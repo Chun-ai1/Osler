@@ -1,0 +1,475 @@
+{
+  "_comment": "NEXUS Medical Agent — Training Configuration",
+  "_version": "2.0",
+  "_instructions": [
+    "To add a new disease: add an entry to 'diseases' with canonical symptoms and treatments.",
+    "To add a symptom: add it to 'symptom_weights' (weight 1.0 = neutral, 2.5 = pathognomonic).",
+    "To add a mechanism: add it to 'combo_signals' with the symptom combination that triggers it.",
+    "Everything else (feature layout, network size, curriculum) is computed automatically."
+  ],
+  "diseases": [
+    {
+      "name": "pneumonia",
+      "symptoms": [
+        "cough",
+        "fever",
+        "shortness of breath",
+        "chest pain",
+        "fatigue"
+      ],
+      "severity": "severe",
+      "pathogen": "bacteria",
+      "infected_organ": "lungs",
+      "treatments": [
+        "antibiotics",
+        "oxygen therapy"
+      ]
+    },
+    {
+      "name": "flu",
+      "symptoms": [
+        "fever",
+        "body aches",
+        "fatigue",
+        "cough",
+        "headache"
+      ],
+      "severity": "moderate",
+      "pathogen": "virus",
+      "infected_organ": "lungs",
+      "treatments": [
+        "antivirals",
+        "rest",
+        "fluids"
+      ]
+    },
+    {
+      "name": "appendicitis",
+      "symptoms": [
+        "abdominal pain",
+        "nausea",
+        "fever",
+        "vomiting"
+      ],
+      "severity": "severe",
+      "pathogen": "bacteria",
+      "infected_organ": "appendix",
+      "treatments": [
+        "surgery",
+        "antibiotics"
+      ]
+    },
+    {
+      "name": "meningitis",
+      "symptoms": [
+        "headache",
+        "stiff neck",
+        "fever",
+        "confusion",
+        "nausea"
+      ],
+      "severity": "critical",
+      "pathogen": "bacteria",
+      "infected_organ": "meninges",
+      "treatments": [
+        "antibiotics",
+        "steroids",
+        "iv fluids"
+      ]
+    },
+    {
+      "name": "heart attack",
+      "symptoms": [
+        "chest pain",
+        "left arm pain",
+        "shortness of breath",
+        "nausea",
+        "sweating"
+      ],
+      "severity": "critical",
+      "pathogen": "non-infectious",
+      "infected_organ": "heart",
+      "treatments": [
+        "aspirin",
+        "pci",
+        "nitroglycerin"
+      ]
+    },
+    {
+      "name": "gastroenteritis",
+      "symptoms": [
+        "diarrhea",
+        "vomiting",
+        "abdominal pain",
+        "nausea",
+        "fever"
+      ],
+      "severity": "moderate",
+      "pathogen": "virus",
+      "infected_organ": "stomach",
+      "treatments": [
+        "fluids",
+        "rest",
+        "antiemetics"
+      ]
+    },
+    {
+      "name": "sepsis",
+      "symptoms": [
+        "fever",
+        "confusion",
+        "shortness of breath",
+        "body aches",
+        "weakness"
+      ],
+      "severity": "critical",
+      "pathogen": "bacteria",
+      "infected_organ": "spleen",
+      "treatments": [
+        "antibiotics",
+        "iv fluids",
+        "vasopressors"
+      ]
+    },
+    {
+      "name": "asthma",
+      "symptoms": [
+        "wheezing",
+        "shortness of breath",
+        "chest tightness",
+        "cough"
+      ],
+      "severity": "moderate",
+      "pathogen": "non-infectious",
+      "infected_organ": "lungs",
+      "treatments": [
+        "inhaler",
+        "bronchodilators",
+        "steroids"
+      ]
+    },
+    {
+      "name": "migraine",
+      "symptoms": [
+        "headache",
+        "nausea",
+        "dizziness",
+        "sensitivity to light"
+      ],
+      "severity": "moderate",
+      "pathogen": "non-infectious",
+      "infected_organ": "brain",
+      "treatments": [
+        "triptans",
+        "nsaids",
+        "rest"
+      ]
+    },
+    {
+      "name": "covid",
+      "symptoms": [
+        "fever",
+        "cough",
+        "fatigue",
+        "shortness of breath",
+        "loss of smell"
+      ],
+      "severity": "moderate",
+      "pathogen": "virus",
+      "infected_organ": "lungs",
+      "treatments": [
+        "antivirals",
+        "oxygen therapy",
+        "rest"
+      ]
+    }
+  ],
+  "treatments": [
+    "antibiotics",
+    "antivirals",
+    "antifungals",
+    "oxygen therapy",
+    "iv fluids",
+    "fluids",
+    "rest",
+    "aspirin",
+    "steroids",
+    "nsaids",
+    "triptans",
+    "inhaler",
+    "bronchodilators",
+    "surgery",
+    "pci",
+    "nitroglycerin",
+    "vasopressors",
+    "antiemetics",
+    "analgesics"
+  ],
+  "symptom_weights": {
+    "_comment": "Diagnostic signal strength. 1.0=neutral, 2.5=pathognomonic.",
+    "left arm pain": 2.5,
+    "stiff neck": 2.5,
+    "loss of smell": 2.5,
+    "confusion": 2.0,
+    "wheezing": 2.0,
+    "sensitivity to light": 1.8,
+    "chest pain": 1.8,
+    "abdominal pain": 1.8,
+    "diarrhea": 1.8,
+    "body aches": 1.8,
+    "headache": 1.5,
+    "sweating": 1.5,
+    "shortness of breath": 1.4,
+    "weakness": 1.3,
+    "dizziness": 1.3
+  },
+  "combo_signals": {
+    "_comment": "Symptom combinations that strongly indicate a specific disease.",
+    "_format": "Each entry: {symptoms_required, symptoms_absent (optional), value, slot_name}",
+    "mi_definite": {
+      "requires": [
+        "chest pain",
+        "left arm pain"
+      ],
+      "excludes": [],
+      "value": 2.0,
+      "description": "MI: chest + left arm"
+    },
+    "mi_probable": {
+      "requires": [
+        "chest pain",
+        "sweating"
+      ],
+      "excludes": [],
+      "value": 1.5,
+      "description": "MI: chest + sweating"
+    },
+    "meningitis_full": {
+      "requires": [
+        "headache",
+        "stiff neck",
+        "fever"
+      ],
+      "excludes": [],
+      "value": 2.5,
+      "description": "Meningitis triad"
+    },
+    "meningitis_part": {
+      "requires": [
+        "headache",
+        "stiff neck"
+      ],
+      "excludes": [],
+      "value": 2.0,
+      "description": "Meningitis: head + neck"
+    },
+    "sepsis_fever_conf": {
+      "requires": [
+        "fever",
+        "confusion"
+      ],
+      "excludes": [],
+      "value": 1.8,
+      "description": "Sepsis: fever + confusion"
+    },
+    "asthma_attack": {
+      "requires": [
+        "wheezing",
+        "shortness of breath"
+      ],
+      "excludes": [],
+      "value": 2.0,
+      "description": "Asthma: wheeze + SOB"
+    },
+    "gi_not_cardiac": {
+      "requires": [
+        "abdominal pain"
+      ],
+      "excludes": [
+        "chest pain",
+        "left arm pain"
+      ],
+      "value": 1.5,
+      "description": "GI pattern (non-cardiac)"
+    },
+    "gi_nausea": {
+      "requires": [
+        "abdominal pain",
+        "nausea"
+      ],
+      "excludes": [
+        "chest pain",
+        "left arm pain"
+      ],
+      "value": 1.5,
+      "description": "GI: pain + nausea"
+    },
+    "covid_smell": {
+      "requires": [
+        "loss of smell"
+      ],
+      "excludes": [],
+      "value": 2.5,
+      "description": "Covid: anosmia"
+    },
+    "flu_triad": {
+      "requires": [
+        "body aches",
+        "headache",
+        "fever"
+      ],
+      "excludes": [],
+      "value": 1.5,
+      "description": "Flu triad"
+    }
+  },
+  "anatomy": {
+    "critical_organs": [
+      "brain",
+      "heart",
+      "lungs",
+      "meninges",
+      "liver",
+      "kidney",
+      "spleen",
+      "brainstem"
+    ],
+    "organ_systems": [
+      "respiratory",
+      "cardiovascular",
+      "neurologic",
+      "gi",
+      "systemic",
+      "immune",
+      "unknown"
+    ]
+  },
+  "training": {
+    "episodes": 5000,
+    "learning_rate": 0.005,
+    "momentum": 0.9,
+    "hidden_size": 256,
+    "replay_buffer_size": 5000,
+    "learn_every": 200,
+    "env_noise_p": 0.15,
+    "curriculum": [
+      {
+        "until_episode": 1000,
+        "clean": 0.5,
+        "partial": 0.3,
+        "noisy": 0.2
+      },
+      {
+        "until_episode": 2500,
+        "clean": 0.3,
+        "partial": 0.4,
+        "noisy": 0.3
+      },
+      {
+        "until_episode": 4000,
+        "clean": 0.2,
+        "partial": 0.3,
+        "noisy": 0.5
+      },
+      {
+        "until_episode": 99999,
+        "clean": 0.1,
+        "partial": 0.3,
+        "noisy": 0.6
+      }
+    ],
+    "nexus_score_dropout": [
+      {
+        "until_episode": 2500,
+        "rate": 0.0
+      },
+      {
+        "until_episode": 4000,
+        "rate": 0.3
+      },
+      {
+        "until_episode": 99999,
+        "rate": 0.5
+      }
+    ],
+    "noise_symptoms": [
+      "fatigue",
+      "dizziness",
+      "weakness",
+      "loss of appetite",
+      "insomnia",
+      "sweating",
+      "chills",
+      "back pain",
+      "joint pain",
+      "sore throat",
+      "runny nose",
+      "rash",
+      "anxiety",
+      "palpitations",
+      "dry mouth"
+    ],
+    "env_noise_symptoms": [
+      "fatigue",
+      "dizziness",
+      "weakness",
+      "loss of appetite",
+      "insomnia"
+    ]
+  },
+  "feature_layout": {
+    "_comment": "Computed automatically from config. Shown here for documentation only.",
+    "nexus_disease_scores": "[0 : N_DISEASES]",
+    "reserved": "[N_DISEASES : N_DISEASES+10]",
+    "organ_system_dist": "[N_DISEASES+10 : N_DISEASES+17]",
+    "nexus_mechanism": "[N_DISEASES+17 : N_DISEASES+22]",
+    "anatomy_spread": "[N_DISEASES+22 : N_DISEASES+30]",
+    "symptom_onehot": "[N_DISEASES+30 : N_DISEASES+30+N_SYMPTOMS]",
+    "combo_signals": "[N_DISEASES+30+N_SYMPTOMS : ...]",
+    "total": "auto-computed, padded to next multiple of 64"
+  },
+  "thresholds": {
+    "_comment": "All scoring thresholds used across NEXUS. Edit here, not in code.",
+    "disease_ranking": {
+      "min_score": 0.3,
+      "disease_label_min_score": 0.72,
+      "disease_label_min_margin": 0.15,
+      "contract_floor": 0.5,
+      "coverage_for_boost": 0.4,
+      "high_confidence": 0.8
+    },
+    "etiology": {
+      "uncertain_below": 0.5,
+      "viral_min": 0.75,
+      "bacterial_min": 0.65,
+      "non_infectious_min": 0.6,
+      "min_mech_activations": 5,
+      "uncertain_classifier_below": 0.45,
+      "classifier_confident_above": 0.6
+    },
+    "anatomy": {
+      "organ_confidence_default": 0.7,
+      "organ_confidence_nonspecific": 0.78,
+      "disease_organ_confidence": 0.65,
+      "api_anatomy_localizes_min": 0.55,
+      "api_anatomy_disease_min": 0.65,
+      "max_useful_organs": 8,
+      "nonspecific_organ_cap": 3,
+      "specific_organ_cap": 5,
+      "anatomy_confidence_min": 0.5,
+      "disease_seed_min_score": 0.3,
+      "anatomy_confidence_spread_min": 0.4
+    },
+    "consistency": {
+      "min_top_score_for_meaningful": 0.3,
+      "min_for_high_consistency": 0.5,
+      "min_for_some_consistency": 0.3
+    },
+    "matching": {
+      "_comment": "Symptom matching precision scores in nexus_medical",
+      "exact_match_tag": 0.8,
+      "partial_match_min": 0.5,
+      "coverage_boost_min": 0.4
+    }
+  }
+}

@@ -1,0 +1,320 @@
+{
+  "_metadata": {
+    "organ": "ear",
+    "schema_version": "2.0",
+    "description": "Ear state model — external/middle/inner ear pathology. Used by AOM, serous OM, otitis externa, Meniere's.",
+    "source": "Cummings Otolaryngology",
+    "review_status": "unreviewed"
+  },
+  "state_variables": {
+    "external_canal_inflammation": {
+      "range": [
+        0,
+        1
+      ],
+      "description": "otitis externa"
+    },
+    "middle_ear_effusion": {
+      "range": [
+        0,
+        1
+      ],
+      "description": "fluid in middle ear"
+    },
+    "middle_ear_infection": {
+      "range": [
+        0,
+        1
+      ],
+      "description": "bacterial middle ear infection"
+    },
+    "tympanic_membrane_integrity": {
+      "range": [
+        0,
+        1
+      ],
+      "description": "TM integrity — HIGHER = better",
+      "inverse": true
+    },
+    "eustachian_tube_function": {
+      "range": [
+        0,
+        1
+      ],
+      "description": "ET patency — HIGHER = better",
+      "inverse": true
+    },
+    "hearing_conduction": {
+      "range": [
+        0,
+        1
+      ],
+      "description": "conductive hearing — HIGHER = better",
+      "inverse": true
+    },
+    "vestibular_function": {
+      "range": [
+        0,
+        1
+      ],
+      "description": "vestibular labyrinth function — HIGHER = better",
+      "inverse": true
+    },
+    "cochlear_function": {
+      "range": [
+        0,
+        1
+      ],
+      "description": "sensorineural hearing — HIGHER = better",
+      "inverse": true
+    }
+  },
+  "derivation_rules": [
+    {
+      "symptom": "ear pain",
+      "condition": {
+        "any": [
+          {
+            "state": "external_canal_inflammation",
+            "op": ">",
+            "threshold": 0.4
+          },
+          {
+            "state": "middle_ear_infection",
+            "op": ">",
+            "threshold": 0.4
+          }
+        ]
+      },
+      "rationale": "external canal or middle ear inflammation activates nociceptors",
+      "confidence": 1.0
+    },
+    {
+      "symptom": "hearing loss",
+      "condition": {
+        "any": [
+          {
+            "state": "hearing_conduction",
+            "op": "<",
+            "threshold": 0.6
+          },
+          {
+            "state": "cochlear_function",
+            "op": "<",
+            "threshold": 0.6
+          }
+        ]
+      },
+      "rationale": "conductive or sensorineural pathway impaired",
+      "confidence": 1.0
+    },
+    {
+      "symptom": "ear fullness",
+      "condition": {
+        "state": "middle_ear_effusion",
+        "op": ">",
+        "threshold": 0.5
+      },
+      "rationale": "fluid in middle ear → pressure sensation",
+      "confidence": 0.9
+    },
+    {
+      "symptom": "ear discharge",
+      "condition": {
+        "any": [
+          {
+            "state": "external_canal_inflammation",
+            "op": ">",
+            "threshold": 0.5
+          },
+          {
+            "state": "tympanic_membrane_integrity",
+            "op": "<",
+            "threshold": 0.4
+          }
+        ]
+      },
+      "rationale": "otitis externa or TM perforation → otorrhea",
+      "confidence": 0.9
+    },
+    {
+      "symptom": "vertigo",
+      "condition": {
+        "state": "vestibular_function",
+        "op": "<",
+        "threshold": 0.5
+      },
+      "rationale": "vestibular pathology → false sense of motion",
+      "confidence": 1.0
+    },
+    {
+      "symptom": "tinnitus",
+      "condition": {
+        "state": "cochlear_function",
+        "op": "<",
+        "threshold": 0.6
+      },
+      "rationale": "cochlear damage → ringing",
+      "confidence": 0.8
+    },
+    {
+      "symptom": "fever",
+      "condition": {
+        "state": "middle_ear_infection",
+        "op": ">",
+        "threshold": 0.5
+      },
+      "rationale": "bacterial otitis media releases pyrogens",
+      "confidence": 0.7
+    }
+  ],
+  "propagation_rules": [
+    {
+      "trigger": {
+        "state": "eustachian_tube_function",
+        "op": "<",
+        "threshold": 0.5
+      },
+      "effect": {
+        "state": "middle_ear_effusion",
+        "delta": 0.4
+      },
+      "rationale": "ET dysfunction → negative middle ear pressure → effusion",
+      "via": "intra_organ",
+      "review_status": "unreviewed"
+    },
+    {
+      "trigger": {
+        "state": "middle_ear_effusion",
+        "op": ">",
+        "threshold": 0.5
+      },
+      "effect": {
+        "state": "middle_ear_infection",
+        "delta": 0.3
+      },
+      "rationale": "stagnant fluid predisposes to bacterial infection",
+      "via": "intra_organ",
+      "review_status": "unreviewed"
+    },
+    {
+      "trigger": {
+        "state": "middle_ear_effusion",
+        "op": ">",
+        "threshold": 0.5
+      },
+      "effect": {
+        "state": "hearing_conduction",
+        "delta": -0.3
+      },
+      "rationale": "fluid dampens ossicular chain motion",
+      "via": "intra_organ",
+      "review_status": "unreviewed"
+    },
+    {
+      "trigger": {
+        "state": "middle_ear_infection",
+        "op": ">",
+        "threshold": 0.7
+      },
+      "effect": {
+        "state": "tympanic_membrane_integrity",
+        "delta": -0.4
+      },
+      "rationale": "severe pressure → TM perforation",
+      "via": "intra_organ",
+      "review_status": "unreviewed"
+    }
+  ],
+  "connections": {
+    "incoming": [
+      "blood (auricular branches)",
+      "neural (CN8)"
+    ],
+    "outgoing": [
+      "brain (auditory via CN8)"
+    ],
+    "neural": [
+      "CN5 (sensory)",
+      "CN7 (motor)",
+      "CN8 (hearing + balance)"
+    ]
+  },
+  "diseases": {
+    "Acute Otitis Media": {
+      "_review_status": "unreviewed",
+      "description": "Bacterial middle ear infection (S. pneumoniae, H. influenzae, M. catarrhalis).",
+      "perturbations": [
+        {
+          "variable": "eustachian_tube_function",
+          "delta": -0.55,
+          "cause": "URI/allergy → ET dysfunction"
+        },
+        {
+          "variable": "middle_ear_effusion",
+          "delta": 0.65,
+          "cause": "negative pressure → transudate, then bacterial colonization"
+        },
+        {
+          "variable": "middle_ear_infection",
+          "delta": 0.65,
+          "cause": "bacterial superinfection of effusion"
+        }
+      ]
+    },
+    "Serous Otitis Media": {
+      "_review_status": "unreviewed",
+      "description": "Sterile middle ear effusion — chronic ET dysfunction.",
+      "perturbations": [
+        {
+          "variable": "eustachian_tube_function",
+          "delta": -0.5,
+          "cause": "chronic ET dysfunction (allergy, adenoid hypertrophy)"
+        },
+        {
+          "variable": "middle_ear_effusion",
+          "delta": 0.55,
+          "cause": "chronic transudative effusion"
+        }
+      ]
+    },
+    "Otitis Externa": {
+      "review_status": "unreviewed",
+      "description": "Inflammation or infection of the external auditory canal, commonly associated with canal pain and discharge.",
+      "perturbations": [
+        {
+          "variable": "external_canal_inflammation",
+          "delta": 0.75,
+          "cause": "external canal epithelial infection/inflammation"
+        }
+      ]
+    },
+    "Meniere Disease": {
+      "review_status": "unreviewed",
+      "description": "Inner-ear disorder causing episodic vertigo with sensorineural hearing symptoms.",
+      "perturbations": [
+        {
+          "variable": "vestibular_function",
+          "delta": -0.65,
+          "cause": "endolymphatic dysfunction disturbs vestibular signaling"
+        },
+        {
+          "variable": "cochlear_function",
+          "delta": -0.55,
+          "cause": "inner-ear dysfunction impairs sensorineural hearing"
+        }
+      ]
+    },
+    "Benign Paroxysmal Positional Vertigo": {
+      "review_status": "unreviewed",
+      "description": "Positional vertigo due to abnormal vestibular stimulation from displaced canaliths.",
+      "perturbations": [
+        {
+          "variable": "vestibular_function",
+          "delta": -0.6,
+          "cause": "canalith displacement produces discordant positional vestibular signals"
+        }
+      ]
+    }
+  }
+}

@@ -1,0 +1,585 @@
+{
+  "_metadata": {
+    "schema_version": "1.0",
+    "description": "Drug mechanism map for NEXUS treatment recommendation (#10) and drug-response inference (#5). Each drug declares which organ states it modulates (state_effects) — treatment recs auto-match drugs to diseases whose perturbations need correcting. No hardcoded disease->drug lookups.",
+    "review_status": "unreviewed",
+    "field_reference": {
+      "relieves": "symptoms this drug relieves (feeds drug-response inference #5)",
+      "supports_diseases": "if drug relieved a symptom, which diseases get boosted (lowercase)",
+      "drug_class": "groups drugs for class-diverse treatment ranking",
+      "state_effects": "[{organ, variable, direction}] — the mechanism core. direction low=pushes state down, high=pushes up, organ '*'=any organ",
+      "rationale": "human-readable mechanism note"
+    }
+  },
+  "drugs": {
+    "nitroglycerin": {
+      "relieves": [
+        "chest pain"
+      ],
+      "supports_diseases": [
+        "heart attack/mi",
+        "acute coronary syndrome",
+        "stable angina"
+      ],
+      "drug_class": "vasodilator",
+      "state_effects": [
+        {
+          "organ": "heart",
+          "variable": "afterload",
+          "direction": "low"
+        },
+        {
+          "organ": "heart",
+          "variable": "ischemia",
+          "direction": "low"
+        },
+        {
+          "organ": "heart",
+          "variable": "wall_stress",
+          "direction": "low"
+        }
+      ],
+      "rationale": "NTG vasodilates coronary arteries"
+    },
+    "ntg": {
+      "relieves": [
+        "chest pain"
+      ],
+      "supports_diseases": [
+        "heart attack/mi",
+        "acute coronary syndrome"
+      ],
+      "drug_class": "vasodilator",
+      "state_effects": [
+        {
+          "organ": "heart",
+          "variable": "afterload",
+          "direction": "low"
+        },
+        {
+          "organ": "heart",
+          "variable": "ischemia",
+          "direction": "low"
+        }
+      ],
+      "rationale": "NTG vasodilates coronary arteries"
+    },
+    "epinephrine": {
+      "relieves": [
+        "wheezing",
+        "swelling",
+        "hives"
+      ],
+      "supports_diseases": [
+        "anaphylaxis",
+        "asthma exacerbation"
+      ],
+      "drug_class": "adrenergic agonist",
+      "state_effects": [
+        {
+          "organ": "vessel",
+          "variable": "vasoconstriction",
+          "direction": "high"
+        },
+        {
+          "organ": "lung",
+          "variable": "airflow_resistance",
+          "direction": "low"
+        },
+        {
+          "organ": "lung",
+          "variable": "bronchospasm",
+          "direction": "low"
+        }
+      ],
+      "rationale": "epi reverses anaphylactic vasodilation/bronchospasm"
+    },
+    "epi pen": {
+      "relieves": [
+        "wheezing",
+        "swelling",
+        "hives"
+      ],
+      "supports_diseases": [
+        "anaphylaxis"
+      ],
+      "drug_class": "adrenergic agonist",
+      "state_effects": [
+        {
+          "organ": "vessel",
+          "variable": "vasoconstriction",
+          "direction": "high"
+        },
+        {
+          "organ": "lung",
+          "variable": "bronchospasm",
+          "direction": "low"
+        }
+      ],
+      "rationale": "EpiPen → anaphylaxis-specific"
+    },
+    "diphenhydramine": {
+      "relieves": [
+        "hives",
+        "itching",
+        "rash"
+      ],
+      "supports_diseases": [
+        "acute urticaria",
+        "anaphylaxis",
+        "allergic rhinitis"
+      ],
+      "drug_class": "antihistamine_H1",
+      "state_effects": [
+        {
+          "organ": "skin",
+          "variable": "histamine_release",
+          "direction": "low"
+        },
+        {
+          "organ": "skin",
+          "variable": "pruritus",
+          "direction": "low"
+        }
+      ],
+      "rationale": "antihistamine blocks H1 receptor"
+    },
+    "benadryl": {
+      "relieves": [
+        "hives",
+        "itching",
+        "rash"
+      ],
+      "supports_diseases": [
+        "acute urticaria",
+        "anaphylaxis"
+      ],
+      "drug_class": "antihistamine_H1",
+      "state_effects": [
+        {
+          "organ": "skin",
+          "variable": "histamine_release",
+          "direction": "low"
+        }
+      ],
+      "rationale": "antihistamine blocks H1 receptor"
+    },
+    "omeprazole": {
+      "relieves": [
+        "heartburn",
+        "epigastric pain"
+      ],
+      "supports_diseases": [
+        "gastroesophageal reflux disease",
+        "erosive esophagitis"
+      ],
+      "drug_class": "PPI",
+      "state_effects": [
+        {
+          "organ": "gi",
+          "variable": "gastric_acid",
+          "direction": "low"
+        },
+        {
+          "organ": "gi",
+          "variable": "mucosal_irritation",
+          "direction": "low"
+        }
+      ],
+      "rationale": "PPI suppresses gastric acid"
+    },
+    "ppi": {
+      "relieves": [
+        "heartburn",
+        "epigastric pain"
+      ],
+      "supports_diseases": [
+        "gastroesophageal reflux disease",
+        "erosive esophagitis"
+      ],
+      "drug_class": "PPI",
+      "state_effects": [
+        {
+          "organ": "gi",
+          "variable": "gastric_acid",
+          "direction": "low"
+        }
+      ],
+      "rationale": "PPI suppresses gastric acid"
+    },
+    "ranitidine": {
+      "relieves": [
+        "heartburn"
+      ],
+      "supports_diseases": [
+        "gastroesophageal reflux disease"
+      ],
+      "drug_class": "H2_blocker",
+      "state_effects": [
+        {
+          "organ": "gi",
+          "variable": "gastric_acid",
+          "direction": "low"
+        }
+      ],
+      "rationale": "H2 blocker reduces acid"
+    },
+    "sumatriptan": {
+      "relieves": [
+        "headache"
+      ],
+      "supports_diseases": [
+        "migraine"
+      ],
+      "drug_class": "triptan",
+      "state_effects": [
+        {
+          "organ": "brain",
+          "variable": "neurogenic_inflammation",
+          "direction": "low"
+        },
+        {
+          "organ": "vessel",
+          "variable": "cranial_vasodilation",
+          "direction": "low"
+        }
+      ],
+      "rationale": "triptan = migraine-specific 5HT1B/1D agonist"
+    },
+    "triptan": {
+      "relieves": [
+        "headache"
+      ],
+      "supports_diseases": [
+        "migraine"
+      ],
+      "drug_class": "triptan",
+      "state_effects": [
+        {
+          "organ": "vessel",
+          "variable": "cranial_vasodilation",
+          "direction": "low"
+        }
+      ],
+      "rationale": "triptans target migraine"
+    },
+    "albuterol": {
+      "relieves": [
+        "wheezing",
+        "shortness of breath"
+      ],
+      "supports_diseases": [
+        "asthma exacerbation",
+        "copd"
+      ],
+      "drug_class": "beta2_agonist",
+      "state_effects": [
+        {
+          "organ": "lung",
+          "variable": "bronchospasm",
+          "direction": "low"
+        },
+        {
+          "organ": "lung",
+          "variable": "airflow_resistance",
+          "direction": "low"
+        }
+      ],
+      "rationale": "beta-2 agonist relaxes bronchial smooth muscle"
+    },
+    "ventolin": {
+      "relieves": [
+        "wheezing",
+        "shortness of breath"
+      ],
+      "supports_diseases": [
+        "asthma exacerbation"
+      ],
+      "drug_class": "beta2_agonist",
+      "state_effects": [
+        {
+          "organ": "lung",
+          "variable": "bronchospasm",
+          "direction": "low"
+        }
+      ],
+      "rationale": "albuterol brand"
+    },
+    "ibuprofen": {
+      "relieves": [
+        "joint pain",
+        "muscle pain",
+        "headache"
+      ],
+      "supports_diseases": [
+        "migraine",
+        "rotator cuff syndrome"
+      ],
+      "drug_class": "NSAID",
+      "state_effects": [
+        {
+          "organ": "*",
+          "variable": "inflammation",
+          "direction": "low"
+        },
+        {
+          "organ": "*",
+          "variable": "prostaglandin",
+          "direction": "low"
+        }
+      ],
+      "rationale": "NSAID anti-inflammatory"
+    },
+    "aspirin": {
+      "relieves": [],
+      "supports_diseases": [],
+      "drug_class": "antiplatelet",
+      "state_effects": [
+        {
+          "organ": "blood",
+          "variable": "platelet_aggregation",
+          "direction": "low"
+        },
+        {
+          "organ": "heart",
+          "variable": "ischemia",
+          "direction": "low"
+        },
+        {
+          "organ": "*",
+          "variable": "inflammation",
+          "direction": "low"
+        }
+      ],
+      "rationale": "antiplatelet — reduces thrombus extension in ACS"
+    },
+    "metoprolol": {
+      "relieves": [],
+      "supports_diseases": [],
+      "drug_class": "beta_blocker",
+      "state_effects": [
+        {
+          "organ": "heart",
+          "variable": "sympathetic_drive",
+          "direction": "low"
+        },
+        {
+          "organ": "heart",
+          "variable": "heart_rate",
+          "direction": "low"
+        },
+        {
+          "organ": "heart",
+          "variable": "myocardial_oxygen_demand",
+          "direction": "low"
+        }
+      ],
+      "rationale": "β-blocker reduces sympathetic drive + cardiac O2 demand"
+    },
+    "atenolol": {
+      "relieves": [],
+      "supports_diseases": [],
+      "drug_class": "beta_blocker",
+      "state_effects": [
+        {
+          "organ": "heart",
+          "variable": "sympathetic_drive",
+          "direction": "low"
+        },
+        {
+          "organ": "heart",
+          "variable": "heart_rate",
+          "direction": "low"
+        }
+      ],
+      "rationale": "β-blocker reduces sympathetic drive"
+    },
+    "lisinopril": {
+      "relieves": [],
+      "supports_diseases": [],
+      "drug_class": "ACE_inhibitor",
+      "state_effects": [
+        {
+          "organ": "heart",
+          "variable": "afterload",
+          "direction": "low"
+        },
+        {
+          "organ": "heart",
+          "variable": "systemic_BP",
+          "direction": "low"
+        },
+        {
+          "organ": "vessel",
+          "variable": "angiotensin_II",
+          "direction": "low"
+        }
+      ],
+      "rationale": "ACE inhibitor reduces afterload + RAAS activity"
+    },
+    "furosemide": {
+      "relieves": [],
+      "supports_diseases": [],
+      "drug_class": "loop_diuretic",
+      "state_effects": [
+        {
+          "organ": "heart",
+          "variable": "preload",
+          "direction": "low"
+        },
+        {
+          "organ": "lung",
+          "variable": "pulmonary_edema",
+          "direction": "low"
+        },
+        {
+          "organ": "*",
+          "variable": "fluid_overload",
+          "direction": "low"
+        }
+      ],
+      "rationale": "loop diuretic — reduces preload and pulmonary edema"
+    },
+    "morphine": {
+      "relieves": [
+        "chest pain",
+        "shortness of breath"
+      ],
+      "supports_diseases": [],
+      "drug_class": "opioid_analgesic",
+      "state_effects": [
+        {
+          "organ": "brain",
+          "variable": "pain_perception",
+          "direction": "low"
+        },
+        {
+          "organ": "heart",
+          "variable": "sympathetic_drive",
+          "direction": "low"
+        },
+        {
+          "organ": "heart",
+          "variable": "preload",
+          "direction": "low"
+        }
+      ],
+      "rationale": "opioid: analgesia + sympatholytic + venodilation"
+    },
+    "heparin": {
+      "relieves": [],
+      "supports_diseases": [],
+      "drug_class": "anticoagulant",
+      "state_effects": [
+        {
+          "organ": "blood",
+          "variable": "coagulation_cascade",
+          "direction": "low"
+        },
+        {
+          "organ": "heart",
+          "variable": "ischemia",
+          "direction": "low"
+        }
+      ],
+      "rationale": "anticoagulant — prevents clot propagation"
+    },
+    "ceftriaxone": {
+      "relieves": [],
+      "supports_diseases": [],
+      "drug_class": "antibiotic_broad",
+      "state_effects": [
+        {
+          "organ": "*",
+          "variable": "infection_load",
+          "direction": "low"
+        },
+        {
+          "organ": "*",
+          "variable": "bacterial_pathogen",
+          "direction": "low"
+        }
+      ],
+      "rationale": "broad-spectrum antibiotic — covers gram-negative + Strep"
+    },
+    "amoxicillin": {
+      "relieves": [],
+      "supports_diseases": [],
+      "drug_class": "antibiotic_penicillin",
+      "state_effects": [
+        {
+          "organ": "*",
+          "variable": "infection_load",
+          "direction": "low"
+        },
+        {
+          "organ": "*",
+          "variable": "bacterial_pathogen",
+          "direction": "low"
+        }
+      ],
+      "rationale": "penicillin — common community pathogens"
+    },
+    "insulin": {
+      "relieves": [],
+      "supports_diseases": [],
+      "drug_class": "hormone_replacement",
+      "state_effects": [
+        {
+          "organ": "pancreas",
+          "variable": "blood_glucose_elevation",
+          "direction": "low"
+        },
+        {
+          "organ": "pancreas",
+          "variable": "ketogenesis",
+          "direction": "low"
+        }
+      ],
+      "rationale": "insulin — corrects hyperglycemia and ketosis"
+    },
+    "fluids_iv": {
+      "relieves": [],
+      "supports_diseases": [],
+      "drug_class": "volume_resuscitation",
+      "state_effects": [
+        {
+          "organ": "heart",
+          "variable": "preload",
+          "direction": "high"
+        },
+        {
+          "organ": "*",
+          "variable": "hypovolemia",
+          "direction": "low"
+        },
+        {
+          "organ": "*",
+          "variable": "perfusion",
+          "direction": "high"
+        }
+      ],
+      "rationale": "IV fluids — restore intravascular volume + perfusion"
+    },
+    "oxygen": {
+      "relieves": [
+        "shortness of breath"
+      ],
+      "supports_diseases": [],
+      "drug_class": "respiratory_support",
+      "state_effects": [
+        {
+          "organ": "lung",
+          "variable": "gas_exchange",
+          "direction": "high"
+        },
+        {
+          "organ": "*",
+          "variable": "hypoxia",
+          "direction": "low"
+        }
+      ],
+      "rationale": "supplemental O2 — corrects hypoxia"
+    }
+  }
+}

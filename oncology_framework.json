@@ -1,0 +1,139 @@
+{
+  "_metadata": {
+    "framework": "oncology",
+    "schema_version": "1.0",
+    "description": "Oncology framework — tumor types, staging principles, metastasis pathways, paraneoplastic syndromes, common adult cancers.",
+    "source": "DeVita Principles & Practice of Oncology; Harrison's IM Oncology",
+    "review_status": "unreviewed"
+  },
+
+  "tumor_categorization": {
+    "by_origin": {
+      "carcinoma": "epithelial origin (most common adult cancer)",
+      "sarcoma": "mesenchymal origin (bone, muscle, fat, vessel)",
+      "lymphoma": "lymphoid tissue (Hodgkin, NHL)",
+      "leukemia": "hematopoietic cells in blood/marrow (ALL, AML, CLL, CML)",
+      "germ_cell": "ovary, testis (seminoma, teratoma)",
+      "neuroendocrine": "DNES cells (carcinoid, small cell lung, MTC, pheo)",
+      "CNS_primary": "brain (glioma, meningioma, medulloblastoma)"
+    },
+    "by_behavior": {
+      "benign": "well-differentiated, capsulated, non-invasive, non-metastatic",
+      "malignant": "invasive, may metastasize",
+      "in_situ": "non-invasive (e.g. DCIS, CIN)"
+    }
+  },
+
+  "TNM_staging": {
+    "T_primary_tumor": "size and local invasion (T1-T4)",
+    "N_regional_nodes": "involvement of regional lymph nodes (N0-N3)",
+    "M_distant_metastasis": "M0 (none) vs M1 (present)",
+    "stage_groups": {
+      "Stage_I": "early, local",
+      "Stage_II": "larger or regional spread",
+      "Stage_III": "regional advanced",
+      "Stage_IV": "distant metastases"
+    },
+    "alternative_systems": ["Ann Arbor (lymphoma)", "FIGO (gynecologic)", "Dukes/AJCC (colorectal)"]
+  },
+
+  "metastasis_pathways": {
+    "lymphatic": "most common for carcinoma; follows regional drainage",
+    "hematogenous": "common for sarcoma; depends on venous drainage",
+    "seeding": "peritoneal (ovarian, gastric), CSF (medulloblastoma)",
+    "direct_extension": "to adjacent organs",
+    "common_metastatic_sites": {
+      "lung": ["from breast, colon, kidney, melanoma, sarcoma"],
+      "liver": ["from GI primaries (portal drainage)", "breast", "lung"],
+      "bone": ["from breast, prostate, lung, kidney, thyroid (mnemonic: BLT-KP)"],
+      "brain": ["from lung", "breast", "melanoma", "renal", "colon"],
+      "adrenal": ["from lung", "breast", "melanoma"]
+    }
+  },
+
+  "common_adult_cancers": {
+    "lung_cancer": {
+      "types": ["NSCLC (adenocarcinoma, squamous, large cell)", "SCLC"],
+      "risk_factors": ["smoking", "asbestos", "radon"],
+      "presentation": ["cough", "hemoptysis", "weight loss", "post-obstructive pneumonia"],
+      "paraneoplastic": ["SIADH (SCLC)", "Cushing (SCLC ectopic ACTH)", "Lambert-Eaton (SCLC)", "PTHrP (squamous)"],
+      "review_status": "unreviewed"
+    },
+    "breast_cancer": {
+      "types": ["IDC (most common)", "ILC", "DCIS"],
+      "risk_factors": ["BRCA1/2", "estrogen exposure", "family history", "age"],
+      "presentation": ["palpable mass", "skin changes (peau d'orange)", "nipple discharge"],
+      "screening": "mammography 40+ (varies)",
+      "biomarkers": ["ER", "PR", "HER2"],
+      "review_status": "unreviewed"
+    },
+    "colorectal_cancer": {
+      "types": ["adenocarcinoma (>90%)"],
+      "risk_factors": ["family history", "FAP", "Lynch syndrome", "IBD", "diet/lifestyle"],
+      "presentation": ["change in bowel habits", "hematochezia/melena", "iron-deficiency anemia"],
+      "screening": "colonoscopy 45+",
+      "review_status": "unreviewed"
+    },
+    "prostate_cancer": {
+      "types": ["adenocarcinoma"],
+      "presentation": ["often asymptomatic", "elevated PSA", "bone pain (advanced)"],
+      "metastasis": "osteoblastic bone mets",
+      "screening": "PSA + DRE (controversial)",
+      "review_status": "unreviewed"
+    },
+    "pancreatic_cancer": {
+      "types": ["ductal adenocarcinoma (>90%)"],
+      "presentation": ["painless jaundice", "weight loss", "Trousseau sign (migratory thrombophlebitis)"],
+      "prognosis": "poor (advanced at diagnosis)",
+      "marker": "CA 19-9",
+      "review_status": "unreviewed"
+    },
+    "hepatocellular_carcinoma": {
+      "risk_factors": ["cirrhosis (any cause)", "HBV/HCV", "aflatoxin"],
+      "marker": "AFP",
+      "review_status": "unreviewed"
+    },
+    "renal_cell_carcinoma": {
+      "presentation": ["hematuria, flank pain, mass (classic triad uncommon)", "paraneoplastic: EPO → polycythemia, PTHrP → hypercalcemia"],
+      "review_status": "unreviewed"
+    },
+    "bladder_cancer": {
+      "types": ["transitional cell carcinoma (urothelial)"],
+      "risk_factors": ["smoking", "aniline dyes", "schistosomiasis (squamous)"],
+      "presentation": ["painless hematuria"],
+      "review_status": "unreviewed"
+    },
+    "gastric_cancer": {
+      "risk_factors": ["H. pylori", "smoked foods", "atrophic gastritis"],
+      "presentation": ["weight loss, abdominal pain, anemia, Virchow node"],
+      "review_status": "unreviewed"
+    },
+    "leukemias": {
+      "AML": "adults, blast cells, Auer rods",
+      "ALL": "children, mediastinal mass possible",
+      "CLL": "elderly, smudge cells, indolent",
+      "CML": "Philadelphia chromosome t(9;22) BCR-ABL"
+    },
+    "lymphomas": {
+      "Hodgkin": "Reed-Sternberg cells, contiguous spread, bimodal age",
+      "NHL": "DLBCL most common; varies indolent to aggressive"
+    }
+  },
+
+  "paraneoplastic_syndromes": {
+    "endocrine": ["SIADH (SCLC)", "ectopic ACTH (SCLC)", "PTHrP hypercalcemia (squamous lung, RCC)"],
+    "neurologic": ["Lambert-Eaton (SCLC)", "limbic encephalitis", "cerebellar degeneration"],
+    "hematologic": ["polycythemia (RCC, HCC)", "Trousseau (pancreatic)", "DIC (APL)"],
+    "dermatologic": ["acanthosis nigricans (GI)", "dermatomyositis"],
+    "review_status": "unreviewed"
+  },
+
+  "treatment_modalities": {
+    "surgery": "curative for localized disease",
+    "chemotherapy": "systemic cytotoxic; adjuvant/neoadjuvant/palliative",
+    "radiation": "local control; can be definitive or palliative",
+    "targeted_therapy": ["HER2 (trastuzumab)", "EGFR (erlotinib)", "BCR-ABL (imatinib)", "BRAF (vemurafenib)"],
+    "immunotherapy": ["checkpoint inhibitors (anti-PD-1, anti-CTLA-4)", "CAR-T", "monoclonal antibodies"],
+    "hormonal": ["tamoxifen (ER+ breast)", "androgen deprivation (prostate)"]
+  }
+}

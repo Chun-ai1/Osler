@@ -1,0 +1,783 @@
+{
+  "_metadata": {
+    "organ": "heart",
+    "schema_version": "2.0",
+    "description": "Cardiac state model. Used by MI, angina, heart failure.",
+    "source": "Boron & Boulpaep Cardiovascular Physiology; Harrison's IM Cardiology",
+    "review_status": "unreviewed"
+  },
+  "state_variables": {
+    "ischemia": {
+      "range": [
+        0,
+        1
+      ],
+      "description": "myocardial O2 deficit"
+    },
+    "perfusion": {
+      "range": [
+        0,
+        1
+      ],
+      "description": "coronary blood flow — HIGHER = better",
+      "inverse": true
+    },
+    "contractility": {
+      "range": [
+        0,
+        1
+      ],
+      "description": "myocardial contraction strength — HIGHER = better",
+      "inverse": true
+    },
+    "cardiac_output": {
+      "range": [
+        0,
+        1
+      ],
+      "description": "stroke volume × heart rate — HIGHER = better",
+      "inverse": true
+    },
+    "preload": {
+      "range": [
+        0,
+        1
+      ],
+      "description": "ventricular filling pressure",
+      "default": 0.5
+    },
+    "afterload": {
+      "range": [
+        0,
+        1
+      ],
+      "description": "resistance the heart pumps against"
+    },
+    "sympathetic_drive": {
+      "range": [
+        0,
+        1
+      ],
+      "description": "adrenergic activation"
+    },
+    "electrical_instability": {
+      "range": [
+        0,
+        1
+      ],
+      "description": "arrhythmia risk"
+    },
+    "wall_stress": {
+      "range": [
+        0,
+        1
+      ],
+      "description": "ventricular wall tension"
+    },
+    "pulmonary_congestion": {
+      "range": [
+        0,
+        1
+      ],
+      "description": "backward pressure to lungs (left heart failure)"
+    },
+    "valve_function": {
+      "range": [
+        0,
+        1
+      ],
+      "description": "valve competence + opening — HIGHER = better",
+      "inverse": true
+    },
+    "electrical_rhythm": {
+      "range": [
+        0,
+        1
+      ],
+      "description": "normal sinus rhythm — HIGHER = better; deviation = arrhythmia",
+      "inverse": true,
+      "default": 1.0
+    },
+    "pericardial_inflammation": {
+      "range": [
+        0,
+        1
+      ],
+      "description": "pericardial sac inflammation"
+    },
+    "systemic_BP": {
+      "range": [
+        0,
+        1
+      ],
+      "description": "systemic blood pressure (0.5 = normal; high = HTN, low = hypotension)",
+      "default": 0.5
+    },
+    "lipid_burden": {
+      "range": [
+        0,
+        1
+      ],
+      "description": "circulating LDL / atherosclerotic burden"
+    }
+  },
+  "derivation_rules": [
+    {
+      "symptom": "chest pain",
+      "condition": {
+        "state": "ischemia",
+        "op": ">",
+        "threshold": 0.5
+      },
+      "rationale": "ischemic metabolites (adenosine, lactate, bradykinin) activate cardiac visceral afferents → referred to T1-T4 dermatomes (chest, arm, jaw)",
+      "confidence": 1.0
+    },
+    {
+      "symptom": "left arm pain",
+      "condition": {
+        "state": "ischemia",
+        "op": ">",
+        "threshold": 0.6
+      },
+      "rationale": "cardiac afferents converge on T1-T2 with somatic afferents from left arm → referred pain (Head's zones)",
+      "confidence": 0.9
+    },
+    {
+      "symptom": "shortness of breath",
+      "condition": {
+        "any": [
+          {
+            "state": "cardiac_output",
+            "op": "<",
+            "threshold": 0.6
+          },
+          {
+            "state": "pulmonary_congestion",
+            "op": ">",
+            "threshold": 0.5
+          }
+        ]
+      },
+      "rationale": "low cardiac output OR pulmonary venous congestion → impaired gas exchange + J-receptor stimulation",
+      "confidence": 1.0
+    },
+    {
+      "symptom": "diaphoresis",
+      "condition": {
+        "state": "sympathetic_drive",
+        "op": ">",
+        "threshold": 0.6
+      },
+      "rationale": "sympathetic surge activates sweat glands via cholinergic post-ganglionic fibers",
+      "confidence": 0.9
+    },
+    {
+      "symptom": "nausea",
+      "condition": {
+        "state": "sympathetic_drive",
+        "op": ">",
+        "threshold": 0.7
+      },
+      "rationale": "vagal afferents + sympathetic crosstalk activate CTZ — common in inferior MI",
+      "confidence": 0.7
+    },
+    {
+      "symptom": "palpitations",
+      "condition": {
+        "state": "electrical_instability",
+        "op": ">",
+        "threshold": 0.5
+      },
+      "rationale": "ectopic beats or rate changes perceived as forceful/irregular heartbeats",
+      "confidence": 0.9
+    },
+    {
+      "symptom": "lightheadedness",
+      "condition": {
+        "state": "cardiac_output",
+        "op": "<",
+        "threshold": 0.5
+      },
+      "rationale": "reduced cerebral perfusion from low cardiac output → presyncope",
+      "confidence": 0.9
+    },
+    {
+      "symptom": "leg swelling",
+      "condition": {
+        "state": "preload",
+        "op": ">",
+        "threshold": 0.7
+      },
+      "rationale": "elevated venous pressure → hydrostatic pressure exceeds plasma oncotic → dependent edema",
+      "confidence": 0.9
+    },
+    {
+      "symptom": "orthopnea",
+      "condition": {
+        "all": [
+          {
+            "state": "pulmonary_congestion",
+            "op": ">",
+            "threshold": 0.5
+          },
+          {
+            "state": "preload",
+            "op": ">",
+            "threshold": 0.5
+          }
+        ]
+      },
+      "rationale": "supine position increases venous return → worsens pulmonary edema → must sit up to breathe",
+      "confidence": 0.9
+    },
+    {
+      "symptom": "fatigue",
+      "condition": {
+        "state": "cardiac_output",
+        "op": "<",
+        "threshold": 0.6
+      },
+      "rationale": "reduced peripheral perfusion limits exercise capacity, oxygen delivery to muscles",
+      "confidence": 0.7
+    },
+    {
+      "symptom": "pericardial friction rub",
+      "condition": {
+        "state": "pericardial_inflammation",
+        "op": ">",
+        "threshold": 0.5
+      },
+      "rationale": "inflamed pericardial layers rub on auscultation",
+      "confidence": 1.0
+    },
+    {
+      "symptom": "pleuritic chest pain",
+      "condition": {
+        "state": "pericardial_inflammation",
+        "op": ">",
+        "threshold": 0.5
+      },
+      "rationale": "pericardial inflammation worsens with inspiration/lying flat",
+      "confidence": 0.9
+    },
+    {
+      "symptom": "irregular pulse",
+      "condition": {
+        "state": "electrical_rhythm",
+        "op": "<",
+        "threshold": 0.5
+      },
+      "rationale": "atrial fibrillation produces irregularly irregular pulse",
+      "confidence": 1.0
+    },
+    {
+      "symptom": "heart murmur",
+      "condition": {
+        "state": "valve_function",
+        "op": "<",
+        "threshold": 0.5
+      },
+      "rationale": "abnormal valve produces turbulent flow → audible murmur",
+      "confidence": 1.0
+    },
+    {
+      "symptom": "syncope",
+      "condition": {
+        "all": [
+          {
+            "state": "cardiac_output",
+            "op": "<",
+            "threshold": 0.4
+          },
+          {
+            "state": "valve_function",
+            "op": "<",
+            "threshold": 0.5
+          }
+        ]
+      },
+      "rationale": "severe outflow obstruction (aortic stenosis) → transient cerebral hypoperfusion",
+      "confidence": 0.9
+    },
+    {
+      "symptom": "headache",
+      "condition": {
+        "state": "systemic_BP",
+        "op": ">",
+        "threshold": 0.7
+      },
+      "rationale": "severe hypertension may cause occipital headache",
+      "confidence": 0.5
+    }
+  ],
+  "propagation_rules": [
+    {
+      "trigger": {
+        "state": "ischemia",
+        "op": ">",
+        "threshold": 0.6
+      },
+      "effect": {
+        "state": "contractility",
+        "delta": -0.4
+      },
+      "rationale": "ischemic myocardium loses contractile function (stunning)",
+      "via": "intra_organ",
+      "review_status": "unreviewed"
+    },
+    {
+      "trigger": {
+        "state": "contractility",
+        "op": "<",
+        "threshold": 0.5
+      },
+      "effect": {
+        "state": "cardiac_output",
+        "delta": -0.4
+      },
+      "rationale": "reduced contractility → lower stroke volume → lower cardiac output",
+      "via": "intra_organ",
+      "review_status": "unreviewed"
+    },
+    {
+      "trigger": {
+        "state": "cardiac_output",
+        "op": "<",
+        "threshold": 0.5
+      },
+      "effect": {
+        "state": "sympathetic_drive",
+        "delta": 0.4
+      },
+      "rationale": "baroreceptor reflex: low BP triggers sympathetic surge",
+      "via": "intra_organ",
+      "review_status": "unreviewed"
+    },
+    {
+      "trigger": {
+        "state": "contractility",
+        "op": "<",
+        "threshold": 0.5
+      },
+      "effect": {
+        "state": "pulmonary_congestion",
+        "delta": 0.5
+      },
+      "rationale": "failing left ventricle → backward pressure to pulmonary veins → pulmonary edema",
+      "via": "intra_organ",
+      "review_status": "unreviewed"
+    },
+    {
+      "trigger": {
+        "state": "cardiac_output",
+        "op": "<",
+        "threshold": 0.5
+      },
+      "effect": {
+        "organ": "kidney",
+        "state": "perfusion",
+        "delta": -0.4
+      },
+      "rationale": "low cardiac output → reduced renal blood flow → activates RAAS",
+      "via": "arterial",
+      "review_status": "unreviewed"
+    },
+    {
+      "trigger": {
+        "state": "pulmonary_congestion",
+        "op": ">",
+        "threshold": 0.5
+      },
+      "effect": {
+        "organ": "lung",
+        "state": "gas_exchange",
+        "delta": -0.4
+      },
+      "rationale": "alveolar edema impairs O2 diffusion",
+      "via": "circulates_through",
+      "review_status": "unreviewed"
+    }
+  ],
+  "diseases": {
+    "Heart Attack/MI": {
+      "review_status": "unreviewed",
+      "description": "Acute myocardial infarction — coronary occlusion causes irreversible myocyte death if not reperfused.",
+      "perturbations": [
+        {
+          "variable": "ischemia",
+          "delta": 0.85,
+          "cause": "coronary artery occlusion (plaque rupture + thrombosis)"
+        },
+        {
+          "variable": "perfusion",
+          "delta": -0.7,
+          "cause": "vessel blockage"
+        },
+        {
+          "variable": "sympathetic_drive",
+          "delta": 0.65,
+          "cause": "severe pain + hemodynamic stress"
+        },
+        {
+          "variable": "electrical_instability",
+          "delta": 0.55,
+          "cause": "ischemic myocardium develops re-entry circuits"
+        },
+        {
+          "variable": "wall_stress",
+          "delta": 0.4,
+          "cause": "compensatory ventricular dilation if anterior MI"
+        }
+      ]
+    },
+    "Stable Angina": {
+      "review_status": "unreviewed",
+      "description": "Chronic coronary insufficiency — exertional ischemia without infarction.",
+      "perturbations": [
+        {
+          "variable": "ischemia",
+          "delta": 0.55,
+          "cause": "fixed coronary stenosis limits flow during exertion"
+        },
+        {
+          "variable": "perfusion",
+          "delta": -0.4,
+          "cause": "atherosclerotic narrowing"
+        },
+        {
+          "variable": "sympathetic_drive",
+          "delta": 0.35,
+          "cause": "moderate pain response"
+        }
+      ]
+    },
+    "Congestive Heart Failure": {
+      "review_status": "unreviewed",
+      "description": "Chronic ventricular dysfunction — reduced contractility → fluid retention + pulmonary congestion.",
+      "perturbations": [
+        {
+          "variable": "contractility",
+          "delta": -0.55,
+          "cause": "chronic myocardial remodeling, fibrosis"
+        },
+        {
+          "variable": "cardiac_output",
+          "delta": -0.45,
+          "cause": "reduced ejection fraction"
+        },
+        {
+          "variable": "preload",
+          "delta": 0.55,
+          "cause": "RAAS activation → Na+/H2O retention"
+        },
+        {
+          "variable": "pulmonary_congestion",
+          "delta": 0.5,
+          "cause": "elevated left atrial pressure"
+        },
+        {
+          "variable": "sympathetic_drive",
+          "delta": 0.45,
+          "cause": "compensatory adrenergic activation"
+        }
+      ]
+    },
+    "Acute Pericarditis": {
+      "_review_status": "unreviewed",
+      "description": "Acute inflammation of pericardium — sharp pleuritic chest pain relieved by sitting forward.",
+      "perturbations": [
+        {
+          "variable": "pericardial_inflammation",
+          "delta": 0.75,
+          "cause": "viral / autoimmune / post-MI pericardial inflammation"
+        }
+      ]
+    },
+    "Atrial Fibrillation": {
+      "_review_status": "unreviewed",
+      "description": "Disorganized atrial electrical activity → irregular ventricular response.",
+      "perturbations": [
+        {
+          "variable": "electrical_rhythm",
+          "delta": -0.65,
+          "cause": "chaotic atrial reentry circuits"
+        },
+        {
+          "variable": "electrical_instability",
+          "delta": 0.4,
+          "cause": "rapid irregular conduction"
+        }
+      ]
+    },
+    "Bradyarrhythmia": {
+      "_review_status": "unreviewed",
+      "description": "Slow heart rate from SA/AV node dysfunction or high vagal tone.",
+      "perturbations": [
+        {
+          "variable": "electrical_rhythm",
+          "delta": -0.4,
+          "cause": "SA node dysfunction or AV block"
+        },
+        {
+          "variable": "cardiac_output",
+          "delta": -0.3,
+          "cause": "reduced rate × stroke volume"
+        }
+      ]
+    },
+    "Dilated Cardiomyopathy": {
+      "_review_status": "unreviewed",
+      "description": "Ventricular dilation + systolic dysfunction (idiopathic, post-viral, alcohol, chemo).",
+      "perturbations": [
+        {
+          "variable": "contractility",
+          "delta": -0.55,
+          "cause": "myocyte loss / dysfunction"
+        },
+        {
+          "variable": "cardiac_output",
+          "delta": -0.45,
+          "cause": "reduced ejection fraction"
+        },
+        {
+          "variable": "wall_stress",
+          "delta": 0.45,
+          "cause": "dilated chamber → Laplace stress increase"
+        }
+      ]
+    },
+    "Mitral Regurgitation": {
+      "_review_status": "unreviewed",
+      "description": "Incompetent mitral valve → backflow LV→LA in systole.",
+      "perturbations": [
+        {
+          "variable": "valve_function",
+          "delta": -0.55,
+          "cause": "leaflet prolapse / annular dilation"
+        },
+        {
+          "variable": "pulmonary_congestion",
+          "delta": 0.4,
+          "cause": "elevated LA pressure transmits to lungs"
+        }
+      ]
+    },
+    "Aortic Stenosis": {
+      "_review_status": "unreviewed",
+      "description": "Calcified or congenitally narrowed aortic valve → fixed outflow obstruction.",
+      "perturbations": [
+        {
+          "variable": "valve_function",
+          "delta": -0.6,
+          "cause": "calcific or congenital stenosis"
+        },
+        {
+          "variable": "afterload",
+          "delta": 0.5,
+          "cause": "LV must overcome stenotic gradient"
+        },
+        {
+          "variable": "cardiac_output",
+          "delta": -0.35,
+          "cause": "fixed obstruction limits stroke volume"
+        }
+      ]
+    },
+    "Aortic Regurgitation": {
+      "_review_status": "unreviewed",
+      "description": "Incompetent aortic valve → backflow aorta→LV in diastole.",
+      "perturbations": [
+        {
+          "variable": "valve_function",
+          "delta": -0.55,
+          "cause": "leaflet defect (bicuspid, endocarditis, dissection)"
+        },
+        {
+          "variable": "wall_stress",
+          "delta": 0.4,
+          "cause": "LV volume overload"
+        }
+      ]
+    },
+    "Mitral Stenosis": {
+      "_review_status": "unreviewed",
+      "description": "Rheumatic-induced mitral valve narrowing → impaired LA→LV filling.",
+      "perturbations": [
+        {
+          "variable": "valve_function",
+          "delta": -0.55,
+          "cause": "rheumatic leaflet thickening, commissure fusion"
+        },
+        {
+          "variable": "pulmonary_congestion",
+          "delta": 0.45,
+          "cause": "elevated LA pressure"
+        }
+      ]
+    },
+    "Chronic Essential Hypertension": {
+      "_review_status": "unreviewed",
+      "description": "Sustained elevated systemic BP without identifiable secondary cause.",
+      "perturbations": [
+        {
+          "variable": "systemic_BP",
+          "delta": 0.35,
+          "cause": "multifactorial (sympathetic, RAAS, vascular stiffness)"
+        },
+        {
+          "variable": "afterload",
+          "delta": 0.3,
+          "cause": "elevated SVR"
+        }
+      ]
+    },
+    "Hyperlipidemia": {
+      "_review_status": "unreviewed",
+      "description": "Elevated circulating LDL / cholesterol — atherosclerotic risk factor.",
+      "perturbations": [
+        {
+          "variable": "lipid_burden",
+          "delta": 0.5,
+          "cause": "dietary, genetic, metabolic causes"
+        }
+      ]
+    },
+    "Supraventricular Tachycardia": {
+      "_review_status": "unreviewed",
+      "description": "Reentrant tachyarrhythmia originating above the ventricles — AVNRT or AVRT.",
+      "perturbations": [
+        {
+          "variable": "electrical_rhythm",
+          "delta": -0.5,
+          "cause": "reentry circuit at AV node or accessory pathway"
+        },
+        {
+          "variable": "electrical_instability",
+          "delta": 0.4,
+          "cause": "rapid sustained tachycardia"
+        }
+      ]
+    },
+    "Stable Angina Pectoris": {
+      "_review_status": "unreviewed",
+      "description": "Predictable exertional chest pain from fixed coronary atherosclerosis — relieved by rest.",
+      "perturbations": [
+        {
+          "variable": "ischemia",
+          "delta": 0.4,
+          "cause": "demand-induced ischemia from fixed coronary stenosis"
+        },
+        {
+          "variable": "perfusion",
+          "delta": -0.3,
+          "cause": "limited coronary flow reserve"
+        }
+      ]
+    },
+    "Hypertensive Emergency": {
+      "_review_status": "unreviewed",
+      "description": "Severe BP elevation (typically >180/120) with end-organ damage — emergency.",
+      "perturbations": [
+        {
+          "variable": "systemic_BP",
+          "delta": 0.5,
+          "cause": "acute severe HTN"
+        },
+        {
+          "variable": "afterload",
+          "delta": 0.55,
+          "cause": "massive SVR elevation"
+        },
+        {
+          "variable": "wall_stress",
+          "delta": 0.45,
+          "cause": "LV stress from extreme afterload"
+        }
+      ]
+    },
+    "Infective Endocarditis": {
+      "_review_status": "unreviewed",
+      "description": "Bacterial infection of endocardium (typically heart valves) — vegetations.",
+      "perturbations": [
+        {
+          "variable": "pericardial_inflammation",
+          "delta": 0.3,
+          "cause": "spread to pericardium possible"
+        },
+        {
+          "variable": "valve_function",
+          "delta": -0.5,
+          "cause": "vegetations destroy leaflets"
+        }
+      ]
+    },
+    "Vasovagal Syncope": {
+      "_review_status": "unreviewed",
+      "description": "Sudden neurally-mediated drop in HR + BP → transient cerebral hypoperfusion → fainting.",
+      "perturbations": [
+        {
+          "variable": "electrical_rhythm",
+          "delta": -0.4,
+          "cause": "intense vagal stimulation → bradycardia"
+        },
+        {
+          "variable": "cardiac_output",
+          "delta": -0.45,
+          "cause": "bradycardia + vasodilation"
+        },
+        {
+          "variable": "systemic_BP",
+          "delta": -0.45,
+          "cause": "vasodilatory limb of reflex"
+        }
+      ]
+    },
+    "Acute Myocarditis": {
+      "review_status": "unreviewed",
+      "description": "Inflammatory myocardial injury causing impaired contraction and electrical instability.",
+      "perturbations": [
+        {
+          "variable": "contractility",
+          "delta": -0.5,
+          "cause": "inflamed myocardium contracts poorly"
+        },
+        {
+          "variable": "cardiac_output",
+          "delta": -0.4,
+          "cause": "reduced effective pump performance"
+        },
+        {
+          "variable": "electrical_instability",
+          "delta": 0.45,
+          "cause": "myocardial inflammation increases arrhythmia risk"
+        },
+        {
+          "variable": "pericardial_inflammation",
+          "delta": 0.2,
+          "cause": "associated myopericardial irritation may occur"
+        }
+      ]
+    },
+    "Ventricular Tachycardia": {
+      "review_status": "unreviewed",
+      "description": "Rapid ventricular arrhythmia that may severely reduce cardiac output and progress to instability.",
+      "perturbations": [
+        {
+          "variable": "electrical_rhythm",
+          "delta": -0.8,
+          "cause": "ventricular re-entry or abnormal automaticity"
+        },
+        {
+          "variable": "electrical_instability",
+          "delta": 0.8,
+          "cause": "malignant ventricular electrical activity"
+        },
+        {
+          "variable": "cardiac_output",
+          "delta": -0.6,
+          "cause": "rapid ineffective filling and contraction"
+        }
+      ]
+    }
+  }
+}

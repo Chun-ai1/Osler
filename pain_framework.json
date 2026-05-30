@@ -1,0 +1,113 @@
+{
+  "_metadata": {
+    "framework": "pain_characterization",
+    "schema_version": "1.0",
+    "description": "Pain framework — characterizes pain by quality, pattern, and OPQRST. Maps pain features to likely pain mechanisms (visceral vs somatic vs neuropathic vs referred). Used to refine diagnosis: same chest pain with different qualities means different mechanism.",
+    "source": "Bonica's Management of Pain; Harrison's IM Pain Chapter",
+    "review_status": "unreviewed"
+  },
+
+  "pain_qualities": {
+    "sharp_stabbing": {
+      "mechanism": "somatic_A_delta_fibers",
+      "typical_origin": ["skin", "pleura", "peritoneum", "joint"],
+      "implications": ["pleuritic pain", "peritoneal irritation", "fracture", "nerve compression"],
+      "review_status": "unreviewed"
+    },
+    "dull_aching": {
+      "mechanism": "visceral_C_fibers",
+      "typical_origin": ["gi", "kidney", "liver", "deep_organs"],
+      "implications": ["organ inflammation", "capsule stretch", "ischemia"],
+      "review_status": "unreviewed"
+    },
+    "burning": {
+      "mechanism": "C_fiber_chronic_or_neuropathic",
+      "typical_origin": ["skin", "mucosa", "nerve_injury"],
+      "implications": ["urothelial inflammation (dysuria)", "neuropathy", "complex regional pain"],
+      "review_status": "unreviewed"
+    },
+    "cramping_colicky": {
+      "mechanism": "smooth_muscle_spasm_against_obstruction",
+      "typical_origin": ["gi (bowel)", "biliary", "urinary (ureter)", "uterus"],
+      "implications": ["intestinal obstruction", "biliary colic", "renal colic", "labor"],
+      "review_status": "unreviewed"
+    },
+    "crushing_pressure": {
+      "mechanism": "visceral_ischemia_at_thoracic_level",
+      "typical_origin": ["heart", "great vessels"],
+      "implications": ["myocardial ischemia/MI", "aortic dissection"],
+      "review_status": "unreviewed"
+    },
+    "tearing_ripping": {
+      "mechanism": "vascular_wall_disruption",
+      "typical_origin": ["aorta"],
+      "implications": ["aortic dissection — surgical emergency"],
+      "review_status": "unreviewed"
+    },
+    "electric_shock_shooting": {
+      "mechanism": "nerve_irritation_or_compression",
+      "typical_origin": ["peripheral nerve", "nerve root"],
+      "implications": ["radiculopathy", "trigeminal neuralgia", "neuropathic pain"],
+      "review_status": "unreviewed"
+    },
+    "throbbing_pulsating": {
+      "mechanism": "vascular_distension_or_inflammation",
+      "typical_origin": ["scalp arteries", "abscess cavity"],
+      "implications": ["migraine", "vascular headache", "abscess"],
+      "review_status": "unreviewed"
+    },
+    "tender": {
+      "mechanism": "inflammatory_sensitization",
+      "typical_origin": ["any inflamed tissue"],
+      "implications": ["localized inflammation", "infection", "soft tissue injury"],
+      "review_status": "unreviewed"
+    }
+  },
+
+  "pain_patterns": {
+    "constant": {"implies": "ongoing tissue damage or inflammation"},
+    "intermittent": {"implies": "intermittent obstruction or vascular spasm"},
+    "colicky_waves": {"implies": "peristaltic obstruction (bowel, ureter, biliary)"},
+    "exertional": {"implies": "ischemic — limited blood supply meets demand"},
+    "positional": {"implies": "mechanical or postural — e.g. pleuritic, musculoskeletal"},
+    "post_prandial": {"implies": "GI-related, biliary, mesenteric ischemia"},
+    "nocturnal": {"implies": "inflammatory arthropathy, malignancy, GERD"},
+    "diurnal_morning_stiffness": {"implies": "inflammatory arthritis (RA)"}
+  },
+
+  "pain_radiation_patterns": {
+    "_comment": "Pain that radiates follows nerve pathways or referred pain principles.",
+    "chest_to_left_arm_jaw": {"implies": "cardiac (T1-T5 dermatomes)", "see_referred_pain_pathway": "cardiac_to_chest_arm"},
+    "epigastric_to_back": {"implies": "pancreatic / aortic", "see_referred_pain_pathway": "pancreas_to_back"},
+    "loin_to_groin": {"implies": "ureteric stone", "see_referred_pain_pathway": "ureter_to_groin"},
+    "right_shoulder_after_meal": {"implies": "gallbladder", "see_referred_pain_pathway": "gallbladder_to_shoulder"},
+    "periumbilical_to_RLQ": {"implies": "appendicitis (T10 → somatic)", "see_referred_pain_pathway": "appendix_to_periumbilical"},
+    "low_back_to_leg": {"implies": "lumbar radiculopathy / sciatica"},
+    "neck_to_arm": {"implies": "cervical radiculopathy"}
+  },
+
+  "OPQRST": {
+    "_comment": "Standardized pain history acronym used clinically.",
+    "O": "Onset (sudden vs gradual; precipitating event)",
+    "P": "Provocation/Palliation (what makes it worse/better)",
+    "Q": "Quality (sharp/dull/burning/etc — see pain_qualities)",
+    "R": "Region/Radiation (location + pattern of spread)",
+    "S": "Severity (0-10 numerical rating scale)",
+    "T": "Time (duration, course, progression)"
+  },
+
+  "pain_severity_implications": {
+    "_comment": "10/10 pain implies critical pathology; gradual mild pain implies different mechanisms.",
+    "10_of_10_sudden": {
+      "implies": ["aortic dissection", "renal colic", "thunderclap_headache_SAH", "perforated viscus"],
+      "urgency": "immediate"
+    },
+    "10_of_10_gradual": {
+      "implies": ["necrotizing infection", "compartment syndrome (out of proportion to exam)"],
+      "urgency": "immediate"
+    },
+    "moderate_chronic": {
+      "implies": ["inflammatory arthritis", "chronic pain syndrome", "fibromyalgia"]
+    }
+  }
+}

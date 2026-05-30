@@ -1,0 +1,825 @@
+{
+  "_metadata": {
+    "organ": "brain",
+    "schema_version": "2.0",
+    "description": "Brain state model — covers stroke, hemorrhage, meningitis, encephalitis, seizure, dementia. State variables represent global brain function dimensions.",
+    "source": "Adams & Victor Principles of Neurology; Kandel; Harrison's IM Neurology",
+    "review_status": "unreviewed"
+  },
+  "state_variables": {
+    "ischemia": {
+      "range": [
+        0,
+        1
+      ],
+      "description": "focal/global ischemic neuronal injury"
+    },
+    "edema": {
+      "range": [
+        0,
+        1
+      ],
+      "description": "cytotoxic or vasogenic cerebral edema"
+    },
+    "intracranial_pressure": {
+      "range": [
+        0,
+        1
+      ],
+      "description": "ICP elevation severity"
+    },
+    "neuronal_inflammation": {
+      "range": [
+        0,
+        1
+      ],
+      "description": "encephalitis / autoimmune inflammation"
+    },
+    "meningeal_inflammation": {
+      "range": [
+        0,
+        1
+      ],
+      "description": "meningitis severity"
+    },
+    "electrical_activity": {
+      "range": [
+        0,
+        1
+      ],
+      "description": "deviation from normal — high = seizure, low = coma"
+    },
+    "synaptic_function": {
+      "range": [
+        0,
+        1
+      ],
+      "description": "neurotransmission integrity — HIGHER = better",
+      "inverse": true,
+      "default": 1.0
+    },
+    "perfusion": {
+      "range": [
+        0,
+        1
+      ],
+      "description": "cerebral blood flow — HIGHER = better",
+      "inverse": true,
+      "default": 1.0
+    },
+    "sympathetic_outflow": {
+      "range": [
+        0,
+        1
+      ],
+      "description": "hypothalamus → SNS drive"
+    },
+    "vagal_drive": {
+      "range": [
+        0,
+        1
+      ],
+      "description": "parasympathetic outflow"
+    },
+    "consciousness_level": {
+      "range": [
+        0,
+        1
+      ],
+      "description": "alertness — HIGHER = better",
+      "inverse": true,
+      "default": 1.0
+    },
+    "brainstem_compression": {
+      "range": [
+        0,
+        1
+      ],
+      "description": "herniation risk to brainstem"
+    },
+    "dopaminergic_function": {
+      "range": [
+        0,
+        1
+      ],
+      "description": "substantia nigra dopamine output — HIGHER = better",
+      "inverse": true,
+      "default": 1.0
+    },
+    "cholinergic_function": {
+      "range": [
+        0,
+        1
+      ],
+      "description": "cortical cholinergic activity (memory) — HIGHER = better",
+      "inverse": true,
+      "default": 1.0
+    },
+    "amyloid_burden": {
+      "range": [
+        0,
+        1
+      ],
+      "description": "amyloid plaque deposition (Alzheimer)"
+    },
+    "subarachnoid_blood": {
+      "range": [
+        0,
+        1
+      ],
+      "description": "blood in subarachnoid space"
+    },
+    "pericranial_muscle_tension": {
+      "range": [
+        0,
+        1
+      ],
+      "description": "scalp/neck/jaw muscle tension contributing to tension headache"
+    }
+  },
+  "derivation_rules": [
+    {
+      "symptom": "headache",
+      "condition": {
+        "any": [
+          {
+            "state": "intracranial_pressure",
+            "op": ">",
+            "threshold": 0.5
+          },
+          {
+            "state": "meningeal_inflammation",
+            "op": ">",
+            "threshold": 0.5
+          }
+        ]
+      },
+      "rationale": "elevated ICP stretches dura OR meningeal inflammation activates trigeminal afferents",
+      "confidence": 1.0
+    },
+    {
+      "symptom": "altered mental status",
+      "condition": {
+        "state": "consciousness_level",
+        "op": "<",
+        "threshold": 0.6
+      },
+      "rationale": "RAS or bilateral hemispheric dysfunction → reduced alertness",
+      "confidence": 1.0
+    },
+    {
+      "symptom": "focal weakness",
+      "condition": {
+        "all": [
+          {
+            "state": "ischemia",
+            "op": ">",
+            "threshold": 0.5
+          },
+          {
+            "state": "synaptic_function",
+            "op": "<",
+            "threshold": 0.6
+          }
+        ]
+      },
+      "rationale": "focal cortical or capsular ischemia → contralateral motor deficit",
+      "confidence": 1.0
+    },
+    {
+      "symptom": "seizure",
+      "condition": {
+        "state": "electrical_activity",
+        "op": ">",
+        "threshold": 0.7
+      },
+      "rationale": "hypersynchronous neuronal firing → motor convulsions / awareness change",
+      "confidence": 1.0
+    },
+    {
+      "symptom": "neck stiffness",
+      "condition": {
+        "state": "meningeal_inflammation",
+        "op": ">",
+        "threshold": 0.6
+      },
+      "rationale": "meningeal inflammation triggers paraspinal muscle reflex spasm — nuchal rigidity",
+      "confidence": 0.9
+    },
+    {
+      "symptom": "photophobia",
+      "condition": {
+        "state": "meningeal_inflammation",
+        "op": ">",
+        "threshold": 0.5
+      },
+      "rationale": "trigeminal afferents to dura activated by light → pain",
+      "confidence": 0.9
+    },
+    {
+      "symptom": "vomiting",
+      "condition": {
+        "state": "intracranial_pressure",
+        "op": ">",
+        "threshold": 0.6
+      },
+      "rationale": "elevated ICP stimulates area postrema CTZ (centrally-mediated vomiting)",
+      "confidence": 0.8
+    },
+    {
+      "symptom": "papilledema",
+      "condition": {
+        "state": "intracranial_pressure",
+        "op": ">",
+        "threshold": 0.6
+      },
+      "rationale": "CSF pressure transmitted along optic nerve sheath → optic disc swelling",
+      "confidence": 0.9
+    },
+    {
+      "symptom": "memory loss",
+      "condition": {
+        "state": "synaptic_function",
+        "op": "<",
+        "threshold": 0.5
+      },
+      "rationale": "hippocampal/cortical synaptic dysfunction → episodic memory failure",
+      "confidence": 0.7
+    },
+    {
+      "symptom": "fever",
+      "condition": {
+        "state": "meningeal_inflammation",
+        "op": ">",
+        "threshold": 0.5
+      },
+      "rationale": "CNS infection releases pyrogens",
+      "confidence": 0.9
+    },
+    {
+      "symptom": "confusion",
+      "condition": {
+        "state": "consciousness_level",
+        "op": "<",
+        "threshold": 0.7
+      },
+      "rationale": "global cortical dysfunction",
+      "confidence": 0.9
+    },
+    {
+      "symptom": "tremor at rest",
+      "condition": {
+        "state": "dopaminergic_function",
+        "op": "<",
+        "threshold": 0.4
+      },
+      "rationale": "dopamine deficiency in substantia nigra (Parkinson)",
+      "confidence": 0.9
+    },
+    {
+      "symptom": "bradykinesia",
+      "condition": {
+        "state": "dopaminergic_function",
+        "op": "<",
+        "threshold": 0.4
+      },
+      "rationale": "loss of dopaminergic facilitation of movement",
+      "confidence": 1.0
+    },
+    {
+      "symptom": "rigidity",
+      "condition": {
+        "state": "dopaminergic_function",
+        "op": "<",
+        "threshold": 0.4
+      },
+      "rationale": "loss of dopaminergic modulation → increased tone",
+      "confidence": 0.9
+    },
+    {
+      "symptom": "progressive memory loss",
+      "condition": {
+        "state": "amyloid_burden",
+        "op": ">",
+        "threshold": 0.5
+      },
+      "rationale": "amyloid + tau pathology disrupts hippocampal circuits",
+      "confidence": 0.9
+    },
+    {
+      "symptom": "convulsions",
+      "condition": {
+        "state": "electrical_activity",
+        "op": ">",
+        "threshold": 0.7
+      },
+      "rationale": "hypersynchronous discharge from motor cortex",
+      "confidence": 1.0
+    },
+    {
+      "symptom": "loss of consciousness",
+      "condition": {
+        "state": "electrical_activity",
+        "op": ">",
+        "threshold": 0.7
+      },
+      "rationale": "generalized seizure disrupts cortical function",
+      "confidence": 0.9
+    },
+    {
+      "symptom": "thunderclap headache",
+      "condition": {
+        "state": "subarachnoid_blood",
+        "op": ">",
+        "threshold": 0.5
+      },
+      "rationale": "SAH — sudden severe headache from blood irritating meninges",
+      "confidence": 1.0
+    },
+    {
+      "symptom": "neck pain or stiffness",
+      "condition": {
+        "state": "pericranial_muscle_tension",
+        "op": ">",
+        "threshold": 0.5
+      },
+      "rationale": "tension-type headache: muscle tension + central sensitization",
+      "confidence": 0.8
+    },
+    {
+      "symptom": "throbbing pulsating headache",
+      "condition": {
+        "state": "neuronal_inflammation",
+        "op": ">",
+        "threshold": 0.3
+      },
+      "rationale": "CGRP-mediated trigeminovascular activation → throbbing pain",
+      "confidence": 0.9
+    },
+    {
+      "symptom": "nausea",
+      "condition": {
+        "state": "neuronal_inflammation",
+        "op": ">",
+        "threshold": 0.3
+      },
+      "rationale": "brainstem nausea center activation in migraine",
+      "confidence": 0.8
+    },
+    {
+      "symptom": "unilateral headache",
+      "condition": {
+        "state": "neuronal_inflammation",
+        "op": ">",
+        "threshold": 0.3
+      },
+      "rationale": "migraine typically unilateral",
+      "confidence": 0.7
+    },
+    {
+      "symptom": "vomiting",
+      "condition": {
+        "state": "subarachnoid_blood",
+        "op": ">",
+        "threshold": 0.4
+      },
+      "rationale": "blood + raised ICP → vomiting",
+      "confidence": 0.9
+    },
+    {
+      "symptom": "photophobia",
+      "condition": {
+        "state": "subarachnoid_blood",
+        "op": ">",
+        "threshold": 0.4
+      },
+      "rationale": "blood irritates V1 sensory in meninges",
+      "confidence": 0.9
+    },
+    {
+      "symptom": "facial droop",
+      "condition": {
+        "all": [
+          {
+            "state": "ischemia",
+            "op": ">",
+            "threshold": 0.5
+          },
+          {
+            "state": "perfusion",
+            "op": "<",
+            "threshold": 0.6
+          }
+        ]
+      },
+      "rationale": "MCA territory ischemia affects corticobulbar tract to CN7 nucleus",
+      "confidence": 0.85
+    },
+    {
+      "symptom": "slurred speech",
+      "condition": {
+        "all": [
+          {
+            "state": "ischemia",
+            "op": ">",
+            "threshold": 0.5
+          },
+          {
+            "state": "perfusion",
+            "op": "<",
+            "threshold": 0.6
+          }
+        ]
+      },
+      "rationale": "dominant hemisphere or corticobulbar tract stroke → dysarthria",
+      "confidence": 0.8
+    },
+    {
+      "symptom": "aphasia",
+      "condition": {
+        "all": [
+          {
+            "state": "ischemia",
+            "op": ">",
+            "threshold": 0.6
+          },
+          {
+            "state": "perfusion",
+            "op": "<",
+            "threshold": 0.5
+          }
+        ]
+      },
+      "rationale": "dominant (typically left) hemisphere stroke affecting Broca/Wernicke",
+      "confidence": 0.7
+    }
+  ],
+  "propagation_rules": [
+    {
+      "trigger": {
+        "state": "ischemia",
+        "op": ">",
+        "threshold": 0.5
+      },
+      "effect": {
+        "state": "edema",
+        "delta": 0.4
+      },
+      "rationale": "ischemic neurons fail Na+/K+ ATPase → cytotoxic edema",
+      "via": "intra_organ",
+      "review_status": "unreviewed"
+    },
+    {
+      "trigger": {
+        "state": "edema",
+        "op": ">",
+        "threshold": 0.5
+      },
+      "effect": {
+        "state": "intracranial_pressure",
+        "delta": 0.5
+      },
+      "rationale": "edema in closed skull → ICP rises (Monro-Kellie)",
+      "via": "intra_organ",
+      "review_status": "unreviewed"
+    },
+    {
+      "trigger": {
+        "state": "intracranial_pressure",
+        "op": ">",
+        "threshold": 0.7
+      },
+      "effect": {
+        "state": "perfusion",
+        "delta": -0.4
+      },
+      "rationale": "high ICP → cerebral perfusion pressure falls",
+      "via": "intra_organ",
+      "review_status": "unreviewed"
+    },
+    {
+      "trigger": {
+        "state": "intracranial_pressure",
+        "op": ">",
+        "threshold": 0.8
+      },
+      "effect": {
+        "state": "brainstem_compression",
+        "delta": 0.5
+      },
+      "rationale": "severe ICP → herniation risk, brainstem compression",
+      "via": "intra_organ",
+      "review_status": "unreviewed"
+    },
+    {
+      "trigger": {
+        "state": "ischemia",
+        "op": ">",
+        "threshold": 0.6
+      },
+      "effect": {
+        "state": "synaptic_function",
+        "delta": -0.5
+      },
+      "rationale": "ischemia disrupts neurotransmission",
+      "via": "intra_organ",
+      "review_status": "unreviewed"
+    },
+    {
+      "trigger": {
+        "state": "meningeal_inflammation",
+        "op": ">",
+        "threshold": 0.6
+      },
+      "effect": {
+        "state": "neuronal_inflammation",
+        "delta": 0.3
+      },
+      "rationale": "meningitis can extend to cortical surface",
+      "via": "intra_organ",
+      "review_status": "unreviewed"
+    },
+    {
+      "trigger": {
+        "state": "sympathetic_outflow",
+        "op": ">",
+        "threshold": 0.7
+      },
+      "effect": {
+        "organ": "heart",
+        "state": "electrical_instability",
+        "delta": 0.3
+      },
+      "rationale": "catecholamine surge → arrhythmia risk (e.g. neurogenic stress cardiomyopathy)",
+      "via": "neural",
+      "review_status": "unreviewed"
+    }
+  ],
+  "connections": {
+    "incoming": [
+      "blood (carotid + vertebral arteries)",
+      "neural (cranial + spinal afferents)"
+    ],
+    "outgoing": [
+      "heart (autonomic)",
+      "gi (vagus)",
+      "skin (autonomic, somatic motor)",
+      "muscle (motor neurons)"
+    ],
+    "neural": [
+      "all 12 cranial nerves",
+      "spinal cord"
+    ]
+  },
+  "diseases": {
+    "Ischemic Stroke": {
+      "review_status": "unreviewed",
+      "description": "Acute focal ischemia from thrombosis or embolism — sudden neurological deficit.",
+      "perturbations": [
+        {
+          "variable": "ischemia",
+          "delta": 0.8,
+          "cause": "arterial occlusion (embolic or thrombotic)"
+        },
+        {
+          "variable": "perfusion",
+          "delta": -0.6,
+          "cause": "vessel occlusion"
+        },
+        {
+          "variable": "synaptic_function",
+          "delta": -0.5,
+          "cause": "ischemia disrupts ion gradients"
+        }
+      ]
+    },
+    "Hemorrhagic Stroke": {
+      "review_status": "unreviewed",
+      "description": "Intracerebral hemorrhage — blood disrupts parenchyma + raises ICP.",
+      "perturbations": [
+        {
+          "variable": "edema",
+          "delta": 0.65,
+          "cause": "hematoma + perihematomal edema"
+        },
+        {
+          "variable": "intracranial_pressure",
+          "delta": 0.55,
+          "cause": "mass effect from hematoma"
+        },
+        {
+          "variable": "synaptic_function",
+          "delta": -0.5,
+          "cause": "direct parenchymal disruption"
+        }
+      ]
+    },
+    "Bacterial Meningitis": {
+      "review_status": "unreviewed",
+      "description": "Acute bacterial infection of meninges → severe headache, fever, neck stiffness.",
+      "perturbations": [
+        {
+          "variable": "meningeal_inflammation",
+          "delta": 0.85,
+          "cause": "bacterial invasion of subarachnoid space"
+        },
+        {
+          "variable": "intracranial_pressure",
+          "delta": 0.4,
+          "cause": "inflammatory exudate"
+        }
+      ]
+    },
+    "Generalized Seizure": {
+      "review_status": "unreviewed",
+      "description": "Hypersynchronous neuronal firing → motor convulsions + loss of awareness.",
+      "perturbations": [
+        {
+          "variable": "electrical_activity",
+          "delta": 0.8,
+          "cause": "neuronal hyperexcitability"
+        },
+        {
+          "variable": "consciousness_level",
+          "delta": -0.6,
+          "cause": "diffuse cortical disruption"
+        }
+      ]
+    },
+    "Migraine": {
+      "review_status": "unreviewed",
+      "description": "Recurrent vascular-neural headache with sensory hypersensitivity.",
+      "perturbations": [
+        {
+          "variable": "neuronal_inflammation",
+          "delta": 0.55,
+          "cause": "trigeminovascular activation + CGRP release"
+        },
+        {
+          "variable": "intracranial_pressure",
+          "delta": 0.15,
+          "cause": "mild vasodilation contribution (minor)"
+        }
+      ]
+    },
+    "Generalized Tonic-Clonic Seizure": {
+      "_review_status": "unreviewed",
+      "description": "Bilateral hemispheric hypersynchronous neuronal firing → tonic stiffening then clonic jerks.",
+      "perturbations": [
+        {
+          "variable": "electrical_activity",
+          "delta": 0.8,
+          "cause": "spreading hypersynchronous discharge"
+        },
+        {
+          "variable": "consciousness_level",
+          "delta": -0.65,
+          "cause": "cortical disruption"
+        }
+      ]
+    },
+    "Alzheimer's Dementia": {
+      "_review_status": "unreviewed",
+      "description": "Progressive cortical dementia from amyloid + tau pathology — hippocampus early.",
+      "perturbations": [
+        {
+          "variable": "amyloid_burden",
+          "delta": 0.65,
+          "cause": "Aβ42 plaque deposition"
+        },
+        {
+          "variable": "cholinergic_function",
+          "delta": -0.5,
+          "cause": "basal forebrain cholinergic loss"
+        },
+        {
+          "variable": "synaptic_function",
+          "delta": -0.45,
+          "cause": "neuritic plaque + tau tangle disruption"
+        }
+      ]
+    },
+    "Parkinson Disease": {
+      "_review_status": "unreviewed",
+      "description": "Substantia nigra dopaminergic neuron loss → tremor, bradykinesia, rigidity, postural instability.",
+      "perturbations": [
+        {
+          "variable": "dopaminergic_function",
+          "delta": -0.65,
+          "cause": "SN pars compacta neuron loss + Lewy bodies"
+        }
+      ]
+    },
+    "Acute Bacterial Meningitis": {
+      "review_status": "unreviewed",
+      "description": "Acute bacterial infection of meninges → severe headache, fever, neck stiffness.",
+      "perturbations": [
+        {
+          "variable": "meningeal_inflammation",
+          "delta": 0.85,
+          "cause": "bacterial invasion of subarachnoid space"
+        },
+        {
+          "variable": "intracranial_pressure",
+          "delta": 0.4,
+          "cause": "inflammatory exudate"
+        }
+      ]
+    },
+    "Subarachnoid Hemorrhage": {
+      "_review_status": "unreviewed",
+      "description": "Bleeding into subarachnoid space — typically ruptured berry aneurysm.",
+      "perturbations": [
+        {
+          "variable": "subarachnoid_blood",
+          "delta": 0.75,
+          "cause": "ruptured aneurysm"
+        },
+        {
+          "variable": "intracranial_pressure",
+          "delta": 0.5,
+          "cause": "blood + edema raise ICP"
+        },
+        {
+          "variable": "meningeal_inflammation",
+          "delta": 0.45,
+          "cause": "blood irritates meninges"
+        }
+      ]
+    },
+    "Tension-type Headache": {
+      "_review_status": "unreviewed",
+      "description": "Most common headache — bilateral pressing pain without nausea/photophobia.",
+      "perturbations": [
+        {
+          "variable": "pericranial_muscle_tension",
+          "delta": 0.55,
+          "cause": "stress, posture, sleep deficit"
+        }
+      ]
+    },
+    "Thalamic Stroke (Lacunar Type)": {
+      "_review_status": "unreviewed",
+      "description": "Small vessel infarct in thalamus → pure sensory or sensorimotor lacunar syndromes.",
+      "perturbations": [
+        {
+          "variable": "ischemia",
+          "delta": 0.7,
+          "cause": "thalamoperforator vessel occlusion"
+        },
+        {
+          "variable": "perfusion",
+          "delta": -0.5,
+          "cause": "lacunar infarct"
+        }
+      ]
+    },
+    "Viral Encephalitis": {
+      "review_status": "unreviewed",
+      "description": "Inflammation of brain parenchyma from viral infection, often causing altered mental status and seizures.",
+      "perturbations": [
+        {
+          "variable": "neuronal_inflammation",
+          "delta": 0.75,
+          "cause": "viral invasion and immune injury of brain tissue"
+        },
+        {
+          "variable": "consciousness_level",
+          "delta": -0.55,
+          "cause": "diffuse cerebral dysfunction"
+        },
+        {
+          "variable": "electrical_activity",
+          "delta": 0.55,
+          "cause": "inflamed cortex becomes seizure-prone"
+        },
+        {
+          "variable": "edema",
+          "delta": 0.3,
+          "cause": "inflammatory cerebral edema"
+        }
+      ]
+    },
+    "Transient Ischemic Attack": {
+      "review_status": "unreviewed",
+      "description": "Transient focal neurologic dysfunction from short-lived cerebral ischemia without established infarction.",
+      "perturbations": [
+        {
+          "variable": "ischemia",
+          "delta": 0.55,
+          "cause": "brief focal reduction in cerebral perfusion"
+        },
+        {
+          "variable": "perfusion",
+          "delta": -0.45,
+          "cause": "transient arterial flow impairment"
+        },
+        {
+          "variable": "synaptic_function",
+          "delta": -0.45,
+          "cause": "temporary neuronal dysfunction in affected territory"
+        }
+      ]
+    }
+  }
+}

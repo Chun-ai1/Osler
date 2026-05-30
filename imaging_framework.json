@@ -1,0 +1,146 @@
+{
+  "_metadata": {
+    "framework": "imaging",
+    "schema_version": "1.0",
+    "description": "Imaging modalities + their indications + key findings for major diseases. Bridges imaging findings to state model.",
+    "source": "Brant & Helms Fundamentals of Diagnostic Radiology; Harrison's IM",
+    "review_status": "unreviewed"
+  },
+
+  "modalities": {
+    "X_ray": {
+      "what_it_shows": ["bone", "lung parenchyma (air spaces)", "gross fluid/air"],
+      "what_it_misses": ["soft tissue detail", "early ischemia", "small lesions"],
+      "radiation": "low",
+      "typical_indications": ["fracture", "pneumonia", "pneumothorax", "bowel obstruction", "CHF"],
+      "review_status": "unreviewed"
+    },
+    "CT": {
+      "what_it_shows": ["cross-sectional anatomy", "stroke (hemorrhage immediate, ischemia delayed)", "PE (CTA)", "abdominal pathology"],
+      "with_contrast": "vascular structures, organ enhancement, infection abscess",
+      "radiation": "moderate-high",
+      "typical_indications": ["stroke", "trauma", "PE", "kidney stone", "appendicitis", "abdominal pain"],
+      "review_status": "unreviewed"
+    },
+    "MRI": {
+      "what_it_shows": ["soft tissue detail", "brain parenchyma", "spine", "joints", "early ischemia (DWI)"],
+      "advantages": ["no radiation", "best soft tissue resolution"],
+      "disadvantages": ["slow", "expensive", "metal/pacemaker contraindications"],
+      "typical_indications": ["MS", "ischemic stroke detail", "spinal cord pathology", "joint pathology", "tumor"],
+      "review_status": "unreviewed"
+    },
+    "Ultrasound": {
+      "what_it_shows": ["fluid", "gallbladder", "kidney", "vascular flow (Doppler)", "OB", "echo (heart)"],
+      "advantages": ["bedside", "no radiation", "real-time"],
+      "disadvantages": ["operator-dependent", "limited by air/bone"],
+      "typical_indications": ["gallbladder pathology", "DVT", "echo for cardiac function", "abdominal aorta", "FAST in trauma"],
+      "review_status": "unreviewed"
+    },
+    "Nuclear_medicine": {
+      "what_it_shows": ["functional/physiologic info"],
+      "common_studies": ["V/Q scan (PE alternative to CTA)", "bone scan (mets, osteomyelitis)", "thyroid scan", "MAG3 (renal function)", "HIDA (gallbladder)"],
+      "review_status": "unreviewed"
+    },
+    "PET_CT": {
+      "what_it_shows": ["metabolic activity (FDG)"],
+      "indications": ["cancer staging", "viable myocardium", "infection in selected cases"],
+      "review_status": "unreviewed"
+    },
+    "Angiography": {
+      "what_it_shows": ["vessels in real-time"],
+      "indications": ["diagnostic + therapeutic (stent, embolization)"]
+    }
+  },
+
+  "key_imaging_findings": {
+    "_comment": "Disease → expected imaging finding(s).",
+    "pneumonia": {
+      "X_ray": "lobar consolidation or interstitial infiltrate",
+      "CT": "ground-glass opacities, consolidation, may show cavitation",
+      "state_inference": "lung.alveolar_inflammation, lung.consolidation"
+    },
+    "pulmonary_embolism": {
+      "CTA": "filling defect in pulmonary artery branches",
+      "VQ_scan": "perfusion defect with normal ventilation",
+      "state_inference": "lung.gas_exchange impairment"
+    },
+    "pneumothorax": {
+      "X_ray": "visceral pleural line, no lung markings beyond",
+      "state_inference": "lung.gas_exchange impairment (mechanical)"
+    },
+    "CHF": {
+      "X_ray": "cardiomegaly, Kerley B lines, pleural effusion, pulmonary edema",
+      "echo": "reduced EF (HFrEF) or diastolic dysfunction (HFpEF)",
+      "state_inference": "heart.contractility low, heart.pulmonary_congestion high"
+    },
+    "MI": {
+      "ECG": "ST elevation (STEMI) or depression (NSTEMI)",
+      "echo": "regional wall motion abnormality",
+      "angiography": "coronary occlusion",
+      "state_inference": "heart.ischemia, heart.perfusion"
+    },
+    "ischemic_stroke": {
+      "CT_initial": "may be normal in first hours; later hypodensity",
+      "CT_with_perfusion": "perfusion mismatch (penumbra)",
+      "MRI_DWI": "restricted diffusion (acute)",
+      "state_inference": "brain.ischemia, brain.perfusion"
+    },
+    "hemorrhagic_stroke": {
+      "CT_initial": "hyperdense blood (immediate)",
+      "state_inference": "brain.edema, brain.intracranial_pressure"
+    },
+    "subarachnoid_hemorrhage": {
+      "CT": "blood in basal cisterns, sulci",
+      "LP_if_CT_negative": "xanthochromia",
+      "angiography": "aneurysm"
+    },
+    "appendicitis": {
+      "CT": "appendiceal diameter > 6mm, wall thickening, periappendiceal stranding",
+      "US": "non-compressible appendix",
+      "state_inference": "gi.inflammation (RLQ)"
+    },
+    "kidney_stone": {
+      "CT_no_contrast": "stone in collecting system, hydronephrosis",
+      "US": "hydronephrosis (stone may not be seen)",
+      "state_inference": "kidney.obstruction, kidney.ureteral_distension"
+    },
+    "cholecystitis": {
+      "US": "gallbladder wall thickening, pericholecystic fluid, sonographic Murphy",
+      "HIDA": "non-visualization of gallbladder",
+      "state_inference": "gallbladder.inflammation, gallbladder.wall_distension"
+    },
+    "bowel_obstruction": {
+      "X_ray": "dilated bowel loops with air-fluid levels",
+      "CT": "transition point identifiable",
+      "state_inference": "gi.obstruction"
+    },
+    "pneumonia_consolidation_pattern": {
+      "lobar": "S. pneumoniae",
+      "diffuse_interstitial": "viral, atypical (Mycoplasma)",
+      "upper_lobe_cavitary": "TB, Klebsiella"
+    },
+    "bone_fracture": {
+      "X_ray": "cortical disruption, displacement",
+      "state_inference": "bone.fracture_present"
+    },
+    "septic_arthritis": {
+      "X_ray": "joint effusion, soft tissue swelling",
+      "US": "effusion (guide aspiration)",
+      "state_inference": "bone.synovial_inflammation, bone.infection"
+    }
+  },
+
+  "ECG_findings": {
+    "_comment": "ECG isn't strictly imaging but is a key diagnostic test.",
+    "STEMI": {"finding": "ST elevation in contiguous leads", "state": "heart.ischemia high"},
+    "NSTEMI_unstable_angina": {"finding": "ST depression or T wave inversion", "state": "heart.ischemia moderate"},
+    "AF": {"finding": "irregularly irregular, no P waves", "state": "heart.electrical_instability"},
+    "VT": {"finding": "wide complex tachycardia", "state": "heart.electrical_instability high"},
+    "hyperkalemia": {"finding": "peaked T waves, wide QRS", "state": "potassium high"},
+    "hypokalemia": {"finding": "U waves, flat T", "state": "potassium low"},
+    "pericarditis": {"finding": "diffuse ST elevation, PR depression", "state": "heart.pericardial_inflammation"},
+    "PE": {"finding": "sinus tach, S1Q3T3 (classic but uncommon)", "state": "lung.gas_exchange impairment"},
+    "LBBB": {"finding": "wide QRS with notched R in lateral leads"},
+    "RBBB": {"finding": "wide QRS with rsR' in V1"}
+  }
+}

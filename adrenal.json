@@ -1,0 +1,327 @@
+{
+  "_metadata": {
+    "organ": "adrenal",
+    "schema_version": "2.0",
+    "description": "Adrenal state model. Used by Addison's, Cushing's, pheochromocytoma, adrenal crisis.",
+    "source": "Harrison's IM Endocrinology",
+    "review_status": "unreviewed"
+  },
+  "state_variables": {
+    "cortisol_level": {
+      "range": [
+        0,
+        1
+      ],
+      "description": "circulating cortisol (0.5 = normal)",
+      "default": 0.5
+    },
+    "aldosterone_level": {
+      "range": [
+        0,
+        1
+      ],
+      "description": "mineralocorticoid (0.5 = normal)",
+      "default": 0.5
+    },
+    "catecholamine_output": {
+      "range": [
+        0,
+        1
+      ],
+      "description": "epinephrine/norepinephrine release",
+      "default": 0.3
+    },
+    "cortex_function": {
+      "range": [
+        0,
+        1
+      ],
+      "description": "cortex integrity — HIGHER = better",
+      "inverse": true
+    },
+    "medulla_function": {
+      "range": [
+        0,
+        1
+      ],
+      "description": "medulla integrity — HIGHER = better",
+      "inverse": true
+    },
+    "acth_drive": {
+      "range": [
+        0,
+        1
+      ],
+      "description": "pituitary ACTH stimulation",
+      "default": 0.5
+    },
+    "stress_response_capacity": {
+      "range": [
+        0,
+        1
+      ],
+      "description": "ability to mount stress response — HIGHER = better",
+      "inverse": true
+    }
+  },
+  "derivation_rules": [
+    {
+      "symptom": "fatigue",
+      "condition": {
+        "state": "cortisol_level",
+        "op": "<",
+        "threshold": 0.3
+      },
+      "rationale": "cortisol deficiency → reduced energy mobilization",
+      "confidence": 1.0
+    },
+    {
+      "symptom": "weight loss",
+      "condition": {
+        "state": "cortisol_level",
+        "op": "<",
+        "threshold": 0.3
+      },
+      "rationale": "loss of cortisol-mediated appetite + catabolic balance shift",
+      "confidence": 0.8
+    },
+    {
+      "symptom": "hyperpigmentation",
+      "condition": {
+        "all": [
+          {
+            "state": "cortisol_level",
+            "op": "<",
+            "threshold": 0.3
+          },
+          {
+            "state": "acth_drive",
+            "op": ">",
+            "threshold": 0.6
+          }
+        ]
+      },
+      "rationale": "high ACTH (primary adrenal insufficiency) → MSH-like effect on melanocytes",
+      "confidence": 1.0
+    },
+    {
+      "symptom": "hypotension",
+      "condition": {
+        "state": "aldosterone_level",
+        "op": "<",
+        "threshold": 0.3
+      },
+      "rationale": "aldosterone deficiency → Na+ loss → volume depletion",
+      "confidence": 0.9
+    },
+    {
+      "symptom": "weight gain",
+      "condition": {
+        "state": "cortisol_level",
+        "op": ">",
+        "threshold": 0.7
+      },
+      "rationale": "cortisol excess → central obesity, lipogenesis",
+      "confidence": 0.8
+    },
+    {
+      "symptom": "moon face",
+      "condition": {
+        "state": "cortisol_level",
+        "op": ">",
+        "threshold": 0.7
+      },
+      "rationale": "cortisol-mediated fat redistribution to face",
+      "confidence": 1.0
+    },
+    {
+      "symptom": "easy bruising",
+      "condition": {
+        "state": "cortisol_level",
+        "op": ">",
+        "threshold": 0.7
+      },
+      "rationale": "cortisol-induced capillary fragility + reduced collagen",
+      "confidence": 0.9
+    },
+    {
+      "symptom": "episodic hypertension",
+      "condition": {
+        "state": "catecholamine_output",
+        "op": ">",
+        "threshold": 0.6
+      },
+      "rationale": "pheochromocytoma → catecholamine surges → paroxysmal HTN",
+      "confidence": 1.0
+    },
+    {
+      "symptom": "palpitations",
+      "condition": {
+        "state": "catecholamine_output",
+        "op": ">",
+        "threshold": 0.6
+      },
+      "rationale": "catecholamine excess → tachycardia",
+      "confidence": 0.9
+    },
+    {
+      "symptom": "diaphoresis",
+      "condition": {
+        "state": "catecholamine_output",
+        "op": ">",
+        "threshold": 0.6
+      },
+      "rationale": "sympathetic activation of sweat glands",
+      "confidence": 0.9
+    }
+  ],
+  "propagation_rules": [
+    {
+      "trigger": {
+        "state": "cortex_function",
+        "op": "<",
+        "threshold": 0.4
+      },
+      "effect": {
+        "state": "cortisol_level",
+        "delta": -0.4
+      },
+      "rationale": "destroyed/atrophied cortex cannot produce cortisol",
+      "via": "intra_organ",
+      "review_status": "unreviewed"
+    },
+    {
+      "trigger": {
+        "state": "cortex_function",
+        "op": "<",
+        "threshold": 0.4
+      },
+      "effect": {
+        "state": "aldosterone_level",
+        "delta": -0.3
+      },
+      "rationale": "zona glomerulosa destruction → aldosterone deficiency",
+      "via": "intra_organ",
+      "review_status": "unreviewed"
+    },
+    {
+      "trigger": {
+        "state": "cortisol_level",
+        "op": "<",
+        "threshold": 0.3
+      },
+      "effect": {
+        "state": "acth_drive",
+        "delta": 0.5
+      },
+      "rationale": "loss of cortisol negative feedback → ACTH rises",
+      "via": "intra_organ",
+      "review_status": "unreviewed"
+    },
+    {
+      "trigger": {
+        "state": "stress_response_capacity",
+        "op": "<",
+        "threshold": 0.3
+      },
+      "effect": {
+        "organ": "heart",
+        "state": "cardiac_output",
+        "delta": -0.3
+      },
+      "rationale": "adrenal crisis → vasoplegia → shock",
+      "via": "circulates_through",
+      "review_status": "unreviewed"
+    }
+  ],
+  "connections": {
+    "incoming": [
+      "blood (suprarenal arteries)",
+      "blood (pituitary ACTH)",
+      "neural (sympathetic to medulla)"
+    ],
+    "outgoing": [
+      "blood (cortisol, aldosterone, catecholamines)"
+    ],
+    "neural": [
+      "sympathetic preganglionic (medulla = modified ganglion)"
+    ]
+  },
+  "diseases": {
+    "Addison Disease": {
+      "review_status": "unreviewed",
+      "description": "Primary adrenal insufficiency — autoimmune cortex destruction.",
+      "perturbations": [
+        {
+          "variable": "cortex_function",
+          "delta": -0.65,
+          "cause": "autoimmune destruction of cortex"
+        },
+        {
+          "variable": "cortisol_level",
+          "delta": -0.3,
+          "cause": "loss of cortisol production"
+        },
+        {
+          "variable": "aldosterone_level",
+          "delta": -0.25,
+          "cause": "loss of aldosterone production"
+        }
+      ]
+    },
+    "Cushing Syndrome": {
+      "review_status": "unreviewed",
+      "description": "Chronic glucocorticoid excess (exogenous or ACTH-producing tumor).",
+      "perturbations": [
+        {
+          "variable": "cortisol_level",
+          "delta": 0.4,
+          "cause": "chronic glucocorticoid excess"
+        }
+      ]
+    },
+    "Pheochromocytoma": {
+      "review_status": "unreviewed",
+      "description": "Catecholamine-secreting tumor of adrenal medulla → paroxysmal HTN.",
+      "perturbations": [
+        {
+          "variable": "catecholamine_output",
+          "delta": 0.65,
+          "cause": "tumor episodic catecholamine release"
+        }
+      ]
+    },
+    "Adrenal Crisis": {
+      "review_status": "unreviewed",
+      "description": "Acute adrenal insufficiency — vasoplegic shock, hypotension, electrolyte derangement.",
+      "perturbations": [
+        {
+          "variable": "cortisol_level",
+          "delta": -0.45,
+          "cause": "stress unmasks insufficient reserve"
+        },
+        {
+          "variable": "stress_response_capacity",
+          "delta": -0.5,
+          "cause": "no cortisol for stress mobilization"
+        }
+      ]
+    },
+    "Adrenal Insufficiency": {
+      "_review_status": "unreviewed",
+      "description": "Generic adrenal cortex failure — primary (Addison) or secondary (pituitary).",
+      "perturbations": [
+        {
+          "variable": "cortisol_level",
+          "delta": -0.35,
+          "cause": "reduced cortisol synthesis"
+        },
+        {
+          "variable": "stress_response_capacity",
+          "delta": -0.4,
+          "cause": "insufficient cortisol for stress demand"
+        }
+      ]
+    }
+  }
+}

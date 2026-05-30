@@ -1,0 +1,87 @@
+{
+  "_metadata": {
+    "organ": "gallbladder",
+    "schema_version": "2.0",
+    "description": "Gallbladder state model. Used by cholelithiasis, cholecystitis, cholangitis.",
+    "source": "Boron & Boulpaep; Harrison's IM",
+    "review_status": "unreviewed"
+  },
+  "state_variables": {
+    "stones_present":      {"range": [0, 1], "description": "gallstone burden"},
+    "cystic_duct_obstruction": {"range": [0, 1], "description": "stone impacted in cystic duct"},
+    "inflammation":        {"range": [0, 1], "description": "gallbladder wall inflammation"},
+    "infection":           {"range": [0, 1], "description": "bacterial superinfection of bile"},
+    "wall_distension":     {"range": [0, 1], "description": "gallbladder distension from obstruction"},
+    "biliary_obstruction": {"range": [0, 1], "description": "common bile duct obstruction"},
+    "bile_stasis":         {"range": [0, 1], "description": "stagnant bile predisposing to stone/infection"}
+  },
+  "derivation_rules": [
+    {"symptom": "right upper quadrant pain", "condition": {"state": "wall_distension", "op": ">", "threshold": 0.5},
+     "rationale": "gallbladder distension activates visceral afferents (T6-T9) → RUQ pain",
+     "confidence": 1.0},
+    {"symptom": "biliary colic", "condition": {"state": "cystic_duct_obstruction", "op": ">", "threshold": 0.5},
+     "rationale": "stone intermittently obstructs cystic duct → wave-like crampy pain",
+     "confidence": 1.0},
+    {"symptom": "Murphy sign", "condition": {"state": "inflammation", "op": ">", "threshold": 0.5},
+     "rationale": "inflamed gallbladder painful on inspiration during RUQ palpation",
+     "confidence": 1.0},
+    {"symptom": "fever", "condition": {"state": "infection", "op": ">", "threshold": 0.5},
+     "rationale": "bacterial superinfection → pyrogenic cytokines", "confidence": 0.9},
+    {"symptom": "nausea", "condition": {"state": "inflammation", "op": ">", "threshold": 0.5},
+     "rationale": "visceral inflammation + CTZ activation", "confidence": 0.8},
+    {"symptom": "jaundice", "condition": {"state": "biliary_obstruction", "op": ">", "threshold": 0.5},
+     "rationale": "CBD obstruction → bile backup → conjugated hyperbilirubinemia", "confidence": 1.0},
+    {"symptom": "pain after fatty meal", "condition": {"state": "stones_present", "op": ">", "threshold": 0.4},
+     "rationale": "CCK release after fat → gallbladder contraction against stones → pain", "confidence": 0.9}
+  ],
+  "propagation_rules": [
+    {"trigger": {"state": "stones_present", "op": ">", "threshold": 0.5},
+     "effect": {"state": "cystic_duct_obstruction", "delta": 0.4},
+     "rationale": "stones risk impaction in cystic duct outflow", "via": "intra_organ", "review_status": "unreviewed"},
+    {"trigger": {"state": "cystic_duct_obstruction", "op": ">", "threshold": 0.5},
+     "effect": {"state": "wall_distension", "delta": 0.5},
+     "rationale": "obstructed outflow → gallbladder distends", "via": "intra_organ", "review_status": "unreviewed"},
+    {"trigger": {"state": "wall_distension", "op": ">", "threshold": 0.5},
+     "effect": {"state": "inflammation", "delta": 0.4},
+     "rationale": "ischemic stretch → inflammatory cascade", "via": "intra_organ", "review_status": "unreviewed"},
+    {"trigger": {"state": "inflammation", "op": ">", "threshold": 0.6},
+     "effect": {"state": "infection", "delta": 0.3},
+     "rationale": "inflamed bile predisposes to bacterial overgrowth", "via": "intra_organ", "review_status": "unreviewed"},
+    {"trigger": {"state": "biliary_obstruction", "op": ">", "threshold": 0.5},
+     "effect": {"organ": "liver", "state": "bilirubin_conjugation", "delta": -0.3},
+     "rationale": "biliary backup → hepatocyte stress, decreased excretion", "via": "biliary", "review_status": "unreviewed"}
+  ],
+  "connections": {
+    "incoming": ["liver (bile via cystic duct)"],
+    "outgoing": ["gi (bile via CBD → duodenum)"],
+    "neural": ["vagus", "celiac plexus", "phrenic (referred to right shoulder)"]
+  },
+  "diseases": {
+    "Cholelithiasis": {
+      "review_status": "unreviewed",
+      "description": "Gallstones in gallbladder — may be asymptomatic or cause biliary colic.",
+      "perturbations": [
+        {"variable": "stones_present", "delta": 0.75, "cause": "cholesterol or pigment stone formation"}
+      ]
+    },
+    "Acute Cholecystitis": {
+      "review_status": "unreviewed",
+      "description": "Persistent cystic duct obstruction → gallbladder inflammation + infection.",
+      "perturbations": [
+        {"variable": "stones_present", "delta": 0.75, "cause": "underlying gallstone disease"},
+        {"variable": "cystic_duct_obstruction", "delta": 0.70, "cause": "stone impacted in cystic duct"},
+        {"variable": "inflammation", "delta": 0.75, "cause": "chemical + bacterial inflammation"},
+        {"variable": "wall_distension", "delta": 0.65, "cause": "obstructed outflow"}
+      ]
+    },
+    "Acute Cholangitis": {
+      "review_status": "unreviewed",
+      "description": "Ascending bacterial infection of CBD — Charcot triad: fever, jaundice, RUQ pain.",
+      "perturbations": [
+        {"variable": "biliary_obstruction", "delta": 0.75, "cause": "stone in CBD"},
+        {"variable": "infection", "delta": 0.80, "cause": "ascending bacterial infection of bile"},
+        {"variable": "inflammation", "delta": 0.65, "cause": "biliary tree inflammation"}
+      ]
+    }
+  }
+}

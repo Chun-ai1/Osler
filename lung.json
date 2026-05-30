@@ -1,0 +1,738 @@
+{
+  "_metadata": {
+    "organ": "lung",
+    "schema_version": "1.0",
+    "description": "Lung/airway state model. Used by pneumonia, bronchitis, asthma, COPD, PE (when added).",
+    "source": "Boron & Boulpaep Respiratory Physiology; Harrison's IM Pulmonary section",
+    "review_status": "unreviewed"
+  },
+  "state_variables": {
+    "alveolar_inflammation": {
+      "range": [
+        0,
+        1
+      ],
+      "description": "alveolar wall + parenchymal inflammation"
+    },
+    "airway_inflammation": {
+      "range": [
+        0,
+        1
+      ],
+      "description": "bronchial wall inflammation"
+    },
+    "mucus_production": {
+      "range": [
+        0,
+        1
+      ],
+      "description": "secretion from goblet cells / submucosal glands"
+    },
+    "bronchospasm": {
+      "range": [
+        0,
+        1
+      ],
+      "description": "smooth muscle constriction of airways"
+    },
+    "airflow_resistance": {
+      "range": [
+        0,
+        1
+      ],
+      "description": "resistance to airflow (high = obstruction)"
+    },
+    "gas_exchange": {
+      "range": [
+        0,
+        1
+      ],
+      "description": "alveolar-capillary O2/CO2 transfer — HIGHER = better",
+      "inverse": true
+    },
+    "consolidation": {
+      "range": [
+        0,
+        1
+      ],
+      "description": "alveolar filling with exudate (e.g. pneumonia)"
+    },
+    "pleural_irritation": {
+      "range": [
+        0,
+        1
+      ],
+      "description": "parietal pleura nociceptor activation"
+    },
+    "cough_reflex_trigger": {
+      "range": [
+        0,
+        1
+      ],
+      "description": "afferent vagal stimulation"
+    },
+    "fibrosis": {
+      "range": [
+        0,
+        1
+      ],
+      "description": "interstitial lung fibrosis"
+    },
+    "airspace_destruction": {
+      "range": [
+        0,
+        1
+      ],
+      "description": "alveolar destruction (emphysema)"
+    },
+    "vascular_obstruction": {
+      "range": [
+        0,
+        1
+      ],
+      "description": "pulmonary embolus or thrombosis"
+    },
+    "pleural_air": {
+      "range": [
+        0,
+        1
+      ],
+      "description": "pneumothorax — air in pleural space"
+    },
+    "pulmonary_capillary_pressure": {
+      "range": [
+        0,
+        1
+      ],
+      "description": "hydrostatic pressure driving pulmonary edema"
+    },
+    "capillary_permeability": {
+      "range": [
+        0,
+        1
+      ],
+      "description": "alveolar-capillary barrier permeability"
+    }
+  },
+  "derivation_rules": [
+    {
+      "symptom": "cough",
+      "condition": {
+        "any": [
+          {
+            "state": "cough_reflex_trigger",
+            "op": ">",
+            "threshold": 0.4
+          },
+          {
+            "state": "mucus_production",
+            "op": ">",
+            "threshold": 0.4
+          },
+          {
+            "state": "airway_inflammation",
+            "op": ">",
+            "threshold": 0.4
+          }
+        ]
+      },
+      "rationale": "generic cough — fires when any of: cough reflex activated, increased mucus production, or airway inflammation. More specific 'productive cough' / 'dry cough' rules also apply.",
+      "confidence": 0.85
+    },
+    {
+      "symptom": "productive cough",
+      "condition": {
+        "all": [
+          {
+            "state": "mucus_production",
+            "op": ">",
+            "threshold": 0.5
+          },
+          {
+            "state": "cough_reflex_trigger",
+            "op": ">",
+            "threshold": 0.4
+          }
+        ]
+      },
+      "rationale": "increased mucus + activated vagal cough reflex → cough that brings up sputum",
+      "confidence": 1.0
+    },
+    {
+      "symptom": "dry cough",
+      "condition": {
+        "all": [
+          {
+            "state": "cough_reflex_trigger",
+            "op": ">",
+            "threshold": 0.5
+          },
+          {
+            "state": "mucus_production",
+            "op": "<",
+            "threshold": 0.4
+          }
+        ]
+      },
+      "rationale": "vagal cough reflex activated without significant mucus production → non-productive cough",
+      "confidence": 1.0
+    },
+    {
+      "symptom": "shortness of breath",
+      "condition": {
+        "any": [
+          {
+            "state": "gas_exchange",
+            "op": "<",
+            "threshold": 0.6
+          },
+          {
+            "state": "airflow_resistance",
+            "op": ">",
+            "threshold": 0.5
+          }
+        ]
+      },
+      "rationale": "impaired gas exchange OR increased airway resistance → sensation of dyspnea via chemoreceptor / mechanoreceptor afferents",
+      "confidence": 1.0
+    },
+    {
+      "symptom": "wheezing",
+      "condition": {
+        "state": "bronchospasm",
+        "op": ">",
+        "threshold": 0.5
+      },
+      "rationale": "narrowed airway lumen produces turbulent airflow audible as wheeze, esp. on expiration",
+      "confidence": 1.0
+    },
+    {
+      "symptom": "pleuritic chest pain",
+      "condition": {
+        "state": "pleural_irritation",
+        "op": ">",
+        "threshold": 0.5
+      },
+      "rationale": "inflamed parietal pleura — sharp pain worsens with deep inspiration (somatic nociception)",
+      "confidence": 1.0
+    },
+    {
+      "symptom": "fever",
+      "condition": {
+        "state": "alveolar_inflammation",
+        "op": ">",
+        "threshold": 0.6
+      },
+      "rationale": "alveolar infection releases pyrogens (IL-1, IL-6, TNF) → hypothalamic setpoint elevation",
+      "confidence": 0.9
+    },
+    {
+      "symptom": "tachypnea",
+      "condition": {
+        "any": [
+          {
+            "state": "gas_exchange",
+            "op": "<",
+            "threshold": 0.6
+          },
+          {
+            "state": "consolidation",
+            "op": ">",
+            "threshold": 0.4
+          }
+        ]
+      },
+      "rationale": "chemoreceptor drive to increase ventilation when O2 transfer is impaired",
+      "confidence": 0.9
+    },
+    {
+      "symptom": "chest tightness",
+      "condition": {
+        "all": [
+          {
+            "state": "bronchospasm",
+            "op": ">",
+            "threshold": 0.4
+          },
+          {
+            "state": "airflow_resistance",
+            "op": ">",
+            "threshold": 0.4
+          }
+        ]
+      },
+      "rationale": "bronchoconstriction + chest wall mechanoreceptor activation → tightness/constriction sensation",
+      "confidence": 0.9
+    },
+    {
+      "symptom": "dyspnea on exertion",
+      "condition": {
+        "any": [
+          {
+            "state": "fibrosis",
+            "op": ">",
+            "threshold": 0.4
+          },
+          {
+            "state": "airspace_destruction",
+            "op": ">",
+            "threshold": 0.4
+          }
+        ]
+      },
+      "rationale": "reduced compliance or alveolar gas exchange limits exercise tolerance",
+      "confidence": 0.9
+    },
+    {
+      "symptom": "pleuritic chest pain",
+      "condition": {
+        "any": [
+          {
+            "state": "pleural_irritation",
+            "op": ">",
+            "threshold": 0.5
+          },
+          {
+            "state": "pleural_air",
+            "op": ">",
+            "threshold": 0.5
+          }
+        ]
+      },
+      "rationale": "pleural irritation or pneumothorax",
+      "confidence": 0.9
+    },
+    {
+      "symptom": "tachypnea",
+      "condition": {
+        "any": [
+          {
+            "state": "vascular_obstruction",
+            "op": ">",
+            "threshold": 0.5
+          },
+          {
+            "state": "pulmonary_capillary_pressure",
+            "op": ">",
+            "threshold": 0.5
+          }
+        ]
+      },
+      "rationale": "hypoxia or pulmonary edema → compensatory tachypnea",
+      "confidence": 0.9
+    },
+    {
+      "symptom": "pink frothy sputum",
+      "condition": {
+        "state": "pulmonary_capillary_pressure",
+        "op": ">",
+        "threshold": 0.7
+      },
+      "rationale": "transudate fluid from alveolar capillaries",
+      "confidence": 0.9
+    },
+    {
+      "symptom": "sudden onset shortness of breath",
+      "condition": {
+        "any": [
+          {
+            "state": "vascular_obstruction",
+            "op": ">",
+            "threshold": 0.5
+          },
+          {
+            "state": "pleural_air",
+            "op": ">",
+            "threshold": 0.5
+          }
+        ]
+      },
+      "rationale": "PE or pneumothorax = sudden onset (vs gradual in pneumonia)",
+      "confidence": 0.95
+    },
+    {
+      "symptom": "hypoxia",
+      "condition": {
+        "state": "gas_exchange",
+        "op": "<",
+        "threshold": 0.6
+      },
+      "rationale": "impaired gas exchange → low O2 saturation",
+      "confidence": 0.85
+    },
+    {
+      "symptom": "decreased breath sounds unilateral",
+      "condition": {
+        "state": "pleural_air",
+        "op": ">",
+        "threshold": 0.4
+      },
+      "rationale": "pneumothorax — collapsed lung loses air entry on affected side",
+      "confidence": 1.0
+    },
+    {
+      "symptom": "tachycardia",
+      "condition": {
+        "state": "vascular_obstruction",
+        "op": ">",
+        "threshold": 0.5
+      },
+      "rationale": "PE → RV strain + reflex tachycardia (most common PE finding)",
+      "confidence": 0.9
+    },
+    {
+      "symptom": "calf pain",
+      "condition": {
+        "state": "vascular_obstruction",
+        "op": ">",
+        "threshold": 0.5
+      },
+      "rationale": "PE often originates from DVT — concurrent calf findings",
+      "confidence": 0.5
+    }
+  ],
+  "diseases": {
+    "Community-acquired Pneumonia": {
+      "review_status": "unreviewed",
+      "description": "Bacterial (typically S. pneumoniae) or viral infection of alveoli → consolidation, inflammation, impaired gas exchange.",
+      "perturbations": [
+        {
+          "variable": "alveolar_inflammation",
+          "delta": 0.85,
+          "cause": "neutrophil infiltration and cytokine cascade from pathogen"
+        },
+        {
+          "variable": "consolidation",
+          "delta": 0.75,
+          "cause": "alveoli fill with exudate (fluid + neutrophils + bacteria)"
+        },
+        {
+          "variable": "gas_exchange",
+          "delta": -0.5,
+          "cause": "alveolar filling blocks O2/CO2 diffusion"
+        },
+        {
+          "variable": "mucus_production",
+          "delta": 0.6,
+          "cause": "infected airway lining hypersecretion"
+        },
+        {
+          "variable": "cough_reflex_trigger",
+          "delta": 0.7,
+          "cause": "vagal afferents activated by inflammation"
+        },
+        {
+          "variable": "pleural_irritation",
+          "delta": 0.55,
+          "cause": "parenchymal inflammation reaches visceral pleura"
+        }
+      ]
+    },
+    "Acute Bronchitis": {
+      "review_status": "unreviewed",
+      "description": "Viral (typically) infection of large airways → mucus + cough, without alveolar involvement.",
+      "perturbations": [
+        {
+          "variable": "airway_inflammation",
+          "delta": 0.7,
+          "cause": "viral bronchial epithelial injury"
+        },
+        {
+          "variable": "mucus_production",
+          "delta": 0.65,
+          "cause": "irritated bronchial glands hypersecrete"
+        },
+        {
+          "variable": "cough_reflex_trigger",
+          "delta": 0.8,
+          "cause": "airway irritation activates cough afferents strongly"
+        },
+        {
+          "variable": "airflow_resistance",
+          "delta": 0.35,
+          "cause": "modest narrowing from inflamed mucosa"
+        },
+        {
+          "variable": "alveolar_inflammation",
+          "delta": 0.15,
+          "cause": "minimal — bronchitis spares alveoli typically"
+        }
+      ]
+    },
+    "Asthma Exacerbation": {
+      "review_status": "unreviewed",
+      "description": "Hyperreactive airway response — bronchospasm + inflammation + mucus → reversible airflow obstruction.",
+      "perturbations": [
+        {
+          "variable": "bronchospasm",
+          "delta": 0.8,
+          "cause": "smooth muscle constriction triggered by allergen/irritant"
+        },
+        {
+          "variable": "airway_inflammation",
+          "delta": 0.65,
+          "cause": "eosinophilic + Th2 inflammation"
+        },
+        {
+          "variable": "airflow_resistance",
+          "delta": 0.75,
+          "cause": "lumen narrowing from spasm + edema"
+        },
+        {
+          "variable": "mucus_production",
+          "delta": 0.5,
+          "cause": "goblet cell hyperplasia"
+        },
+        {
+          "variable": "cough_reflex_trigger",
+          "delta": 0.55,
+          "cause": "airway irritation activates cough"
+        },
+        {
+          "variable": "gas_exchange",
+          "delta": -0.3,
+          "cause": "V/Q mismatch from heterogeneous obstruction"
+        }
+      ]
+    },
+    "COPD": {
+      "_review_status": "unreviewed",
+      "description": "Chronic obstructive lung disease — emphysema + chronic bronchitis from smoking.",
+      "perturbations": [
+        {
+          "variable": "airspace_destruction",
+          "delta": 0.65,
+          "cause": "elastase-mediated alveolar destruction (smoking)"
+        },
+        {
+          "variable": "airflow_resistance",
+          "delta": 0.55,
+          "cause": "small airway inflammation + mucus"
+        },
+        {
+          "variable": "mucus_production",
+          "delta": 0.55,
+          "cause": "chronic bronchitis component"
+        },
+        {
+          "variable": "gas_exchange",
+          "delta": -0.4,
+          "cause": "loss of alveolar surface area"
+        }
+      ]
+    },
+    "Acute Pulmonary Edema": {
+      "_review_status": "unreviewed",
+      "description": "Fluid in alveoli from elevated pulmonary capillary pressure (cardiogenic) or permeability.",
+      "perturbations": [
+        {
+          "variable": "pulmonary_capillary_pressure",
+          "delta": 0.7,
+          "cause": "left heart failure or fluid overload"
+        },
+        {
+          "variable": "gas_exchange",
+          "delta": -0.55,
+          "cause": "fluid fills alveoli, blocks O2 diffusion"
+        }
+      ]
+    },
+    "Acute Pulmonary Embolism": {
+      "_review_status": "unreviewed",
+      "description": "Thromboembolus in pulmonary artery → V/Q mismatch, right heart strain.",
+      "perturbations": [
+        {
+          "variable": "vascular_obstruction",
+          "delta": 0.75,
+          "cause": "embolus from DVT typically"
+        },
+        {
+          "variable": "gas_exchange",
+          "delta": -0.45,
+          "cause": "V/Q mismatch"
+        },
+        {
+          "variable": "pleural_irritation",
+          "delta": 0.35,
+          "cause": "infarct touches pleura → pleuritic pain"
+        }
+      ]
+    },
+    "Acute Viral Upper Respiratory Infection": {
+      "_review_status": "unreviewed",
+      "description": "Common cold — viral inflammation of upper airway mucosa.",
+      "perturbations": [
+        {
+          "variable": "airway_inflammation",
+          "delta": 0.45,
+          "cause": "rhinovirus, coronavirus, RSV, etc."
+        },
+        {
+          "variable": "mucus_production",
+          "delta": 0.5,
+          "cause": "inflammatory cytokine response"
+        },
+        {
+          "organ": "upper_airway",
+          "variable": "nasal_inflammation",
+          "delta": 0.5,
+          "cause": "viral inflammation of nasal mucosa"
+        },
+        {
+          "organ": "upper_airway",
+          "variable": "mucus_production",
+          "delta": 0.6,
+          "cause": "increased nasal mucus production"
+        },
+        {
+          "organ": "upper_airway",
+          "variable": "pharyngeal_inflammation",
+          "delta": 0.45,
+          "cause": "post-nasal drip and viral pharyngitis"
+        }
+      ]
+    },
+    "Bronchiectasis": {
+      "_review_status": "unreviewed",
+      "description": "Irreversible bronchial dilation from chronic infection/inflammation.",
+      "perturbations": [
+        {
+          "variable": "airway_inflammation",
+          "delta": 0.6,
+          "cause": "chronic infection/inflammation cycle"
+        },
+        {
+          "variable": "mucus_production",
+          "delta": 0.7,
+          "cause": "impaired mucociliary clearance"
+        }
+      ]
+    },
+    "Pneumothorax": {
+      "_review_status": "unreviewed",
+      "description": "Air in pleural space → lung collapse on affected side.",
+      "perturbations": [
+        {
+          "variable": "pleural_air",
+          "delta": 0.8,
+          "cause": "rupture of bleb (spontaneous) or trauma"
+        },
+        {
+          "variable": "gas_exchange",
+          "delta": -0.4,
+          "cause": "loss of lung expansion on affected side"
+        },
+        {
+          "variable": "pleural_irritation",
+          "delta": 0.4,
+          "cause": "pleural surface separation"
+        }
+      ]
+    },
+    "Pulmonary Tuberculosis": {
+      "_review_status": "unreviewed",
+      "description": "Mycobacterium tuberculosis chronic pulmonary infection — cavitary upper lobe.",
+      "perturbations": [
+        {
+          "variable": "alveolar_inflammation",
+          "delta": 0.65,
+          "cause": "M. tuberculosis granulomatous inflammation"
+        },
+        {
+          "variable": "consolidation",
+          "delta": 0.45,
+          "cause": "caseating granulomas, cavity formation"
+        }
+      ]
+    },
+    "Idiopathic Pulmonary Fibrosis": {
+      "_review_status": "unreviewed",
+      "description": "Progressive interstitial fibrosis of unknown cause.",
+      "perturbations": [
+        {
+          "variable": "fibrosis",
+          "delta": 0.65,
+          "cause": "abnormal fibroblastic foci, ECM deposition"
+        },
+        {
+          "variable": "gas_exchange",
+          "delta": -0.4,
+          "cause": "thickened interstitium impairs O2 diffusion"
+        }
+      ]
+    },
+    "ARDS": {
+      "_review_status": "unreviewed",
+      "description": "Diffuse alveolar damage with non-cardiogenic pulmonary edema — sepsis, trauma, pneumonia.",
+      "perturbations": [
+        {
+          "variable": "alveolar_inflammation",
+          "delta": 0.7,
+          "cause": "diffuse alveolar damage"
+        },
+        {
+          "variable": "capillary_permeability",
+          "delta": 0.7,
+          "cause": "endothelial injury → protein-rich edema"
+        },
+        {
+          "variable": "gas_exchange",
+          "delta": -0.6,
+          "cause": "alveolar flooding + fibroproliferative phase"
+        }
+      ]
+    },
+    "Viral Pneumonia": {
+      "review_status": "unreviewed",
+      "description": "Viral infection of the lung causing alveolar inflammation and impaired gas exchange.",
+      "perturbations": [
+        {
+          "variable": "alveolar_inflammation",
+          "delta": 0.6,
+          "cause": "viral infection of respiratory epithelium"
+        },
+        {
+          "variable": "cough_reflex_trigger",
+          "delta": 0.5,
+          "cause": "airway/alveolar inflammation activates vagal afferents"
+        },
+        {
+          "variable": "gas_exchange",
+          "delta": -0.4,
+          "cause": "inflamed alveoli impair oxygen transfer"
+        },
+        {
+          "variable": "consolidation",
+          "delta": 0.3,
+          "cause": "inflammatory airspace opacity may develop"
+        }
+      ]
+    },
+    "Aspiration Pneumonitis": {
+      "review_status": "unreviewed",
+      "description": "Chemical inflammatory injury to the lungs after aspiration of gastric contents.",
+      "perturbations": [
+        {
+          "variable": "alveolar_inflammation",
+          "delta": 0.7,
+          "cause": "acidic aspirate injures alveolar epithelium"
+        },
+        {
+          "variable": "capillary_permeability",
+          "delta": 0.5,
+          "cause": "chemical injury disrupts alveolar-capillary barrier"
+        },
+        {
+          "variable": "gas_exchange",
+          "delta": -0.55,
+          "cause": "edema and inflammation impair oxygen exchange"
+        },
+        {
+          "variable": "cough_reflex_trigger",
+          "delta": 0.45,
+          "cause": "aspiration irritates airway afferents"
+        }
+      ]
+    }
+  }
+}

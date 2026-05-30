@@ -1,0 +1,66 @@
+{
+  "_metadata": {
+    "framework": "anatomy_bones",
+    "schema_version": "1.0",
+    "description": "Major named bones — not all 206, but the ~50 clinically named ones (skull, spine, limb major bones). Each bone maps to atlas 'bone' state model.",
+    "source": "Gray's Anatomy 41e",
+    "review_status": "unreviewed"
+  },
+
+  "bones": {
+    "skull": {
+      "region": "head",
+      "parts": ["frontal_bone", "parietal_bone", "temporal_bone", "occipital_bone", "sphenoid", "ethmoid"],
+      "fractures_associated": ["traumatic brain injury", "CSF leak", "cranial nerve palsy"]
+    },
+    "mandible": {"region": "head", "fractures_associated": ["dental injury", "airway compromise"]},
+    "maxilla": {"region": "head"},
+    "zygoma": {"region": "head"},
+    "nasal_bones": {"region": "head"},
+    "hyoid": {"region": "neck"},
+
+    "cervical_vertebrae_C1_C7": {"region": "neck", "key_bones": ["C1_atlas", "C2_axis", "C7_vertebra_prominens"]},
+    "thoracic_vertebrae_T1_T12": {"region": "thorax"},
+    "lumbar_vertebrae_L1_L5": {"region": "lower_back"},
+    "sacrum": {"region": "pelvis"},
+    "coccyx": {"region": "pelvis"},
+
+    "clavicle": {"region": "shoulder_girdle", "fractures_associated": ["brachial plexus injury", "subclavian vessel"]},
+    "scapula": {"region": "shoulder_girdle"},
+    "sternum": {"region": "thorax", "parts": ["manubrium", "body", "xiphoid"]},
+    "ribs_1_to_12": {"region": "thorax", "fractures_associated": ["pneumothorax", "hemothorax", "flail chest"]},
+
+    "humerus": {"region": "upper_arm", "fractures_associated": ["radial nerve palsy (midshaft)"]},
+    "radius": {"region": "forearm"},
+    "ulna": {"region": "forearm"},
+    "carpal_bones": {"region": "wrist", "key_bones": ["scaphoid", "lunate", "trapezium"]},
+    "metacarpals": {"region": "hand"},
+    "phalanges_hand": {"region": "fingers"},
+
+    "pelvis": {"region": "pelvis", "parts": ["ilium", "ischium", "pubis"]},
+    "femur": {"region": "thigh", "fractures_associated": ["femoral artery injury", "fat embolism", "DVT/PE"]},
+    "patella": {"region": "knee"},
+    "tibia": {"region": "leg"},
+    "fibula": {"region": "leg", "fractures_associated": ["common peroneal nerve injury"]},
+    "tarsal_bones": {"region": "ankle", "key_bones": ["talus", "calcaneus"]},
+    "metatarsals": {"region": "foot"},
+    "phalanges_foot": {"region": "toes"}
+  },
+
+  "joint_classifications": {
+    "synovial": {
+      "subtypes": ["hinge (knee, elbow)", "ball_and_socket (shoulder, hip)",
+                   "pivot (atlantoaxial)", "saddle (thumb CMC)",
+                   "condyloid (MCP)", "plane (intercarpal)"],
+      "common_pathology": ["arthritis (OA, RA, septic, gout)", "dislocation", "ligament injury"]
+    },
+    "cartilaginous": {
+      "examples": ["intervertebral disks", "pubic symphysis"],
+      "common_pathology": ["disk herniation", "pubic symphysis instability"]
+    },
+    "fibrous": {
+      "examples": ["skull sutures", "tibiofibular syndesmosis"],
+      "common_pathology": ["craniosynostosis", "ankle high sprain"]
+    }
+  }
+}

@@ -1,0 +1,419 @@
+{
+  "_metadata": {
+    "organ": "skin",
+    "schema_version": "2.0",
+    "description": "Skin state model. Used by cellulitis, abscess, dermatitis, urticaria, burns.",
+    "source": "Fitzpatrick's Dermatology; Harrison's IM Dermatology",
+    "review_status": "unreviewed"
+  },
+  "state_variables": {
+    "inflammation": {
+      "range": [
+        0,
+        1
+      ],
+      "description": "dermal/epidermal inflammation"
+    },
+    "barrier_integrity": {
+      "range": [
+        0,
+        1
+      ],
+      "description": "stratum corneum function — HIGHER = better",
+      "inverse": true
+    },
+    "infection": {
+      "range": [
+        0,
+        1
+      ],
+      "description": "bacterial/fungal/viral pathogen load"
+    },
+    "vasodilation": {
+      "range": [
+        0,
+        1
+      ],
+      "description": "dermal capillary dilation (erythema)"
+    },
+    "edema": {
+      "range": [
+        0,
+        1
+      ],
+      "description": "interstitial fluid accumulation"
+    },
+    "pruritus_signal": {
+      "range": [
+        0,
+        1
+      ],
+      "description": "histamine/cytokine itch signaling"
+    },
+    "abscess_formation": {
+      "range": [
+        0,
+        1
+      ],
+      "description": "localized pus collection"
+    },
+    "necrosis": {
+      "range": [
+        0,
+        1
+      ],
+      "description": "tissue death (severe infection, ischemia)"
+    }
+  },
+  "derivation_rules": [
+    {
+      "symptom": "erythema",
+      "condition": {
+        "state": "vasodilation",
+        "op": ">",
+        "threshold": 0.5
+      },
+      "rationale": "cutaneous vasodilation → visible redness",
+      "confidence": 1.0
+    },
+    {
+      "symptom": "skin warmth",
+      "condition": {
+        "state": "vasodilation",
+        "op": ">",
+        "threshold": 0.5
+      },
+      "rationale": "increased blood flow → palpable warmth",
+      "confidence": 1.0
+    },
+    {
+      "symptom": "skin swelling",
+      "condition": {
+        "state": "edema",
+        "op": ">",
+        "threshold": 0.5
+      },
+      "rationale": "interstitial fluid accumulation in dermis/subcutis",
+      "confidence": 1.0
+    },
+    {
+      "symptom": "skin pain",
+      "condition": {
+        "state": "inflammation",
+        "op": ">",
+        "threshold": 0.5
+      },
+      "rationale": "inflammatory mediators sensitize cutaneous nociceptors",
+      "confidence": 0.9
+    },
+    {
+      "symptom": "pruritus",
+      "condition": {
+        "state": "pruritus_signal",
+        "op": ">",
+        "threshold": 0.5
+      },
+      "rationale": "histamine/IL-31 activate C-fibers → itch sensation",
+      "confidence": 1.0
+    },
+    {
+      "symptom": "fever",
+      "condition": {
+        "state": "infection",
+        "op": ">",
+        "threshold": 0.6
+      },
+      "rationale": "skin infection releases pyrogens",
+      "confidence": 0.8
+    },
+    {
+      "symptom": "fluctuant mass",
+      "condition": {
+        "state": "abscess_formation",
+        "op": ">",
+        "threshold": 0.5
+      },
+      "rationale": "pus collection palpable as fluctuant mass",
+      "confidence": 1.0
+    },
+    {
+      "symptom": "rash",
+      "condition": {
+        "all": [
+          {
+            "state": "inflammation",
+            "op": ">",
+            "threshold": 0.4
+          },
+          {
+            "state": "vasodilation",
+            "op": ">",
+            "threshold": 0.4
+          }
+        ]
+      },
+      "rationale": "combination of dermal inflammation + vasodilation produces visible rash",
+      "confidence": 1.0
+    }
+  ],
+  "propagation_rules": [
+    {
+      "trigger": {
+        "state": "barrier_integrity",
+        "op": "<",
+        "threshold": 0.5
+      },
+      "effect": {
+        "state": "infection",
+        "delta": 0.3
+      },
+      "rationale": "compromised barrier allows pathogen entry",
+      "via": "intra_organ",
+      "review_status": "unreviewed"
+    },
+    {
+      "trigger": {
+        "state": "infection",
+        "op": ">",
+        "threshold": 0.5
+      },
+      "effect": {
+        "state": "inflammation",
+        "delta": 0.5
+      },
+      "rationale": "pathogen triggers inflammatory cascade",
+      "via": "intra_organ",
+      "review_status": "unreviewed"
+    },
+    {
+      "trigger": {
+        "state": "inflammation",
+        "op": ">",
+        "threshold": 0.5
+      },
+      "effect": {
+        "state": "vasodilation",
+        "delta": 0.4
+      },
+      "rationale": "inflammatory mediators (histamine, bradykinin) → vasodilation",
+      "via": "intra_organ",
+      "review_status": "unreviewed"
+    },
+    {
+      "trigger": {
+        "state": "inflammation",
+        "op": ">",
+        "threshold": 0.5
+      },
+      "effect": {
+        "state": "edema",
+        "delta": 0.4
+      },
+      "rationale": "increased vascular permeability → interstitial edema",
+      "via": "intra_organ",
+      "review_status": "unreviewed"
+    },
+    {
+      "trigger": {
+        "state": "infection",
+        "op": ">",
+        "threshold": 0.7
+      },
+      "effect": {
+        "state": "abscess_formation",
+        "delta": 0.4
+      },
+      "rationale": "neutrophil accumulation + tissue liquefaction → abscess",
+      "via": "intra_organ",
+      "review_status": "unreviewed"
+    },
+    {
+      "trigger": {
+        "state": "infection",
+        "op": ">",
+        "threshold": 0.6
+      },
+      "effect": {
+        "organ": "blood",
+        "state": "infection_load",
+        "delta": 0.2
+      },
+      "rationale": "skin infection can seed bloodstream (cellulitis, erysipelas → bacteremia)",
+      "via": "lymphatic",
+      "review_status": "unreviewed"
+    }
+  ],
+  "connections": {
+    "incoming": [
+      "blood (dermal capillaries)",
+      "neural (sensory + autonomic)"
+    ],
+    "outgoing": [
+      "blood (toxin/pathogen absorption)",
+      "lymphatic (regional drainage)"
+    ],
+    "neural": [
+      "all dermatomes C2-S5",
+      "sympathetic (sweating, vasomotor)"
+    ]
+  },
+  "diseases": {
+    "Cellulitis": {
+      "review_status": "unreviewed",
+      "description": "Bacterial infection of dermis + subcutis (typically Strep or Staph).",
+      "perturbations": [
+        {
+          "variable": "infection",
+          "delta": 0.75,
+          "cause": "bacterial entry through skin break"
+        },
+        {
+          "variable": "inflammation",
+          "delta": 0.7,
+          "cause": "neutrophil response to invading bacteria"
+        },
+        {
+          "variable": "vasodilation",
+          "delta": 0.6,
+          "cause": "inflammatory mediators"
+        },
+        {
+          "variable": "edema",
+          "delta": 0.55,
+          "cause": "vascular permeability + lymphatic congestion"
+        }
+      ]
+    },
+    "Skin Abscess": {
+      "review_status": "unreviewed",
+      "description": "Localized collection of pus (typically Staph aureus).",
+      "perturbations": [
+        {
+          "variable": "infection",
+          "delta": 0.8,
+          "cause": "localized bacterial infection"
+        },
+        {
+          "variable": "abscess_formation",
+          "delta": 0.75,
+          "cause": "walled-off pus collection"
+        },
+        {
+          "variable": "inflammation",
+          "delta": 0.65,
+          "cause": "surrounding inflammation"
+        }
+      ]
+    },
+    "Contact Dermatitis": {
+      "review_status": "unreviewed",
+      "description": "Type IV hypersensitivity or irritant reaction to allergen/chemical.",
+      "perturbations": [
+        {
+          "variable": "inflammation",
+          "delta": 0.55,
+          "cause": "T-cell mediated reaction or chemical irritation"
+        },
+        {
+          "variable": "pruritus_signal",
+          "delta": 0.7,
+          "cause": "cytokine-mediated itch (IL-31, IL-4)"
+        },
+        {
+          "variable": "barrier_integrity",
+          "delta": -0.3,
+          "cause": "epidermal disruption"
+        }
+      ]
+    },
+    "Acute Urticaria": {
+      "review_status": "unreviewed",
+      "description": "Mast cell degranulation → wheals + pruritus (IgE-mediated or other triggers).",
+      "perturbations": [
+        {
+          "variable": "vasodilation",
+          "delta": 0.65,
+          "cause": "mast cell histamine release"
+        },
+        {
+          "variable": "edema",
+          "delta": 0.6,
+          "cause": "increased vascular permeability"
+        },
+        {
+          "variable": "pruritus_signal",
+          "delta": 0.75,
+          "cause": "histamine on H1 receptors of C-fibers"
+        }
+      ]
+    },
+    "Atopic Dermatitis": {
+      "_review_status": "unreviewed",
+      "description": "Chronic relapsing eczema — Th2-mediated with skin barrier dysfunction.",
+      "perturbations": [
+        {
+          "variable": "inflammation",
+          "delta": 0.5,
+          "cause": "Th2-mediated dermal inflammation"
+        },
+        {
+          "variable": "barrier_integrity",
+          "delta": -0.45,
+          "cause": "filaggrin / lipid barrier dysfunction"
+        },
+        {
+          "variable": "pruritus_signal",
+          "delta": 0.65,
+          "cause": "IL-31 + histamine pruritogens"
+        }
+      ]
+    },
+    "Necrotizing Fasciitis": {
+      "review_status": "unreviewed",
+      "description": "Rapidly progressive deep soft-tissue infection causing fascial necrosis and systemic toxicity.",
+      "perturbations": [
+        {
+          "variable": "infection",
+          "delta": 0.9,
+          "cause": "invasive bacterial infection of deep tissues"
+        },
+        {
+          "variable": "inflammation",
+          "delta": 0.85,
+          "cause": "aggressive toxin-mediated inflammatory response"
+        },
+        {
+          "variable": "necrosis",
+          "delta": 0.85,
+          "cause": "fascial and soft-tissue death"
+        },
+        {
+          "variable": "barrier_integrity",
+          "delta": -0.6,
+          "cause": "destruction of tissue barrier"
+        }
+      ]
+    },
+    "Herpes Zoster": {
+      "review_status": "unreviewed",
+      "description": "Reactivation of varicella-zoster virus in a dermatomal distribution causing painful vesicular eruption.",
+      "perturbations": [
+        {
+          "variable": "infection",
+          "delta": 0.55,
+          "cause": "viral reactivation in skin supplied by affected sensory nerve"
+        },
+        {
+          "variable": "inflammation",
+          "delta": 0.55,
+          "cause": "local inflammatory eruption"
+        },
+        {
+          "variable": "pruritus_signal",
+          "delta": 0.35,
+          "cause": "cutaneous sensory irritation"
+        }
+      ]
+    }
+  }
+}

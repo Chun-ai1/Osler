@@ -1,0 +1,95 @@
+{
+  "_comment": "OTC medication rules for Osler. Loaded by nexus_medical._build_otc_rules().",
+  "_version": "1.0",
+  "tiers": {
+    "always_ok": [
+      "Oral rehydration",
+      "Saline nasal rinse",
+      "Nasal saline"
+    ],
+    "conditional": [
+      "Dextromethorphan",
+      "Guaifenesin",
+      "Bismuth subsalicylate",
+      "Ginger",
+      "Antacid",
+      "Famotidine",
+      "Acetaminophen",
+      "Ibuprofen"
+    ],
+    "restricted": [
+      "Loperamide"
+    ]
+  },
+  "restrictions": {
+    "Loperamide": {
+      "blocked_when": [
+        "bloody stool",
+        "blood in stool",
+        "bloody diarrhea",
+        "bloody vomit",
+        "vomiting blood",
+        "hematemesis",
+        "melena",
+        "dark stool",
+        "black stool"
+      ],
+      "reason": "Contraindicated in GI bleeding / dysentery"
+    }
+  },
+  "symptom_map": {
+    "fever": [
+      "Acetaminophen",
+      "Ibuprofen"
+    ],
+    "headache": [
+      "Acetaminophen",
+      "Ibuprofen"
+    ],
+    "pain": [
+      "Acetaminophen",
+      "Ibuprofen"
+    ],
+    "sore throat": [
+      "Acetaminophen"
+    ],
+    "cough": [
+      "Dextromethorphan",
+      "Guaifenesin"
+    ],
+    "diarrhea": [
+      "Oral rehydration",
+      "Loperamide"
+    ],
+    "nausea": [
+      "Bismuth subsalicylate",
+      "Ginger"
+    ],
+    "heartburn": [
+      "Famotidine",
+      "Antacid"
+    ],
+    "vomiting": [
+      "Oral rehydration"
+    ],
+    "runny nose": [
+      "Guaifenesin"
+    ],
+    "congestion": [
+      "Guaifenesin",
+      "Saline nasal rinse"
+    ],
+    "itching": [
+      "Diphenhydramine",
+      "Cetirizine"
+    ],
+    "rash": [
+      "Diphenhydramine",
+      "Cetirizine"
+    ],
+    "hives": [
+      "Diphenhydramine",
+      "Cetirizine"
+    ]
+  }
+}

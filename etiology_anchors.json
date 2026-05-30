@@ -1,0 +1,59 @@
+{
+  "_comment": "Discriminating etiology anchors used by evidence_gate Layer 3.",
+  "_version": "1.0",
+  "_note": "These symptoms DISCRIMINATE viral/bacterial from other causes. More specific than broad symptom-file anchors.",
+  "discriminating_viral": [
+    "fever",
+    "chills",
+    "myalgia",
+    "body aches",
+    "fatigue",
+    "sore throat",
+    "runny nose",
+    "nasal congestion",
+    "sneezing",
+    "headache",
+    "sick contact",
+    "uri prodrome",
+    "pharyngitis"
+  ],
+  "discriminating_bacterial": [
+    "purulent discharge",
+    "focal pain",
+    "dysuria",
+    "urinary frequency",
+    "flank pain",
+    "productive cough",
+    "high fever",
+    "night sweats",
+    "localized swelling",
+    "lymphadenopathy"
+  ],
+  "strong_viral": [
+    "fever",
+    "cough",
+    "sore throat",
+    "runny nose",
+    "congestion",
+    "rash",
+    "body aches",
+    "lymphadenopathy"
+  ],
+  "nonspecific_infection": [
+    "chills",
+    "vomiting",
+    "diarrhea",
+    "nausea"
+  ],
+  "bleed_symptoms": [
+    "bloody stool",
+    "blood in stool",
+    "bloody diarrhea",
+    "bloody vomit",
+    "vomiting blood",
+    "hematemesis",
+    "melena",
+    "dark stool",
+    "black stool"
+  ]
+}

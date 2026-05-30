@@ -1,0 +1,435 @@
+{
+  "_metadata": {
+    "organ": "liver",
+    "schema_version": "2.0",
+    "description": "Liver state model. Used by hepatitis, cirrhosis, hepatic failure.",
+    "source": "Boron & Boulpaep; Harrison's IM Hepatology",
+    "review_status": "unreviewed"
+  },
+  "state_variables": {
+    "hepatocyte_inflammation": {
+      "range": [
+        0,
+        1
+      ],
+      "description": "viral/toxic hepatocyte injury"
+    },
+    "synthetic_function": {
+      "range": [
+        0,
+        1
+      ],
+      "description": "albumin, clotting factors — HIGHER = better",
+      "inverse": true
+    },
+    "detoxification": {
+      "range": [
+        0,
+        1
+      ],
+      "description": "ammonia, drug clearance — HIGHER = better",
+      "inverse": true
+    },
+    "bilirubin_conjugation": {
+      "range": [
+        0,
+        1
+      ],
+      "description": "bilirubin processing — HIGHER = better",
+      "inverse": true
+    },
+    "portal_pressure": {
+      "range": [
+        0,
+        1
+      ],
+      "description": "portal vein hypertension"
+    },
+    "ascites": {
+      "range": [
+        0,
+        1
+      ],
+      "description": "peritoneal fluid accumulation"
+    },
+    "fibrosis": {
+      "range": [
+        0,
+        1
+      ],
+      "description": "scarring / cirrhosis severity"
+    },
+    "encephalopathy_risk": {
+      "range": [
+        0,
+        1
+      ],
+      "description": "ammonia → brain risk"
+    },
+    "fat_infiltration": {
+      "range": [
+        0,
+        1
+      ],
+      "description": "steatosis — fat in hepatocytes"
+    }
+  },
+  "derivation_rules": [
+    {
+      "symptom": "jaundice",
+      "condition": {
+        "state": "bilirubin_conjugation",
+        "op": "<",
+        "threshold": 0.5
+      },
+      "rationale": "impaired bilirubin conjugation → hyperbilirubinemia → yellow sclera/skin",
+      "confidence": 1.0
+    },
+    {
+      "symptom": "right upper quadrant pain",
+      "condition": {
+        "state": "hepatocyte_inflammation",
+        "op": ">",
+        "threshold": 0.5
+      },
+      "rationale": "Glisson capsule stretch from hepatic inflammation activates visceral afferents (T6-T9)",
+      "confidence": 0.9
+    },
+    {
+      "symptom": "fatigue",
+      "condition": {
+        "state": "synthetic_function",
+        "op": "<",
+        "threshold": 0.6
+      },
+      "rationale": "reduced albumin and energy substrate synthesis → systemic fatigue",
+      "confidence": 0.7
+    },
+    {
+      "symptom": "abdominal distension",
+      "condition": {
+        "state": "ascites",
+        "op": ">",
+        "threshold": 0.5
+      },
+      "rationale": "peritoneal fluid accumulation distends abdomen",
+      "confidence": 1.0
+    },
+    {
+      "symptom": "confusion",
+      "condition": {
+        "state": "encephalopathy_risk",
+        "op": ">",
+        "threshold": 0.5
+      },
+      "rationale": "elevated ammonia crosses blood-brain barrier → hepatic encephalopathy",
+      "confidence": 0.9
+    },
+    {
+      "symptom": "bleeding tendency",
+      "condition": {
+        "state": "synthetic_function",
+        "op": "<",
+        "threshold": 0.4
+      },
+      "rationale": "reduced clotting factor synthesis (II, VII, IX, X) → coagulopathy",
+      "confidence": 0.9
+    },
+    {
+      "symptom": "nausea",
+      "condition": {
+        "state": "hepatocyte_inflammation",
+        "op": ">",
+        "threshold": 0.6
+      },
+      "rationale": "inflammatory cytokines activate CTZ + reduced GI tolerance",
+      "confidence": 0.7
+    },
+    {
+      "symptom": "hepatomegaly",
+      "condition": {
+        "any": [
+          {
+            "state": "hepatocyte_inflammation",
+            "op": ">",
+            "threshold": 0.4
+          },
+          {
+            "state": "fat_infiltration",
+            "op": ">",
+            "threshold": 0.5
+          }
+        ]
+      },
+      "rationale": "inflammation or fat accumulation enlarges liver",
+      "confidence": 0.9
+    }
+  ],
+  "propagation_rules": [
+    {
+      "trigger": {
+        "state": "hepatocyte_inflammation",
+        "op": ">",
+        "threshold": 0.6
+      },
+      "effect": {
+        "state": "bilirubin_conjugation",
+        "delta": -0.4
+      },
+      "rationale": "hepatocyte injury impairs conjugation machinery",
+      "via": "intra_organ",
+      "review_status": "unreviewed"
+    },
+    {
+      "trigger": {
+        "state": "hepatocyte_inflammation",
+        "op": ">",
+        "threshold": 0.6
+      },
+      "effect": {
+        "state": "synthetic_function",
+        "delta": -0.3
+      },
+      "rationale": "injured hepatocytes synthesize less albumin/clotting factors",
+      "via": "intra_organ",
+      "review_status": "unreviewed"
+    },
+    {
+      "trigger": {
+        "state": "fibrosis",
+        "op": ">",
+        "threshold": 0.5
+      },
+      "effect": {
+        "state": "portal_pressure",
+        "delta": 0.5
+      },
+      "rationale": "cirrhotic architecture obstructs sinusoidal flow → portal hypertension",
+      "via": "intra_organ",
+      "review_status": "unreviewed"
+    },
+    {
+      "trigger": {
+        "state": "portal_pressure",
+        "op": ">",
+        "threshold": 0.6
+      },
+      "effect": {
+        "state": "ascites",
+        "delta": 0.4
+      },
+      "rationale": "portal hypertension + low albumin → transudate into peritoneum",
+      "via": "intra_organ",
+      "review_status": "unreviewed"
+    },
+    {
+      "trigger": {
+        "state": "detoxification",
+        "op": "<",
+        "threshold": 0.4
+      },
+      "effect": {
+        "state": "encephalopathy_risk",
+        "delta": 0.5
+      },
+      "rationale": "ammonia accumulates without hepatic clearance",
+      "via": "intra_organ",
+      "review_status": "unreviewed"
+    },
+    {
+      "trigger": {
+        "state": "portal_pressure",
+        "op": ">",
+        "threshold": 0.6
+      },
+      "effect": {
+        "organ": "spleen",
+        "state": "congestion",
+        "delta": 0.4
+      },
+      "rationale": "backward portal pressure → splenic vein congestion → splenomegaly",
+      "via": "portal",
+      "review_status": "unreviewed"
+    }
+  ],
+  "connections": {
+    "incoming": [
+      "gi (portal vein)",
+      "blood (hepatic artery)"
+    ],
+    "outgoing": [
+      "heart (hepatic vein → IVC)",
+      "gi (bile)",
+      "spleen (portal collateral)"
+    ],
+    "neural": [
+      "vagus",
+      "celiac plexus"
+    ]
+  },
+  "diseases": {
+    "Acute Viral Hepatitis": {
+      "review_status": "unreviewed",
+      "description": "Hepatocellular inflammation from HAV/HBV/HCV → jaundice, RUQ pain, fatigue.",
+      "perturbations": [
+        {
+          "variable": "hepatocyte_inflammation",
+          "delta": 0.75,
+          "cause": "viral cytopathic effect + immune-mediated injury"
+        },
+        {
+          "variable": "bilirubin_conjugation",
+          "delta": -0.5,
+          "cause": "impaired conjugation enzyme function"
+        }
+      ]
+    },
+    "Cirrhosis": {
+      "review_status": "unreviewed",
+      "description": "End-stage chronic liver disease with fibrosis, portal hypertension, decompensation.",
+      "perturbations": [
+        {
+          "variable": "fibrosis",
+          "delta": 0.8,
+          "cause": "chronic alcohol / viral / metabolic injury"
+        },
+        {
+          "variable": "synthetic_function",
+          "delta": -0.55,
+          "cause": "loss of functional hepatocyte mass"
+        },
+        {
+          "variable": "detoxification",
+          "delta": -0.5,
+          "cause": "reduced hepatocyte and shunting"
+        },
+        {
+          "variable": "bilirubin_conjugation",
+          "delta": -0.45,
+          "cause": "loss of functional hepatocytes"
+        }
+      ]
+    },
+    "Acute Liver Failure": {
+      "review_status": "unreviewed",
+      "description": "Sudden hepatocyte necrosis (e.g. acetaminophen overdose) → encephalopathy + coagulopathy.",
+      "perturbations": [
+        {
+          "variable": "hepatocyte_inflammation",
+          "delta": 0.9,
+          "cause": "massive hepatocyte necrosis"
+        },
+        {
+          "variable": "synthetic_function",
+          "delta": -0.75,
+          "cause": "rapid loss of functional liver mass"
+        },
+        {
+          "variable": "detoxification",
+          "delta": -0.7,
+          "cause": "failed ammonia clearance"
+        },
+        {
+          "variable": "encephalopathy_risk",
+          "delta": 0.65,
+          "cause": "ammonia + inflammatory mediators reach brain"
+        }
+      ]
+    },
+    "Acute Hepatitis": {
+      "_review_status": "unreviewed",
+      "description": "Acute liver inflammation from any cause (viral, drug, autoimmune).",
+      "perturbations": [
+        {
+          "variable": "hepatocyte_inflammation",
+          "delta": 0.65,
+          "cause": "viral / drug / autoimmune hepatocyte injury"
+        },
+        {
+          "variable": "bilirubin_conjugation",
+          "delta": -0.4,
+          "cause": "impaired conjugation in inflamed hepatocytes"
+        }
+      ]
+    },
+    "Alcoholic Hepatitis": {
+      "_review_status": "unreviewed",
+      "description": "Acute liver inflammation from alcohol — neutrophilic infiltration.",
+      "perturbations": [
+        {
+          "variable": "hepatocyte_inflammation",
+          "delta": 0.7,
+          "cause": "acetaldehyde-mediated injury + neutrophilic response"
+        },
+        {
+          "variable": "fat_infiltration",
+          "delta": 0.55,
+          "cause": "ethanol-induced steatosis"
+        },
+        {
+          "variable": "synthetic_function",
+          "delta": -0.4,
+          "cause": "loss of functional hepatocyte mass"
+        }
+      ]
+    },
+    "Non-alcoholic Fatty Liver Disease": {
+      "_review_status": "unreviewed",
+      "description": "Fat in hepatocytes from metabolic syndrome — may progress to NASH.",
+      "perturbations": [
+        {
+          "variable": "fat_infiltration",
+          "delta": 0.55,
+          "cause": "insulin resistance → hepatic lipogenesis"
+        },
+        {
+          "variable": "hepatocyte_inflammation",
+          "delta": 0.25,
+          "cause": "lipotoxicity (NASH if higher)"
+        }
+      ]
+    },
+    "Hepatic Encephalopathy": {
+      "review_status": "unreviewed",
+      "description": "Brain dysfunction caused by impaired hepatic detoxification and accumulation of neurotoxins such as ammonia.",
+      "perturbations": [
+        {
+          "variable": "detoxification",
+          "delta": -0.7,
+          "cause": "hepatic inability to clear ammonia and other neurotoxins"
+        },
+        {
+          "variable": "encephalopathy_risk",
+          "delta": 0.85,
+          "cause": "neurotoxin accumulation affects brain function"
+        },
+        {
+          "variable": "synthetic_function",
+          "delta": -0.3,
+          "cause": "usually occurs in significant hepatic dysfunction"
+        }
+      ]
+    },
+    "Primary Biliary Cholangitis": {
+      "review_status": "unreviewed",
+      "description": "Chronic autoimmune cholestatic liver disease causing progressive bile-duct injury and fibrosis.",
+      "perturbations": [
+        {
+          "variable": "hepatocyte_inflammation",
+          "delta": 0.35,
+          "cause": "immune-mediated biliary injury causes hepatic inflammation"
+        },
+        {
+          "variable": "bilirubin_conjugation",
+          "delta": -0.45,
+          "cause": "cholestasis impairs effective bilirubin handling"
+        },
+        {
+          "variable": "fibrosis",
+          "delta": 0.45,
+          "cause": "chronic cholestatic injury drives scarring"
+        }
+      ]
+    }
+  }
+}

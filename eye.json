@@ -1,0 +1,436 @@
+{
+  "_metadata": {
+    "organ": "eye",
+    "schema_version": "2.0",
+    "description": "Eye state model — covers conjunctivitis, glaucoma, retinopathy, optic neuritis, uveitis.",
+    "source": "AAO Basic & Clinical Science Course; Wills Eye Manual",
+    "review_status": "unreviewed"
+  },
+  "state_variables": {
+    "conjunctival_inflammation": {
+      "range": [
+        0,
+        1
+      ],
+      "description": "conjunctivitis severity"
+    },
+    "intraocular_pressure": {
+      "range": [
+        0,
+        1
+      ],
+      "description": "IOP (0.3 = normal ~15mmHg, high = glaucoma)",
+      "default": 0.3
+    },
+    "anterior_chamber_inflammation": {
+      "range": [
+        0,
+        1
+      ],
+      "description": "uveitis / iritis"
+    },
+    "retinal_inflammation": {
+      "range": [
+        0,
+        1
+      ],
+      "description": "retinitis"
+    },
+    "retinal_perfusion": {
+      "range": [
+        0,
+        1
+      ],
+      "description": "retinal blood flow — HIGHER = better",
+      "inverse": true
+    },
+    "vitreous_clarity": {
+      "range": [
+        0,
+        1
+      ],
+      "description": "vitreous transparency — HIGHER = better",
+      "inverse": true
+    },
+    "optic_nerve_function": {
+      "range": [
+        0,
+        1
+      ],
+      "description": "optic nerve conduction — HIGHER = better",
+      "inverse": true
+    },
+    "lens_clarity": {
+      "range": [
+        0,
+        1
+      ],
+      "description": "lens transparency — HIGHER = better",
+      "inverse": true
+    },
+    "corneal_integrity": {
+      "range": [
+        0,
+        1
+      ],
+      "description": "corneal epithelial integrity — HIGHER = better",
+      "inverse": true
+    },
+    "pupillary_response": {
+      "range": [
+        0,
+        1
+      ],
+      "description": "pupillary light reflex — HIGHER = better",
+      "inverse": true
+    }
+  },
+  "derivation_rules": [
+    {
+      "symptom": "red eye",
+      "condition": {
+        "any": [
+          {
+            "state": "conjunctival_inflammation",
+            "op": ">",
+            "threshold": 0.4
+          },
+          {
+            "state": "anterior_chamber_inflammation",
+            "op": ">",
+            "threshold": 0.4
+          }
+        ]
+      },
+      "rationale": "conjunctival or scleral vasodilation from inflammation",
+      "confidence": 1.0
+    },
+    {
+      "symptom": "eye discharge",
+      "condition": {
+        "state": "conjunctival_inflammation",
+        "op": ">",
+        "threshold": 0.5
+      },
+      "rationale": "viral (watery) or bacterial (purulent) conjunctivitis",
+      "confidence": 0.9
+    },
+    {
+      "symptom": "eye pain",
+      "condition": {
+        "any": [
+          {
+            "state": "intraocular_pressure",
+            "op": ">",
+            "threshold": 0.7
+          },
+          {
+            "state": "anterior_chamber_inflammation",
+            "op": ">",
+            "threshold": 0.5
+          },
+          {
+            "state": "corneal_integrity",
+            "op": "<",
+            "threshold": 0.5
+          }
+        ]
+      },
+      "rationale": "raised IOP, uveitis, or corneal abrasion all activate eye nociceptors",
+      "confidence": 1.0
+    },
+    {
+      "symptom": "photophobia",
+      "condition": {
+        "any": [
+          {
+            "state": "anterior_chamber_inflammation",
+            "op": ">",
+            "threshold": 0.4
+          },
+          {
+            "state": "corneal_integrity",
+            "op": "<",
+            "threshold": 0.5
+          }
+        ]
+      },
+      "rationale": "ciliary muscle spasm with light in iritis/keratitis",
+      "confidence": 0.9
+    },
+    {
+      "symptom": "vision loss",
+      "condition": {
+        "any": [
+          {
+            "state": "optic_nerve_function",
+            "op": "<",
+            "threshold": 0.6
+          },
+          {
+            "state": "retinal_perfusion",
+            "op": "<",
+            "threshold": 0.7
+          },
+          {
+            "state": "vitreous_clarity",
+            "op": "<",
+            "threshold": 0.5
+          }
+        ]
+      },
+      "rationale": "optic nerve, retinal perfusion, or vitreous opacity all cause vision loss",
+      "confidence": 1.0
+    },
+    {
+      "symptom": "blurry vision",
+      "condition": {
+        "any": [
+          {
+            "state": "lens_clarity",
+            "op": "<",
+            "threshold": 0.6
+          },
+          {
+            "state": "corneal_integrity",
+            "op": "<",
+            "threshold": 0.6
+          }
+        ]
+      },
+      "rationale": "lens opacity (cataract) or corneal abnormality blurs vision",
+      "confidence": 1.0
+    },
+    {
+      "symptom": "halos around lights",
+      "condition": {
+        "state": "intraocular_pressure",
+        "op": ">",
+        "threshold": 0.7
+      },
+      "rationale": "corneal edema from acute IOP elevation diffracts light",
+      "confidence": 0.9
+    },
+    {
+      "symptom": "fixed mid-dilated pupil",
+      "condition": {
+        "all": [
+          {
+            "state": "intraocular_pressure",
+            "op": ">",
+            "threshold": 0.7
+          },
+          {
+            "state": "pupillary_response",
+            "op": "<",
+            "threshold": 0.4
+          }
+        ]
+      },
+      "rationale": "acute angle closure → ischemic iris sphincter paralysis",
+      "confidence": 1.0
+    },
+    {
+      "symptom": "floaters",
+      "condition": {
+        "state": "vitreous_clarity",
+        "op": "<",
+        "threshold": 0.7
+      },
+      "rationale": "blood, inflammation, or vitreous degeneration → debris cast shadows",
+      "confidence": 0.9
+    },
+    {
+      "symptom": "tearing",
+      "condition": {
+        "state": "conjunctival_inflammation",
+        "op": ">",
+        "threshold": 0.4
+      },
+      "rationale": "reflex lacrimation from ocular irritation",
+      "confidence": 0.8
+    },
+    {
+      "symptom": "blurry vision",
+      "condition": {
+        "state": "retinal_perfusion",
+        "op": "<",
+        "threshold": 0.7
+      },
+      "rationale": "macular involvement → central vision degradation",
+      "confidence": 0.7
+    },
+    {
+      "symptom": "floaters",
+      "condition": {
+        "state": "vitreous_clarity",
+        "op": "<",
+        "threshold": 0.8
+      },
+      "rationale": "microvascular bleeding or vitreous changes",
+      "confidence": 0.6
+    }
+  ],
+  "propagation_rules": [
+    {
+      "trigger": {
+        "state": "intraocular_pressure",
+        "op": ">",
+        "threshold": 0.7
+      },
+      "effect": {
+        "state": "optic_nerve_function",
+        "delta": -0.3
+      },
+      "rationale": "elevated IOP damages optic nerve (acutely in angle closure, chronically in glaucoma)",
+      "via": "intra_organ",
+      "review_status": "unreviewed"
+    },
+    {
+      "trigger": {
+        "state": "intraocular_pressure",
+        "op": ">",
+        "threshold": 0.7
+      },
+      "effect": {
+        "state": "retinal_perfusion",
+        "delta": -0.3
+      },
+      "rationale": "high IOP compresses retinal vessels",
+      "via": "intra_organ",
+      "review_status": "unreviewed"
+    },
+    {
+      "trigger": {
+        "state": "intraocular_pressure",
+        "op": ">",
+        "threshold": 0.8
+      },
+      "effect": {
+        "state": "pupillary_response",
+        "delta": -0.5
+      },
+      "rationale": "acute angle closure ischemia → mid-dilated fixed pupil",
+      "via": "intra_organ",
+      "review_status": "unreviewed"
+    }
+  ],
+  "connections": {
+    "incoming": [
+      "blood (ophthalmic artery from ICA)",
+      "neural (CN2, CN3, CN4, CN6, V1)"
+    ],
+    "outgoing": [
+      "brain (visual signals via CN2)"
+    ],
+    "neural": [
+      "CN2 (vision)",
+      "CN3/4/6 (motor)",
+      "V1 (sensory)"
+    ]
+  },
+  "diseases": {
+    "Conjunctivitis": {
+      "_review_status": "unreviewed",
+      "description": "Inflammation of conjunctiva (viral most common; bacterial, allergic).",
+      "perturbations": [
+        {
+          "variable": "conjunctival_inflammation",
+          "delta": 0.65,
+          "cause": "viral, bacterial, or allergic"
+        }
+      ]
+    },
+    "Acute Angle Closure Glaucoma": {
+      "_review_status": "unreviewed",
+      "description": "Sudden blockage of aqueous outflow → severe IOP elevation. Ophthalmologic emergency.",
+      "perturbations": [
+        {
+          "variable": "intraocular_pressure",
+          "delta": 0.65,
+          "cause": "pupillary block by iris-lens contact"
+        },
+        {
+          "variable": "anterior_chamber_inflammation",
+          "delta": 0.3,
+          "cause": "ischemic anterior segment"
+        }
+      ]
+    },
+    "Diabetic Retinopathy": {
+      "_review_status": "unreviewed",
+      "description": "Microvascular damage from chronic hyperglycemia — retinal microaneurysms, neovascularization.",
+      "perturbations": [
+        {
+          "variable": "retinal_perfusion",
+          "delta": -0.5,
+          "cause": "microvascular damage + capillary occlusion"
+        },
+        {
+          "variable": "vitreous_clarity",
+          "delta": -0.35,
+          "cause": "vitreous hemorrhage from neovessels"
+        }
+      ]
+    },
+    "Anterior Uveitis": {
+      "review_status": "unreviewed",
+      "description": "Inflammation in the anterior chamber/uvea causing a painful red eye and possible vision change.",
+      "perturbations": [
+        {
+          "variable": "anterior_chamber_inflammation",
+          "delta": 0.75,
+          "cause": "immune or infectious inflammation of anterior uvea"
+        },
+        {
+          "variable": "pupillary_response",
+          "delta": -0.25,
+          "cause": "iris inflammation can impair normal pupillary response"
+        }
+      ]
+    },
+    "Cataract": {
+      "review_status": "unreviewed",
+      "description": "Opacity of the crystalline lens leading to progressive painless visual impairment.",
+      "perturbations": [
+        {
+          "variable": "lens_clarity",
+          "delta": -0.75,
+          "cause": "lens protein aggregation and opacification"
+        }
+      ]
+    },
+    "Central Retinal Artery Occlusion": {
+      "review_status": "unreviewed",
+      "description": "Acute retinal ischemia from occlusion of arterial blood flow to the retina, causing sudden vision loss.",
+      "perturbations": [
+        {
+          "variable": "retinal_perfusion",
+          "delta": -0.85,
+          "cause": "arterial occlusion sharply reduces retinal blood flow"
+        },
+        {
+          "variable": "optic_nerve_function",
+          "delta": -0.45,
+          "cause": "severe retinal ischemia interrupts visual signaling"
+        }
+      ]
+    },
+    "Optic Neuritis": {
+      "review_status": "unreviewed",
+      "description": "Inflammatory dysfunction of the optic nerve causing painful visual loss.",
+      "perturbations": [
+        {
+          "variable": "optic_nerve_function",
+          "delta": -0.7,
+          "cause": "optic nerve inflammation/demyelination impairs conduction"
+        },
+        {
+          "variable": "retinal_inflammation",
+          "delta": 0.25,
+          "cause": "adjacent inflammatory visual pathway activity"
+        }
+      ]
+    }
+  }
+}

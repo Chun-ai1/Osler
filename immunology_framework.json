@@ -1,0 +1,138 @@
+{
+  "_metadata": {
+    "framework": "immunology",
+    "schema_version": "1.0",
+    "description": "Immunology framework — innate vs adaptive, autoimmune mechanisms, hypersensitivity types, immunodeficiencies.",
+    "source": "Janeway's Immunobiology; Harrison's IM Immunology",
+    "review_status": "unreviewed"
+  },
+
+  "immune_components": {
+    "innate": {
+      "cells": ["neutrophils", "macrophages", "dendritic_cells", "NK_cells", "mast_cells", "eosinophils", "basophils"],
+      "barriers": ["skin", "mucus", "stomach_acid", "commensal_flora"],
+      "molecules": ["complement", "cytokines (IL-1, IL-6, TNF, IFN)", "acute_phase_reactants (CRP, ferritin)"],
+      "review_status": "unreviewed"
+    },
+    "adaptive": {
+      "T_cells": {
+        "CD4_helper": ["Th1 (cellular)", "Th2 (humoral/allergy)", "Th17 (inflammatory/auto)", "Treg (regulation)"],
+        "CD8_cytotoxic": "kills virus-infected and tumor cells",
+        "review_status": "unreviewed"
+      },
+      "B_cells": {
+        "function": "antibody production (IgM, IgG, IgA, IgE, IgD)",
+        "isotypes": {
+          "IgM": "first response, complement activation",
+          "IgG": "secondary response, longest half-life, crosses placenta",
+          "IgA": "mucosal, breast milk",
+          "IgE": "allergy, parasites (mast cell binding)",
+          "IgD": "B cell receptor, function unclear"
+        }
+      },
+      "review_status": "unreviewed"
+    }
+  },
+
+  "hypersensitivity_types": {
+    "Type_I_IgE_mediated": {
+      "mechanism": "IgE binds mast cells → degranulation on re-exposure",
+      "time_course": "minutes",
+      "examples": ["anaphylaxis", "allergic rhinitis", "atopic asthma", "food allergy", "urticaria"],
+      "treatment": ["epinephrine (anaphylaxis)", "antihistamines", "corticosteroids"],
+      "state_effects": [
+        {"organ": "skin", "state": "vasodilation", "delta": 0.6},
+        {"organ": "skin", "state": "edema", "delta": 0.5},
+        {"organ": "lung", "state": "airflow_resistance", "delta": 0.5}
+      ],
+      "review_status": "unreviewed"
+    },
+    "Type_II_cytotoxic": {
+      "mechanism": "antibody binds cell surface antigen → complement or ADCC kills",
+      "examples": ["AIHA", "ITP", "Goodpasture (anti-GBM)", "Graves (anti-TSHR, stimulatory)", "myasthenia gravis (anti-AChR)", "transfusion reaction", "HDN"],
+      "review_status": "unreviewed"
+    },
+    "Type_III_immune_complex": {
+      "mechanism": "Ag-Ab complexes deposit → complement activation, tissue injury",
+      "examples": ["SLE", "post-strep GN", "serum sickness", "rheumatoid arthritis (partly)"],
+      "review_status": "unreviewed"
+    },
+    "Type_IV_delayed_T_cell": {
+      "mechanism": "T cell-mediated, no antibody",
+      "time_course": "48-72 hours",
+      "examples": ["contact dermatitis", "TB skin test (PPD)", "transplant rejection", "Type 1 DM", "MS", "Hashimoto thyroiditis"],
+      "review_status": "unreviewed"
+    }
+  },
+
+  "autoimmune_diseases": {
+    "_comment": "Organ-specific vs systemic autoimmune patterns.",
+    "organ_specific": {
+      "Hashimoto_thyroiditis": {"target": "thyroid (anti-TPO, anti-Tg)", "type": "IV"},
+      "Graves_disease": {"target": "TSH receptor (TSI)", "type": "II (stimulatory)"},
+      "Type_1_diabetes": {"target": "pancreatic β cells (anti-GAD, anti-islet)", "type": "IV"},
+      "myasthenia_gravis": {"target": "ACh receptor at NMJ", "type": "II"},
+      "Goodpasture": {"target": "alveolar + glomerular BM (anti-GBM)", "type": "II"},
+      "pemphigus": {"target": "desmoglein (epidermis)", "type": "II"},
+      "MS": {"target": "CNS myelin", "type": "IV"},
+      "Addison_disease": {"target": "adrenal cortex", "type": "IV"}
+    },
+    "systemic": {
+      "SLE": {
+        "antibodies": ["ANA", "anti-dsDNA", "anti-Sm", "anti-Ro", "anti-La", "antiphospholipid"],
+        "manifestations": ["malar rash", "arthritis", "nephritis", "serositis", "cytopenias", "neuropsych"],
+        "type": "III (mostly)"
+      },
+      "rheumatoid_arthritis": {
+        "antibodies": ["RF", "anti-CCP"],
+        "manifestations": ["symmetric polyarthritis", "morning stiffness", "rheumatoid nodules", "extra-articular"],
+        "type": "III/IV"
+      },
+      "Sjogren_syndrome": {
+        "antibodies": ["anti-Ro (SSA)", "anti-La (SSB)"],
+        "manifestations": ["xerostomia", "xerophthalmia", "parotid enlargement"]
+      },
+      "scleroderma_systemic_sclerosis": {
+        "antibodies": ["anti-Scl-70 (diffuse)", "anti-centromere (limited/CREST)"],
+        "manifestations": ["skin thickening", "Raynaud", "ILD", "renal crisis"]
+      },
+      "polymyositis_dermatomyositis": {
+        "antibodies": ["anti-Jo-1", "anti-Mi-2"],
+        "manifestations": ["proximal weakness", "Gottron papules (DM)", "heliotrope rash (DM)"]
+      },
+      "vasculitides": ["GPA (c-ANCA)", "MPA (p-ANCA)", "EGPA", "GCA", "PAN", "Takayasu", "Kawasaki", "IgA vasculitis"]
+    },
+    "review_status": "unreviewed"
+  },
+
+  "immunodeficiencies": {
+    "primary": {
+      "B_cell_defects": ["X-linked agammaglobulinemia (Bruton)", "CVID", "selective IgA deficiency"],
+      "T_cell_defects": ["DiGeorge (22q11)", "SCID"],
+      "combined": ["SCID (multiple causes)"],
+      "phagocyte_defects": ["CGD (NADPH oxidase)", "Chediak-Higashi", "leukocyte adhesion deficiency"],
+      "complement_defects": ["C5-C9 → Neisseria infections", "C1-esterase inhibitor → hereditary angioedema"]
+    },
+    "secondary": {
+      "causes": ["HIV/AIDS", "chemotherapy", "corticosteroids", "biologics (TNF blockers, rituximab)", "splenectomy", "malnutrition", "diabetes", "aging"],
+      "characteristic_infections": {
+        "T_cell_def": ["PCP", "CMV", "Candida", "Cryptococcus", "TB"],
+        "B_cell_def": ["encapsulated bacteria (S. pneumoniae, H. influenzae, N. meningitidis)"],
+        "neutrophil_def": ["Staph aureus", "gram-negatives", "fungi (Aspergillus, Candida)"],
+        "splenectomy": ["encapsulated bacteria → OPSI"],
+        "complement_late": ["Neisseria"]
+      }
+    },
+    "review_status": "unreviewed"
+  },
+
+  "transplant_immunology": {
+    "rejection_types": {
+      "hyperacute": "preformed antibodies (minutes-hours) — ABO mismatch",
+      "acute_cellular": "T-cell mediated (days-weeks)",
+      "acute_humoral": "antibody-mediated (days-weeks)",
+      "chronic": "vasculopathy, fibrosis (months-years)"
+    },
+    "immunosuppression": ["calcineurin inhibitors (tacrolimus, cyclosporine)", "antimetabolites (MMF, azathioprine)", "mTOR inhibitors (sirolimus)", "corticosteroids", "induction (basiliximab, ATG)"]
+  }
+}

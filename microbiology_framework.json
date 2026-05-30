@@ -1,0 +1,266 @@
+{
+  "_metadata": {
+    "framework": "microbiology",
+    "schema_version": "1.0",
+    "description": "Detailed microbiology — pathogens organized by class, gram stain, common sites, antibiotic susceptibility patterns.",
+    "source": "Sherris Medical Microbiology; Sanford Guide; Harrison's IM ID",
+    "review_status": "unreviewed"
+  },
+
+  "bacteria_gram_positive_cocci": {
+    "Staphylococcus_aureus": {
+      "morphology": "gram+ cocci in clusters",
+      "key_features": ["coagulase positive", "catalase positive"],
+      "common_sites": ["skin", "soft tissue", "bone (osteomyelitis)", "heart (endocarditis)", "lung"],
+      "common_syndromes": ["cellulitis", "abscess", "endocarditis", "pneumonia (post-influenza)", "TSS"],
+      "resistance": "MRSA (methicillin-resistant) widespread",
+      "antibiotics_susceptible_to": ["nafcillin/oxacillin (MSSA)", "vancomycin (MRSA)", "linezolid", "daptomycin"],
+      "review_status": "unreviewed"
+    },
+    "Streptococcus_pyogenes_GAS": {
+      "morphology": "gram+ cocci in chains",
+      "key_features": ["β-hemolytic", "Lancefield group A"],
+      "common_sites": ["pharynx", "skin", "uterus (postpartum)"],
+      "common_syndromes": ["strep throat", "scarlet fever", "rheumatic fever", "post-strep GN", "necrotizing fasciitis", "TSS"],
+      "antibiotics": ["penicillin (always sensitive)", "macrolides (alt)"],
+      "review_status": "unreviewed"
+    },
+    "Streptococcus_pneumoniae": {
+      "morphology": "gram+ lancet-shaped diplococci",
+      "key_features": ["α-hemolytic", "encapsulated", "optochin sensitive"],
+      "common_sites": ["lung", "meninges", "middle ear", "sinuses"],
+      "common_syndromes": ["CAP (most common)", "meningitis", "otitis media", "sinusitis"],
+      "antibiotics": ["penicillin", "ceftriaxone", "vancomycin (severe)"],
+      "vaccines": ["PCV13", "PPSV23"],
+      "review_status": "unreviewed"
+    },
+    "Enterococcus_faecalis_faecium": {
+      "morphology": "gram+ cocci in pairs/chains",
+      "common_sites": ["GI", "urinary tract", "endocardium"],
+      "resistance": "VRE (vancomycin-resistant) increasing",
+      "antibiotics": ["ampicillin", "vancomycin (E. faecalis)", "linezolid/daptomycin (VRE)"],
+      "review_status": "unreviewed"
+    }
+  },
+
+  "bacteria_gram_positive_rods": {
+    "Clostridioides_difficile": {
+      "morphology": "gram+ spore-forming rod, anaerobe",
+      "common_sites": ["colon"],
+      "common_syndromes": ["antibiotic-associated colitis", "pseudomembranous colitis", "toxic megacolon"],
+      "toxins": ["TcdA (enterotoxin)", "TcdB (cytotoxin)"],
+      "antibiotics": ["oral vancomycin", "fidaxomicin", "metronidazole (mild)"],
+      "review_status": "unreviewed"
+    },
+    "Clostridium_perfringens": {
+      "morphology": "gram+ spore-forming rod",
+      "syndromes": ["gas gangrene", "food poisoning"],
+      "review_status": "unreviewed"
+    },
+    "Bacillus_anthracis": {
+      "morphology": "gram+ spore-forming rod",
+      "syndromes": ["anthrax (cutaneous, inhalational, GI)"],
+      "review_status": "unreviewed"
+    },
+    "Listeria_monocytogenes": {
+      "morphology": "gram+ rod",
+      "common_sites": ["meninges", "placenta", "GI"],
+      "at_risk": ["pregnant women", "elderly", "immunocompromised", "neonates"],
+      "antibiotics": ["ampicillin + gentamicin"],
+      "review_status": "unreviewed"
+    }
+  },
+
+  "bacteria_gram_negative_rods": {
+    "Escherichia_coli": {
+      "morphology": "gram- rod, lactose fermenter",
+      "common_syndromes": ["UTI (most common)", "neonatal meningitis", "gastroenteritis (EHEC/ETEC)", "sepsis"],
+      "subtypes": ["EHEC (O157:H7) → HUS", "ETEC → traveler's diarrhea", "UPEC → UTI"],
+      "antibiotics": ["TMP-SMX (uncomplicated UTI)", "ceftriaxone", "fluoroquinolones (decreasing efficacy)"],
+      "resistance": "ESBL increasing",
+      "review_status": "unreviewed"
+    },
+    "Klebsiella_pneumoniae": {
+      "morphology": "gram- rod, encapsulated",
+      "syndromes": ["pneumonia (currant jelly sputum)", "UTI", "liver abscess (Asian populations)"],
+      "resistance": "ESBL, CRE",
+      "review_status": "unreviewed"
+    },
+    "Pseudomonas_aeruginosa": {
+      "morphology": "gram- rod, non-fermenter",
+      "common_sites": ["lung (CF, VAP)", "skin (burns, hot tub folliculitis)", "ear (otitis externa)"],
+      "antibiotics": ["antipseudomonal: ceftazidime, cefepime, piperacillin-tazobactam, meropenem, ciprofloxacin"],
+      "review_status": "unreviewed"
+    },
+    "Salmonella_typhi_non_typhi": {
+      "morphology": "gram- rod",
+      "syndromes": ["typhoid fever (S. typhi)", "gastroenteritis (non-typhi)"],
+      "review_status": "unreviewed"
+    },
+    "Shigella": {
+      "syndromes": ["bacillary dysentery (bloody diarrhea, low ID50)"],
+      "review_status": "unreviewed"
+    },
+    "Helicobacter_pylori": {
+      "morphology": "gram- helical, urease+",
+      "syndromes": ["gastritis", "peptic ulcer", "gastric MALT lymphoma", "gastric adenocarcinoma"],
+      "treatment": "triple/quadruple therapy (PPI + clarithromycin + amox or metro)",
+      "review_status": "unreviewed"
+    },
+    "Neisseria_meningitidis": {
+      "morphology": "gram- diplococci",
+      "syndromes": ["meningitis", "meningococcemia (purpura, Waterhouse-Friderichsen)"],
+      "antibiotics": ["ceftriaxone"],
+      "vaccines": ["MenACWY", "MenB"],
+      "review_status": "unreviewed"
+    },
+    "Neisseria_gonorrhoeae": {
+      "morphology": "gram- diplococci",
+      "syndromes": ["urethritis", "cervicitis", "PID", "disseminated gonococcal infection (arthritis-dermatitis)"],
+      "treatment": "ceftriaxone IM + doxycycline (for chlamydia coinfection)",
+      "review_status": "unreviewed"
+    }
+  },
+
+  "bacteria_atypical": {
+    "Mycobacterium_tuberculosis": {
+      "morphology": "acid-fast rod",
+      "syndromes": ["pulmonary TB", "miliary TB", "TB meningitis", "Pott disease (spinal)"],
+      "treatment": "RIPE (rifampin, isoniazid, pyrazinamide, ethambutol) × 2mo then RI × 4mo",
+      "review_status": "unreviewed"
+    },
+    "Mycoplasma_pneumoniae": {
+      "morphology": "no cell wall",
+      "syndromes": ["walking pneumonia (atypical)", "extrapulmonary: cold agglutinin AIHA, erythema multiforme"],
+      "treatment": "macrolide or doxycycline",
+      "review_status": "unreviewed"
+    },
+    "Chlamydia_trachomatis": {
+      "syndromes": ["urethritis/cervicitis", "PID", "LGV", "trachoma"],
+      "treatment": "doxycycline 7 days OR azithromycin 1g single dose",
+      "review_status": "unreviewed"
+    },
+    "Legionella_pneumophila": {
+      "syndromes": ["Legionnaire's disease (severe pneumonia)", "Pontiac fever"],
+      "diagnosis": "urinary antigen",
+      "treatment": "macrolide or fluoroquinolone",
+      "review_status": "unreviewed"
+    },
+    "Treponema_pallidum": {
+      "morphology": "spirochete",
+      "syndromes": ["syphilis (1°, 2°, 3°, tertiary, neurosyphilis, congenital)"],
+      "treatment": "penicillin G",
+      "review_status": "unreviewed"
+    },
+    "Borrelia_burgdorferi": {
+      "morphology": "spirochete",
+      "syndromes": ["Lyme disease (erythema migrans, arthritis, carditis, neuro)"],
+      "treatment": "doxycycline",
+      "review_status": "unreviewed"
+    }
+  },
+
+  "viruses": {
+    "Influenza_A_B": {
+      "syndromes": ["seasonal flu", "viral pneumonia", "Reye syndrome (with aspirin in kids)"],
+      "treatment": "oseltamivir within 48 hours",
+      "vaccine": "annual",
+      "review_status": "unreviewed"
+    },
+    "SARS_CoV_2": {
+      "syndromes": ["COVID-19 (URI, pneumonia, ARDS, multi-organ)"],
+      "treatment": "paxlovid (early), dexamethasone (severe), remdesivir",
+      "vaccine": "mRNA / adenovirus",
+      "review_status": "unreviewed"
+    },
+    "HIV": {
+      "syndromes": ["acute retroviral syndrome", "AIDS (opportunistic infections at CD4 < 200)"],
+      "treatment": "ART (combination)",
+      "review_status": "unreviewed"
+    },
+    "Hepatitis_A_E": {
+      "syndromes": ["acute hepatitis (HAV, HEV)", "chronic hepatitis (HBV, HCV, HDV)"],
+      "review_status": "unreviewed"
+    },
+    "Herpes_simplex_HSV1_HSV2": {
+      "syndromes": ["oral/genital herpes", "encephalitis (HSV1)", "neonatal HSV"],
+      "treatment": "acyclovir / valacyclovir",
+      "review_status": "unreviewed"
+    },
+    "Varicella_zoster": {
+      "syndromes": ["chickenpox (primary)", "shingles (reactivation)", "PHN", "Ramsay Hunt"],
+      "treatment": "acyclovir",
+      "vaccines": ["varicella", "shingrix"],
+      "review_status": "unreviewed"
+    },
+    "Epstein_Barr_EBV": {
+      "syndromes": ["mononucleosis", "Burkitt lymphoma", "nasopharyngeal carcinoma"],
+      "review_status": "unreviewed"
+    },
+    "Cytomegalovirus_CMV": {
+      "syndromes": ["mononucleosis-like", "congenital", "transplant complications", "retinitis (AIDS)"],
+      "review_status": "unreviewed"
+    },
+    "Norovirus": {
+      "syndromes": ["acute viral gastroenteritis"],
+      "review_status": "unreviewed"
+    }
+  },
+
+  "fungi": {
+    "Candida_albicans": {
+      "syndromes": ["thrush", "vulvovaginitis", "esophagitis (AIDS)", "candidemia"],
+      "treatment": "fluconazole; echinocandin (severe)",
+      "review_status": "unreviewed"
+    },
+    "Aspergillus": {
+      "syndromes": ["allergic bronchopulmonary aspergillosis (ABPA)", "aspergilloma", "invasive aspergillosis"],
+      "treatment": "voriconazole",
+      "review_status": "unreviewed"
+    },
+    "Cryptococcus_neoformans": {
+      "syndromes": ["cryptococcal meningitis (AIDS)"],
+      "treatment": "amphotericin B + flucytosine, then fluconazole",
+      "review_status": "unreviewed"
+    },
+    "Pneumocystis_jirovecii": {
+      "syndromes": ["PCP pneumonia (AIDS, immunocompromised)"],
+      "treatment": "TMP-SMX",
+      "review_status": "unreviewed"
+    }
+  },
+
+  "parasites": {
+    "Plasmodium_malaria": {
+      "species": ["falciparum (severe)", "vivax", "ovale", "malariae"],
+      "syndromes": ["cyclical fever", "cerebral malaria (falciparum)", "hemolytic anemia"],
+      "review_status": "unreviewed"
+    },
+    "Giardia_lamblia": {
+      "syndromes": ["chronic watery diarrhea", "malabsorption"],
+      "review_status": "unreviewed"
+    },
+    "Entamoeba_histolytica": {
+      "syndromes": ["amoebic dysentery", "liver abscess"],
+      "review_status": "unreviewed"
+    },
+    "Toxoplasma_gondii": {
+      "syndromes": ["congenital toxoplasmosis", "cerebral toxoplasmosis (AIDS)"],
+      "review_status": "unreviewed"
+    }
+  },
+
+  "antibiotic_spectrum_chart": {
+    "_comment": "Empiric antibiotic choice by infection site + likely pathogens.",
+    "CAP_outpatient": ["amoxicillin", "doxycycline", "macrolide"],
+    "CAP_inpatient": ["ceftriaxone + macrolide", "respiratory fluoroquinolone"],
+    "CAP_ICU": ["ceftriaxone + macrolide + cover MRSA/Pseudomonas if risk factors"],
+    "UTI_uncomplicated": ["nitrofurantoin", "TMP-SMX", "fosfomycin"],
+    "UTI_complicated_pyelonephritis": ["ceftriaxone", "fluoroquinolone"],
+    "meningitis_community": ["ceftriaxone + vancomycin + dexamethasone +/- ampicillin (Listeria if > 50 or immunocompromised)"],
+    "cellulitis_non_purulent": ["cephalexin", "dicloxacillin"],
+    "cellulitis_purulent_MRSA_risk": ["TMP-SMX", "doxycycline", "clindamycin"],
+    "intra_abdominal": ["piperacillin-tazobactam", "ceftriaxone + metronidazole"],
+    "sepsis_empiric": ["broad spectrum: cefepime/meropenem + vancomycin"]
+  }
+}

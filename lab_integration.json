@@ -1,0 +1,751 @@
+{
+  "_metadata": {
+    "framework": "lab_integration",
+    "schema_version": "1.0",
+    "description": "Bridges layer5_labs (51 lab values) to state_model state variables. When a lab is abnormal, this maps to which organ state changes. Bidirectional: abnormal labs → infer state perturbation; perturbed state → predict abnormal labs.",
+    "source": "Harrison's IM Lab Reference; Tietz Clinical Chemistry",
+    "review_status": "unreviewed"
+  },
+  "lab_to_state_mapping": {
+    "_comment": "lab_name → [organ.state_var, abnormality_direction, sensitivity]. Direction: 'high_means_perturb' (high lab → state increases), 'low_means_perturb' (low lab → state increases).",
+    "WBC": [
+      {
+        "organ": "blood",
+        "state": "infection_load",
+        "high_means_perturb": 0.7,
+        "rationale": "leukocytosis suggests bacterial infection"
+      },
+      {
+        "organ": null,
+        "state": "inflammation",
+        "high_means_perturb": 0.5,
+        "rationale": "WBC elevation in any inflammatory state (any organ)"
+      },
+      {
+        "organ": "blood",
+        "state": "wbc_count",
+        "abnormal_either_direction": 0.7,
+        "direct_state": true,
+        "rationale": "WBC IS the wbc_count state"
+      }
+    ],
+    "neutrophils_pct": [
+      {
+        "organ": "blood",
+        "state": "infection_load",
+        "high_means_perturb": 0.8,
+        "rationale": "neutrophilia → bacterial; pct > 75% specific"
+      }
+    ],
+    "lymphocytes_pct": [
+      {
+        "organ": "blood",
+        "state": "infection_load",
+        "high_means_perturb": 0.5,
+        "viral_marker": true,
+        "rationale": "lymphocytosis → viral infection (atypical lymphs)"
+      }
+    ],
+    "Hgb": [
+      {
+        "organ": "blood",
+        "state": "anemia_severity",
+        "low_means_perturb": 0.8,
+        "rationale": "low Hgb = anemia"
+      },
+      {
+        "organ": "blood",
+        "state": "hemoglobin_level",
+        "low_means_perturb": 0.9,
+        "direct_state": true,
+        "rationale": "Hgb IS the hemoglobin_level state"
+      },
+      {
+        "organ": "blood",
+        "state": "oxygen_carrying_capacity",
+        "low_means_perturb": 0.7,
+        "rationale": "low Hb → reduced O2 transport"
+      }
+    ],
+    "platelets": [
+      {
+        "organ": "spleen",
+        "state": "platelet_sequestration",
+        "low_means_perturb": 0.7,
+        "rationale": "thrombocytopenia in hypersplenism"
+      },
+      {
+        "organ": "liver",
+        "state": "synthetic_function",
+        "low_means_perturb": 0.5,
+        "inverse_lab": true,
+        "rationale": "cirrhosis → reduced TPO + sequestration"
+      },
+      {
+        "organ": "blood",
+        "state": "platelet_count",
+        "low_means_perturb": 1.0,
+        "direct_state": true,
+        "rationale": "platelets IS the platelet_count state"
+      }
+    ],
+    "CRP": [
+      {
+        "organ": null,
+        "state": "inflammation",
+        "high_means_perturb": 0.7,
+        "rationale": "acute phase reactant — sensitive but nonspecific inflammation marker"
+      },
+      {
+        "organ": "blood",
+        "state": "inflammation_marker",
+        "high_means_perturb": 0.9,
+        "direct_state": true,
+        "rationale": "CRP is a primary inflammation marker"
+      }
+    ],
+    "ESR": [
+      {
+        "organ": null,
+        "state": "inflammation",
+        "high_means_perturb": 0.6,
+        "rationale": "slower marker than CRP; chronic inflammation"
+      }
+    ],
+    "procalcitonin": [
+      {
+        "organ": "blood",
+        "state": "infection_load",
+        "high_means_perturb": 0.9,
+        "bacterial_specific": true,
+        "rationale": "PCT > 0.5 highly specific for bacterial infection"
+      }
+    ],
+    "creatinine": [
+      {
+        "organ": "kidney",
+        "state": "filtration",
+        "high_means_perturb": 0.8,
+        "inverse_state": true,
+        "rationale": "high Cr → low GFR (filtration impaired)"
+      }
+    ],
+    "BUN": [
+      {
+        "organ": "kidney",
+        "state": "filtration",
+        "high_means_perturb": 0.7,
+        "inverse_state": true,
+        "rationale": "high BUN → low GFR or dehydration"
+      }
+    ],
+    "GFR": [
+      {
+        "organ": "kidney",
+        "state": "filtration",
+        "low_means_perturb": 1.0,
+        "direct_state": true,
+        "rationale": "GFR IS the filtration state variable"
+      }
+    ],
+    "sodium": [
+      {
+        "organ": "kidney",
+        "state": "fluid_retention",
+        "abnormal_either_direction": 0.5,
+        "rationale": "Na+ derangement reflects fluid/volume status"
+      },
+      {
+        "organ": "brain",
+        "state": "neuronal_inflammation",
+        "abnormal_either_direction": 0.6,
+        "rationale": "severe hypo/hypernatremia → cerebral edema/dehydration"
+      }
+    ],
+    "potassium": [
+      {
+        "organ": "kidney",
+        "state": "filtration",
+        "high_means_perturb": 0.6,
+        "inverse_state": true,
+        "rationale": "hyperkalemia in AKI/CKD"
+      },
+      {
+        "organ": "heart",
+        "state": "electrical_instability",
+        "abnormal_either_direction": 0.8,
+        "rationale": "K+ derangement → arrhythmia risk"
+      }
+    ],
+    "chloride": [
+      {
+        "organ": "kidney",
+        "state": "fluid_retention",
+        "abnormal_either_direction": 0.3,
+        "rationale": "Cl- derangement often follows Na+"
+      }
+    ],
+    "bicarbonate": [
+      {
+        "organ": "lung",
+        "state": "gas_exchange",
+        "abnormal_either_direction": 0.5,
+        "rationale": "HCO3- reflects respiratory + metabolic acid-base"
+      },
+      {
+        "organ": "kidney",
+        "state": "filtration",
+        "low_means_perturb": 0.5,
+        "inverse_state": true,
+        "rationale": "metabolic acidosis from renal failure"
+      }
+    ],
+    "anion_gap": [
+      {
+        "organ": null,
+        "state": "metabolic_acidosis",
+        "high_means_perturb": 0.8,
+        "rationale": "high AG = unmeasured anions (lactate, ketones, uremic toxins)"
+      }
+    ],
+    "glucose": [
+      {
+        "organ": "pancreas",
+        "state": "blood_glucose_elevation",
+        "high_means_perturb": 1.0,
+        "direct_state": true,
+        "rationale": "hyperglycemia IS the state variable"
+      },
+      {
+        "organ": "pancreas",
+        "state": "insulin_secretion",
+        "high_means_perturb": 0.6,
+        "inverse_state": true,
+        "rationale": "persistent high glucose → low insulin function"
+      }
+    ],
+    "HbA1c": [
+      {
+        "organ": "pancreas",
+        "state": "insulin_secretion",
+        "high_means_perturb": 0.7,
+        "inverse_state": true,
+        "rationale": "elevated HbA1c → chronic insulin dysfunction"
+      }
+    ],
+    "ketones": [
+      {
+        "organ": "pancreas",
+        "state": "insulin_secretion",
+        "high_means_perturb": 0.8,
+        "inverse_state": true,
+        "rationale": "ketonuria/ketonemia in DKA (T1DM)"
+      }
+    ],
+    "lactate": [
+      {
+        "organ": null,
+        "state": "perfusion",
+        "high_means_perturb": 0.7,
+        "inverse_state": true,
+        "rationale": "lactic acidosis from hypoperfusion / anaerobic metabolism"
+      },
+      {
+        "organ": "liver",
+        "state": "detoxification",
+        "high_means_perturb": 0.4,
+        "inverse_state": true,
+        "rationale": "liver fails to clear lactate"
+      }
+    ],
+    "AST": [
+      {
+        "organ": "liver",
+        "state": "hepatocyte_inflammation",
+        "high_means_perturb": 0.7,
+        "rationale": "AST > 40 → hepatocyte injury"
+      },
+      {
+        "organ": "muscle",
+        "state": "necrosis",
+        "high_means_perturb": 0.5,
+        "rationale": "AST also from muscle (rhabdo, MI)"
+      }
+    ],
+    "ALT": [
+      {
+        "organ": "liver",
+        "state": "hepatocyte_inflammation",
+        "high_means_perturb": 0.9,
+        "rationale": "ALT > 40 → hepatocyte injury (more liver-specific than AST)"
+      }
+    ],
+    "alk_phos": [
+      {
+        "organ": "gallbladder",
+        "state": "biliary_obstruction",
+        "high_means_perturb": 0.7,
+        "rationale": "ALP elevation in cholestasis"
+      },
+      {
+        "organ": "bone",
+        "state": "structural_integrity",
+        "high_means_perturb": 0.4,
+        "inverse_state": true,
+        "rationale": "ALP from osteoblasts (Paget, mets, growth)"
+      }
+    ],
+    "total_bilirubin": [
+      {
+        "organ": "liver",
+        "state": "bilirubin_conjugation",
+        "high_means_perturb": 0.8,
+        "inverse_state": true,
+        "rationale": "total bili rises with conjugation failure or obstruction"
+      }
+    ],
+    "direct_bilirubin": [
+      {
+        "organ": "gallbladder",
+        "state": "biliary_obstruction",
+        "high_means_perturb": 0.9,
+        "rationale": "conjugated bili → biliary obstruction or hepatocellular"
+      }
+    ],
+    "albumin": [
+      {
+        "organ": "liver",
+        "state": "synthetic_function",
+        "low_means_perturb": 0.8,
+        "direct_state": true,
+        "rationale": "albumin synthesized by liver"
+      }
+    ],
+    "INR": [
+      {
+        "organ": "liver",
+        "state": "synthetic_function",
+        "high_means_perturb": 0.8,
+        "inverse_state": true,
+        "rationale": "elevated INR → reduced clotting factor synthesis"
+      }
+    ],
+    "troponin": [
+      {
+        "organ": "heart",
+        "state": "ischemia",
+        "high_means_perturb": 1.0,
+        "direct_state": true,
+        "rationale": "troponin IS the cardiac ischemia/necrosis marker"
+      }
+    ],
+    "BNP": [
+      {
+        "organ": "heart",
+        "state": "wall_stress",
+        "high_means_perturb": 0.9,
+        "direct_state": true,
+        "rationale": "BNP released from ventricles under stretch"
+      },
+      {
+        "organ": "heart",
+        "state": "pulmonary_congestion",
+        "high_means_perturb": 0.7,
+        "rationale": "BNP elevated in CHF / volume overload"
+      }
+    ],
+    "CK_MB": [
+      {
+        "organ": "heart",
+        "state": "ischemia",
+        "high_means_perturb": 0.8,
+        "rationale": "older cardiac biomarker, less specific than troponin"
+      }
+    ],
+    "D_dimer": [
+      {
+        "organ": "lung",
+        "state": "pulmonary_congestion",
+        "high_means_perturb": 0.5,
+        "rationale": "elevated in PE (also in DVT, DIC, sepsis)"
+      },
+      {
+        "organ": "blood",
+        "state": "thrombosis_marker",
+        "high_means_perturb": 0.7,
+        "rationale": "fibrin degradation product"
+      },
+      {
+        "organ": "blood",
+        "state": "hypercoagulable_state",
+        "high_means_perturb": 0.6,
+        "rationale": "elevated D-dimer in thrombosis (DVT, PE)"
+      },
+      {
+        "organ": "blood",
+        "state": "coagulation_function",
+        "high_means_perturb": 0.4,
+        "rationale": "elevated in DIC, PE, DVT"
+      }
+    ],
+    "lipase": [
+      {
+        "organ": "pancreas",
+        "state": "exocrine_inflammation",
+        "high_means_perturb": 1.0,
+        "direct_state": true,
+        "rationale": "lipase > 3x ULN diagnostic of pancreatitis"
+      }
+    ],
+    "amylase": [
+      {
+        "organ": "pancreas",
+        "state": "exocrine_inflammation",
+        "high_means_perturb": 0.7,
+        "rationale": "amylase elevated in pancreatitis (less specific than lipase)"
+      }
+    ],
+    "TSH": [
+      {
+        "organ": "thyroid",
+        "state": "t3_t4_level",
+        "high_means_perturb": 0.8,
+        "inverse_state": true,
+        "rationale": "high TSH → low T3/T4 (primary hypothyroid)"
+      },
+      {
+        "organ": "thyroid",
+        "state": "t3_t4_level",
+        "low_means_perturb": 0.8,
+        "rationale": "low TSH → high T3/T4 (hyperthyroid feedback)"
+      }
+    ],
+    "free_T4": [
+      {
+        "organ": "thyroid",
+        "state": "t3_t4_level",
+        "high_means_perturb": 0.9,
+        "direct_state": true,
+        "rationale": "free T4 IS the hormone state"
+      }
+    ],
+    "cortisol_AM": [
+      {
+        "organ": "adrenal",
+        "state": "cortisol_level",
+        "high_means_perturb": 0.9,
+        "direct_state": true,
+        "rationale": "AM cortisol IS the cortisol state"
+      }
+    ],
+    "pH": [
+      {
+        "organ": "lung",
+        "state": "gas_exchange",
+        "low_means_perturb": 0.5,
+        "rationale": "respiratory acidosis from CO2 retention"
+      },
+      {
+        "organ": "kidney",
+        "state": "filtration",
+        "low_means_perturb": 0.5,
+        "inverse_state": true,
+        "rationale": "metabolic acidosis from uremia"
+      }
+    ],
+    "PaO2": [
+      {
+        "organ": "lung",
+        "state": "gas_exchange",
+        "low_means_perturb": 0.9,
+        "direct_state": true,
+        "rationale": "PaO2 IS the gas exchange state"
+      }
+    ],
+    "PaCO2": [
+      {
+        "organ": "lung",
+        "state": "gas_exchange",
+        "high_means_perturb": 0.7,
+        "inverse_state": true,
+        "rationale": "elevated PaCO2 = CO2 retention = poor ventilation"
+      }
+    ],
+    "O2_sat": [
+      {
+        "organ": "lung",
+        "state": "gas_exchange",
+        "low_means_perturb": 0.9,
+        "direct_state": true,
+        "rationale": "SpO2 reflects oxygenation state"
+      }
+    ],
+    "urine_WBC": [
+      {
+        "organ": "bladder",
+        "state": "inflammation",
+        "high_means_perturb": 0.7,
+        "rationale": "pyuria → UTI / cystitis"
+      },
+      {
+        "organ": "kidney",
+        "state": "parenchymal_inflammation",
+        "high_means_perturb": 0.6,
+        "rationale": "WBC casts → pyelonephritis"
+      }
+    ],
+    "urine_nitrites": [
+      {
+        "organ": "bladder",
+        "state": "luminal_bacteria",
+        "high_means_perturb": 0.9,
+        "rationale": "nitrites = gram-negative bacterial reduction of nitrate"
+      }
+    ],
+    "urine_blood": [
+      {
+        "organ": "kidney",
+        "state": "tubular_damage",
+        "high_means_perturb": 0.5,
+        "rationale": "hematuria from glomerular or tubular injury"
+      },
+      {
+        "organ": "kidney",
+        "state": "ureteral_distension",
+        "high_means_perturb": 0.6,
+        "rationale": "hematuria from stone abrasion"
+      }
+    ],
+    "urine_protein": [
+      {
+        "organ": "kidney",
+        "state": "filtration",
+        "high_means_perturb": 0.7,
+        "inverse_state": true,
+        "rationale": "proteinuria → glomerular dysfunction"
+      }
+    ],
+    "urine_glucose": [
+      {
+        "organ": "pancreas",
+        "state": "blood_glucose_elevation",
+        "high_means_perturb": 0.8,
+        "rationale": "glycosuria when serum glucose > renal threshold (180 mg/dL)"
+      }
+    ],
+    "urine_ketones": [
+      {
+        "organ": "pancreas",
+        "state": "insulin_secretion",
+        "high_means_perturb": 0.8,
+        "inverse_state": true,
+        "rationale": "ketonuria in DKA"
+      }
+    ],
+    "CSF_WBC": [
+      {
+        "organ": "brain",
+        "state": "meningeal_inflammation",
+        "high_means_perturb": 0.9,
+        "rationale": "CSF pleocytosis diagnostic of meningitis"
+      }
+    ],
+    "CSF_protein": [
+      {
+        "organ": "brain",
+        "state": "meningeal_inflammation",
+        "high_means_perturb": 0.7,
+        "rationale": "elevated CSF protein in meningitis, GBS, MS"
+      }
+    ],
+    "CSF_glucose": [
+      {
+        "organ": "brain",
+        "state": "meningeal_inflammation",
+        "low_means_perturb": 0.8,
+        "rationale": "low CSF glucose specifically suggests bacterial meningitis"
+      }
+    ],
+    "stool_WBC": [
+      {
+        "organ": "gi",
+        "state": "mucosal_inflammation",
+        "high_means_perturb": 0.7,
+        "rationale": "fecal WBC suggests invasive/inflammatory bacterial gastroenteritis"
+      }
+    ],
+    "stool_occult_blood_FOBT": [
+      {
+        "organ": "gi",
+        "state": "mucosal_inflammation",
+        "high_means_perturb": 0.6,
+        "rationale": "GI bleeding (proximal or distal)"
+      }
+    ],
+    "stool_C_diff_toxin": [
+      {
+        "organ": "gi",
+        "state": "luminal_pathogen",
+        "high_means_perturb": 0.9,
+        "rationale": "C. difficile colitis"
+      }
+    ],
+    "beta_hCG_qualitative": [
+      {
+        "organ": "reproductive",
+        "state": "pregnancy_state",
+        "high_means_perturb": 1.0,
+        "direct_state": true,
+        "rationale": "qualitative pregnancy test"
+      }
+    ],
+    "beta_hCG_quantitative": [
+      {
+        "organ": "reproductive",
+        "state": "ectopic_implantation",
+        "high_means_perturb": 0.5,
+        "rationale": "abnormal hCG doubling pattern in ectopic"
+      },
+      {
+        "organ": "reproductive",
+        "state": "pregnancy_state",
+        "high_means_perturb": 0.9
+      }
+    ],
+    "wound_culture": [
+      {
+        "organ": "skin",
+        "state": "infection",
+        "high_means_perturb": 0.8,
+        "rationale": "positive wound culture confirms skin infection"
+      }
+    ],
+    "ferritin": [
+      {
+        "organ": "blood",
+        "state": "iron_stores",
+        "low_means_perturb": 0.9,
+        "direct_state": true,
+        "rationale": "ferritin IS the iron_stores state (low in IDA)"
+      },
+      {
+        "organ": "blood",
+        "state": "inflammation_marker",
+        "high_means_perturb": 0.6,
+        "rationale": "ferritin is also an acute-phase reactant (high in inflammation)"
+      }
+    ],
+    "TIBC": [
+      {
+        "organ": "blood",
+        "state": "iron_stores",
+        "high_means_perturb": 0.8,
+        "rationale": "high TIBC (transferrin) in iron deficiency"
+      }
+    ],
+    "iron": [
+      {
+        "organ": "blood",
+        "state": "iron_stores",
+        "low_means_perturb": 0.7,
+        "rationale": "serum iron low in IDA"
+      }
+    ],
+    "INR_PT": [
+      {
+        "organ": "blood",
+        "state": "coagulation_function",
+        "high_means_perturb": 0.8,
+        "inverse_state": true,
+        "rationale": "elevated INR → impaired coagulation"
+      }
+    ],
+    "PTT": [
+      {
+        "organ": "blood",
+        "state": "coagulation_function",
+        "high_means_perturb": 0.7,
+        "inverse_state": true,
+        "rationale": "prolonged PTT → coagulation impairment"
+      }
+    ],
+    "fundoscopy_finding": [
+      {
+        "organ": "eye",
+        "state": "retinal_perfusion",
+        "abnormal_either_direction": 0.7,
+        "rationale": "fundus exam reveals retinal pathology"
+      }
+    ],
+    "intraocular_pressure_tonometry": [
+      {
+        "organ": "eye",
+        "state": "intraocular_pressure",
+        "high_means_perturb": 1.0,
+        "direct_state": true,
+        "rationale": "IOP IS the intraocular_pressure state"
+      }
+    ],
+    "audiometry": [
+      {
+        "organ": "ear",
+        "state": "cochlear_function",
+        "low_means_perturb": 0.8,
+        "rationale": "audiometry reveals sensorineural hearing loss"
+      },
+      {
+        "organ": "ear",
+        "state": "hearing_conduction",
+        "low_means_perturb": 0.8,
+        "rationale": "audiometry reveals conductive hearing loss"
+      }
+    ],
+    "EMG_NCS": [
+      {
+        "organ": "peripheral_nerve",
+        "state": "motor_conduction",
+        "abnormal_either_direction": 0.9,
+        "rationale": "EMG-NCS reveals nerve conduction abnormalities"
+      },
+      {
+        "organ": "peripheral_nerve",
+        "state": "sensory_conduction",
+        "abnormal_either_direction": 0.9,
+        "rationale": "EMG-NCS sensory parameters"
+      }
+    ],
+    "ABI": [
+      {
+        "organ": "vessel",
+        "state": "atherosclerotic_burden",
+        "low_means_perturb": 0.8,
+        "rationale": "low ABI (< 0.9) indicates PAD"
+      },
+      {
+        "organ": "vessel",
+        "state": "luminal_patency",
+        "low_means_perturb": 0.7,
+        "rationale": "ABI reflects arterial patency"
+      }
+    ],
+    "throat_culture_rapid_strep": [
+      {
+        "organ": "upper_airway",
+        "state": "infection_load",
+        "high_means_perturb": 0.9,
+        "rationale": "rapid antigen / culture positive → GAS pharyngitis"
+      }
+    ],
+    "nasal_swab_viral_panel": [
+      {
+        "organ": "upper_airway",
+        "state": "infection_load",
+        "high_means_perturb": 0.8,
+        "rationale": "viral PCR for respiratory pathogens"
+      }
+    ]
+  },
+  "state_to_predicted_labs": {
+    "_comment": "Reverse mapping: given a perturbed state, which labs would be abnormal? Computed at query time from lab_to_state_mapping."
+  }
+}

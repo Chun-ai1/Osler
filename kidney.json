@@ -1,0 +1,372 @@
+{
+  "_metadata": {
+    "organ": "kidney",
+    "schema_version": "2.0",
+    "description": "Kidney state model. Used by pyelonephritis, AKI, nephrolithiasis.",
+    "source": "Boron & Boulpaep Renal Physiology; Harrison's IM Nephrology",
+    "review_status": "unreviewed"
+  },
+  "state_variables": {
+    "perfusion": {
+      "range": [
+        0,
+        1
+      ],
+      "description": "renal blood flow — HIGHER = better",
+      "inverse": true
+    },
+    "filtration": {
+      "range": [
+        0,
+        1
+      ],
+      "description": "GFR — HIGHER = better",
+      "inverse": true
+    },
+    "tubular_damage": {
+      "range": [
+        0,
+        1
+      ],
+      "description": "ATN, tubule injury severity"
+    },
+    "parenchymal_inflammation": {
+      "range": [
+        0,
+        1
+      ],
+      "description": "pyelonephritis inflammation"
+    },
+    "obstruction": {
+      "range": [
+        0,
+        1
+      ],
+      "description": "ureteral/pelvis obstruction (stone, mass)"
+    },
+    "ureteral_distension": {
+      "range": [
+        0,
+        1
+      ],
+      "description": "hydronephrosis or stone passage stretching"
+    },
+    "luminal_pathogen": {
+      "range": [
+        0,
+        1
+      ],
+      "description": "ascending bacterial infection"
+    },
+    "fluid_retention": {
+      "range": [
+        0,
+        1
+      ],
+      "description": "Na+/H2O accumulation"
+    },
+    "uremic_toxin_buildup": {
+      "range": [
+        0,
+        1
+      ],
+      "description": "BUN, creatinine, K+ rise"
+    }
+  },
+  "derivation_rules": [
+    {
+      "symptom": "flank pain",
+      "condition": {
+        "any": [
+          {
+            "state": "parenchymal_inflammation",
+            "op": ">",
+            "threshold": 0.5
+          },
+          {
+            "state": "ureteral_distension",
+            "op": ">",
+            "threshold": 0.5
+          }
+        ]
+      },
+      "rationale": "renal capsule stretching OR ureteral distension activates visceral afferents → T10-L1 referred to flank",
+      "confidence": 1.0
+    },
+    {
+      "symptom": "CVA tenderness",
+      "condition": {
+        "state": "parenchymal_inflammation",
+        "op": ">",
+        "threshold": 0.6
+      },
+      "rationale": "kidney is in retroperitoneum at costovertebral angle; inflammation triggers pain on percussion",
+      "confidence": 1.0
+    },
+    {
+      "symptom": "fever",
+      "condition": {
+        "state": "parenchymal_inflammation",
+        "op": ">",
+        "threshold": 0.6
+      },
+      "rationale": "renal infection releases pyrogens (IL-1, IL-6) → hypothalamic setpoint elevation",
+      "confidence": 0.9
+    },
+    {
+      "symptom": "hematuria",
+      "condition": {
+        "any": [
+          {
+            "state": "ureteral_distension",
+            "op": ">",
+            "threshold": 0.5
+          },
+          {
+            "state": "tubular_damage",
+            "op": ">",
+            "threshold": 0.6
+          }
+        ]
+      },
+      "rationale": "stone abrasion or glomerular injury allows RBC into tubular lumen",
+      "confidence": 0.9
+    },
+    {
+      "symptom": "colicky pain",
+      "condition": {
+        "state": "ureteral_distension",
+        "op": ">",
+        "threshold": 0.6
+      },
+      "rationale": "ureteral peristalsis against obstruction → severe crampy pain in waves",
+      "confidence": 1.0
+    },
+    {
+      "symptom": "oliguria",
+      "condition": {
+        "state": "filtration",
+        "op": "<",
+        "threshold": 0.5
+      },
+      "rationale": "reduced GFR → low urine output (< 400 mL/day)",
+      "confidence": 1.0
+    },
+    {
+      "symptom": "lower extremity edema",
+      "condition": {
+        "state": "fluid_retention",
+        "op": ">",
+        "threshold": 0.6
+      },
+      "rationale": "Na+/H2O retention raises capillary hydrostatic pressure → dependent edema",
+      "confidence": 0.9
+    },
+    {
+      "symptom": "confusion",
+      "condition": {
+        "state": "uremic_toxin_buildup",
+        "op": ">",
+        "threshold": 0.6
+      },
+      "rationale": "uremic toxins cross blood-brain barrier → encephalopathy",
+      "confidence": 0.8
+    }
+  ],
+  "propagation_rules": [
+    {
+      "trigger": {
+        "state": "perfusion",
+        "op": "<",
+        "threshold": 0.5
+      },
+      "effect": {
+        "state": "filtration",
+        "delta": -0.4
+      },
+      "rationale": "reduced renal blood flow → lower glomerular hydrostatic pressure → falling GFR",
+      "via": "intra_organ",
+      "review_status": "unreviewed"
+    },
+    {
+      "trigger": {
+        "state": "obstruction",
+        "op": ">",
+        "threshold": 0.5
+      },
+      "effect": {
+        "state": "ureteral_distension",
+        "delta": 0.5
+      },
+      "rationale": "obstruction below kidney → urine backs up → ureteral/pelvic stretch",
+      "via": "intra_organ",
+      "review_status": "unreviewed"
+    },
+    {
+      "trigger": {
+        "state": "filtration",
+        "op": "<",
+        "threshold": 0.4
+      },
+      "effect": {
+        "state": "uremic_toxin_buildup",
+        "delta": 0.5
+      },
+      "rationale": "failing kidney cannot clear urea, creatinine, K+ → accumulation in blood",
+      "via": "intra_organ",
+      "review_status": "unreviewed"
+    },
+    {
+      "trigger": {
+        "state": "filtration",
+        "op": "<",
+        "threshold": 0.5
+      },
+      "effect": {
+        "state": "fluid_retention",
+        "delta": 0.4
+      },
+      "rationale": "reduced filtration → impaired Na+/H2O excretion → retention",
+      "via": "intra_organ",
+      "review_status": "unreviewed"
+    },
+    {
+      "trigger": {
+        "state": "luminal_pathogen",
+        "op": ">",
+        "threshold": 0.5
+      },
+      "effect": {
+        "organ": "blood",
+        "state": "infection_load",
+        "delta": 0.3
+      },
+      "rationale": "pyelonephritis can seed bloodstream → urosepsis risk",
+      "via": "circulates_through",
+      "review_status": "unreviewed"
+    }
+  ],
+  "diseases": {
+    "Acute Pyelonephritis": {
+      "review_status": "unreviewed",
+      "description": "Upper UTI: ascending bacterial infection invades renal parenchyma, triggers fever + flank pain + CVA tenderness.",
+      "perturbations": [
+        {
+          "variable": "luminal_pathogen",
+          "delta": 0.8,
+          "cause": "ascending uropathogen (typically E. coli) reaches renal pelvis"
+        },
+        {
+          "variable": "parenchymal_inflammation",
+          "delta": 0.8,
+          "cause": "bacterial invasion + neutrophil response in interstitium"
+        },
+        {
+          "variable": "tubular_damage",
+          "delta": 0.4,
+          "cause": "inflammation injures tubule epithelium"
+        }
+      ]
+    },
+    "Nephrolithiasis": {
+      "review_status": "unreviewed",
+      "description": "Renal stone — typically obstructs ureter, causes severe colicky pain + hematuria.",
+      "perturbations": [
+        {
+          "variable": "obstruction",
+          "delta": 0.75,
+          "cause": "stone lodged in ureter (often UVJ or pelvic brim)"
+        },
+        {
+          "variable": "ureteral_distension",
+          "delta": 0.7,
+          "cause": "urine backflow from obstruction stretches collecting system"
+        }
+      ]
+    },
+    "Acute Kidney Injury": {
+      "review_status": "unreviewed",
+      "description": "Sudden GFR decline — pre-renal (hypoperfusion), intrinsic (ATN), or post-renal (obstruction).",
+      "perturbations": [
+        {
+          "variable": "perfusion",
+          "delta": -0.55,
+          "cause": "hypovolemia or low cardiac output"
+        },
+        {
+          "variable": "tubular_damage",
+          "delta": 0.6,
+          "cause": "ischemic or toxic injury to tubular epithelium"
+        },
+        {
+          "variable": "filtration",
+          "delta": -0.5,
+          "cause": "reduced GFR from combined pre-renal + intrinsic injury"
+        }
+      ]
+    },
+    "Chronic Kidney Disease": {
+      "_review_status": "unreviewed",
+      "description": "Progressive nephron loss over months/years — often from DM, HTN.",
+      "perturbations": [
+        {
+          "variable": "filtration",
+          "delta": -0.5,
+          "cause": "progressive nephron loss"
+        },
+        {
+          "variable": "uremic_toxin_buildup",
+          "delta": 0.45,
+          "cause": "reduced clearance of metabolic waste"
+        },
+        {
+          "variable": "fluid_retention",
+          "delta": 0.35,
+          "cause": "impaired Na+/H2O excretion"
+        }
+      ]
+    },
+    "Hydronephrosis from Urinary Obstruction": {
+      "review_status": "unreviewed",
+      "description": "Urinary outflow obstruction producing collecting-system dilation and impaired filtration.",
+      "perturbations": [
+        {
+          "variable": "obstruction",
+          "delta": 0.75,
+          "cause": "stone, stricture, or downstream blockage"
+        },
+        {
+          "variable": "ureteral_distension",
+          "delta": 0.65,
+          "cause": "back pressure dilates ureter and renal pelvis"
+        },
+        {
+          "variable": "filtration",
+          "delta": -0.45,
+          "cause": "increased tubular pressure reduces effective GFR"
+        }
+      ]
+    },
+    "Acute Interstitial Nephritis": {
+      "review_status": "unreviewed",
+      "description": "Inflammatory kidney injury involving the interstitium and tubules, often medication-associated.",
+      "perturbations": [
+        {
+          "variable": "tubular_damage",
+          "delta": 0.55,
+          "cause": "interstitial inflammation damages tubular function"
+        },
+        {
+          "variable": "parenchymal_inflammation",
+          "delta": 0.5,
+          "cause": "immune-mediated interstitial infiltrate"
+        },
+        {
+          "variable": "filtration",
+          "delta": -0.4,
+          "cause": "inflammation impairs kidney function"
+        }
+      ]
+    }
+  }
+}

@@ -1,0 +1,4718 @@
+{
+  "meta": {
+    "version": 1,
+    "created_at": "2026-02-11T14:52:47.257935",
+    "embedding_model": "all-MiniLM-L6-v2"
+  },
+  "nodes": {
+    "abdominal cramps": {
+      "frequency": 1
+    },
+    "abdominal pain": {
+      "frequency": 133
+    },
+    "acute onset of diarrhea and vomiting": {
+      "frequency": 1
+    },
+    "acute onset of nausea, vomiting, and diarrhea": {
+      "frequency": 1
+    },
+    "altered mental status": {
+      "frequency": 3
+    },
+    "associated diaphoresis": {
+      "frequency": 1
+    },
+    "back pain": {
+      "frequency": 136
+    },
+    "bilateral pressure-like headache": {
+      "frequency": 1
+    },
+    "blood in stool": {
+      "frequency": 1
+    },
+    "bloody diarrhea": {
+      "frequency": 1
+    },
+    "blue lips": {
+      "frequency": 293
+    },
+    "blurred vision": {
+      "frequency": 1
+    },
+    "bp usually >180/120 with end-organ signs": {
+      "frequency": 1
+    },
+    "burning chest pain after meals": {
+      "frequency": 1
+    },
+    "burning with urination": {
+      "frequency": 1
+    },
+    "chest pain": {
+      "frequency": 153
+    },
+    "chest pain at rest": {
+      "frequency": 1
+    },
+    "chest pressure with exertion": {
+      "frequency": 1
+    },
+    "chest tightness": {
+      "frequency": 1
+    },
+    "chills": {
+      "frequency": 1
+    },
+    "confusion": {
+      "frequency": 301
+    },
+    "costovertebral angle tenderness": {
+      "frequency": 1
+    },
+    "cough": {
+      "frequency": 157
+    },
+    "cough with sputum": {
+      "frequency": 1
+    },
+    "diarrhea": {
+      "frequency": 150
+    },
+    "difficulty swallowing": {
+      "frequency": 1
+    },
+    "dizziness": {
+      "frequency": 134
+    },
+    "dysuria and frequency without vaginal symptoms": {
+      "frequency": 1
+    },
+    "episodic wheeze and dyspnea": {
+      "frequency": 1
+    },
+    "fatigue": {
+      "frequency": 146
+    },
+    "fever": {
+      "frequency": 136
+    },
+    "fever and abdominal cramps": {
+      "frequency": 1
+    },
+    "fever with neck stiffness": {
+      "frequency": 1
+    },
+    "fever, neck stiffness, and headache": {
+      "frequency": 1
+    },
+    "flank pain": {
+      "frequency": 2
+    },
+    "focal crackles on lung exam": {
+      "frequency": 1
+    },
+    "frequent urination": {
+      "frequency": 1
+    },
+    "headache": {
+      "frequency": 155
+    },
+    "high fever": {
+      "frequency": 272
+    },
+    "high persistent fever": {
+      "frequency": 1
+    },
+    "history of asthma": {
+      "frequency": 1
+    },
+    "hyperosmolar state": {
+      "frequency": 1
+    },
+    "hypotension": {
+      "frequency": 1
+    },
+    "inability to speak full sentences": {
+      "frequency": 1
+    },
+    "increased frequency": {
+      "frequency": 1
+    },
+    "increased thirst": {
+      "frequency": 1
+    },
+    "joint pain": {
+      "frequency": 131
+    },
+    "ketoacidosis symptoms": {
+      "frequency": 1
+    },
+    "light sensitivity": {
+      "frequency": 1
+    },
+    "loss of consciousness": {
+      "frequency": 278
+    },
+    "low blood pressure": {
+      "frequency": 1
+    },
+    "low-grade fever": {
+      "frequency": 1
+    },
+    "mild cough": {
+      "frequency": 1
+    },
+    "mild photophobia": {
+      "frequency": 1
+    },
+    "nasal congestion": {
+      "frequency": 1
+    },
+    "nausea": {
+      "frequency": 150
+    },
+    "nausea/vomiting": {
+      "frequency": 1
+    },
+    "neck stiffness": {
+      "frequency": 1
+    },
+    "neck tightness": {
+      "frequency": 1
+    },
+    "neurologic deficits": {
+      "frequency": 1
+    },
+    "normal lung exam": {
+      "frequency": 1
+    },
+    "not worsened by routine activity": {
+      "frequency": 1
+    },
+    "often asymptomatic, found on screening": {
+      "frequency": 1
+    },
+    "palpitations": {
+      "frequency": 131
+    },
+    "persistent high fever": {
+      "frequency": 1
+    },
+    "persistent vomiting": {
+      "frequency": 1
+    },
+    "photophobia": {
+      "frequency": 1
+    },
+    "photophobia or phonophobia": {
+      "frequency": 1
+    },
+    "pleuritic chest pain": {
+      "frequency": 1
+    },
+    "positive kernig or brudzinski sign": {
+      "frequency": 1
+    },
+    "predictable exertional chest discomfort": {
+      "frequency": 1
+    },
+    "pressing, non-throbbing pain": {
+      "frequency": 1
+    },
+    "productive cough": {
+      "frequency": 1
+    },
+    "radiation to arm or jaw": {
+      "frequency": 1
+    },
+    "rapid deterioration": {
+      "frequency": 1
+    },
+    "rash": {
+      "frequency": 127
+    },
+    "recurrent unilateral headaches": {
+      "frequency": 1
+    },
+    "regurgitation": {
+      "frequency": 1
+    },
+    "relief with rest": {
+      "frequency": 1
+    },
+    "respiratory distress": {
+      "frequency": 1
+    },
+    "runny nose": {
+      "frequency": 1
+    },
+    "seizure": {
+      "frequency": 2
+    },
+    "severe chest pain": {
+      "frequency": 285
+    },
+    "severe headache": {
+      "frequency": 1
+    },
+    "shortness of breath": {
+      "frequency": 149
+    },
+    "shortness of breath at rest": {
+      "frequency": 1
+    },
+    "signs of severe dehydration": {
+      "frequency": 2
+    },
+    "silent chest": {
+      "frequency": 1
+    },
+    "sore throat": {
+      "frequency": 1
+    },
+    "sound sensitivity": {
+      "frequency": 1
+    },
+    "sour taste": {
+      "frequency": 1
+    },
+    "sudden onset": {
+      "frequency": 1
+    },
+    "throbbing headache": {
+      "frequency": 1
+    },
+    "typical heartburn relieved by antacids": {
+      "frequency": 1
+    },
+    "unable to breathe": {
+      "frequency": 272
+    },
+    "uncontrolled bleeding": {
+      "frequency": 300
+    },
+    "urgency": {
+      "frequency": 1
+    },
+    "use of accessory muscles": {
+      "frequency": 1
+    },
+    "very high blood pressure": {
+      "frequency": 1
+    },
+    "vision loss": {
+      "frequency": 1
+    },
+    "visual changes": {
+      "frequency": 1
+    },
+    "vomiting": {
+      "frequency": 151
+    },
+    "vomiting blood": {
+      "frequency": 1
+    },
+    "weakness on one side": {
+      "frequency": 1
+    },
+    "weight loss": {
+      "frequency": 1
+    },
+    "wheezing": {
+      "frequency": 1
+    },
+    "worst headache of life": {
+      "frequency": 1
+    }
+  },
+  "edges": {
+    "abdominal cramps|abdominal pain": {
+      "cooccurrence": 0,
+      "similarity": 0.753,
+      "red_flag_boost": 0,
+      "weight": 3.012
+    },
+    "abdominal cramps|acute onset of diarrhea and vomiting": {
+      "cooccurrence": 1,
+      "similarity": 0.37,
+      "red_flag_boost": 0,
+      "weight": 3.479
+    },
+    "abdominal cramps|bloody diarrhea": {
+      "cooccurrence": 1,
+      "similarity": 0.349,
+      "red_flag_boost": 0,
+      "weight": 3.397
+    },
+    "abdominal cramps|diarrhea": {
+      "cooccurrence": 1,
+      "similarity": 0.357,
+      "red_flag_boost": 0,
+      "weight": 3.426
+    },
+    "abdominal cramps|fever": {
+      "cooccurrence": 1,
+      "similarity": 0.215,
+      "red_flag_boost": 0,
+      "weight": 2.862
+    },
+    "abdominal cramps|fever and abdominal cramps": {
+      "cooccurrence": 0,
+      "similarity": 0.741,
+      "red_flag_boost": 0,
+      "weight": 2.965
+    },
+    "abdominal cramps|persistent high fever": {
+      "cooccurrence": 1,
+      "similarity": 0.188,
+      "red_flag_boost": 0,
+      "weight": 2.751
+    },
+    "abdominal cramps|signs of severe dehydration": {
+      "cooccurrence": 1,
+      "similarity": 0.364,
+      "red_flag_boost": 0,
+      "weight": 3.458
+    },
+    "abdominal cramps|vomiting": {
+      "cooccurrence": 1,
+      "similarity": 0.325,
+      "red_flag_boost": 0,
+      "weight": 3.302
+    },
+    "abdominal pain|back pain": {
+      "cooccurrence": 10,
+      "similarity": 0.513,
+      "red_flag_boost": 0,
+      "weight": 22.05
+    },
+    "abdominal pain|blue lips": {
+      "cooccurrence": 28,
+      "similarity": 0.097,
+      "red_flag_boost": 0,
+      "weight": 56.388
+    },
+    "abdominal pain|chest pain": {
+      "cooccurrence": 14,
+      "similarity": 0.481,
+      "red_flag_boost": 0,
+      "weight": 29.922
+    },
+    "abdominal pain|confusion": {
+      "cooccurrence": 47,
+      "similarity": 0.129,
+      "red_flag_boost": 0,
+      "weight": 94.515
+    },
+    "abdominal pain|cough": {
+      "cooccurrence": 8,
+      "similarity": 0.219,
+      "red_flag_boost": 0,
+      "weight": 16.877
+    },
+    "abdominal pain|diarrhea": {
+      "cooccurrence": 7,
+      "similarity": 0.404,
+      "red_flag_boost": 0,
+      "weight": 15.615
+    },
+    "abdominal pain|dizziness": {
+      "cooccurrence": 14,
+      "similarity": 0.173,
+      "red_flag_boost": 0,
+      "weight": 28.692
+    },
+    "abdominal pain|fatigue": {
+      "cooccurrence": 17,
+      "similarity": 0.227,
+      "red_flag_boost": 0,
+      "weight": 34.908
+    },
+    "abdominal pain|fever": {
+      "cooccurrence": 12,
+      "similarity": 0.249,
+      "red_flag_boost": 0,
+      "weight": 24.998
+    },
+    "abdominal pain|fever and abdominal cramps": {
+      "cooccurrence": 0,
+      "similarity": 0.601,
+      "red_flag_boost": 0,
+      "weight": 2.404
+    },
+    "abdominal pain|headache": {
+      "cooccurrence": 13,
+      "similarity": 0.308,
+      "red_flag_boost": 0,
+      "weight": 27.231
+    },
+    "abdominal pain|high fever": {
+      "cooccurrence": 34,
+      "similarity": 0.235,
+      "red_flag_boost": 0,
+      "weight": 68.94
+    },
+    "abdominal pain|joint pain": {
+      "cooccurrence": 14,
+      "similarity": 0.377,
+      "red_flag_boost": 0,
+      "weight": 29.506
+    },
+    "abdominal pain|loss of consciousness": {
+      "cooccurrence": 40,
+      "similarity": 0.178,
+      "red_flag_boost": 0,
+      "weight": 80.71
+    },
+    "abdominal pain|nausea": {
+      "cooccurrence": 13,
+      "similarity": 0.45,
+      "red_flag_boost": 0,
+      "weight": 27.799
+    },
+    "abdominal pain|palpitations": {
+      "cooccurrence": 6,
+      "similarity": 0.175,
+      "red_flag_boost": 0,
+      "weight": 12.7
+    },
+    "abdominal pain|rash": {
+      "cooccurrence": 11,
+      "similarity": 0.215,
+      "red_flag_boost": 0,
+      "weight": 22.861
+    },
+    "abdominal pain|severe chest pain": {
+      "cooccurrence": 37,
+      "similarity": 0.45,
+      "red_flag_boost": 0,
+      "weight": 75.8
+    },
+    "abdominal pain|shortness of breath": {
+      "cooccurrence": 13,
+      "similarity": 0.087,
+      "red_flag_boost": 0,
+      "weight": 26.346
+    },
+    "abdominal pain|unable to breathe": {
+      "cooccurrence": 36,
+      "similarity": 0.203,
+      "red_flag_boost": 0,
+      "weight": 72.814
+    },
+    "abdominal pain|uncontrolled bleeding": {
+      "cooccurrence": 44,
+      "similarity": 0.241,
+      "red_flag_boost": 0,
+      "weight": 88.965
+    },
+    "abdominal pain|vomiting": {
+      "cooccurrence": 14,
+      "similarity": 0.416,
+      "red_flag_boost": 0,
+      "weight": 29.664
+    },
+    "acute onset of diarrhea and vomiting|acute onset of nausea, vomiting, and diarrhea": {
+      "cooccurrence": 0,
+      "similarity": 0.937,
+      "red_flag_boost": 0,
+      "weight": 3.749
+    },
+    "acute onset of diarrhea and vomiting|bloody diarrhea": {
+      "cooccurrence": 1,
+      "similarity": 0.643,
+      "red_flag_boost": 0,
+      "weight": 4.571
+    },
+    "acute onset of diarrhea and vomiting|diarrhea": {
+      "cooccurrence": 1,
+      "similarity": 0.669,
+      "red_flag_boost": 0,
+      "weight": 4.677
+    },
+    "acute onset of diarrhea and vomiting|fever": {
+      "cooccurrence": 1,
+      "similarity": 0.344,
+      "red_flag_boost": 0,
+      "weight": 3.374
+    },
+    "acute onset of diarrhea and vomiting|nausea": {
+      "cooccurrence": 0,
+      "similarity": 0.518,
+      "red_flag_boost": 0,
+      "weight": 2.073
+    },
+    "acute onset of diarrhea and vomiting|nausea/vomiting": {
+      "cooccurrence": 0,
+      "similarity": 0.649,
+      "red_flag_boost": 0,
+      "weight": 2.596
+    },
+    "acute onset of diarrhea and vomiting|persistent high fever": {
+      "cooccurrence": 1,
+      "similarity": 0.411,
+      "red_flag_boost": 0,
+      "weight": 3.644
+    },
+    "acute onset of diarrhea and vomiting|persistent vomiting": {
+      "cooccurrence": 0,
+      "similarity": 0.701,
+      "red_flag_boost": 0,
+      "weight": 2.805
+    },
+    "acute onset of diarrhea and vomiting|signs of severe dehydration": {
+      "cooccurrence": 1,
+      "similarity": 0.361,
+      "red_flag_boost": 0,
+      "weight": 3.444
+    },
+    "acute onset of diarrhea and vomiting|vomiting": {
+      "cooccurrence": 1,
+      "similarity": 0.641,
+      "red_flag_boost": 0,
+      "weight": 4.562
+    },
+    "acute onset of diarrhea and vomiting|vomiting blood": {
+      "cooccurrence": 0,
+      "similarity": 0.525,
+      "red_flag_boost": 0,
+      "weight": 2.101
+    },
+    "acute onset of nausea, vomiting, and diarrhea|altered mental status": {
+      "cooccurrence": 1,
+      "similarity": 0.221,
+      "red_flag_boost": 0,
+      "weight": 2.884
+    },
+    "acute onset of nausea, vomiting, and diarrhea|blood in stool": {
+      "cooccurrence": 1,
+      "similarity": 0.353,
+      "red_flag_boost": 0,
+      "weight": 3.412
+    },
+    "acute onset of nausea, vomiting, and diarrhea|bloody diarrhea": {
+      "cooccurrence": 0,
+      "similarity": 0.566,
+      "red_flag_boost": 0,
+      "weight": 2.265
+    },
+    "acute onset of nausea, vomiting, and diarrhea|diarrhea": {
+      "cooccurrence": 0,
+      "similarity": 0.609,
+      "red_flag_boost": 0,
+      "weight": 2.437
+    },
+    "acute onset of nausea, vomiting, and diarrhea|fever and abdominal cramps": {
+      "cooccurrence": 1,
+      "similarity": 0.485,
+      "red_flag_boost": 0,
+      "weight": 3.94
+    },
+    "acute onset of nausea, vomiting, and diarrhea|high fever": {
+      "cooccurrence": 1,
+      "similarity": 0.395,
+      "red_flag_boost": 0,
+      "weight": 3.578
+    },
+    "acute onset of nausea, vomiting, and diarrhea|nausea": {
+      "cooccurrence": 0,
+      "similarity": 0.683,
+      "red_flag_boost": 0,
+      "weight": 2.731
+    },
+    "acute onset of nausea, vomiting, and diarrhea|nausea/vomiting": {
+      "cooccurrence": 0,
+      "similarity": 0.801,
+      "red_flag_boost": 0,
+      "weight": 3.204
+    },
+    "acute onset of nausea, vomiting, and diarrhea|persistent vomiting": {
+      "cooccurrence": 1,
+      "similarity": 0.719,
+      "red_flag_boost": 0,
+      "weight": 4.876
+    },
+    "acute onset of nausea, vomiting, and diarrhea|signs of severe dehydration": {
+      "cooccurrence": 1,
+      "similarity": 0.384,
+      "red_flag_boost": 0,
+      "weight": 3.536
+    },
+    "acute onset of nausea, vomiting, and diarrhea|vomiting": {
+      "cooccurrence": 0,
+      "similarity": 0.673,
+      "red_flag_boost": 0,
+      "weight": 2.693
+    },
+    "acute onset of nausea, vomiting, and diarrhea|vomiting blood": {
+      "cooccurrence": 0,
+      "similarity": 0.541,
+      "red_flag_boost": 0,
+      "weight": 2.163
+    },
+    "altered mental status|blood in stool": {
+      "cooccurrence": 1,
+      "similarity": 0.092,
+      "red_flag_boost": 0,
+      "weight": 2.37
+    },
+    "altered mental status|chills": {
+      "cooccurrence": 1,
+      "similarity": 0.185,
+      "red_flag_boost": 0,
+      "weight": 2.739
+    },
+    "altered mental status|costovertebral angle tenderness": {
+      "cooccurrence": 1,
+      "similarity": -0.05,
+      "red_flag_boost": 0,
+      "weight": 2
+    },
+    "altered mental status|fever": {
+      "cooccurrence": 2,
+      "similarity": 0.193,
+      "red_flag_boost": 0,
+      "weight": 4.77
+    },
+    "altered mental status|fever and abdominal cramps": {
+      "cooccurrence": 1,
+      "similarity": 0.057,
+      "red_flag_boost": 0,
+      "weight": 2.227
+    },
+    "altered mental status|fever, neck stiffness, and headache": {
+      "cooccurrence": 1,
+      "similarity": 0.133,
+      "red_flag_boost": 0,
+      "weight": 2.531
+    },
+    "altered mental status|flank pain": {
+      "cooccurrence": 1,
+      "similarity": 0.055,
+      "red_flag_boost": 0,
+      "weight": 2.22
+    },
+    "altered mental status|high fever": {
+      "cooccurrence": 1,
+      "similarity": 0.222,
+      "red_flag_boost": 0,
+      "weight": 2.888
+    },
+    "altered mental status|hypotension": {
+      "cooccurrence": 1,
+      "similarity": 0.302,
+      "red_flag_boost": 0,
+      "weight": 3.207
+    },
+    "altered mental status|nausea": {
+      "cooccurrence": 1,
+      "similarity": 0.271,
+      "red_flag_boost": 0,
+      "weight": 3.085
+    },
+    "altered mental status|neck stiffness": {
+      "cooccurrence": 1,
+      "similarity": 0.205,
+      "red_flag_boost": 0,
+      "weight": 2.822
+    },
+    "altered mental status|persistent vomiting": {
+      "cooccurrence": 1,
+      "similarity": 0.276,
+      "red_flag_boost": 0,
+      "weight": 3.102
+    },
+    "altered mental status|photophobia": {
+      "cooccurrence": 1,
+      "similarity": 0.233,
+      "red_flag_boost": 0,
+      "weight": 2.933
+    },
+    "altered mental status|positive kernig or brudzinski sign": {
+      "cooccurrence": 1,
+      "similarity": 0.139,
+      "red_flag_boost": 0,
+      "weight": 2.558
+    },
+    "altered mental status|rapid deterioration": {
+      "cooccurrence": 1,
+      "similarity": 0.297,
+      "red_flag_boost": 0,
+      "weight": 3.189
+    },
+    "altered mental status|seizure": {
+      "cooccurrence": 1,
+      "similarity": 0.342,
+      "red_flag_boost": 0,
+      "weight": 3.367
+    },
+    "altered mental status|severe headache": {
+      "cooccurrence": 1,
+      "similarity": 0.211,
+      "red_flag_boost": 0,
+      "weight": 2.844
+    },
+    "altered mental status|signs of severe dehydration": {
+      "cooccurrence": 1,
+      "similarity": 0.139,
+      "red_flag_boost": 0,
+      "weight": 2.557
+    },
+    "associated diaphoresis|chest pain at rest": {
+      "cooccurrence": 1,
+      "similarity": 0.012,
+      "red_flag_boost": 0,
+      "weight": 2.049
+    },
+    "associated diaphoresis|chest pressure with exertion": {
+      "cooccurrence": 1,
+      "similarity": -0.055,
+      "red_flag_boost": 0,
+      "weight": 2
+    },
+    "associated diaphoresis|predictable exertional chest discomfort": {
+      "cooccurrence": 1,
+      "similarity": -0.021,
+      "red_flag_boost": 0,
+      "weight": 2
+    },
+    "associated diaphoresis|radiation to arm or jaw": {
+      "cooccurrence": 1,
+      "similarity": 0.048,
+      "red_flag_boost": 0,
+      "weight": 2.192
+    },
+    "associated diaphoresis|relief with rest": {
+      "cooccurrence": 1,
+      "similarity": 0.037,
+      "red_flag_boost": 0,
+      "weight": 2.148
+    },
+    "associated diaphoresis|shortness of breath": {
+      "cooccurrence": 1,
+      "similarity": 0.064,
+      "red_flag_boost": 0,
+      "weight": 2.257
+    },
+    "back pain|blue lips": {
+      "cooccurrence": 41,
+      "similarity": 0.092,
+      "red_flag_boost": 0,
+      "weight": 82.367
+    },
+    "back pain|chest pain": {
+      "cooccurrence": 19,
+      "similarity": 0.509,
+      "red_flag_boost": 0,
+      "weight": 40.038
+    },
+    "back pain|confusion": {
+      "cooccurrence": 45,
+      "similarity": 0.106,
+      "red_flag_boost": 0,
+      "weight": 90.423
+    },
+    "back pain|cough": {
+      "cooccurrence": 16,
+      "similarity": 0.223,
+      "red_flag_boost": 0,
+      "weight": 32.893
+    },
+    "back pain|diarrhea": {
+      "cooccurrence": 9,
+      "similarity": 0.285,
+      "red_flag_boost": 0,
+      "weight": 19.139
+    },
+    "back pain|dizziness": {
+      "cooccurrence": 11,
+      "similarity": 0.268,
+      "red_flag_boost": 0,
+      "weight": 23.072
+    },
+    "back pain|fatigue": {
+      "cooccurrence": 10,
+      "similarity": 0.294,
+      "red_flag_boost": 0,
+      "weight": 21.177
+    },
+    "back pain|fever": {
+      "cooccurrence": 14,
+      "similarity": 0.191,
+      "red_flag_boost": 0,
+      "weight": 28.763
+    },
+    "back pain|flank pain": {
+      "cooccurrence": 0,
+      "similarity": 0.505,
+      "red_flag_boost": 0,
+      "weight": 2.02
+    },
+    "back pain|headache": {
+      "cooccurrence": 8,
+      "similarity": 0.423,
+      "red_flag_boost": 0,
+      "weight": 17.691
+    },
+    "back pain|high fever": {
+      "cooccurrence": 36,
+      "similarity": 0.159,
+      "red_flag_boost": 0,
+      "weight": 72.634
+    },
+    "back pain|joint pain": {
+      "cooccurrence": 10,
+      "similarity": 0.52,
+      "red_flag_boost": 0,
+      "weight": 22.082
+    },
+    "back pain|loss of consciousness": {
+      "cooccurrence": 35,
+      "similarity": 0.164,
+      "red_flag_boost": 0,
+      "weight": 70.657
+    },
+    "back pain|nausea": {
+      "cooccurrence": 15,
+      "similarity": 0.313,
+      "red_flag_boost": 0,
+      "weight": 31.254
+    },
+    "back pain|palpitations": {
+      "cooccurrence": 8,
+      "similarity": 0.179,
+      "red_flag_boost": 0,
+      "weight": 16.714
+    },
+    "back pain|rash": {
+      "cooccurrence": 7,
+      "similarity": 0.223,
+      "red_flag_boost": 0,
+      "weight": 14.894
+    },
+    "back pain|severe chest pain": {
+      "cooccurrence": 44,
+      "similarity": 0.45,
+      "red_flag_boost": 0,
+      "weight": 89.8
+    },
+    "back pain|shortness of breath": {
+      "cooccurrence": 13,
+      "similarity": 0.191,
+      "red_flag_boost": 0,
+      "weight": 26.765
+    },
+    "back pain|unable to breathe": {
+      "cooccurrence": 31,
+      "similarity": 0.246,
+      "red_flag_boost": 0,
+      "weight": 62.984
+    },
+    "back pain|uncontrolled bleeding": {
+      "cooccurrence": 40,
+      "similarity": 0.147,
+      "red_flag_boost": 0,
+      "weight": 80.587
+    },
+    "back pain|vomiting": {
+      "cooccurrence": 9,
+      "similarity": 0.32,
+      "red_flag_boost": 0,
+      "weight": 19.28
+    },
+    "bilateral pressure-like headache|headache": {
+      "cooccurrence": 0,
+      "similarity": 0.687,
+      "red_flag_boost": 0,
+      "weight": 2.747
+    },
+    "bilateral pressure-like headache|mild photophobia": {
+      "cooccurrence": 1,
+      "similarity": 0.156,
+      "red_flag_boost": 0,
+      "weight": 2.623
+    },
+    "bilateral pressure-like headache|neck tightness": {
+      "cooccurrence": 1,
+      "similarity": 0.317,
+      "red_flag_boost": 0,
+      "weight": 3.269
+    },
+    "bilateral pressure-like headache|neurologic deficits": {
+      "cooccurrence": 1,
+      "similarity": 0.31,
+      "red_flag_boost": 0,
+      "weight": 3.238
+    },
+    "bilateral pressure-like headache|not worsened by routine activity": {
+      "cooccurrence": 1,
+      "similarity": 0.132,
+      "red_flag_boost": 0,
+      "weight": 2.527
+    },
+    "bilateral pressure-like headache|pressing, non-throbbing pain": {
+      "cooccurrence": 1,
+      "similarity": 0.443,
+      "red_flag_boost": 0,
+      "weight": 3.774
+    },
+    "bilateral pressure-like headache|recurrent unilateral headaches": {
+      "cooccurrence": 0,
+      "similarity": 0.67,
+      "red_flag_boost": 0,
+      "weight": 2.679
+    },
+    "bilateral pressure-like headache|severe headache": {
+      "cooccurrence": 0,
+      "similarity": 0.709,
+      "red_flag_boost": 0,
+      "weight": 2.835
+    },
+    "bilateral pressure-like headache|sudden onset": {
+      "cooccurrence": 1,
+      "similarity": 0.292,
+      "red_flag_boost": 0,
+      "weight": 3.169
+    },
+    "bilateral pressure-like headache|throbbing headache": {
+      "cooccurrence": 0,
+      "similarity": 0.614,
+      "red_flag_boost": 0,
+      "weight": 2.458
+    },
+    "bilateral pressure-like headache|worst headache of life": {
+      "cooccurrence": 0,
+      "similarity": 0.533,
+      "red_flag_boost": 0,
+      "weight": 2.131
+    },
+    "blood in stool|bloody diarrhea": {
+      "cooccurrence": 0,
+      "similarity": 0.554,
+      "red_flag_boost": 0,
+      "weight": 2.218
+    },
+    "blood in stool|fever and abdominal cramps": {
+      "cooccurrence": 1,
+      "similarity": 0.28,
+      "red_flag_boost": 0,
+      "weight": 3.12
+    },
+    "blood in stool|high fever": {
+      "cooccurrence": 1,
+      "similarity": 0.184,
+      "red_flag_boost": 0,
+      "weight": 2.736
+    },
+    "blood in stool|persistent vomiting": {
+      "cooccurrence": 1,
+      "similarity": 0.259,
+      "red_flag_boost": 0,
+      "weight": 3.037
+    },
+    "blood in stool|signs of severe dehydration": {
+      "cooccurrence": 1,
+      "similarity": 0.21,
+      "red_flag_boost": 0,
+      "weight": 2.842
+    },
+    "blood in stool|vomiting blood": {
+      "cooccurrence": 0,
+      "similarity": 0.566,
+      "red_flag_boost": 0,
+      "weight": 2.265
+    },
+    "bloody diarrhea|diarrhea": {
+      "cooccurrence": 1,
+      "similarity": 0.872,
+      "red_flag_boost": 0,
+      "weight": 5.488
+    },
+    "bloody diarrhea|fever": {
+      "cooccurrence": 1,
+      "similarity": 0.441,
+      "red_flag_boost": 0,
+      "weight": 3.765
+    },
+    "bloody diarrhea|nausea": {
+      "cooccurrence": 0,
+      "similarity": 0.513,
+      "red_flag_boost": 0,
+      "weight": 2.051
+    },
+    "bloody diarrhea|persistent high fever": {
+      "cooccurrence": 1,
+      "similarity": 0.334,
+      "red_flag_boost": 0,
+      "weight": 3.337
+    },
+    "bloody diarrhea|signs of severe dehydration": {
+      "cooccurrence": 1,
+      "similarity": 0.336,
+      "red_flag_boost": 0,
+      "weight": 3.346
+    },
+    "bloody diarrhea|vomiting": {
+      "cooccurrence": 1,
+      "similarity": 0.566,
+      "red_flag_boost": 0,
+      "weight": 4.263
+    },
+    "bloody diarrhea|vomiting blood": {
+      "cooccurrence": 0,
+      "similarity": 0.523,
+      "red_flag_boost": 0,
+      "weight": 2.093
+    },
+    "blue lips|chest pain": {
+      "cooccurrence": 57,
+      "similarity": 0.104,
+      "red_flag_boost": 0,
+      "weight": 114.417
+    },
+    "blue lips|confusion": {
+      "cooccurrence": 53,
+      "similarity": 0.18,
+      "red_flag_boost": 0,
+      "weight": 106.72
+    },
+    "blue lips|cough": {
+      "cooccurrence": 40,
+      "similarity": 0.207,
+      "red_flag_boost": 0,
+      "weight": 80.829
+    },
+    "blue lips|diarrhea": {
+      "cooccurrence": 50,
+      "similarity": 0.222,
+      "red_flag_boost": 0,
+      "weight": 100.888
+    },
+    "blue lips|dizziness": {
+      "cooccurrence": 38,
+      "similarity": 0.184,
+      "red_flag_boost": 0,
+      "weight": 76.737
+    },
+    "blue lips|fatigue": {
+      "cooccurrence": 42,
+      "similarity": 0.168,
+      "red_flag_boost": 0,
+      "weight": 84.672
+    },
+    "blue lips|fever": {
+      "cooccurrence": 37,
+      "similarity": 0.227,
+      "red_flag_boost": 0,
+      "weight": 74.907
+    },
+    "blue lips|headache": {
+      "cooccurrence": 53,
+      "similarity": 0.307,
+      "red_flag_boost": 0,
+      "weight": 107.227
+    },
+    "blue lips|high fever": {
+      "cooccurrence": 48,
+      "similarity": 0.121,
+      "red_flag_boost": 0,
+      "weight": 96.482
+    },
+    "blue lips|joint pain": {
+      "cooccurrence": 37,
+      "similarity": 0.068,
+      "red_flag_boost": 0,
+      "weight": 74.273
+    },
+    "blue lips|loss of consciousness": {
+      "cooccurrence": 55,
+      "similarity": 0.138,
+      "red_flag_boost": 0,
+      "weight": 110.552
+    },
+    "blue lips|nausea": {
+      "cooccurrence": 35,
+      "similarity": 0.161,
+      "red_flag_boost": 0,
+      "weight": 70.645
+    },
+    "blue lips|palpitations": {
+      "cooccurrence": 46,
+      "similarity": 0.148,
+      "red_flag_boost": 0,
+      "weight": 92.594
+    },
+    "blue lips|rash": {
+      "cooccurrence": 41,
+      "similarity": 0.296,
+      "red_flag_boost": 0,
+      "weight": 83.185
+    },
+    "blue lips|severe chest pain": {
+      "cooccurrence": 43,
+      "similarity": 0.036,
+      "red_flag_boost": 0,
+      "weight": 86.143
+    },
+    "blue lips|shortness of breath": {
+      "cooccurrence": 37,
+      "similarity": 0.113,
+      "red_flag_boost": 0,
+      "weight": 74.452
+    },
+    "blue lips|unable to breathe": {
+      "cooccurrence": 55,
+      "similarity": 0.133,
+      "red_flag_boost": 0,
+      "weight": 110.531
+    },
+    "blue lips|uncontrolled bleeding": {
+      "cooccurrence": 39,
+      "similarity": 0.163,
+      "red_flag_boost": 0,
+      "weight": 78.652
+    },
+    "blue lips|vomiting": {
+      "cooccurrence": 43,
+      "similarity": 0.14,
+      "red_flag_boost": 0,
+      "weight": 86.56
+    },
+    "blurred vision|fatigue": {
+      "cooccurrence": 1,
+      "similarity": 0.216,
+      "red_flag_boost": 0,
+      "weight": 2.863
+    },
+    "blurred vision|frequent urination": {
+      "cooccurrence": 1,
+      "similarity": 0.188,
+      "red_flag_boost": 0,
+      "weight": 2.753
+    },
+    "blurred vision|hyperosmolar state": {
+      "cooccurrence": 1,
+      "similarity": 0.206,
+      "red_flag_boost": 0,
+      "weight": 2.824
+    },
+    "blurred vision|increased thirst": {
+      "cooccurrence": 1,
+      "similarity": 0.297,
+      "red_flag_boost": 0,
+      "weight": 3.186
+    },
+    "blurred vision|ketoacidosis symptoms": {
+      "cooccurrence": 1,
+      "similarity": 0.184,
+      "red_flag_boost": 0,
+      "weight": 2.735
+    },
+    "blurred vision|often asymptomatic, found on screening": {
+      "cooccurrence": 1,
+      "similarity": 0.26,
+      "red_flag_boost": 0,
+      "weight": 3.039
+    },
+    "blurred vision|vision loss": {
+      "cooccurrence": 0,
+      "similarity": 0.745,
+      "red_flag_boost": 0,
+      "weight": 2.979
+    },
+    "bp usually >180/120 with end-organ signs|chest pain": {
+      "cooccurrence": 1,
+      "similarity": 0.238,
+      "red_flag_boost": 0,
+      "weight": 2.953
+    },
+    "bp usually >180/120 with end-organ signs|confusion": {
+      "cooccurrence": 1,
+      "similarity": 0.061,
+      "red_flag_boost": 0,
+      "weight": 2.245
+    },
+    "bp usually >180/120 with end-organ signs|headache": {
+      "cooccurrence": 1,
+      "similarity": 0.108,
+      "red_flag_boost": 0,
+      "weight": 2.434
+    },
+    "bp usually >180/120 with end-organ signs|seizure": {
+      "cooccurrence": 1,
+      "similarity": 0.071,
+      "red_flag_boost": 0,
+      "weight": 2.283
+    },
+    "bp usually >180/120 with end-organ signs|shortness of breath": {
+      "cooccurrence": 1,
+      "similarity": 0.223,
+      "red_flag_boost": 0,
+      "weight": 2.89
+    },
+    "bp usually >180/120 with end-organ signs|very high blood pressure": {
+      "cooccurrence": 1,
+      "similarity": 0.468,
+      "red_flag_boost": 0,
+      "weight": 3.871
+    },
+    "bp usually >180/120 with end-organ signs|visual changes": {
+      "cooccurrence": 1,
+      "similarity": -0.009,
+      "red_flag_boost": 0,
+      "weight": 2
+    },
+    "burning chest pain after meals|chest pain": {
+      "cooccurrence": 0,
+      "similarity": 0.698,
+      "red_flag_boost": 0,
+      "weight": 2.793
+    },
+    "burning chest pain after meals|chest pain at rest": {
+      "cooccurrence": 0,
+      "similarity": 0.723,
+      "red_flag_boost": 0,
+      "weight": 2.894
+    },
+    "burning chest pain after meals|difficulty swallowing": {
+      "cooccurrence": 1,
+      "similarity": 0.314,
+      "red_flag_boost": 0,
+      "weight": 3.257
+    },
+    "burning chest pain after meals|pleuritic chest pain": {
+      "cooccurrence": 0,
+      "similarity": 0.6,
+      "red_flag_boost": 0,
+      "weight": 2.401
+    },
+    "burning chest pain after meals|predictable exertional chest discomfort": {
+      "cooccurrence": 0,
+      "similarity": 0.598,
+      "red_flag_boost": 0,
+      "weight": 2.393
+    },
+    "burning chest pain after meals|regurgitation": {
+      "cooccurrence": 1,
+      "similarity": 0.292,
+      "red_flag_boost": 0,
+      "weight": 3.169
+    },
+    "burning chest pain after meals|severe chest pain": {
+      "cooccurrence": 0,
+      "similarity": 0.683,
+      "red_flag_boost": 0,
+      "weight": 2.734
+    },
+    "burning chest pain after meals|sour taste": {
+      "cooccurrence": 1,
+      "similarity": 0.137,
+      "red_flag_boost": 0,
+      "weight": 2.549
+    },
+    "burning chest pain after meals|typical heartburn relieved by antacids": {
+      "cooccurrence": 1,
+      "similarity": 0.474,
+      "red_flag_boost": 0,
+      "weight": 3.895
+    },
+    "burning chest pain after meals|vomiting blood": {
+      "cooccurrence": 1,
+      "similarity": 0.252,
+      "red_flag_boost": 0,
+      "weight": 3.006
+    },
+    "burning chest pain after meals|weight loss": {
+      "cooccurrence": 1,
+      "similarity": 0.276,
+      "red_flag_boost": 0,
+      "weight": 3.103
+    },
+    "burning with urination|dysuria and frequency without vaginal symptoms": {
+      "cooccurrence": 1,
+      "similarity": 0.399,
+      "red_flag_boost": 0,
+      "weight": 3.596
+    },
+    "burning with urination|fever": {
+      "cooccurrence": 1,
+      "similarity": 0.276,
+      "red_flag_boost": 0,
+      "weight": 3.105
+    },
+    "burning with urination|flank pain": {
+      "cooccurrence": 1,
+      "similarity": 0.251,
+      "red_flag_boost": 0,
+      "weight": 3.005
+    },
+    "burning with urination|frequent urination": {
+      "cooccurrence": 0,
+      "similarity": 0.682,
+      "red_flag_boost": 0,
+      "weight": 2.728
+    },
+    "burning with urination|increased frequency": {
+      "cooccurrence": 1,
+      "similarity": -0.064,
+      "red_flag_boost": 0,
+      "weight": 2
+    },
+    "burning with urination|nausea/vomiting": {
+      "cooccurrence": 1,
+      "similarity": 0.276,
+      "red_flag_boost": 0,
+      "weight": 3.105
+    },
+    "burning with urination|urgency": {
+      "cooccurrence": 1,
+      "similarity": 0.147,
+      "red_flag_boost": 0,
+      "weight": 2.588
+    },
+    "chest pain|chest pain at rest": {
+      "cooccurrence": 0,
+      "similarity": 0.862,
+      "red_flag_boost": 0,
+      "weight": 3.447
+    },
+    "chest pain|chest pressure with exertion": {
+      "cooccurrence": 0,
+      "similarity": 0.615,
+      "red_flag_boost": 0,
+      "weight": 2.46
+    },
+    "chest pain|chest tightness": {
+      "cooccurrence": 0,
+      "similarity": 0.659,
+      "red_flag_boost": 0,
+      "weight": 2.637
+    },
+    "chest pain|confusion": {
+      "cooccurrence": 43,
+      "similarity": 0.182,
+      "red_flag_boost": 0,
+      "weight": 86.727
+    },
+    "chest pain|cough": {
+      "cooccurrence": 19,
+      "similarity": 0.377,
+      "red_flag_boost": 0,
+      "weight": 39.507
+    },
+    "chest pain|diarrhea": {
+      "cooccurrence": 17,
+      "similarity": 0.295,
+      "red_flag_boost": 0,
+      "weight": 35.179
+    },
+    "chest pain|dizziness": {
+      "cooccurrence": 8,
+      "similarity": 0.28,
+      "red_flag_boost": 0,
+      "weight": 17.119
+    },
+    "chest pain|fatigue": {
+      "cooccurrence": 16,
+      "similarity": 0.357,
+      "red_flag_boost": 0,
+      "weight": 33.426
+    },
+    "chest pain|fever": {
+      "cooccurrence": 14,
+      "similarity": 0.219,
+      "red_flag_boost": 0,
+      "weight": 28.877
+    },
+    "chest pain|flank pain": {
+      "cooccurrence": 0,
+      "similarity": 0.512,
+      "red_flag_boost": 0,
+      "weight": 2.05
+    },
+    "chest pain|headache": {
+      "cooccurrence": 15,
+      "similarity": 0.385,
+      "red_flag_boost": 0,
+      "weight": 31.541
+    },
+    "chest pain|high fever": {
+      "cooccurrence": 42,
+      "similarity": 0.208,
+      "red_flag_boost": 0,
+      "weight": 84.832
+    },
+    "chest pain|high persistent fever": {
+      "cooccurrence": 1,
+      "similarity": 0.184,
+      "red_flag_boost": 0,
+      "weight": 2.734
+    },
+    "chest pain|joint pain": {
+      "cooccurrence": 17,
+      "similarity": 0.341,
+      "red_flag_boost": 0,
+      "weight": 35.365
+    },
+    "chest pain|loss of consciousness": {
+      "cooccurrence": 39,
+      "similarity": 0.262,
+      "red_flag_boost": 0,
+      "weight": 79.047
+    },
+    "chest pain|low-grade fever": {
+      "cooccurrence": 1,
+      "similarity": 0.137,
+      "red_flag_boost": 0,
+      "weight": 2.547
+    },
+    "chest pain|mild cough": {
+      "cooccurrence": 1,
+      "similarity": 0.447,
+      "red_flag_boost": 0,
+      "weight": 3.786
+    },
+    "chest pain|nasal congestion": {
+      "cooccurrence": 1,
+      "similarity": 0.223,
+      "red_flag_boost": 0,
+      "weight": 2.89
+    },
+    "chest pain|nausea": {
+      "cooccurrence": 25,
+      "similarity": 0.412,
+      "red_flag_boost": 0,
+      "weight": 51.647
+    },
+    "chest pain|normal lung exam": {
+      "cooccurrence": 1,
+      "similarity": 0.365,
+      "red_flag_boost": 0,
+      "weight": 3.46
+    },
+    "chest pain|palpitations": {
+      "cooccurrence": 10,
+      "similarity": 0.429,
+      "red_flag_boost": 0,
+      "weight": 21.718
+    },
+    "chest pain|pleuritic chest pain": {
+      "cooccurrence": 0,
+      "similarity": 0.795,
+      "red_flag_boost": 0,
+      "weight": 3.181
+    },
+    "chest pain|predictable exertional chest discomfort": {
+      "cooccurrence": 0,
+      "similarity": 0.744,
+      "red_flag_boost": 0,
+      "weight": 2.976
+    },
+    "chest pain|rash": {
+      "cooccurrence": 12,
+      "similarity": 0.266,
+      "red_flag_boost": 0,
+      "weight": 25.063
+    },
+    "chest pain|runny nose": {
+      "cooccurrence": 1,
+      "similarity": 0.261,
+      "red_flag_boost": 0,
+      "weight": 3.043
+    },
+    "chest pain|seizure": {
+      "cooccurrence": 1,
+      "similarity": 0.259,
+      "red_flag_boost": 0,
+      "weight": 3.034
+    },
+    "chest pain|severe chest pain": {
+      "cooccurrence": 39,
+      "similarity": 0.927,
+      "red_flag_boost": 0,
+      "weight": 81.709
+    },
+    "chest pain|shortness of breath": {
+      "cooccurrence": 12,
+      "similarity": 0.364,
+      "red_flag_boost": 22,
+      "weight": 47.458
+    },
+    "chest pain|shortness of breath at rest": {
+      "cooccurrence": 1,
+      "similarity": 0.38,
+      "red_flag_boost": 0,
+      "weight": 3.521
+    },
+    "chest pain|silent chest": {
+      "cooccurrence": 0,
+      "similarity": 0.575,
+      "red_flag_boost": 0,
+      "weight": 2.3
+    },
+    "chest pain|sore throat": {
+      "cooccurrence": 1,
+      "similarity": 0.414,
+      "red_flag_boost": 0,
+      "weight": 3.657
+    },
+    "chest pain|unable to breathe": {
+      "cooccurrence": 44,
+      "similarity": 0.429,
+      "red_flag_boost": 0,
+      "weight": 89.715
+    },
+    "chest pain|uncontrolled bleeding": {
+      "cooccurrence": 39,
+      "similarity": 0.22,
+      "red_flag_boost": 0,
+      "weight": 78.88
+    },
+    "chest pain|very high blood pressure": {
+      "cooccurrence": 1,
+      "similarity": 0.369,
+      "red_flag_boost": 0,
+      "weight": 3.475
+    },
+    "chest pain|visual changes": {
+      "cooccurrence": 1,
+      "similarity": 0.076,
+      "red_flag_boost": 0,
+      "weight": 2.305
+    },
+    "chest pain|vomiting": {
+      "cooccurrence": 11,
+      "similarity": 0.353,
+      "red_flag_boost": 0,
+      "weight": 23.413
+    },
+    "chest pain at rest|chest pressure with exertion": {
+      "cooccurrence": 1,
+      "similarity": 0.612,
+      "red_flag_boost": 0,
+      "weight": 4.449
+    },
+    "chest pain at rest|chest tightness": {
+      "cooccurrence": 0,
+      "similarity": 0.552,
+      "red_flag_boost": 0,
+      "weight": 2.208
+    },
+    "chest pain at rest|pleuritic chest pain": {
+      "cooccurrence": 0,
+      "similarity": 0.78,
+      "red_flag_boost": 0,
+      "weight": 3.119
+    },
+    "chest pain at rest|predictable exertional chest discomfort": {
+      "cooccurrence": 1,
+      "similarity": 0.691,
+      "red_flag_boost": 0,
+      "weight": 4.766
+    },
+    "chest pain at rest|radiation to arm or jaw": {
+      "cooccurrence": 1,
+      "similarity": 0.133,
+      "red_flag_boost": 0,
+      "weight": 2.533
+    },
+    "chest pain at rest|relief with rest": {
+      "cooccurrence": 1,
+      "similarity": 0.512,
+      "red_flag_boost": 0,
+      "weight": 4.046
+    },
+    "chest pain at rest|severe chest pain": {
+      "cooccurrence": 0,
+      "similarity": 0.832,
+      "red_flag_boost": 0,
+      "weight": 3.329
+    },
+    "chest pain at rest|shortness of breath": {
+      "cooccurrence": 1,
+      "similarity": 0.295,
+      "red_flag_boost": 0,
+      "weight": 3.182
+    },
+    "chest pressure with exertion|chest tightness": {
+      "cooccurrence": 0,
+      "similarity": 0.636,
+      "red_flag_boost": 0,
+      "weight": 2.543
+    },
+    "chest pressure with exertion|pleuritic chest pain": {
+      "cooccurrence": 0,
+      "similarity": 0.545,
+      "red_flag_boost": 0,
+      "weight": 2.179
+    },
+    "chest pressure with exertion|predictable exertional chest discomfort": {
+      "cooccurrence": 1,
+      "similarity": 0.745,
+      "red_flag_boost": 0,
+      "weight": 4.982
+    },
+    "chest pressure with exertion|radiation to arm or jaw": {
+      "cooccurrence": 1,
+      "similarity": 0.19,
+      "red_flag_boost": 0,
+      "weight": 2.759
+    },
+    "chest pressure with exertion|relief with rest": {
+      "cooccurrence": 1,
+      "similarity": 0.315,
+      "red_flag_boost": 0,
+      "weight": 3.261
+    },
+    "chest pressure with exertion|severe chest pain": {
+      "cooccurrence": 0,
+      "similarity": 0.581,
+      "red_flag_boost": 0,
+      "weight": 2.324
+    },
+    "chest pressure with exertion|shortness of breath": {
+      "cooccurrence": 1,
+      "similarity": 0.331,
+      "red_flag_boost": 0,
+      "weight": 3.323
+    },
+    "chest tightness|cough": {
+      "cooccurrence": 1,
+      "similarity": 0.298,
+      "red_flag_boost": 0,
+      "weight": 3.194
+    },
+    "chest tightness|episodic wheeze and dyspnea": {
+      "cooccurrence": 1,
+      "similarity": 0.295,
+      "red_flag_boost": 0,
+      "weight": 3.18
+    },
+    "chest tightness|history of asthma": {
+      "cooccurrence": 1,
+      "similarity": 0.169,
+      "red_flag_boost": 0,
+      "weight": 2.676
+    },
+    "chest tightness|inability to speak full sentences": {
+      "cooccurrence": 1,
+      "similarity": 0.133,
+      "red_flag_boost": 0,
+      "weight": 2.53
+    },
+    "chest tightness|neck tightness": {
+      "cooccurrence": 0,
+      "similarity": 0.704,
+      "red_flag_boost": 0,
+      "weight": 2.814
+    },
+    "chest tightness|pleuritic chest pain": {
+      "cooccurrence": 0,
+      "similarity": 0.518,
+      "red_flag_boost": 0,
+      "weight": 2.073
+    },
+    "chest tightness|predictable exertional chest discomfort": {
+      "cooccurrence": 0,
+      "similarity": 0.691,
+      "red_flag_boost": 0,
+      "weight": 2.765
+    },
+    "chest tightness|severe chest pain": {
+      "cooccurrence": 0,
+      "similarity": 0.583,
+      "red_flag_boost": 0,
+      "weight": 2.33
+    },
+    "chest tightness|shortness of breath": {
+      "cooccurrence": 1,
+      "similarity": 0.444,
+      "red_flag_boost": 0,
+      "weight": 3.777
+    },
+    "chest tightness|silent chest": {
+      "cooccurrence": 1,
+      "similarity": 0.615,
+      "red_flag_boost": 0,
+      "weight": 4.46
+    },
+    "chest tightness|use of accessory muscles": {
+      "cooccurrence": 1,
+      "similarity": 0.257,
+      "red_flag_boost": 0,
+      "weight": 3.027
+    },
+    "chest tightness|wheezing": {
+      "cooccurrence": 1,
+      "similarity": 0.407,
+      "red_flag_boost": 0,
+      "weight": 3.627
+    },
+    "chills|costovertebral angle tenderness": {
+      "cooccurrence": 1,
+      "similarity": 0.076,
+      "red_flag_boost": 0,
+      "weight": 2.306
+    },
+    "chills|fever": {
+      "cooccurrence": 1,
+      "similarity": 0.328,
+      "red_flag_boost": 0,
+      "weight": 3.311
+    },
+    "chills|flank pain": {
+      "cooccurrence": 1,
+      "similarity": 0.109,
+      "red_flag_boost": 0,
+      "weight": 2.437
+    },
+    "chills|hypotension": {
+      "cooccurrence": 1,
+      "similarity": 0.15,
+      "red_flag_boost": 0,
+      "weight": 2.6
+    },
+    "chills|nausea": {
+      "cooccurrence": 1,
+      "similarity": 0.349,
+      "red_flag_boost": 0,
+      "weight": 3.396
+    },
+    "confusion|cough": {
+      "cooccurrence": 48,
+      "similarity": 0.359,
+      "red_flag_boost": 0,
+      "weight": 97.435
+    },
+    "confusion|cough with sputum": {
+      "cooccurrence": 1,
+      "similarity": 0.126,
+      "red_flag_boost": 0,
+      "weight": 2.503
+    },
+    "confusion|diarrhea": {
+      "cooccurrence": 34,
+      "similarity": 0.259,
+      "red_flag_boost": 0,
+      "weight": 69.035
+    },
+    "confusion|dizziness": {
+      "cooccurrence": 40,
+      "similarity": 0.182,
+      "red_flag_boost": 0,
+      "weight": 80.727
+    },
+    "confusion|fatigue": {
+      "cooccurrence": 43,
+      "similarity": 0.256,
+      "red_flag_boost": 0,
+      "weight": 87.023
+    },
+    "confusion|fever": {
+      "cooccurrence": 38,
+      "similarity": 0.195,
+      "red_flag_boost": 0,
+      "weight": 76.782
+    },
+    "confusion|focal crackles on lung exam": {
+      "cooccurrence": 1,
+      "similarity": 0.056,
+      "red_flag_boost": 0,
+      "weight": 2.223
+    },
+    "confusion|headache": {
+      "cooccurrence": 40,
+      "similarity": 0.289,
+      "red_flag_boost": 0,
+      "weight": 81.156
+    },
+    "confusion|high fever": {
+      "cooccurrence": 53,
+      "similarity": 0.154,
+      "red_flag_boost": 0,
+      "weight": 106.618
+    },
+    "confusion|joint pain": {
+      "cooccurrence": 39,
+      "similarity": 0.12,
+      "red_flag_boost": 0,
+      "weight": 78.48
+    },
+    "confusion|loss of consciousness": {
+      "cooccurrence": 52,
+      "similarity": 0.237,
+      "red_flag_boost": 0,
+      "weight": 104.948
+    },
+    "confusion|low blood pressure": {
+      "cooccurrence": 1,
+      "similarity": 0.113,
+      "red_flag_boost": 0,
+      "weight": 2.452
+    },
+    "confusion|nausea": {
+      "cooccurrence": 48,
+      "similarity": 0.26,
+      "red_flag_boost": 0,
+      "weight": 97.038
+    },
+    "confusion|palpitations": {
+      "cooccurrence": 34,
+      "similarity": 0.24,
+      "red_flag_boost": 0,
+      "weight": 68.96
+    },
+    "confusion|pleuritic chest pain": {
+      "cooccurrence": 1,
+      "similarity": -0.003,
+      "red_flag_boost": 0,
+      "weight": 2
+    },
+    "confusion|productive cough": {
+      "cooccurrence": 1,
+      "similarity": 0.188,
+      "red_flag_boost": 0,
+      "weight": 2.75
+    },
+    "confusion|rash": {
+      "cooccurrence": 41,
+      "similarity": 0.27,
+      "red_flag_boost": 0,
+      "weight": 83.078
+    },
+    "confusion|respiratory distress": {
+      "cooccurrence": 1,
+      "similarity": 0.149,
+      "red_flag_boost": 0,
+      "weight": 2.594
+    },
+    "confusion|seizure": {
+      "cooccurrence": 1,
+      "similarity": 0.237,
+      "red_flag_boost": 0,
+      "weight": 2.947
+    },
+    "confusion|severe chest pain": {
+      "cooccurrence": 40,
+      "similarity": 0.068,
+      "red_flag_boost": 0,
+      "weight": 80.272
+    },
+    "confusion|shortness of breath": {
+      "cooccurrence": 42,
+      "similarity": 0.032,
+      "red_flag_boost": 0,
+      "weight": 84.129
+    },
+    "confusion|unable to breathe": {
+      "cooccurrence": 41,
+      "similarity": 0.205,
+      "red_flag_boost": 0,
+      "weight": 82.82
+    },
+    "confusion|uncontrolled bleeding": {
+      "cooccurrence": 60,
+      "similarity": 0.11,
+      "red_flag_boost": 0,
+      "weight": 120.44
+    },
+    "confusion|very high blood pressure": {
+      "cooccurrence": 1,
+      "similarity": 0.095,
+      "red_flag_boost": 0,
+      "weight": 2.381
+    },
+    "confusion|visual changes": {
+      "cooccurrence": 1,
+      "similarity": 0.221,
+      "red_flag_boost": 0,
+      "weight": 2.884
+    },
+    "confusion|vomiting": {
+      "cooccurrence": 49,
+      "similarity": 0.302,
+      "red_flag_boost": 0,
+      "weight": 99.207
+    },
+    "costovertebral angle tenderness|fever": {
+      "cooccurrence": 1,
+      "similarity": 0.018,
+      "red_flag_boost": 0,
+      "weight": 2.072
+    },
+    "costovertebral angle tenderness|flank pain": {
+      "cooccurrence": 1,
+      "similarity": 0.304,
+      "red_flag_boost": 0,
+      "weight": 3.216
+    },
+    "costovertebral angle tenderness|hypotension": {
+      "cooccurrence": 1,
+      "similarity": 0.141,
+      "red_flag_boost": 0,
+      "weight": 2.564
+    },
+    "costovertebral angle tenderness|nausea": {
+      "cooccurrence": 1,
+      "similarity": 0.148,
+      "red_flag_boost": 0,
+      "weight": 2.591
+    },
+    "cough|cough with sputum": {
+      "cooccurrence": 0,
+      "similarity": 0.542,
+      "red_flag_boost": 0,
+      "weight": 2.166
+    },
+    "cough|diarrhea": {
+      "cooccurrence": 20,
+      "similarity": 0.336,
+      "red_flag_boost": 0,
+      "weight": 41.345
+    },
+    "cough|dizziness": {
+      "cooccurrence": 16,
+      "similarity": 0.149,
+      "red_flag_boost": 0,
+      "weight": 32.595
+    },
+    "cough|episodic wheeze and dyspnea": {
+      "cooccurrence": 1,
+      "similarity": 0.164,
+      "red_flag_boost": 0,
+      "weight": 2.658
+    },
+    "cough|fatigue": {
+      "cooccurrence": 19,
+      "similarity": 0.206,
+      "red_flag_boost": 0,
+      "weight": 38.824
+    },
+    "cough|fever": {
+      "cooccurrence": 12,
+      "similarity": 0.253,
+      "red_flag_boost": 0,
+      "weight": 25.014
+    },
+    "cough|headache": {
+      "cooccurrence": 17,
+      "similarity": 0.37,
+      "red_flag_boost": 0,
+      "weight": 35.479
+    },
+    "cough|high fever": {
+      "cooccurrence": 46,
+      "similarity": 0.247,
+      "red_flag_boost": 0,
+      "weight": 92.99
+    },
+    "cough|high persistent fever": {
+      "cooccurrence": 1,
+      "similarity": 0.144,
+      "red_flag_boost": 0,
+      "weight": 2.577
+    },
+    "cough|history of asthma": {
+      "cooccurrence": 1,
+      "similarity": 0.201,
+      "red_flag_boost": 0,
+      "weight": 2.805
+    },
+    "cough|inability to speak full sentences": {
+      "cooccurrence": 1,
+      "similarity": 0.211,
+      "red_flag_boost": 0,
+      "weight": 2.844
+    },
+    "cough|joint pain": {
+      "cooccurrence": 17,
+      "similarity": 0.189,
+      "red_flag_boost": 0,
+      "weight": 34.755
+    },
+    "cough|loss of consciousness": {
+      "cooccurrence": 39,
+      "similarity": 0.193,
+      "red_flag_boost": 0,
+      "weight": 78.772
+    },
+    "cough|low-grade fever": {
+      "cooccurrence": 1,
+      "similarity": 0.161,
+      "red_flag_boost": 0,
+      "weight": 2.646
+    },
+    "cough|mild cough": {
+      "cooccurrence": 1,
+      "similarity": 0.599,
+      "red_flag_boost": 0,
+      "weight": 4.395
+    },
+    "cough|nasal congestion": {
+      "cooccurrence": 1,
+      "similarity": 0.273,
+      "red_flag_boost": 0,
+      "weight": 3.092
+    },
+    "cough|nausea": {
+      "cooccurrence": 13,
+      "similarity": 0.285,
+      "red_flag_boost": 0,
+      "weight": 27.141
+    },
+    "cough|normal lung exam": {
+      "cooccurrence": 1,
+      "similarity": 0.248,
+      "red_flag_boost": 0,
+      "weight": 2.991
+    },
+    "cough|palpitations": {
+      "cooccurrence": 9,
+      "similarity": 0.175,
+      "red_flag_boost": 0,
+      "weight": 18.701
+    },
+    "cough|productive cough": {
+      "cooccurrence": 0,
+      "similarity": 0.596,
+      "red_flag_boost": 0,
+      "weight": 2.382
+    },
+    "cough|rash": {
+      "cooccurrence": 16,
+      "similarity": 0.321,
+      "red_flag_boost": 0,
+      "weight": 33.284
+    },
+    "cough|runny nose": {
+      "cooccurrence": 1,
+      "similarity": 0.317,
+      "red_flag_boost": 0,
+      "weight": 3.267
+    },
+    "cough|severe chest pain": {
+      "cooccurrence": 47,
+      "similarity": 0.291,
+      "red_flag_boost": 0,
+      "weight": 95.162
+    },
+    "cough|shortness of breath": {
+      "cooccurrence": 12,
+      "similarity": 0.246,
+      "red_flag_boost": 0,
+      "weight": 24.983
+    },
+    "cough|shortness of breath at rest": {
+      "cooccurrence": 1,
+      "similarity": 0.217,
+      "red_flag_boost": 0,
+      "weight": 2.867
+    },
+    "cough|silent chest": {
+      "cooccurrence": 1,
+      "similarity": 0.319,
+      "red_flag_boost": 0,
+      "weight": 3.274
+    },
+    "cough|sore throat": {
+      "cooccurrence": 1,
+      "similarity": 0.349,
+      "red_flag_boost": 0,
+      "weight": 3.396
+    },
+    "cough|unable to breathe": {
+      "cooccurrence": 38,
+      "similarity": 0.318,
+      "red_flag_boost": 0,
+      "weight": 77.272
+    },
+    "cough|uncontrolled bleeding": {
+      "cooccurrence": 52,
+      "similarity": 0.049,
+      "red_flag_boost": 0,
+      "weight": 104.197
+    },
+    "cough|use of accessory muscles": {
+      "cooccurrence": 1,
+      "similarity": 0.085,
+      "red_flag_boost": 0,
+      "weight": 2.341
+    },
+    "cough|vomiting": {
+      "cooccurrence": 16,
+      "similarity": 0.296,
+      "red_flag_boost": 0,
+      "weight": 33.183
+    },
+    "cough|wheezing": {
+      "cooccurrence": 1,
+      "similarity": 0.394,
+      "red_flag_boost": 0,
+      "weight": 3.575
+    },
+    "cough with sputum|fever": {
+      "cooccurrence": 1,
+      "similarity": 0.264,
+      "red_flag_boost": 0,
+      "weight": 3.056
+    },
+    "cough with sputum|focal crackles on lung exam": {
+      "cooccurrence": 1,
+      "similarity": 0.363,
+      "red_flag_boost": 0,
+      "weight": 3.453
+    },
+    "cough with sputum|low blood pressure": {
+      "cooccurrence": 1,
+      "similarity": 0.138,
+      "red_flag_boost": 0,
+      "weight": 2.551
+    },
+    "cough with sputum|mild cough": {
+      "cooccurrence": 0,
+      "similarity": 0.701,
+      "red_flag_boost": 0,
+      "weight": 2.804
+    },
+    "cough with sputum|pleuritic chest pain": {
+      "cooccurrence": 1,
+      "similarity": 0.348,
+      "red_flag_boost": 0,
+      "weight": 3.39
+    },
+    "cough with sputum|productive cough": {
+      "cooccurrence": 1,
+      "similarity": 0.581,
+      "red_flag_boost": 0,
+      "weight": 4.324
+    },
+    "cough with sputum|respiratory distress": {
+      "cooccurrence": 1,
+      "similarity": 0.321,
+      "red_flag_boost": 0,
+      "weight": 3.284
+    },
+    "cough with sputum|shortness of breath": {
+      "cooccurrence": 1,
+      "similarity": 0.308,
+      "red_flag_boost": 0,
+      "weight": 3.231
+    },
+    "diarrhea|dizziness": {
+      "cooccurrence": 9,
+      "similarity": 0.28,
+      "red_flag_boost": 0,
+      "weight": 19.121
+    },
+    "diarrhea|fatigue": {
+      "cooccurrence": 16,
+      "similarity": 0.341,
+      "red_flag_boost": 0,
+      "weight": 33.364
+    },
+    "diarrhea|fever": {
+      "cooccurrence": 12,
+      "similarity": 0.419,
+      "red_flag_boost": 0,
+      "weight": 25.674
+    },
+    "diarrhea|headache": {
+      "cooccurrence": 14,
+      "similarity": 0.395,
+      "red_flag_boost": 0,
+      "weight": 29.578
+    },
+    "diarrhea|high fever": {
+      "cooccurrence": 41,
+      "similarity": 0.382,
+      "red_flag_boost": 0,
+      "weight": 83.528
+    },
+    "diarrhea|joint pain": {
+      "cooccurrence": 11,
+      "similarity": 0.256,
+      "red_flag_boost": 0,
+      "weight": 23.022
+    },
+    "diarrhea|loss of consciousness": {
+      "cooccurrence": 36,
+      "similarity": 0.152,
+      "red_flag_boost": 0,
+      "weight": 72.609
+    },
+    "diarrhea|nausea": {
+      "cooccurrence": 21,
+      "similarity": 0.603,
+      "red_flag_boost": 0,
+      "weight": 44.411
+    },
+    "diarrhea|nausea/vomiting": {
+      "cooccurrence": 0,
+      "similarity": 0.535,
+      "red_flag_boost": 0,
+      "weight": 2.139
+    },
+    "diarrhea|palpitations": {
+      "cooccurrence": 16,
+      "similarity": 0.304,
+      "red_flag_boost": 0,
+      "weight": 33.217
+    },
+    "diarrhea|persistent high fever": {
+      "cooccurrence": 1,
+      "similarity": 0.302,
+      "red_flag_boost": 0,
+      "weight": 3.207
+    },
+    "diarrhea|rash": {
+      "cooccurrence": 10,
+      "similarity": 0.448,
+      "red_flag_boost": 0,
+      "weight": 21.792
+    },
+    "diarrhea|severe chest pain": {
+      "cooccurrence": 49,
+      "similarity": 0.21,
+      "red_flag_boost": 0,
+      "weight": 98.842
+    },
+    "diarrhea|shortness of breath": {
+      "cooccurrence": 16,
+      "similarity": 0.203,
+      "red_flag_boost": 0,
+      "weight": 32.812
+    },
+    "diarrhea|signs of severe dehydration": {
+      "cooccurrence": 1,
+      "similarity": 0.3,
+      "red_flag_boost": 0,
+      "weight": 3.199
+    },
+    "diarrhea|unable to breathe": {
+      "cooccurrence": 43,
+      "similarity": 0.263,
+      "red_flag_boost": 0,
+      "weight": 87.052
+    },
+    "diarrhea|uncontrolled bleeding": {
+      "cooccurrence": 45,
+      "similarity": 0.222,
+      "red_flag_boost": 0,
+      "weight": 90.889
+    },
+    "diarrhea|vomiting": {
+      "cooccurrence": 13,
+      "similarity": 0.618,
+      "red_flag_boost": 0,
+      "weight": 28.473
+    },
+    "difficulty swallowing|regurgitation": {
+      "cooccurrence": 1,
+      "similarity": 0.387,
+      "red_flag_boost": 0,
+      "weight": 3.548
+    },
+    "difficulty swallowing|sour taste": {
+      "cooccurrence": 1,
+      "similarity": 0.244,
+      "red_flag_boost": 0,
+      "weight": 2.976
+    },
+    "difficulty swallowing|typical heartburn relieved by antacids": {
+      "cooccurrence": 1,
+      "similarity": 0.202,
+      "red_flag_boost": 0,
+      "weight": 2.809
+    },
+    "difficulty swallowing|vomiting blood": {
+      "cooccurrence": 1,
+      "similarity": 0.209,
+      "red_flag_boost": 0,
+      "weight": 2.835
+    },
+    "difficulty swallowing|weight loss": {
+      "cooccurrence": 1,
+      "similarity": 0.133,
+      "red_flag_boost": 0,
+      "weight": 2.533
+    },
+    "dizziness|fatigue": {
+      "cooccurrence": 13,
+      "similarity": 0.306,
+      "red_flag_boost": 0,
+      "weight": 27.225
+    },
+    "dizziness|fever": {
+      "cooccurrence": 14,
+      "similarity": 0.257,
+      "red_flag_boost": 0,
+      "weight": 29.028
+    },
+    "dizziness|headache": {
+      "cooccurrence": 14,
+      "similarity": 0.49,
+      "red_flag_boost": 0,
+      "weight": 29.962
+    },
+    "dizziness|high fever": {
+      "cooccurrence": 31,
+      "similarity": 0.319,
+      "red_flag_boost": 0,
+      "weight": 63.277
+    },
+    "dizziness|joint pain": {
+      "cooccurrence": 9,
+      "similarity": 0.213,
+      "red_flag_boost": 0,
+      "weight": 18.853
+    },
+    "dizziness|loss of consciousness": {
+      "cooccurrence": 44,
+      "similarity": 0.235,
+      "red_flag_boost": 0,
+      "weight": 88.941
+    },
+    "dizziness|nausea": {
+      "cooccurrence": 13,
+      "similarity": 0.461,
+      "red_flag_boost": 0,
+      "weight": 27.843
+    },
+    "dizziness|palpitations": {
+      "cooccurrence": 14,
+      "similarity": 0.361,
+      "red_flag_boost": 0,
+      "weight": 29.443
+    },
+    "dizziness|rash": {
+      "cooccurrence": 8,
+      "similarity": 0.278,
+      "red_flag_boost": 0,
+      "weight": 17.112
+    },
+    "dizziness|severe chest pain": {
+      "cooccurrence": 35,
+      "similarity": 0.228,
+      "red_flag_boost": 0,
+      "weight": 70.913
+    },
+    "dizziness|shortness of breath": {
+      "cooccurrence": 16,
+      "similarity": 0.283,
+      "red_flag_boost": 0,
+      "weight": 33.133
+    },
+    "dizziness|unable to breathe": {
+      "cooccurrence": 43,
+      "similarity": 0.301,
+      "red_flag_boost": 0,
+      "weight": 87.202
+    },
+    "dizziness|uncontrolled bleeding": {
+      "cooccurrence": 37,
+      "similarity": 0.285,
+      "red_flag_boost": 0,
+      "weight": 75.14
+    },
+    "dizziness|vomiting": {
+      "cooccurrence": 12,
+      "similarity": 0.38,
+      "red_flag_boost": 0,
+      "weight": 25.519
+    },
+    "dysuria and frequency without vaginal symptoms|fever": {
+      "cooccurrence": 1,
+      "similarity": 0.18,
+      "red_flag_boost": 0,
+      "weight": 2.719
+    },
+    "dysuria and frequency without vaginal symptoms|flank pain": {
+      "cooccurrence": 1,
+      "similarity": 0.104,
+      "red_flag_boost": 0,
+      "weight": 2.415
+    },
+    "dysuria and frequency without vaginal symptoms|increased frequency": {
+      "cooccurrence": 1,
+      "similarity": 0.094,
+      "red_flag_boost": 0,
+      "weight": 2.378
+    },
+    "dysuria and frequency without vaginal symptoms|nausea/vomiting": {
+      "cooccurrence": 1,
+      "similarity": 0.203,
+      "red_flag_boost": 0,
+      "weight": 2.811
+    },
+    "dysuria and frequency without vaginal symptoms|urgency": {
+      "cooccurrence": 1,
+      "similarity": 0.027,
+      "red_flag_boost": 0,
+      "weight": 2.109
+    },
+    "episodic wheeze and dyspnea|history of asthma": {
+      "cooccurrence": 1,
+      "similarity": 0.396,
+      "red_flag_boost": 0,
+      "weight": 3.585
+    },
+    "episodic wheeze and dyspnea|inability to speak full sentences": {
+      "cooccurrence": 1,
+      "similarity": 0.183,
+      "red_flag_boost": 0,
+      "weight": 2.732
+    },
+    "episodic wheeze and dyspnea|shortness of breath": {
+      "cooccurrence": 1,
+      "similarity": 0.411,
+      "red_flag_boost": 0,
+      "weight": 3.644
+    },
+    "episodic wheeze and dyspnea|silent chest": {
+      "cooccurrence": 1,
+      "similarity": 0.213,
+      "red_flag_boost": 0,
+      "weight": 2.854
+    },
+    "episodic wheeze and dyspnea|use of accessory muscles": {
+      "cooccurrence": 1,
+      "similarity": 0.07,
+      "red_flag_boost": 0,
+      "weight": 2.279
+    },
+    "episodic wheeze and dyspnea|wheezing": {
+      "cooccurrence": 1,
+      "similarity": 0.605,
+      "red_flag_boost": 0,
+      "weight": 4.421
+    },
+    "fatigue|fever": {
+      "cooccurrence": 8,
+      "similarity": 0.289,
+      "red_flag_boost": 0,
+      "weight": 17.155
+    },
+    "fatigue|frequent urination": {
+      "cooccurrence": 1,
+      "similarity": 0.293,
+      "red_flag_boost": 0,
+      "weight": 3.173
+    },
+    "fatigue|headache": {
+      "cooccurrence": 17,
+      "similarity": 0.43,
+      "red_flag_boost": 0,
+      "weight": 35.718
+    },
+    "fatigue|high fever": {
+      "cooccurrence": 38,
+      "similarity": 0.227,
+      "red_flag_boost": 0,
+      "weight": 76.908
+    },
+    "fatigue|hyperosmolar state": {
+      "cooccurrence": 1,
+      "similarity": 0.135,
+      "red_flag_boost": 0,
+      "weight": 2.539
+    },
+    "fatigue|increased thirst": {
+      "cooccurrence": 1,
+      "similarity": 0.334,
+      "red_flag_boost": 0,
+      "weight": 3.336
+    },
+    "fatigue|joint pain": {
+      "cooccurrence": 11,
+      "similarity": 0.275,
+      "red_flag_boost": 0,
+      "weight": 23.101
+    },
+    "fatigue|ketoacidosis symptoms": {
+      "cooccurrence": 1,
+      "similarity": 0.231,
+      "red_flag_boost": 0,
+      "weight": 2.924
+    },
+    "fatigue|loss of consciousness": {
+      "cooccurrence": 41,
+      "similarity": 0.313,
+      "red_flag_boost": 0,
+      "weight": 83.253
+    },
+    "fatigue|nausea": {
+      "cooccurrence": 15,
+      "similarity": 0.487,
+      "red_flag_boost": 0,
+      "weight": 31.948
+    },
+    "fatigue|often asymptomatic, found on screening": {
+      "cooccurrence": 1,
+      "similarity": 0.2,
+      "red_flag_boost": 0,
+      "weight": 2.801
+    },
+    "fatigue|palpitations": {
+      "cooccurrence": 15,
+      "similarity": 0.314,
+      "red_flag_boost": 0,
+      "weight": 31.257
+    },
+    "fatigue|rash": {
+      "cooccurrence": 7,
+      "similarity": 0.34,
+      "red_flag_boost": 0,
+      "weight": 15.361
+    },
+    "fatigue|relief with rest": {
+      "cooccurrence": 0,
+      "similarity": 0.501,
+      "red_flag_boost": 0,
+      "weight": 2.005
+    },
+    "fatigue|severe chest pain": {
+      "cooccurrence": 39,
+      "similarity": 0.265,
+      "red_flag_boost": 0,
+      "weight": 79.058
+    },
+    "fatigue|shortness of breath": {
+      "cooccurrence": 11,
+      "similarity": 0.267,
+      "red_flag_boost": 0,
+      "weight": 23.067
+    },
+    "fatigue|unable to breathe": {
+      "cooccurrence": 36,
+      "similarity": 0.352,
+      "red_flag_boost": 0,
+      "weight": 73.41
+    },
+    "fatigue|uncontrolled bleeding": {
+      "cooccurrence": 51,
+      "similarity": 0.129,
+      "red_flag_boost": 0,
+      "weight": 102.517
+    },
+    "fatigue|vomiting": {
+      "cooccurrence": 17,
+      "similarity": 0.405,
+      "red_flag_boost": 0,
+      "weight": 35.619
+    },
+    "fever|fever and abdominal cramps": {
+      "cooccurrence": 0,
+      "similarity": 0.688,
+      "red_flag_boost": 0,
+      "weight": 2.753
+    },
+    "fever|fever with neck stiffness": {
+      "cooccurrence": 0,
+      "similarity": 0.666,
+      "red_flag_boost": 0,
+      "weight": 2.665
+    },
+    "fever|fever, neck stiffness, and headache": {
+      "cooccurrence": 1,
+      "similarity": 0.643,
+      "red_flag_boost": 0,
+      "weight": 4.574
+    },
+    "fever|flank pain": {
+      "cooccurrence": 2,
+      "similarity": 0.23,
+      "red_flag_boost": 0,
+      "weight": 4.919
+    },
+    "fever|focal crackles on lung exam": {
+      "cooccurrence": 1,
+      "similarity": 0.069,
+      "red_flag_boost": 0,
+      "weight": 2.277
+    },
+    "fever|headache": {
+      "cooccurrence": 10,
+      "similarity": 0.399,
+      "red_flag_boost": 0,
+      "weight": 21.594
+    },
+    "fever|high fever": {
+      "cooccurrence": 40,
+      "similarity": 0.828,
+      "red_flag_boost": 0,
+      "weight": 83.313
+    },
+    "fever|high persistent fever": {
+      "cooccurrence": 0,
+      "similarity": 0.781,
+      "red_flag_boost": 0,
+      "weight": 3.124
+    },
+    "fever|hypotension": {
+      "cooccurrence": 1,
+      "similarity": 0.182,
+      "red_flag_boost": 0,
+      "weight": 2.729
+    },
+    "fever|increased frequency": {
+      "cooccurrence": 1,
+      "similarity": 0.018,
+      "red_flag_boost": 0,
+      "weight": 2.073
+    },
+    "fever|joint pain": {
+      "cooccurrence": 5,
+      "similarity": 0.146,
+      "red_flag_boost": 0,
+      "weight": 10.583
+    },
+    "fever|loss of consciousness": {
+      "cooccurrence": 45,
+      "similarity": 0.195,
+      "red_flag_boost": 0,
+      "weight": 90.778
+    },
+    "fever|low blood pressure": {
+      "cooccurrence": 1,
+      "similarity": 0.099,
+      "red_flag_boost": 0,
+      "weight": 2.394
+    },
+    "fever|low-grade fever": {
+      "cooccurrence": 0,
+      "similarity": 0.755,
+      "red_flag_boost": 0,
+      "weight": 3.02
+    },
+    "fever|nausea": {
+      "cooccurrence": 10,
+      "similarity": 0.412,
+      "red_flag_boost": 0,
+      "weight": 21.649
+    },
+    "fever|nausea/vomiting": {
+      "cooccurrence": 1,
+      "similarity": 0.386,
+      "red_flag_boost": 0,
+      "weight": 3.545
+    },
+    "fever|neck stiffness": {
+      "cooccurrence": 1,
+      "similarity": 0.186,
+      "red_flag_boost": 0,
+      "weight": 2.746
+    },
+    "fever|palpitations": {
+      "cooccurrence": 12,
+      "similarity": 0.184,
+      "red_flag_boost": 0,
+      "weight": 24.737
+    },
+    "fever|persistent high fever": {
+      "cooccurrence": 1,
+      "similarity": 0.794,
+      "red_flag_boost": 0,
+      "weight": 5.175
+    },
+    "fever|photophobia": {
+      "cooccurrence": 1,
+      "similarity": 0.135,
+      "red_flag_boost": 0,
+      "weight": 2.54
+    },
+    "fever|pleuritic chest pain": {
+      "cooccurrence": 1,
+      "similarity": 0.088,
+      "red_flag_boost": 0,
+      "weight": 2.352
+    },
+    "fever|positive kernig or brudzinski sign": {
+      "cooccurrence": 1,
+      "similarity": 0.112,
+      "red_flag_boost": 0,
+      "weight": 2.446
+    },
+    "fever|productive cough": {
+      "cooccurrence": 1,
+      "similarity": 0.254,
+      "red_flag_boost": 0,
+      "weight": 3.017
+    },
+    "fever|rapid deterioration": {
+      "cooccurrence": 1,
+      "similarity": 0.214,
+      "red_flag_boost": 0,
+      "weight": 2.855
+    },
+    "fever|rash": {
+      "cooccurrence": 9,
+      "similarity": 0.509,
+      "red_flag_boost": 0,
+      "weight": 20.037
+    },
+    "fever|respiratory distress": {
+      "cooccurrence": 1,
+      "similarity": 0.253,
+      "red_flag_boost": 0,
+      "weight": 3.012
+    },
+    "fever|seizure": {
+      "cooccurrence": 1,
+      "similarity": 0.333,
+      "red_flag_boost": 0,
+      "weight": 3.333
+    },
+    "fever|severe chest pain": {
+      "cooccurrence": 42,
+      "similarity": 0.18,
+      "red_flag_boost": 0,
+      "weight": 84.719
+    },
+    "fever|severe headache": {
+      "cooccurrence": 1,
+      "similarity": 0.367,
+      "red_flag_boost": 0,
+      "weight": 3.466
+    },
+    "fever|shortness of breath": {
+      "cooccurrence": 13,
+      "similarity": 0.133,
+      "red_flag_boost": 0,
+      "weight": 26.53
+    },
+    "fever|signs of severe dehydration": {
+      "cooccurrence": 1,
+      "similarity": 0.256,
+      "red_flag_boost": 0,
+      "weight": 3.024
+    },
+    "fever|unable to breathe": {
+      "cooccurrence": 28,
+      "similarity": 0.241,
+      "red_flag_boost": 0,
+      "weight": 56.964
+    },
+    "fever|uncontrolled bleeding": {
+      "cooccurrence": 33,
+      "similarity": 0.25,
+      "red_flag_boost": 0,
+      "weight": 67.001
+    },
+    "fever|urgency": {
+      "cooccurrence": 1,
+      "similarity": 0.182,
+      "red_flag_boost": 0,
+      "weight": 2.73
+    },
+    "fever|vomiting": {
+      "cooccurrence": 22,
+      "similarity": 0.437,
+      "red_flag_boost": 0,
+      "weight": 45.749
+    },
+    "fever and abdominal cramps|fever with neck stiffness": {
+      "cooccurrence": 0,
+      "similarity": 0.541,
+      "red_flag_boost": 0,
+      "weight": 2.166
+    },
+    "fever and abdominal cramps|fever, neck stiffness, and headache": {
+      "cooccurrence": 0,
+      "similarity": 0.567,
+      "red_flag_boost": 0,
+      "weight": 2.269
+    },
+    "fever and abdominal cramps|high fever": {
+      "cooccurrence": 1,
+      "similarity": 0.591,
+      "red_flag_boost": 0,
+      "weight": 4.363
+    },
+    "fever and abdominal cramps|high persistent fever": {
+      "cooccurrence": 0,
+      "similarity": 0.579,
+      "red_flag_boost": 0,
+      "weight": 2.315
+    },
+    "fever and abdominal cramps|low-grade fever": {
+      "cooccurrence": 0,
+      "similarity": 0.548,
+      "red_flag_boost": 0,
+      "weight": 2.193
+    },
+    "fever and abdominal cramps|persistent high fever": {
+      "cooccurrence": 0,
+      "similarity": 0.6,
+      "red_flag_boost": 0,
+      "weight": 2.399
+    },
+    "fever and abdominal cramps|persistent vomiting": {
+      "cooccurrence": 1,
+      "similarity": 0.373,
+      "red_flag_boost": 0,
+      "weight": 3.492
+    },
+    "fever and abdominal cramps|signs of severe dehydration": {
+      "cooccurrence": 1,
+      "similarity": 0.385,
+      "red_flag_boost": 0,
+      "weight": 3.538
+    },
+    "fever with neck stiffness|fever, neck stiffness, and headache": {
+      "cooccurrence": 0,
+      "similarity": 0.901,
+      "red_flag_boost": 0,
+      "weight": 3.604
+    },
+    "fever with neck stiffness|high fever": {
+      "cooccurrence": 0,
+      "similarity": 0.593,
+      "red_flag_boost": 0,
+      "weight": 2.371
+    },
+    "fever with neck stiffness|high persistent fever": {
+      "cooccurrence": 0,
+      "similarity": 0.589,
+      "red_flag_boost": 0,
+      "weight": 2.356
+    },
+    "fever with neck stiffness|light sensitivity": {
+      "cooccurrence": 1,
+      "similarity": 0.004,
+      "red_flag_boost": 0,
+      "weight": 2.015
+    },
+    "fever with neck stiffness|low-grade fever": {
+      "cooccurrence": 0,
+      "similarity": 0.553,
+      "red_flag_boost": 0,
+      "weight": 2.212
+    },
+    "fever with neck stiffness|nausea": {
+      "cooccurrence": 1,
+      "similarity": 0.273,
+      "red_flag_boost": 0,
+      "weight": 3.093
+    },
+    "fever with neck stiffness|neck stiffness": {
+      "cooccurrence": 0,
+      "similarity": 0.751,
+      "red_flag_boost": 0,
+      "weight": 3.003
+    },
+    "fever with neck stiffness|neck tightness": {
+      "cooccurrence": 0,
+      "similarity": 0.571,
+      "red_flag_boost": 0,
+      "weight": 2.284
+    },
+    "fever with neck stiffness|persistent high fever": {
+      "cooccurrence": 0,
+      "similarity": 0.606,
+      "red_flag_boost": 0,
+      "weight": 2.425
+    },
+    "fever with neck stiffness|photophobia or phonophobia": {
+      "cooccurrence": 1,
+      "similarity": 0.043,
+      "red_flag_boost": 0,
+      "weight": 2.173
+    },
+    "fever with neck stiffness|recurrent unilateral headaches": {
+      "cooccurrence": 1,
+      "similarity": 0.367,
+      "red_flag_boost": 0,
+      "weight": 3.469
+    },
+    "fever with neck stiffness|sound sensitivity": {
+      "cooccurrence": 1,
+      "similarity": 0.096,
+      "red_flag_boost": 0,
+      "weight": 2.382
+    },
+    "fever with neck stiffness|throbbing headache": {
+      "cooccurrence": 1,
+      "similarity": 0.454,
+      "red_flag_boost": 0,
+      "weight": 3.816
+    },
+    "fever with neck stiffness|vision loss": {
+      "cooccurrence": 1,
+      "similarity": 0.005,
+      "red_flag_boost": 0,
+      "weight": 2.018
+    },
+    "fever with neck stiffness|weakness on one side": {
+      "cooccurrence": 1,
+      "similarity": 0.295,
+      "red_flag_boost": 0,
+      "weight": 3.178
+    },
+    "fever with neck stiffness|worst headache of life": {
+      "cooccurrence": 1,
+      "similarity": 0.257,
+      "red_flag_boost": 0,
+      "weight": 3.027
+    },
+    "fever, neck stiffness, and headache|headache": {
+      "cooccurrence": 0,
+      "similarity": 0.533,
+      "red_flag_boost": 0,
+      "weight": 2.131
+    },
+    "fever, neck stiffness, and headache|high fever": {
+      "cooccurrence": 0,
+      "similarity": 0.603,
+      "red_flag_boost": 0,
+      "weight": 2.411
+    },
+    "fever, neck stiffness, and headache|high persistent fever": {
+      "cooccurrence": 0,
+      "similarity": 0.586,
+      "red_flag_boost": 0,
+      "weight": 2.344
+    },
+    "fever, neck stiffness, and headache|low-grade fever": {
+      "cooccurrence": 0,
+      "similarity": 0.555,
+      "red_flag_boost": 0,
+      "weight": 2.221
+    },
+    "fever, neck stiffness, and headache|neck stiffness": {
+      "cooccurrence": 1,
+      "similarity": 0.646,
+      "red_flag_boost": 0,
+      "weight": 4.584
+    },
+    "fever, neck stiffness, and headache|persistent high fever": {
+      "cooccurrence": 0,
+      "similarity": 0.607,
+      "red_flag_boost": 0,
+      "weight": 2.428
+    },
+    "fever, neck stiffness, and headache|photophobia": {
+      "cooccurrence": 1,
+      "similarity": 0.003,
+      "red_flag_boost": 0,
+      "weight": 2.011
+    },
+    "fever, neck stiffness, and headache|positive kernig or brudzinski sign": {
+      "cooccurrence": 1,
+      "similarity": 0.119,
+      "red_flag_boost": 0,
+      "weight": 2.476
+    },
+    "fever, neck stiffness, and headache|rapid deterioration": {
+      "cooccurrence": 1,
+      "similarity": 0.197,
+      "red_flag_boost": 0,
+      "weight": 2.787
+    },
+    "fever, neck stiffness, and headache|recurrent unilateral headaches": {
+      "cooccurrence": 0,
+      "similarity": 0.531,
+      "red_flag_boost": 0,
+      "weight": 2.125
+    },
+    "fever, neck stiffness, and headache|seizure": {
+      "cooccurrence": 1,
+      "similarity": 0.251,
+      "red_flag_boost": 0,
+      "weight": 3.003
+    },
+    "fever, neck stiffness, and headache|severe headache": {
+      "cooccurrence": 1,
+      "similarity": 0.604,
+      "red_flag_boost": 0,
+      "weight": 4.418
+    },
+    "fever, neck stiffness, and headache|throbbing headache": {
+      "cooccurrence": 0,
+      "similarity": 0.585,
+      "red_flag_boost": 0,
+      "weight": 2.34
+    },
+    "flank pain|hypotension": {
+      "cooccurrence": 1,
+      "similarity": 0.098,
+      "red_flag_boost": 0,
+      "weight": 2.39
+    },
+    "flank pain|increased frequency": {
+      "cooccurrence": 1,
+      "similarity": -0.031,
+      "red_flag_boost": 0,
+      "weight": 2
+    },
+    "flank pain|nausea": {
+      "cooccurrence": 1,
+      "similarity": 0.293,
+      "red_flag_boost": 0,
+      "weight": 3.171
+    },
+    "flank pain|nausea/vomiting": {
+      "cooccurrence": 1,
+      "similarity": 0.274,
+      "red_flag_boost": 0,
+      "weight": 3.094
+    },
+    "flank pain|urgency": {
+      "cooccurrence": 1,
+      "similarity": 0.199,
+      "red_flag_boost": 0,
+      "weight": 2.794
+    },
+    "focal crackles on lung exam|low blood pressure": {
+      "cooccurrence": 1,
+      "similarity": -0.03,
+      "red_flag_boost": 0,
+      "weight": 2
+    },
+    "focal crackles on lung exam|normal lung exam": {
+      "cooccurrence": 0,
+      "similarity": 0.682,
+      "red_flag_boost": 0,
+      "weight": 2.727
+    },
+    "focal crackles on lung exam|pleuritic chest pain": {
+      "cooccurrence": 1,
+      "similarity": 0.271,
+      "red_flag_boost": 0,
+      "weight": 3.084
+    },
+    "focal crackles on lung exam|productive cough": {
+      "cooccurrence": 1,
+      "similarity": 0.302,
+      "red_flag_boost": 0,
+      "weight": 3.207
+    },
+    "focal crackles on lung exam|respiratory distress": {
+      "cooccurrence": 1,
+      "similarity": 0.416,
+      "red_flag_boost": 0,
+      "weight": 3.664
+    },
+    "focal crackles on lung exam|shortness of breath": {
+      "cooccurrence": 1,
+      "similarity": 0.291,
+      "red_flag_boost": 0,
+      "weight": 3.164
+    },
+    "frequent urination|hyperosmolar state": {
+      "cooccurrence": 1,
+      "similarity": 0.166,
+      "red_flag_boost": 0,
+      "weight": 2.663
+    },
+    "frequent urination|increased thirst": {
+      "cooccurrence": 1,
+      "similarity": 0.341,
+      "red_flag_boost": 0,
+      "weight": 3.366
+    },
+    "frequent urination|ketoacidosis symptoms": {
+      "cooccurrence": 1,
+      "similarity": 0.253,
+      "red_flag_boost": 0,
+      "weight": 3.012
+    },
+    "frequent urination|often asymptomatic, found on screening": {
+      "cooccurrence": 1,
+      "similarity": 0.258,
+      "red_flag_boost": 0,
+      "weight": 3.031
+    },
+    "headache|high fever": {
+      "cooccurrence": 39,
+      "similarity": 0.355,
+      "red_flag_boost": 0,
+      "weight": 79.418
+    },
+    "headache|joint pain": {
+      "cooccurrence": 8,
+      "similarity": 0.38,
+      "red_flag_boost": 0,
+      "weight": 17.522
+    },
+    "headache|loss of consciousness": {
+      "cooccurrence": 40,
+      "similarity": 0.334,
+      "red_flag_boost": 0,
+      "weight": 81.335
+    },
+    "headache|nausea": {
+      "cooccurrence": 13,
+      "similarity": 0.492,
+      "red_flag_boost": 0,
+      "weight": 27.968
+    },
+    "headache|palpitations": {
+      "cooccurrence": 13,
+      "similarity": 0.267,
+      "red_flag_boost": 0,
+      "weight": 27.067
+    },
+    "headache|rash": {
+      "cooccurrence": 9,
+      "similarity": 0.383,
+      "red_flag_boost": 0,
+      "weight": 19.532
+    },
+    "headache|recurrent unilateral headaches": {
+      "cooccurrence": 0,
+      "similarity": 0.695,
+      "red_flag_boost": 0,
+      "weight": 2.781
+    },
+    "headache|seizure": {
+      "cooccurrence": 1,
+      "similarity": 0.369,
+      "red_flag_boost": 0,
+      "weight": 3.475
+    },
+    "headache|severe chest pain": {
+      "cooccurrence": 45,
+      "similarity": 0.285,
+      "red_flag_boost": 0,
+      "weight": 91.141
+    },
+    "headache|severe headache": {
+      "cooccurrence": 0,
+      "similarity": 0.837,
+      "red_flag_boost": 0,
+      "weight": 3.348
+    },
+    "headache|shortness of breath": {
+      "cooccurrence": 18,
+      "similarity": 0.202,
+      "red_flag_boost": 0,
+      "weight": 36.808
+    },
+    "headache|throbbing headache": {
+      "cooccurrence": 0,
+      "similarity": 0.818,
+      "red_flag_boost": 0,
+      "weight": 3.272
+    },
+    "headache|unable to breathe": {
+      "cooccurrence": 49,
+      "similarity": 0.31,
+      "red_flag_boost": 0,
+      "weight": 99.241
+    },
+    "headache|uncontrolled bleeding": {
+      "cooccurrence": 43,
+      "similarity": 0.3,
+      "red_flag_boost": 0,
+      "weight": 87.2
+    },
+    "headache|very high blood pressure": {
+      "cooccurrence": 1,
+      "similarity": 0.345,
+      "red_flag_boost": 0,
+      "weight": 3.38
+    },
+    "headache|visual changes": {
+      "cooccurrence": 1,
+      "similarity": 0.136,
+      "red_flag_boost": 0,
+      "weight": 2.543
+    },
+    "headache|vomiting": {
+      "cooccurrence": 17,
+      "similarity": 0.451,
+      "red_flag_boost": 0,
+      "weight": 35.803
+    },
+    "headache|worst headache of life": {
+      "cooccurrence": 0,
+      "similarity": 0.736,
+      "red_flag_boost": 0,
+      "weight": 2.944
+    },
+    "high fever|high persistent fever": {
+      "cooccurrence": 0,
+      "similarity": 0.849,
+      "red_flag_boost": 0,
+      "weight": 3.397
+    },
+    "high fever|joint pain": {
+      "cooccurrence": 33,
+      "similarity": 0.117,
+      "red_flag_boost": 0,
+      "weight": 66.469
+    },
+    "high fever|loss of consciousness": {
+      "cooccurrence": 42,
+      "similarity": 0.137,
+      "red_flag_boost": 0,
+      "weight": 84.55
+    },
+    "high fever|low-grade fever": {
+      "cooccurrence": 0,
+      "similarity": 0.772,
+      "red_flag_boost": 0,
+      "weight": 3.087
+    },
+    "high fever|nausea": {
+      "cooccurrence": 45,
+      "similarity": 0.387,
+      "red_flag_boost": 0,
+      "weight": 91.547
+    },
+    "high fever|palpitations": {
+      "cooccurrence": 30,
+      "similarity": 0.149,
+      "red_flag_boost": 0,
+      "weight": 60.597
+    },
+    "high fever|persistent high fever": {
+      "cooccurrence": 0,
+      "similarity": 0.888,
+      "red_flag_boost": 0,
+      "weight": 3.551
+    },
+    "high fever|persistent vomiting": {
+      "cooccurrence": 1,
+      "similarity": 0.343,
+      "red_flag_boost": 0,
+      "weight": 3.371
+    },
+    "high fever|rash": {
+      "cooccurrence": 28,
+      "similarity": 0.425,
+      "red_flag_boost": 0,
+      "weight": 57.702
+    },
+    "high fever|severe chest pain": {
+      "cooccurrence": 48,
+      "similarity": 0.234,
+      "red_flag_boost": 0,
+      "weight": 96.937
+    },
+    "high fever|shortness of breath": {
+      "cooccurrence": 42,
+      "similarity": 0.209,
+      "red_flag_boost": 0,
+      "weight": 84.834
+    },
+    "high fever|signs of severe dehydration": {
+      "cooccurrence": 1,
+      "similarity": 0.275,
+      "red_flag_boost": 0,
+      "weight": 3.1
+    },
+    "high fever|unable to breathe": {
+      "cooccurrence": 34,
+      "similarity": 0.222,
+      "red_flag_boost": 0,
+      "weight": 68.888
+    },
+    "high fever|uncontrolled bleeding": {
+      "cooccurrence": 46,
+      "similarity": 0.192,
+      "red_flag_boost": 0,
+      "weight": 92.768
+    },
+    "high fever|vomiting": {
+      "cooccurrence": 36,
+      "similarity": 0.383,
+      "red_flag_boost": 0,
+      "weight": 73.533
+    },
+    "high persistent fever|low-grade fever": {
+      "cooccurrence": 1,
+      "similarity": 0.7,
+      "red_flag_boost": 0,
+      "weight": 4.799
+    },
+    "high persistent fever|mild cough": {
+      "cooccurrence": 1,
+      "similarity": 0.345,
+      "red_flag_boost": 0,
+      "weight": 3.381
+    },
+    "high persistent fever|nasal congestion": {
+      "cooccurrence": 1,
+      "similarity": 0.266,
+      "red_flag_boost": 0,
+      "weight": 3.064
+    },
+    "high persistent fever|normal lung exam": {
+      "cooccurrence": 1,
+      "similarity": 0.052,
+      "red_flag_boost": 0,
+      "weight": 2.207
+    },
+    "high persistent fever|persistent high fever": {
+      "cooccurrence": 0,
+      "similarity": 0.988,
+      "red_flag_boost": 0,
+      "weight": 3.951
+    },
+    "high persistent fever|runny nose": {
+      "cooccurrence": 1,
+      "similarity": 0.306,
+      "red_flag_boost": 0,
+      "weight": 3.224
+    },
+    "high persistent fever|shortness of breath at rest": {
+      "cooccurrence": 1,
+      "similarity": 0.15,
+      "red_flag_boost": 0,
+      "weight": 2.601
+    },
+    "high persistent fever|sore throat": {
+      "cooccurrence": 1,
+      "similarity": 0.339,
+      "red_flag_boost": 0,
+      "weight": 3.356
+    },
+    "history of asthma|inability to speak full sentences": {
+      "cooccurrence": 1,
+      "similarity": 0.021,
+      "red_flag_boost": 0,
+      "weight": 2.085
+    },
+    "history of asthma|shortness of breath": {
+      "cooccurrence": 1,
+      "similarity": 0.285,
+      "red_flag_boost": 0,
+      "weight": 3.14
+    },
+    "history of asthma|silent chest": {
+      "cooccurrence": 1,
+      "similarity": 0.156,
+      "red_flag_boost": 0,
+      "weight": 2.625
+    },
+    "history of asthma|use of accessory muscles": {
+      "cooccurrence": 1,
+      "similarity": 0.118,
+      "red_flag_boost": 0,
+      "weight": 2.472
+    },
+    "history of asthma|wheezing": {
+      "cooccurrence": 1,
+      "similarity": 0.401,
+      "red_flag_boost": 0,
+      "weight": 3.605
+    },
+    "hyperosmolar state|increased thirst": {
+      "cooccurrence": 1,
+      "similarity": 0.164,
+      "red_flag_boost": 0,
+      "weight": 2.655
+    },
+    "hyperosmolar state|ketoacidosis symptoms": {
+      "cooccurrence": 1,
+      "similarity": 0.145,
+      "red_flag_boost": 0,
+      "weight": 2.582
+    },
+    "hyperosmolar state|often asymptomatic, found on screening": {
+      "cooccurrence": 1,
+      "similarity": 0.186,
+      "red_flag_boost": 0,
+      "weight": 2.745
+    },
+    "hypotension|nausea": {
+      "cooccurrence": 1,
+      "similarity": 0.195,
+      "red_flag_boost": 0,
+      "weight": 2.78
+    },
+    "inability to speak full sentences|shortness of breath": {
+      "cooccurrence": 1,
+      "similarity": 0.279,
+      "red_flag_boost": 0,
+      "weight": 3.115
+    },
+    "inability to speak full sentences|silent chest": {
+      "cooccurrence": 1,
+      "similarity": 0.147,
+      "red_flag_boost": 0,
+      "weight": 2.588
+    },
+    "inability to speak full sentences|use of accessory muscles": {
+      "cooccurrence": 1,
+      "similarity": 0.057,
+      "red_flag_boost": 0,
+      "weight": 2.227
+    },
+    "inability to speak full sentences|wheezing": {
+      "cooccurrence": 1,
+      "similarity": 0.185,
+      "red_flag_boost": 0,
+      "weight": 2.739
+    },
+    "increased frequency|nausea/vomiting": {
+      "cooccurrence": 1,
+      "similarity": -0.006,
+      "red_flag_boost": 0,
+      "weight": 2
+    },
+    "increased frequency|urgency": {
+      "cooccurrence": 1,
+      "similarity": 0.198,
+      "red_flag_boost": 0,
+      "weight": 2.793
+    },
+    "increased thirst|ketoacidosis symptoms": {
+      "cooccurrence": 1,
+      "similarity": 0.272,
+      "red_flag_boost": 0,
+      "weight": 3.087
+    },
+    "increased thirst|often asymptomatic, found on screening": {
+      "cooccurrence": 1,
+      "similarity": 0.195,
+      "red_flag_boost": 0,
+      "weight": 2.779
+    },
+    "increased thirst|signs of severe dehydration": {
+      "cooccurrence": 0,
+      "similarity": 0.556,
+      "red_flag_boost": 0,
+      "weight": 2.224
+    },
+    "joint pain|loss of consciousness": {
+      "cooccurrence": 33,
+      "similarity": 0.108,
+      "red_flag_boost": 0,
+      "weight": 66.432
+    },
+    "joint pain|nausea": {
+      "cooccurrence": 15,
+      "similarity": 0.327,
+      "red_flag_boost": 0,
+      "weight": 31.309
+    },
+    "joint pain|palpitations": {
+      "cooccurrence": 20,
+      "similarity": 0.16,
+      "red_flag_boost": 0,
+      "weight": 40.639
+    },
+    "joint pain|rash": {
+      "cooccurrence": 12,
+      "similarity": 0.252,
+      "red_flag_boost": 0,
+      "weight": 25.009
+    },
+    "joint pain|severe chest pain": {
+      "cooccurrence": 37,
+      "similarity": 0.29,
+      "red_flag_boost": 0,
+      "weight": 75.162
+    },
+    "joint pain|shortness of breath": {
+      "cooccurrence": 8,
+      "similarity": 0.152,
+      "red_flag_boost": 0,
+      "weight": 16.607
+    },
+    "joint pain|unable to breathe": {
+      "cooccurrence": 40,
+      "similarity": 0.174,
+      "red_flag_boost": 0,
+      "weight": 80.697
+    },
+    "joint pain|uncontrolled bleeding": {
+      "cooccurrence": 43,
+      "similarity": 0.147,
+      "red_flag_boost": 0,
+      "weight": 86.588
+    },
+    "joint pain|vomiting": {
+      "cooccurrence": 11,
+      "similarity": 0.23,
+      "red_flag_boost": 0,
+      "weight": 22.921
+    },
+    "ketoacidosis symptoms|often asymptomatic, found on screening": {
+      "cooccurrence": 1,
+      "similarity": 0.134,
+      "red_flag_boost": 0,
+      "weight": 2.537
+    },
+    "light sensitivity|nausea": {
+      "cooccurrence": 1,
+      "similarity": 0.09,
+      "red_flag_boost": 0,
+      "weight": 2.36
+    },
+    "light sensitivity|photophobia or phonophobia": {
+      "cooccurrence": 1,
+      "similarity": 0.369,
+      "red_flag_boost": 0,
+      "weight": 3.475
+    },
+    "light sensitivity|recurrent unilateral headaches": {
+      "cooccurrence": 1,
+      "similarity": 0.008,
+      "red_flag_boost": 0,
+      "weight": 2.032
+    },
+    "light sensitivity|sound sensitivity": {
+      "cooccurrence": 1,
+      "similarity": 0.539,
+      "red_flag_boost": 0,
+      "weight": 4.157
+    },
+    "light sensitivity|throbbing headache": {
+      "cooccurrence": 1,
+      "similarity": 0.063,
+      "red_flag_boost": 0,
+      "weight": 2.253
+    },
+    "light sensitivity|vision loss": {
+      "cooccurrence": 1,
+      "similarity": 0.314,
+      "red_flag_boost": 0,
+      "weight": 3.256
+    },
+    "light sensitivity|weakness on one side": {
+      "cooccurrence": 1,
+      "similarity": 0.136,
+      "red_flag_boost": 0,
+      "weight": 2.544
+    },
+    "light sensitivity|worst headache of life": {
+      "cooccurrence": 1,
+      "similarity": 0.085,
+      "red_flag_boost": 0,
+      "weight": 2.339
+    },
+    "loss of consciousness|nausea": {
+      "cooccurrence": 44,
+      "similarity": 0.274,
+      "red_flag_boost": 0,
+      "weight": 89.095
+    },
+    "loss of consciousness|palpitations": {
+      "cooccurrence": 43,
+      "similarity": 0.271,
+      "red_flag_boost": 0,
+      "weight": 87.084
+    },
+    "loss of consciousness|rash": {
+      "cooccurrence": 40,
+      "similarity": 0.106,
+      "red_flag_boost": 0,
+      "weight": 80.423
+    },
+    "loss of consciousness|severe chest pain": {
+      "cooccurrence": 45,
+      "similarity": 0.229,
+      "red_flag_boost": 0,
+      "weight": 90.914
+    },
+    "loss of consciousness|shortness of breath": {
+      "cooccurrence": 45,
+      "similarity": 0.319,
+      "red_flag_boost": 0,
+      "weight": 91.275
+    },
+    "loss of consciousness|unable to breathe": {
+      "cooccurrence": 44,
+      "similarity": 0.482,
+      "red_flag_boost": 0,
+      "weight": 89.927
+    },
+    "loss of consciousness|uncontrolled bleeding": {
+      "cooccurrence": 40,
+      "similarity": 0.297,
+      "red_flag_boost": 0,
+      "weight": 81.187
+    },
+    "loss of consciousness|vision loss": {
+      "cooccurrence": 0,
+      "similarity": 0.535,
+      "red_flag_boost": 0,
+      "weight": 2.142
+    },
+    "loss of consciousness|vomiting": {
+      "cooccurrence": 32,
+      "similarity": 0.342,
+      "red_flag_boost": 0,
+      "weight": 65.366
+    },
+    "low blood pressure|pleuritic chest pain": {
+      "cooccurrence": 1,
+      "similarity": 0.166,
+      "red_flag_boost": 0,
+      "weight": 2.666
+    },
+    "low blood pressure|productive cough": {
+      "cooccurrence": 1,
+      "similarity": 0.087,
+      "red_flag_boost": 0,
+      "weight": 2.346
+    },
+    "low blood pressure|respiratory distress": {
+      "cooccurrence": 1,
+      "similarity": 0.204,
+      "red_flag_boost": 0,
+      "weight": 2.815
+    },
+    "low blood pressure|shortness of breath": {
+      "cooccurrence": 1,
+      "similarity": 0.312,
+      "red_flag_boost": 0,
+      "weight": 3.249
+    },
+    "low blood pressure|very high blood pressure": {
+      "cooccurrence": 0,
+      "similarity": 0.727,
+      "red_flag_boost": 0,
+      "weight": 2.908
+    },
+    "low-grade fever|mild cough": {
+      "cooccurrence": 1,
+      "similarity": 0.387,
+      "red_flag_boost": 0,
+      "weight": 3.548
+    },
+    "low-grade fever|nasal congestion": {
+      "cooccurrence": 1,
+      "similarity": 0.218,
+      "red_flag_boost": 0,
+      "weight": 2.872
+    },
+    "low-grade fever|normal lung exam": {
+      "cooccurrence": 1,
+      "similarity": 0.141,
+      "red_flag_boost": 0,
+      "weight": 2.562
+    },
+    "low-grade fever|persistent high fever": {
+      "cooccurrence": 0,
+      "similarity": 0.732,
+      "red_flag_boost": 0,
+      "weight": 2.927
+    },
+    "low-grade fever|runny nose": {
+      "cooccurrence": 1,
+      "similarity": 0.324,
+      "red_flag_boost": 0,
+      "weight": 3.294
+    },
+    "low-grade fever|shortness of breath at rest": {
+      "cooccurrence": 1,
+      "similarity": 0.171,
+      "red_flag_boost": 0,
+      "weight": 2.685
+    },
+    "low-grade fever|sore throat": {
+      "cooccurrence": 1,
+      "similarity": 0.278,
+      "red_flag_boost": 0,
+      "weight": 3.113
+    },
+    "mild cough|nasal congestion": {
+      "cooccurrence": 1,
+      "similarity": 0.44,
+      "red_flag_boost": 0,
+      "weight": 3.76
+    },
+    "mild cough|normal lung exam": {
+      "cooccurrence": 1,
+      "similarity": 0.397,
+      "red_flag_boost": 0,
+      "weight": 3.588
+    },
+    "mild cough|productive cough": {
+      "cooccurrence": 0,
+      "similarity": 0.713,
+      "red_flag_boost": 0,
+      "weight": 2.854
+    },
+    "mild cough|runny nose": {
+      "cooccurrence": 1,
+      "similarity": 0.427,
+      "red_flag_boost": 0,
+      "weight": 3.707
+    },
+    "mild cough|shortness of breath at rest": {
+      "cooccurrence": 1,
+      "similarity": 0.329,
+      "red_flag_boost": 0,
+      "weight": 3.315
+    },
+    "mild cough|sore throat": {
+      "cooccurrence": 1,
+      "similarity": 0.596,
+      "red_flag_boost": 0,
+      "weight": 4.385
+    },
+    "mild cough|wheezing": {
+      "cooccurrence": 0,
+      "similarity": 0.528,
+      "red_flag_boost": 0,
+      "weight": 2.111
+    },
+    "mild photophobia|neck tightness": {
+      "cooccurrence": 1,
+      "similarity": 0.192,
+      "red_flag_boost": 0,
+      "weight": 2.769
+    },
+    "mild photophobia|neurologic deficits": {
+      "cooccurrence": 1,
+      "similarity": 0.154,
+      "red_flag_boost": 0,
+      "weight": 2.614
+    },
+    "mild photophobia|not worsened by routine activity": {
+      "cooccurrence": 1,
+      "similarity": 0.164,
+      "red_flag_boost": 0,
+      "weight": 2.657
+    },
+    "mild photophobia|photophobia": {
+      "cooccurrence": 0,
+      "similarity": 0.941,
+      "red_flag_boost": 0,
+      "weight": 3.764
+    },
+    "mild photophobia|photophobia or phonophobia": {
+      "cooccurrence": 0,
+      "similarity": 0.849,
+      "red_flag_boost": 0,
+      "weight": 3.396
+    },
+    "mild photophobia|pressing, non-throbbing pain": {
+      "cooccurrence": 1,
+      "similarity": 0.082,
+      "red_flag_boost": 0,
+      "weight": 2.33
+    },
+    "mild photophobia|sudden onset": {
+      "cooccurrence": 1,
+      "similarity": 0.183,
+      "red_flag_boost": 0,
+      "weight": 2.732
+    },
+    "nasal congestion|normal lung exam": {
+      "cooccurrence": 1,
+      "similarity": 0.292,
+      "red_flag_boost": 0,
+      "weight": 3.169
+    },
+    "nasal congestion|runny nose": {
+      "cooccurrence": 1,
+      "similarity": 0.608,
+      "red_flag_boost": 0,
+      "weight": 4.432
+    },
+    "nasal congestion|shortness of breath at rest": {
+      "cooccurrence": 1,
+      "similarity": 0.336,
+      "red_flag_boost": 0,
+      "weight": 3.344
+    },
+    "nasal congestion|sore throat": {
+      "cooccurrence": 1,
+      "similarity": 0.389,
+      "red_flag_boost": 0,
+      "weight": 3.557
+    },
+    "nausea|nausea/vomiting": {
+      "cooccurrence": 0,
+      "similarity": 0.887,
+      "red_flag_boost": 0,
+      "weight": 3.548
+    },
+    "nausea|palpitations": {
+      "cooccurrence": 8,
+      "similarity": 0.381,
+      "red_flag_boost": 0,
+      "weight": 17.522
+    },
+    "nausea|persistent vomiting": {
+      "cooccurrence": 0,
+      "similarity": 0.615,
+      "red_flag_boost": 0,
+      "weight": 2.46
+    },
+    "nausea|photophobia or phonophobia": {
+      "cooccurrence": 1,
+      "similarity": 0.252,
+      "red_flag_boost": 0,
+      "weight": 3.008
+    },
+    "nausea|rash": {
+      "cooccurrence": 10,
+      "similarity": 0.444,
+      "red_flag_boost": 0,
+      "weight": 21.775
+    },
+    "nausea|recurrent unilateral headaches": {
+      "cooccurrence": 1,
+      "similarity": 0.247,
+      "red_flag_boost": 0,
+      "weight": 2.987
+    },
+    "nausea|severe chest pain": {
+      "cooccurrence": 36,
+      "similarity": 0.314,
+      "red_flag_boost": 0,
+      "weight": 73.255
+    },
+    "nausea|shortness of breath": {
+      "cooccurrence": 15,
+      "similarity": 0.177,
+      "red_flag_boost": 0,
+      "weight": 30.708
+    },
+    "nausea|sound sensitivity": {
+      "cooccurrence": 1,
+      "similarity": 0.13,
+      "red_flag_boost": 0,
+      "weight": 2.52
+    },
+    "nausea|throbbing headache": {
+      "cooccurrence": 1,
+      "similarity": 0.387,
+      "red_flag_boost": 0,
+      "weight": 3.546
+    },
+    "nausea|unable to breathe": {
+      "cooccurrence": 39,
+      "similarity": 0.209,
+      "red_flag_boost": 0,
+      "weight": 78.837
+    },
+    "nausea|uncontrolled bleeding": {
+      "cooccurrence": 49,
+      "similarity": 0.182,
+      "red_flag_boost": 0,
+      "weight": 98.728
+    },
+    "nausea|vision loss": {
+      "cooccurrence": 1,
+      "similarity": 0.209,
+      "red_flag_boost": 0,
+      "weight": 2.838
+    },
+    "nausea|vomiting": {
+      "cooccurrence": 13,
+      "similarity": 0.77,
+      "red_flag_boost": 0,
+      "weight": 29.08
+    },
+    "nausea|vomiting blood": {
+      "cooccurrence": 0,
+      "similarity": 0.556,
+      "red_flag_boost": 0,
+      "weight": 2.223
+    },
+    "nausea|weakness on one side": {
+      "cooccurrence": 1,
+      "similarity": 0.348,
+      "red_flag_boost": 0,
+      "weight": 3.391
+    },
+    "nausea|worst headache of life": {
+      "cooccurrence": 1,
+      "similarity": 0.35,
+      "red_flag_boost": 0,
+      "weight": 3.401
+    },
+    "nausea/vomiting|persistent vomiting": {
+      "cooccurrence": 0,
+      "similarity": 0.743,
+      "red_flag_boost": 0,
+      "weight": 2.972
+    },
+    "nausea/vomiting|urgency": {
+      "cooccurrence": 1,
+      "similarity": 0.186,
+      "red_flag_boost": 0,
+      "weight": 2.742
+    },
+    "nausea/vomiting|vomiting": {
+      "cooccurrence": 0,
+      "similarity": 0.838,
+      "red_flag_boost": 0,
+      "weight": 3.353
+    },
+    "nausea/vomiting|vomiting blood": {
+      "cooccurrence": 0,
+      "similarity": 0.672,
+      "red_flag_boost": 0,
+      "weight": 2.687
+    },
+    "neck stiffness|neck tightness": {
+      "cooccurrence": 0,
+      "similarity": 0.78,
+      "red_flag_boost": 0,
+      "weight": 3.12
+    },
+    "neck stiffness|photophobia": {
+      "cooccurrence": 1,
+      "similarity": 0.093,
+      "red_flag_boost": 0,
+      "weight": 2.373
+    },
+    "neck stiffness|positive kernig or brudzinski sign": {
+      "cooccurrence": 1,
+      "similarity": 0.149,
+      "red_flag_boost": 0,
+      "weight": 2.596
+    },
+    "neck stiffness|rapid deterioration": {
+      "cooccurrence": 1,
+      "similarity": 0.214,
+      "red_flag_boost": 0,
+      "weight": 2.855
+    },
+    "neck stiffness|seizure": {
+      "cooccurrence": 1,
+      "similarity": 0.212,
+      "red_flag_boost": 0,
+      "weight": 2.847
+    },
+    "neck stiffness|severe headache": {
+      "cooccurrence": 1,
+      "similarity": 0.377,
+      "red_flag_boost": 0,
+      "weight": 3.51
+    },
+    "neck tightness|neurologic deficits": {
+      "cooccurrence": 1,
+      "similarity": 0.23,
+      "red_flag_boost": 0,
+      "weight": 2.919
+    },
+    "neck tightness|not worsened by routine activity": {
+      "cooccurrence": 1,
+      "similarity": 0.167,
+      "red_flag_boost": 0,
+      "weight": 2.669
+    },
+    "neck tightness|pressing, non-throbbing pain": {
+      "cooccurrence": 1,
+      "similarity": 0.255,
+      "red_flag_boost": 0,
+      "weight": 3.02
+    },
+    "neck tightness|sudden onset": {
+      "cooccurrence": 1,
+      "similarity": 0.321,
+      "red_flag_boost": 0,
+      "weight": 3.282
+    },
+    "neurologic deficits|not worsened by routine activity": {
+      "cooccurrence": 1,
+      "similarity": 0.413,
+      "red_flag_boost": 0,
+      "weight": 3.65
+    },
+    "neurologic deficits|pressing, non-throbbing pain": {
+      "cooccurrence": 1,
+      "similarity": 0.148,
+      "red_flag_boost": 0,
+      "weight": 2.591
+    },
+    "neurologic deficits|sudden onset": {
+      "cooccurrence": 1,
+      "similarity": 0.295,
+      "red_flag_boost": 0,
+      "weight": 3.182
+    },
+    "normal lung exam|runny nose": {
+      "cooccurrence": 1,
+      "similarity": 0.18,
+      "red_flag_boost": 0,
+      "weight": 2.721
+    },
+    "normal lung exam|shortness of breath at rest": {
+      "cooccurrence": 1,
+      "similarity": 0.341,
+      "red_flag_boost": 0,
+      "weight": 3.363
+    },
+    "normal lung exam|sore throat": {
+      "cooccurrence": 1,
+      "similarity": 0.155,
+      "red_flag_boost": 0,
+      "weight": 2.62
+    },
+    "not worsened by routine activity|pressing, non-throbbing pain": {
+      "cooccurrence": 1,
+      "similarity": 0.184,
+      "red_flag_boost": 0,
+      "weight": 2.734
+    },
+    "not worsened by routine activity|sudden onset": {
+      "cooccurrence": 1,
+      "similarity": 0.355,
+      "red_flag_boost": 0,
+      "weight": 3.418
+    },
+    "palpitations|rash": {
+      "cooccurrence": 14,
+      "similarity": 0.218,
+      "red_flag_boost": 0,
+      "weight": 28.874
+    },
+    "palpitations|severe chest pain": {
+      "cooccurrence": 32,
+      "similarity": 0.342,
+      "red_flag_boost": 0,
+      "weight": 65.368
+    },
+    "palpitations|shortness of breath": {
+      "cooccurrence": 16,
+      "similarity": 0.304,
+      "red_flag_boost": 0,
+      "weight": 33.216
+    },
+    "palpitations|unable to breathe": {
+      "cooccurrence": 36,
+      "similarity": 0.251,
+      "red_flag_boost": 0,
+      "weight": 73.004
+    },
+    "palpitations|uncontrolled bleeding": {
+      "cooccurrence": 41,
+      "similarity": 0.208,
+      "red_flag_boost": 0,
+      "weight": 82.833
+    },
+    "palpitations|vomiting": {
+      "cooccurrence": 10,
+      "similarity": 0.328,
+      "red_flag_boost": 0,
+      "weight": 21.312
+    },
+    "persistent high fever|signs of severe dehydration": {
+      "cooccurrence": 1,
+      "similarity": 0.292,
+      "red_flag_boost": 0,
+      "weight": 3.168
+    },
+    "persistent high fever|vomiting": {
+      "cooccurrence": 1,
+      "similarity": 0.318,
+      "red_flag_boost": 0,
+      "weight": 3.271
+    },
+    "persistent vomiting|signs of severe dehydration": {
+      "cooccurrence": 1,
+      "similarity": 0.365,
+      "red_flag_boost": 0,
+      "weight": 3.462
+    },
+    "persistent vomiting|vomiting": {
+      "cooccurrence": 0,
+      "similarity": 0.82,
+      "red_flag_boost": 0,
+      "weight": 3.282
+    },
+    "persistent vomiting|vomiting blood": {
+      "cooccurrence": 0,
+      "similarity": 0.663,
+      "red_flag_boost": 0,
+      "weight": 2.652
+    },
+    "photophobia|photophobia or phonophobia": {
+      "cooccurrence": 0,
+      "similarity": 0.865,
+      "red_flag_boost": 0,
+      "weight": 3.461
+    },
+    "photophobia|positive kernig or brudzinski sign": {
+      "cooccurrence": 1,
+      "similarity": 0.143,
+      "red_flag_boost": 0,
+      "weight": 2.571
+    },
+    "photophobia|rapid deterioration": {
+      "cooccurrence": 1,
+      "similarity": 0.122,
+      "red_flag_boost": 0,
+      "weight": 2.488
+    },
+    "photophobia|seizure": {
+      "cooccurrence": 1,
+      "similarity": 0.231,
+      "red_flag_boost": 0,
+      "weight": 2.924
+    },
+    "photophobia|severe headache": {
+      "cooccurrence": 1,
+      "similarity": 0.131,
+      "red_flag_boost": 0,
+      "weight": 2.524
+    },
+    "photophobia or phonophobia|recurrent unilateral headaches": {
+      "cooccurrence": 1,
+      "similarity": 0.051,
+      "red_flag_boost": 0,
+      "weight": 2.203
+    },
+    "photophobia or phonophobia|sound sensitivity": {
+      "cooccurrence": 1,
+      "similarity": 0.352,
+      "red_flag_boost": 0,
+      "weight": 3.409
+    },
+    "photophobia or phonophobia|throbbing headache": {
+      "cooccurrence": 1,
+      "similarity": 0.141,
+      "red_flag_boost": 0,
+      "weight": 2.563
+    },
+    "photophobia or phonophobia|vision loss": {
+      "cooccurrence": 1,
+      "similarity": 0.298,
+      "red_flag_boost": 0,
+      "weight": 3.193
+    },
+    "photophobia or phonophobia|weakness on one side": {
+      "cooccurrence": 1,
+      "similarity": 0.233,
+      "red_flag_boost": 0,
+      "weight": 2.931
+    },
+    "photophobia or phonophobia|worst headache of life": {
+      "cooccurrence": 1,
+      "similarity": 0.216,
+      "red_flag_boost": 0,
+      "weight": 2.864
+    },
+    "pleuritic chest pain|predictable exertional chest discomfort": {
+      "cooccurrence": 0,
+      "similarity": 0.635,
+      "red_flag_boost": 0,
+      "weight": 2.541
+    },
+    "pleuritic chest pain|productive cough": {
+      "cooccurrence": 1,
+      "similarity": 0.189,
+      "red_flag_boost": 0,
+      "weight": 2.754
+    },
+    "pleuritic chest pain|respiratory distress": {
+      "cooccurrence": 1,
+      "similarity": 0.294,
+      "red_flag_boost": 0,
+      "weight": 3.177
+    },
+    "pleuritic chest pain|severe chest pain": {
+      "cooccurrence": 0,
+      "similarity": 0.791,
+      "red_flag_boost": 0,
+      "weight": 3.164
+    },
+    "pleuritic chest pain|shortness of breath": {
+      "cooccurrence": 1,
+      "similarity": 0.263,
+      "red_flag_boost": 0,
+      "weight": 3.053
+    },
+    "positive kernig or brudzinski sign|rapid deterioration": {
+      "cooccurrence": 1,
+      "similarity": 0.124,
+      "red_flag_boost": 0,
+      "weight": 2.496
+    },
+    "positive kernig or brudzinski sign|seizure": {
+      "cooccurrence": 1,
+      "similarity": 0.167,
+      "red_flag_boost": 0,
+      "weight": 2.67
+    },
+    "positive kernig or brudzinski sign|severe headache": {
+      "cooccurrence": 1,
+      "similarity": 0.138,
+      "red_flag_boost": 0,
+      "weight": 2.55
+    },
+    "predictable exertional chest discomfort|radiation to arm or jaw": {
+      "cooccurrence": 1,
+      "similarity": 0.207,
+      "red_flag_boost": 0,
+      "weight": 2.83
+    },
+    "predictable exertional chest discomfort|relief with rest": {
+      "cooccurrence": 1,
+      "similarity": 0.403,
+      "red_flag_boost": 0,
+      "weight": 3.612
+    },
+    "predictable exertional chest discomfort|severe chest pain": {
+      "cooccurrence": 0,
+      "similarity": 0.717,
+      "red_flag_boost": 0,
+      "weight": 2.868
+    },
+    "predictable exertional chest discomfort|shortness of breath": {
+      "cooccurrence": 1,
+      "similarity": 0.372,
+      "red_flag_boost": 0,
+      "weight": 3.488
+    },
+    "predictable exertional chest discomfort|silent chest": {
+      "cooccurrence": 0,
+      "similarity": 0.523,
+      "red_flag_boost": 0,
+      "weight": 2.093
+    },
+    "pressing, non-throbbing pain|sudden onset": {
+      "cooccurrence": 1,
+      "similarity": 0.418,
+      "red_flag_boost": 0,
+      "weight": 3.672
+    },
+    "pressing, non-throbbing pain|throbbing headache": {
+      "cooccurrence": 0,
+      "similarity": 0.649,
+      "red_flag_boost": 0,
+      "weight": 2.594
+    },
+    "productive cough|respiratory distress": {
+      "cooccurrence": 1,
+      "similarity": 0.334,
+      "red_flag_boost": 0,
+      "weight": 3.335
+    },
+    "productive cough|shortness of breath": {
+      "cooccurrence": 1,
+      "similarity": 0.246,
+      "red_flag_boost": 0,
+      "weight": 2.985
+    },
+    "radiation to arm or jaw|relief with rest": {
+      "cooccurrence": 1,
+      "similarity": 0.213,
+      "red_flag_boost": 0,
+      "weight": 2.851
+    },
+    "radiation to arm or jaw|shortness of breath": {
+      "cooccurrence": 1,
+      "similarity": 0.135,
+      "red_flag_boost": 0,
+      "weight": 2.542
+    },
+    "rapid deterioration|seizure": {
+      "cooccurrence": 1,
+      "similarity": 0.292,
+      "red_flag_boost": 0,
+      "weight": 3.167
+    },
+    "rapid deterioration|severe headache": {
+      "cooccurrence": 1,
+      "similarity": 0.312,
+      "red_flag_boost": 0,
+      "weight": 3.249
+    },
+    "rash|severe chest pain": {
+      "cooccurrence": 33,
+      "similarity": 0.196,
+      "red_flag_boost": 0,
+      "weight": 66.785
+    },
+    "rash|shortness of breath": {
+      "cooccurrence": 12,
+      "similarity": 0.066,
+      "red_flag_boost": 0,
+      "weight": 24.265
+    },
+    "rash|unable to breathe": {
+      "cooccurrence": 37,
+      "similarity": 0.165,
+      "red_flag_boost": 0,
+      "weight": 74.661
+    },
+    "rash|uncontrolled bleeding": {
+      "cooccurrence": 34,
+      "similarity": 0.167,
+      "red_flag_boost": 0,
+      "weight": 68.667
+    },
+    "rash|vomiting": {
+      "cooccurrence": 13,
+      "similarity": 0.395,
+      "red_flag_boost": 0,
+      "weight": 27.581
+    },
+    "recurrent unilateral headaches|severe headache": {
+      "cooccurrence": 0,
+      "similarity": 0.744,
+      "red_flag_boost": 0,
+      "weight": 2.975
+    },
+    "recurrent unilateral headaches|sound sensitivity": {
+      "cooccurrence": 1,
+      "similarity": -0.023,
+      "red_flag_boost": 0,
+      "weight": 2
+    },
+    "recurrent unilateral headaches|throbbing headache": {
+      "cooccurrence": 1,
+      "similarity": 0.654,
+      "red_flag_boost": 0,
+      "weight": 4.618
+    },
+    "recurrent unilateral headaches|vision loss": {
+      "cooccurrence": 1,
+      "similarity": 0.223,
+      "red_flag_boost": 0,
+      "weight": 2.892
+    },
+    "recurrent unilateral headaches|weakness on one side": {
+      "cooccurrence": 1,
+      "similarity": 0.33,
+      "red_flag_boost": 0,
+      "weight": 3.322
+    },
+    "recurrent unilateral headaches|worst headache of life": {
+      "cooccurrence": 1,
+      "similarity": 0.549,
+      "red_flag_boost": 0,
+      "weight": 4.194
+    },
+    "regurgitation|sour taste": {
+      "cooccurrence": 1,
+      "similarity": 0.082,
+      "red_flag_boost": 0,
+      "weight": 2.326
+    },
+    "regurgitation|typical heartburn relieved by antacids": {
+      "cooccurrence": 1,
+      "similarity": 0.176,
+      "red_flag_boost": 0,
+      "weight": 2.705
+    },
+    "regurgitation|vomiting blood": {
+      "cooccurrence": 1,
+      "similarity": 0.255,
+      "red_flag_boost": 0,
+      "weight": 3.02
+    },
+    "regurgitation|weight loss": {
+      "cooccurrence": 1,
+      "similarity": 0.205,
+      "red_flag_boost": 0,
+      "weight": 2.818
+    },
+    "relief with rest|shortness of breath": {
+      "cooccurrence": 1,
+      "similarity": 0.169,
+      "red_flag_boost": 0,
+      "weight": 2.677
+    },
+    "respiratory distress|shortness of breath": {
+      "cooccurrence": 1,
+      "similarity": 0.464,
+      "red_flag_boost": 0,
+      "weight": 3.855
+    },
+    "respiratory distress|unable to breathe": {
+      "cooccurrence": 0,
+      "similarity": 0.604,
+      "red_flag_boost": 0,
+      "weight": 2.415
+    },
+    "runny nose|shortness of breath at rest": {
+      "cooccurrence": 1,
+      "similarity": 0.303,
+      "red_flag_boost": 0,
+      "weight": 3.211
+    },
+    "runny nose|sore throat": {
+      "cooccurrence": 1,
+      "similarity": 0.398,
+      "red_flag_boost": 0,
+      "weight": 3.59
+    },
+    "seizure|severe headache": {
+      "cooccurrence": 1,
+      "similarity": 0.318,
+      "red_flag_boost": 0,
+      "weight": 3.271
+    },
+    "seizure|shortness of breath": {
+      "cooccurrence": 1,
+      "similarity": 0.137,
+      "red_flag_boost": 0,
+      "weight": 2.548
+    },
+    "seizure|very high blood pressure": {
+      "cooccurrence": 1,
+      "similarity": 0.301,
+      "red_flag_boost": 0,
+      "weight": 3.205
+    },
+    "seizure|visual changes": {
+      "cooccurrence": 1,
+      "similarity": 0.153,
+      "red_flag_boost": 0,
+      "weight": 2.611
+    },
+    "severe chest pain|shortness of breath": {
+      "cooccurrence": 40,
+      "similarity": 0.325,
+      "red_flag_boost": 0,
+      "weight": 81.301
+    },
+    "severe chest pain|unable to breathe": {
+      "cooccurrence": 46,
+      "similarity": 0.386,
+      "red_flag_boost": 0,
+      "weight": 93.542
+    },
+    "severe chest pain|uncontrolled bleeding": {
+      "cooccurrence": 63,
+      "similarity": 0.255,
+      "red_flag_boost": 0,
+      "weight": 127.018
+    },
+    "severe chest pain|vomiting": {
+      "cooccurrence": 45,
+      "similarity": 0.27,
+      "red_flag_boost": 0,
+      "weight": 91.08
+    },
+    "severe headache|throbbing headache": {
+      "cooccurrence": 0,
+      "similarity": 0.764,
+      "red_flag_boost": 0,
+      "weight": 3.056
+    },
+    "severe headache|worst headache of life": {
+      "cooccurrence": 0,
+      "similarity": 0.714,
+      "red_flag_boost": 0,
+      "weight": 2.856
+    },
+    "shortness of breath|shortness of breath at rest": {
+      "cooccurrence": 0,
+      "similarity": 0.893,
+      "red_flag_boost": 0,
+      "weight": 3.57
+    },
+    "shortness of breath|silent chest": {
+      "cooccurrence": 1,
+      "similarity": 0.351,
+      "red_flag_boost": 0,
+      "weight": 3.405
+    },
+    "shortness of breath|unable to breathe": {
+      "cooccurrence": 41,
+      "similarity": 0.608,
+      "red_flag_boost": 0,
+      "weight": 84.433
+    },
+    "shortness of breath|uncontrolled bleeding": {
+      "cooccurrence": 45,
+      "similarity": 0.152,
+      "red_flag_boost": 0,
+      "weight": 90.609
+    },
+    "shortness of breath|use of accessory muscles": {
+      "cooccurrence": 1,
+      "similarity": 0.043,
+      "red_flag_boost": 0,
+      "weight": 2.171
+    },
+    "shortness of breath|very high blood pressure": {
+      "cooccurrence": 1,
+      "similarity": 0.312,
+      "red_flag_boost": 0,
+      "weight": 3.248
+    },
+    "shortness of breath|visual changes": {
+      "cooccurrence": 1,
+      "similarity": 0.003,
+      "red_flag_boost": 0,
+      "weight": 2.011
+    },
+    "shortness of breath|vomiting": {
+      "cooccurrence": 14,
+      "similarity": 0.171,
+      "red_flag_boost": 0,
+      "weight": 28.682
+    },
+    "shortness of breath|wheezing": {
+      "cooccurrence": 1,
+      "similarity": 0.41,
+      "red_flag_boost": 0,
+      "weight": 3.641
+    },
+    "shortness of breath at rest|sore throat": {
+      "cooccurrence": 1,
+      "similarity": 0.239,
+      "red_flag_boost": 0,
+      "weight": 2.956
+    },
+    "shortness of breath at rest|unable to breathe": {
+      "cooccurrence": 0,
+      "similarity": 0.599,
+      "red_flag_boost": 0,
+      "weight": 2.397
+    },
+    "signs of severe dehydration|vomiting": {
+      "cooccurrence": 1,
+      "similarity": 0.35,
+      "red_flag_boost": 0,
+      "weight": 3.398
+    },
+    "silent chest|use of accessory muscles": {
+      "cooccurrence": 1,
+      "similarity": 0.18,
+      "red_flag_boost": 0,
+      "weight": 2.722
+    },
+    "silent chest|wheezing": {
+      "cooccurrence": 1,
+      "similarity": 0.361,
+      "red_flag_boost": 0,
+      "weight": 3.443
+    },
+    "sound sensitivity|throbbing headache": {
+      "cooccurrence": 1,
+      "similarity": 0.078,
+      "red_flag_boost": 0,
+      "weight": 2.311
+    },
+    "sound sensitivity|vision loss": {
+      "cooccurrence": 1,
+      "similarity": 0.101,
+      "red_flag_boost": 0,
+      "weight": 2.405
+    },
+    "sound sensitivity|weakness on one side": {
+      "cooccurrence": 1,
+      "similarity": 0.149,
+      "red_flag_boost": 0,
+      "weight": 2.598
+    },
+    "sound sensitivity|worst headache of life": {
+      "cooccurrence": 1,
+      "similarity": 0.042,
+      "red_flag_boost": 0,
+      "weight": 2.167
+    },
+    "sour taste|typical heartburn relieved by antacids": {
+      "cooccurrence": 1,
+      "similarity": 0.143,
+      "red_flag_boost": 0,
+      "weight": 2.573
+    },
+    "sour taste|vomiting blood": {
+      "cooccurrence": 1,
+      "similarity": 0.17,
+      "red_flag_boost": 0,
+      "weight": 2.679
+    },
+    "sour taste|weight loss": {
+      "cooccurrence": 1,
+      "similarity": 0.107,
+      "red_flag_boost": 0,
+      "weight": 2.429
+    },
+    "throbbing headache|vision loss": {
+      "cooccurrence": 1,
+      "similarity": 0.2,
+      "red_flag_boost": 0,
+      "weight": 2.799
+    },
+    "throbbing headache|weakness on one side": {
+      "cooccurrence": 1,
+      "similarity": 0.356,
+      "red_flag_boost": 0,
+      "weight": 3.422
+    },
+    "throbbing headache|worst headache of life": {
+      "cooccurrence": 1,
+      "similarity": 0.604,
+      "red_flag_boost": 0,
+      "weight": 4.417
+    },
+    "typical heartburn relieved by antacids|vomiting blood": {
+      "cooccurrence": 1,
+      "similarity": 0.212,
+      "red_flag_boost": 0,
+      "weight": 2.849
+    },
+    "typical heartburn relieved by antacids|weight loss": {
+      "cooccurrence": 1,
+      "similarity": 0.085,
+      "red_flag_boost": 0,
+      "weight": 2.34
+    },
+    "unable to breathe|uncontrolled bleeding": {
+      "cooccurrence": 52,
+      "similarity": 0.268,
+      "red_flag_boost": 0,
+      "weight": 105.073
+    },
+    "unable to breathe|vomiting": {
+      "cooccurrence": 50,
+      "similarity": 0.333,
+      "red_flag_boost": 0,
+      "weight": 101.333
+    },
+    "uncontrolled bleeding|vomiting": {
+      "cooccurrence": 45,
+      "similarity": 0.282,
+      "red_flag_boost": 0,
+      "weight": 91.128
+    },
+    "uncontrolled bleeding|vomiting blood": {
+      "cooccurrence": 0,
+      "similarity": 0.516,
+      "red_flag_boost": 0,
+      "weight": 2.064
+    },
+    "use of accessory muscles|wheezing": {
+      "cooccurrence": 1,
+      "similarity": 0.128,
+      "red_flag_boost": 0,
+      "weight": 2.511
+    },
+    "very high blood pressure|visual changes": {
+      "cooccurrence": 1,
+      "similarity": 0.053,
+      "red_flag_boost": 0,
+      "weight": 2.213
+    },
+    "vision loss|weakness on one side": {
+      "cooccurrence": 1,
+      "similarity": 0.285,
+      "red_flag_boost": 0,
+      "weight": 3.14
+    },
+    "vision loss|worst headache of life": {
+      "cooccurrence": 1,
+      "similarity": 0.315,
+      "red_flag_boost": 0,
+      "weight": 3.259
+    },
+    "vomiting|vomiting blood": {
+      "cooccurrence": 0,
+      "similarity": 0.742,
+      "red_flag_boost": 0,
+      "weight": 2.969
+    },
+    "vomiting blood|weight loss": {
+      "cooccurrence": 1,
+      "similarity": 0.158,
+      "red_flag_boost": 0,
+      "weight": 2.63
+    },
+    "weakness on one side|worst headache of life": {
+      "cooccurrence": 1,
+      "similarity": 0.382,
+      "red_flag_boost": 0,
+      "weight": 3.53
+    }
+  }
+}

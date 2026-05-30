@@ -1,0 +1,104 @@
+{
+  "_metadata": {
+    "framework": "specialty_ophthalmology",
+    "schema_version": "1.0",
+    "description": "Ophthalmology framework — eye anatomy, vision loss patterns, red eye DDx, major eye diseases.",
+    "source": "AAO Basic & Clinical Science Course; Wills Eye Manual",
+    "review_status": "unreviewed"
+  },
+
+  "eye_anatomy_detail": {
+    "anterior_segment": ["cornea", "anterior_chamber", "iris", "pupil", "lens", "ciliary_body"],
+    "posterior_segment": ["vitreous", "retina", "choroid", "optic_nerve", "macula", "fovea"],
+    "adnexa": ["eyelid", "lacrimal_apparatus", "conjunctiva", "extraocular_muscles"]
+  },
+
+  "vision_loss_patterns": {
+    "sudden_painless_monocular": {
+      "DDx": ["CRAO (cherry red spot)", "CRVO (blood and thunder)", "retinal detachment", "vitreous hemorrhage", "GCA / ION"]
+    },
+    "sudden_painful_monocular": {
+      "DDx": ["acute angle closure glaucoma", "optic neuritis", "endophthalmitis"]
+    },
+    "gradual_monocular": {
+      "DDx": ["cataract", "macular degeneration", "diabetic retinopathy", "glaucoma (peripheral first)"]
+    },
+    "bilateral_acute": {
+      "DDx": ["toxic (methanol)", "occipital stroke (cortical blindness)", "papilledema (raised ICP)", "functional"]
+    },
+    "transient_monocular_amaurosis_fugax": {
+      "DDx": ["carotid plaque embolus", "GCA"]
+    },
+    "field_defects_localization": {
+      "monocular_total": "optic nerve",
+      "bitemporal_hemianopia": "optic chiasm (pituitary tumor)",
+      "homonymous_hemianopia": "contralateral post-chiasmal",
+      "quadrantanopia": "Meyer loop (temporal) or parietal lobe"
+    }
+  },
+
+  "red_eye_differential": {
+    "_comment": "Most common ophthalmologic presentation.",
+    "conjunctivitis": {
+      "viral": "watery discharge, often bilateral, contagious; adenovirus common",
+      "bacterial": "purulent discharge; S. aureus, S. pneumoniae",
+      "allergic": "itchy, watery, bilateral",
+      "gonococcal": "hyperacute, copious purulent — emergency"
+    },
+    "keratitis_corneal_ulcer": "pain, photophobia, white spot; bacterial/HSV/fungal/acanthamoeba (contact lens)",
+    "uveitis": "deep pain, photophobia, hypopyon; associated with autoimmune (HLA-B27)",
+    "acute_angle_closure_glaucoma": "severe pain, headache, nausea, halos around lights, fixed mid-dilated pupil — emergency",
+    "scleritis": "deep boring pain, often associated with autoimmune (RA)",
+    "subconjunctival_hemorrhage": "painless, dramatic appearance, benign",
+    "blepharitis": "eyelid margin inflammation, crusting"
+  },
+
+  "major_eye_diseases": {
+    "glaucoma": {
+      "types": ["primary_open_angle", "angle_closure", "normal_tension", "secondary"],
+      "primary_open_angle": {
+        "presentation": "asymptomatic until late, peripheral vision loss",
+        "screening": "tonometry + optic disc + visual field",
+        "treatment": "topical (PG analogs, β-blockers, α-agonists, CAIs); laser (SLT); surgery"
+      }
+    },
+    "age_related_macular_degeneration_AMD": {
+      "dry_geographic": "drusen, slow loss of central vision",
+      "wet_neovascular": "subretinal neovascularization → bleeding/scar; anti-VEGF treatment"
+    },
+    "diabetic_retinopathy": {
+      "non_proliferative": "microaneurysms, dot/blot hemorrhages, hard exudates",
+      "proliferative": "neovascularization (high risk for vitreous hemorrhage)",
+      "screening": "annual dilated exam in all diabetics"
+    },
+    "cataract": {
+      "types": ["nuclear (age)", "cortical", "posterior subcapsular (steroids, DM)"],
+      "treatment": "phacoemulsification + IOL"
+    },
+    "retinal_detachment": {
+      "presentation": "flashes, floaters, curtain over vision",
+      "treatment": "surgical (laser/scleral buckle/vitrectomy)"
+    },
+    "optic_neuritis": {
+      "presentation": "subacute vision loss + pain on eye movement + dyschromatopsia",
+      "associated": "MS (40% risk over 10y)"
+    }
+  },
+
+  "pupillary_abnormalities": {
+    "anisocoria_unequal_pupils": ["Horner syndrome (sympathetic loss)", "CN3 palsy (parasympathetic loss)", "Adie tonic pupil", "drug effect"],
+    "afferent_pupillary_defect_APD_Marcus_Gunn": "optic nerve lesion; swinging flashlight test",
+    "Horner_syndrome": {"triad": ["ptosis", "miosis", "anhidrosis"], "implies": "sympathetic chain lesion"}
+  },
+
+  "ocular_emergencies": [
+    "acute angle closure glaucoma",
+    "central retinal artery occlusion",
+    "endophthalmitis",
+    "retinal detachment",
+    "globe rupture",
+    "chemical burn",
+    "orbital cellulitis (vs preseptal)",
+    "giant cell arteritis with vision loss"
+  ]
+}

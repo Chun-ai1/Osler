@@ -1,0 +1,207 @@
+{
+  "_metadata": {
+    "organ": "bladder",
+    "schema_version": "1.0",
+    "description": "Bladder/lower urinary tract state model. Used by cystitis, urethritis, BPH, interstitial cystitis (when added).",
+    "source": "Boron & Boulpaep Physiology; Harrison's IM lower UTI",
+    "review_status": "unreviewed"
+  },
+  "state_variables": {
+    "inflammation": {
+      "range": [
+        0,
+        1
+      ],
+      "description": "urothelial inflammation severity"
+    },
+    "nerve_irritation": {
+      "range": [
+        0,
+        1
+      ],
+      "description": "afferent C-fiber activation"
+    },
+    "detrusor_irritability": {
+      "range": [
+        0,
+        1
+      ],
+      "description": "smooth muscle hyperreactivity"
+    },
+    "storage_tolerance": {
+      "range": [
+        0,
+        1
+      ],
+      "description": "ability to hold urine — HIGHER = better",
+      "inverse": true
+    },
+    "mucosal_barrier": {
+      "range": [
+        0,
+        1
+      ],
+      "description": "urothelial damage — HIGHER = more damage"
+    },
+    "luminal_bacteria": {
+      "range": [
+        0,
+        1
+      ],
+      "description": "uropathogen load"
+    },
+    "outflow_obstruction": {
+      "range": [
+        0,
+        1
+      ],
+      "description": "bladder neck or urethral obstruction"
+    }
+  },
+  "derivation_rules": [
+    {
+      "symptom": "dysuria burning",
+      "condition": {
+        "state": "nerve_irritation",
+        "op": ">",
+        "threshold": 0.6
+      },
+      "rationale": "afferent C-fiber stimulation in inflamed urothelium produces burning quality during urine flow",
+      "confidence": 1.0
+    },
+    {
+      "symptom": "urinary frequency",
+      "condition": {
+        "any": [
+          {
+            "state": "storage_tolerance",
+            "op": "<",
+            "threshold": 0.4
+          },
+          {
+            "state": "detrusor_irritability",
+            "op": ">",
+            "threshold": 0.6
+          }
+        ]
+      },
+      "rationale": "reduced bladder storage tolerance OR detrusor hyperreactivity → frequent voiding",
+      "confidence": 1.0
+    },
+    {
+      "symptom": "suprapubic pain",
+      "condition": {
+        "state": "inflammation",
+        "op": ">",
+        "threshold": 0.6
+      },
+      "rationale": "visceral nociceptor activation by inflamed bladder wall referred to suprapubic dermatome (T11-L2)",
+      "confidence": 1.0
+    },
+    {
+      "symptom": "urinary urgency",
+      "condition": {
+        "state": "detrusor_irritability",
+        "op": ">",
+        "threshold": 0.5
+      },
+      "rationale": "detrusor muscle hyperreactivity → sudden compelling need to void",
+      "confidence": 1.0
+    },
+    {
+      "symptom": "urinary hesitancy",
+      "condition": {
+        "state": "outflow_obstruction",
+        "op": ">",
+        "threshold": 0.5
+      },
+      "rationale": "narrowed bladder neck or urethra delays urine flow initiation",
+      "confidence": 0.9
+    }
+  ],
+  "diseases": {
+    "Acute Uncomplicated Cystitis": {
+      "review_status": "unreviewed",
+      "description": "Lower UTI: uropathogen ascends urethra, colonizes bladder, triggers urothelial inflammation + sensory nerve activation.",
+      "perturbations": [
+        {
+          "variable": "luminal_bacteria",
+          "delta": 0.8,
+          "cause": "uropathogen ascends urethra"
+        },
+        {
+          "variable": "inflammation",
+          "delta": 0.8,
+          "cause": "urothelial cytokine release (IL-6, IL-8) from bacterial PAMPs"
+        },
+        {
+          "variable": "nerve_irritation",
+          "delta": 0.75,
+          "cause": "inflammatory mediators sensitize afferent C-fibers"
+        },
+        {
+          "variable": "detrusor_irritability",
+          "delta": 0.65,
+          "cause": "inflammation-induced smooth muscle hyperreactivity"
+        },
+        {
+          "variable": "storage_tolerance",
+          "delta": -0.6,
+          "cause": "irritated bladder cannot hold normal volume"
+        },
+        {
+          "variable": "mucosal_barrier",
+          "delta": 0.4,
+          "cause": "GAG layer disruption by uropathogen virulence factors"
+        }
+      ]
+    },
+    "Interstitial Cystitis/Bladder Pain Syndrome": {
+      "review_status": "unreviewed",
+      "description": "Chronic bladder pain syndrome with urothelial barrier dysfunction and sensory hypersensitivity in the absence of proven bacterial infection.",
+      "perturbations": [
+        {
+          "variable": "mucosal_barrier",
+          "delta": 0.45,
+          "cause": "urothelial barrier dysfunction increases irritant exposure"
+        },
+        {
+          "variable": "nerve_irritation",
+          "delta": 0.6,
+          "cause": "afferent sensitization produces painful urinary symptoms"
+        },
+        {
+          "variable": "storage_tolerance",
+          "delta": -0.5,
+          "cause": "pain with filling reduces tolerated bladder volume"
+        },
+        {
+          "variable": "detrusor_irritability",
+          "delta": 0.3,
+          "cause": "sensory urgency drives frequent voiding"
+        }
+      ]
+    },
+    "Urethritis": {
+      "review_status": "unreviewed",
+      "description": "Inflammation or infection of the urethra producing burning urination and urinary discomfort.",
+      "perturbations": [
+        {
+          "variable": "inflammation",
+          "delta": 0.45,
+          "cause": "infectious or inflammatory urethral mucosal injury"
+        },
+        {
+          "variable": "nerve_irritation",
+          "delta": 0.65,
+          "cause": "inflamed lower urinary mucosa sensitizes afferent nerves"
+        },
+        {
+          "variable": "luminal_bacteria",
+          "delta": 0.35,
+          "cause": "bacterial pathogen load when infectious"
+        }
+      ]
+    }
+  }
+}

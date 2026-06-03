@@ -1,0 +1,782 @@
+{
+  "_metadata": {
+    "schema_version": "3.0-pkpd-only",
+    "description": "Pharmacology-only drug framework (PK + PD). No disease/diagnosis fields. state_effects[].max_delta is the signed mechanism magnitude at full PD strength (negative=pushes state down, positive=up).",
+    "field_reference": {
+      "drug_class": "pharmacologic class",
+      "rationale": "human-readable mechanism note",
+      "parameterized": "true=full dose-time PK/PD sim; false=mechanism direction only",
+      "pk": "{routes:{route:{bioavailability,ka_per_hr(null=IV bolus)}}, vd_L_per_kg, cl_L_per_hr_per_kg, fraction_renal_clearance, reference_dose_mg, reference_route}. ke and t1/2 are DERIVED.",
+      "pd": "{benefit:{emax,ec50_norm,hill}, toxicity:{emax,ec50_norm,hill}} on normalized concentration scale (1.0 \u2248 reference-dose peak in reference patient).",
+      "state_effects": "[{organ, variable, max_delta}] benefit mechanism; organ '*'=any organ",
+      "toxic_effects": "[{organ, variable, max_delta}] driven by the toxicity Emax curve",
+      "confidence": "provenance/estimation flags",
+      "SAFETY": "All pk/pd values ESTIMATED, not clinical. Mechanistic simulation only.",
+      "effect_type": "primary | derived | symptom_relief \u2014 distinguishes mechanism roles so different drug classes are not ranked as one effect"
+    }
+  },
+  "drugs": {
+    "nitroglycerin": {
+      "drug_class": "vasodilator",
+      "rationale": "venodilation lowers preload \u2192 lowers myocardial O2 demand \u2192 relieves anginal pain (not an antithrombotic)",
+      "parameterized": true,
+      "pk": {
+        "default_route": "sublingual",
+        "reference_route": "sublingual",
+        "reference_dose_mg": 0.4,
+        "vd_L_per_kg": 3.0,
+        "cl_L_per_hr_per_kg": 12.0,
+        "fraction_renal_clearance": 0.1,
+        "routes": {
+          "sublingual": {
+            "bioavailability": 0.4,
+            "ka_per_hr": 30.0
+          },
+          "iv": {
+            "bioavailability": 1.0,
+            "ka_per_hr": null
+          }
+        }
+      },
+      "pd": {
+        "benefit": {
+          "emax": 1.0,
+          "ec50_norm": 0.3,
+          "hill": 1.0
+        },
+        "toxicity": {
+          "emax": 1.0,
+          "ec50_norm": 1.8,
+          "hill": 2.0
+        }
+      },
+      "state_effects": [
+        {
+          "organ": "heart",
+          "variable": "preload",
+          "direction": "low",
+          "max_delta": -0.45,
+          "effect_type": "primary"
+        },
+        {
+          "organ": "heart",
+          "variable": "myocardial_oxygen_demand",
+          "direction": "low",
+          "max_delta": -0.4,
+          "effect_type": "derived"
+        },
+        {
+          "organ": "heart",
+          "variable": "anginal_pain",
+          "direction": "low",
+          "max_delta": -0.5,
+          "effect_type": "symptom_relief"
+        }
+      ],
+      "toxic_effects": [
+        {
+          "organ": "heart",
+          "variable": "systemic_BP",
+          "max_delta": -0.4
+        }
+      ],
+      "confidence": {
+        "pk": "estimated",
+        "pd": "estimated",
+        "dose": "NOT a clinical recommendation",
+        "provenance": "illustrative placeholder for mechanistic simulation"
+      }
+    },
+    "ntg": {
+      "drug_class": "vasodilator",
+      "rationale": "venodilation lowers preload \u2192 lowers myocardial O2 demand \u2192 relieves anginal pain (not an antithrombotic)",
+      "parameterized": false,
+      "state_effects": [
+        {
+          "organ": "heart",
+          "variable": "preload",
+          "direction": "low",
+          "max_delta": -0.45,
+          "effect_type": "primary"
+        },
+        {
+          "organ": "heart",
+          "variable": "myocardial_oxygen_demand",
+          "direction": "low",
+          "max_delta": -0.4,
+          "effect_type": "derived"
+        }
+      ]
+    },
+    "epinephrine": {
+      "drug_class": "adrenergic agonist",
+      "rationale": "epi reverses anaphylactic vasodilation/bronchospasm",
+      "parameterized": true,
+      "pk": {
+        "default_route": "im",
+        "reference_route": "im",
+        "reference_dose_mg": 0.3,
+        "vd_L_per_kg": 1.0,
+        "cl_L_per_hr_per_kg": 4.0,
+        "fraction_renal_clearance": 0.1,
+        "routes": {
+          "im": {
+            "bioavailability": 0.9,
+            "ka_per_hr": 8.0
+          },
+          "iv": {
+            "bioavailability": 1.0,
+            "ka_per_hr": null
+          }
+        }
+      },
+      "pd": {
+        "benefit": {
+          "emax": 1.0,
+          "ec50_norm": 0.3,
+          "hill": 1.0
+        },
+        "toxicity": {
+          "emax": 1.0,
+          "ec50_norm": 1.5,
+          "hill": 2.0
+        }
+      },
+      "state_effects": [
+        {
+          "organ": "vessel",
+          "variable": "vasoconstriction",
+          "max_delta": 0.5,
+          "effect_type": "primary"
+        },
+        {
+          "organ": "lung",
+          "variable": "airflow_resistance",
+          "max_delta": -0.45,
+          "effect_type": "primary"
+        },
+        {
+          "organ": "lung",
+          "variable": "bronchospasm",
+          "max_delta": -0.5,
+          "effect_type": "primary"
+        }
+      ],
+      "toxic_effects": [
+        {
+          "organ": "heart",
+          "variable": "heart_rate",
+          "max_delta": 0.4
+        }
+      ],
+      "confidence": {
+        "pk": "estimated",
+        "pd": "estimated",
+        "dose": "NOT a clinical recommendation",
+        "provenance": "illustrative placeholder for mechanistic simulation"
+      }
+    },
+    "epi pen": {
+      "drug_class": "adrenergic agonist",
+      "rationale": "EpiPen \u2192 anaphylaxis-specific",
+      "parameterized": false,
+      "state_effects": [
+        {
+          "organ": "vessel",
+          "variable": "vasoconstriction",
+          "max_delta": 0.3,
+          "effect_type": "primary"
+        },
+        {
+          "organ": "lung",
+          "variable": "bronchospasm",
+          "max_delta": -0.3,
+          "effect_type": "primary"
+        }
+      ]
+    },
+    "diphenhydramine": {
+      "drug_class": "antihistamine_H1",
+      "rationale": "antihistamine blocks H1 receptor",
+      "parameterized": false,
+      "state_effects": [
+        {
+          "organ": "skin",
+          "variable": "histamine_release",
+          "max_delta": -0.3,
+          "effect_type": "primary"
+        },
+        {
+          "organ": "skin",
+          "variable": "pruritus",
+          "max_delta": -0.3,
+          "effect_type": "primary"
+        }
+      ]
+    },
+    "benadryl": {
+      "drug_class": "antihistamine_H1",
+      "rationale": "antihistamine blocks H1 receptor",
+      "parameterized": false,
+      "state_effects": [
+        {
+          "organ": "skin",
+          "variable": "histamine_release",
+          "max_delta": -0.3,
+          "effect_type": "primary"
+        }
+      ]
+    },
+    "omeprazole": {
+      "drug_class": "PPI",
+      "rationale": "PPI suppresses gastric acid",
+      "parameterized": true,
+      "pk": {
+        "default_route": "oral",
+        "reference_route": "oral",
+        "reference_dose_mg": 20.0,
+        "vd_L_per_kg": 0.35,
+        "cl_L_per_hr_per_kg": 0.5,
+        "fraction_renal_clearance": 0.2,
+        "routes": {
+          "oral": {
+            "bioavailability": 0.4,
+            "ka_per_hr": 1.0
+          }
+        }
+      },
+      "pd": {
+        "benefit": {
+          "emax": 1.0,
+          "ec50_norm": 0.4,
+          "hill": 1.0
+        },
+        "toxicity": {
+          "emax": 1.0,
+          "ec50_norm": 3.0,
+          "hill": 2.0
+        }
+      },
+      "state_effects": [
+        {
+          "organ": "gi",
+          "variable": "gastric_acid",
+          "max_delta": -0.55,
+          "effect_type": "primary"
+        },
+        {
+          "organ": "gi",
+          "variable": "mucosal_irritation",
+          "max_delta": -0.4,
+          "effect_type": "primary"
+        }
+      ],
+      "confidence": {
+        "pk": "estimated",
+        "pd": "estimated",
+        "dose": "NOT a clinical recommendation",
+        "provenance": "illustrative placeholder for mechanistic simulation"
+      }
+    },
+    "ppi": {
+      "drug_class": "PPI",
+      "rationale": "PPI suppresses gastric acid",
+      "parameterized": false,
+      "state_effects": [
+        {
+          "organ": "gi",
+          "variable": "gastric_acid",
+          "max_delta": -0.3,
+          "effect_type": "primary"
+        }
+      ]
+    },
+    "ranitidine": {
+      "drug_class": "H2_blocker",
+      "rationale": "H2 blocker reduces acid",
+      "parameterized": false,
+      "state_effects": [
+        {
+          "organ": "gi",
+          "variable": "gastric_acid",
+          "max_delta": -0.3,
+          "effect_type": "primary"
+        }
+      ]
+    },
+    "sumatriptan": {
+      "drug_class": "triptan",
+      "rationale": "triptan = migraine-specific 5HT1B/1D agonist",
+      "parameterized": false,
+      "state_effects": [
+        {
+          "organ": "brain",
+          "variable": "neurogenic_inflammation",
+          "max_delta": -0.3,
+          "effect_type": "primary"
+        },
+        {
+          "organ": "vessel",
+          "variable": "cranial_vasodilation",
+          "max_delta": -0.3,
+          "effect_type": "primary"
+        }
+      ]
+    },
+    "triptan": {
+      "drug_class": "triptan",
+      "rationale": "triptans target migraine",
+      "parameterized": false,
+      "state_effects": [
+        {
+          "organ": "vessel",
+          "variable": "cranial_vasodilation",
+          "max_delta": -0.3,
+          "effect_type": "primary"
+        }
+      ]
+    },
+    "albuterol": {
+      "drug_class": "beta2_agonist",
+      "rationale": "beta-2 agonist relaxes bronchial smooth muscle",
+      "parameterized": true,
+      "pk": {
+        "default_route": "inhaled",
+        "reference_route": "inhaled",
+        "reference_dose_mg": 2.5,
+        "vd_L_per_kg": 2.5,
+        "cl_L_per_hr_per_kg": 0.43,
+        "fraction_renal_clearance": 0.5,
+        "routes": {
+          "inhaled": {
+            "bioavailability": 0.1,
+            "ka_per_hr": 12.0
+          },
+          "oral": {
+            "bioavailability": 0.5,
+            "ka_per_hr": 1.5
+          }
+        }
+      },
+      "pd": {
+        "benefit": {
+          "emax": 1.0,
+          "ec50_norm": 0.25,
+          "hill": 1.0
+        },
+        "toxicity": {
+          "emax": 1.0,
+          "ec50_norm": 1.6,
+          "hill": 2.0
+        }
+      },
+      "state_effects": [
+        {
+          "organ": "lung",
+          "variable": "bronchospasm",
+          "max_delta": -0.5,
+          "effect_type": "primary"
+        },
+        {
+          "organ": "lung",
+          "variable": "airflow_resistance",
+          "max_delta": -0.4,
+          "effect_type": "primary"
+        }
+      ],
+      "toxic_effects": [
+        {
+          "organ": "heart",
+          "variable": "heart_rate",
+          "max_delta": 0.3
+        }
+      ],
+      "confidence": {
+        "pk": "estimated",
+        "pd": "estimated",
+        "dose": "NOT a clinical recommendation",
+        "provenance": "illustrative placeholder for mechanistic simulation"
+      }
+    },
+    "ventolin": {
+      "drug_class": "beta2_agonist",
+      "rationale": "albuterol brand",
+      "parameterized": false,
+      "state_effects": [
+        {
+          "organ": "lung",
+          "variable": "bronchospasm",
+          "max_delta": -0.3,
+          "effect_type": "primary"
+        }
+      ]
+    },
+    "ibuprofen": {
+      "drug_class": "NSAID",
+      "rationale": "NSAID anti-inflammatory",
+      "parameterized": false,
+      "state_effects": [
+        {
+          "organ": "*",
+          "variable": "inflammation",
+          "max_delta": -0.3,
+          "effect_type": "primary"
+        },
+        {
+          "organ": "*",
+          "variable": "prostaglandin",
+          "max_delta": -0.3,
+          "effect_type": "primary"
+        }
+      ]
+    },
+    "aspirin": {
+      "drug_class": "antiplatelet",
+      "rationale": "irreversible COX-1 inhibition lowers platelet aggregation \u2192 lowers thrombus progression risk",
+      "parameterized": false,
+      "state_effects": [
+        {
+          "organ": "blood",
+          "variable": "platelet_aggregation",
+          "direction": "low",
+          "max_delta": -0.55,
+          "effect_type": "primary"
+        },
+        {
+          "organ": "heart",
+          "variable": "ischemic_event_progression_risk",
+          "direction": "low",
+          "max_delta": -0.35,
+          "effect_type": "derived"
+        }
+      ]
+    },
+    "metoprolol": {
+      "drug_class": "beta_blocker",
+      "rationale": "\u03b2-blocker reduces sympathetic drive + cardiac O2 demand",
+      "parameterized": false,
+      "state_effects": [
+        {
+          "organ": "heart",
+          "variable": "sympathetic_drive",
+          "max_delta": -0.3,
+          "effect_type": "primary"
+        },
+        {
+          "organ": "heart",
+          "variable": "heart_rate",
+          "max_delta": -0.3,
+          "effect_type": "primary"
+        },
+        {
+          "organ": "heart",
+          "variable": "myocardial_oxygen_demand",
+          "max_delta": -0.3,
+          "effect_type": "primary"
+        }
+      ]
+    },
+    "atenolol": {
+      "drug_class": "beta_blocker",
+      "rationale": "\u03b2-blocker reduces sympathetic drive",
+      "parameterized": false,
+      "state_effects": [
+        {
+          "organ": "heart",
+          "variable": "sympathetic_drive",
+          "max_delta": -0.3,
+          "effect_type": "primary"
+        },
+        {
+          "organ": "heart",
+          "variable": "heart_rate",
+          "max_delta": -0.3,
+          "effect_type": "primary"
+        }
+      ]
+    },
+    "lisinopril": {
+      "drug_class": "ACE_inhibitor",
+      "rationale": "ACE inhibitor reduces afterload + RAAS activity",
+      "parameterized": false,
+      "state_effects": [
+        {
+          "organ": "heart",
+          "variable": "afterload",
+          "max_delta": -0.3,
+          "effect_type": "primary"
+        },
+        {
+          "organ": "heart",
+          "variable": "systemic_BP",
+          "max_delta": -0.3,
+          "effect_type": "primary"
+        },
+        {
+          "organ": "vessel",
+          "variable": "angiotensin_II",
+          "max_delta": -0.3,
+          "effect_type": "primary"
+        }
+      ]
+    },
+    "furosemide": {
+      "drug_class": "loop_diuretic",
+      "rationale": "loop diuretic \u2014 reduces preload and pulmonary edema",
+      "parameterized": true,
+      "pk": {
+        "default_route": "iv",
+        "reference_route": "iv",
+        "reference_dose_mg": 40.0,
+        "vd_L_per_kg": 0.2,
+        "cl_L_per_hr_per_kg": 0.12,
+        "fraction_renal_clearance": 0.65,
+        "routes": {
+          "iv": {
+            "bioavailability": 1.0,
+            "ka_per_hr": null
+          },
+          "oral": {
+            "bioavailability": 0.5,
+            "ka_per_hr": 2.0
+          }
+        }
+      },
+      "pd": {
+        "benefit": {
+          "emax": 1.0,
+          "ec50_norm": 0.3,
+          "hill": 1.0
+        },
+        "toxicity": {
+          "emax": 1.0,
+          "ec50_norm": 1.7,
+          "hill": 2.0
+        }
+      },
+      "state_effects": [
+        {
+          "organ": "heart",
+          "variable": "preload",
+          "max_delta": -0.45,
+          "effect_type": "primary"
+        },
+        {
+          "organ": "lung",
+          "variable": "pulmonary_edema",
+          "max_delta": -0.5,
+          "effect_type": "primary"
+        },
+        {
+          "organ": "*",
+          "variable": "fluid_overload",
+          "max_delta": -0.5,
+          "effect_type": "primary"
+        }
+      ],
+      "toxic_effects": [
+        {
+          "organ": "*",
+          "variable": "hypovolemia",
+          "max_delta": 0.35
+        }
+      ],
+      "confidence": {
+        "pk": "estimated",
+        "pd": "estimated",
+        "dose": "NOT a clinical recommendation",
+        "provenance": "illustrative placeholder for mechanistic simulation"
+      }
+    },
+    "morphine": {
+      "drug_class": "opioid_analgesic",
+      "rationale": "opioid: analgesia + sympatholytic + venodilation",
+      "parameterized": true,
+      "pk": {
+        "default_route": "iv",
+        "reference_route": "iv",
+        "reference_dose_mg": 4.0,
+        "vd_L_per_kg": 3.0,
+        "cl_L_per_hr_per_kg": 1.0,
+        "fraction_renal_clearance": 0.1,
+        "routes": {
+          "iv": {
+            "bioavailability": 1.0,
+            "ka_per_hr": null
+          },
+          "oral": {
+            "bioavailability": 0.3,
+            "ka_per_hr": 1.2
+          }
+        }
+      },
+      "pd": {
+        "benefit": {
+          "emax": 1.0,
+          "ec50_norm": 0.3,
+          "hill": 1.0
+        },
+        "toxicity": {
+          "emax": 1.0,
+          "ec50_norm": 1.4,
+          "hill": 2.5
+        }
+      },
+      "state_effects": [
+        {
+          "organ": "brain",
+          "variable": "pain_perception",
+          "max_delta": -0.5,
+          "effect_type": "primary"
+        },
+        {
+          "organ": "heart",
+          "variable": "sympathetic_drive",
+          "max_delta": -0.3,
+          "effect_type": "primary"
+        },
+        {
+          "organ": "heart",
+          "variable": "preload",
+          "max_delta": -0.25,
+          "effect_type": "primary"
+        }
+      ],
+      "toxic_effects": [
+        {
+          "organ": "brain",
+          "variable": "respiratory_depression",
+          "max_delta": 0.45
+        }
+      ],
+      "confidence": {
+        "pk": "estimated",
+        "pd": "estimated",
+        "dose": "NOT a clinical recommendation",
+        "provenance": "illustrative placeholder for mechanistic simulation"
+      }
+    },
+    "heparin": {
+      "drug_class": "anticoagulant",
+      "rationale": "potentiates antithrombin \u2192 lowers coagulation cascade \u2192 lowers clot propagation risk (anticoagulant, not direct ischemia relief)",
+      "parameterized": false,
+      "state_effects": [
+        {
+          "organ": "blood",
+          "variable": "coagulation_cascade",
+          "direction": "low",
+          "max_delta": -0.55,
+          "effect_type": "primary"
+        },
+        {
+          "organ": "blood",
+          "variable": "clot_propagation_risk",
+          "direction": "low",
+          "max_delta": -0.4,
+          "effect_type": "derived"
+        }
+      ]
+    },
+    "ceftriaxone": {
+      "drug_class": "antibiotic_broad",
+      "rationale": "broad-spectrum antibiotic \u2014 covers gram-negative + Strep",
+      "parameterized": false,
+      "state_effects": [
+        {
+          "organ": "*",
+          "variable": "infection_load",
+          "max_delta": -0.3,
+          "effect_type": "primary"
+        },
+        {
+          "organ": "*",
+          "variable": "bacterial_pathogen",
+          "max_delta": -0.3,
+          "effect_type": "primary"
+        }
+      ]
+    },
+    "amoxicillin": {
+      "drug_class": "antibiotic_penicillin",
+      "rationale": "penicillin \u2014 common community pathogens",
+      "parameterized": false,
+      "state_effects": [
+        {
+          "organ": "*",
+          "variable": "infection_load",
+          "max_delta": -0.3,
+          "effect_type": "primary"
+        },
+        {
+          "organ": "*",
+          "variable": "bacterial_pathogen",
+          "max_delta": -0.3,
+          "effect_type": "primary"
+        }
+      ]
+    },
+    "insulin": {
+      "drug_class": "hormone_replacement",
+      "rationale": "insulin \u2014 corrects hyperglycemia and ketosis",
+      "parameterized": false,
+      "state_effects": [
+        {
+          "organ": "pancreas",
+          "variable": "blood_glucose_elevation",
+          "max_delta": -0.3,
+          "effect_type": "primary"
+        },
+        {
+          "organ": "pancreas",
+          "variable": "ketogenesis",
+          "max_delta": -0.3,
+          "effect_type": "primary"
+        }
+      ]
+    },
+    "fluids_iv": {
+      "drug_class": "volume_resuscitation",
+      "rationale": "IV fluids \u2014 restore intravascular volume + perfusion",
+      "parameterized": false,
+      "state_effects": [
+        {
+          "organ": "heart",
+          "variable": "preload",
+          "max_delta": 0.3,
+          "effect_type": "primary"
+        },
+        {
+          "organ": "*",
+          "variable": "hypovolemia",
+          "max_delta": -0.3,
+          "effect_type": "primary"
+        },
+        {
+          "organ": "*",
+          "variable": "perfusion",
+          "max_delta": 0.3,
+          "effect_type": "primary"
+        }
+      ]
+    },
+    "oxygen": {
+      "drug_class": "respiratory_support",
+      "rationale": "supplemental O2 \u2014 corrects hypoxia",
+      "parameterized": false,
+      "state_effects": [
+        {
+          "organ": "lung",
+          "variable": "gas_exchange",
+          "max_delta": 0.3,
+          "effect_type": "primary"
+        },
+        {
+          "organ": "*",
+          "variable": "hypoxia",
+          "max_delta": -0.3,
+          "effect_type": "primary"
+        }
+      ]
+    }
+  }
+}

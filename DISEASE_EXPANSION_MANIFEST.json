@@ -1,0 +1,233 @@
+{
+  "version": "v1",
+  "added_disease_count": 42,
+  "modified_files": {
+    "bladder.json": [
+      "Interstitial Cystitis/Bladder Pain Syndrome",
+      "Urethritis"
+    ],
+    "blood.json": [
+      "Disseminated Intravascular Coagulation",
+      "Anemia of Chronic Disease",
+      "Hemolytic Anemia"
+    ],
+    "bone.json": [
+      "Osteomyelitis",
+      "Osteoarthritis",
+      "Calcium Pyrophosphate Deposition Disease"
+    ],
+    "brain.json": [
+      "Viral Encephalitis",
+      "Transient Ischemic Attack"
+    ],
+    "ear.json": [
+      "Otitis Externa",
+      "Meniere Disease",
+      "Benign Paroxysmal Positional Vertigo"
+    ],
+    "eye.json": [
+      "Anterior Uveitis",
+      "Cataract",
+      "Central Retinal Artery Occlusion",
+      "Optic Neuritis"
+    ],
+    "heart.json": [
+      "Acute Myocarditis",
+      "Ventricular Tachycardia"
+    ],
+    "kidney.json": [
+      "Hydronephrosis from Urinary Obstruction",
+      "Acute Interstitial Nephritis"
+    ],
+    "liver.json": [
+      "Hepatic Encephalopathy",
+      "Primary Biliary Cholangitis"
+    ],
+    "lung.json": [
+      "Viral Pneumonia",
+      "Aspiration Pneumonitis"
+    ],
+    "muscle.json": [
+      "Dermatomyositis",
+      "Toxic Statin Myopathy"
+    ],
+    "pancreas.json": [
+      "Pancreatic Adenocarcinoma",
+      "Exocrine Pancreatic Insufficiency"
+    ],
+    "reproductive.json": [
+      "Acute Endometritis",
+      "Tubo-Ovarian Abscess"
+    ],
+    "skin.json": [
+      "Necrotizing Fasciitis",
+      "Herpes Zoster"
+    ],
+    "spleen.json": [
+      "Splenic Rupture",
+      "Hypersplenism"
+    ],
+    "thyroid.json": [
+      "Subacute Thyroiditis",
+      "Toxic Multinodular Goiter"
+    ],
+    "upper_airway.json": [
+      "Acute Viral Rhinitis",
+      "Chronic Rhinosinusitis"
+    ],
+    "vessel.json": [
+      "Abdominal Aortic Aneurysm",
+      "Acute Limb Ischemia",
+      "Superficial Thrombophlebitis"
+    ],
+    "disease_timecourse.json": [
+      "Interstitial Cystitis/Bladder Pain Syndrome",
+      "Urethritis",
+      "Disseminated Intravascular Coagulation",
+      "Anemia of Chronic Disease",
+      "Hemolytic Anemia",
+      "Osteomyelitis",
+      "Osteoarthritis",
+      "Calcium Pyrophosphate Deposition Disease",
+      "Viral Encephalitis",
+      "Transient Ischemic Attack",
+      "Otitis Externa",
+      "Meniere Disease",
+      "Benign Paroxysmal Positional Vertigo",
+      "Anterior Uveitis",
+      "Cataract",
+      "Central Retinal Artery Occlusion",
+      "Optic Neuritis",
+      "Acute Myocarditis",
+      "Ventricular Tachycardia",
+      "Hydronephrosis from Urinary Obstruction",
+      "Acute Interstitial Nephritis",
+      "Hepatic Encephalopathy",
+      "Primary Biliary Cholangitis",
+      "Viral Pneumonia",
+      "Aspiration Pneumonitis",
+      "Dermatomyositis",
+      "Toxic Statin Myopathy",
+      "Pancreatic Adenocarcinoma",
+      "Exocrine Pancreatic Insufficiency",
+      "Acute Endometritis",
+      "Tubo-Ovarian Abscess",
+      "Necrotizing Fasciitis",
+      "Herpes Zoster",
+      "Splenic Rupture",
+      "Hypersplenism",
+      "Subacute Thyroiditis",
+      "Toxic Multinodular Goiter",
+      "Acute Viral Rhinitis",
+      "Chronic Rhinosinusitis",
+      "Abdominal Aortic Aneurysm",
+      "Acute Limb Ischemia",
+      "Superficial Thrombophlebitis"
+    ]
+  },
+  "timecourses_added": 42,
+  "notes": [
+    "All new disease entries are marked unreviewed.",
+    "Perturbations use only state variables already present in the target organ model.",
+    "This is a knowledge-base expansion patch, not clinical validation or regulatory approval.",
+    "Every added disease has at least one perturbation anchored to an existing derivation or propagation rule after interpretability audit."
+  ],
+  "validation": [
+    {
+      "file": "bladder.json",
+      "added": 2,
+      "state_variables_checked": true
+    },
+    {
+      "file": "blood.json",
+      "added": 3,
+      "state_variables_checked": true
+    },
+    {
+      "file": "bone.json",
+      "added": 3,
+      "state_variables_checked": true
+    },
+    {
+      "file": "brain.json",
+      "added": 2,
+      "state_variables_checked": true
+    },
+    {
+      "file": "ear.json",
+      "added": 3,
+      "state_variables_checked": true
+    },
+    {
+      "file": "eye.json",
+      "added": 4,
+      "state_variables_checked": true
+    },
+    {
+      "file": "heart.json",
+      "added": 2,
+      "state_variables_checked": true
+    },
+    {
+      "file": "kidney.json",
+      "added": 2,
+      "state_variables_checked": true
+    },
+    {
+      "file": "liver.json",
+      "added": 2,
+      "state_variables_checked": true
+    },
+    {
+      "file": "lung.json",
+      "added": 2,
+      "state_variables_checked": true
+    },
+    {
+      "file": "muscle.json",
+      "added": 2,
+      "state_variables_checked": true
+    },
+    {
+      "file": "pancreas.json",
+      "added": 2,
+      "state_variables_checked": true
+    },
+    {
+      "file": "reproductive.json",
+      "added": 2,
+      "state_variables_checked": true
+    },
+    {
+      "file": "skin.json",
+      "added": 2,
+      "state_variables_checked": true
+    },
+    {
+      "file": "spleen.json",
+      "added": 2,
+      "state_variables_checked": true
+    },
+    {
+      "file": "thyroid.json",
+      "added": 2,
+      "state_variables_checked": true
+    },
+    {
+      "file": "upper_airway.json",
+      "added": 2,
+      "state_variables_checked": true
+    },
+    {
+      "file": "vessel.json",
+      "added": 3,
+      "state_variables_checked": true
+    }
+  ],
+  "validation_errors": [],
+  "interpretability_coverage": {
+    "checked_models": 42,
+    "models_with_no_state_to_symptom_or_propagation_anchor": [],
+    "passed": true
+  }
+}

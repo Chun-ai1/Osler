@@ -1,0 +1,893 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<title>osler — AI Health Chat</title>
+<link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600;700&family=Sora:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+<style>
+:root {
+--bg: #F8F9FC;
+--bg-warm: #EEF1F7;
+--bg-card: #FFFFFF;
+--accent: #0F2B5B;
+--accent-light: #E8EDF5;
+--accent-bright: #1A3F7A;
+--silver: #8C9BB5;
+--silver-light: #C5CEDB;
+--text: #0F2B5B;
+--text-secondary: #4A5A7A;
+--text-muted: #8C9BB5;
+--border: rgba(15,43,91,0.08);
+--border-solid: #E2E7F0;
+--orange: #E8724A;
+--shadow-sm: 0 1px 3px rgba(0,0,0,0.04);
+--shadow-md: 0 8px 30px rgba(0,0,0,0.06);
+--radius: 16px;
+--radius-sm: 10px;
+--teal: #0D9488;
+--green: #059669;
+--amber: #D97706;
+    }
+* { margin: 0; padding: 0; box-sizing: border-box; }
+body { 
+font-family: 'Sora', -apple-system, sans-serif; 
+background-color: var(--bg); color: var(--text);
+margin: 0; display: flex; justify-content: center; padding: 40px 20px;
+-webkit-font-smoothing: antialiased;
+    }
+.container { width: 100%; max-width: 1200px; }
+.app-header {
+display: flex; align-items: center; gap: 10px;
+margin-bottom: 28px; padding-bottom: 18px; border-bottom: 1px solid var(--border);
+    }
+.logo-mark { width: 36px; height: 36px; }
+.logo-mark svg { width: 36px; height: 36px; }
+.logo-name {
+font-family: 'Outfit', sans-serif; font-size: 22px; color: var(--accent);
+letter-spacing: -0.5px; font-weight: 600; text-transform: lowercase;
+    }
+.panel { 
+background: var(--bg-card); border: 1px solid var(--border); 
+border-radius: var(--radius); padding: 24px; margin-bottom: 20px; 
+box-shadow: var(--shadow-sm);
+    }
+.main-layout {
+display: block;
+    }
+#chat-box { 
+width: 100%; height: 500px; border: 1px solid var(--border); 
+border-radius: var(--radius); padding: 20px; overflow-y: auto; 
+background: var(--bg-card); box-shadow: var(--shadow-sm);
+    }
+.msg-user { 
+background: var(--accent); color: white;
+padding: 12px 16px; border-radius: 12px 12px 0 12px; 
+margin: 10px 0 10px auto; max-width: 80%; width: fit-content; font-size: 0.95rem;
+    }
+.msg-ai { 
+background: var(--bg); color: var(--text);
+padding: 16px 20px; border-radius: 12px 12px 12px 0; 
+margin: 10px 0; max-width: 90%; line-height: 1.7;
+border: 1px solid var(--border-solid); box-shadow: var(--shadow-sm);
+font-size: 0.94rem;
+    }
+.msg-ai strong, .msg-ai b { color: var(--accent); font-weight: 600; }
+.msg-ai h1, .msg-ai h2, .msg-ai h3 { margin: 12px 0 6px; color: var(--accent); }
+.msg-ai h3 { font-size: 1rem; }
+.msg-ai ul, .msg-ai ol { margin: 6px 0 6px 20px; }
+.msg-ai li { margin: 4px 0; }
+.msg-ai p { margin: 8px 0; }
+.msg-ai em, .msg-ai i { color: var(--text-muted); font-size: 0.88rem; }
+.msg-ai hr { border: none; border-top: 1px solid var(--border-solid); margin: 12px 0; }
+.msg-ai code { background: var(--accent-light); padding: 2px 6px; border-radius: 4px; font-size: 0.88rem; }
+.msg-ai .red-flag { color: #dc2626; font-weight: 600; }
+.msg-ai .triage-emergency { background: #fef2f2; border-left: 4px solid #dc2626; padding: 8px 12px; border-radius: 6px; margin: 8px 0; }
+.msg-ai .triage-urgent { background: #fffbeb; border-left: 4px solid #f59e0b; padding: 8px 12px; border-radius: 6px; margin: 8px 0; }
+.msg-ai .triage-routine { background: #f0fdf4; border-left: 4px solid #22c55e; padding: 8px 12px; border-radius: 6px; margin: 8px 0; }
+.msg-ai .evidence-score { font-family: monospace; font-size: 0.8rem; color: var(--silver); }
+.msg-ai .disclaimer { font-size: 0.82rem; color: var(--text-muted); border-top: 1px solid var(--border); padding-top: 8px; margin-top: 12px; }
+input[type="text"], input[type="number"], select { 
+font-family: 'Sora', sans-serif; padding: 10px 14px; border-radius: var(--radius-sm); 
+border: 1px solid var(--border-solid); background: var(--bg); color: var(--text);
+font-size: 14px; outline: none; transition: border 0.2s;
+    }
+input:focus, select:focus { border-color: var(--accent); box-shadow: 0 0 0 3px rgba(15,43,91,0.08); }
+button { 
+font-family: 'Sora', sans-serif; padding: 10px 20px; border-radius: 50px; 
+border: none; background: var(--accent); color: white; 
+font-weight: 600; font-size: 14px; cursor: pointer; transition: all 0.2s;
+    }
+button:hover { transform: translateY(-1px); box-shadow: 0 6px 24px rgba(15,43,91,0.25); }
+#clearSelectedBtn { background: var(--orange); }
+#refreshSymptomsBtn, #backToSymptomsBtn { 
+background: var(--bg-card); color: var(--text); border: 1.5px solid var(--border-solid); 
+    }
+#refreshSymptomsBtn:hover, #backToSymptomsBtn:hover { border-color: var(--accent); color: var(--accent); }
+.symptom-list { 
+display: grid; grid-template-columns: repeat(auto-fill, minmax(200px, 1fr)); 
+gap: 12px; max-height: 300px; padding: 15px; overflow-y: auto;
+    }
+.symptom-item { 
+background: var(--bg-card); border: 1px solid var(--border-solid); 
+padding: 10px; border-radius: var(--radius-sm); transition: all 0.2s;
+    }
+.symptom-item:hover { border-color: var(--silver); background: var(--accent-light); }
+.followup-card {
+border-left: 4px solid var(--accent); background: var(--bg);
+padding: 15px; margin-bottom: 12px; border-radius: var(--radius-sm);
+    }
+.muted { color: var(--text-muted); font-size: 0.85rem; margin-bottom: 4px; }
+.row { display: flex; gap: 10px; align-items: center; flex-wrap: wrap; }
+
+/* ═══ REASONING PANEL ═══ */
+.reasoning-toggle {
+display: inline-flex; align-items: center; gap: 6px;
+margin-top: 10px; padding: 7px 14px; font-size: 0.82rem; font-weight: 600;
+background: var(--accent-light); color: var(--accent);
+border-radius: 50px; cursor: pointer; border: none; transition: all 0.2s;
+    }
+.reasoning-toggle:hover { background: var(--silver-light); box-shadow: none; transform: none; }
+.reasoning-toggle .dot { width: 7px; height: 7px; border-radius: 50%; background: var(--green); }
+.reasoning-panel {
+margin-top: 12px; border: 1px solid var(--border-solid); border-radius: var(--radius);
+background: var(--bg-card); overflow: hidden; box-shadow: var(--shadow-sm);
+    }
+.reasoning-tabs {
+display: flex; gap: 2px; padding: 6px; background: var(--bg-warm);
+    }
+.reasoning-tab {
+flex: none; padding: 6px 14px; font-size: 0.82rem; font-weight: 600;
+border-radius: 8px; background: transparent; color: var(--text-muted);
+border: none; cursor: pointer; transition: all 0.15s;
+    }
+.reasoning-tab.active { background: var(--bg-card); color: var(--accent); box-shadow: var(--shadow-sm); }
+.reasoning-tab:hover { transform: none; box-shadow: none; }
+.reasoning-body { padding: 18px; }
+
+/* pipeline steps */
+.pipe-step { position: relative; padding-left: 34px; padding-bottom: 18px; }
+.pipe-step:last-child { padding-bottom: 0; }
+.pipe-step::before {
+content: ""; position: absolute; left: 11px; top: 24px; bottom: 0; width: 1px; background: var(--border-solid);
+    }
+.pipe-step:last-child::before { display: none; }
+.pipe-num {
+position: absolute; left: 0; top: 2px; width: 24px; height: 24px;
+border-radius: 50%; background: var(--accent); color: white;
+font-size: 11px; font-weight: 700; display: flex; align-items: center; justify-content: center;
+    }
+.pipe-label { font-weight: 600; font-size: 0.88rem; color: var(--accent); }
+.pipe-detail { font-size: 0.82rem; color: var(--text-secondary); margin-top: 2px; line-height: 1.5; }
+.pipe-pills { display: flex; flex-wrap: wrap; gap: 6px; margin-top: 6px; }
+
+.rx-pill {
+display: inline-flex; align-items: center; padding: 2px 9px; border-radius: 50px;
+font-size: 0.74rem; font-weight: 600;
+background: var(--bg-warm); color: var(--text-secondary);
+    }
+.rx-pill.high { background: #ecfdf5; color: var(--green); }
+.rx-pill.med { background: #fffbeb; color: var(--amber); }
+
+/* diagnosis cards */
+.dx-card { border: 1px solid var(--border-solid); border-radius: 12px; margin-bottom: 10px; overflow: hidden; }
+.dx-head {
+display: flex; align-items: center; gap: 12px; padding: 12px 14px; cursor: pointer;
+background: var(--bg-card); transition: background 0.15s;
+    }
+.dx-head:hover { background: var(--bg-warm); }
+.dx-rank { width: 26px; height: 26px; border-radius: 8px; background: var(--accent); color: white; font-size: 0.78rem; font-weight: 700; display: flex; align-items: center; justify-content: center; flex: none; }
+.dx-name { flex: 1; font-weight: 600; font-size: 0.92rem; }
+.dx-bar-track { width: 90px; height: 6px; border-radius: 50px; background: var(--bg-warm); overflow: hidden; }
+.dx-bar-fill { height: 100%; border-radius: 50px; }
+.dx-score { font-size: 0.78rem; color: var(--text-muted); font-family: monospace; min-width: 34px; text-align: right; }
+.dx-body { border-top: 1px solid var(--border-solid); padding: 14px; background: #FBFCFE; display: none; }
+.dx-body.open { display: block; }
+.trace-sec { margin-bottom: 14px; }
+.trace-sec:last-child { margin-bottom: 0; }
+.trace-sec-head { display: flex; align-items: center; gap: 7px; margin-bottom: 6px; }
+.trace-sec-num { width: 19px; height: 19px; border-radius: 5px; background: var(--silver-light); color: var(--accent); font-size: 0.68rem; font-weight: 700; display: flex; align-items: center; justify-content: center; }
+.trace-sec-title { font-size: 0.82rem; font-weight: 600; color: var(--text-secondary); }
+.trace-body { padding-left: 26px; }
+.trace-line { font-size: 0.8rem; color: var(--text-secondary); margin: 3px 0; line-height: 1.5; }
+.trace-line.mono { font-family: monospace; color: var(--accent); font-size: 0.78rem; }
+.trace-explain { display: flex; gap: 7px; align-items: flex-start; margin: 5px 0; font-size: 0.8rem; }
+.trace-check { flex: none; margin-top: 1px; }
+.trace-check.yes { color: var(--green); }
+.trace-check.no { color: var(--silver-light); }
+.g5-row { font-size: 0.76rem; color: var(--text-muted); padding-left: 10px; border-left: 2px solid var(--border-solid); margin: 3px 0; }
+.rx-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 10px; margin-top: 4px; }
+@media (max-width: 560px) { .rx-grid { grid-template-columns: 1fr; } }
+.rx-box { border: 1px solid var(--border-solid); border-radius: 10px; padding: 12px; }
+.rx-box-title { font-size: 0.82rem; font-weight: 600; color: var(--text-secondary); margin-bottom: 8px; }
+.rx-note { font-size: 0.72rem; color: var(--text-muted); margin-top: 8px; line-height: 1.4; }
+
+/* anatomy body diagram */
+.anat-wrap { display: flex; gap: 14px; align-items: flex-start; margin-bottom: 14px; padding: 12px; border: 1px solid var(--border-solid); border-radius: 12px; background: #FBFCFE; }
+.anat-svg-box { flex: none; }
+.anat-legend { flex: 1; min-width: 0; }
+.anat-legend-title { font-size: 0.82rem; font-weight: 600; color: var(--text-secondary); margin-bottom: 8px; }
+.anat-organ-row { display: flex; align-items: center; gap: 8px; margin: 5px 0; font-size: 0.82rem; }
+.anat-dot { width: 11px; height: 11px; border-radius: 50%; flex: none; }
+.anat-organ-name { font-weight: 600; color: var(--accent); text-transform: capitalize; }
+.anat-organ-sys { color: var(--text-muted); font-size: 0.74rem; }
+.anat-blip { transition: opacity 0.3s, r 0.3s; }
+.anat-3d-link { display: inline-block; margin-top: 10px; font-size: 0.78rem; font-weight: 600; color: var(--accent); text-decoration: none; padding: 5px 12px; border: 1px solid var(--border-solid); border-radius: 50px; transition: all 0.15s; }
+.anat-3d-link:hover { background: var(--accent-light); border-color: var(--accent); }
+.anat-spread-title { font-size: 0.78rem; font-weight: 600; color: var(--text-secondary); margin: 10px 0 4px; }
+.anat-spread-row { display: flex; align-items: center; gap: 6px; margin: 3px 0; font-size: 0.8rem; }
+.anat-arrow { color: var(--orange); font-weight: 700; }
+@media (max-width: 520px) { .anat-wrap { flex-direction: column; align-items: center; } }
+
+/* medical causal-flow chain */
+.flow-chain { padding-left: 26px; }
+.flow-node { display: flex; align-items: flex-start; gap: 8px; margin: 0; }
+.flow-rail { display: flex; flex-direction: column; align-items: center; flex: none; width: 16px; }
+.flow-dot { width: 9px; height: 9px; border-radius: 50%; background: var(--orange); margin-top: 5px; }
+.flow-dot.cause { background: var(--accent); }
+.flow-dot.symptom { background: var(--green); }
+.flow-line { width: 2px; flex: 1; min-height: 14px; background: var(--border-solid); }
+.flow-content { padding-bottom: 12px; flex: 1; }
+.flow-kind { font-size: 0.68rem; text-transform: uppercase; letter-spacing: 0.05em; color: var(--text-muted); font-weight: 600; }
+.flow-text { font-size: 0.84rem; color: var(--text); line-height: 1.45; margin-top: 1px; }
+.flow-text .organ-tag { font-weight: 600; color: var(--accent); text-transform: capitalize; }
+.flow-cross { background: #FFF6F2; border-left: 3px solid var(--orange); padding: 6px 10px; border-radius: 6px; margin: 2px 0; }
+.flow-cross .flow-text { color: var(--orange); font-weight: 500; }
+/* diagnostic bridge — visual flow graph (symptom → state → disease) */
+.bridge-graph { width: 100%; overflow-x: auto; padding: 4px 0; }
+.bridge-graph svg { display: block; min-width: 460px; }
+</style>
+<script src="https://cdn.jsdelivr.net/npm/marked/marked.min.js"></script>
+</head>
+<body>
+<div class="container">
+<div class="app-header">
+<div class="logo-mark">
+<svg viewBox="0 0 36 36" fill="none" xmlns="http://www.w3.org/2000/svg">
+<circle cx="18" cy="16" r="10" stroke="#0F2B5B" stroke-width="2.8" fill="none"/>
+<path d="M28 16C28 16 26 22 22 26C19.5 28.5 16 30 14 30" stroke="#8C9BB5" stroke-width="2.4" stroke-linecap="round"/>
+</svg>
+</div>
+<span class="logo-name">osler</span>
+</div>
+<!-- Symptom selection panel -->
+<div class="panel" id="symptomPanel">
+<div class="row" style="justify-content:space-between;">
+<div>
+<div style="font-weight:700;">Select symptoms</div>
+<div class="muted">Search + multi-select. Then we'll ask duration & severity.</div>
+</div>
+<button id="refreshSymptomsBtn">Refresh list</button>
+</div>
+<div class="row" style="margin-top:10px;">
+<input id="symptomSearch" type="text" placeholder="Search symptoms..." style="flex:1; min-width:240px;">
+<button id="clearSelectedBtn">Clear</button>
+<button id="nextToFollowupBtn">Next</button>
+</div>
+<div class="muted" id="symptomStatus" style="margin-top:8px;">Loading symptoms...</div>
+<div id="symptomList" class="symptom-list" style="margin-top:10px;"></div>
+</div>
+<!-- Follow-up panel -->
+<div class="panel" id="followupPanel" style="display:none;">
+<div style="font-weight:700;">Follow-up</div>
+<div class="muted" id="selectedSummary" style="margin:6px 0 10px 0;"></div>
+<div id="followupCards"></div>
+<div class="row" style="margin-top:10px;">
+<button id="backToSymptomsBtn">Back</button>
+<button id="sendStructuredBtn">Send as message</button>
+</div>
+</div>
+<!-- Main layout: chat + anatomy -->
+<div class="main-layout">
+<div>
+<div id="chat-box"></div>
+<div class="row" style="margin-top:12px;">
+<input id="user-input" type="text" style="flex:1;" placeholder="Tell Osler how you feel..." />
+<button onclick="sendMessage()">Send</button>
+</div>
+</div>
+</div>
+</div>
+<script>
+/* ═══════════════════════════════════════
+   SYMPTOMS UI (unchanged)
+═══════════════════════════════════════ */
+let ALL_SYMPTOMS = [];
+let SELECTED = new Set();
+const followupState = {};
+function renderFollowups() {
+const box = document.getElementById("followupCards");
+if (!box) return;
+box.innerHTML = "";
+const selected = Array.from(SELECTED);
+document.getElementById("selectedSummary").textContent = "Selected: " + (selected.length ? selected.join(", ") : "(none)");
+if (selected.length === 0) return;
+for (const k of Object.keys(followupState)) { if (!SELECTED.has(k)) delete followupState[k]; }
+for (const sym of selected) {
+if (!followupState[sym]) followupState[sym] = { durationValue: "", durationUnit: "days", severity: "mild" };
+const st = followupState[sym];
+const card = document.createElement("div");
+card.className = "followup-card";
+card.innerHTML = `
+      <div style="font-weight:700">${sym}</div>
+      <div class="row" style="margin-top:8px;">
+        <div style="flex:1;min-width:260px;">
+          <div class="muted">How long?</div>
+          <div class="row">
+            <input data-k="durV" data-sym="${sym}" type="number" min="0" placeholder="e.g., 3" style="width:120px;">
+            <select data-k="durU" data-sym="${sym}"><option value="hours">hours</option><option value="days">days</option><option value="weeks">weeks</option></select>
+          </div>
+        </div>
+        <div style="flex:1;min-width:260px;">
+          <div class="muted">Severity</div>
+          <select data-k="sev" data-sym="${sym}" style="width:220px;"><option value="mild">mild</option><option value="moderate">moderate</option><option value="severe">severe</option></select>
+        </div>
+      </div>`;
+box.appendChild(card);
+card.querySelector(`input[data-k="durV"]`).value = st.durationValue;
+card.querySelector(`select[data-k="durU"]`).value = st.durationUnit;
+card.querySelector(`select[data-k="sev"]`).value = st.severity;
+card.querySelector(`input[data-k="durV"]`).addEventListener("input", e => { followupState[sym].durationValue = e.target.value; });
+card.querySelector(`select[data-k="durU"]`).addEventListener("change", e => { followupState[sym].durationUnit = e.target.value; });
+card.querySelector(`select[data-k="sev"]`).addEventListener("change", e => { followupState[sym].severity = e.target.value; });
+  }
+}
+function setStatus(msg) { document.getElementById("symptomStatus").textContent = msg; }
+function renderSymptoms(filter="") {
+const list = document.getElementById("symptomList");
+list.innerHTML = "";
+const f = (filter || "").trim().toLowerCase();
+const items = ALL_SYMPTOMS.filter(s => !f || s.toLowerCase().includes(f));
+setStatus(`Loaded ${ALL_SYMPTOMS.length} symptoms. Showing ${items.length}. Selected ${SELECTED.size}.`);
+for (const sym of items) {
+const row = document.createElement("div");
+row.className = "symptom-item";
+const id = "sym_" + sym.replace(/[^a-z0-9]+/gi, "_");
+row.innerHTML = `<label style="display:flex;gap:8px;align-items:center;"><input type="checkbox" id="${id}"><span>${sym}</span></label>`;
+list.appendChild(row);
+const cb = row.querySelector("input");
+cb.checked = SELECTED.has(sym);
+cb.addEventListener("change", () => {
+if (cb.checked) SELECTED.add(sym); else SELECTED.delete(sym);
+setStatus(`Loaded ${ALL_SYMPTOMS.length} symptoms. Selected ${SELECTED.size}.`);
+if (document.getElementById("followupPanel").style.display !== "none") renderFollowups();
+    });
+  }
+}
+async function loadSymptoms() {
+setStatus("Loading symptoms...");
+try {
+const res = await fetch("/api/symptoms");
+if (!res.ok) throw new Error("symptoms api not ok");
+const data = await res.json();
+const arr = Array.isArray(data) ? data : (data.symptoms || []);
+ALL_SYMPTOMS = arr.map(x => typeof x === "string" ? x : x.symptom).map(x => String(x || "").trim()).filter(Boolean);
+renderSymptoms(document.getElementById("symptomSearch").value);
+  } catch (e) {
+ALL_SYMPTOMS = ["headache","fever","cough","shortness of breath","chest pain","abdominal pain","nausea","vomiting","diarrhea","dizziness","rash","fatigue"];
+setStatus("Failed to load /api/symptoms. Using fallback list.");
+renderSymptoms(document.getElementById("symptomSearch").value);
+  }
+}
+document.getElementById("symptomSearch").addEventListener("input", e => renderSymptoms(e.target.value));
+document.getElementById("refreshSymptomsBtn").addEventListener("click", loadSymptoms);
+document.getElementById("clearSelectedBtn").addEventListener("click", () => {
+SELECTED.clear();
+for (const k of Object.keys(followupState)) delete followupState[k];
+renderSymptoms(document.getElementById("symptomSearch").value);
+if (document.getElementById("followupPanel").style.display !== "none") renderFollowups();
+});
+document.getElementById("nextToFollowupBtn").addEventListener("click", () => {
+if (SELECTED.size === 0) { alert("Please select at least one symptom."); return; }
+document.getElementById("followupPanel").style.display = "block";
+renderFollowups();
+document.getElementById("followupPanel").scrollIntoView({behavior:"smooth"});
+});
+document.getElementById("backToSymptomsBtn").addEventListener("click", () => {
+document.getElementById("followupPanel").style.display = "none";
+});
+document.getElementById("sendStructuredBtn").addEventListener("click", async () => {
+const symptoms = Array.from(SELECTED);
+if (symptoms.length === 0) { alert("No symptoms selected."); return; }
+const lines = [`Chief complaint(s): ${symptoms.join(", ")}.`];
+for (const sym of symptoms) {
+const st = followupState[sym] || {};
+lines.push(`- ${sym}: duration=${st.durationValue || "?"} ${st.durationUnit || "days"}, severity=${st.severity || "mild"}`);
+  }
+lines.push("TASK: Give a FINAL answer now.");
+lines.push("RULES: Do NOT ask any follow-up questions.");
+lines.push("Output: (1) likely causes (top 3), (2) red flags, (3) what to do now, (4) OTC options if appropriate.");
+document.getElementById("user-input").value = lines.join("\n");
+await sendMessage();
+document.getElementById("followupPanel").style.display = "none";
+});
+
+/* ═══════════════════════════════════════
+   REASONING PANEL  (NEW)
+═══════════════════════════════════════ */
+const STEP_LABELS = {
+INPUT: "Patient input received",
+STATE_EVIDENCE_INFERENCE: "Inferred organ states from symptoms",
+STATE_FIRST_SCAN: "Scanned all diseases against evidence",
+CASCADE_BACKFILL: "Added related diseases via cascade",
+CONTEXT_MODIFIERS: "Applied age / sex / vitals",
+G5_MODIFIERS: "Applied history / temporal / drug-response",
+PHYSIOLOGY_SIM: "Simulated physiology (BP, HR, perfusion)",
+SPATIAL_3D: "Cross-checked anatomy in 3D",
+RANKING: "Ranked the differential",
+LAB_RECOMMENDATION: "Derived which labs would help",
+TREATMENT_RECOMMENDATION: "Derived treatment from mechanism",
+};
+const TRACE_LABELS = {
+"1_disease_perturbation": "What this disease does to the body",
+"2_state_propagation": "How that produces symptoms",
+"3_explains_symptoms": "Which of your symptoms it explains",
+"4_vital_signs_check": "Vital signs check",
+"5_anatomy_check": "Anatomy check",
+"6_missing_evidence": "What would confirm it",
+};
+function esc(s){ return String(s==null?"":s).replace(/[&<>"]/g, c=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;'}[c])); }
+function scoreColor(s){ return s>=0.6?'var(--green)':s>=0.35?'var(--amber)':'var(--silver-light)'; }
+
+/* ── Front-view body (viewBox 320x520) with 22 state-model organs placed
+   at anatomically-correct positions. Body silhouette path provided by user. */
+const ORGAN_MAP = {
+brain:[160,42,"neurologic"],
+eye:[150,48,"neurologic"],
+ear:[142,52,"neurologic"],
+upper_airway:[160,82,"respiratory"],
+thyroid:[160,95,"endocrine"],
+heart:[150,140,"cardiovascular"],
+lung:[128,138,"respiratory"],
+blood:[160,155,"hematologic"],
+vessel:[160,172,"cardiovascular"],
+liver:[132,195,"hepatobiliary"],
+gallbladder:[140,205,"hepatobiliary"],
+spleen:[186,195,"hematologic"],
+stomach:[174,190,"gi"],
+pancreas:[158,208,"endocrine"],
+adrenal:[142,218,"endocrine"],
+kidney:[130,228,"renal"],
+gi:[160,250,"gi"],
+bladder:[160,285,"renal"],
+reproductive:[160,300,"reproductive"],
+muscle:[198,230,"musculoskeletal"],
+bone:[148,318,"musculoskeletal"],
+skin:[108,165,"integumentary"],
+peripheral_nerve:[200,270,"neurologic"],
+};
+
+const BODY_SILHOUETTE = `
+  <circle cx="160" cy="48" r="27" fill="#F7F8FC" stroke="#B8C2D6" stroke-width="2"/>
+  <path d="M150 73 L150 88 C150 94 144 98 135 101 L119 107 C105 112 98 124 97 141 L94 244 C93 266 95 286 102 302 C107 314 111 324 112 338 L112 475 C112 493 120 503 131 503 C142 503 146 494 146 479 L150 337 L170 337 L174 479 C174 494 178 503 189 503 C200 503 208 493 208 475 L208 338 C209 324 213 314 218 302 C225 286 227 266 226 244 L223 141 C222 124 215 112 201 107 L185 101 C176 98 170 94 170 88 L170 73 Z" fill="#F7F8FC" stroke="#B8C2D6" stroke-width="2" stroke-linejoin="round"/>
+  <path d="M105 133 C97 148 93 166 91 188 L87 232 C86 250 82 266 77 281 L72 299 C69 310 71 320 78 326 C84 331 90 328 92 321 C94 315 91 310 92 304 L98 282 C103 266 106 249 107 232 L112 178 C114 159 113 145 105 133 Z" fill="#F7F8FC" stroke="#B8C2D6" stroke-width="2" stroke-linejoin="round"/>
+  <path d="M215 133 C223 148 227 166 229 188 L233 232 C234 250 238 266 243 281 L248 299 C251 310 249 320 242 326 C236 331 230 328 228 321 C226 315 229 310 228 304 L222 282 C217 266 214 249 213 232 L208 178 C206 159 207 145 215 133 Z" fill="#F7F8FC" stroke="#B8C2D6" stroke-width="2" stroke-linejoin="round"/>`;
+
+function buildBodyDiagram(affectedOrgans, spreadEdges) {
+const affected = new Set((affectedOrgans||[]).map(o => String(o).toLowerCase()));
+
+// spread arrows (organ → organ) drawn under blips
+let arrows = "";
+for (const e of (spreadEdges||[])) {
+const a = ORGAN_MAP[String(e.from).toLowerCase()];
+const b = ORGAN_MAP[String(e.to).toLowerCase()];
+if (!a || !b) continue;
+arrows += `<line x1="${a[0]}" y1="${a[1]}" x2="${b[0]}" y2="${b[1]}"
+      stroke="#F07A45" stroke-width="2" stroke-dasharray="4 3"
+      marker-end="url(#arrowhead)" opacity="0.8"/>`;
+  }
+
+// Only draw the AFFECTED organs (orange). No grey/decorative dots —
+// the body silhouette stays clean; only what the diagnosis touches lights up.
+let blips = "";
+for (const [organ, coords] of Object.entries(ORGAN_MAP)) {
+if (!affected.has(organ)) continue;
+const [cx, cy] = coords;
+blips += `<circle class="anat-blip" cx="${cx}" cy="${cy}" r="17" fill="#F07A45" opacity="0.22"/>`;
+blips += `<circle class="anat-blip" cx="${cx}" cy="${cy}" r="9" fill="#F07A45"><title>${organ}</title></circle>`;
+  }
+return `<svg width="200" height="325" viewBox="0 0 320 520" preserveAspectRatio="xMidYMid meet" fill="none" xmlns="http://www.w3.org/2000/svg">
+    <defs><marker id="arrowhead" markerWidth="7" markerHeight="7" refX="6" refY="3.5" orient="auto">
+      <path d="M0,0 L7,3.5 L0,7 Z" fill="#F07A45"/>
+    </marker></defs>
+    ${BODY_SILHOUETTE}${arrows}${blips}
+  </svg>`;
+}
+
+function buildAnatomyBlock(affectedOrgans, spreadEdges) {
+const affected = (affectedOrgans||[]).filter(o => ORGAN_MAP[String(o).toLowerCase()]);
+if (!affected.length) return "";
+let legend = "";
+for (const o of affected) {
+const meta = ORGAN_MAP[o.toLowerCase()];
+if (!meta) continue;
+legend += `<div class="anat-organ-row">
+      <span class="anat-dot" style="background:#F07A45"></span>
+      <span class="anat-organ-name">${esc(o.replace(/_/g,' '))}</span>
+      <span class="anat-organ-sys">· ${esc(meta[2])}</span>
+    </div>`;
+  }
+let spreadDesc = "";
+const edges = (spreadEdges||[]).filter(e => ORGAN_MAP[String(e.from).toLowerCase()] && ORGAN_MAP[String(e.to).toLowerCase()]);
+if (edges.length) {
+spreadDesc = `<div class="anat-spread-title">How it spreads</div>`;
+for (const e of edges) {
+spreadDesc += `<div class="anat-spread-row">
+        <span class="anat-organ-name">${esc(e.from)}</span>
+        <span class="anat-arrow">→</span>
+        <span class="anat-organ-name">${esc(e.to)}</span>
+        ${e.via?`<span class="anat-organ-sys">(via ${esc(e.via)})</span>`:""}
+      </div>`;
+    }
+  }
+return `<div class="anat-wrap">
+    <div class="anat-svg-box">${buildBodyDiagram(affected, spreadEdges)}</div>
+    <div class="anat-legend">
+      <div class="anat-legend-title">Organs this diagnosis affects</div>
+      ${legend}
+      ${spreadDesc}
+      <a class="anat-3d-link" href="/anatomy3d?highlight=${encodeURIComponent(affected.join(','))}" target="_blank" rel="noopener">View in 3D ↗</a>
+    </div>
+  </div>`;
+}
+
+/* Build the reverse diagnostic flow graph as SVG:
+   symptoms (left) → inferred organ states (middle) → disease (right).
+   Lines colored by evidence strength (green=strong, amber=moderate, grey=weak). */
+function buildBridgeGraph(bridge, diseaseName) {
+const strokeOf = {strong:"#059669", moderate:"#D97706", weak:"#C5CEDB"};
+// unique symptoms preserving order
+const syms = [];
+bridge.forEach(b => (b.symptoms||[]).forEach(s => { if (!syms.includes(s)) syms.push(s); }));
+const states = bridge.map(b => ({
+sym: (b.symptoms||[])[0] || "",
+organ: b.organ || "",
+label: `${b.state||""} ${b.direction||""}`.trim(),
+strength: b.strength || "weak",
+  }));
+
+const W = 600;
+const rowH = 46;
+const H = Math.max(syms.length, states.length) * rowH + 30;
+const symX = 80, stateX = 300, dzX = 520;
+const yOf = (n, i) => n === 1 ? H/2 : 25 + (H-50) * i / (n-1);
+const symY = {}; syms.forEach((s,i) => symY[s] = yOf(syms.length, i));
+const stateY = states.map((_,i) => yOf(states.length, i));
+const dzY = H/2;
+
+let lines = "";
+// symptom → state
+states.forEach((st, i) => {
+const sy = symY[st.sym], ey = stateY[i];
+const c = strokeOf[st.strength] || strokeOf.weak;
+const mx = (symX + stateX) / 2;
+lines += `<path d="M${symX+52} ${sy} C${mx} ${sy}, ${mx} ${ey}, ${stateX-78} ${ey}" stroke="${c}" stroke-width="2" fill="none" opacity="0.7"/>`;
+  });
+// state → disease
+states.forEach((st, i) => {
+const ey = stateY[i];
+const c = strokeOf[st.strength] || strokeOf.weak;
+const mx = (stateX + dzX) / 2;
+lines += `<path d="M${stateX+78} ${ey} C${mx} ${ey}, ${mx} ${dzY}, ${dzX-46} ${dzY}" stroke="${c}" stroke-width="2" fill="none" opacity="0.45"/>`;
+  });
+
+let nodes = "";
+// symptom nodes (navy pills)
+syms.forEach(s => {
+const y = symY[s];
+const label = s.length > 17 ? s.slice(0,16)+"…" : s;
+nodes += `<rect x="${symX-52}" y="${y-13}" width="104" height="26" rx="13" fill="#0F2B5B"/>
+    <text x="${symX}" y="${y+4}" font-size="10" fill="white" text-anchor="middle" font-family="Sora,sans-serif">${esc(label)}</text>`;
+  });
+// state nodes (light, color-bordered by strength)
+states.forEach((st, i) => {
+const y = stateY[i];
+const c = strokeOf[st.strength] || strokeOf.weak;
+const label = st.label.length > 22 ? st.label.slice(0,21)+"…" : st.label;
+nodes += `<rect x="${stateX-78}" y="${y-15}" width="156" height="30" rx="7" fill="#EEF1F7" stroke="${c}" stroke-width="2"/>
+    <text x="${stateX}" y="${y-1}" font-size="9" fill="#0F2B5B" text-anchor="middle" font-family="Sora,sans-serif">${esc(label)}</text>
+    <text x="${stateX}" y="${y+10}" font-size="6.5" fill="#8C9BB5" text-anchor="middle" font-family="Sora,sans-serif" text-transform="uppercase">${esc(st.organ)} · ${esc(st.strength)}</text>`;
+  });
+// disease node (orange)
+const dzLabel = diseaseName.length > 16 ? diseaseName.slice(0,15)+"…" : diseaseName;
+nodes += `<rect x="${dzX-46}" y="${dzY-22}" width="100" height="44" rx="10" fill="#E8724A"/>
+  <text x="${dzX+4}" y="${dzY-1}" font-size="9" fill="white" text-anchor="middle" font-family="Sora,sans-serif" font-weight="600">${esc(dzLabel)}</text>
+  <text x="${dzX+4}" y="${dzY+12}" font-size="7" fill="white" text-anchor="middle" opacity="0.85" font-family="Sora,sans-serif">diagnosis</text>`;
+
+// column headers
+const headers = `
+  <text x="${symX}" y="14" font-size="8" fill="#8C9BB5" text-anchor="middle" font-family="Sora,sans-serif">YOUR SYMPTOMS</text>
+  <text x="${stateX}" y="14" font-size="8" fill="#8C9BB5" text-anchor="middle" font-family="Sora,sans-serif">INFERRED ORGAN STATE</text>
+  <text x="${dzX+4}" y="14" font-size="8" fill="#8C9BB5" text-anchor="middle" font-family="Sora,sans-serif">POINTS TO</text>`;
+
+return `<div class="bridge-graph"><svg width="100%" viewBox="0 0 ${W} ${H}" preserveAspectRatio="xMidYMid meet" xmlns="http://www.w3.org/2000/svg">
+    ${headers}${lines}${nodes}
+  </svg></div>`;
+}
+
+function buildReasoningPanel(data) {
+const wrap = document.createElement("div");
+
+// toggle button
+const toggle = document.createElement("button");
+toggle.className = "reasoning-toggle";
+toggle.innerHTML = `<span class="dot"></span> See how Osler reasoned`;
+wrap.appendChild(toggle);
+
+const panel = document.createElement("div");
+panel.className = "reasoning-panel";
+panel.style.display = "none";
+wrap.appendChild(panel);
+
+toggle.addEventListener("click", () => {
+panel.style.display = panel.style.display === "none" ? "block" : "none";
+toggle.innerHTML = panel.style.display === "none"
+      ? `<span class="dot"></span> See how Osler reasoned`
+      : `<span class="dot"></span> Hide reasoning`;
+  });
+
+// (Reasoning-steps tab removed — show diagnoses directly)
+const body = document.createElement("div");
+body.className = "reasoning-body";
+panel.appendChild(body);
+
+function renderDx() {
+const dxs = data.diagnoses || [];
+let html = "";
+dxs.forEach((d, i) => {
+const pct = Math.round(Math.min(d.score||0,1)*100);
+const trace = d.reasoning_trace || {};
+const g5 = d._g5_modifiers || {};
+let secHtml = "";
+
+// 0. Body diagram — highlight affected organs + spread arrows
+const affectedOrgans = d.affected_organs || [];
+const spreadEdges = trace["spread_edges"] || [];
+if (affectedOrgans.length) {
+secHtml += buildAnatomyBlock(affectedOrgans, spreadEdges);
+        }
+
+// 0b. DIAGNOSTIC BRIDGE — REVERSE direction as a VISUAL FLOW GRAPH:
+// symptom nodes (left) → inferred organ-state nodes (middle) → disease (right).
+// Lines colored by evidence strength. Shows "how your symptoms point here".
+const bridge = trace["3b_diagnostic_bridge"] || [];
+if (bridge.length) {
+secHtml += traceSec("⊕", "How your symptoms point here",
+buildBridgeGraph(bridge, d.disease));
+        }
+
+// 1. MEDICAL CAUSAL FLOW — cause → pathology → cross-organ spread → symptoms
+// This is the clinical reasoning chain, not a math breakdown.
+let flowHtml = `<div class="flow-chain">`;
+const flowNodes = [];
+
+// (a) Root cause + initial pathology (from perturbation lines)
+(trace["1_disease_perturbation"]||[]).forEach((p, idx) => {
+// "↑ischemia (+0.85) in heart: coronary artery occlusion ..."
+const m = String(p).match(/^([↑↓])(\w+)\s*\([^)]*\)\s*in\s+(\w+):\s*(.*)$/);
+if (m) {
+const [,dir,state,organ,cause] = m;
+const arrow = dir==="↑"?"rises":"falls";
+flowNodes.push({
+kind: idx===0?"Root cause":"Pathology",
+cls: idx===0?"cause":"",
+html: `<span class="organ-tag">${esc(organ)}</span>: ${esc(cause)} → <b>${esc(state)} ${arrow}</b>`
+          });
+      } else {
+flowNodes.push({kind:"Pathology", cls:"", html: esc(p)});
+      }
+  });
+
+// (b) Cross-organ cascade (the "spread" — medically the key insight)
+(trace["2b_cross_organ_cascade"]||[]).forEach(c => {
+const fromOrgan = String(c.from).split(".")[0];
+const toOrgan = String(c.to).split(".")[0];
+const isCross = fromOrgan !== toOrgan;
+flowNodes.push({
+kind: isCross ? "Spreads to "+toOrgan : "Knock-on effect",
+cls: "", cross: isCross,
+html: `${esc(c.from)} <span class="anat-arrow">→</span> ${esc(c.to)}`
+      });
+  });
+
+// (c) Resulting symptoms (from explains_symptoms, only the explained ones)
+(trace["3_explains_symptoms"]||[]).forEach(e => {
+const ok = !/NOT EXPLAINED/i.test(e.explained_by||"");
+if (ok) {
+flowNodes.push({
+kind:"Symptom", cls:"symptom",
+html: `<b>${esc(e.user_reported)}</b> — ${esc(e.explained_by)}`
+        });
+    }
+  });
+
+flowNodes.forEach((n, idx) => {
+const last = idx === flowNodes.length-1;
+flowHtml += `<div class="flow-node">
+      <div class="flow-rail">
+        <div class="flow-dot ${n.cls}"></div>
+        ${last?"":'<div class="flow-line"></div>'}
+      </div>
+      <div class="flow-content ${n.cross?'flow-cross':''}">
+        <div class="flow-kind">${esc(n.kind)}</div>
+        <div class="flow-text">${n.html}</div>
+      </div>
+    </div>`;
+  });
+flowHtml += `</div>`;
+if (flowNodes.length) {
+secHtml += traceSec("→", "The mechanism chain", flowHtml);
+        }
+
+// 6 missing — what would confirm it
+if (trace["6_missing_evidence"] && trace["6_missing_evidence"].would_strengthen && trace["6_missing_evidence"].would_strengthen.length) {
+const pills = trace["6_missing_evidence"].would_strengthen.map(s=>`<span class="rx-pill med">+ ${esc(s)}</span>`).join("");
+secHtml += traceSec("?", TRACE_LABELS["6_missing_evidence"], `<div class="pipe-pills">${pills}</div>`);
+        }
+// G5 modifiers — how context adjusted score
+if (g5.details && Object.keys(g5.details).length) {
+let rows = `<div class="trace-line">base <span class="mono">${(g5.before||0).toFixed(2)}</span> → adjusted <b>${(g5.after||0).toFixed(2)}</b> (×${g5.combined_multiplier})</div>`;
+for (const [k,v] of Object.entries(g5.details)) {
+rows += `<div class="g5-row"><b>${esc(k)}</b>: ×${v.multiplier} — ${esc(v.rationale||"")}</div>`;
+          }
+secHtml += traceSec("±", "How patient context adjusted this", rows);
+        }
+
+html += `<div class="dx-card">
+        <div class="dx-head" data-dx="${i}">
+          <span class="dx-rank">${i+1}</span>
+          <span class="dx-name">${esc(d.disease)}</span>
+          <span class="dx-bar-track"><span class="dx-bar-fill" style="width:${pct}%;background:${scoreColor(d.score||0)}"></span></span>
+          <span class="dx-score">${(d.score||0).toFixed(2)}</span>
+        </div>
+        <div class="dx-body ${i===0?'open':''}" id="dxbody-${i}">${secHtml||'<div class="muted">No detailed trace for this diagnosis.</div>'}</div>
+      </div>`;
+    });
+
+// labs + treatment
+const labs = (data.lab_recommendations && data.lab_recommendations.labs_aggregated) || [];
+const drugs = (data.treatment_recommendations && data.treatment_recommendations.drugs_aggregated) || [];
+if (labs.length || drugs.length) {
+let rx = `<div class="rx-grid">`;
+if (labs.length) {
+rx += `<div class="rx-box"><div class="rx-box-title">Tests that would help</div><div class="pipe-pills">${
+labs.slice(0,6).map(l=>`<span class="rx-pill ${l.max_priority==='high'?'high':'med'}">${esc(l.lab)}</span>`).join("")
+          }</div><div class="rx-note">Derived from states the diagnoses predict but your symptoms haven't confirmed.</div></div>`;
+        }
+if (drugs.length) {
+rx += `<div class="rx-box"><div class="rx-box-title">Treatment directions</div><div class="pipe-pills">${
+drugs.slice(0,6).map(d=>`<span class="rx-pill ${d.max_priority==='high'?'high':'med'}">${esc(d.drug)}</span>`).join("")
+          }</div><div class="rx-note">Each targets a state the disease perturbed — not a lookup table.</div></div>`;
+        }
+rx += `</div>`;
+html += rx;
+    }
+
+body.innerHTML = html || `<div class="muted">No diagnoses available.</div>`;
+// wire expand/collapse
+body.querySelectorAll(".dx-head").forEach(h => {
+h.addEventListener("click", () => {
+const id = "dxbody-" + h.getAttribute("data-dx");
+document.getElementById(id).classList.toggle("open");
+      });
+    });
+  }
+
+function traceSec(num, title, inner) {
+return `<div class="trace-sec">
+      <div class="trace-sec-head"><span class="trace-sec-num">${num}</span><span class="trace-sec-title">${esc(title)}</span></div>
+      <div class="trace-body">${inner}</div>
+    </div>`;
+  }
+
+renderDx(); // diagnoses only
+return wrap;
+}
+
+/* ═══════════════════════════════════════
+   CHAT
+═══════════════════════════════════════ */
+const REASONING_SENTINEL = "\n\u241E\u241ENEXUS_REASONING\u241E\u241E\n";
+
+async function resetChatOnReload() {
+try { await fetch("/reset_followup", { method: "POST" }); } catch(e) {}
+const chatBox = document.getElementById("chat-box");
+if (chatBox) chatBox.innerHTML = "";
+}
+function renderMarkdown(text) {
+if (typeof marked !== 'undefined') {
+try {
+let html = marked.parse(text);
+html = html.replace(/<strong>This combination of symptoms requires immediate/g, 
+'<div class="triage-emergency"><strong>This combination of symptoms requires immediate');
+html = html.replace(/Please go to an emergency room or call emergency services now\.<\/strong>/g,
+'Please go to an emergency room or call emergency services now.</strong></div>');
+html = html.replace(/<strong>This symptom pattern warrants prompt/g,
+'<div class="triage-urgent"><strong>This symptom pattern warrants prompt');
+html = html.replace(/I recommend seeing a doctor within 24 hours\.<\/strong>/g,
+'I recommend seeing a doctor within 24 hours.</strong></div>');
+html = html.replace(/<em>This assessment is generated by Osler/g,
+'<div class="disclaimer"><em>This assessment is generated by Osler');
+html = html.replace(/Please consult a healthcare provider for diagnosis and treatment\.<\/em>/g,
+'Please consult a healthcare provider for diagnosis and treatment.</em></div>');
+return html;
+    } catch(e) { return text; }
+  }
+return text
+    .replace(/\*\*(.+?)\*\*/g, '<strong>$1</strong>')
+    .replace(/\*(.+?)\*/g, '<em>$1</em>')
+    .replace(/^- (.+)$/gm, '<li>$1</li>')
+    .replace(/(<li>.*<\/li>)/gs, '<ul>$1</ul>')
+    .replace(/\n\n/g, '<br><br>')
+    .replace(/\n/g, '<br>');
+}
+async function sendMessage() {
+const input = document.getElementById("user-input");
+const text = input.value.trim();
+if (!text) return;
+input.value = "";
+const chatBox = document.getElementById("chat-box");
+chatBox.innerHTML += `<div class="msg-user">${esc(text)}</div>`;
+const aiBlock = document.createElement("div");
+aiBlock.className = "msg-ai";
+aiBlock.innerHTML = "";
+chatBox.appendChild(aiBlock);
+
+let full_reply = "";       // entire stream (text + sentinel + json)
+let display_text = "";     // human-readable portion only
+let reasoning_data = null;
+
+const symptoms = Array.from(SELECTED);
+const response = await fetch("/chat_stream", {
+method: "POST",
+headers: { "Content-Type": "application/json" },
+body: JSON.stringify({ message: text, selected_symptoms: symptoms })
+  });
+const reader = response.body.getReader();
+const decoder = new TextDecoder();
+while (true) {
+const { value, done } = await reader.read();
+if (done) break;
+full_reply += decoder.decode(value, {stream:true});
+
+// Split: everything before sentinel = display text, after = reasoning JSON
+const idx = full_reply.indexOf(REASONING_SENTINEL);
+if (idx >= 0) {
+display_text = full_reply.slice(0, idx);
+      } else {
+display_text = full_reply;
+      }
+aiBlock.innerHTML = renderMarkdown(display_text);
+chatBox.scrollTop = chatBox.scrollHeight;
+  }
+
+// Parse reasoning JSON if present
+const idx = full_reply.indexOf(REASONING_SENTINEL);
+if (idx >= 0) {
+const jsonStr = full_reply.slice(idx + REASONING_SENTINEL.length).trim();
+try { reasoning_data = JSON.parse(jsonStr); } catch(e) { console.warn("reasoning parse fail", e); }
+  }
+
+// Render reasoning panel under the answer
+if (reasoning_data && (reasoning_data.thinking?.length || reasoning_data.diagnoses?.length)) {
+try {
+const panel = buildReasoningPanel(reasoning_data);
+aiBlock.appendChild(panel);
+chatBox.scrollTop = chatBox.scrollHeight;
+    } catch(e) { console.warn("panel build fail", e); }
+  }
+
+// Save only the human-readable text to history
+await fetch("/save_history", {
+method: "POST",
+headers: { "Content-Type": "application/json" },
+body: JSON.stringify({ user: text, ai: display_text })
+  });
+}
+/* Boot */
+window.addEventListener("load", () => {
+resetChatOnReload();
+loadSymptoms();
+});
+</script>
+</body>
+</html>

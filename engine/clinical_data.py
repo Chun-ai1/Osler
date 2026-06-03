@@ -41,7 +41,7 @@ _SECTIONS = {
 }
 
 
-def _get(url, timeout=20, retries=4):
+def _get(url, timeout=6, retries=2):
     import time as _t
     for attempt in range(retries):
         try:

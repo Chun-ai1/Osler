@@ -20,11 +20,14 @@ from clinical_role import assign_clinical_role
 _ETYPE_WEIGHT = {"primary": 1.0, "derived": 0.5, "symptom_relief": 0.3, "": 0.4}
 
 _HERE = Path(__file__).parent
+# Data files live in the project-root data/ folder (after the repo reorg). Fall back
+# to this module's own folder so the engine also works if data sits beside it.
+_DATA = _HERE.parent / "data" if (_HERE.parent / "data").exists() else _HERE
 _RANK = {"ok": 0, "caution": 1, "adjust": 2, "insufficient_data": 3, "avoid": 4, "emergency": 5}
 _ETYPE = {"primary": 0, "derived": 1, "symptom_relief": 2, "": 3}
 
 
-def _load(p): return json.loads((_HERE / p).read_text())
+def _load(p): return json.loads((_DATA / p).read_text(encoding="utf-8", errors="replace"))
 def _arrow(direction): return "\u2193" if direction == "low" else "\u2191"
 def _friendly(v): return v.replace("_", " ")
 

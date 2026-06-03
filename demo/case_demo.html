@@ -1,0 +1,453 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Osler·Rx — Drug Recommendation Agent</title>
+<link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600;700&family=Sora:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+<script src="https://cdn.jsdelivr.net/npm/marked/marked.min.js"></script>
+<script src="https://unpkg.com/vis-network/standalone/umd/vis-network.min.js"></script>
+<style>
+:root{
+--bg:#F8F9FC;--bg-warm:#EEF1F7;--bg-card:#FFFFFF;--accent:#0F2B5B;--accent-light:#E8EDF5;
+--silver:#8C9BB5;--silver-light:#C5CEDB;--text:#0F2B5B;--text-secondary:#4A5A7A;--text-muted:#8C9BB5;
+--border:rgba(15,43,91,0.08);--border-solid:#E2E7F0;--orange:#E8724A;
+--shadow-sm:0 1px 3px rgba(0,0,0,0.04);--shadow-md:0 8px 30px rgba(0,0,0,0.06);
+--radius:14px;--radius-sm:9px;--green:#059669;--amber:#D97706;--red:#DC2626;--gray:#6B7280;--teal:#0D9488;
+}
+*{margin:0;padding:0;box-sizing:border-box}
+html,body{height:100%}
+body{font-family:'Sora',-apple-system,sans-serif;background:var(--bg);color:var(--text);-webkit-font-smoothing:antialiased;display:flex;flex-direction:column;overflow:hidden}
+.app-header{flex:0 0 auto;display:flex;align-items:center;gap:12px;padding:12px 22px;border-bottom:1px solid var(--border);background:var(--bg-card)}
+.logo-name{font-family:'Outfit';font-size:21px;color:var(--accent);font-weight:700;letter-spacing:-.5px}
+.logo-name span{color:var(--orange)}
+.tagline{font-size:.8rem;color:var(--text-muted);margin-left:2px}
+.reopen{display:none;font-family:'Sora';font-size:12px;font-weight:600;padding:7px 13px;border:1px solid var(--border-solid);border-radius:8px;background:var(--bg);color:var(--accent);cursor:pointer}
+body.art-hidden .reopen{display:inline-block}
+.keybox{margin-left:auto;display:flex;align-items:center;gap:7px}
+.keybox select,.keybox input{font-family:'Sora';font-size:12.5px;padding:7px 9px;border:1px solid var(--border-solid);border-radius:8px;background:var(--bg);color:var(--text);outline:none}
+.keybox input{width:170px}
+.keybox button{font-family:'Sora';font-size:12px;font-weight:600;padding:7px 13px;border:none;border-radius:8px;background:var(--accent);color:#fff;cursor:pointer}
+.kstat{font-size:.72rem;font-weight:600;padding:4px 10px;border-radius:50px;background:var(--accent-light);color:var(--accent);white-space:nowrap}
+.kstat.off{background:#FEF3F2;color:var(--red)}
+.wrap{flex:1 1 auto;min-height:0;display:grid;grid-template-columns:300px 1fr var(--art-w,460px)}
+body.art-hidden .wrap{grid-template-columns:300px 1fr}
+.col-left{min-height:0;overflow-y:auto;padding:18px;border-right:1px solid var(--border)}
+h2.sec{font-family:'Outfit';font-size:.74rem;text-transform:uppercase;letter-spacing:.12em;color:var(--text-muted);margin:0 0 10px;font-weight:600}
+.pt{display:flex;align-items:center;gap:8px;width:100%;text-align:left;background:var(--bg-card);border:1px solid var(--border-solid);border-radius:var(--radius-sm);padding:9px 11px;margin-bottom:7px;cursor:pointer;transition:all .15s;font-family:'Sora'}
+.pt:hover{border-color:var(--accent)}.pt.active{border-color:var(--accent);box-shadow:0 0 0 2px var(--accent-light)}
+.pt b{font-size:.86rem;color:var(--accent);font-weight:600;display:block}.pt span{font-size:.74rem;color:var(--text-muted)}
+.pt .dot{width:8px;height:8px;border-radius:50%;flex:none}
+.import-box{background:var(--bg-card);border:1px solid var(--border-solid);border-radius:var(--radius);padding:13px;margin-top:6px}
+textarea{width:100%;min-height:116px;font-family:'Sora';font-size:13px;padding:10px;border:1px solid var(--border-solid);border-radius:var(--radius-sm);background:var(--bg);color:var(--text);outline:none;resize:vertical;line-height:1.5}
+textarea:focus{border-color:var(--accent)}
+.mini{font-size:.72rem;color:var(--text-muted);margin:7px 0 3px}
+.preset{display:inline-block;font-size:.74rem;background:var(--accent-light);color:var(--accent);border:none;border-radius:50px;padding:5px 11px;margin:3px 5px 0 0;cursor:pointer;font-family:'Sora'}
+.chk{display:flex;align-items:center;gap:7px;font-size:.78rem;color:var(--text-secondary);margin-top:10px}.chk input{width:auto}
+button.primary{width:100%;margin-top:11px;padding:11px;border:none;border-radius:50px;background:var(--accent);color:#fff;font-weight:600;font-size:14px;cursor:pointer;font-family:'Sora'}
+button.primary:hover{box-shadow:0 6px 24px rgba(15,43,91,.25)}button.primary:disabled{opacity:.5;cursor:not-allowed}
+/* chat */
+.col-center{min-height:0;display:flex;flex-direction:column}
+#chat-box{flex:1 1 auto;min-height:0;overflow-y:auto;padding:22px 26px}
+.chat-empty{color:var(--text-muted);text-align:center;margin-top:70px;font-size:.92rem;line-height:1.7}
+.msg-user{background:var(--accent);color:#fff;padding:10px 14px;border-radius:12px 12px 0 12px;margin:10px 0 10px auto;max-width:75%;width:fit-content;font-size:.9rem}
+.msg-ai{background:var(--bg-card);color:var(--text);padding:14px 17px;border-radius:12px 12px 12px 0;margin:10px 0;max-width:760px;line-height:1.65;border:1px solid var(--border-solid);box-shadow:var(--shadow-sm);font-size:.9rem}
+.msg-ai strong{color:var(--accent)}.msg-ai ul,.msg-ai ol{margin:6px 0 6px 18px}.msg-ai li{margin:3px 0}.msg-ai p{margin:6px 0}
+.msg-ai code{background:var(--accent-light);padding:2px 6px;border-radius:4px;font-size:.85rem}
+.chips{margin-top:8px}.chip-q{display:inline-block;font-size:.77rem;background:var(--accent-light);color:var(--accent);border:none;border-radius:50px;padding:6px 12px;margin:4px 6px 0 0;cursor:pointer;font-family:'Sora'}
+/* live agent workflow */
+.trace{max-width:760px;background:#0F2B5B;color:#E8EDF5;border:none;padding-top:11px;padding-bottom:11px}
+.trace .trace-h{font-family:'Outfit';font-size:.7rem;letter-spacing:.14em;text-transform:uppercase;color:#9DB2D6;display:flex;align-items:center;gap:7px;cursor:pointer;margin-bottom:9px}
+.trace-caret{margin-left:auto;font-size:.8rem;transition:transform .15s;color:#9DB2D6}
+.trace:not(.collapsed) .trace-caret{transform:rotate(90deg)}
+.trace-sum{text-transform:none;letter-spacing:0;font-size:.74rem;font-weight:500;color:#B9C7E0}
+.trace.collapsed .trace-h{margin-bottom:0}
+.trace.collapsed .trace-body{display:none}
+.trace.collapsed .trace-sum{display:inline}
+.trace:not(.collapsed) .trace-sum{display:none}
+.trace-step{display:flex;gap:9px;padding:5px 0;align-items:flex-start;animation:fadein .25s ease}
+@keyframes fadein{from{opacity:0;transform:translateY(4px)}to{opacity:1;transform:none}}
+.trace-step .ti{font-size:.95rem;line-height:1.3}
+.trace-step b{font-size:.84rem;color:#fff;font-weight:600}
+.trace-step .td{font-size:.76rem;color:#9DB2D6;margin-top:1px;font-family:'Outfit'}
+.spin{width:11px;height:11px;border:2px solid rgba(157,178,214,.4);border-top-color:#fff;border-radius:50%;display:inline-block;animation:sp .7s linear infinite;margin-top:3px}
+@keyframes sp{to{transform:rotate(360deg)}}
+.composer{flex:0 0 auto;display:flex;gap:9px;padding:13px 26px;border-top:1px solid var(--border);background:var(--bg-card)}
+.composer input{flex:1;font-family:'Sora';font-size:14px;padding:10px 13px;border:1px solid var(--border-solid);border-radius:50px;background:var(--bg);color:var(--text);outline:none}
+.composer button{padding:10px 20px;border:none;border-radius:50px;background:var(--accent);color:#fff;font-weight:600;cursor:pointer;font-family:'Sora'}
+.composer button:disabled{opacity:.5}
+/* artifact sidebar */
+.col-right{position:relative;min-height:0;display:flex;flex-direction:column;border-left:1px solid var(--border);background:var(--bg-warm)}
+body.art-hidden .col-right{display:none}
+.art-resize{position:absolute;left:-3px;top:0;width:8px;height:100%;cursor:col-resize;z-index:6}
+.art-resize::after{content:"";position:absolute;left:3px;top:0;width:2px;height:100%;background:transparent;transition:background .15s}
+.art-resize:hover::after,.art-resize.drag::after{background:var(--accent)}
+.art-head{flex:0 0 auto;display:flex;align-items:center;gap:8px;padding:11px 14px;border-bottom:1px solid var(--border);background:var(--bg-card)}
+.art-title{font-family:'Outfit';font-size:.82rem;font-weight:700;color:var(--accent);white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
+.art-tabs{margin-left:auto;display:flex;gap:3px}
+.art-tab{font-family:'Sora';font-size:.74rem;font-weight:600;padding:5px 11px;border:none;border-radius:50px;background:transparent;color:var(--text-muted);cursor:pointer}
+.art-tab.active{background:var(--accent);color:#fff}
+.art-x{border:none;background:transparent;color:var(--text-muted);font-size:17px;cursor:pointer;padding:2px 6px;line-height:1}
+.art-x:hover{color:var(--red)}
+.art-body{flex:1 1 auto;min-height:0;overflow-y:auto;padding:14px}
+.art-panel.hidden{display:none}
+.gphost{height:340px;background:var(--bg-card);border:1px solid var(--border-solid);border-radius:var(--radius-sm)}
+.legend{padding:9px 2px 0;font-size:.68rem;color:var(--text-muted);display:flex;flex-wrap:wrap;gap:8px}
+.lg{display:inline-flex;align-items:center;gap:4px}.lg i{width:9px;height:9px;border-radius:2px;display:inline-block}
+.dz-card{background:var(--bg-card);border:1px solid var(--border-solid);border-radius:var(--radius-sm);padding:12px 14px}
+.dz-card .h{font-family:'Outfit';font-size:.95rem;font-weight:700;color:var(--red)}
+.dz-card .src{font-size:.68rem;color:var(--text-muted);text-transform:uppercase;letter-spacing:.06em}
+.pchip{display:inline-block;font-size:.73rem;background:#FEF2F2;color:var(--red);border-radius:6px;padding:2px 7px;margin:3px 4px 0 0}
+.schip{display:inline-block;font-size:.72rem;background:var(--bg-warm);color:var(--text-secondary);border-radius:6px;padding:2px 7px;margin:3px 4px 0 0}
+.lab{font-size:.66rem;text-transform:uppercase;letter-spacing:.07em;color:var(--text-muted);font-weight:600;margin:9px 0 3px}
+.dcard{background:var(--bg-card);border:1px solid var(--border-solid);border-radius:var(--radius-sm);padding:13px 15px;margin-bottom:11px;position:relative}
+.dcard .rank{position:absolute;top:-9px;left:-9px;width:23px;height:23px;border-radius:50%;background:var(--accent);color:#fff;font-size:12px;font-weight:700;display:flex;align-items:center;justify-content:center}
+.drug-top{display:flex;gap:11px;align-items:center;margin-bottom:2px}
+.drug-img{width:46px;height:46px;border-radius:9px;object-fit:cover;background:var(--bg-warm);border:1px solid var(--border-solid);flex:none}
+.dname{font-family:'Outfit';font-size:1.0rem;font-weight:700;color:var(--accent);text-transform:capitalize}
+.role{font-size:.69rem;font-weight:600;color:var(--text-muted);text-transform:uppercase;margin-top:1px}
+.vendors{margin-top:4px;display:flex;flex-wrap:wrap;gap:6px;align-items:center}
+.vchip{display:inline-flex;align-items:center;gap:5px;font-size:.74rem;background:var(--bg-warm);border:1px solid var(--border-solid);border-radius:50px;padding:3px 9px;color:var(--text-secondary);text-decoration:none;cursor:pointer;transition:all .15s}
+a.vchip:hover{border-color:var(--accent);box-shadow:var(--shadow-sm)}
+.vchip .vd{width:8px;height:8px;border-radius:50%}.vchip b{color:var(--accent);font-weight:600}
+.pill{display:inline-block;font-size:.71rem;font-weight:700;border-radius:50px;padding:3px 10px;float:right}
+.pill.ok{background:#ECFDF5;color:var(--green)}.pill.caution,.pill.adjust{background:#FFFBEB;color:var(--amber)}
+.pill.avoid{background:#FEF2F2;color:var(--red)}.pill.insufficient_data,.pill.emergency{background:#F3F4F6;color:var(--gray)}
+.mech{font-family:'Outfit';font-size:.84rem;color:var(--text);background:var(--bg-warm);border-radius:7px;padding:6px 9px}
+.mtag{display:inline-block;font-size:.71rem;background:var(--bg-warm);color:var(--text-secondary);border-radius:6px;padding:2px 7px;margin:2px 4px 0 0}
+.mtag .et{color:var(--silver);font-size:.65rem}
+.reason{font-size:.78rem;color:var(--text-secondary);line-height:1.45;margin-top:3px;padding-left:9px;border-left:2px solid var(--border-solid)}
+.dose{font-size:.81rem;color:var(--text);background:#F0FDF4;border:1px solid #BBF7D0;border-radius:7px;padding:7px 9px}
+.dose.blocked{background:var(--bg-warm);border-color:var(--border-solid);color:var(--text-muted)}
+.final{font-size:.79rem;color:var(--text-secondary);margin-top:9px;padding-top:8px;border-top:1px solid var(--border-solid);line-height:1.45}
+.faers{font-size:.72rem;color:var(--text-muted);margin-top:5px}
+.score{font-family:'Outfit';font-size:.72rem;color:var(--silver);font-weight:600}
+.placeholder{color:var(--text-muted);text-align:center;padding:30px 20px;font-size:.85rem;line-height:1.6}
+</style>
+</head>
+<body>
+<div class="app-header">
+  <div class="logo-name">osler<span>·</span>rx</div>
+  <div class="tagline">case → drug recommendation agent · explainable</div>
+  <button class="reopen" onclick="document.body.classList.remove('art-hidden')">▸ Reasoning</button>
+  <div class="keybox">
+    <select id="provider"><option value="openai">OpenAI</option><option value="gemini">Gemini</option></select>
+    <input id="apikey" type="password" placeholder="paste API key (optional)">
+    <button onclick="saveKey()">Save</button>
+    <span class="kstat off" id="kstat">no key</span>
+  </div>
+</div>
+<div class="wrap">
+  <div class="col-left">
+    <h2 class="sec">Patients</h2>
+    <div id="roster"><div class="placeholder" style="font-size:.8rem;padding:8px 0">No patients yet.<br>Import a case below.</div></div>
+    <h2 class="sec" style="margin-top:18px">New patient · import case</h2>
+    <div class="import-box">
+      <textarea id="caseText" placeholder="Paste a free-text case, e.g.&#10;64M crushing chest pain, diaphoresis, acute coronary syndrome. BP 88/54, HR 112, eGFR 72. No known allergies."></textarea>
+      <div class="mini">or quick presets:</div>
+      <div id="presets"></div>
+      <label class="chk"><input type="checkbox" id="useFda" checked> fetch live openFDA labels (needs internet)</label>
+      <label class="chk"><input type="checkbox" id="useLlmOrch" checked> LLM orchestration (tool-calling · OpenAI or Gemini key; else falls back)</label>
+      <button class="primary" id="analyzeBtn" onclick="analyze()">Analyze case →</button>
+    </div>
+  </div>
+  <div class="col-center">
+    <div id="chat-box"><div class="chat-empty">← Import a case on the left.<br><br>The agent shows its workflow live here,<br>and the reasoning artifact opens on the right →</div></div>
+    <div class="composer">
+      <input id="chatInput" type="text" placeholder="Ask why a drug was recommended…" onkeydown="if(event.key==='Enter')send()">
+      <button id="sendBtn" onclick="send()">Send</button>
+    </div>
+  </div>
+  <div class="col-right" id="artifact">
+    <div class="art-resize" id="artResize" title="Drag to resize"></div>
+    <div class="art-head">
+      <span class="art-title" id="artTitle">Reasoning</span>
+      <div class="art-tabs" id="artTabs">
+        <button class="art-tab active" onclick="artTab('graph')">Graph</button>
+        <button class="art-tab" onclick="artTab('disease')">Disease</button>
+        <button class="art-tab" onclick="artTab('drugs')">Drugs</button>
+      </div>
+      <button class="art-x" title="Hide" onclick="document.body.classList.add('art-hidden')">✕</button>
+    </div>
+    <div class="art-body" id="artBody"><div class="placeholder">Analyze a case to open the reasoning artifact:<br>mind-map graph · disease model · drug cards.</div></div>
+  </div>
+</div>
+<script>
+const GROUPS={
+  patient:{color:'#0F2B5B',label:'patient'}, indication:{color:'#E8724A',label:'indication'},
+  disease:{color:'#B91C1C',label:'disease'}, pathology:{color:'#FCA5A5',label:'perturbation'},
+  symptom:{color:'#9CA3AF',label:'symptom'}, target:{color:'#0D9488',label:'target'},
+  flag:{color:'#F59E0B',label:'flag'},
+  'drug-ok':{color:'#059669',label:'drug·ok'}, 'drug-caution':{color:'#D97706',label:'drug·caution'},
+  'drug-adjust':{color:'#D97706',label:'drug·adjust'}, 'drug-avoid':{color:'#DC2626',label:'drug·avoid'},
+  'drug-insufficient_data':{color:'#6B7280',label:'drug·no label'}, 'drug-emergency':{color:'#6B7280',label:'drug'}
+};
+let PATIENTS=[], CUR=-1, KEY='', PROVIDER='openai', ART_TAB='graph', _net=null;
+const esc=s=>String(s==null?'':s).replace(/[&<>"]/g,c=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;'}[c]));
+
+function saveKey(){KEY=document.getElementById('apikey').value.trim();PROVIDER=document.getElementById('provider').value;
+  sessionStorage.setItem('osler_key',KEY);sessionStorage.setItem('osler_prov',PROVIDER);updateKeyStat();}
+function updateKeyStat(){const s=document.getElementById('kstat');
+  if(KEY){s.textContent=PROVIDER+' key set';s.className='kstat';}else{s.textContent='no key (rules + graph)';s.className='kstat off';}}
+async function init(){
+  KEY=sessionStorage.getItem('osler_key')||'';PROVIDER=sessionStorage.getItem('osler_prov')||'openai';
+  document.getElementById('apikey').value=KEY;document.getElementById('provider').value=PROVIDER;
+  const j=await(await fetch('/api/cases')).json();
+  if(j.env_llm && !KEY){const s=document.getElementById('kstat');s.textContent='env key set';s.className='kstat';}else updateKeyStat();
+  document.getElementById('presets').innerHTML=j.cases.map((c,i)=>`<button class="preset" onclick='usePreset(${i})'>${esc(c.title)}</button>`).join('');
+  window._SAMPLES=j.cases;
+}
+function caseToText(c){
+  const v=c.vitals||{},parts=[];parts.push(`${c.age??''}${c.sex||''}`.trim());
+  if(c.symptoms&&c.symptoms.length)parts.push('presents with '+c.symptoms.join(', '));parts.push(c.indication);
+  const vit=[];if(v.sbp)vit.push('BP '+v.sbp+'/?');if(v.heart_rate)vit.push('HR '+v.heart_rate);if(v.spo2)vit.push('SpO2 '+v.spo2);
+  let s=parts.filter(Boolean).join(', ')+'.';if(vit.length)s+=' '+vit.join(', ')+'.';
+  if(c.egfr)s+=' eGFR '+c.egfr+'.';
+  if(c.allergies&&c.allergies.length)s+=' Allergies: '+c.allergies.join(', ')+'.';else s+=' No known allergies.';
+  if(c.current_medications&&c.current_medications.length)s+=' Taking '+c.current_medications.join(', ')+'.';
+  if((c.labs||{}).potassium)s+=' K+ '+c.labs.potassium+'.';return s;
+}
+function sampleToFields(c){return {indication:c.indication,age:c.age,sex:c.sex,weight_kg:c.weight_kg,egfr:c.egfr,
+  hepatic_status:c.hepatic_status,allergies:c.allergies,current_medications:c.current_medications,symptoms:c.symptoms,vitals:c.vitals,labs:c.labs};}
+function usePreset(i){const c=window._SAMPLES[i];document.getElementById('caseText').value=caseToText(c);analyze(c);}
+
+// ── streaming analyze (Claude-Code-style live workflow) ──────────────────
+async function analyze(structured){
+  const text=document.getElementById('caseText').value.trim();
+  if(!text && !structured){alert('Paste a case or pick a preset first.');return;}
+  const btn=document.getElementById('analyzeBtn');btn.disabled=true;btn.textContent='Analyzing…';
+  document.body.classList.remove('art-hidden');
+  const pid='p'+Date.now();
+  const p={id:pid,label:'Analyzing…',bundle:null,chat:[]};PATIENTS.push(p);CUR=PATIENTS.length-1;renderRoster();
+  // fresh chat with a live workflow block
+  const box=document.getElementById('chat-box');
+  // collapsed one-liner that updates to the CURRENT step live (not a growing block)
+  box.innerHTML=`<div class="msg-ai trace collapsed" id="liveTraceWrap"><div class="trace-h" onclick="toggleTrace(this)"><span>⚡ Agent workflow</span><span class="trace-sum" id="liveSum"><span class="spin"></span> starting…</span><span class="trace-caret">▸</span></div><div class="trace-body" id="liveTrace"></div></div>`;
+  const live=document.getElementById('liveTrace');const sumEl=document.getElementById('liveSum');let runningEl=null;
+  const addStep=ev=>{
+    const el=document.createElement('div');el.className='trace-step';
+    el.innerHTML=`<span class="ti">${ev.running?'<span class=spin></span>':(ev.icon||'•')}</span><div><b>${esc(ev.title)}</b><div class="td">${esc(ev.detail||'')}</div></div>`;
+    if(!ev.running && runningEl){runningEl.replaceWith(el);runningEl=null;}else{live.appendChild(el);if(ev.running)runningEl=el;}
+    // live one-liner = current step
+    sumEl.innerHTML=(ev.running?'<span class="spin"></span> ':(ev.icon||'•')+' ')+esc(ev.title);
+    box.scrollTop=box.scrollHeight;
+  };
+  const body={patient_id:pid,text:text,fields:(structured?sampleToFields(structured):{}),
+    api_key:KEY,provider:PROVIDER,use_openfda:document.getElementById('useFda').checked,
+    orchestrator:document.getElementById('useLlmOrch').checked?'llm':'deterministic'};
+  try{
+    const r=await fetch('/api/analyze_stream',{method:'POST',headers:{'Content-Type':'application/json'},body:JSON.stringify(body)});
+    const reader=r.body.getReader();const dec=new TextDecoder();let buf='';
+    while(true){
+      const {done,value}=await reader.read();if(done)break;
+      buf+=dec.decode(value,{stream:true});let nl;
+      while((nl=buf.indexOf('\n'))>=0){
+        const line=buf.slice(0,nl).trim();buf=buf.slice(nl+1);if(!line)continue;
+        let ev;try{ev=JSON.parse(line);}catch{continue;}
+        if(ev.type==='step')addStep(ev);
+        else if(ev.type==='error'){addStep({icon:'⚠️',title:'Error',detail:ev.error});p.label='(failed)';renderRoster();}
+        else if(ev.type==='final'){
+          p.bundle=ev.bundle;
+          p.label=(ev.bundle.result.patient.age?ev.bundle.result.patient.age+'y · ':'')+(ev.bundle.result.indication_label||ev.bundle.indication);
+          renderRoster();renderArtifact(p);
+          const tw=document.getElementById('liveTraceWrap');  // Claude-Code style: collapse when done
+          if(tw){const sm=document.getElementById('liveSum');if(sm)sm.textContent=traceSummary(p.bundle);tw.classList.add('collapsed');}
+          appendSummary(p);
+        }
+      }
+    }
+  }catch(e){addStep({icon:'⚠️',title:'Request failed',detail:e.message});}
+  finally{btn.disabled=false;btn.textContent='Analyze case →';}
+}
+function appendSummary(p){
+  const drugs=p.bundle.result.candidates.map(c=>c.drug);
+  const box=document.getElementById('chat-box');
+  const d=document.createElement('div');d.className='msg-ai';
+  d.innerHTML=`Recommended <strong>${drugs.length}</strong> drugs: <strong>${drugs.map(esc).join(', ')}</strong>. The reasoning artifact is on the right →`+
+    `<div class="chips">${drugs.slice(0,3).map(x=>`<button class="chip-q" onclick="ask('Why is ${esc(x)} recommended?')">Why ${esc(x)}?</button>`).join('')}`+
+    `<button class="chip-q" onclick="ask('Which drug is top priority and why?')">Top priority?</button>`+
+    `<button class="chip-q" onclick="ask('What is the disease doing to the body?')">Disease mechanism?</button></div>`;
+  box.appendChild(d);box.scrollTop=box.scrollHeight;
+}
+function renderRoster(){
+  document.getElementById('roster').innerHTML=PATIENTS.map((p,i)=>{
+    const cands=p.bundle?p.bundle.result.candidates:[];
+    const worst=cands.some(c=>c.safety.decision==='avoid')?'#DC2626':(cands.length?'#059669':'#6B7280');
+    return `<button class="pt ${i===CUR?'active':''}" onclick="selectPatient(${i})"><span class="dot" style="background:${worst}"></span>
+      <span><b>${esc(p.label)}</b><span>${p.bundle?cands.length+' drugs · '+esc(p.bundle.parser)+' parse':'…'}</span></span></button>`;}).join('');
+}
+function traceSummary(b){
+  const n=(b.trace||[]).length;
+  const eng=(b.trace||[]).find(s=>/Symbolic engine/.test(s.title));
+  const ms=eng?((eng.title.match(/· ([\d.]+) ms/)||[])[1]):null;
+  const fda=b.openfda_loaded?` · openFDA ×${b.openfda_loaded.length}`:'';
+  return `✓ ${n} steps${ms?` · ${ms} ms`:''} · ${b.parser} parse${fda}`;
+}
+function toggleTrace(h){h.closest('.trace').classList.toggle('collapsed');}
+function traceBlock(trace,bundle){
+  if(!trace||!trace.length)return '';
+  return `<div class="msg-ai trace collapsed"><div class="trace-h" onclick="toggleTrace(this)"><span>⚡ Agent workflow</span><span class="trace-sum">${esc(traceSummary(bundle))}</span><span class="trace-caret">▸</span></div><div class="trace-body">`+
+    trace.map(s=>`<div class="trace-step"><span class="ti">${s.icon||'•'}</span><div><b>${esc(s.title)}</b><div class="td">${esc(s.detail||'')}</div></div></div>`).join('')+`</div></div>`;
+}
+function selectPatient(i){
+  CUR=i;renderRoster();const p=PATIENTS[i];
+  const box=document.getElementById('chat-box');
+  if(!p.bundle){box.innerHTML='<div class="chat-empty">Analyzing…</div>';return;}
+  let h=traceBlock(p.bundle.trace,p.bundle);
+  const drugs=p.bundle.result.candidates.map(c=>c.drug);
+  h+=`<div class="msg-ai">Recommended <strong>${drugs.length}</strong> drugs: <strong>${drugs.map(esc).join(', ')}</strong>. Artifact on the right →`+
+    `<div class="chips">${drugs.slice(0,3).map(x=>`<button class="chip-q" onclick="ask('Why is ${esc(x)} recommended?')">Why ${esc(x)}?</button>`).join('')}`+
+    `<button class="chip-q" onclick="ask('Which drug is top priority and why?')">Top priority?</button></div></div>`;
+  for(const m of p.chat)h+=m.role==='user'?`<div class="msg-user">${esc(m.content)}</div>`:`<div class="msg-ai">${marked.parse(m.content)}</div>`;
+  box.innerHTML=h;box.scrollTop=box.scrollHeight;
+  renderArtifact(p);
+}
+// ── artifact sidebar ────────────────────────────────────────────────────
+function diseaseCardHtml(dm,openfda){
+  return `<div class="dz-card"><div class="src">disease world-model · ${esc(dm.source)}${dm.source_file?' · data/'+esc(dm.source_file):''}</div>`+
+    `<div class="h">${esc(dm.disease)}</div>`+
+    (dm.description?`<div class="reason" style="border:0;padding:0;margin-top:4px">${esc(dm.description.slice(0,180))}</div>`:'')+
+    `<div class="lab">perturbations (disease pushes ↑/↓)</div>`+dm.perturbations.map(pp=>`<span class="pchip">${esc(pp.variable.replace(/_/g,' '))} ${pp.direction==='high'?'↑':'↓'}</span>`).join('')+
+    (dm.symptoms.length?`<div class="lab">derived symptoms</div>`+dm.symptoms.map(s=>`<span class="schip">${esc(s)}</span>`).join(''):'')+
+    (openfda?`<div class="lab">live openFDA</div><span class="schip">✓ ${openfda.map(esc).join(', ')}</span>`:'')+`</div>`;
+}
+function pill(d){return `<span class="pill ${d}">${d}</span>`;}
+function drugCardsHtml(res){
+  return res.candidates.map((c,i)=>{
+    const dec=c.safety.decision,dose=c.dose||{};
+    let h=`<div class="dcard"><div class="rank">${i+1}</div>`+pill(dec)+
+      `<div class="drug-top"><img class="drug-img" data-name="${esc(c.drug)}" src="${pillSvg(c.drug)}" alt="${esc(c.drug)}">`+
+      `<div><div class="dname">${esc(c.drug)}</div><div class="role">${esc(c.clinical_role.label)} · <span class="score">score ${c.mechanism_score}</span></div></div></div>`+
+      `<div class="lab">mechanism</div><div class="mech">${esc(c.mechanism_chain||'—')}</div>`+
+      `<div class="lab">matched targets · ${esc(c.indication_support)}</div>${(c.matched_targets||[]).map(m=>`<span class="mtag">${esc(m.target)} <span class="et">${esc(m.effect_type)}</span></span>`).join('')||'—'}`+
+      `<div class="lab">safety</div>`+(c.safety.reasons||[]).map(r=>`<div class="reason">${esc(r.message)}</div>`).join('');
+    if(dose.patient_specific_allowed&&dose.verbatim)h+=`<div class="lab">dose (confirm with clinician)</div><div class="dose">${esc(dose.verbatim)}</div>`;
+    else h+=`<div class="lab">dose</div><div class="dose blocked">not shown — ${res.mechanism_only?'no label loaded':'blocked by safety gate / validation'}</div>`;
+    if(c.faers_signals&&c.faers_signals.length)h+=`<div class="faers">⚠ FAERS: ${c.faers_signals.slice(0,3).map(s=>esc(s.event)+'('+s.report_count+')').join(', ')}</div>`;
+    h+=`<div class="lab">where to fill · illustrative prices</div>`+vendorsHtml(c.drug);
+    h+=`<div class="final">${esc(c.final_answer)}</div></div>`;return h;
+  }).join('')+`<div class="faers" style="margin-top:8px">${esc(res._disclaimer||'')}</div>`;
+}
+function hashStr(s){let h=0;for(let i=0;i<s.length;i++)h=(h*31+s.charCodeAt(i))>>>0;return h;}
+// Clean generated medication image (capsule or round tablet), colored by drug — looks
+// like a pill, never a powder/molecule photo. (Real product photos need a licensed
+// pill-image API such as the NIH RxImage successor / First Databank.)
+function pillSvg(name){
+  const hue=hashStr(name)%360, shape=hashStr(name)%2;
+  let inner;
+  if(shape===0){const c1=`hsl(${hue},58%,55%)`,c2=`hsl(${hue},42%,87%)`;
+    inner=`<g transform='rotate(-32 23 23)'><rect x='6' y='17.5' width='34' height='12.5' rx='6.25' fill='${c2}'/><rect x='6' y='17.5' width='17' height='12.5' rx='6.25' fill='${c1}'/><rect x='6' y='17.5' width='34' height='4' rx='6.25' fill='rgba(255,255,255,.35)'/></g>`;
+  }else{const c=`hsl(${hue},45%,82%)`,cs=`hsl(${hue},35%,60%)`;
+    inner=`<circle cx='23' cy='23' r='13' fill='${c}' stroke='${cs}' stroke-width='1'/><line x1='23' y1='11' x2='23' y2='35' stroke='${cs}' stroke-width='1'/><ellipse cx='19' cy='18' rx='5' ry='3' fill='rgba(255,255,255,.45)'/>`;}
+  const svg=`<svg xmlns='http://www.w3.org/2000/svg' width='46' height='46'><rect width='46' height='46' rx='9' fill='#F4F6FA'/>${inner}</svg>`;
+  return 'data:image/svg+xml;utf8,'+encodeURIComponent(svg);
+}
+function vendorsHtml(name){
+  const q=encodeURIComponent(name), base=6+(hashStr(name)%34);
+  const vs=[{n:'CVS',c:'#CC0000',p:base+2,u:`https://www.cvs.com/search?searchTerm=${q}`},
+            {n:'Walgreens',c:'#E31837',p:base+4,u:`https://www.walgreens.com/search/results.jsp?Ntt=${q}`},
+            {n:'Walmart',c:'#0071CE',p:Math.max(4,base-1),u:`https://www.walmart.com/search?q=${q}`},
+            {n:'GoodRx',c:'#FDB714',p:Math.max(3,base-3),u:`https://www.goodrx.com/${q}`}];
+  return `<div class="vendors">`+vs.map(v=>`<a class="vchip" href="${v.u}" target="_blank" rel="noopener"><span class="vd" style="background:${v.c}"></span>${v.n} <b>$${v.p}.${String(hashStr(name+v.n)%90+10)}</b></a>`).join('')+`</div>`;
+}
+// Real pill/product photo from Wikimedia Commons (search "<drug> tablet pill"), filtered
+// to raster photos (skip molecule/structure/SVG). Falls back to the generated pill SVG.
+const IMG_CACHE={};
+async function enrichDrugImages(){
+  for(const img of document.querySelectorAll('.drug-img')){
+    const name=img.dataset.name;if(!name)continue;
+    if(IMG_CACHE[name]!==undefined){if(IMG_CACHE[name])img.src=IMG_CACHE[name];continue;}
+    IMG_CACHE[name]='';
+    try{
+      const url='https://commons.wikimedia.org/w/api.php?action=query&format=json&origin=*'+
+        '&generator=search&gsrnamespace=6&gsrlimit=8&gsrsearch='+encodeURIComponent(name+' tablet')+
+        '&prop=imageinfo&iiprop=url|mime&iiurlwidth=120';
+      const j=await(await fetch(url)).json();
+      const pages=j.query&&j.query.pages?Object.values(j.query.pages):[];
+      pages.sort((a,b)=>(a.index||0)-(b.index||0));
+      let pick=null;
+      for(const pg of pages){
+        const ii=pg.imageinfo&&pg.imageinfo[0];if(!ii)continue;
+        const t=(pg.title||'').toLowerCase();
+        if(/structure|molecule|skeletal|formula|\.svg|chemical|2d|3d/.test(t))continue;
+        if(ii.mime&&!/jpeg|jpg|png/.test(ii.mime))continue;
+        pick=ii.thumburl||ii.url;break;
+      }
+      if(pick){IMG_CACHE[name]=pick;img.src=pick;}
+    }catch(e){}
+  }
+}
+function renderArtifact(p){
+  const b=p.bundle,res=b.result,dm=b.disease_model;
+  document.getElementById('artTitle').textContent='⚙ '+(res.indication_label||b.indication);
+  document.querySelector('#artTabs .art-tab:nth-child(3)').textContent='Drugs ('+res.candidates.length+')';
+  const legend=Object.values(GROUPS).map(g=>`<span class="lg"><i style="background:${g.color}"></i>${g.label}</span>`).join('');
+  const body=document.getElementById('artBody');
+  body.innerHTML=
+    `<div class="art-panel ${ART_TAB==='graph'?'':'hidden'}" data-panel="graph"><div class="gphost" id="art-graph"></div><div class="legend">${legend}</div></div>`+
+    `<div class="art-panel ${ART_TAB==='disease'?'':'hidden'}" data-panel="disease">${diseaseCardHtml(dm,b.openfda_loaded)}</div>`+
+    `<div class="art-panel ${ART_TAB==='drugs'?'':'hidden'}" data-panel="drugs">${drugCardsHtml(res)}</div>`;
+  renderGraph(b.graph);
+  enrichDrugImages();  // real pill photos (Commons), SVG pill fallback
+}
+function artTab(name){
+  ART_TAB=name;
+  document.querySelectorAll('#artTabs .art-tab').forEach((t,i)=>t.classList.toggle('active',['graph','disease','drugs'][i]===name));
+  document.querySelectorAll('#artBody .art-panel').forEach(pn=>pn.classList.toggle('hidden',pn.dataset.panel!==name));
+}
+function renderGraph(g){
+  const el=document.getElementById('art-graph');if(!el)return;
+  if(typeof vis==='undefined'){el.innerHTML='<div class="placeholder">Graph library blocked (offline). See Disease / Drugs tabs.</div>';return;}
+  const nodes=g.nodes.map(n=>({id:n.id,label:n.label,group:n.group,title:n.title||undefined}));
+  const edges=g.edges.map(e=>({from:e.from,to:e.to,label:e.label||undefined,dashes:e.dashes||false,color:e.color?{color:e.color}:undefined}));
+  const groupOpts={};for(const k in GROUPS)groupOpts[k]={color:{background:GROUPS[k].color,border:GROUPS[k].color},font:{color:'#fff'}};
+  _net=new vis.Network(el,{nodes:new vis.DataSet(nodes),edges:new vis.DataSet(edges)},{
+    nodes:{shape:'box',margin:7,font:{size:12,color:'#fff',face:'Sora'},borderWidth:0,widthConstraint:{maximum:125}},
+    edges:{font:{size:9,color:'#6B7280',strokeWidth:3,strokeColor:'#fff'},color:{color:'#C5CEDB'},arrows:{to:{enabled:true,scaleFactor:.5}},smooth:{type:'cubicBezier'}},
+    groups:groupOpts,physics:{barnesHut:{gravitationalConstant:-6500,springLength:115,springConstant:.05},stabilization:{iterations:140}},
+    interaction:{hover:true,tooltipDelay:120}});
+  _net.on('click',pr=>{if(pr.nodes.length&&pr.nodes[0].startsWith('drug:'))artTab('drugs');});
+}
+// ── chat (stateless grounding) ──────────────────────────────────────────
+function ask(q){document.getElementById('chatInput').value=q;send();}
+function addMsg(cls,html){const b=document.getElementById('chat-box');const d=document.createElement('div');d.className=cls;d.innerHTML=html;b.appendChild(d);b.scrollTop=b.scrollHeight;return d;}
+async function send(){
+  const inp=document.getElementById('chatInput');const q=inp.value.trim();if(!q)return;
+  if(CUR<0||!PATIENTS[CUR].bundle){addMsg('msg-ai','Please analyze a case first.');return;}
+  const p=PATIENTS[CUR];inp.value='';addMsg('msg-user',esc(q));p.chat.push({role:'user',content:q});
+  const btn=document.getElementById('sendBtn');btn.disabled=true;const waiting=addMsg('msg-ai','<em>thinking…</em>');
+  try{
+    const r=await fetch('/api/chat',{method:'POST',headers:{'Content-Type':'application/json'},
+      body:JSON.stringify({patient_id:p.id,messages:p.chat,api_key:KEY,provider:PROVIDER,
+        result:p.bundle.result,disease_model:p.bundle.disease_model})});
+    const ct=r.headers.get('content-type')||'';
+    if(!ct.includes('application/json')){throw new Error('server returned '+r.status+' (restart may be needed)');}
+    const j=await r.json();
+    waiting.innerHTML=marked.parse(j.reply||'(no reply)');if(j.ok)p.chat.push({role:'assistant',content:j.reply});
+  }catch(e){waiting.innerHTML='⚠️ '+esc(e.message);}
+  btn.disabled=false;
+}
+// drag-to-resize the artifact sidebar; the mind-map refits to the new width
+(function(){
+  const h=document.getElementById('artResize');if(!h)return;
+  const saved=sessionStorage.getItem('osler_artw');
+  if(saved)document.documentElement.style.setProperty('--art-w',saved);
+  let sx=0,sw=0;
+  const onMove=e=>{
+    let w=sw-(e.clientX-sx);
+    w=Math.max(340,Math.min(window.innerWidth*0.72,w));
+    document.documentElement.style.setProperty('--art-w',w+'px');
+    if(_net){try{_net.setSize('100%','100%');_net.redraw();}catch(_){}}
+  };
+  const onUp=()=>{document.removeEventListener('mousemove',onMove);document.removeEventListener('mouseup',onUp);
+    h.classList.remove('drag');document.body.style.userSelect='';
+    if(_net){try{_net.fit();}catch(_){}}
+    sessionStorage.setItem('osler_artw',getComputedStyle(document.documentElement).getPropertyValue('--art-w').trim());};
+  h.addEventListener('mousedown',e=>{e.preventDefault();sx=e.clientX;sw=document.getElementById('artifact').offsetWidth;
+    h.classList.add('drag');document.body.style.userSelect='none';
+    document.addEventListener('mousemove',onMove);document.addEventListener('mouseup',onUp);});
+})();
+init();
+</script>
+</body>
+</html>

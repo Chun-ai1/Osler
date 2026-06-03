@@ -1,0 +1,146 @@
+{
+  "_comment": "ILLUSTRATIVE label data for the DEMO ONLY. NOT real FDA labels, NOT clinically validated. Hand-authored so the safety gate + validated-dose path actually fire in the demo. demo_app.py loads this if present; without it the engine runs mechanism-only. Generate real data with clinical_data.py for production.",
+  "drugs": {
+    "nitroglycerin": {
+      "source": {"primary": "DEMO label (illustrative, not clinical)", "set_id": "11111111-0000-0000-0000-000000000001", "retrieved_at": "2026-01-01"},
+      "identifiers": {"generic_name": "nitroglycerin", "substance_name": ["nitroglycerin"], "pharm_class": ["nitrate vasodilator"], "product_type": "Prescription"},
+      "indications": ["acute coronary syndrome", "angina", "chest pain"],
+      "label_sections": {
+        "indications_and_usage": "Relief of ischemic chest pain (angina) and management of acute coronary syndrome.",
+        "contraindications": "Severe hypotension (systolic blood pressure below 90 mmHg), shock, or concurrent use of PDE5 inhibitors.",
+        "warnings_and_precautions": "May cause headache and reflex tachycardia. Use caution with volume depletion.",
+        "drug_interactions": "PDE5 inhibitors (sildenafil) cause severe hypotension."
+      },
+      "dose_rules": [{"indication": "angina", "route": "sublingual", "dose_text_verbatim": "0.4 mg sublingually every 5 minutes, up to 3 doses.", "structured_extraction": {"dose_value": "0.4", "dose_unit": "mg", "frequency": "every 5 min x3", "maximum": "1.2 mg"}, "requires_human_validation": false, "validation": {"validated": true, "validated_by": "DEMO", "validated_at": "2026-01-01"}, "source_section": "Dosage and Administration"}],
+      "validation_status": "human_validated",
+      "faers_signals": [{"event": "headache", "report_count": 4120, "source": "FAERS", "confidence": "signal_only"}, {"event": "hypotension", "report_count": 1890, "source": "FAERS", "confidence": "signal_only"}]
+    },
+    "aspirin": {
+      "source": {"primary": "DEMO label (illustrative, not clinical)", "set_id": "11111111-0000-0000-0000-000000000002", "retrieved_at": "2026-01-01"},
+      "identifiers": {"generic_name": "aspirin", "substance_name": ["acetylsalicylic acid"], "pharm_class": ["antiplatelet", "nonsteroidal anti-inflammatory drug"], "product_type": "OTC"},
+      "indications": ["acute coronary syndrome", "myocardial infarction", "antiplatelet"],
+      "label_sections": {
+        "indications_and_usage": "Antiplatelet therapy in acute coronary syndrome and secondary prevention of myocardial infarction.",
+        "contraindications": "Known aspirin or NSAID hypersensitivity; active gastrointestinal bleeding.",
+        "warnings_and_precautions": "Increased bleeding risk; gastrointestinal irritation.",
+        "drug_interactions": "Anticoagulants (warfarin, heparin) increase bleeding risk."
+      },
+      "dose_rules": [{"indication": "acute coronary syndrome", "route": "oral", "dose_text_verbatim": "162-325 mg chewed at presentation, then 81 mg orally once daily.", "structured_extraction": {"dose_value": "162-325", "dose_unit": "mg", "frequency": "load then daily", "maximum": null}, "requires_human_validation": false, "validation": {"validated": true, "validated_by": "DEMO", "validated_at": "2026-01-01"}, "source_section": "Dosage and Administration"}],
+      "validation_status": "human_validated",
+      "faers_signals": [{"event": "gastrointestinal hemorrhage", "report_count": 3402, "source": "FAERS", "confidence": "signal_only"}]
+    },
+    "metoprolol": {
+      "source": {"primary": "DEMO label (illustrative, not clinical)", "set_id": "11111111-0000-0000-0000-000000000003", "retrieved_at": "2026-01-01"},
+      "identifiers": {"generic_name": "metoprolol", "substance_name": ["metoprolol tartrate"], "pharm_class": ["beta blocker"], "product_type": "Prescription"},
+      "indications": ["acute coronary syndrome", "angina", "hypertension"],
+      "label_sections": {
+        "indications_and_usage": "Reduces myocardial oxygen demand in acute coronary syndrome, angina, and hypertension.",
+        "contraindications": "Severe bradycardia, second- or third-degree heart block, cardiogenic shock, decompensated heart failure.",
+        "warnings_and_precautions": "Avoid in acute hypotension. May mask hypoglycemia. Do not withdraw abruptly.",
+        "drug_interactions": "Additive effects with calcium channel blockers."
+      },
+      "dose_rules": [{"indication": "acute coronary syndrome", "route": "oral", "dose_text_verbatim": "25-50 mg orally every 6-12 hours once hemodynamically stable.", "structured_extraction": {"dose_value": "25-50", "dose_unit": "mg", "frequency": "every 6-12 h", "maximum": null}, "requires_human_validation": false, "validation": {"validated": true, "validated_by": "DEMO", "validated_at": "2026-01-01"}, "source_section": "Dosage and Administration"}],
+      "validation_status": "human_validated",
+      "faers_signals": [{"event": "bradycardia", "report_count": 2110, "source": "FAERS", "confidence": "signal_only"}]
+    },
+    "heparin": {
+      "source": {"primary": "DEMO label (illustrative, not clinical)", "set_id": "11111111-0000-0000-0000-000000000004", "retrieved_at": "2026-01-01"},
+      "identifiers": {"generic_name": "heparin", "substance_name": ["heparin sodium"], "pharm_class": ["anticoagulant"], "product_type": "Prescription"},
+      "indications": ["acute coronary syndrome", "venous thromboembolism", "anticoagulation"],
+      "label_sections": {
+        "indications_and_usage": "Anticoagulation in acute coronary syndrome and venous thromboembolism.",
+        "contraindications": "Active major bleeding; history of heparin-induced thrombocytopenia.",
+        "warnings_and_precautions": "Monitor for bleeding; check platelet count.",
+        "drug_interactions": "Antiplatelet agents and NSAIDs increase bleeding risk."
+      },
+      "dose_rules": [{"indication": "acute coronary syndrome", "route": "IV", "dose_text_verbatim": "60 units/kg IV bolus (max 4000 units), then 12 units/kg/hour infusion, titrated to aPTT.", "structured_extraction": {"dose_value": "60", "dose_unit": "units/kg", "frequency": "bolus + infusion", "maximum": "4000 units bolus"}, "requires_human_validation": false, "validation": {"validated": true, "validated_by": "DEMO", "validated_at": "2026-01-01"}, "source_section": "Dosage and Administration"}],
+      "validation_status": "human_validated",
+      "faers_signals": [{"event": "thrombocytopenia", "report_count": 1530, "source": "FAERS", "confidence": "signal_only"}]
+    },
+    "albuterol": {
+      "source": {"primary": "DEMO label (illustrative, not clinical)", "set_id": "11111111-0000-0000-0000-000000000005", "retrieved_at": "2026-01-01"},
+      "identifiers": {"generic_name": "albuterol", "substance_name": ["albuterol sulfate"], "pharm_class": ["beta2 agonist bronchodilator"], "product_type": "Prescription"},
+      "indications": ["asthma", "bronchospasm"],
+      "label_sections": {
+        "indications_and_usage": "Relief of bronchospasm in asthma and reversible obstructive airway disease.",
+        "contraindications": "Hypersensitivity to albuterol.",
+        "warnings_and_precautions": "May cause tachycardia, palpitations, and tremor. Use caution in cardiovascular disease.",
+        "drug_interactions": "Non-selective beta blockers antagonize the effect."
+      },
+      "dose_rules": [{"indication": "asthma", "route": "inhaled", "dose_text_verbatim": "2.5 mg via nebulizer every 20 minutes for 3 doses in acute exacerbation.", "structured_extraction": {"dose_value": "2.5", "dose_unit": "mg", "frequency": "every 20 min x3", "maximum": null}, "requires_human_validation": false, "validation": {"validated": true, "validated_by": "DEMO", "validated_at": "2026-01-01"}, "source_section": "Dosage and Administration"}],
+      "validation_status": "human_validated",
+      "faers_signals": [{"event": "tremor", "report_count": 980, "source": "FAERS", "confidence": "signal_only"}, {"event": "tachycardia", "report_count": 760, "source": "FAERS", "confidence": "signal_only"}]
+    },
+    "epinephrine": {
+      "source": {"primary": "DEMO label (illustrative, not clinical)", "set_id": "11111111-0000-0000-0000-000000000006", "retrieved_at": "2026-01-01"},
+      "identifiers": {"generic_name": "epinephrine", "substance_name": ["epinephrine"], "pharm_class": ["adrenergic agonist"], "product_type": "Prescription"},
+      "indications": ["anaphylaxis", "acute allergic reaction"],
+      "label_sections": {
+        "indications_and_usage": "First-line treatment of anaphylaxis.",
+        "contraindications": "There are no absolute contraindications in anaphylaxis (life-threatening).",
+        "warnings_and_precautions": "May cause tachycardia, hypertension, and arrhythmia; use caution in coronary disease but never withhold in anaphylaxis.",
+        "drug_interactions": "Effects potentiated by MAO inhibitors and tricyclic antidepressants."
+      },
+      "dose_rules": [{"indication": "anaphylaxis", "route": "intramuscular", "dose_text_verbatim": "0.3-0.5 mg (1:1000) intramuscularly into the mid-outer thigh; repeat every 5-15 minutes as needed.", "structured_extraction": {"dose_value": "0.3-0.5", "dose_unit": "mg", "frequency": "every 5-15 min PRN", "maximum": null}, "requires_human_validation": false, "validation": {"validated": true, "validated_by": "DEMO", "validated_at": "2026-01-01"}, "source_section": "Dosage and Administration"}],
+      "validation_status": "human_validated",
+      "faers_signals": [{"event": "palpitations", "report_count": 640, "source": "FAERS", "confidence": "signal_only"}]
+    },
+    "diphenhydramine": {
+      "source": {"primary": "DEMO label (illustrative, not clinical)", "set_id": "11111111-0000-0000-0000-000000000007", "retrieved_at": "2026-01-01"},
+      "identifiers": {"generic_name": "diphenhydramine", "substance_name": ["diphenhydramine hydrochloride"], "pharm_class": ["H1 antihistamine"], "product_type": "OTC"},
+      "indications": ["anaphylaxis", "allergic reaction", "urticaria"],
+      "label_sections": {
+        "indications_and_usage": "Adjunctive antihistamine for allergic reactions and urticaria.",
+        "contraindications": "Hypersensitivity to diphenhydramine; neonates.",
+        "warnings_and_precautions": "Causes sedation; additive CNS depression with other sedatives.",
+        "drug_interactions": "Additive sedation with alcohol and CNS depressants."
+      },
+      "dose_rules": [{"indication": "allergic reaction", "route": "oral", "dose_text_verbatim": "25-50 mg orally every 4-6 hours as needed.", "structured_extraction": {"dose_value": "25-50", "dose_unit": "mg", "frequency": "every 4-6 h PRN", "maximum": "300 mg/day"}, "requires_human_validation": false, "validation": {"validated": true, "validated_by": "DEMO", "validated_at": "2026-01-01"}, "source_section": "Dosage and Administration"}],
+      "validation_status": "human_validated",
+      "faers_signals": [{"event": "somnolence", "report_count": 1220, "source": "FAERS", "confidence": "signal_only"}]
+    },
+    "omeprazole": {
+      "source": {"primary": "DEMO label (illustrative, not clinical)", "set_id": "11111111-0000-0000-0000-000000000008", "retrieved_at": "2026-01-01"},
+      "identifiers": {"generic_name": "omeprazole", "substance_name": ["omeprazole"], "pharm_class": ["proton pump inhibitor"], "product_type": "OTC"},
+      "indications": ["gerd", "gastroesophageal reflux disease", "peptic ulcer"],
+      "label_sections": {
+        "indications_and_usage": "Treatment of gastroesophageal reflux disease and acid-peptic disorders.",
+        "contraindications": "Hypersensitivity to substituted benzimidazoles.",
+        "warnings_and_precautions": "Long-term use associated with hypomagnesemia and fracture risk.",
+        "drug_interactions": "May increase the effect of warfarin; monitor INR. Reduces clopidogrel activation."
+      },
+      "dose_rules": [{"indication": "gerd", "route": "oral", "dose_text_verbatim": "20 mg orally once daily before a meal for 4-8 weeks.", "structured_extraction": {"dose_value": "20", "dose_unit": "mg", "frequency": "once daily", "maximum": null}, "requires_human_validation": false, "validation": {"validated": true, "validated_by": "DEMO", "validated_at": "2026-01-01"}, "source_section": "Dosage and Administration"}],
+      "validation_status": "human_validated",
+      "faers_signals": [{"event": "headache", "report_count": 540, "source": "FAERS", "confidence": "signal_only"}]
+    },
+    "ranitidine": {
+      "source": {"primary": "DEMO label (illustrative, not clinical)", "set_id": "11111111-0000-0000-0000-000000000009", "retrieved_at": "2026-01-01"},
+      "identifiers": {"generic_name": "ranitidine", "substance_name": ["ranitidine hydrochloride"], "pharm_class": ["H2 receptor antagonist"], "product_type": "OTC"},
+      "indications": ["gerd", "heartburn", "peptic ulcer"],
+      "label_sections": {
+        "indications_and_usage": "Reduces gastric acid for heartburn and reflux.",
+        "contraindications": "Hypersensitivity to ranitidine.",
+        "warnings_and_precautions": "Adjust dose in renal impairment.",
+        "drug_interactions": "May alter absorption of pH-dependent drugs."
+      },
+      "dose_rules": [{"indication": "gerd", "route": "oral", "dose_text_verbatim": "150 mg orally twice daily.", "structured_extraction": {"dose_value": "150", "dose_unit": "mg", "frequency": "twice daily", "maximum": null}, "requires_human_validation": false, "validation": {"validated": true, "validated_by": "DEMO", "validated_at": "2026-01-01"}, "source_section": "Dosage and Administration"}],
+      "validation_status": "human_validated",
+      "faers_signals": []
+    },
+    "lisinopril": {
+      "source": {"primary": "DEMO label (illustrative, not clinical)", "set_id": "11111111-0000-0000-0000-000000000010", "retrieved_at": "2026-01-01"},
+      "identifiers": {"generic_name": "lisinopril", "substance_name": ["lisinopril"], "pharm_class": ["ACE inhibitor"], "product_type": "Prescription"},
+      "indications": ["hypertension", "heart failure"],
+      "label_sections": {
+        "indications_and_usage": "Treatment of hypertension and heart failure.",
+        "contraindications": "History of angioedema; pregnancy; concomitant aliskiren in diabetes.",
+        "warnings_and_precautions": "Can cause hyperkalemia and worsening renal function; monitor potassium and creatinine.",
+        "drug_interactions": "Potassium-sparing diuretics and supplements increase hyperkalemia risk; NSAIDs reduce effect.",
+        "use_in_specific_populations": "Reduce dose in renal impairment (creatinine clearance below 30 mL/min); contraindicated in pregnancy."
+      },
+      "dose_rules": [{"indication": "hypertension", "route": "oral", "dose_text_verbatim": "Initial 10 mg orally once daily; titrate to 20-40 mg daily.", "structured_extraction": {"dose_value": "10", "dose_unit": "mg", "frequency": "once daily", "maximum": "40 mg/day"}, "requires_human_validation": false, "validation": {"validated": true, "validated_by": "DEMO", "validated_at": "2026-01-01"}, "source_section": "Dosage and Administration"}],
+      "validation_status": "human_validated",
+      "faers_signals": [{"event": "cough", "report_count": 2890, "source": "FAERS", "confidence": "signal_only"}, {"event": "angioedema", "report_count": 410, "source": "FAERS", "confidence": "signal_only"}]
+    }
+  }
+}

@@ -1,1 +1,4 @@
 flask>=3.0
+# Optional — only needed for the chat panel in demo_app.py:
+openai>=1.0          # OpenAI provider (default)
+google-genai>=0.3    # Gemini provider (choose Gemini in the top-right key box)

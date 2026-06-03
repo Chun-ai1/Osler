@@ -1,0 +1,240 @@
+{
+  "_meta": {
+    "version": "1.0",
+    "description": "Major microvascular beds"
+  },
+  "microvascular_beds": {
+    "retinal_capillaries": {
+      "type": "microvasculature",
+      "location": "retina_inner_layers",
+      "supplied_by": [
+        "central_retinal_artery_from_ophthalmic"
+      ],
+      "drained_by": [
+        "central_retinal_vein"
+      ],
+      "anatomic_features": [
+        "tight_endothelium_BRB_blood_retinal_barrier",
+        "pericyte_rich",
+        "macula_avascular_zone_fovea"
+      ],
+      "vulnerability_to": [
+        "hyperglycemia_AGEs_pericyte_loss",
+        "hypertension_arteriolar_damage",
+        "hypoxia",
+        "shear_stress"
+      ],
+      "pathophysiology_signs": [
+        "microaneurysms_first_sign_DR",
+        "dot_blot_hemorrhages",
+        "cotton_wool_spots_NFL_infarct",
+        "hard_exudates_lipid",
+        "neovascularization_VEGF_driven",
+        "macular_edema",
+        "AV_nicking_hypertension",
+        "flame_hemorrhages_hypertension"
+      ],
+      "associated_diseases": [
+        "Diabetic Retinopathy",
+        "Hypertensive Retinopathy",
+        "Central Retinal Vein Occlusion",
+        "Branch Retinal Artery Occlusion"
+      ]
+    },
+    "glomerular_capillaries": {
+      "type": "microvasculature",
+      "location": "renal_glomeruli",
+      "supplied_by": [
+        "afferent_arteriole"
+      ],
+      "drained_by": [
+        "efferent_arteriole_to_peritubular_capillaries"
+      ],
+      "anatomic_features": [
+        "fenestrated_endothelium",
+        "GBM_glomerular_basement_membrane_charge_size_selective",
+        "podocyte_foot_processes_slit_diaphragm",
+        "mesangial_cells"
+      ],
+      "vulnerability_to": [
+        "hyperglycemia_AGEs_mesangial_expansion",
+        "hypertension_hyperfiltration",
+        "immune_complex_deposition",
+        "complement_activation"
+      ],
+      "pathophysiology_signs": [
+        "microalbuminuria_30_300mg_24h_earliest_DM",
+        "macroalbuminuria_above_300mg",
+        "decreased_GFR",
+        "hematuria_dysmorphic_RBCs",
+        "RBC_casts_glomerulonephritis",
+        "Kimmelstiel_Wilson_nodules_DM",
+        "crescents_RPGN"
+      ],
+      "associated_diseases": [
+        "Diabetic Nephropathy",
+        "IgA Nephropathy",
+        "Membranous Nephropathy",
+        "FSGS",
+        "Minimal Change Disease"
+      ]
+    },
+    "vasa_nervorum": {
+      "type": "microvasculature",
+      "location": "peripheral_nerves_endoneurium_perineurium",
+      "supplied_by": [
+        "small_arterioles_from_segmental_arteries"
+      ],
+      "drained_by": [
+        "small_venules"
+      ],
+      "anatomic_features": [
+        "perfuse_axons_and_Schwann_cells",
+        "blood_nerve_barrier",
+        "limited_collateral_supply"
+      ],
+      "vulnerability_to": [
+        "diabetes_AGE_accumulation_polyol_pathway",
+        "vasculitis_immune",
+        "atherosclerosis",
+        "compression_chronic"
+      ],
+      "pathophysiology_signs": [
+        "distal_symmetric_polyneuropathy_DM_classic",
+        "stocking_glove_distribution",
+        "loss_of_vibration_proprioception_first_large_fibers",
+        "loss_of_pain_temperature_late_small_fibers",
+        "mononeuritis_multiplex_vasculitis"
+      ],
+      "associated_diseases": [
+        "Diabetic Peripheral Neuropathy",
+        "Vasculitic Neuropathy",
+        "Critical Limb Ischemia neuropathy"
+      ]
+    },
+    "dermal_capillaries": {
+      "type": "microvasculature",
+      "location": "dermal_papillae_subpapillary_plexus",
+      "supplied_by": [
+        "dermal_arterial_plexus_from_subcutaneous"
+      ],
+      "drained_by": [
+        "dermal_venous_plexus"
+      ],
+      "anatomic_features": [
+        "papillary_loops_thermoregulation",
+        "arteriovenous_anastomoses_fingers_face",
+        "rich_innervation"
+      ],
+      "vulnerability_to": [
+        "raynaud_vasospasm",
+        "vasculitis",
+        "calciphylaxis_uremic",
+        "venous_hypertension"
+      ],
+      "pathophysiology_signs": [
+        "petechiae",
+        "purpura_palpable_vasculitis",
+        "livedo_reticularis_lattice_pattern",
+        "Raynaud_phenomenon_color_changes_white_blue_red",
+        "stasis_dermatitis"
+      ],
+      "associated_diseases": [
+        "Vasculitis_cutaneous",
+        "Raynaud's Phenomenon",
+        "Stasis Dermatitis"
+      ]
+    },
+    "pulmonary_capillaries": {
+      "type": "microvasculature",
+      "location": "alveolar_capillary_membrane",
+      "supplied_by": [
+        "pulmonary_arteries"
+      ],
+      "drained_by": [
+        "pulmonary_veins"
+      ],
+      "anatomic_features": [
+        "thin_alveolar_capillary_membrane",
+        "huge_surface_area_70_m2",
+        "low_pressure_system"
+      ],
+      "vulnerability_to": [
+        "ARDS_inflammation",
+        "pulmonary_edema_hydrostatic",
+        "PE_obstruction",
+        "vasculitis"
+      ],
+      "pathophysiology_signs": [
+        "VQ_mismatch",
+        "decreased_DLCO",
+        "alveolar_hemorrhage_DAH",
+        "ARDS_PaO2_FiO2_below_300"
+      ],
+      "associated_diseases": [
+        "ARDS",
+        "Diffuse Alveolar Hemorrhage",
+        "Pulmonary Capillaritis"
+      ]
+    },
+    "coronary_microvasculature": {
+      "type": "microvasculature",
+      "location": "myocardial_intramural",
+      "supplied_by": [
+        "epicardial_coronary_arteries_then_intramural_branches"
+      ],
+      "drained_by": [
+        "coronary_sinus_thebesian_veins"
+      ],
+      "anatomic_features": [
+        "dense_capillary_network",
+        "high_oxygen_extraction_baseline"
+      ],
+      "vulnerability_to": [
+        "microvascular_dysfunction_endothelial",
+        "diabetic_microangiopathy",
+        "vasospasm"
+      ],
+      "pathophysiology_signs": [
+        "angina_with_normal_coronaries",
+        "decreased_coronary_flow_reserve",
+        "increased_filling_pressures_HFpEF"
+      ],
+      "associated_diseases": [
+        "Microvascular Angina",
+        "HFpEF",
+        "Diabetic Cardiomyopathy"
+      ]
+    },
+    "splanchnic_capillaries_gut_mucosa": {
+      "type": "microvasculature",
+      "location": "intestinal_villi_mucosal_layer",
+      "supplied_by": [
+        "mesenteric_arteries_arcuate_arteries"
+      ],
+      "drained_by": [
+        "mesenteric_veins_to_portal_system"
+      ],
+      "anatomic_features": [
+        "countercurrent_exchange_villus",
+        "watershed_zones_splenic_flexure"
+      ],
+      "vulnerability_to": [
+        "hypoperfusion_shock",
+        "embolism_AFib",
+        "atherosclerosis_chronic"
+      ],
+      "pathophysiology_signs": [
+        "intestinal_ischemia_pain_out_of_proportion",
+        "lactic_acidosis_late",
+        "bloody_diarrhea_ischemic_colitis",
+        "thumbprinting_imaging"
+      ],
+      "associated_diseases": [
+        "Acute Mesenteric Ischemia",
+        "Chronic Mesenteric Ischemia",
+        "Ischemic Colitis"
+      ]
+    }
+  }
+}

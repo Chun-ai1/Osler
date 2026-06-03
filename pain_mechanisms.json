@@ -1,0 +1,62 @@
+{
+  "_meta": {
+    "description": "Rules for pain mechanism types and migration patterns",
+    "version": "1.0"
+  },
+  "rules": {
+    "visceral_pain": {
+      "character": [
+        "dull",
+        "aching",
+        "poorly_localized",
+        "diffuse"
+      ],
+      "localization": "midline_segmental",
+      "occurs_when": "organ_distention OR organ_ischemia OR organ_inflammation_early",
+      "neural_pathway": "afferent_via_sympathetic_chain → spinal_cord_level"
+    },
+    "somatic_pain": {
+      "character": [
+        "sharp",
+        "well_localized",
+        "tender_to_palpation"
+      ],
+      "localization": "directly_at_organ_location",
+      "occurs_when": "parietal_peritoneum_irritation OR pleural_irritation OR skin_muscle",
+      "neural_pathway": "afferent_via_spinal_nerve → direct_somatic_innervation"
+    },
+    "referred_pain": {
+      "character": [
+        "dull",
+        "aching"
+      ],
+      "localization": "distant_dermatome_sharing_spinal_level",
+      "examples": [
+        "diaphragm (C3-C5) → shoulder tip",
+        "MI (T1-T4) → left arm (T1)",
+        "gallbladder rupture → right shoulder (phrenic)",
+        "appendicitis (T10 visceral) → periumbilical"
+      ]
+    },
+    "migration_pattern": {
+      "phase_1_visceral": "umbilical/epigastric/suprapubic by gut region",
+      "phase_2_somatic": "moves to actual organ location once parietal involvement",
+      "example_appendicitis": [
+        {
+          "hour": 0,
+          "type": "visceral",
+          "location": "periumbilical (T10)"
+        },
+        {
+          "hour": 12,
+          "type": "transitional"
+        },
+        {
+          "hour": 24,
+          "type": "somatic",
+          "location": "RLQ (T12-L1, McBurney)"
+        }
+      ]
+    }
+  }
+}

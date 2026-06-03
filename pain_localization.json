@@ -1,0 +1,33 @@
+{
+  "_meta": {
+    "description": "Pain location term → body zone mapping",
+    "version": "1.0"
+  },
+  "pain_to_zone": {
+    "headache": "head",
+    "neck_pain": "neck",
+    "stiff_neck": "neck",
+    "chest_pain": "thorax_central",
+    "left_chest_pain": "left_thorax",
+    "right_chest_pain": "right_thorax",
+    "epigastric_pain": "epigastric",
+    "right_upper_quadrant": "ruq",
+    "ruq_pain": "ruq",
+    "left_upper_quadrant": "luq",
+    "luq_pain": "luq",
+    "right_lower_quadrant": "rlq",
+    "rlq_pain": "rlq",
+    "mcburney_point": "rlq",
+    "left_lower_quadrant": "llq",
+    "llq_pain": "llq",
+    "umbilical_pain": "umbilical",
+    "periumbilical_pain": "umbilical",
+    "suprapubic_pain": "suprapubic",
+    "right_flank_pain": "right_flank",
+    "flank_pain": "right_flank",
+    "left_flank_pain": "left_flank",
+    "back_pain": "lower_back",
+    "pelvic_pain": "pelvis",
+    "abdominal_pain": "umbilical"
+  }
+}

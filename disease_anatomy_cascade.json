@@ -1,0 +1,1354 @@
+{
+  "_metadata": {
+    "description": "Disease anatomy fingerprints. Cascade-derived from registry organ + atlas + additional_sites.",
+    "generated_by": "tools/build_disease_anatomy_cascade.py",
+    "stats": {
+      "total": 118,
+      "cascade_derived": 118,
+      "with_additional_sites": 2,
+      "no_atlas_match": 0,
+      "fallback_alias": 62
+    }
+  },
+  "diseases": {
+    "acute_bacterial_meningitis": {
+      "primary": [
+        "meninges"
+      ],
+      "zones": [
+        "head"
+      ],
+      "system": "neurologic",
+      "_source": "cascade_derived",
+      "_registry_organ": "meninges"
+    },
+    "acute_gastroenteritis": {
+      "primary": [
+        "duodenum",
+        "jejunum",
+        "ileum"
+      ],
+      "zones": [
+        "abdomen"
+      ],
+      "system": "gi",
+      "_source": "fallback_alias",
+      "_registry_organ": "small_intestine"
+    },
+    "acute_pyelonephritis": {
+      "primary": [
+        "r_kidney",
+        "l_kidney"
+      ],
+      "zones": [
+        "abdomen"
+      ],
+      "system": "renal",
+      "_source": "fallback_alias",
+      "_registry_organ": "kidney"
+    },
+    "acute_uncomplicated_cystitis": {
+      "primary": [
+        "bladder"
+      ],
+      "zones": [
+        "pelvis"
+      ],
+      "system": "renal",
+      "_source": "cascade_derived",
+      "_registry_organ": "bladder"
+    },
+    "acute_viral_upper_respiratory_infection": {
+      "primary": [
+        "pharynx"
+      ],
+      "zones": [
+        "neck"
+      ],
+      "system": "gi",
+      "_source": "fallback_alias",
+      "_registry_organ": "upper_respiratory_tract"
+    },
+    "asthma_exacerbation": {
+      "primary": [
+        "r_bronchus",
+        "l_bronchus"
+      ],
+      "zones": [
+        "thorax"
+      ],
+      "system": "respiratory",
+      "_source": "fallback_alias",
+      "_registry_organ": "bronchus"
+    },
+    "community_acquired_pneumonia": {
+      "primary": [
+        "lungs"
+      ],
+      "zones": [
+        "thorax"
+      ],
+      "system": "respiratory",
+      "_source": "cascade_derived",
+      "_registry_organ": "lungs"
+    },
+    "diabetes_mellitus_type_2": {
+      "primary": [
+        "pancreas_islets"
+      ],
+      "zones": [
+        "abdomen"
+      ],
+      "system": "endocrine",
+      "_source": "fallback_alias",
+      "_registry_organ": "pancreas_islets"
+    },
+    "gastroesophageal_reflux_disease": {
+      "primary": [
+        "esophagus",
+        "lower_esophageal_sphincter"
+      ],
+      "zones": [
+        "thorax"
+      ],
+      "system": "gi",
+      "_source": "cascade_derived",
+      "_registry_organ": "stomach"
+    },
+    "hypertensive_emergency": {
+      "primary": [
+        "aorta"
+      ],
+      "zones": [
+        "thorax"
+      ],
+      "system": "cardiovascular",
+      "_source": "fallback_alias",
+      "_registry_organ": "vasculature_systemic"
+    },
+    "migraine": {
+      "primary": [
+        "brain"
+      ],
+      "zones": [
+        "head"
+      ],
+      "system": "neurologic",
+      "_source": "cascade_derived",
+      "_registry_organ": "brain"
+    },
+    "stable_angina_pectoris": {
+      "primary": [
+        "coronary_aa"
+      ],
+      "zones": [
+        "thorax"
+      ],
+      "system": "cardiovascular",
+      "_source": "fallback_alias",
+      "_registry_organ": "coronary_arteries"
+    },
+    "tension_type_headache": {
+      "primary": [
+        "brain"
+      ],
+      "zones": [
+        "head"
+      ],
+      "system": "neurologic",
+      "_source": "cascade_derived",
+      "_registry_organ": "brain"
+    },
+    "sepsis": {
+      "primary": [
+        "aorta"
+      ],
+      "zones": [
+        "thorax"
+      ],
+      "system": "cardiovascular",
+      "_source": "fallback_alias",
+      "_registry_organ": "vasculature_systemic"
+    },
+    "congestive_heart_failure": {
+      "primary": [
+        "heart"
+      ],
+      "zones": [
+        "thorax"
+      ],
+      "system": "cardiovascular",
+      "_source": "cascade_derived",
+      "_registry_organ": "heart"
+    },
+    "copd": {
+      "primary": [
+        "r_bronchus",
+        "l_bronchus"
+      ],
+      "zones": [
+        "thorax"
+      ],
+      "system": "respiratory",
+      "_source": "fallback_alias",
+      "_registry_organ": "bronchus"
+    },
+    "heart_attack_mi": {
+      "primary": [
+        "heart"
+      ],
+      "zones": [
+        "thorax"
+      ],
+      "system": "cardiovascular",
+      "_source": "cascade_derived",
+      "_registry_organ": "heart"
+    },
+    "acute_pulmonary_embolism": {
+      "primary": [
+        "pulm_aa"
+      ],
+      "zones": [
+        "thorax"
+      ],
+      "system": "cardiovascular",
+      "_source": "fallback_alias",
+      "_registry_organ": "pulmonary_arteries"
+    },
+    "ards": {
+      "primary": [
+        "lungs"
+      ],
+      "zones": [
+        "thorax"
+      ],
+      "system": "respiratory",
+      "_source": "cascade_derived",
+      "_registry_organ": "lungs"
+    },
+    "diabetic_ketoacidosis": {
+      "primary": [
+        "pancreas_islets"
+      ],
+      "zones": [
+        "abdomen"
+      ],
+      "system": "endocrine",
+      "_source": "fallback_alias",
+      "_registry_organ": "pancreas_islets"
+    },
+    "anaphylaxis": {
+      "primary": [
+        "spleen",
+        "bone_marrow"
+      ],
+      "zones": [
+        "abdomen",
+        "whole"
+      ],
+      "system": "hematologic",
+      "_source": "fallback_alias",
+      "_registry_organ": "systemic_immune"
+    },
+    "acute_pancreatitis": {
+      "primary": [
+        "pancreas"
+      ],
+      "zones": [
+        "abdomen"
+      ],
+      "system": "hepatobiliary",
+      "_source": "cascade_derived",
+      "_registry_organ": "pancreas"
+    },
+    "aortic_dissection": {
+      "primary": [
+        "aorta"
+      ],
+      "zones": [
+        "thorax"
+      ],
+      "system": "cardiovascular",
+      "_source": "cascade_derived",
+      "_registry_organ": "aorta"
+    },
+    "acute_cholecystitis": {
+      "primary": [
+        "gallbladder"
+      ],
+      "zones": [
+        "abdomen"
+      ],
+      "system": "hepatobiliary",
+      "_source": "cascade_derived",
+      "_registry_organ": "gallbladder"
+    },
+    "acute_diverticulitis": {
+      "primary": [
+        "desc_colon"
+      ],
+      "zones": [
+        "abdomen"
+      ],
+      "system": "gi",
+      "_source": "fallback_alias",
+      "_registry_organ": "desc_colon"
+    },
+    "atrial_fibrillation": {
+      "primary": [
+        "heart"
+      ],
+      "zones": [
+        "thorax"
+      ],
+      "system": "cardiovascular",
+      "_source": "cascade_derived",
+      "_registry_organ": "heart"
+    },
+    "ischemic_stroke": {
+      "primary": [
+        "brain"
+      ],
+      "zones": [
+        "head"
+      ],
+      "system": "neurologic",
+      "_source": "cascade_derived",
+      "_registry_organ": "brain"
+    },
+    "type_1_diabetes_mellitus": {
+      "primary": [
+        "pancreas_islets"
+      ],
+      "zones": [
+        "abdomen"
+      ],
+      "system": "endocrine",
+      "_source": "fallback_alias",
+      "_registry_organ": "pancreas_islets"
+    },
+    "primary_hypothyroidism": {
+      "primary": [
+        "thyroid"
+      ],
+      "zones": [
+        "neck"
+      ],
+      "system": "endocrine",
+      "_source": "cascade_derived",
+      "_registry_organ": "thyroid"
+    },
+    "cirrhosis": {
+      "primary": [
+        "liver"
+      ],
+      "zones": [
+        "abdomen"
+      ],
+      "system": "hepatobiliary",
+      "_source": "cascade_derived",
+      "_registry_organ": "liver"
+    },
+    "chronic_kidney_disease": {
+      "primary": [
+        "r_kidney",
+        "l_kidney"
+      ],
+      "zones": [
+        "abdomen"
+      ],
+      "system": "renal",
+      "_source": "fallback_alias",
+      "_registry_organ": "kidney"
+    },
+    "cellulitis": {
+      "primary": [
+        "skin"
+      ],
+      "zones": [
+        "whole"
+      ],
+      "system": "integumentary",
+      "_source": "cascade_derived",
+      "_registry_organ": "skin"
+    },
+    "acute_appendicitis": {
+      "primary": [
+        "appendix"
+      ],
+      "zones": [
+        "abdomen"
+      ],
+      "system": "gi",
+      "_source": "cascade_derived",
+      "_registry_organ": "appendix"
+    },
+    "deep_vein_thrombosis": {
+      "primary": [
+        "blood"
+      ],
+      "zones": [
+        "whole"
+      ],
+      "system": "hematologic",
+      "_source": "fallback_alias",
+      "_registry_organ": "blood"
+    },
+    "acute_kidney_injury": {
+      "primary": [
+        "r_kidney",
+        "l_kidney"
+      ],
+      "zones": [
+        "abdomen"
+      ],
+      "system": "renal",
+      "_source": "fallback_alias",
+      "_registry_organ": "kidney"
+    },
+    "acute_bronchitis": {
+      "primary": [
+        "r_bronchus",
+        "l_bronchus"
+      ],
+      "zones": [
+        "thorax"
+      ],
+      "system": "respiratory",
+      "_source": "fallback_alias",
+      "_registry_organ": "bronchus"
+    },
+    "pneumothorax": {
+      "primary": [
+        "pleura"
+      ],
+      "zones": [
+        "thorax"
+      ],
+      "system": "respiratory",
+      "_source": "cascade_derived",
+      "_registry_organ": "pleura"
+    },
+    "acute_pericarditis": {
+      "primary": [
+        "heart"
+      ],
+      "zones": [
+        "thorax"
+      ],
+      "system": "cardiovascular",
+      "_source": "fallback_alias",
+      "_registry_organ": "pericardium"
+    },
+    "infective_endocarditis": {
+      "primary": [
+        "heart"
+      ],
+      "zones": [
+        "thorax"
+      ],
+      "system": "cardiovascular",
+      "_source": "cascade_derived",
+      "_registry_organ": "heart"
+    },
+    "acute_pulmonary_edema": {
+      "primary": [
+        "heart"
+      ],
+      "zones": [
+        "thorax"
+      ],
+      "system": "cardiovascular",
+      "_source": "cascade_derived",
+      "_registry_organ": "heart"
+    },
+    "acute_hepatitis": {
+      "primary": [
+        "liver"
+      ],
+      "zones": [
+        "abdomen"
+      ],
+      "system": "hepatobiliary",
+      "_source": "cascade_derived",
+      "_registry_organ": "liver"
+    },
+    "inflammatory_bowel_disease": {
+      "primary": [
+        "sig_colon"
+      ],
+      "zones": [
+        "pelvis"
+      ],
+      "system": "gi",
+      "_source": "fallback_alias",
+      "_registry_organ": "sig_colon"
+    },
+    "acute_cholangitis": {
+      "primary": [
+        "bile_duct"
+      ],
+      "zones": [
+        "abdomen"
+      ],
+      "system": "hepatobiliary",
+      "_source": "cascade_derived",
+      "_registry_organ": "bile_duct"
+    },
+    "small_bowel_obstruction": {
+      "primary": [
+        "duodenum",
+        "jejunum",
+        "ileum"
+      ],
+      "zones": [
+        "abdomen"
+      ],
+      "system": "gi",
+      "_source": "fallback_alias",
+      "_registry_organ": "small_intestine"
+    },
+    "subarachnoid_hemorrhage": {
+      "primary": [
+        "brain"
+      ],
+      "zones": [
+        "head"
+      ],
+      "system": "neurologic",
+      "_source": "cascade_derived",
+      "_registry_organ": "brain"
+    },
+    "bells_palsy": {
+      "primary": [
+        "facial_nerve"
+      ],
+      "zones": [
+        "head"
+      ],
+      "system": "neurologic",
+      "_source": "fallback_alias",
+      "_registry_organ": "facial_nerve"
+    },
+    "generalized_tonic_clonic_seizure": {
+      "primary": [
+        "brain"
+      ],
+      "zones": [
+        "head"
+      ],
+      "system": "neurologic",
+      "_source": "cascade_derived",
+      "_registry_organ": "brain"
+    },
+    "hyperthyroidism_graves": {
+      "primary": [
+        "thyroid"
+      ],
+      "zones": [
+        "neck"
+      ],
+      "system": "endocrine",
+      "_source": "cascade_derived",
+      "_registry_organ": "thyroid"
+    },
+    "iron_deficiency_anemia": {
+      "primary": [
+        "blood"
+      ],
+      "zones": [
+        "whole"
+      ],
+      "system": "hematologic",
+      "_source": "fallback_alias",
+      "_registry_organ": "blood"
+    },
+    "adrenal_insufficiency": {
+      "primary": [
+        "r_adrenal"
+      ],
+      "zones": [
+        "abdomen"
+      ],
+      "system": "endocrine",
+      "_source": "cascade_derived",
+      "_registry_organ": "r_adrenal"
+    },
+    "acute_gout": {
+      "primary": [
+        "mtp_joint",
+        "mcp_joint",
+        "knee_joint",
+        "ankle_joint"
+      ],
+      "zones": [
+        "limbs"
+      ],
+      "system": "msk",
+      "_source": "additional_sites",
+      "_registry_organ": "joint",
+      "_additional_sites": [
+        "mtp_joint",
+        "ankle_joint",
+        "knee_joint"
+      ]
+    },
+    "sciatica": {
+      "primary": [
+        "spinal_cord"
+      ],
+      "zones": [
+        "spine"
+      ],
+      "system": "neurologic",
+      "_source": "fallback_alias",
+      "_registry_organ": "spinal_nerves"
+    },
+    "acute_otitis_media": {
+      "primary": [
+        "middle_ear"
+      ],
+      "zones": [
+        "head"
+      ],
+      "system": "sensory",
+      "_source": "fallback_alias",
+      "_registry_organ": "middle_ear"
+    },
+    "chronic_essential_hypertension": {
+      "primary": [
+        "aorta"
+      ],
+      "zones": [
+        "thorax"
+      ],
+      "system": "cardiovascular",
+      "_source": "fallback_alias",
+      "_registry_organ": "vasculature_systemic"
+    },
+    "hyperlipidemia": {
+      "primary": [
+        "aorta"
+      ],
+      "zones": [
+        "thorax"
+      ],
+      "system": "cardiovascular",
+      "_source": "fallback_alias",
+      "_registry_organ": "vasculature_systemic"
+    },
+    "dilated_cardiomyopathy": {
+      "primary": [
+        "heart"
+      ],
+      "zones": [
+        "thorax"
+      ],
+      "system": "cardiovascular",
+      "_source": "cascade_derived",
+      "_registry_organ": "heart"
+    },
+    "mitral_regurgitation": {
+      "primary": [
+        "heart"
+      ],
+      "zones": [
+        "thorax"
+      ],
+      "system": "cardiovascular",
+      "_source": "cascade_derived",
+      "_registry_organ": "heart"
+    },
+    "aortic_stenosis": {
+      "primary": [
+        "heart"
+      ],
+      "zones": [
+        "thorax"
+      ],
+      "system": "cardiovascular",
+      "_source": "cascade_derived",
+      "_registry_organ": "heart"
+    },
+    "bradyarrhythmia": {
+      "primary": [
+        "heart"
+      ],
+      "zones": [
+        "thorax"
+      ],
+      "system": "cardiovascular",
+      "_source": "cascade_derived",
+      "_registry_organ": "heart"
+    },
+    "supraventricular_tachycardia": {
+      "primary": [
+        "heart"
+      ],
+      "zones": [
+        "thorax"
+      ],
+      "system": "cardiovascular",
+      "_source": "cascade_derived",
+      "_registry_organ": "heart"
+    },
+    "vasovagal_syncope": {
+      "primary": [
+        "brain"
+      ],
+      "zones": [
+        "head"
+      ],
+      "system": "neurologic",
+      "_source": "cascade_derived",
+      "_registry_organ": "brain"
+    },
+    "peripheral_artery_disease": {
+      "primary": [
+        "aorta"
+      ],
+      "zones": [
+        "thorax"
+      ],
+      "system": "cardiovascular",
+      "_source": "fallback_alias",
+      "_registry_organ": "vasculature_systemic"
+    },
+    "varicose_veins": {
+      "primary": [
+        "aorta"
+      ],
+      "zones": [
+        "thorax"
+      ],
+      "system": "cardiovascular",
+      "_source": "fallback_alias",
+      "_registry_organ": "vasculature_systemic"
+    },
+    "erosive_esophagitis": {
+      "primary": [
+        "esophagus"
+      ],
+      "zones": [
+        "thorax"
+      ],
+      "system": "gi",
+      "_source": "cascade_derived",
+      "_registry_organ": "esophagus"
+    },
+    "peptic_ulcer_disease": {
+      "primary": [
+        "stomach"
+      ],
+      "zones": [
+        "abdomen"
+      ],
+      "system": "gi",
+      "_source": "cascade_derived",
+      "_registry_organ": "stomach"
+    },
+    "irritable_bowel_syndrome": {
+      "primary": [
+        "asc_colon",
+        "desc_colon"
+      ],
+      "zones": [
+        "abdomen"
+      ],
+      "system": "gi",
+      "_source": "fallback_alias",
+      "_registry_organ": "colon"
+    },
+    "colorectal_cancer": {
+      "primary": [
+        "asc_colon"
+      ],
+      "zones": [
+        "abdomen"
+      ],
+      "system": "gi",
+      "_source": "fallback_alias",
+      "_registry_organ": "asc_colon"
+    },
+    "hemorrhoids": {
+      "primary": [
+        "rectum"
+      ],
+      "zones": [
+        "pelvis"
+      ],
+      "system": "gi",
+      "_source": "cascade_derived",
+      "_registry_organ": "rectum"
+    },
+    "non_alcoholic_fatty_liver_disease": {
+      "primary": [
+        "liver"
+      ],
+      "zones": [
+        "abdomen"
+      ],
+      "system": "hepatobiliary",
+      "_source": "cascade_derived",
+      "_registry_organ": "liver"
+    },
+    "cholelithiasis": {
+      "primary": [
+        "gallbladder"
+      ],
+      "zones": [
+        "abdomen"
+      ],
+      "system": "hepatobiliary",
+      "_source": "cascade_derived",
+      "_registry_organ": "gallbladder"
+    },
+    "alcoholic_hepatitis": {
+      "primary": [
+        "liver"
+      ],
+      "zones": [
+        "abdomen"
+      ],
+      "system": "hepatobiliary",
+      "_source": "cascade_derived",
+      "_registry_organ": "liver"
+    },
+    "chronic_pancreatitis": {
+      "primary": [
+        "pancreas"
+      ],
+      "zones": [
+        "abdomen"
+      ],
+      "system": "hepatobiliary",
+      "_source": "cascade_derived",
+      "_registry_organ": "pancreas"
+    },
+    "celiac_disease": {
+      "primary": [
+        "duodenum",
+        "jejunum",
+        "ileum"
+      ],
+      "zones": [
+        "abdomen"
+      ],
+      "system": "gi",
+      "_source": "fallback_alias",
+      "_registry_organ": "small_intestine"
+    },
+    "acute_sinusitis": {
+      "primary": [
+        "pharynx"
+      ],
+      "zones": [
+        "neck"
+      ],
+      "system": "gi",
+      "_source": "fallback_alias",
+      "_registry_organ": "upper_respiratory_tract"
+    },
+    "streptococcal_pharyngitis": {
+      "primary": [
+        "pharynx"
+      ],
+      "zones": [
+        "neck"
+      ],
+      "system": "gi",
+      "_source": "fallback_alias",
+      "_registry_organ": "throat"
+    },
+    "allergic_rhinitis": {
+      "primary": [
+        "pharynx"
+      ],
+      "zones": [
+        "neck"
+      ],
+      "system": "gi",
+      "_source": "fallback_alias",
+      "_registry_organ": "nose"
+    },
+    "pulmonary_tuberculosis": {
+      "primary": [
+        "lungs"
+      ],
+      "zones": [
+        "thorax"
+      ],
+      "system": "respiratory",
+      "_source": "cascade_derived",
+      "_registry_organ": "lungs"
+    },
+    "lung_cancer": {
+      "primary": [
+        "lungs"
+      ],
+      "zones": [
+        "thorax"
+      ],
+      "system": "respiratory",
+      "_source": "cascade_derived",
+      "_registry_organ": "lungs"
+    },
+    "serous_otitis_media": {
+      "primary": [
+        "middle_ear"
+      ],
+      "zones": [
+        "head"
+      ],
+      "system": "sensory",
+      "_source": "fallback_alias",
+      "_registry_organ": "middle_ear"
+    },
+    "acute_angle_closure_glaucoma": {
+      "primary": [
+        "eye"
+      ],
+      "zones": [
+        "head"
+      ],
+      "system": "sensory",
+      "_source": "fallback_alias",
+      "_registry_organ": "eye"
+    },
+    "conjunctivitis": {
+      "primary": [
+        "eye"
+      ],
+      "zones": [
+        "head"
+      ],
+      "system": "sensory",
+      "_source": "fallback_alias",
+      "_registry_organ": "eye"
+    },
+    "bronchiectasis": {
+      "primary": [
+        "r_bronchus",
+        "l_bronchus"
+      ],
+      "zones": [
+        "thorax"
+      ],
+      "system": "respiratory",
+      "_source": "fallback_alias",
+      "_registry_organ": "bronchus"
+    },
+    "idiopathic_pulmonary_fibrosis": {
+      "primary": [
+        "lungs"
+      ],
+      "zones": [
+        "thorax"
+      ],
+      "system": "respiratory",
+      "_source": "cascade_derived",
+      "_registry_organ": "lungs"
+    },
+    "benign_prostatic_hyperplasia": {
+      "primary": [
+        "prostate"
+      ],
+      "zones": [
+        "pelvis"
+      ],
+      "system": "reproductive",
+      "_source": "cascade_derived",
+      "_registry_organ": "prostate"
+    },
+    "prostate_cancer": {
+      "primary": [
+        "prostate"
+      ],
+      "zones": [
+        "pelvis"
+      ],
+      "system": "reproductive",
+      "_source": "cascade_derived",
+      "_registry_organ": "prostate"
+    },
+    "endometriosis": {
+      "primary": [
+        "uterus"
+      ],
+      "zones": [
+        "pelvis"
+      ],
+      "system": "reproductive",
+      "_source": "cascade_derived",
+      "_registry_organ": "uterus"
+    },
+    "pcos": {
+      "primary": [
+        "ovaries"
+      ],
+      "zones": [
+        "pelvis"
+      ],
+      "system": "reproductive",
+      "_source": "fallback_alias",
+      "_registry_organ": "ovary"
+    },
+    "ectopic_pregnancy": {
+      "primary": [
+        "uterus"
+      ],
+      "zones": [
+        "pelvis"
+      ],
+      "system": "reproductive",
+      "_source": "cascade_derived",
+      "_registry_organ": "uterus"
+    },
+    "breast_cancer": {
+      "primary": [
+        "breast"
+      ],
+      "zones": [
+        "thorax"
+      ],
+      "system": "reproductive",
+      "_source": "fallback_alias",
+      "_registry_organ": "breast"
+    },
+    "uterine_fibroids": {
+      "primary": [
+        "uterus"
+      ],
+      "zones": [
+        "pelvis"
+      ],
+      "system": "reproductive",
+      "_source": "cascade_derived",
+      "_registry_organ": "uterus"
+    },
+    "nephrolithiasis": {
+      "primary": [
+        "r_kidney",
+        "l_kidney"
+      ],
+      "zones": [
+        "abdomen"
+      ],
+      "system": "renal",
+      "_source": "fallback_alias",
+      "_registry_organ": "kidney"
+    },
+    "hypoglycemia": {
+      "primary": [
+        "pancreas_islets"
+      ],
+      "zones": [
+        "abdomen"
+      ],
+      "system": "endocrine",
+      "_source": "fallback_alias",
+      "_registry_organ": "pancreas_islets"
+    },
+    "preeclampsia": {
+      "primary": [
+        "aorta"
+      ],
+      "zones": [
+        "thorax"
+      ],
+      "system": "cardiovascular",
+      "_source": "fallback_alias",
+      "_registry_organ": "vasculature_systemic"
+    },
+    "parkinson_disease": {
+      "primary": [
+        "brain"
+      ],
+      "zones": [
+        "head"
+      ],
+      "system": "neurologic",
+      "_source": "cascade_derived",
+      "_registry_organ": "brain"
+    },
+    "alzheimers_dementia": {
+      "primary": [
+        "brain"
+      ],
+      "zones": [
+        "head"
+      ],
+      "system": "neurologic",
+      "_source": "cascade_derived",
+      "_registry_organ": "brain"
+    },
+    "multiple_sclerosis": {
+      "primary": [
+        "brain"
+      ],
+      "zones": [
+        "head"
+      ],
+      "system": "neurologic",
+      "_source": "cascade_derived",
+      "_registry_organ": "brain"
+    },
+    "guillain_barre_syndrome": {
+      "primary": [
+        "spinal_cord"
+      ],
+      "zones": [
+        "spine"
+      ],
+      "system": "neurologic",
+      "_source": "fallback_alias",
+      "_registry_organ": "spinal_nerves"
+    },
+    "osteoporosis": {
+      "primary": [
+        "bone_marrow"
+      ],
+      "zones": [
+        "whole"
+      ],
+      "system": "hematologic",
+      "_source": "fallback_alias",
+      "_registry_organ": "bone"
+    },
+    "rheumatoid_arthritis": {
+      "primary": [
+        "mtp_joint",
+        "mcp_joint",
+        "knee_joint",
+        "pip_joint",
+        "wrist_joint"
+      ],
+      "zones": [
+        "limbs"
+      ],
+      "system": "msk",
+      "_source": "additional_sites",
+      "_registry_organ": "joint",
+      "_additional_sites": [
+        "mcp_joint",
+        "pip_joint",
+        "wrist_joint",
+        "mtp_joint"
+      ]
+    },
+    "immune_thrombocytopenia_itp": {
+      "primary": [
+        "blood"
+      ],
+      "zones": [
+        "whole"
+      ],
+      "system": "hematologic",
+      "_source": "fallback_alias",
+      "_registry_organ": "blood"
+    },
+    "atopic_dermatitis": {
+      "primary": [
+        "skin"
+      ],
+      "zones": [
+        "whole"
+      ],
+      "system": "integumentary",
+      "_source": "cascade_derived",
+      "_registry_organ": "skin"
+    },
+    "non_hodgkin_lymphoma": {
+      "primary": [
+        "cerv_ln",
+        "axil_ln",
+        "mes_ln"
+      ],
+      "zones": [
+        "abdomen",
+        "neck",
+        "thorax"
+      ],
+      "system": "lymphatic",
+      "_source": "fallback_alias",
+      "_registry_organ": "lymph_node"
+    },
+    "carpal_tunnel_syndrome": {
+      "primary": [
+        "median_nerve"
+      ],
+      "zones": [
+        "limbs"
+      ],
+      "system": "neurologic",
+      "_source": "fallback_alias",
+      "_registry_organ": "median_nerve"
+    },
+    "cubital_tunnel_syndrome": {
+      "primary": [
+        "ulnar_nerve"
+      ],
+      "zones": [
+        "limbs"
+      ],
+      "system": "neurologic",
+      "_source": "fallback_alias",
+      "_registry_organ": "ulnar_nerve"
+    },
+    "tarsal_tunnel_syndrome": {
+      "primary": [
+        "tibial_nerve"
+      ],
+      "zones": [
+        "limbs"
+      ],
+      "system": "neurologic",
+      "_source": "fallback_alias",
+      "_registry_organ": "tibial_nerve"
+    },
+    "peroneal_nerve_palsy": {
+      "primary": [
+        "common_peroneal_nerve"
+      ],
+      "zones": [
+        "limbs"
+      ],
+      "system": "neurologic",
+      "_source": "fallback_alias",
+      "_registry_organ": "common_peroneal_nerve"
+    },
+    "trigeminal_neuralgia": {
+      "primary": [
+        "trigeminal_nerve"
+      ],
+      "zones": [
+        "head"
+      ],
+      "system": "neurologic",
+      "_source": "fallback_alias",
+      "_registry_organ": "trigeminal_nerve"
+    },
+    "diabetic_retinopathy": {
+      "primary": [
+        "retina"
+      ],
+      "zones": [
+        "head"
+      ],
+      "system": "sensory",
+      "_source": "fallback_alias",
+      "_registry_organ": "retina"
+    },
+    "diabetic_nephropathy": {
+      "primary": [
+        "r_kidney",
+        "l_kidney"
+      ],
+      "zones": [
+        "abdomen"
+      ],
+      "system": "renal",
+      "_source": "fallback_alias",
+      "_registry_organ": "kidney"
+    },
+    "diabetic_peripheral_neuropathy": {
+      "primary": [
+        "spinal_cord"
+      ],
+      "zones": [
+        "spine"
+      ],
+      "system": "neurologic",
+      "_source": "fallback_alias",
+      "_registry_organ": "spinal_nerves"
+    },
+    "plantar_fasciitis": {
+      "primary": [
+        "skin"
+      ],
+      "zones": [
+        "whole"
+      ],
+      "system": "integumentary",
+      "_source": "cascade_derived",
+      "_registry_organ": "skin"
+    },
+    "rotator_cuff_tear_supraspinatus": {
+      "primary": [
+        "supraspinatus_muscle"
+      ],
+      "zones": [
+        "limbs"
+      ],
+      "system": "msk",
+      "_source": "fallback_alias",
+      "_registry_organ": "supraspinatus_muscle"
+    },
+    "piriformis_syndrome": {
+      "primary": [
+        "piriformis_muscle"
+      ],
+      "zones": [
+        "pelvis"
+      ],
+      "system": "msk",
+      "_source": "fallback_alias",
+      "_registry_organ": "piriformis_muscle"
+    },
+    "thoracic_outlet_syndrome": {
+      "primary": [
+        "brachial_plexus"
+      ],
+      "zones": [
+        "neck"
+      ],
+      "system": "neurologic",
+      "_source": "fallback_alias",
+      "_registry_organ": "brachial_plexus"
+    },
+    "acute_compartment_syndrome": {
+      "primary": [
+        "fascial_compartment_leg"
+      ],
+      "zones": [
+        "limbs"
+      ],
+      "system": "msk",
+      "_source": "fallback_alias",
+      "_registry_organ": "fascial_compartment_leg"
+    },
+    "cauda_equina_syndrome": {
+      "primary": [
+        "spinal_cord"
+      ],
+      "zones": [
+        "spine"
+      ],
+      "system": "neurologic",
+      "_source": "fallback_alias",
+      "_registry_organ": "cauda_equina"
+    },
+    "iliotibial_band_syndrome": {
+      "primary": [
+        "iliotibial_band"
+      ],
+      "zones": [
+        "limbs"
+      ],
+      "system": "msk",
+      "_source": "fallback_alias",
+      "_registry_organ": "iliotibial_band"
+    },
+    "thalamic_stroke_lacunar_type": {
+      "primary": [
+        "thalamus"
+      ],
+      "zones": [
+        "head"
+      ],
+      "system": "neurologic",
+      "_source": "cascade_derived",
+      "_registry_organ": "thalamus"
+    }
+  }
+}

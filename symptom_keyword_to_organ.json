@@ -1,0 +1,4819 @@
+{
+  "_meta": {
+    "description": "Reverse index: symptom keyword \u2192 candidate organs (filtered \u22648 organs)",
+    "total_keywords": 1334,
+    "use": "atlas propagation fallback when atlas.resolve fails"
+  },
+  "keyword_to_organs": {
+    "obstruction": [
+      "appendix",
+      "asc_colon",
+      "heart",
+      "nose",
+      "prostate",
+      "small_intestine"
+    ],
+    "somatic": [
+      "appendix"
+    ],
+    "rebound": [
+      "appendix",
+      "small_intestine"
+    ],
+    "high": [
+      "appendix",
+      "bile_duct",
+      "brain",
+      "common_peroneal_nerve",
+      "r_adrenal",
+      "small_intestine",
+      "spinal_nerves",
+      "thyroid"
+    ],
+    "visceral": [
+      "appendix",
+      "small_intestine"
+    ],
+    "leukocytosis": [
+      "appendix",
+      "desc_colon",
+      "gallbladder",
+      "joint"
+    ],
+    "immune": [
+      "appendix"
+    ],
+    "luminal": [
+      "appendix"
+    ],
+    "neutrophil": [
+      "appendix",
+      "bile_duct",
+      "desc_colon",
+      "joint",
+      "sig_colon"
+    ],
+    "mechanism": [
+      "meninges"
+    ],
+    "headache": [
+      "blood",
+      "brain",
+      "bronchus",
+      "eye",
+      "meninges",
+      "throat",
+      "upper_respiratory_tract",
+      "vasculature_systemic"
+    ],
+    "meningeal": [
+      "meninges"
+    ],
+    "stiffness": [
+      "brain",
+      "joint",
+      "meninges"
+    ],
+    "phonophobia": [
+      "brain",
+      "meninges"
+    ],
+    "trigeminal": [
+      "meninges",
+      "trigeminal_nerve"
+    ],
+    "photophobia": [
+      "brain",
+      "meninges"
+    ],
+    "same": [
+      "bronchus",
+      "meninges"
+    ],
+    "neck": [
+      "brachial_plexus",
+      "brain",
+      "meninges"
+    ],
+    "hypothalamus": [
+      "meninges"
+    ],
+    "infection": [
+      "bile_duct",
+      "bladder",
+      "kidney",
+      "meninges",
+      "skin"
+    ],
+    "hoarseness": [
+      "lungs",
+      "systemic_immune"
+    ],
+    "lesions": [
+      "heart",
+      "lungs",
+      "sig_colon"
+    ],
+    "fine": [
+      "lungs",
+      "thyroid"
+    ],
+    "lymphatic": [
+      "lungs"
+    ],
+    "systemic": [
+      "bile_duct",
+      "lungs"
+    ],
+    "tinged": [
+      "lungs",
+      "pulmonary_arteries"
+    ],
+    "night": [
+      "lungs",
+      "lymph_node",
+      "supraspinatus_muscle"
+    ],
+    "bone": [
+      "breast",
+      "kidney",
+      "lungs",
+      "lymph_node",
+      "prostate"
+    ],
+    "productive": [
+      "bronchus",
+      "lungs"
+    ],
+    "cough": [
+      "bronchus",
+      "lungs",
+      "throat",
+      "upper_respiratory_tract"
+    ],
+    "blood": [
+      "aorta",
+      "asc_colon",
+      "brain",
+      "kidney",
+      "lungs",
+      "pulmonary_arteries",
+      "rectum",
+      "vasculature_systemic"
+    ],
+    "primary": [
+      "lungs",
+      "r_adrenal",
+      "thyroid"
+    ],
+    "responding": [
+      "lungs"
+    ],
+    "inspiratory": [
+      "lungs"
+    ],
+    "upper": [
+      "lungs",
+      "systemic_immune",
+      "vasculature_systemic"
+    ],
+    "sweats": [
+      "lungs",
+      "lymph_node"
+    ],
+    "granuloma": [
+      "lungs"
+    ],
+    "fingers": [
+      "bronchus",
+      "lungs"
+    ],
+    "respiratory": [
+      "brain",
+      "bronchus",
+      "lungs",
+      "pulmonary_arteries",
+      "spinal_nerves",
+      "vasculature_systemic"
+    ],
+    "drenching": [
+      "lungs",
+      "lymph_node"
+    ],
+    "consolidation": [
+      "lungs"
+    ],
+    "tuberculosis": [
+      "lungs"
+    ],
+    "cavitary": [
+      "lungs"
+    ],
+    "recurrent": [
+      "bronchus",
+      "lungs",
+      "prostate"
+    ],
+    "barrier": [
+      "lungs",
+      "skin"
+    ],
+    "anorexia": [
+      "desc_colon",
+      "kidney",
+      "liver",
+      "lungs",
+      "middle_ear",
+      "r_adrenal"
+    ],
+    "pulmonary": [
+      "blood",
+      "heart",
+      "kidney",
+      "lungs",
+      "vasculature_systemic"
+    ],
+    "alveolar": [
+      "bronchus",
+      "lungs"
+    ],
+    "brain": [
+      "lungs",
+      "pancreas_islets"
+    ],
+    "exertional": [
+      "coronary_arteries",
+      "heart",
+      "lungs",
+      "vasculature_systemic"
+    ],
+    "complex": [
+      "lungs"
+    ],
+    "cancer": [
+      "asc_colon",
+      "breast",
+      "lungs",
+      "prostate"
+    ],
+    "hypoxemia": [
+      "lungs"
+    ],
+    "compliance": [
+      "lungs"
+    ],
+    "central": [
+      "lungs",
+      "ovary",
+      "retina"
+    ],
+    "pleuritic": [
+      "leg_veins",
+      "lungs",
+      "pericardium",
+      "pleura",
+      "pulmonary_arteries"
+    ],
+    "diffusion": [
+      "lungs"
+    ],
+    "dlco": [
+      "lungs"
+    ],
+    "shortness": [
+      "bronchus",
+      "coronary_arteries",
+      "heart",
+      "lungs",
+      "pleura",
+      "systemic_immune"
+    ],
+    "lung": [
+      "asc_colon",
+      "breast",
+      "lungs",
+      "pleura"
+    ],
+    "clubbing": [
+      "bronchus",
+      "lungs"
+    ],
+    "marked": [
+      "lungs",
+      "pancreas_islets"
+    ],
+    "persistent": [
+      "heart",
+      "lungs",
+      "pancreas",
+      "small_intestine",
+      "thyroid"
+    ],
+    "clearing": [
+      "lungs"
+    ],
+    "ards": [
+      "lungs"
+    ],
+    "volumes": [
+      "lungs"
+    ],
+    "capillary": [
+      "heart",
+      "lungs"
+    ],
+    "release": [
+      "joint",
+      "lungs",
+      "nose",
+      "skin"
+    ],
+    "fibrosis": [
+      "lungs"
+    ],
+    "rest": [
+      "blood",
+      "lungs",
+      "vasculature_systemic"
+    ],
+    "hypoxia": [
+      "lungs",
+      "pulmonary_arteries"
+    ],
+    "hemoptysis": [
+      "bronchus",
+      "lungs",
+      "pulmonary_arteries"
+    ],
+    "laryngeal": [
+      "lungs"
+    ],
+    "reduced": [
+      "coronary_arteries",
+      "lungs"
+    ],
+    "injury": [
+      "kidney",
+      "lungs"
+    ],
+    "breath": [
+      "bronchus",
+      "coronary_arteries",
+      "heart",
+      "lungs",
+      "pancreas_islets",
+      "pleura"
+    ],
+    "cyanosis": [
+      "bronchus",
+      "heart",
+      "lungs"
+    ],
+    "velcro": [
+      "lungs"
+    ],
+    "more": [
+      "joint",
+      "lungs",
+      "lymph_node"
+    ],
+    "streaked": [
+      "lungs"
+    ],
+    "caseating": [
+      "lungs"
+    ],
+    "tachypnea": [
+      "lungs",
+      "pleura",
+      "pulmonary_arteries",
+      "vasculature_systemic"
+    ],
+    "formation": [
+      "aorta",
+      "blood",
+      "leg_veins",
+      "lungs"
+    ],
+    "termination": [
+      "heart"
+    ],
+    "valve": [
+      "heart"
+    ],
+    "infarcts": [
+      "heart"
+    ],
+    "bradyarrhythmia": [
+      "heart"
+    ],
+    "gain": [
+      "heart",
+      "thyroid"
+    ],
+    "rapid": [
+      "brain",
+      "heart",
+      "pancreas_islets",
+      "skin",
+      "vasculature_systemic"
+    ],
+    "embolic": [
+      "heart"
+    ],
+    "stokes": [
+      "heart"
+    ],
+    "fibrillation": [
+      "heart"
+    ],
+    "vegetations": [
+      "heart"
+    ],
+    "volume": [
+      "bronchus",
+      "heart",
+      "kidney",
+      "vasculature_systemic"
+    ],
+    "harsh": [
+      "heart"
+    ],
+    "regurgitation": [
+      "aorta",
+      "esophagus",
+      "heart",
+      "stomach"
+    ],
+    "dilated": [
+      "eye",
+      "heart",
+      "leg_veins",
+      "liver",
+      "vasculature_systemic"
+    ],
+    "abrupt": [
+      "heart"
+    ],
+    "sweating": [
+      "heart",
+      "pancreas_islets",
+      "thyroid"
+    ],
+    "risk": [
+      "blood",
+      "heart",
+      "vasculature_systemic"
+    ],
+    "asystole": [
+      "heart"
+    ],
+    "orthopnea": [
+      "heart"
+    ],
+    "aortic": [
+      "aorta",
+      "heart"
+    ],
+    "renal": [
+      "heart",
+      "kidney",
+      "pancreas_islets",
+      "vasculature_systemic"
+    ],
+    "carotid": [
+      "aorta",
+      "heart"
+    ],
+    "hydrostatic": [
+      "heart"
+    ],
+    "hemorrhages": [
+      "heart",
+      "retina"
+    ],
+    "cannot": [
+      "heart",
+      "joint"
+    ],
+    "decompensated": [
+      "heart"
+    ],
+    "palpitations": [
+      "blood",
+      "heart",
+      "pancreas_islets",
+      "thyroid",
+      "vasculature_systemic"
+    ],
+    "paroxysmal": [
+      "heart",
+      "nose"
+    ],
+    "atrial": [
+      "heart",
+      "thyroid"
+    ],
+    "water": [
+      "heart"
+    ],
+    "delayed": [
+      "heart"
+    ],
+    "near": [
+      "heart"
+    ],
+    "pink": [
+      "eye",
+      "heart"
+    ],
+    "ascites": [
+      "heart",
+      "liver"
+    ],
+    "angina": [
+      "heart"
+    ],
+    "septic": [
+      "bile_duct",
+      "heart",
+      "skin",
+      "vasculature_systemic"
+    ],
+    "form": [
+      "heart"
+    ],
+    "holosystolic": [
+      "heart"
+    ],
+    "common": [
+      "blood",
+      "heart"
+    ],
+    "anemia": [
+      "blood",
+      "heart",
+      "kidney",
+      "sig_colon",
+      "small_intestine"
+    ],
+    "epigastric": [
+      "heart",
+      "pancreas",
+      "stomach"
+    ],
+    "chaotic": [
+      "heart"
+    ],
+    "onset": [
+      "brain",
+      "heart",
+      "liver",
+      "pancreas_islets",
+      "pulmonary_arteries",
+      "throat"
+    ],
+    "sputum": [
+      "bronchus",
+      "heart"
+    ],
+    "discomfort": [
+      "bronchus",
+      "heart",
+      "liver"
+    ],
+    "frothy": [
+      "heart"
+    ],
+    "syncope": [
+      "brain",
+      "heart",
+      "pulmonary_arteries",
+      "systemic_immune"
+    ],
+    "coronary": [
+      "coronary_arteries",
+      "heart"
+    ],
+    "nodes": [
+      "heart"
+    ],
+    "sinus": [
+      "heart"
+    ],
+    "chills": [
+      "heart",
+      "kidney",
+      "skin",
+      "vasculature_systemic"
+    ],
+    "afib": [
+      "heart"
+    ],
+    "platelet": [
+      "blood",
+      "heart"
+    ],
+    "fluid": [
+      "heart",
+      "middle_ear"
+    ],
+    "exertion": [
+      "blood",
+      "bronchus",
+      "coronary_arteries",
+      "heart",
+      "kidney"
+    ],
+    "extravasates": [
+      "heart"
+    ],
+    "endocarditis": [
+      "heart"
+    ],
+    "fraction": [
+      "heart"
+    ],
+    "crackles": [
+      "heart"
+    ],
+    "pallor": [
+      "asc_colon",
+      "blood",
+      "brain",
+      "fascial_compartment_leg",
+      "heart",
+      "kidney"
+    ],
+    "nailbeds": [
+      "bronchus",
+      "heart"
+    ],
+    "sense": [
+      "heart",
+      "upper_respiratory_tract"
+    ],
+    "painful": [
+      "esophagus",
+      "heart",
+      "rectum",
+      "supraspinatus_muscle",
+      "throat",
+      "uterus"
+    ],
+    "irregular": [
+      "breast",
+      "heart",
+      "ovary"
+    ],
+    "venous": [
+      "blood",
+      "brachial_plexus",
+      "heart",
+      "leg_veins",
+      "vasculature_systemic"
+    ],
+    "hepatomegaly": [
+      "heart",
+      "liver"
+    ],
+    "demand": [
+      "coronary_arteries",
+      "heart"
+    ],
+    "supraventricular": [
+      "heart"
+    ],
+    "electrical": [
+      "heart"
+    ],
+    "infective": [
+      "heart"
+    ],
+    "systolic": [
+      "blood",
+      "heart"
+    ],
+    "changing": [
+      "heart"
+    ],
+    "portal": [
+      "heart"
+    ],
+    "enlargement": [
+      "heart",
+      "prostate"
+    ],
+    "distention": [
+      "heart",
+      "liver"
+    ],
+    "clammy": [
+      "heart"
+    ],
+    "hematuria": [
+      "heart",
+      "kidney",
+      "prostate"
+    ],
+    "dizziness": [
+      "blood",
+      "heart",
+      "r_adrenal"
+    ],
+    "cardiomyopathy": [
+      "heart"
+    ],
+    "cardiogenic": [
+      "heart"
+    ],
+    "heart": [
+      "heart",
+      "thyroid"
+    ],
+    "attacks": [
+      "heart"
+    ],
+    "diaphoresis": [
+      "brain",
+      "heart",
+      "pancreas_islets"
+    ],
+    "splinter": [
+      "heart"
+    ],
+    "murmur": [
+      "heart"
+    ],
+    "supine": [
+      "heart",
+      "pericardium"
+    ],
+    "pitting": [
+      "heart"
+    ],
+    "cardiac": [
+      "aorta",
+      "heart",
+      "kidney",
+      "vasculature_systemic"
+    ],
+    "edema": [
+      "heart",
+      "kidney",
+      "liver",
+      "skin",
+      "vasculature_systemic"
+    ],
+    "failure": [
+      "bronchus",
+      "heart",
+      "vasculature_systemic"
+    ],
+    "into": [
+      "heart",
+      "rectum",
+      "stomach"
+    ],
+    "gallop": [
+      "heart"
+    ],
+    "adams": [
+      "heart"
+    ],
+    "jugular": [
+      "heart"
+    ],
+    "bilateral": [
+      "brain",
+      "cauda_equina",
+      "heart",
+      "spinal_nerves"
+    ],
+    "irregularly": [
+      "heart"
+    ],
+    "death": [
+      "heart"
+    ],
+    "pump": [
+      "heart"
+    ],
+    "roth": [
+      "heart"
+    ],
+    "regular": [
+      "heart"
+    ],
+    "bradycardia": [
+      "brain",
+      "heart",
+      "thyroid"
+    ],
+    "nocturnal": [
+      "heart",
+      "median_nerve"
+    ],
+    "peripheral": [
+      "heart",
+      "kidney",
+      "spinal_nerves",
+      "vasculature_systemic"
+    ],
+    "ventricular": [
+      "heart"
+    ],
+    "sodium": [
+      "heart",
+      "r_adrenal"
+    ],
+    "diffuse": [
+      "brain",
+      "eye",
+      "heart",
+      "kidney",
+      "pericardium",
+      "thyroid"
+    ],
+    "osler": [
+      "heart"
+    ],
+    "arrhythmias": [
+      "heart",
+      "kidney",
+      "spinal_nerves"
+    ],
+    "apex": [
+      "heart"
+    ],
+    "fibrin": [
+      "heart",
+      "leg_veins"
+    ],
+    "retention": [
+      "cauda_equina",
+      "heart",
+      "prostate",
+      "spinal_nerves"
+    ],
+    "painless": [
+      "breast",
+      "heart",
+      "lymph_node",
+      "rectum"
+    ],
+    "block": [
+      "eye",
+      "heart"
+    ],
+    "stroke": [
+      "aorta",
+      "brain",
+      "heart",
+      "vasculature_systemic"
+    ],
+    "lightheadedness": [
+      "blood",
+      "brain",
+      "heart"
+    ],
+    "microorganism": [
+      "heart"
+    ],
+    "stenosis": [
+      "heart"
+    ],
+    "arrhythmia": [
+      "heart"
+    ],
+    "anxiety": [
+      "heart",
+      "pancreas_islets",
+      "pulmonary_arteries",
+      "thyroid"
+    ],
+    "janeway": [
+      "heart"
+    ],
+    "left": [
+      "coronary_arteries",
+      "desc_colon",
+      "heart",
+      "pericardium"
+    ],
+    "ejection": [
+      "heart"
+    ],
+    "congestion": [
+      "heart",
+      "kidney",
+      "liver",
+      "nose",
+      "upper_respiratory_tract"
+    ],
+    "exercise": [
+      "blood",
+      "heart"
+    ],
+    "pulse": [
+      "brachial_plexus",
+      "heart"
+    ],
+    "cold": [
+      "heart",
+      "pancreas_islets",
+      "thyroid"
+    ],
+    "retinal": [
+      "heart",
+      "retina",
+      "vasculature_systemic"
+    ],
+    "mitral": [
+      "heart"
+    ],
+    "below": [
+      "blood",
+      "bone",
+      "heart",
+      "kidney"
+    ],
+    "chamber": [
+      "heart"
+    ],
+    "upstroke": [
+      "heart"
+    ],
+    "spots": [
+      "heart",
+      "retina"
+    ],
+    "relieved": [
+      "colon",
+      "coronary_arteries",
+      "stomach",
+      "vasculature_systemic"
+    ],
+    "ulcer": [
+      "stomach"
+    ],
+    "sour": [
+      "stomach"
+    ],
+    "occasional": [
+      "stomach"
+    ],
+    "heartburn": [
+      "esophagus",
+      "stomach"
+    ],
+    "burning": [
+      "bladder",
+      "spinal_nerves",
+      "stomach",
+      "tibial_nerve"
+    ],
+    "ground": [
+      "stomach"
+    ],
+    "erosion": [
+      "stomach"
+    ],
+    "early": [
+      "stomach"
+    ],
+    "black": [
+      "stomach"
+    ],
+    "retrosternal": [
+      "esophagus",
+      "stomach"
+    ],
+    "acid": [
+      "esophagus",
+      "stomach"
+    ],
+    "endoscopic": [
+      "stomach"
+    ],
+    "coffee": [
+      "stomach"
+    ],
+    "hematemesis": [
+      "liver",
+      "stomach"
+    ],
+    "gastric": [
+      "stomach"
+    ],
+    "peptic": [
+      "stomach"
+    ],
+    "reflux": [
+      "esophagus",
+      "stomach"
+    ],
+    "dysphagia": [
+      "esophagus",
+      "stomach"
+    ],
+    "when": [
+      "brain",
+      "stomach"
+    ],
+    "lying": [
+      "stomach",
+      "supraspinatus_muscle"
+    ],
+    "ulceration": [
+      "stomach"
+    ],
+    "taste": [
+      "facial_nerve",
+      "stomach"
+    ],
+    "tarry": [
+      "stomach"
+    ],
+    "responds": [
+      "brain",
+      "coronary_arteries",
+      "stomach"
+    ],
+    "melena": [
+      "stomach"
+    ],
+    "cystitis": [
+      "bladder"
+    ],
+    "urinary": [
+      "bladder",
+      "brain",
+      "cauda_equina",
+      "prostate",
+      "spinal_nerves",
+      "uterus"
+    ],
+    "dysuria": [
+      "bladder",
+      "kidney",
+      "uterus"
+    ],
+    "frequency": [
+      "bladder",
+      "prostate",
+      "uterus"
+    ],
+    "urgency": [
+      "bladder",
+      "brain",
+      "kidney",
+      "prostate",
+      "sig_colon"
+    ],
+    "suprapubic": [
+      "bladder"
+    ],
+    "oliguria": [
+      "kidney",
+      "vasculature_systemic"
+    ],
+    "glomerulosclerosis": [
+      "kidney"
+    ],
+    "filtration": [
+      "kidney"
+    ],
+    "uremic": [
+      "kidney"
+    ],
+    "kidney": [
+      "kidney"
+    ],
+    "unable": [
+      "kidney",
+      "supraspinatus_muscle"
+    ],
+    "creatinine": [
+      "kidney"
+    ],
+    "elevated": [
+      "kidney",
+      "liver",
+      "prostate",
+      "thyroid",
+      "vasculature_systemic"
+    ],
+    "bruising": [
+      "kidney",
+      "liver",
+      "vasculature_systemic"
+    ],
+    "late": [
+      "brain",
+      "kidney",
+      "median_nerve",
+      "small_intestine"
+    ],
+    "anuria": [
+      "kidney"
+    ],
+    "writhing": [
+      "kidney"
+    ],
+    "urine": [
+      "kidney",
+      "liver"
+    ],
+    "epistaxis": [
+      "blood",
+      "kidney"
+    ],
+    "metallic": [
+      "kidney"
+    ],
+    "rising": [
+      "fascial_compartment_leg",
+      "kidney"
+    ],
+    "diabetic": [
+      "kidney",
+      "pancreas_islets",
+      "retina",
+      "spinal_nerves"
+    ],
+    "compensatory": [
+      "kidney",
+      "pancreas",
+      "pleura",
+      "pulmonary_arteries",
+      "skin",
+      "systemic_immune",
+      "thyroid",
+      "vasculature_systemic"
+    ],
+    "flank": [
+      "kidney"
+    ],
+    "hyperparathyroidism": [
+      "kidney"
+    ],
+    "radiates": [
+      "kidney",
+      "middle_ear",
+      "pancreas"
+    ],
+    "initial": [
+      "gallbladder",
+      "kidney"
+    ],
+    "hyperfiltration": [
+      "kidney"
+    ],
+    "obstructed": [
+      "kidney"
+    ],
+    "nephropathy": [
+      "kidney"
+    ],
+    "normocytic": [
+      "kidney"
+    ],
+    "less": [
+      "kidney"
+    ],
+    "kimmelstiel": [
+      "kidney"
+    ],
+    "stones": [
+      "kidney"
+    ],
+    "pale": [
+      "kidney",
+      "liver",
+      "vasculature_systemic"
+    ],
+    "dependent": [
+      "kidney",
+      "vasculature_systemic"
+    ],
+    "microalbuminuria": [
+      "kidney"
+    ],
+    "loin": [
+      "kidney"
+    ],
+    "itching": [
+      "eye",
+      "kidney",
+      "liver",
+      "nose",
+      "skin",
+      "systemic_immune"
+    ],
+    "symptoms": [
+      "kidney",
+      "median_nerve",
+      "pancreas_islets",
+      "prostate",
+      "tibial_nerve"
+    ],
+    "lower": [
+      "kidney",
+      "liver",
+      "uterus"
+    ],
+    "hypertension": [
+      "brain",
+      "kidney",
+      "vasculature_systemic"
+    ],
+    "above": [
+      "kidney",
+      "lymph_node",
+      "pancreas_islets",
+      "prostate",
+      "throat",
+      "vasculature_systemic"
+    ],
+    "acidosis": [
+      "kidney",
+      "vasculature_systemic"
+    ],
+    "encephalopathy": [
+      "kidney",
+      "liver"
+    ],
+    "nosebleeds": [
+      "blood",
+      "kidney"
+    ],
+    "nephrolithiasis": [
+      "kidney"
+    ],
+    "glomerular": [
+      "kidney"
+    ],
+    "confusion": [
+      "brain",
+      "kidney",
+      "liver",
+      "pancreas_islets"
+    ],
+    "muscle": [
+      "brain",
+      "bronchus",
+      "kidney",
+      "piriformis_muscle",
+      "thyroid"
+    ],
+    "bleeding": [
+      "blood",
+      "kidney",
+      "liver",
+      "uterus",
+      "vasculature_systemic"
+    ],
+    "mesangial": [
+      "kidney"
+    ],
+    "pyelonephritis": [
+      "kidney"
+    ],
+    "screening": [
+      "kidney"
+    ],
+    "nodules": [
+      "joint",
+      "kidney"
+    ],
+    "than": [
+      "kidney",
+      "liver"
+    ],
+    "metabolic": [
+      "kidney",
+      "thyroid"
+    ],
+    "general": [
+      "kidney"
+    ],
+    "testicular": [
+      "kidney",
+      "liver"
+    ],
+    "extremities": [
+      "kidney",
+      "liver"
+    ],
+    "ipsilateral": [
+      "kidney",
+      "pleura"
+    ],
+    "wilson": [
+      "kidney"
+    ],
+    "extremity": [
+      "kidney"
+    ],
+    "expansion": [
+      "kidney"
+    ],
+    "easy": [
+      "blood",
+      "kidney",
+      "liver"
+    ],
+    "macroalbuminuria": [
+      "kidney"
+    ],
+    "secondary": [
+      "kidney",
+      "pancreas",
+      "skin"
+    ],
+    "frost": [
+      "kidney"
+    ],
+    "pruritus": [
+      "kidney",
+      "liver",
+      "rectum",
+      "skin",
+      "systemic_immune",
+      "vasculature_systemic"
+    ],
+    "tension": [
+      "brain"
+    ],
+    "basal": [
+      "brain",
+      "thyroid"
+    ],
+    "repeated": [
+      "brain"
+    ],
+    "intensity": [
+      "brain"
+    ],
+    "amnesia": [
+      "brain"
+    ],
+    "difficulties": [
+      "brain"
+    ],
+    "rhythmic": [
+      "brain"
+    ],
+    "heat": [
+      "brain",
+      "thyroid"
+    ],
+    "rebleed": [
+      "brain"
+    ],
+    "difficulty": [
+      "brain",
+      "esophagus"
+    ],
+    "limb": [
+      "aorta",
+      "brain"
+    ],
+    "agitation": [
+      "brain"
+    ],
+    "tremor": [
+      "brain",
+      "pancreas_islets",
+      "thyroid"
+    ],
+    "slow": [
+      "brain",
+      "thyroid"
+    ],
+    "unilateral": [
+      "blood",
+      "brain",
+      "facial_nerve",
+      "leg_veins",
+      "middle_ear",
+      "pleura",
+      "trigeminal_nerve",
+      "uterus"
+    ],
+    "preceded": [
+      "brain"
+    ],
+    "aphasia": [
+      "brain"
+    ],
+    "migraine": [
+      "brain"
+    ],
+    "clonic": [
+      "brain",
+      "vasculature_systemic"
+    ],
+    "behavior": [
+      "brain"
+    ],
+    "getting": [
+      "brain"
+    ],
+    "spasticity": [
+      "brain"
+    ],
+    "regional": [
+      "brain",
+      "skin"
+    ],
+    "nerve": [
+      "brain",
+      "common_peroneal_nerve",
+      "facial_nerve",
+      "median_nerve",
+      "piriformis_muscle",
+      "spinal_nerves",
+      "ulnar_nerve"
+    ],
+    "cognitive": [
+      "blood",
+      "brain",
+      "thyroid"
+    ],
+    "dysregulation": [
+      "brain"
+    ],
+    "problems": [
+      "brain"
+    ],
+    "brief": [
+      "brain"
+    ],
+    "personality": [
+      "brain"
+    ],
+    "glutamate": [
+      "brain"
+    ],
+    "movements": [
+      "brain",
+      "thyroid"
+    ],
+    "soreness": [
+      "brain"
+    ],
+    "tone": [
+      "brain"
+    ],
+    "worsened": [
+      "brain"
+    ],
+    "adls": [
+      "brain"
+    ],
+    "monocular": [
+      "brain"
+    ],
+    "tonic": [
+      "brain",
+      "vasculature_systemic"
+    ],
+    "handwriting": [
+      "brain"
+    ],
+    "around": [
+      "brain"
+    ],
+    "throbbing": [
+      "brain"
+    ],
+    "convulsions": [
+      "brain"
+    ],
+    "discharges": [
+      "brain"
+    ],
+    "tongue": [
+      "brain",
+      "systemic_immune"
+    ],
+    "field": [
+      "brain"
+    ],
+    "shuffling": [
+      "brain"
+    ],
+    "parkinson": [
+      "brain"
+    ],
+    "maximal": [
+      "brain",
+      "joint"
+    ],
+    "lateral": [
+      "brain",
+      "common_peroneal_nerve",
+      "iliotibial_band",
+      "median_nerve",
+      "spinal_nerves",
+      "supraspinatus_muscle"
+    ],
+    "dementia": [
+      "brain"
+    ],
+    "gradual": [
+      "brain"
+    ],
+    "continuous": [
+      "brain"
+    ],
+    "lead": [
+      "brain"
+    ],
+    "planning": [
+      "brain"
+    ],
+    "aura": [
+      "brain"
+    ],
+    "dopamine": [
+      "brain"
+    ],
+    "language": [
+      "brain"
+    ],
+    "neurocardiogenic": [
+      "brain"
+    ],
+    "distinguishing": [
+      "brain"
+    ],
+    "instability": [
+      "brain",
+      "uterus"
+    ],
+    "during": [
+      "brain",
+      "common_peroneal_nerve",
+      "coronary_arteries",
+      "iliotibial_band"
+    ],
+    "warning": [
+      "brain"
+    ],
+    "smell": [
+      "brain"
+    ],
+    "insidious": [
+      "brain"
+    ],
+    "meningismus": [
+      "brain"
+    ],
+    "papilledema": [
+      "brain"
+    ],
+    "epileptic": [
+      "brain"
+    ],
+    "gait": [
+      "brain",
+      "common_peroneal_nerve",
+      "skin"
+    ],
+    "simple": [
+      "brain"
+    ],
+    "sensory": [
+      "brain",
+      "spinal_nerves",
+      "trigeminal_nerve"
+    ],
+    "subarachnoid": [
+      "brain"
+    ],
+    "psychosis": [
+      "brain"
+    ],
+    "desaturation": [
+      "brain"
+    ],
+    "deficit": [
+      "brain",
+      "cauda_equina",
+      "trigeminal_nerve"
+    ],
+    "palsy": [
+      "brain",
+      "common_peroneal_nerve",
+      "facial_nerve",
+      "spinal_nerves"
+    ],
+    "executive": [
+      "brain"
+    ],
+    "intention": [
+      "brain"
+    ],
+    "excessive": [
+      "brain",
+      "pancreas_islets"
+    ],
+    "typical": [
+      "brain"
+    ],
+    "paradoxical": [
+      "brain"
+    ],
+    "plaques": [
+      "brain"
+    ],
+    "lewy": [
+      "brain"
+    ],
+    "vasospasm": [
+      "brain"
+    ],
+    "hours": [
+      "brain"
+    ],
+    "phenomenon": [
+      "brain",
+      "facial_nerve"
+    ],
+    "uhthoff": [
+      "brain"
+    ],
+    "event": [
+      "brain"
+    ],
+    "occurs": [
+      "brain"
+    ],
+    "gaba": [
+      "brain"
+    ],
+    "epileptiform": [
+      "brain"
+    ],
+    "hemorrhage": [
+      "blood",
+      "brain",
+      "retina"
+    ],
+    "resting": [
+      "brain"
+    ],
+    "sleep": [
+      "brain",
+      "middle_ear"
+    ],
+    "electric": [
+      "brain",
+      "spinal_nerves",
+      "trigeminal_nerve"
+    ],
+    "aggression": [
+      "brain"
+    ],
+    "imaging": [
+      "brain",
+      "colon",
+      "gallbladder"
+    ],
+    "apathy": [
+      "brain"
+    ],
+    "thunderclap": [
+      "brain"
+    ],
+    "entire": [
+      "brain"
+    ],
+    "vascular": [
+      "brain",
+      "skin"
+    ],
+    "facial": [
+      "brain",
+      "facial_nerve",
+      "skin",
+      "spinal_nerves",
+      "systemic_immune",
+      "thyroid",
+      "upper_respiratory_tract"
+    ],
+    "fecal": [
+      "brain",
+      "cauda_equina",
+      "spinal_nerves"
+    ],
+    "postural": [
+      "brain"
+    ],
+    "oligoclonal": [
+      "brain"
+    ],
+    "recovery": [
+      "brain"
+    ],
+    "full": [
+      "brain"
+    ],
+    "multiple": [
+      "brain"
+    ],
+    "alpha": [
+      "brain"
+    ],
+    "alzheimer": [
+      "brain"
+    ],
+    "anterograde": [
+      "brain"
+    ],
+    "dysfunction": [
+      "brain",
+      "facial_nerve",
+      "retina",
+      "spinal_nerves"
+    ],
+    "speaking": [
+      "brain"
+    ],
+    "stage": [
+      "brain"
+    ],
+    "impairment": [
+      "blood",
+      "brain"
+    ],
+    "bands": [
+      "brain"
+    ],
+    "cerebral": [
+      "brain"
+    ],
+    "within": [
+      "brain",
+      "fascial_compartment_leg",
+      "joint",
+      "pancreas_islets"
+    ],
+    "tightness": [
+      "brain",
+      "bronchus",
+      "coronary_arteries",
+      "piriformis_muscle",
+      "systemic_immune"
+    ],
+    "facies": [
+      "brain"
+    ],
+    "paranoia": [
+      "brain"
+    ],
+    "ischemic": [
+      "brain"
+    ],
+    "vasovagal": [
+      "brain"
+    ],
+    "hallucinations": [
+      "brain"
+    ],
+    "bladder": [
+      "brain",
+      "prostate",
+      "uterus"
+    ],
+    "mild": [
+      "brain",
+      "bronchus"
+    ],
+    "sclerosis": [
+      "brain"
+    ],
+    "salivation": [
+      "brain"
+    ],
+    "color": [
+      "brachial_plexus",
+      "brain",
+      "r_adrenal"
+    ],
+    "disseminated": [
+      "brain"
+    ],
+    "visual": [
+      "brain",
+      "eye",
+      "retina",
+      "vasculature_systemic"
+    ],
+    "freezing": [
+      "brain"
+    ],
+    "bradykinesia": [
+      "brain"
+    ],
+    "synuclein": [
+      "brain"
+    ],
+    "drowsiness": [
+      "brain"
+    ],
+    "hemiparesis": [
+      "brain"
+    ],
+    "constant": [
+      "brain",
+      "small_intestine"
+    ],
+    "upright": [
+      "brain"
+    ],
+    "lasting": [
+      "brain"
+    ],
+    "neurologic": [
+      "brain",
+      "cauda_equina",
+      "trigeminal_nerve"
+    ],
+    "mask": [
+      "brain"
+    ],
+    "seconds": [
+      "brain",
+      "trigeminal_nerve"
+    ],
+    "cogwheel": [
+      "brain"
+    ],
+    "like": [
+      "brain"
+    ],
+    "incontinence": [
+      "brain",
+      "cauda_equina",
+      "spinal_nerves"
+    ],
+    "vision": [
+      "brain",
+      "eye",
+      "pancreas_islets",
+      "retina",
+      "vasculature_systemic"
+    ],
+    "lhermitte": [
+      "brain"
+    ],
+    "prodromal": [
+      "brain",
+      "liver"
+    ],
+    "sundowning": [
+      "brain"
+    ],
+    "mortality": [
+      "brain"
+    ],
+    "arrest": [
+      "brain"
+    ],
+    "subtle": [
+      "brain"
+    ],
+    "focal": [
+      "brain"
+    ],
+    "perfusion": [
+      "brain",
+      "pulmonary_arteries"
+    ],
+    "moderate": [
+      "brain"
+    ],
+    "droop": [
+      "brain",
+      "facial_nerve"
+    ],
+    "seizure": [
+      "brain"
+    ],
+    "engorgement": [
+      "brain"
+    ],
+    "rigidity": [
+      "brain"
+    ],
+    "word": [
+      "brain"
+    ],
+    "imbalance": [
+      "brain"
+    ],
+    "palpation": [
+      "brain",
+      "skin"
+    ],
+    "stiffening": [
+      "brain"
+    ],
+    "corresponds": [
+      "brain"
+    ],
+    "demyelinating": [
+      "brain"
+    ],
+    "ataxia": [
+      "brain"
+    ],
+    "decline": [
+      "brain"
+    ],
+    "small": [
+      "brain",
+      "joint",
+      "small_intestine"
+    ],
+    "band": [
+      "brain",
+      "iliotibial_band"
+    ],
+    "biting": [
+      "brain"
+    ],
+    "postictal": [
+      "brain"
+    ],
+    "cranial": [
+      "brain"
+    ],
+    "penumbra": [
+      "brain"
+    ],
+    "generalized": [
+      "brain",
+      "vasculature_systemic"
+    ],
+    "pressing": [
+      "brain"
+    ],
+    "foaming": [
+      "brain"
+    ],
+    "micrographia": [
+      "brain"
+    ],
+    "visuospatial": [
+      "brain"
+    ],
+    "changes": [
+      "brachial_plexus",
+      "brain",
+      "breast",
+      "vasculature_systemic"
+    ],
+    "untreated": [
+      "pancreas_islets"
+    ],
+    "neuroglycopenic": [
+      "pancreas_islets"
+    ],
+    "hyperglycemia": [
+      "pancreas_islets"
+    ],
+    "adrenergic": [
+      "pancreas_islets"
+    ],
+    "dramatic": [
+      "pancreas_islets",
+      "thyroid"
+    ],
+    "coma": [
+      "pancreas_islets"
+    ],
+    "insulin": [
+      "ovary",
+      "pancreas_islets"
+    ],
+    "type": [
+      "ovary",
+      "pancreas_islets",
+      "systemic_immune"
+    ],
+    "glycosuria": [
+      "pancreas_islets"
+    ],
+    "kussmaul": [
+      "pancreas_islets"
+    ],
+    "deficiency": [
+      "blood",
+      "pancreas_islets",
+      "sig_colon",
+      "small_intestine"
+    ],
+    "deep": [
+      "blood",
+      "leg_veins",
+      "pancreas_islets",
+      "piriformis_muscle",
+      "uterus"
+    ],
+    "acetone": [
+      "pancreas_islets"
+    ],
+    "protein": [
+      "pancreas_islets"
+    ],
+    "free": [
+      "pancreas_islets"
+    ],
+    "polyphagia": [
+      "pancreas_islets"
+    ],
+    "thirst": [
+      "pancreas_islets"
+    ],
+    "dehydration": [
+      "pancreas_islets",
+      "small_intestine"
+    ],
+    "acids": [
+      "pancreas_islets"
+    ],
+    "ketoacidosis": [
+      "pancreas_islets"
+    ],
+    "beta": [
+      "pancreas_islets"
+    ],
+    "response": [
+      "pancreas_islets"
+    ],
+    "urination": [
+      "pancreas_islets"
+    ],
+    "respirations": [
+      "pancreas_islets"
+    ],
+    "fruity": [
+      "pancreas_islets"
+    ],
+    "habitus": [
+      "pancreas_islets"
+    ],
+    "frequent": [
+      "pancreas_islets",
+      "thyroid"
+    ],
+    "islet": [
+      "pancreas_islets"
+    ],
+    "lean": [
+      "pancreas_islets"
+    ],
+    "absolute": [
+      "pancreas_islets"
+    ],
+    "shakiness": [
+      "pancreas_islets"
+    ],
+    "polyuria": [
+      "pancreas",
+      "pancreas_islets"
+    ],
+    "appetite": [
+      "middle_ear",
+      "pancreas_islets"
+    ],
+    "blurred": [
+      "eye",
+      "pancreas_islets",
+      "retina"
+    ],
+    "polydipsia": [
+      "pancreas",
+      "pancreas_islets"
+    ],
+    "fatty": [
+      "liver",
+      "pancreas",
+      "pancreas_islets"
+    ],
+    "hypovolemia": [
+      "pancreas_islets",
+      "small_intestine"
+    ],
+    "t2dm": [
+      "pancreas_islets"
+    ],
+    "hypoglycemia": [
+      "pancreas_islets",
+      "r_adrenal"
+    ],
+    "resistance": [
+      "pancreas_islets"
+    ],
+    "cell": [
+      "bronchus",
+      "pancreas_islets",
+      "systemic_immune",
+      "vasculature_systemic"
+    ],
+    "hunger": [
+      "pancreas_islets"
+    ],
+    "sympathetic": [
+      "pancreas_islets",
+      "pulmonary_arteries"
+    ],
+    "autoimmune": [
+      "pancreas_islets"
+    ],
+    "diabetes": [
+      "ovary",
+      "pancreas",
+      "pancreas_islets"
+    ],
+    "body": [
+      "pancreas_islets"
+    ],
+    "seizures": [
+      "pancreas_islets"
+    ],
+    "thick": [
+      "bronchus"
+    ],
+    "three": [
+      "bronchus"
+    ],
+    "airway": [
+      "bronchus"
+    ],
+    "sleepiness": [
+      "bronchus"
+    ],
+    "hypersecretion": [
+      "bronchus"
+    ],
+    "bloating": [
+      "bronchus",
+      "colon",
+      "small_intestine"
+    ],
+    "sinusitis": [
+      "bronchus",
+      "upper_respiratory_tract"
+    ],
+    "ciliated": [
+      "bronchus"
+    ],
+    "progression": [
+      "bronchus",
+      "vasculature_systemic"
+    ],
+    "initially": [
+      "asc_colon",
+      "bronchus",
+      "prostate",
+      "skin"
+    ],
+    "bronchospasm": [
+      "bronchus"
+    ],
+    "barrel": [
+      "bronchus"
+    ],
+    "prolonged": [
+      "bronchus",
+      "liver"
+    ],
+    "contraction": [
+      "bronchus"
+    ],
+    "pneumonias": [
+      "bronchus"
+    ],
+    "turbulent": [
+      "bronchus"
+    ],
+    "purulent": [
+      "bronchus",
+      "middle_ear",
+      "upper_respiratory_tract"
+    ],
+    "lips": [
+      "bronchus"
+    ],
+    "worsening": [
+      "bronchus"
+    ],
+    "elastic": [
+      "bronchus"
+    ],
+    "yellow": [
+      "bronchus",
+      "liver",
+      "vasculature_systemic"
+    ],
+    "smooth": [
+      "blood",
+      "bronchus"
+    ],
+    "expiration": [
+      "bronchus"
+    ],
+    "post": [
+      "bronchus",
+      "middle_ear",
+      "skin"
+    ],
+    "wall": [
+      "bronchus",
+      "desc_colon"
+    ],
+    "mucus": [
+      "bronchus",
+      "colon",
+      "sig_colon"
+    ],
+    "unless": [
+      "bronchus"
+    ],
+    "asthma": [
+      "bronchus",
+      "skin"
+    ],
+    "wheezing": [
+      "bronchus",
+      "systemic_immune"
+    ],
+    "goblet": [
+      "bronchus"
+    ],
+    "daytime": [
+      "bronchus"
+    ],
+    "epithelium": [
+      "bronchus"
+    ],
+    "malaise": [
+      "bronchus",
+      "skin",
+      "upper_respiratory_tract"
+    ],
+    "associated": [
+      "bronchus",
+      "skin"
+    ],
+    "morning": [
+      "bronchus",
+      "eye",
+      "joint",
+      "skin",
+      "vasculature_systemic"
+    ],
+    "bronchitis": [
+      "bronchus"
+    ],
+    "destruction": [
+      "bronchus",
+      "joint"
+    ],
+    "bronchiectasis": [
+      "bronchus"
+    ],
+    "copd": [
+      "bronchus"
+    ],
+    "episodic": [
+      "bronchus"
+    ],
+    "infectious": [
+      "bronchus"
+    ],
+    "aching": [
+      "vasculature_systemic"
+    ],
+    "veins": [
+      "vasculature_systemic"
+    ],
+    "silent": [
+      "vasculature_systemic"
+    ],
+    "reproducible": [
+      "coronary_arteries",
+      "vasculature_systemic"
+    ],
+    "brown": [
+      "vasculature_systemic"
+    ],
+    "absent": [
+      "cauda_equina",
+      "spinal_nerves",
+      "vasculature_systemic"
+    ],
+    "superficial": [
+      "leg_veins",
+      "vasculature_systemic"
+    ],
+    "insufficiency": [
+      "r_adrenal",
+      "vasculature_systemic"
+    ],
+    "tortuous": [
+      "vasculature_systemic"
+    ],
+    "hardening": [
+      "vasculature_systemic"
+    ],
+    "platelets": [
+      "vasculature_systemic"
+    ],
+    "thrombophlebitis": [
+      "vasculature_systemic"
+    ],
+    "atherogenic": [
+      "vasculature_systemic"
+    ],
+    "hemolysis": [
+      "vasculature_systemic"
+    ],
+    "necrosis": [
+      "liver",
+      "vasculature_systemic"
+    ],
+    "proteinuria": [
+      "vasculature_systemic"
+    ],
+    "scotomata": [
+      "vasculature_systemic"
+    ],
+    "stasis": [
+      "bile_duct",
+      "gallbladder",
+      "vasculature_systemic"
+    ],
+    "hyperpigmentation": [
+      "r_adrenal",
+      "vasculature_systemic"
+    ],
+    "arcus": [
+      "vasculature_systemic"
+    ],
+    "diminished": [
+      "brachial_plexus",
+      "vasculature_systemic"
+    ],
+    "discoloration": [
+      "vasculature_systemic"
+    ],
+    "varicose": [
+      "vasculature_systemic"
+    ],
+    "intravascular": [
+      "vasculature_systemic"
+    ],
+    "healing": [
+      "vasculature_systemic"
+    ],
+    "persistently": [
+      "vasculature_systemic"
+    ],
+    "liver": [
+      "asc_colon",
+      "liver",
+      "vasculature_systemic"
+    ],
+    "consistent": [
+      "iliotibial_band",
+      "vasculature_systemic"
+    ],
+    "ulcers": [
+      "spinal_nerves",
+      "vasculature_systemic"
+    ],
+    "preeclampsia": [
+      "vasculature_systemic"
+    ],
+    "breathing": [
+      "vasculature_systemic"
+    ],
+    "brachial": [
+      "vasculature_systemic"
+    ],
+    "after": [
+      "pancreas",
+      "vasculature_systemic"
+    ],
+    "panel": [
+      "vasculature_systemic"
+    ],
+    "dyslipidemia": [
+      "vasculature_systemic"
+    ],
+    "artery": [
+      "vasculature_systemic"
+    ],
+    "quadrant": [
+      "vasculature_systemic"
+    ],
+    "rigors": [
+      "skin",
+      "vasculature_systemic"
+    ],
+    "corneal": [
+      "vasculature_systemic"
+    ],
+    "lipid": [
+      "retina",
+      "vasculature_systemic"
+    ],
+    "shock": [
+      "bile_duct",
+      "r_adrenal",
+      "skin",
+      "trigeminal_nerve",
+      "vasculature_systemic"
+    ],
+    "warm": [
+      "skin",
+      "thyroid",
+      "vasculature_systemic"
+    ],
+    "premature": [
+      "vasculature_systemic"
+    ],
+    "eczema": [
+      "skin",
+      "vasculature_systemic"
+    ],
+    "emergency": [
+      "vasculature_systemic"
+    ],
+    "abnormal": [
+      "trigeminal_nerve",
+      "uterus",
+      "vasculature_systemic"
+    ],
+    "disturbances": [
+      "spinal_nerves",
+      "vasculature_systemic"
+    ],
+    "essential": [
+      "vasculature_systemic"
+    ],
+    "lipodermatosclerosis": [
+      "vasculature_systemic"
+    ],
+    "tissue": [
+      "skin",
+      "vasculature_systemic"
+    ],
+    "patients": [
+      "gallbladder",
+      "trigeminal_nerve",
+      "vasculature_systemic"
+    ],
+    "profile": [
+      "vasculature_systemic"
+    ],
+    "calf": [
+      "blood",
+      "leg_veins",
+      "vasculature_systemic"
+    ],
+    "deposits": [
+      "vasculature_systemic"
+    ],
+    "cool": [
+      "vasculature_systemic"
+    ],
+    "flushed": [
+      "vasculature_systemic"
+    ],
+    "right": [
+      "gallbladder",
+      "pulmonary_arteries",
+      "vasculature_systemic"
+    ],
+    "intermittent": [
+      "gallbladder",
+      "vasculature_systemic"
+    ],
+    "ankle": [
+      "joint",
+      "spinal_nerves",
+      "vasculature_systemic"
+    ],
+    "retinopathy": [
+      "retina",
+      "vasculature_systemic"
+    ],
+    "elevation": [
+      "skin",
+      "vasculature_systemic"
+    ],
+    "macrophage": [
+      "vasculature_systemic"
+    ],
+    "most": [
+      "gallbladder",
+      "vasculature_systemic"
+    ],
+    "xanthomas": [
+      "vasculature_systemic"
+    ],
+    "enzymes": [
+      "vasculature_systemic"
+    ],
+    "unrelieved": [
+      "vasculature_systemic"
+    ],
+    "heaviness": [
+      "vasculature_systemic"
+    ],
+    "gangrene": [
+      "vasculature_systemic"
+    ],
+    "lactic": [
+      "vasculature_systemic"
+    ],
+    "depletion": [
+      "vasculature_systemic"
+    ],
+    "hyperlipidemia": [
+      "vasculature_systemic"
+    ],
+    "claudication": [
+      "vasculature_systemic"
+    ],
+    "hairless": [
+      "vasculature_systemic"
+    ],
+    "thrombocytopenia": [
+      "blood",
+      "vasculature_systemic"
+    ],
+    "improved": [
+      "vasculature_systemic"
+    ],
+    "subendocardial": [
+      "coronary_arteries"
+    ],
+    "pattern": [
+      "bile_duct",
+      "coronary_arteries",
+      "ovary"
+    ],
+    "stable": [
+      "coronary_arteries"
+    ],
+    "ischemia": [
+      "aorta",
+      "coronary_arteries",
+      "median_nerve",
+      "tibial_nerve"
+    ],
+    "predictable": [
+      "coronary_arteries"
+    ],
+    "sublingual": [
+      "coronary_arteries"
+    ],
+    "transient": [
+      "coronary_arteries"
+    ],
+    "atherosclerosis": [
+      "coronary_arteries"
+    ],
+    "supply": [
+      "coronary_arteries"
+    ],
+    "mismatch": [
+      "coronary_arteries",
+      "pulmonary_arteries"
+    ],
+    "baseline": [
+      "coronary_arteries"
+    ],
+    "duodenal": [
+      "small_intestine"
+    ],
+    "distal": [
+      "bone",
+      "small_intestine",
+      "spinal_nerves",
+      "tibial_nerve"
+    ],
+    "peritonitis": [
+      "small_intestine"
+    ],
+    "villous": [
+      "small_intestine"
+    ],
+    "dilation": [
+      "small_intestine"
+    ],
+    "colicky": [
+      "small_intestine"
+    ],
+    "tympany": [
+      "small_intestine"
+    ],
+    "bowel": [
+      "asc_colon",
+      "colon",
+      "sig_colon",
+      "small_intestine",
+      "thyroid"
+    ],
+    "iron": [
+      "blood",
+      "sig_colon",
+      "small_intestine"
+    ],
+    "percussion": [
+      "pleura",
+      "small_intestine"
+    ],
+    "bilious": [
+      "small_intestine"
+    ],
+    "pitched": [
+      "small_intestine"
+    ],
+    "celiac": [
+      "small_intestine"
+    ],
+    "dermatitis": [
+      "skin",
+      "small_intestine"
+    ],
+    "atrophy": [
+      "liver",
+      "median_nerve",
+      "small_intestine",
+      "supraspinatus_muscle",
+      "tibial_nerve",
+      "ulnar_nerve"
+    ],
+    "herpetiformis": [
+      "small_intestine"
+    ],
+    "sepsis": [
+      "small_intestine"
+    ],
+    "rises": [
+      "small_intestine"
+    ],
+    "intraluminal": [
+      "desc_colon",
+      "small_intestine"
+    ],
+    "rash": [
+      "small_intestine",
+      "throat"
+    ],
+    "anti": [
+      "joint",
+      "small_intestine"
+    ],
+    "proximal": [
+      "bile_duct",
+      "small_intestine"
+    ],
+    "mechanical": [
+      "small_intestine",
+      "spinal_nerves"
+    ],
+    "diarrhea": [
+      "colon",
+      "desc_colon",
+      "sig_colon",
+      "small_intestine",
+      "systemic_immune"
+    ],
+    "crampy": [
+      "sig_colon",
+      "small_intestine"
+    ],
+    "watery": [
+      "eye",
+      "nose",
+      "small_intestine"
+    ],
+    "tinkling": [
+      "small_intestine"
+    ],
+    "feculent": [
+      "small_intestine"
+    ],
+    "obstipation": [
+      "small_intestine"
+    ],
+    "passage": [
+      "small_intestine"
+    ],
+    "steatorrhea": [
+      "pancreas",
+      "small_intestine"
+    ],
+    "viral": [
+      "eye",
+      "small_intestine",
+      "upper_respiratory_tract"
+    ],
+    "cramps": [
+      "small_intestine"
+    ],
+    "secretory": [
+      "small_intestine"
+    ],
+    "distension": [
+      "colon",
+      "gallbladder",
+      "small_intestine"
+    ],
+    "tooth": [
+      "upper_respiratory_tract"
+    ],
+    "maxillary": [
+      "trigeminal_nerve",
+      "upper_respiratory_tract"
+    ],
+    "runny": [
+      "upper_respiratory_tract"
+    ],
+    "rhinorrhea": [
+      "nose",
+      "upper_respiratory_tract"
+    ],
+    "nasal": [
+      "nose",
+      "upper_respiratory_tract"
+    ],
+    "discharge": [
+      "eye",
+      "upper_respiratory_tract"
+    ],
+    "sore": [
+      "throat",
+      "upper_respiratory_tract"
+    ],
+    "pharyngitis": [
+      "throat",
+      "upper_respiratory_tract"
+    ],
+    "nose": [
+      "nose",
+      "upper_respiratory_tract"
+    ],
+    "throat": [
+      "upper_respiratory_tract"
+    ],
+    "apprehension": [
+      "pulmonary_arteries"
+    ],
+    "oxygen": [
+      "pulmonary_arteries"
+    ],
+    "ventilation": [
+      "pulmonary_arteries"
+    ],
+    "thromboembolism": [
+      "blood",
+      "pulmonary_arteries"
+    ],
+    "digestion": [
+      "pancreas"
+    ],
+    "auto": [
+      "pancreas"
+    ],
+    "radiation": [
+      "pancreas"
+    ],
+    "periumbilical": [
+      "liver",
+      "pancreas"
+    ],
+    "pancreatitis": [
+      "pancreas"
+    ],
+    "malabsorption": [
+      "pancreas"
+    ],
+    "back": [
+      "bone",
+      "breast",
+      "pancreas",
+      "prostate"
+    ],
+    "grey": [
+      "pancreas"
+    ],
+    "turner": [
+      "pancreas"
+    ],
+    "foul": [
+      "pancreas"
+    ],
+    "cullen": [
+      "pancreas"
+    ],
+    "incidental": [
+      "gallbladder",
+      "liver",
+      "uterus"
+    ],
+    "gallbladder": [
+      "gallbladder"
+    ],
+    "bile": [
+      "bile_duct",
+      "gallbladder"
+    ],
+    "gallstones": [
+      "gallbladder"
+    ],
+    "murphy": [
+      "gallbladder"
+    ],
+    "finding": [
+      "gallbladder",
+      "liver"
+    ],
+    "cholelithiasis": [
+      "gallbladder"
+    ],
+    "30min": [
+      "gallbladder"
+    ],
+    "boas": [
+      "gallbladder"
+    ],
+    "cholecystitis": [
+      "gallbladder"
+    ],
+    "localized": [
+      "desc_colon",
+      "gallbladder",
+      "skin"
+    ],
+    "triggered": [
+      "gallbladder",
+      "trigeminal_nerve"
+    ],
+    "sharp": [
+      "gallbladder",
+      "pericardium",
+      "spinal_nerves"
+    ],
+    "visible": [
+      "leg_veins",
+      "supraspinatus_muscle"
+    ],
+    "overlying": [
+      "leg_veins",
+      "skin"
+    ],
+    "thrombosis": [
+      "leg_veins"
+    ],
+    "clot": [
+      "leg_veins"
+    ],
+    "warmth": [
+      "blood",
+      "joint",
+      "leg_veins",
+      "skin"
+    ],
+    "erythema": [
+      "blood",
+      "leg_veins",
+      "sig_colon",
+      "skin"
+    ],
+    "homans": [
+      "blood",
+      "leg_veins"
+    ],
+    "difference": [
+      "aorta"
+    ],
+    "visualized": [
+      "aorta"
+    ],
+    "intimal": [
+      "aorta"
+    ],
+    "tamponade": [
+      "aorta"
+    ],
+    "radiating": [
+      "aorta",
+      "spinal_nerves"
+    ],
+    "false": [
+      "aorta"
+    ],
+    "flap": [
+      "aorta"
+    ],
+    "dissection": [
+      "aorta"
+    ],
+    "tearing": [
+      "aorta",
+      "facial_nerve"
+    ],
+    "lumen": [
+      "aorta"
+    ],
+    "constipation": [
+      "colon",
+      "desc_colon",
+      "thyroid",
+      "uterus"
+    ],
+    "diverticulitis": [
+      "desc_colon"
+    ],
+    "predominance": [
+      "desc_colon"
+    ],
+    "voluntary": [
+      "desc_colon"
+    ],
+    "guarding": [
+      "desc_colon"
+    ],
+    "mast": [
+      "systemic_immune"
+    ],
+    "cramping": [
+      "systemic_immune"
+    ],
+    "anaphylaxis": [
+      "systemic_immune"
+    ],
+    "vasodilation": [
+      "systemic_immune"
+    ],
+    "hives": [
+      "systemic_immune"
+    ],
+    "angioedema": [
+      "systemic_immune"
+    ],
+    "flushing": [
+      "systemic_immune"
+    ],
+    "stridor": [
+      "systemic_immune"
+    ],
+    "urticaria": [
+      "systemic_immune"
+    ],
+    "intense": [
+      "joint",
+      "liver",
+      "skin",
+      "systemic_immune"
+    ],
+    "massive": [
+      "systemic_immune"
+    ],
+    "hypersensitivity": [
+      "systemic_immune"
+    ],
+    "colored": [
+      "liver"
+    ],
+    "architecture": [
+      "liver"
+    ],
+    "signs": [
+      "liver",
+      "uterus"
+    ],
+    "angiomas": [
+      "liver"
+    ],
+    "alcoholic": [
+      "liver"
+    ],
+    "gynecomastia": [
+      "liver"
+    ],
+    "arthralgia": [
+      "liver"
+    ],
+    "clay": [
+      "liver"
+    ],
+    "coagulopathy": [
+      "liver"
+    ],
+    "palmar": [
+      "liver",
+      "median_nerve"
+    ],
+    "spider": [
+      "liver"
+    ],
+    "males": [
+      "liver"
+    ],
+    "splenomegaly": [
+      "liver"
+    ],
+    "dark": [
+      "liver",
+      "skin"
+    ],
+    "medusae": [
+      "liver"
+    ],
+    "variceal": [
+      "liver"
+    ],
+    "esophageal": [
+      "liver"
+    ],
+    "jaundice": [
+      "bile_duct",
+      "liver"
+    ],
+    "caput": [
+      "liver"
+    ],
+    "cirrhosis": [
+      "liver"
+    ],
+    "varices": [
+      "liver"
+    ],
+    "higher": [
+      "liver"
+    ],
+    "petechiae": [
+      "blood",
+      "liver"
+    ],
+    "tender": [
+      "liver",
+      "piriformis_muscle",
+      "skin",
+      "throat"
+    ],
+    "hepatocellular": [
+      "liver"
+    ],
+    "hepatitis": [
+      "liver"
+    ],
+    "nafld": [
+      "liver"
+    ],
+    "hepatic": [
+      "liver"
+    ],
+    "distorted": [
+      "liver",
+      "retina"
+    ],
+    "myalgia": [
+      "liver"
+    ],
+    "dull": [
+      "liver"
+    ],
+    "functional": [
+      "liver"
+    ],
+    "hand": [
+      "brachial_plexus",
+      "median_nerve",
+      "thyroid",
+      "ulnar_nerve"
+    ],
+    "hypothermia": [
+      "thyroid"
+    ],
+    "graves": [
+      "thyroid"
+    ],
+    "memory": [
+      "thyroid"
+    ],
+    "gland": [
+      "thyroid"
+    ],
+    "unexplained": [
+      "lymph_node",
+      "thyroid"
+    ],
+    "lethargy": [
+      "thyroid"
+    ],
+    "suppressed": [
+      "thyroid"
+    ],
+    "moist": [
+      "thyroid"
+    ],
+    "irritability": [
+      "middle_ear",
+      "thyroid"
+    ],
+    "despite": [
+      "thyroid"
+    ],
+    "proptosis": [
+      "thyroid"
+    ],
+    "thyroid": [
+      "thyroid"
+    ],
+    "intolerance": [
+      "thyroid"
+    ],
+    "hypothyroidism": [
+      "thyroid"
+    ],
+    "depression": [
+      "thyroid"
+    ],
+    "exophthalmos": [
+      "thyroid"
+    ],
+    "diplopia": [
+      "thyroid"
+    ],
+    "extraocular": [
+      "thyroid"
+    ],
+    "bulging": [
+      "middle_ear",
+      "thyroid"
+    ],
+    "periorbital": [
+      "eye",
+      "nose",
+      "thyroid"
+    ],
+    "pretibial": [
+      "thyroid"
+    ],
+    "slowing": [
+      "thyroid"
+    ],
+    "hyperthyroidism": [
+      "thyroid"
+    ],
+    "hair": [
+      "thyroid"
+    ],
+    "hyperdefecation": [
+      "thyroid"
+    ],
+    "hashimoto": [
+      "thyroid"
+    ],
+    "myxedema": [
+      "thyroid"
+    ],
+    "nervousness": [
+      "thyroid"
+    ],
+    "puffiness": [
+      "thyroid"
+    ],
+    "thinning": [
+      "thyroid"
+    ],
+    "mood": [
+      "thyroid"
+    ],
+    "orange": [
+      "skin",
+      "thyroid"
+    ],
+    "feeling": [
+      "thyroid"
+    ],
+    "well": [
+      "skin"
+    ],
+    "bullae": [
+      "skin"
+    ],
+    "repetitive": [
+      "iliotibial_band",
+      "nose",
+      "skin"
+    ],
+    "papules": [
+      "skin"
+    ],
+    "heel": [
+      "skin"
+    ],
+    "bacterial": [
+      "skin"
+    ],
+    "from": [
+      "prostate",
+      "skin"
+    ],
+    "streaking": [
+      "skin"
+    ],
+    "scaly": [
+      "skin"
+    ],
+    "dermis": [
+      "skin"
+    ],
+    "lymphangitis": [
+      "skin"
+    ],
+    "static": [
+      "skin"
+    ],
+    "improves": [
+      "skin"
+    ],
+    "dyskinesia": [
+      "skin"
+    ],
+    "microtrauma": [
+      "iliotibial_band",
+      "skin"
+    ],
+    "lichenification": [
+      "skin"
+    ],
+    "peau": [
+      "skin"
+    ],
+    "streaks": [
+      "skin"
+    ],
+    "lymphadenopathy": [
+      "breast",
+      "eye",
+      "lymph_node",
+      "skin"
+    ],
+    "necrotizing": [
+      "skin"
+    ],
+    "redness": [
+      "skin"
+    ],
+    "proliferation": [
+      "skin"
+    ],
+    "lymphangitic": [
+      "skin"
+    ],
+    "calcaneal": [
+      "skin"
+    ],
+    "atopy": [
+      "skin"
+    ],
+    "cellulitis": [
+      "skin"
+    ],
+    "excoriations": [
+      "skin"
+    ],
+    "permeability": [
+      "skin"
+    ],
+    "allergic": [
+      "eye",
+      "nose",
+      "skin"
+    ],
+    "passive": [
+      "fascial_compartment_leg",
+      "skin"
+    ],
+    "extensor": [
+      "skin"
+    ],
+    "plantar": [
+      "skin",
+      "tibial_nerve"
+    ],
+    "soft": [
+      "skin"
+    ],
+    "invasion": [
+      "skin"
+    ],
+    "atopic": [
+      "skin"
+    ],
+    "scratching": [
+      "skin"
+    ],
+    "spur": [
+      "skin"
+    ],
+    "erythematous": [
+      "skin"
+    ],
+    "local": [
+      "iliotibial_band",
+      "skin"
+    ],
+    "indistinct": [
+      "skin"
+    ],
+    "antecubital": [
+      "skin"
+    ],
+    "borders": [
+      "skin"
+    ],
+    "medial": [
+      "skin",
+      "ulnar_nerve"
+    ],
+    "flexural": [
+      "skin"
+    ],
+    "affected": [
+      "blood",
+      "facial_nerve",
+      "skin"
+    ],
+    "fasciitis": [
+      "skin"
+    ],
+    "impaired": [
+      "skin"
+    ],
+    "crepitus": [
+      "skin"
+    ],
+    "thickened": [
+      "skin"
+    ],
+    "blisters": [
+      "skin"
+    ],
+    "spontaneous": [
+      "pleura"
+    ],
+    "deviation": [
+      "joint",
+      "pleura"
+    ],
+    "tactile": [
+      "pleura"
+    ],
+    "rupture": [
+      "pleura"
+    ],
+    "hyperresonance": [
+      "pleura"
+    ],
+    "pleural": [
+      "pleura"
+    ],
+    "negative": [
+      "middle_ear",
+      "piriformis_muscle",
+      "pleura"
+    ],
+    "collapses": [
+      "pleura"
+    ],
+    "fremitus": [
+      "pleura"
+    ],
+    "partially": [
+      "pleura"
+    ],
+    "tracheal": [
+      "pleura"
+    ],
+    "pneumothorax": [
+      "pleura"
+    ],
+    "pericardial": [
+      "pericardium"
+    ],
+    "friction": [
+      "pericardium"
+    ],
+    "triad": [
+      "pericardium"
+    ],
+    "pericarditis": [
+      "pericardium"
+    ],
+    "fibrinous": [
+      "pericardium"
+    ],
+    "paradoxus": [
+      "pericardium"
+    ],
+    "shoulder": [
+      "brachial_plexus",
+      "pericardium",
+      "supraspinatus_muscle",
+      "uterus"
+    ],
+    "beck": [
+      "pericardium"
+    ],
+    "pulsus": [
+      "pericardium"
+    ],
+    "exudate": [
+      "pericardium"
+    ],
+    "tenesmus": [
+      "sig_colon"
+    ],
+    "strictures": [
+      "sig_colon"
+    ],
+    "hematochezia": [
+      "asc_colon",
+      "sig_colon"
+    ],
+    "joint": [
+      "joint",
+      "sig_colon"
+    ],
+    "arthritis": [
+      "joint",
+      "sig_colon"
+    ],
+    "crohns": [
+      "sig_colon"
+    ],
+    "megacolon": [
+      "sig_colon"
+    ],
+    "transmural": [
+      "sig_colon"
+    ],
+    "bloody": [
+      "sig_colon"
+    ],
+    "crypt": [
+      "sig_colon"
+    ],
+    "toxic": [
+      "sig_colon"
+    ],
+    "unintentional": [
+      "asc_colon",
+      "sig_colon"
+    ],
+    "inflammatory": [
+      "joint",
+      "sig_colon",
+      "spinal_nerves"
+    ],
+    "uveitis": [
+      "sig_colon"
+    ],
+    "fistulas": [
+      "sig_colon"
+    ],
+    "stool": [
+      "colon",
+      "sig_colon"
+    ],
+    "infiltration": [
+      "joint",
+      "lymph_node",
+      "sig_colon"
+    ],
+    "bacteremia": [
+      "bile_duct"
+    ],
+    "ascending": [
+      "bile_duct",
+      "spinal_nerves"
+    ],
+    "recruitment": [
+      "bile_duct"
+    ],
+    "obstructive": [
+      "bile_duct",
+      "prostate"
+    ],
+    "intrabiliary": [
+      "bile_duct"
+    ],
+    "cholangitis": [
+      "bile_duct"
+    ],
+    "wrinkle": [
+      "facial_nerve"
+    ],
+    "smile": [
+      "facial_nerve"
+    ],
+    "paralysis": [
+      "facial_nerve"
+    ],
+    "bell": [
+      "facial_nerve"
+    ],
+    "xerostomia": [
+      "facial_nerve"
+    ],
+    "forehead": [
+      "facial_nerve"
+    ],
+    "axonal": [
+      "facial_nerve"
+    ],
+    "idiopathic": [
+      "facial_nerve"
+    ],
+    "stapedius": [
+      "facial_nerve"
+    ],
+    "self": [
+      "facial_nerve"
+    ],
+    "limited": [
+      "facial_nerve",
+      "joint"
+    ],
+    "inability": [
+      "facial_nerve"
+    ],
+    "close": [
+      "facial_nerve"
+    ],
+    "mouth": [
+      "facial_nerve"
+    ],
+    "hyperacusis": [
+      "facial_nerve"
+    ],
+    "legs": [
+      "blood"
+    ],
+    "count": [
+      "blood"
+    ],
+    "thrombus": [
+      "blood"
+    ],
+    "pinpoint": [
+      "blood"
+    ],
+    "microcytic": [
+      "blood"
+    ],
+    "immobilization": [
+      "blood"
+    ],
+    "cheilitis": [
+      "blood"
+    ],
+    "koilonychia": [
+      "blood"
+    ],
+    "hemoglobin": [
+      "blood"
+    ],
+    "menstrual": [
+      "blood"
+    ],
+    "glossitis": [
+      "blood"
+    ],
+    "children": [
+      "blood"
+    ],
+    "positive": [
+      "blood",
+      "brachial_plexus",
+      "iliotibial_band",
+      "median_nerve",
+      "spinal_nerves",
+      "supraspinatus_muscle",
+      "ulnar_nerve",
+      "uterus"
+    ],
+    "synthesis": [
+      "blood"
+    ],
+    "spoon": [
+      "blood"
+    ],
+    "purpura": [
+      "blood"
+    ],
+    "angular": [
+      "blood"
+    ],
+    "flow": [
+      "blood"
+    ],
+    "embolism": [
+      "blood"
+    ],
+    "pica": [
+      "blood"
+    ],
+    "heavy": [
+      "blood",
+      "uterus"
+    ],
+    "rare": [
+      "blood"
+    ],
+    "lineages": [
+      "blood"
+    ],
+    "ecchymoses": [
+      "blood"
+    ],
+    "normal": [
+      "blood",
+      "colon",
+      "trigeminal_nerve"
+    ],
+    "shaped": [
+      "blood"
+    ],
+    "other": [
+      "blood"
+    ],
+    "conjunctivae": [
+      "blood"
+    ],
+    "hypochromic": [
+      "blood"
+    ],
+    "craving": [
+      "blood",
+      "r_adrenal"
+    ],
+    "restless": [
+      "blood"
+    ],
+    "corner": [
+      "blood"
+    ],
+    "intracranial": [
+      "blood"
+    ],
+    "purple": [
+      "blood"
+    ],
+    "hyponatremia": [
+      "r_adrenal"
+    ],
+    "orthostatic": [
+      "r_adrenal"
+    ],
+    "adrenal": [
+      "r_adrenal"
+    ],
+    "orthostasis": [
+      "r_adrenal"
+    ],
+    "potassium": [
+      "r_adrenal"
+    ],
+    "salt": [
+      "r_adrenal"
+    ],
+    "aldosterone": [
+      "r_adrenal"
+    ],
+    "bronze": [
+      "r_adrenal"
+    ],
+    "hyperkalemia": [
+      "r_adrenal"
+    ],
+    "cortisol": [
+      "r_adrenal"
+    ],
+    "addison": [
+      "r_adrenal"
+    ],
+    "creases": [
+      "r_adrenal"
+    ],
+    "intercritical": [
+      "joint"
+    ],
+    "period": [
+      "joint"
+    ],
+    "rheumatoid": [
+      "joint"
+    ],
+    "exquisite": [
+      "joint"
+    ],
+    "gout": [
+      "joint"
+    ],
+    "factor": [
+      "joint"
+    ],
+    "subcutaneous": [
+      "joint"
+    ],
+    "monosodium": [
+      "joint"
+    ],
+    "deposition": [
+      "joint"
+    ],
+    "spares": [
+      "joint"
+    ],
+    "disability": [
+      "joint"
+    ],
+    "range": [
+      "joint"
+    ],
+    "crystal": [
+      "joint"
+    ],
+    "synovium": [
+      "joint"
+    ],
+    "trigger": [
+      "joint",
+      "trigeminal_nerve"
+    ],
+    "cascade": [
+      "joint"
+    ],
+    "swan": [
+      "joint"
+    ],
+    "peeling": [
+      "joint"
+    ],
+    "polyarthritis": [
+      "joint"
+    ],
+    "wrist": [
+      "joint"
+    ],
+    "involvement": [
+      "joint"
+    ],
+    "monoarticular": [
+      "joint"
+    ],
+    "symmetric": [
+      "joint",
+      "spinal_nerves"
+    ],
+    "ulnar": [
+      "brachial_plexus",
+      "joint",
+      "ulnar_nerve"
+    ],
+    "shiny": [
+      "joint"
+    ],
+    "desquamation": [
+      "joint"
+    ],
+    "joints": [
+      "joint"
+    ],
+    "urate": [
+      "joint"
+    ],
+    "crystals": [
+      "joint"
+    ],
+    "barre": [
+      "spinal_nerves"
+    ],
+    "saddle": [
+      "cauda_equina",
+      "spinal_nerves"
+    ],
+    "glove": [
+      "spinal_nerves"
+    ],
+    "hyperalgesia": [
+      "spinal_nerves"
+    ],
+    "over": [
+      "spinal_nerves"
+    ],
+    "radiculopathy": [
+      "cauda_equina",
+      "spinal_nerves"
+    ],
+    "buttock": [
+      "piriformis_muscle",
+      "spinal_nerves"
+    ],
+    "stocking": [
+      "spinal_nerves"
+    ],
+    "diaphragmatic": [
+      "spinal_nerves",
+      "uterus"
+    ],
+    "perineal": [
+      "cauda_equina",
+      "spinal_nerves"
+    ],
+    "starts": [
+      "spinal_nerves"
+    ],
+    "tingling": [
+      "spinal_nerves"
+    ],
+    "anesthesia": [
+      "cauda_equina",
+      "fascial_compartment_leg",
+      "spinal_nerves"
+    ],
+    "autonomic": [
+      "spinal_nerves"
+    ],
+    "dorsiflexion": [
+      "spinal_nerves"
+    ],
+    "neuropathy": [
+      "spinal_nerves"
+    ],
+    "irritation": [
+      "piriformis_muscle",
+      "spinal_nerves"
+    ],
+    "allodynia": [
+      "spinal_nerves"
+    ],
+    "disc": [
+      "retina",
+      "spinal_nerves"
+    ],
+    "dissociation": [
+      "spinal_nerves"
+    ],
+    "shooting": [
+      "spinal_nerves"
+    ],
+    "activation": [
+      "spinal_nerves"
+    ],
+    "albuminocytologic": [
+      "spinal_nerves"
+    ],
+    "modification": [
+      "spinal_nerves"
+    ],
+    "sciatica": [
+      "spinal_nerves"
+    ],
+    "progresses": [
+      "spinal_nerves"
+    ],
+    "proprioception": [
+      "spinal_nerves"
+    ],
+    "straight": [
+      "piriformis_muscle",
+      "spinal_nerves"
+    ],
+    "vibration": [
+      "spinal_nerves"
+    ],
+    "numbness": [
+      "common_peroneal_nerve",
+      "median_nerve",
+      "spinal_nerves",
+      "ulnar_nerve"
+    ],
+    "radicular": [
+      "spinal_nerves"
+    ],
+    "dermatome": [
+      "spinal_nerves"
+    ],
+    "foot": [
+      "cauda_equina",
+      "common_peroneal_nerve",
+      "spinal_nerves",
+      "tibial_nerve"
+    ],
+    "feet": [
+      "spinal_nerves"
+    ],
+    "nervorum": [
+      "spinal_nerves"
+    ],
+    "vasa": [
+      "spinal_nerves"
+    ],
+    "lumbar": [
+      "spinal_nerves"
+    ],
+    "polyol": [
+      "spinal_nerves"
+    ],
+    "pathway": [
+      "spinal_nerves"
+    ],
+    "demyelination": [
+      "common_peroneal_nerve",
+      "spinal_nerves"
+    ],
+    "microangiopathy": [
+      "spinal_nerves"
+    ],
+    "paresthesia": [
+      "fascial_compartment_leg",
+      "spinal_nerves"
+    ],
+    "along": [
+      "spinal_nerves"
+    ],
+    "chemical": [
+      "spinal_nerves"
+    ],
+    "posterior": [
+      "piriformis_muscle",
+      "spinal_nerves"
+    ],
+    "charcot": [
+      "spinal_nerves"
+    ],
+    "neuroarthropathy": [
+      "spinal_nerves"
+    ],
+    "paresthesias": [
+      "brachial_plexus",
+      "median_nerve",
+      "spinal_nerves",
+      "tibial_nerve",
+      "ulnar_nerve"
+    ],
+    "guillain": [
+      "spinal_nerves"
+    ],
+    "distribution": [
+      "brachial_plexus",
+      "spinal_nerves",
+      "trigeminal_nerve"
+    ],
+    "media": [
+      "middle_ear"
+    ],
+    "conductive": [
+      "middle_ear"
+    ],
+    "outward": [
+      "middle_ear"
+    ],
+    "immobile": [
+      "middle_ear"
+    ],
+    "otorrhea": [
+      "middle_ear"
+    ],
+    "muffled": [
+      "middle_ear"
+    ],
+    "popping": [
+      "middle_ear"
+    ],
+    "amber": [
+      "middle_ear"
+    ],
+    "serous": [
+      "middle_ear"
+    ],
+    "hearing": [
+      "middle_ear"
+    ],
+    "auricular": [
+      "middle_ear"
+    ],
+    "tympanic": [
+      "middle_ear"
+    ],
+    "otitis": [
+      "middle_ear"
+    ],
+    "sensation": [
+      "cauda_equina",
+      "middle_ear"
+    ],
+    "middle": [
+      "middle_ear"
+    ],
+    "poor": [
+      "middle_ear"
+    ],
+    "fullness": [
+      "middle_ear",
+      "uterus"
+    ],
+    "protruding": [
+      "middle_ear"
+    ],
+    "retracted": [
+      "middle_ear"
+    ],
+    "effusion": [
+      "middle_ear"
+    ],
+    "delay": [
+      "middle_ear"
+    ],
+    "relief": [
+      "middle_ear"
+    ],
+    "clear": [
+      "middle_ear",
+      "nose"
+    ],
+    "speech": [
+      "middle_ear"
+    ],
+    "accumulation": [
+      "middle_ear"
+    ],
+    "drainage": [
+      "middle_ear"
+    ],
+    "behind": [
+      "middle_ear"
+    ],
+    "bright": [
+      "asc_colon",
+      "rectum"
+    ],
+    "colorectal": [
+      "asc_colon"
+    ],
+    "metastasis": [
+      "asc_colon"
+    ],
+    "change": [
+      "asc_colon"
+    ],
+    "occult": [
+      "asc_colon"
+    ],
+    "esophagitis": [
+      "esophagus"
+    ],
+    "food": [
+      "esophagus"
+    ],
+    "swallowing": [
+      "esophagus",
+      "throat"
+    ],
+    "odynophagia": [
+      "esophagus",
+      "throat"
+    ],
+    "labs": [
+      "colon"
+    ],
+    "irritable": [
+      "colon"
+    ],
+    "dripping": [
+      "rectum"
+    ],
+    "external": [
+      "rectum"
+    ],
+    "anal": [
+      "cauda_equina",
+      "rectum"
+    ],
+    "hemorrhoids": [
+      "rectum"
+    ],
+    "internal": [
+      "piriformis_muscle",
+      "rectum"
+    ],
+    "permanent": [
+      "eye"
+    ],
+    "conjunctivitis": [
+      "eye",
+      "nose"
+    ],
+    "crusting": [
+      "eye"
+    ],
+    "prominent": [
+      "eye"
+    ],
+    "preauricular": [
+      "eye"
+    ],
+    "acuity": [
+      "eye",
+      "retina"
+    ],
+    "eyelid": [
+      "eye"
+    ],
+    "glaucoma": [
+      "eye",
+      "retina"
+    ],
+    "closure": [
+      "eye"
+    ],
+    "fixed": [
+      "breast",
+      "eye"
+    ],
+    "angle": [
+      "eye"
+    ],
+    "pupillary": [
+      "eye"
+    ],
+    "increase": [
+      "eye"
+    ],
+    "leukotriene": [
+      "nose"
+    ],
+    "sneezing": [
+      "nose"
+    ],
+    "shiners": [
+      "nose"
+    ],
+    "eyes": [
+      "nose"
+    ],
+    "rhinitis": [
+      "nose"
+    ],
+    "mucosal": [
+      "nose"
+    ],
+    "histamine": [
+      "nose"
+    ],
+    "absence": [
+      "throat"
+    ],
+    "strawberry": [
+      "throat"
+    ],
+    "tonsillar": [
+      "throat"
+    ],
+    "anterior": [
+      "throat"
+    ],
+    "exudates": [
+      "retina",
+      "throat"
+    ],
+    "white": [
+      "throat"
+    ],
+    "streptococcal": [
+      "throat"
+    ],
+    "cervical": [
+      "throat"
+    ],
+    "scarlatiniform": [
+      "throat"
+    ],
+    "benign": [
+      "prostate"
+    ],
+    "hematospermia": [
+      "prostate"
+    ],
+    "urinate": [
+      "prostate"
+    ],
+    "nocturia": [
+      "prostate"
+    ],
+    "pathologic": [
+      "prostate"
+    ],
+    "screen": [
+      "prostate"
+    ],
+    "hyperplasia": [
+      "prostate"
+    ],
+    "fractures": [
+      "bone",
+      "prostate"
+    ],
+    "utis": [
+      "prostate"
+    ],
+    "weak": [
+      "common_peroneal_nerve",
+      "prostate"
+    ],
+    "incomplete": [
+      "prostate"
+    ],
+    "emptying": [
+      "prostate"
+    ],
+    "straining": [
+      "prostate"
+    ],
+    "stream": [
+      "prostate"
+    ],
+    "prostate": [
+      "prostate"
+    ],
+    "waking": [
+      "prostate"
+    ],
+    "increasing": [
+      "prostate"
+    ],
+    "outlet": [
+      "brachial_plexus",
+      "prostate"
+    ],
+    "prostatic": [
+      "prostate"
+    ],
+    "uterus": [
+      "uterus"
+    ],
+    "menses": [
+      "uterus"
+    ],
+    "fibroids": [
+      "uterus"
+    ],
+    "pelvic": [
+      "uterus"
+    ],
+    "light": [
+      "trigeminal_nerve",
+      "uterus"
+    ],
+    "amenorrhea": [
+      "uterus"
+    ],
+    "dyschezia": [
+      "uterus"
+    ],
+    "cyclic": [
+      "uterus"
+    ],
+    "dysmenorrhea": [
+      "uterus"
+    ],
+    "peritoneal": [
+      "uterus"
+    ],
+    "dyspareunia": [
+      "uterus"
+    ],
+    "defecation": [
+      "uterus"
+    ],
+    "vaginal": [
+      "uterus"
+    ],
+    "leiomyoma": [
+      "uterus"
+    ],
+    "often": [
+      "uterus"
+    ],
+    "endometriosis": [
+      "uterus"
+    ],
+    "menorrhagia": [
+      "uterus"
+    ],
+    "hemodynamic": [
+      "uterus"
+    ],
+    "ectopic": [
+      "uterus"
+    ],
+    "test": [
+      "brachial_plexus",
+      "iliotibial_band",
+      "median_nerve",
+      "ulnar_nerve",
+      "uterus"
+    ],
+    "pregnancy": [
+      "uterus"
+    ],
+    "uterine": [
+      "uterus"
+    ],
+    "rectal": [
+      "uterus"
+    ],
+    "enlarged": [
+      "uterus"
+    ],
+    "intermenstrual": [
+      "uterus"
+    ],
+    "periods": [
+      "uterus"
+    ],
+    "infertility": [
+      "ovary",
+      "uterus"
+    ],
+    "ovary": [
+      "ovary"
+    ],
+    "androgenic": [
+      "ovary"
+    ],
+    "acne": [
+      "ovary"
+    ],
+    "treatment": [
+      "ovary"
+    ],
+    "excess": [
+      "ovary"
+    ],
+    "hirsutism": [
+      "ovary"
+    ],
+    "anovulation": [
+      "ovary"
+    ],
+    "acanthosis": [
+      "ovary"
+    ],
+    "alopecia": [
+      "ovary"
+    ],
+    "ovaries": [
+      "ovary"
+    ],
+    "obesity": [
+      "ovary"
+    ],
+    "nigricans": [
+      "ovary"
+    ],
+    "polycystic": [
+      "ovary"
+    ],
+    "male": [
+      "ovary"
+    ],
+    "pcos": [
+      "ovary"
+    ],
+    "hard": [
+      "breast",
+      "retina"
+    ],
+    "metastases": [
+      "breast"
+    ],
+    "axillary": [
+      "breast"
+    ],
+    "retraction": [
+      "breast"
+    ],
+    "breast": [
+      "breast"
+    ],
+    "palpable": [
+      "breast",
+      "piriformis_muscle"
+    ],
+    "dimpling": [
+      "breast"
+    ],
+    "nipple": [
+      "breast"
+    ],
+    "colles": [
+      "bone"
+    ],
+    "score": [
+      "bone"
+    ],
+    "radius": [
+      "bone"
+    ],
+    "height": [
+      "bone"
+    ],
+    "vertebral": [
+      "bone"
+    ],
+    "fracture": [
+      "bone"
+    ],
+    "until": [
+      "bone"
+    ],
+    "osteoporosis": [
+      "bone"
+    ],
+    "mobility": [
+      "bone"
+    ],
+    "firm": [
+      "lymph_node"
+    ],
+    "rubbery": [
+      "lymph_node"
+    ],
+    "tumor": [
+      "lymph_node"
+    ],
+    "hepatosplenomegaly": [
+      "lymph_node"
+    ],
+    "lysis": [
+      "lymph_node"
+    ],
+    "hodgkin": [
+      "lymph_node"
+    ],
+    "lymphoma": [
+      "lymph_node"
+    ],
+    "marrow": [
+      "lymph_node"
+    ],
+    "extranodal": [
+      "lymph_node"
+    ],
+    "tinel": [
+      "common_peroneal_nerve",
+      "median_nerve",
+      "tibial_nerve",
+      "ulnar_nerve"
+    ],
+    "tunnel": [
+      "median_nerve",
+      "tibial_nerve",
+      "ulnar_nerve"
+    ],
+    "thumb": [
+      "median_nerve"
+    ],
+    "phalen": [
+      "median_nerve"
+    ],
+    "deformity": [
+      "median_nerve",
+      "ulnar_nerve"
+    ],
+    "carpal": [
+      "median_nerve"
+    ],
+    "thenar": [
+      "median_nerve"
+    ],
+    "aspect": [
+      "median_nerve",
+      "tibial_nerve"
+    ],
+    "median": [
+      "median_nerve"
+    ],
+    "elbow": [
+      "ulnar_nerve"
+    ],
+    "dorsal": [
+      "ulnar_nerve"
+    ],
+    "cubital": [
+      "ulnar_nerve"
+    ],
+    "froment": [
+      "ulnar_nerve"
+    ],
+    "finger": [
+      "ulnar_nerve"
+    ],
+    "pinky": [
+      "ulnar_nerve"
+    ],
+    "interosseous": [
+      "ulnar_nerve"
+    ],
+    "wartenberg": [
+      "ulnar_nerve"
+    ],
+    "claw": [
+      "ulnar_nerve"
+    ],
+    "stretch": [
+      "ulnar_nerve"
+    ],
+    "flexion": [
+      "ulnar_nerve"
+    ],
+    "intrinsic": [
+      "brachial_plexus",
+      "tibial_nerve"
+    ],
+    "reproduction": [
+      "tibial_nerve"
+    ],
+    "tarsal": [
+      "tibial_nerve"
+    ],
+    "sole": [
+      "tibial_nerve"
+    ],
+    "branches": [
+      "tibial_nerve"
+    ],
+    "activity": [
+      "tibial_nerve"
+    ],
+    "dorsum": [
+      "common_peroneal_nerve"
+    ],
+    "slap": [
+      "common_peroneal_nerve"
+    ],
+    "steppage": [
+      "common_peroneal_nerve"
+    ],
+    "drop": [
+      "cauda_equina",
+      "common_peroneal_nerve",
+      "supraspinatus_muscle"
+    ],
+    "eversion": [
+      "common_peroneal_nerve"
+    ],
+    "peroneal": [
+      "common_peroneal_nerve"
+    ],
+    "typically": [
+      "common_peroneal_nerve"
+    ],
+    "exam": [
+      "trigeminal_nerve"
+    ],
+    "lancinating": [
+      "trigeminal_nerve"
+    ],
+    "least": [
+      "trigeminal_nerve"
+    ],
+    "neuralgia": [
+      "trigeminal_nerve"
+    ],
+    "mandibular": [
+      "trigeminal_nerve"
+    ],
+    "chewing": [
+      "trigeminal_nerve"
+    ],
+    "transmission": [
+      "trigeminal_nerve"
+    ],
+    "zones": [
+      "trigeminal_nerve"
+    ],
+    "ephaptic": [
+      "trigeminal_nerve"
+    ],
+    "inhibition": [
+      "trigeminal_nerve"
+    ],
+    "ophthalmic": [
+      "trigeminal_nerve"
+    ],
+    "lose": [
+      "trigeminal_nerve"
+    ],
+    "blot": [
+      "retina"
+    ],
+    "thickening": [
+      "retina"
+    ],
+    "membrane": [
+      "retina"
+    ],
+    "elsewhere": [
+      "retina"
+    ],
+    "fundoscopy": [
+      "retina"
+    ],
+    "tractional": [
+      "retina"
+    ],
+    "lines": [
+      "retina"
+    ],
+    "neovascularization": [
+      "retina"
+    ],
+    "metamorphopsia": [
+      "retina"
+    ],
+    "wool": [
+      "retina"
+    ],
+    "pericyte": [
+      "retina"
+    ],
+    "endothelial": [
+      "retina"
+    ],
+    "vitreous": [
+      "retina"
+    ],
+    "cotton": [
+      "retina"
+    ],
+    "microaneurysms": [
+      "retina"
+    ],
+    "detachment": [
+      "retina"
+    ],
+    "basement": [
+      "retina"
+    ],
+    "neovascular": [
+      "retina"
+    ],
+    "overhead": [
+      "supraspinatus_muscle"
+    ],
+    "partial": [
+      "supraspinatus_muscle"
+    ],
+    "empty": [
+      "supraspinatus_muscle"
+    ],
+    "pseudoparalysis": [
+      "supraspinatus_muscle"
+    ],
+    "rotator": [
+      "supraspinatus_muscle"
+    ],
+    "cuff": [
+      "supraspinatus_muscle"
+    ],
+    "hawkins": [
+      "supraspinatus_muscle"
+    ],
+    "subacromial": [
+      "supraspinatus_muscle"
+    ],
+    "tendon": [
+      "supraspinatus_muscle"
+    ],
+    "tear": [
+      "supraspinatus_muscle"
+    ],
+    "supraspinatus": [
+      "supraspinatus_muscle"
+    ],
+    "impingement": [
+      "supraspinatus_muscle"
+    ],
+    "neer": [
+      "supraspinatus_muscle"
+    ],
+    "abduction": [
+      "supraspinatus_muscle"
+    ],
+    "sciatic": [
+      "piriformis_muscle"
+    ],
+    "thigh": [
+      "piriformis_muscle"
+    ],
+    "sitting": [
+      "piriformis_muscle"
+    ],
+    "piriformis": [
+      "piriformis_muscle"
+    ],
+    "neurovascular": [
+      "brachial_plexus"
+    ],
+    "anatomical": [
+      "brachial_plexus"
+    ],
+    "zone": [
+      "brachial_plexus"
+    ],
+    "roos": [
+      "brachial_plexus"
+    ],
+    "adson": [
+      "brachial_plexus"
+    ],
+    "thoracic": [
+      "brachial_plexus"
+    ],
+    "compress": [
+      "brachial_plexus"
+    ],
+    "compartment": [
+      "fascial_compartment_leg"
+    ],
+    "inelastic": [
+      "fascial_compartment_leg"
+    ],
+    "tense": [
+      "fascial_compartment_leg"
+    ],
+    "then": [
+      "fascial_compartment_leg"
+    ],
+    "swollen": [
+      "fascial_compartment_leg"
+    ],
+    "intracompartmental": [
+      "fascial_compartment_leg"
+    ],
+    "sphincter": [
+      "cauda_equina"
+    ],
+    "cauda": [
+      "cauda_equina"
+    ],
+    "multilevel": [
+      "cauda_equina"
+    ],
+    "lumbosacral": [
+      "cauda_equina"
+    ],
+    "perianal": [
+      "cauda_equina"
+    ],
+    "equina": [
+      "cauda_equina"
+    ],
+    "ober": [
+      "iliotibial_band"
+    ],
+    "noble": [
+      "iliotibial_band"
+    ],
+    "iliotibial": [
+      "iliotibial_band"
+    ],
+    "knee": [
+      "iliotibial_band"
+    ],
+    "running": [
+      "iliotibial_band"
+    ]
+  }
+}

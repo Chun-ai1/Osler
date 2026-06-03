@@ -1,0 +1,16 @@
+{
+  "rs429358": {
+    "gene": "APOE",
+    "risk_allele": "C",
+    "protective_allele": "",
+    "evidence_level": "strong",
+    "mechanisms": ["amyloid_beta_accumulation", "neuroinflammation"]
+  },
+  "rs7412": {
+    "gene": "APOE",
+    "risk_allele": "",
+    "protective_allele": "T",
+    "evidence_level": "moderate",
+    "mechanisms": ["lipid_transport_efficiency"]
+  }
+}

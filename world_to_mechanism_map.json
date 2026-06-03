@@ -1,0 +1,124 @@
+{
+  "lung_alveoli": {
+    "high_density": [
+      {
+        "mechanism": "alveolar_filling",
+        "base_weight": 0.45,
+        "related_diseases": [
+          "Pneumonia",
+          "Pulmonary edema",
+          "ARDS"
+        ]
+      },
+      {
+        "mechanism": "pulmonary_edema",
+        "base_weight": 0.35,
+        "related_diseases": [
+          "Heart failure",
+          "Pulmonary edema"
+        ]
+      },
+      {
+        "mechanism": "inflammation",
+        "base_weight": 0.25,
+        "related_diseases": [
+          "Pneumonia",
+          "Bronchitis"
+        ]
+      },
+      {
+        "mechanism": "impaired_gas_exchange",
+        "base_weight": 0.3,
+        "related_diseases": [
+          "Hypoxemia",
+          "Pneumonia",
+          "Pulmonary embolism"
+        ]
+      }
+    ],
+    "collapse": [
+      {
+        "mechanism": "atelectasis",
+        "base_weight": 0.5,
+        "related_diseases": [
+          "Atelectasis"
+        ]
+      },
+      {
+        "mechanism": "hypoventilation",
+        "base_weight": 0.3,
+        "related_diseases": [
+          "COPD exacerbation"
+        ]
+      }
+    ]
+  },
+  "pleura": {
+    "fluid_layer": [
+      {
+        "mechanism": "pleural_effusion",
+        "base_weight": 0.45,
+        "related_diseases": [
+          "Pleural effusion",
+          "Heart failure",
+          "Pneumonia"
+        ]
+      },
+      {
+        "mechanism": "inflammation",
+        "base_weight": 0.2,
+        "related_diseases": [
+          "Pleuritis"
+        ]
+      }
+    ]
+  },
+  "brain_parenchyma": {
+    "hypo_perfusion": [
+      {
+        "mechanism": "ischemia",
+        "base_weight": 0.55,
+        "related_diseases": [
+          "Ischemic stroke",
+          "TIA"
+        ]
+      },
+      {
+        "mechanism": "hypoxia",
+        "base_weight": 0.35,
+        "related_diseases": [
+          "Hypoxic brain injury"
+        ]
+      }
+    ],
+    "hyper_density_focus": [
+      {
+        "mechanism": "hemorrhage",
+        "base_weight": 0.55,
+        "related_diseases": [
+          "Intracerebral hemorrhage",
+          "Subarachnoid hemorrhage"
+        ]
+      }
+    ]
+  },
+  "stomach": {
+    "wall_thickening": [
+      {
+        "mechanism": "mucosal_injury",
+        "base_weight": 0.35,
+        "related_diseases": [
+          "Peptic ulcer disease"
+        ]
+      },
+      {
+        "mechanism": "inflammation",
+        "base_weight": 0.3,
+        "related_diseases": [
+          "Gastritis",
+          "Gastroenteritis"
+        ]
+      }
+    ]
+  }
+}

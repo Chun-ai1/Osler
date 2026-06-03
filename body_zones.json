@@ -1,0 +1,204 @@
+{
+  "_meta": {
+    "description": "3D body zones for symptom localization",
+    "schema": {
+      "center": "[x, y, z] zone center in normalized body coords",
+      "extent": "[dx, dy, dz] half-extents"
+    },
+    "version": "1.0"
+  },
+  "zones": {
+    "head": {
+      "center": [
+        0,
+        0.8,
+        0
+      ],
+      "extent": [
+        0.1,
+        0.1,
+        0.1
+      ]
+    },
+    "neck": {
+      "center": [
+        0,
+        0.6,
+        0
+      ],
+      "extent": [
+        0.06,
+        0.05,
+        0.05
+      ]
+    },
+    "thorax_central": {
+      "center": [
+        0,
+        0.35,
+        0.05
+      ],
+      "extent": [
+        0.1,
+        0.1,
+        0.05
+      ]
+    },
+    "right_thorax": {
+      "center": [
+        0.1,
+        0.35,
+        0.05
+      ],
+      "extent": [
+        0.08,
+        0.1,
+        0.05
+      ]
+    },
+    "left_thorax": {
+      "center": [
+        -0.1,
+        0.35,
+        0.05
+      ],
+      "extent": [
+        0.08,
+        0.1,
+        0.05
+      ]
+    },
+    "epigastric": {
+      "center": [
+        0,
+        0.15,
+        0.1
+      ],
+      "extent": [
+        0.05,
+        0.05,
+        0.05
+      ]
+    },
+    "ruq": {
+      "center": [
+        0.1,
+        0.12,
+        0.08
+      ],
+      "extent": [
+        0.06,
+        0.07,
+        0.06
+      ]
+    },
+    "luq": {
+      "center": [
+        -0.1,
+        0.12,
+        0.08
+      ],
+      "extent": [
+        0.06,
+        0.07,
+        0.06
+      ]
+    },
+    "rlq": {
+      "center": [
+        0.1,
+        -0.1,
+        0.05
+      ],
+      "extent": [
+        0.06,
+        0.07,
+        0.06
+      ]
+    },
+    "llq": {
+      "center": [
+        -0.1,
+        -0.1,
+        0.05
+      ],
+      "extent": [
+        0.06,
+        0.07,
+        0.06
+      ]
+    },
+    "umbilical": {
+      "center": [
+        0,
+        0.0,
+        0.05
+      ],
+      "extent": [
+        0.05,
+        0.05,
+        0.05
+      ]
+    },
+    "suprapubic": {
+      "center": [
+        0,
+        -0.18,
+        0.04
+      ],
+      "extent": [
+        0.05,
+        0.05,
+        0.04
+      ]
+    },
+    "right_flank": {
+      "center": [
+        0.13,
+        0.05,
+        -0.1
+      ],
+      "extent": [
+        0.04,
+        0.07,
+        0.05
+      ]
+    },
+    "left_flank": {
+      "center": [
+        -0.13,
+        0.05,
+        -0.1
+      ],
+      "extent": [
+        0.04,
+        0.07,
+        0.05
+      ]
+    },
+    "lower_back": {
+      "center": [
+        0,
+        0.0,
+        -0.15
+      ],
+      "extent": [
+        0.1,
+        0.1,
+        0.04
+      ]
+    },
+    "pelvis": {
+      "center": [
+        0,
+        -0.2,
+        0
+      ],
+      "extent": [
+        0.1,
+        0.08,
+        0.08
+      ]
+    }
+  }
+}

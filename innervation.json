@@ -1,0 +1,455 @@
+{
+  "_meta": {
+    "description": "Visceral and somatic innervation by organ — version 2 with laterality",
+    "source": "Gray's Anatomy 41st ed, Moore Clinical Anatomy, USMLE Step 1",
+    "version": "2.0",
+    "verification_status": "anatomic_textbook"
+  },
+  "organs": {
+    "brain": {
+      "visceral": [],
+      "somatic": [
+        "V1",
+        "V2",
+        "V3"
+      ],
+      "side": "midline",
+      "notes": "trigeminal innervation of dura"
+    },
+    "meninges": {
+      "visceral": [],
+      "somatic": [
+        "V1",
+        "V2",
+        "V3",
+        "C2",
+        "C3"
+      ],
+      "side": "midline",
+      "notes": "meningeal pain via trigeminal/upper cervical"
+    },
+    "thyroid": {
+      "visceral": [
+        "T1-T2"
+      ],
+      "somatic": [
+        "C2",
+        "C3",
+        "C4"
+      ],
+      "side": "midline"
+    },
+    "pharynx": {
+      "visceral": [
+        "T1"
+      ],
+      "somatic": [
+        "IX",
+        "X"
+      ],
+      "side": "midline"
+    },
+    "heart": {
+      "visceral": [
+        "T1-T4"
+      ],
+      "somatic": [
+        "T1-T4"
+      ],
+      "side": "left_predominant",
+      "notes": "MI: chest, LEFT arm (T1), jaw (V3 via vagal), epigastric"
+    },
+    "aorta": {
+      "visceral": [
+        "T1-T12"
+      ],
+      "somatic": [
+        "T2-T12"
+      ],
+      "side": "midline"
+    },
+    "pericardium": {
+      "visceral": [
+        "T1-T4"
+      ],
+      "somatic": [
+        "C3-C5"
+      ],
+      "side": "midline",
+      "notes": "phrenic to neck/shoulder"
+    },
+    "lungs": {
+      "visceral": [
+        "T2-T6"
+      ],
+      "somatic": [
+        "T2-T6"
+      ],
+      "side": "bilateral"
+    },
+    "r_lung": {
+      "visceral": [
+        "T2-T6"
+      ],
+      "somatic": [
+        "T2-T6"
+      ],
+      "side": "right"
+    },
+    "l_lung": {
+      "visceral": [
+        "T2-T6"
+      ],
+      "somatic": [
+        "T2-T6"
+      ],
+      "side": "left"
+    },
+    "trachea": {
+      "visceral": [
+        "T1-T2"
+      ],
+      "somatic": [
+        "T1-T2"
+      ],
+      "side": "midline"
+    },
+    "r_bronchus": {
+      "visceral": [
+        "T2-T4"
+      ],
+      "somatic": [
+        "T2-T4"
+      ],
+      "side": "right"
+    },
+    "l_bronchus": {
+      "visceral": [
+        "T2-T4"
+      ],
+      "somatic": [
+        "T2-T4"
+      ],
+      "side": "left"
+    },
+    "pleura": {
+      "visceral": [
+        "T2-T6"
+      ],
+      "somatic": [
+        "T2-T6"
+      ],
+      "side": "bilateral"
+    },
+    "diaphragm": {
+      "visceral": [
+        "C3-C5"
+      ],
+      "somatic": [
+        "C3-C5"
+      ],
+      "side": "bilateral",
+      "notes": "Kehr's sign — refers to shoulder tip"
+    },
+    "stomach": {
+      "visceral": [
+        "T6-T9"
+      ],
+      "somatic": [
+        "T6-T9"
+      ],
+      "side": "midline_left",
+      "notes": "foregut → epigastric"
+    },
+    "esophagus": {
+      "visceral": [
+        "T5-T8"
+      ],
+      "somatic": [
+        "T5-T8"
+      ],
+      "side": "midline"
+    },
+    "duodenum": {
+      "visceral": [
+        "T6-T9"
+      ],
+      "somatic": [
+        "T6-T9"
+      ],
+      "side": "midline"
+    },
+    "liver": {
+      "visceral": [
+        "T6-T9"
+      ],
+      "somatic": [
+        "T6-T9",
+        "C3-C5"
+      ],
+      "side": "right",
+      "notes": "RUQ + R shoulder via phrenic"
+    },
+    "gallbladder": {
+      "visceral": [
+        "T6-T9"
+      ],
+      "somatic": [
+        "T6-T9",
+        "C3-C5"
+      ],
+      "side": "right",
+      "notes": "Boas sign → R subscapular"
+    },
+    "pancreas": {
+      "visceral": [
+        "T6-T9"
+      ],
+      "somatic": [
+        "T10_back-T12_back"
+      ],
+      "side": "midline",
+      "notes": "epigastric → BACK"
+    },
+    "spleen": {
+      "visceral": [
+        "T6-T9"
+      ],
+      "somatic": [
+        "C3-C5"
+      ],
+      "side": "left",
+      "notes": "Kehr's sign on rupture (L shoulder)"
+    },
+    "jejunum": {
+      "visceral": [
+        "T9-T11"
+      ],
+      "somatic": [
+        "T9-T11"
+      ],
+      "side": "midline"
+    },
+    "ileum": {
+      "visceral": [
+        "T10-T11"
+      ],
+      "somatic": [
+        "T10-T11"
+      ],
+      "side": "midline_right",
+      "notes": "midgut → periumbilical"
+    },
+    "appendix": {
+      "visceral": [
+        "T10"
+      ],
+      "somatic": [
+        "T12"
+      ],
+      "side": "right",
+      "notes": "CLASSIC: T10 visceral (periumbilical) → T12 somatic (RLQ McBurney)",
+      "side_zone": "rlq"
+    },
+    "cecum": {
+      "visceral": [
+        "T10"
+      ],
+      "somatic": [
+        "T12"
+      ],
+      "side": "right",
+      "side_zone": "rlq"
+    },
+    "asc_colon": {
+      "visceral": [
+        "T10-T11"
+      ],
+      "somatic": [
+        "T10-T12"
+      ],
+      "side": "right",
+      "side_zone": "rlq"
+    },
+    "trans_colon": {
+      "visceral": [
+        "T10-T12"
+      ],
+      "somatic": [
+        "T10-T12"
+      ],
+      "side": "midline"
+    },
+    "desc_colon": {
+      "visceral": [
+        "L1-L2"
+      ],
+      "somatic": [
+        "L1-L2"
+      ],
+      "side": "left",
+      "side_zone": "llq",
+      "notes": "hindgut → LLQ"
+    },
+    "sig_colon": {
+      "visceral": [
+        "L1-L2"
+      ],
+      "somatic": [
+        "L1-L2"
+      ],
+      "side": "left",
+      "side_zone": "llq"
+    },
+    "rectum": {
+      "visceral": [
+        "S2-S4"
+      ],
+      "somatic": [
+        "S2-S4"
+      ],
+      "side": "midline"
+    },
+    "r_kidney": {
+      "visceral": [
+        "T10-L1"
+      ],
+      "somatic": [
+        "T10_back-T12_back"
+      ],
+      "side": "right",
+      "side_zone": "right_flank",
+      "notes": "right flank pain"
+    },
+    "l_kidney": {
+      "visceral": [
+        "T10-L1"
+      ],
+      "somatic": [
+        "T10_back-T12_back"
+      ],
+      "side": "left",
+      "side_zone": "left_flank"
+    },
+    "r_ureter": {
+      "visceral": [
+        "T11-L2"
+      ],
+      "somatic": [
+        "T11-L2",
+        "L1"
+      ],
+      "side": "right",
+      "side_zone": "right_flank",
+      "notes": "right loin → groin (renal colic)"
+    },
+    "l_ureter": {
+      "visceral": [
+        "T11-L2"
+      ],
+      "somatic": [
+        "T11-L2",
+        "L1"
+      ],
+      "side": "left",
+      "side_zone": "left_flank"
+    },
+    "bladder": {
+      "visceral": [
+        "T11-L2"
+      ],
+      "somatic": [
+        "T11-L2",
+        "S2-S4"
+      ],
+      "side": "midline",
+      "notes": "suprapubic"
+    },
+    "urethra": {
+      "visceral": [
+        "S2-S4"
+      ],
+      "somatic": [
+        "S2-S4"
+      ],
+      "side": "midline"
+    },
+    "prostate": {
+      "visceral": [
+        "S2-S4"
+      ],
+      "somatic": [
+        "S2-S4"
+      ],
+      "side": "midline"
+    },
+    "uterus": {
+      "visceral": [
+        "T10-L1"
+      ],
+      "somatic": [
+        "T10-L1"
+      ],
+      "side": "midline"
+    },
+    "ovaries": {
+      "visceral": [
+        "T10-T11"
+      ],
+      "somatic": [
+        "T10-T11"
+      ],
+      "side": "bilateral",
+      "notes": "left or right ovary"
+    },
+    "testes": {
+      "visceral": [
+        "T10-T11"
+      ],
+      "somatic": [
+        "T10-T11"
+      ],
+      "side": "bilateral"
+    },
+    "r_adrenal": {
+      "visceral": [
+        "T10-L1"
+      ],
+      "somatic": [
+        "T10_back-T12_back"
+      ],
+      "side": "right"
+    },
+    "l_adrenal": {
+      "visceral": [
+        "T10-L1"
+      ],
+      "somatic": [
+        "T10_back-T12_back"
+      ],
+      "side": "left"
+    },
+    "spinal_cord": {
+      "visceral": [],
+      "somatic": [],
+      "side": "midline"
+    },
+    "skin": {
+      "visceral": [],
+      "somatic": [
+        "all"
+      ],
+      "side": "any"
+    },
+    "muscles": {
+      "visceral": [],
+      "somatic": [],
+      "side": "any"
+    },
+    "bones": {
+      "visceral": [],
+      "somatic": [],
+      "side": "any"
+    }
+  }
+}

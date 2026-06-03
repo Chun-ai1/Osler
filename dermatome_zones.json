@@ -1,0 +1,159 @@
+{
+  "_meta": {
+    "description": "Dermatome → body zone mapping (multi-zone, with back, inguinal, jaw)",
+    "source": "Foerster/Keegan-Garrett dermatome maps",
+    "version": "2.0"
+  },
+  "dermatomes": {
+    "V1": [
+      "forehead",
+      "head"
+    ],
+    "V2": [
+      "midface",
+      "head"
+    ],
+    "V3": [
+      "jaw",
+      "lower_face"
+    ],
+    "IX": [
+      "throat"
+    ],
+    "X": [
+      "throat"
+    ],
+    "C2": [
+      "head_posterior",
+      "neck"
+    ],
+    "C3": [
+      "neck",
+      "shoulder"
+    ],
+    "C4": [
+      "neck",
+      "shoulder"
+    ],
+    "C5": [
+      "shoulder",
+      "arm_lateral"
+    ],
+    "C6": [
+      "arm_lateral",
+      "thumb"
+    ],
+    "C7": [
+      "arm_lateral",
+      "fingers"
+    ],
+    "C8": [
+      "arm_medial",
+      "fingers"
+    ],
+    "T1": [
+      "axilla",
+      "arm_medial"
+    ],
+    "T2": [
+      "axilla",
+      "thorax_central"
+    ],
+    "T3": [
+      "thorax_central"
+    ],
+    "T4": [
+      "thorax_central"
+    ],
+    "T5": [
+      "thorax_central"
+    ],
+    "T6": [
+      "epigastric"
+    ],
+    "T7": [
+      "epigastric"
+    ],
+    "T8": [
+      "epigastric"
+    ],
+    "T9": [
+      "epigastric",
+      "umbilical"
+    ],
+    "T10": [
+      "umbilical"
+    ],
+    "T11": [
+      "umbilical",
+      "ruq",
+      "luq"
+    ],
+    "T12": [
+      "rlq",
+      "llq"
+    ],
+    "T6_back": [
+      "upper_back"
+    ],
+    "T7_back": [
+      "upper_back",
+      "mid_back"
+    ],
+    "T8_back": [
+      "mid_back"
+    ],
+    "T9_back": [
+      "mid_back"
+    ],
+    "T10_back": [
+      "mid_back",
+      "back_flank"
+    ],
+    "T11_back": [
+      "back_flank"
+    ],
+    "T12_back": [
+      "lower_back",
+      "flank"
+    ],
+    "L1": [
+      "inguinal",
+      "groin",
+      "rlq",
+      "llq"
+    ],
+    "L2": [
+      "thigh_anterior"
+    ],
+    "L3": [
+      "thigh_anterior",
+      "knee"
+    ],
+    "L4": [
+      "leg_anterior",
+      "shin"
+    ],
+    "L5": [
+      "leg_lateral",
+      "foot_top"
+    ],
+    "S1": [
+      "leg_posterior",
+      "heel"
+    ],
+    "S2": [
+      "perineum",
+      "buttock"
+    ],
+    "S3": [
+      "perineum"
+    ],
+    "S4": [
+      "perineum"
+    ],
+    "S5": [
+      "perineum"
+    ]
+  }
+}

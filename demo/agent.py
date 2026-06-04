@@ -26,6 +26,18 @@ import disease_world
 from patient_profile import PatientProfile
 
 
+def _attach_rationale(result: Dict, drugs_pkpd: Dict) -> None:
+    """Surface each drug's human-readable rationale (from drugs_pkpd.json) onto the
+    candidate, so the UI can show WHY the mechanism, not just a filename."""
+    try:
+        cm = RE.dedupe_to_canonical(drugs_pkpd)
+    except Exception:
+        cm = {}
+    for c in result.get("candidates", []):
+        d = cm.get(c["drug"]) or drugs_pkpd.get(c["drug"]) or {}
+        c["rationale"] = d.get("rationale")
+
+
 def build_patient(d: Dict) -> PatientProfile:
     vit = d.get("vitals") or {}
     labs = d.get("labs") or {}
@@ -89,6 +101,7 @@ def analyze_stream(fields: Dict, drugs_pkpd: Dict, clinical: Dict,
         r["indication_label"] = next((i["label"] for i in case_targets.list_indications()
                                      if i["value"] == canon), canon)
         r["mechanism_only"] = not clinical
+        _attach_rationale(r, drugs_pkpd)
         return r, (time.perf_counter() - t0) * 1000
 
     result, ms = _recommend()

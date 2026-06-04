@@ -93,6 +93,7 @@ class _Run:
         self.result["indication_label"] = next((i["label"] for i in case_targets.list_indications()
                                                 if i["value"] == self.canon), self.canon)
         self.result["mechanism_only"] = not self.clinical
+        agent._attach_rationale(self.result, self.drugs)
         names = [c["drug"] for c in self.result["candidates"]]
         return (f"ranked {len(names)} drugs: " + ", ".join(
                     f"{c['drug']}({c['safety']['decision']})" for c in self.result["candidates"]),

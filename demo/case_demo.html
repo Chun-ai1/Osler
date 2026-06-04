@@ -110,6 +110,11 @@ body.art-hidden .col-right{display:none}
 .vchip{display:inline-flex;align-items:center;gap:5px;font-size:.74rem;background:var(--bg-warm);border:1px solid var(--border-solid);border-radius:50px;padding:3px 9px;color:var(--text-secondary);text-decoration:none;cursor:pointer;transition:all .15s}
 a.vchip:hover{border-color:var(--accent);box-shadow:var(--shadow-sm)}
 .vchip .vd{width:8px;height:8px;border-radius:50%}.vchip b{color:var(--accent);font-weight:600}
+.cites{display:flex;flex-direction:column;gap:3px;margin-top:2px}
+.cite{font-size:.73rem;color:var(--text-muted);line-height:1.4;text-decoration:none}
+.cite b{color:var(--text-secondary);font-weight:600}
+a.cite{color:var(--accent)}a.cite:hover{text-decoration:underline}
+.cite .ext{font-size:.66rem;opacity:.7}
 .pill{display:inline-block;font-size:.71rem;font-weight:700;border-radius:50px;padding:3px 10px;float:right}
 .pill.ok{background:#ECFDF5;color:var(--green)}.pill.caution,.pill.adjust{background:#FFFBEB;color:var(--amber)}
 .pill.avoid{background:#FEF2F2;color:var(--red)}.pill.insufficient_data,.pill.emergency{background:#F3F4F6;color:var(--gray)}
@@ -307,12 +312,13 @@ function diseaseCardHtml(dm,openfda){
   return `<div class="dz-card"><div class="src">disease world-model · ${esc(dm.source)}${dm.source_file?' · data/'+esc(dm.source_file):''}</div>`+
     `<div class="h">${esc(dm.disease)}</div>`+
     (dm.description?`<div class="reason" style="border:0;padding:0;margin-top:4px">${esc(dm.description.slice(0,180))}</div>`:'')+
-    `<div class="lab">perturbations (disease pushes ↑/↓)</div>`+dm.perturbations.map(pp=>`<span class="pchip">${esc(pp.variable.replace(/_/g,' '))} ${pp.direction==='high'?'↑':'↓'}</span>`).join('')+
+    `<div class="lab">perturbations · hover for the cause</div>`+dm.perturbations.map(pp=>`<span class="pchip" title="${esc(pp.cause||'')}">${esc(pp.variable.replace(/_/g,' '))} ${pp.direction==='high'?'↑':'↓'}</span>`).join('')+
+    `<div class="cites" style="margin-top:6px">`+dm.perturbations.filter(pp=>pp.cause).slice(0,6).map(pp=>`<span class="cite"><b>${esc(pp.variable.replace(/_/g,' '))} ${pp.direction==='high'?'↑':'↓'}</b> — ${esc(pp.cause)}</span>`).join('')+`</div>`+
     (dm.symptoms.length?`<div class="lab">derived symptoms</div>`+dm.symptoms.map(s=>`<span class="schip">${esc(s)}</span>`).join(''):'')+
     (openfda?`<div class="lab">live openFDA</div><span class="schip">✓ ${openfda.map(esc).join(', ')}</span>`:'')+`</div>`;
 }
 function pill(d){return `<span class="pill ${d}">${d}</span>`;}
-function drugCardsHtml(res){
+function drugCardsHtml(res,dm){
   return res.candidates.map((c,i)=>{
     const dec=c.safety.decision,dose=c.dose||{};
     let h=`<div class="dcard"><div class="rank">${i+1}</div>`+pill(dec)+
@@ -324,6 +330,7 @@ function drugCardsHtml(res){
     if(dose.patient_specific_allowed&&dose.verbatim)h+=`<div class="lab">dose (confirm with clinician)</div><div class="dose">${esc(dose.verbatim)}</div>`;
     else h+=`<div class="lab">dose</div><div class="dose blocked">not shown — ${res.mechanism_only?'no label loaded':'blocked by safety gate / validation'}</div>`;
     if(c.faers_signals&&c.faers_signals.length)h+=`<div class="faers">⚠ FAERS: ${c.faers_signals.slice(0,3).map(s=>esc(s.event)+'('+s.report_count+')').join(', ')}</div>`;
+    h+=citationsHtml(c,dm);
     h+=`<div class="lab">where to fill · illustrative prices</div>`+vendorsHtml(c.drug);
     h+=`<div class="final">${esc(c.final_answer)}</div></div>`;return h;
   }).join('')+`<div class="faers" style="margin-top:8px">${esc(res._disclaimer||'')}</div>`;
@@ -349,6 +356,36 @@ function vendorsHtml(name){
             {n:'Walmart',c:'#0071CE',p:Math.max(4,base-1),u:`https://www.walmart.com/search?q=${q}`},
             {n:'GoodRx',c:'#FDB714',p:Math.max(3,base-3),u:`https://www.goodrx.com/${q}`}];
   return `<div class="vendors">`+vs.map(v=>`<a class="vchip" href="${v.u}" target="_blank" rel="noopener"><span class="vd" style="background:${v.c}"></span>${v.n} <b>$${v.p}.${String(hashStr(name+v.n)%90+10)}</b></a>`).join('')+`</div>`;
+}
+// Per-drug source/citation block — tells the clinician where each claim comes from.
+function citationsHtml(c,dm){
+  const ev=(c.evidence&&c.evidence[0])||null;
+  const setid=ev&&ev.set_id;
+  const realLabel=ev&&/openfda|dailymed|spl/i.test(ev.source||'');
+  const dmUrl=(realLabel&&setid)
+    ? `https://dailymed.nlm.nih.gov/dailymed/drugInfo.cfm?setid=${setid}`
+    : `https://dailymed.nlm.nih.gov/dailymed/search.cfm?query=${encodeURIComponent(c.drug)}`;
+  let h=`<div class="lab">sources · evidence</div><div class="cites">`;
+  // Mechanism: readable rationale + verify on DrugBank (pharmacology authority — distinct from the FDA label)
+  const mech=c.rationale?esc(c.rationale):'modeled to '+esc(c.mechanism_chain||'act on the target');
+  const mechUrl=`https://go.drugbank.com/unearth/q?searcher=drugs&query=${encodeURIComponent(c.drug)}`;
+  h+=`<a class="cite" href="${mechUrl}" target="_blank" rel="noopener"><b>Mechanism</b> — ${mech}. <span class="ext">Modeled effect (drugs_pkpd.json, unreviewed); verify pharmacology on DrugBank ↗</span></a>`;
+  // Disease model: show the disease's own description + a clinical reference to verify
+  if(dm){
+    const dzUrl=`https://en.wikipedia.org/w/index.php?search=${encodeURIComponent((dm.disease||'').replace(/\//g,' '))}`;
+    const desc=dm.description?esc(dm.description.slice(0,110)):('pushes '+(dm.perturbations||[]).slice(0,3).map(p=>esc(p.variable.replace(/_/g,' '))+(p.direction==='high'?'↑':'↓')).join(', '));
+    h+=`<a class="cite" href="${dzUrl}" target="_blank" rel="noopener"><b>Disease model</b> — ${desc}. <span class="ext">From ${dm.source_file?'data/'+esc(dm.source_file):'inferred'} (unreviewed); reference ↗</span></a>`;
+  }
+  if(realLabel)
+    h+=`<a class="cite" href="${dmUrl}" target="_blank" rel="noopener"><b>FDA label</b> — DailyMed SPL${ev.set_id?' '+esc(String(ev.set_id).slice(0,8)):''}${ev.retrieved_at?' · '+esc(ev.retrieved_at):''} <span class="ext">↗</span></a>`;
+  else
+    h+=`<a class="cite" href="${dmUrl}" target="_blank" rel="noopener"><b>FDA label</b> — look up “${esc(c.drug)}” on DailyMed (official FDA source) <span class="ext">↗</span></a>`;
+  if(c.faers_signals&&c.faers_signals.length){
+    const sfxUrl=`https://www.drugs.com/sfx/${encodeURIComponent(String(c.drug).toLowerCase().replace(/\s+/g,'-'))}-side-effects.html`;
+    h+=`<a class="cite" href="${sfxUrl}" target="_blank" rel="noopener"><b>Adverse events</b> — side-effect reference (Drugs.com) <span class="ext">↗</span></a>`;
+  }
+  h+=`</div>`;
+  return h;
 }
 // Real pill/product photo from Wikimedia Commons (search "<drug> tablet pill"), filtered
 // to raster photos (skip molecule/structure/SVG). Falls back to the generated pill SVG.
@@ -386,7 +423,7 @@ function renderArtifact(p){
   body.innerHTML=
     `<div class="art-panel ${ART_TAB==='graph'?'':'hidden'}" data-panel="graph"><div class="gphost" id="art-graph"></div><div class="legend">${legend}</div></div>`+
     `<div class="art-panel ${ART_TAB==='disease'?'':'hidden'}" data-panel="disease">${diseaseCardHtml(dm,b.openfda_loaded)}</div>`+
-    `<div class="art-panel ${ART_TAB==='drugs'?'':'hidden'}" data-panel="drugs">${drugCardsHtml(res)}</div>`;
+    `<div class="art-panel ${ART_TAB==='drugs'?'':'hidden'}" data-panel="drugs">${drugCardsHtml(res,dm)}</div>`;
   renderGraph(b.graph);
   enrichDrugImages();  // real pill photos (Commons), SVG pill fallback
 }

@@ -1,0 +1,477 @@
+{
+  "_metadata": {
+    "organ": "blood",
+    "schema_version": "2.0",
+    "description": "Blood / hematologic state model — circulating components. Used by anemia, ITP, sepsis, DVT/PE risk, coagulopathies.",
+    "source": "Williams Hematology; Harrison's IM Hematology",
+    "review_status": "unreviewed"
+  },
+  "state_variables": {
+    "rbc_count": {
+      "range": [
+        0,
+        1
+      ],
+      "description": "RBC mass — HIGHER = better",
+      "inverse": true
+    },
+    "hemoglobin_level": {
+      "range": [
+        0,
+        1
+      ],
+      "description": "Hb concentration — HIGHER = better",
+      "inverse": true
+    },
+    "platelet_count": {
+      "range": [
+        0,
+        1
+      ],
+      "description": "platelet count — HIGHER = better",
+      "inverse": true
+    },
+    "wbc_count": {
+      "range": [
+        0,
+        1
+      ],
+      "description": "WBC count (0.5 = normal; high = infection/leukemia, low = neutropenia)",
+      "default": 0.5
+    },
+    "iron_stores": {
+      "range": [
+        0,
+        1
+      ],
+      "description": "body iron / ferritin — HIGHER = better",
+      "inverse": true
+    },
+    "infection_load": {
+      "range": [
+        0,
+        1
+      ],
+      "description": "circulating bacteria / endotoxin"
+    },
+    "coagulation_function": {
+      "range": [
+        0,
+        1
+      ],
+      "description": "intrinsic + extrinsic coagulation — HIGHER = better",
+      "inverse": true
+    },
+    "hypercoagulable_state": {
+      "range": [
+        0,
+        1
+      ],
+      "description": "thrombotic tendency"
+    },
+    "oxygen_carrying_capacity": {
+      "range": [
+        0,
+        1
+      ],
+      "description": "effective O2 transport — HIGHER = better",
+      "inverse": true
+    },
+    "inflammation_marker": {
+      "range": [
+        0,
+        1
+      ],
+      "description": "systemic inflammation (CRP, IL-6, cytokines)"
+    }
+  },
+  "derivation_rules": [
+    {
+      "symptom": "fatigue",
+      "condition": {
+        "state": "oxygen_carrying_capacity",
+        "op": "<",
+        "threshold": 0.8
+      },
+      "rationale": "reduced O2 delivery to tissues",
+      "confidence": 0.9
+    },
+    {
+      "symptom": "pallor",
+      "condition": {
+        "state": "hemoglobin_level",
+        "op": "<",
+        "threshold": 0.7
+      },
+      "rationale": "low Hb → pallor in skin and mucous membranes",
+      "confidence": 1.0
+    },
+    {
+      "symptom": "shortness of breath",
+      "condition": {
+        "state": "oxygen_carrying_capacity",
+        "op": "<",
+        "threshold": 0.5
+      },
+      "rationale": "anemia → compensatory tachypnea",
+      "confidence": 0.8
+    },
+    {
+      "symptom": "tachycardia",
+      "condition": {
+        "state": "oxygen_carrying_capacity",
+        "op": "<",
+        "threshold": 0.5
+      },
+      "rationale": "compensatory cardiac response to anemia",
+      "confidence": 0.8
+    },
+    {
+      "symptom": "easy bruising",
+      "condition": {
+        "state": "platelet_count",
+        "op": "<",
+        "threshold": 0.4
+      },
+      "rationale": "thrombocytopenia → impaired primary hemostasis",
+      "confidence": 1.0
+    },
+    {
+      "symptom": "petechiae",
+      "condition": {
+        "state": "platelet_count",
+        "op": "<",
+        "threshold": 0.3
+      },
+      "rationale": "severe thrombocytopenia → capillary leak of RBCs",
+      "confidence": 1.0
+    },
+    {
+      "symptom": "fever",
+      "condition": {
+        "any": [
+          {
+            "state": "infection_load",
+            "op": ">",
+            "threshold": 0.5
+          },
+          {
+            "state": "inflammation_marker",
+            "op": ">",
+            "threshold": 0.6
+          }
+        ]
+      },
+      "rationale": "pyrogenic cytokines from infection or inflammation",
+      "confidence": 0.9
+    },
+    {
+      "symptom": "hypotension",
+      "condition": {
+        "all": [
+          {
+            "state": "infection_load",
+            "op": ">",
+            "threshold": 0.7
+          },
+          {
+            "state": "inflammation_marker",
+            "op": ">",
+            "threshold": 0.7
+          }
+        ]
+      },
+      "rationale": "septic shock — vasoplegia + cytokine storm",
+      "confidence": 0.9
+    },
+    {
+      "symptom": "bleeding tendency",
+      "condition": {
+        "any": [
+          {
+            "state": "platelet_count",
+            "op": "<",
+            "threshold": 0.4
+          },
+          {
+            "state": "coagulation_function",
+            "op": "<",
+            "threshold": 0.5
+          }
+        ]
+      },
+      "rationale": "primary or secondary hemostasis impaired",
+      "confidence": 1.0
+    },
+    {
+      "symptom": "spoon-shaped nails koilonychia",
+      "condition": {
+        "state": "iron_stores",
+        "op": "<",
+        "threshold": 0.5
+      },
+      "rationale": "severe iron deficiency → koilonychia",
+      "confidence": 0.7
+    },
+    {
+      "symptom": "pica",
+      "condition": {
+        "state": "iron_stores",
+        "op": "<",
+        "threshold": 0.3
+      },
+      "rationale": "iron deficiency → unusual craving (ice, dirt)",
+      "confidence": 0.6
+    },
+    {
+      "symptom": "shortness of breath",
+      "condition": {
+        "state": "oxygen_carrying_capacity",
+        "op": "<",
+        "threshold": 0.7
+      },
+      "rationale": "anemia → reduced O2 carrying → compensatory tachypnea + dyspnea",
+      "confidence": 0.7
+    },
+    {
+      "symptom": "dizziness",
+      "condition": {
+        "state": "oxygen_carrying_capacity",
+        "op": "<",
+        "threshold": 0.7
+      },
+      "rationale": "cerebral O2 delivery reduced",
+      "confidence": 0.6
+    }
+  ],
+  "propagation_rules": [
+    {
+      "trigger": {
+        "state": "iron_stores",
+        "op": "<",
+        "threshold": 0.4
+      },
+      "effect": {
+        "state": "hemoglobin_level",
+        "delta": -0.4
+      },
+      "rationale": "iron deficiency → impaired erythropoiesis",
+      "via": "intra_organ",
+      "review_status": "unreviewed"
+    },
+    {
+      "trigger": {
+        "state": "hemoglobin_level",
+        "op": "<",
+        "threshold": 0.5
+      },
+      "effect": {
+        "state": "oxygen_carrying_capacity",
+        "delta": -0.5
+      },
+      "rationale": "Hb is the primary O2 carrier",
+      "via": "intra_organ",
+      "review_status": "unreviewed"
+    },
+    {
+      "trigger": {
+        "state": "infection_load",
+        "op": ">",
+        "threshold": 0.5
+      },
+      "effect": {
+        "state": "inflammation_marker",
+        "delta": 0.5
+      },
+      "rationale": "bacteremia drives cytokine surge",
+      "via": "intra_organ",
+      "review_status": "unreviewed"
+    },
+    {
+      "trigger": {
+        "state": "infection_load",
+        "op": ">",
+        "threshold": 0.6
+      },
+      "effect": {
+        "state": "wbc_count",
+        "delta": 0.3
+      },
+      "rationale": "leukocytosis in response to infection",
+      "via": "intra_organ",
+      "review_status": "unreviewed"
+    },
+    {
+      "trigger": {
+        "state": "hypercoagulable_state",
+        "op": ">",
+        "threshold": 0.6
+      },
+      "effect": {
+        "organ": "vessel",
+        "state": "thrombus_burden",
+        "delta": 0.4
+      },
+      "rationale": "hypercoagulability promotes thrombus formation in vessels (DVT)",
+      "via": "circulates_through",
+      "review_status": "unreviewed"
+    },
+    {
+      "trigger": {
+        "state": "infection_load",
+        "op": ">",
+        "threshold": 0.7
+      },
+      "effect": {
+        "organ": "heart",
+        "state": "cardiac_output",
+        "delta": -0.3
+      },
+      "rationale": "sepsis → distributive shock + myocardial depression",
+      "via": "circulates_through",
+      "review_status": "unreviewed"
+    }
+  ],
+  "connections": {
+    "incoming": [
+      "bone marrow (hematopoiesis)",
+      "liver (synthetic: albumin, factors)",
+      "kidney (EPO)",
+      "gi (absorbed nutrients)"
+    ],
+    "outgoing": [
+      "all organs (perfusion + delivery)"
+    ],
+    "neural": [
+      "none (humoral)"
+    ]
+  },
+  "diseases": {
+    "Iron Deficiency Anemia": {
+      "_review_status": "unreviewed",
+      "description": "Reduced iron stores → impaired heme synthesis → microcytic anemia. Causes: blood loss, malabsorption, dietary, pregnancy.",
+      "perturbations": [
+        {
+          "variable": "iron_stores",
+          "delta": -0.65,
+          "cause": "chronic blood loss (GI, menstrual) or malabsorption"
+        },
+        {
+          "variable": "hemoglobin_level",
+          "delta": -0.55,
+          "cause": "impaired heme synthesis"
+        },
+        {
+          "variable": "oxygen_carrying_capacity",
+          "delta": -0.4,
+          "cause": "low Hb → reduced O2 transport"
+        }
+      ]
+    },
+    "Immune Thrombocytopenia (ITP)": {
+      "_review_status": "unreviewed",
+      "description": "Autoimmune platelet destruction → thrombocytopenia. Often post-viral in children.",
+      "perturbations": [
+        {
+          "variable": "platelet_count",
+          "delta": -0.65,
+          "cause": "anti-platelet antibodies → splenic destruction"
+        }
+      ]
+    },
+    "Sepsis": {
+      "_review_status": "unreviewed",
+      "description": "Life-threatening organ dysfunction from dysregulated host response to infection (Sepsis-3).",
+      "perturbations": [
+        {
+          "variable": "infection_load",
+          "delta": 0.7,
+          "cause": "bacteremia (gram-neg or gram-pos)"
+        },
+        {
+          "variable": "inflammation_marker",
+          "delta": 0.75,
+          "cause": "cytokine storm (TNF, IL-1, IL-6)"
+        },
+        {
+          "variable": "wbc_count",
+          "delta": 0.3,
+          "cause": "leukocytosis (or leukopenia in severe)"
+        }
+      ]
+    },
+    "Disseminated Intravascular Coagulation": {
+      "review_status": "unreviewed",
+      "description": "Systemic coagulation activation with consumption of platelets and clotting factors, commonly triggered by sepsis or major tissue injury.",
+      "perturbations": [
+        {
+          "variable": "coagulation_function",
+          "delta": -0.75,
+          "cause": "consumption of clotting factors causes bleeding tendency"
+        },
+        {
+          "variable": "platelet_count",
+          "delta": -0.65,
+          "cause": "platelets are consumed in widespread microthrombosis"
+        },
+        {
+          "variable": "hypercoagulable_state",
+          "delta": 0.65,
+          "cause": "systemic thrombin generation causes microvascular thrombosis"
+        },
+        {
+          "variable": "inflammation_marker",
+          "delta": 0.55,
+          "cause": "underlying systemic inflammatory trigger"
+        }
+      ]
+    },
+    "Anemia of Chronic Disease": {
+      "review_status": "unreviewed",
+      "description": "Inflammation-mediated anemia caused by iron sequestration and reduced erythropoiesis.",
+      "perturbations": [
+        {
+          "variable": "hemoglobin_level",
+          "delta": -0.45,
+          "cause": "inflammation reduces erythropoiesis and available iron"
+        },
+        {
+          "variable": "oxygen_carrying_capacity",
+          "delta": -0.35,
+          "cause": "reduced hemoglobin lowers oxygen delivery"
+        },
+        {
+          "variable": "iron_stores",
+          "delta": -0.2,
+          "cause": "functional iron restriction limits usable stores"
+        },
+        {
+          "variable": "inflammation_marker",
+          "delta": 0.55,
+          "cause": "chronic inflammatory state"
+        }
+      ]
+    },
+    "Hemolytic Anemia": {
+      "review_status": "unreviewed",
+      "description": "Accelerated red blood cell destruction causing anemia and reduced oxygen transport.",
+      "perturbations": [
+        {
+          "variable": "rbc_count",
+          "delta": -0.6,
+          "cause": "premature RBC destruction"
+        },
+        {
+          "variable": "hemoglobin_level",
+          "delta": -0.55,
+          "cause": "loss of circulating red-cell mass"
+        },
+        {
+          "variable": "oxygen_carrying_capacity",
+          "delta": -0.5,
+          "cause": "reduced hemoglobin-mediated oxygen transport"
+        }
+      ]
+    }
+  }
+}

@@ -1,0 +1,361 @@
+{
+  "_meta": {
+    "version": "1.0",
+    "description": "Key skeletal muscles with origin/insertion/innervation"
+  },
+  "muscles": {
+    "supraspinatus": {
+      "type": "skeletal_muscle",
+      "origin": "supraspinous_fossa_of_scapula",
+      "insertion": "greater_tubercle_humerus_superior_facet",
+      "action": [
+        "arm_abduction_first_15_degrees",
+        "stabilize_glenohumeral_joint"
+      ],
+      "innervation": "suprascapular_nerve_C5_C6",
+      "blood_supply": "suprascapular_artery",
+      "common_pathology": [
+        "rotator_cuff_tear_supraspinatus_most_common",
+        "impingement_syndrome",
+        "calcific_tendinitis_supraspinatus"
+      ],
+      "clinical_tests": [
+        "empty_can_test_Jobe_test",
+        "drop_arm_test",
+        "Neer_impingement",
+        "Hawkins_Kennedy"
+      ]
+    },
+    "infraspinatus": {
+      "type": "skeletal_muscle",
+      "origin": "infraspinous_fossa_of_scapula",
+      "insertion": "greater_tubercle_humerus_middle_facet",
+      "action": [
+        "external_rotation_arm",
+        "shoulder_stabilization"
+      ],
+      "innervation": "suprascapular_nerve_C5_C6",
+      "blood_supply": "circumflex_scapular_suprascapular",
+      "common_pathology": [
+        "rotator_cuff_tear_infraspinatus",
+        "spinoglenoid_notch_ganglion_cyst_compression"
+      ],
+      "clinical_tests": [
+        "external_rotation_lag_sign",
+        "Hornblower_sign"
+      ]
+    },
+    "teres_minor": {
+      "type": "skeletal_muscle",
+      "origin": "lateral_border_scapula",
+      "insertion": "greater_tubercle_humerus_inferior_facet",
+      "action": [
+        "external_rotation_arm",
+        "shoulder_stabilization"
+      ],
+      "innervation": "axillary_nerve_C5_C6",
+      "blood_supply": "posterior_circumflex_humeral",
+      "common_pathology": [
+        "isolated_teres_minor_atrophy_quadrangular_space"
+      ],
+      "clinical_tests": [
+        "Hornblower_sign"
+      ]
+    },
+    "subscapularis": {
+      "type": "skeletal_muscle",
+      "origin": "subscapular_fossa_anterior_scapula",
+      "insertion": "lesser_tubercle_humerus",
+      "action": [
+        "internal_rotation_arm",
+        "shoulder_stabilization_anterior"
+      ],
+      "innervation": "upper_lower_subscapular_nerves_C5_C7",
+      "blood_supply": "subscapular_artery",
+      "common_pathology": [
+        "subscapularis_tear_less_common",
+        "anterior_shoulder_instability"
+      ],
+      "clinical_tests": [
+        "lift_off_test_Gerber",
+        "belly_press_test",
+        "bear_hug_test"
+      ]
+    },
+    "deltoid": {
+      "type": "skeletal_muscle",
+      "origin": "lateral_clavicle_acromion_spine_of_scapula",
+      "insertion": "deltoid_tuberosity_humerus",
+      "action": [
+        "arm_abduction_after_15_degrees_main_abductor",
+        "anterior_fibers_flexion",
+        "posterior_fibers_extension"
+      ],
+      "innervation": "axillary_nerve_C5_C6",
+      "blood_supply": "posterior_circumflex_humeral_artery",
+      "common_pathology": [
+        "deltoid_paralysis_axillary_nerve_injury_post_shoulder_dislocation"
+      ],
+      "clinical_tests": [
+        "arm_abduction_test",
+        "regimental_badge_sensory_check"
+      ]
+    },
+    "biceps_brachii": {
+      "type": "skeletal_muscle",
+      "origin": "long_head_supraglenoid_tubercle_short_head_coracoid_process",
+      "insertion": "radial_tuberosity_and_bicipital_aponeurosis",
+      "action": [
+        "elbow_flexion",
+        "forearm_supination_strongest_supinator"
+      ],
+      "innervation": "musculocutaneous_nerve_C5_C6",
+      "blood_supply": "brachial_artery_branches",
+      "common_pathology": [
+        "biceps_tendinopathy",
+        "long_head_rupture_Popeye_deformity",
+        "SLAP_lesion"
+      ],
+      "clinical_tests": [
+        "Speed_test",
+        "Yergason_test",
+        "biceps_reflex_C5_C6"
+      ]
+    },
+    "triceps_brachii": {
+      "type": "skeletal_muscle",
+      "origin": "long_head_infraglenoid_tubercle_medial_lateral_heads_humerus",
+      "insertion": "olecranon_process_ulna",
+      "action": [
+        "elbow_extension",
+        "long_head_arm_extension"
+      ],
+      "innervation": "radial_nerve_C6_C8",
+      "blood_supply": "profunda_brachii_artery",
+      "common_pathology": [
+        "triceps_rupture_rare",
+        "tennis_player_triceps_strain"
+      ],
+      "clinical_tests": [
+        "triceps_reflex_C7",
+        "elbow_extension_strength"
+      ]
+    },
+    "flexor_digitorum_profundus_FDP": {
+      "type": "skeletal_muscle",
+      "origin": "ulna_interosseous_membrane",
+      "insertion": "distal_phalanges_of_fingers_2_5",
+      "action": [
+        "DIP_flexion_fingers",
+        "PIP_MCP_flexion"
+      ],
+      "innervation": "median_nerve_radial_half_lateral_2_anterior_interosseous_AND_ulnar_nerve_medial_half_3_4",
+      "blood_supply": "anterior_interosseous_artery",
+      "common_pathology": [
+        "jersey_finger_FDP_avulsion",
+        "AIN_syndrome_isolated_FDP_2_3"
+      ],
+      "clinical_tests": [
+        "DIP_flexion_against_resistance"
+      ]
+    },
+    "abductor_pollicis_brevis_APB": {
+      "type": "skeletal_muscle",
+      "origin": "flexor_retinaculum_scaphoid_trapezium",
+      "insertion": "lateral_proximal_phalanx_thumb",
+      "action": [
+        "thumb_abduction_perpendicular_to_palm"
+      ],
+      "innervation": "median_nerve_C8_T1_via_recurrent_branch",
+      "blood_supply": "superficial_palmar_arch",
+      "common_pathology": [
+        "thenar_atrophy_in_CTS"
+      ],
+      "clinical_tests": [
+        "thumb_abduction_against_resistance_pen_test"
+      ]
+    },
+    "first_dorsal_interosseous_FDI": {
+      "type": "skeletal_muscle",
+      "origin": "metacarpals_1_and_2",
+      "insertion": "radial_proximal_phalanx_index_finger",
+      "action": [
+        "index_finger_abduction",
+        "MCP_flexion_PIP_DIP_extension"
+      ],
+      "innervation": "ulnar_nerve_deep_branch_C8_T1",
+      "blood_supply": "deep_palmar_arch",
+      "common_pathology": [
+        "interosseous_atrophy_in_ulnar_neuropathy_classic_sign"
+      ],
+      "clinical_tests": [
+        "index_finger_abduction_strength",
+        "Wartenberg_sign"
+      ]
+    },
+    "iliopsoas": {
+      "type": "skeletal_muscle",
+      "origin": "psoas_T12_L4_vertebrae_iliacus_iliac_fossa",
+      "insertion": "lesser_trochanter_femur",
+      "action": [
+        "hip_flexion_main_flexor",
+        "lumbar_spine_flexion"
+      ],
+      "innervation": "psoas_L1_L3_iliacus_femoral_nerve_L2_L4",
+      "blood_supply": "iliolumbar_artery_lumbar_arteries",
+      "common_pathology": [
+        "iliopsoas_bursitis",
+        "psoas_abscess_can_cause_hip_flexion_contracture",
+        "psoas_hematoma_anticoagulation"
+      ],
+      "clinical_tests": [
+        "Thomas_test",
+        "psoas_sign_appendicitis"
+      ]
+    },
+    "piriformis": {
+      "type": "skeletal_muscle",
+      "origin": "anterior_sacrum",
+      "insertion": "greater_trochanter_femur",
+      "action": [
+        "external_rotation_thigh",
+        "abduction_when_hip_flexed"
+      ],
+      "innervation": "nerve_to_piriformis_S1_S2",
+      "blood_supply": "superior_gluteal_artery",
+      "common_pathology": [
+        "Piriformis Syndrome_sciatic_compression"
+      ],
+      "clinical_tests": [
+        "Pace_test",
+        "Freiberg_test",
+        "FAIR_test"
+      ],
+      "anatomical_note": "sciatic_nerve_passes_through_or_under_piriformis_85_percent_under_15_percent_through"
+    },
+    "quadriceps_femoris": {
+      "type": "skeletal_muscle_group",
+      "origin": "rectus_femoris_AIIS_vasti_femur",
+      "insertion": "tibial_tuberosity_via_patellar_tendon",
+      "action": [
+        "knee_extension_main",
+        "rectus_hip_flexion"
+      ],
+      "innervation": "femoral_nerve_L2_L4",
+      "blood_supply": "femoral_artery_branches",
+      "common_pathology": [
+        "quadriceps_strain",
+        "quadriceps_atrophy_in_femoral_neuropathy",
+        "patellar_tendinopathy",
+        "rectus_femoris_avulsion"
+      ],
+      "clinical_tests": [
+        "patellar_reflex_L4",
+        "knee_extension_strength",
+        "Ely_test_for_rectus_tightness"
+      ]
+    },
+    "hamstrings": {
+      "type": "skeletal_muscle_group",
+      "origin": "ischial_tuberosity_short_head_biceps_linea_aspera",
+      "insertion": "tibia_fibula_pes_anserinus",
+      "action": [
+        "knee_flexion_main",
+        "hip_extension"
+      ],
+      "innervation": "sciatic_nerve_tibial_division_L5_S2_except_short_head_biceps_peroneal",
+      "blood_supply": "perforating_arteries_from_profunda_femoris",
+      "common_pathology": [
+        "hamstring_strain_sprint_injury",
+        "proximal_avulsion",
+        "hamstring_syndrome_sitting_pain"
+      ],
+      "clinical_tests": [
+        "straight_leg_raise_modified",
+        "passive_knee_extension"
+      ]
+    },
+    "tibialis_anterior_TA": {
+      "type": "skeletal_muscle",
+      "origin": "lateral_tibia_proximal_2_3",
+      "insertion": "medial_cuneiform_first_metatarsal_base",
+      "action": [
+        "dorsiflexion_ankle",
+        "inversion_foot"
+      ],
+      "innervation": "deep_peroneal_nerve_L4_L5",
+      "blood_supply": "anterior_tibial_artery",
+      "common_pathology": [
+        "foot_drop_in_peroneal_nerve_palsy",
+        "anterior_compartment_syndrome",
+        "shin_splints_medial_tibial_stress"
+      ],
+      "clinical_tests": [
+        "dorsiflexion_strength",
+        "heel_walking"
+      ]
+    },
+    "gastrocnemius_soleus": {
+      "type": "skeletal_muscle_group",
+      "origin": "gastrocnemius_femoral_condyles_soleus_tibia_fibula",
+      "insertion": "calcaneus_via_Achilles_tendon",
+      "action": [
+        "plantar_flexion_main",
+        "gastrocnemius_knee_flexion"
+      ],
+      "innervation": "tibial_nerve_S1_S2",
+      "blood_supply": "posterior_tibial_artery_sural_arteries",
+      "common_pathology": [
+        "Achilles_tendinopathy",
+        "Achilles_rupture",
+        "gastrocnemius_tear_tennis_leg",
+        "compartment_syndrome_deep_posterior"
+      ],
+      "clinical_tests": [
+        "Achilles_reflex_S1",
+        "Thompson_test_for_rupture",
+        "single_leg_heel_raise"
+      ]
+    },
+    "rectus_abdominis": {
+      "type": "skeletal_muscle",
+      "origin": "pubic_crest_pubic_symphysis",
+      "insertion": "xiphoid_process_costal_cartilages_5_7",
+      "action": [
+        "spine_flexion",
+        "increase_intra_abdominal_pressure"
+      ],
+      "innervation": "intercostal_nerves_T7_T12",
+      "blood_supply": "superior_inferior_epigastric_arteries",
+      "common_pathology": [
+        "rectus_diastasis_pregnancy",
+        "rectus_sheath_hematoma",
+        "athletic_pubalgia_sports_hernia"
+      ],
+      "clinical_tests": [
+        "Carnett_sign_for_abdominal_wall_pain"
+      ]
+    },
+    "diaphragm": {
+      "type": "skeletal_muscle",
+      "origin": "xiphoid_costal_margin_lumbar_vertebrae_via_crura",
+      "insertion": "central_tendon",
+      "action": [
+        "main_inspiratory_muscle",
+        "increases_intraabdominal_pressure"
+      ],
+      "innervation": "phrenic_nerve_C3_C5",
+      "blood_supply": "phrenic_arteries_superior_inferior",
+      "common_pathology": [
+        "diaphragmatic_paralysis_phrenic_injury",
+        "diaphragmatic_hernia",
+        "hiccups_persistent"
+      ],
+      "clinical_tests": [
+        "sniff_test_fluoroscopy",
+        "ultrasound_diaphragmatic_excursion"
+      ],
+      "anatomical_note": "C3_4_5_keeps_the_diaphragm_alive_C3_5_referred_shoulder_tip_pain_when_irritated"
+    }
+  }
+}

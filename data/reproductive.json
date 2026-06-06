@@ -1,0 +1,427 @@
+{
+  "_metadata": {
+    "organ": "reproductive",
+    "schema_version": "2.0",
+    "description": "Reproductive system state model — covers both prostate/testis (male) and uterus/ovary (female). Used by BPH, prostatitis, PID, ectopic, ovarian torsion, endometriosis.",
+    "source": "Harrison's IM; Williams Obstetrics; Campbell-Walsh Urology",
+    "review_status": "unreviewed"
+  },
+  "state_variables": {
+    "inflammation": {
+      "range": [
+        0,
+        1
+      ],
+      "description": "tissue inflammation"
+    },
+    "infection": {
+      "range": [
+        0,
+        1
+      ],
+      "description": "pathogen load"
+    },
+    "contraction": {
+      "range": [
+        0,
+        1
+      ],
+      "description": "uterine smooth muscle contraction"
+    },
+    "prostate_enlargement": {
+      "range": [
+        0,
+        1
+      ],
+      "description": "BPH severity (male)"
+    },
+    "outflow_obstruction": {
+      "range": [
+        0,
+        1
+      ],
+      "description": "urinary outflow blockage from prostate"
+    },
+    "ovarian_torsion": {
+      "range": [
+        0,
+        1
+      ],
+      "description": "ovary twisted on pedicle (female)"
+    },
+    "ectopic_implantation": {
+      "range": [
+        0,
+        1
+      ],
+      "description": "tubal pregnancy"
+    },
+    "endometrial_implants": {
+      "range": [
+        0,
+        1
+      ],
+      "description": "ectopic endometrial tissue (endometriosis)"
+    },
+    "hormonal_imbalance": {
+      "range": [
+        0,
+        1
+      ],
+      "description": "deviation from normal cycle"
+    }
+  },
+  "derivation_rules": [
+    {
+      "symptom": "pelvic pain",
+      "condition": {
+        "any": [
+          {
+            "state": "inflammation",
+            "op": ">",
+            "threshold": 0.5
+          },
+          {
+            "state": "ovarian_torsion",
+            "op": ">",
+            "threshold": 0.5
+          },
+          {
+            "state": "ectopic_implantation",
+            "op": ">",
+            "threshold": 0.5
+          }
+        ]
+      },
+      "rationale": "pelvic visceral nociceptors activated by inflammation, torsion, or hemorrhage",
+      "confidence": 1.0
+    },
+    {
+      "symptom": "dyspareunia",
+      "condition": {
+        "any": [
+          {
+            "state": "inflammation",
+            "op": ">",
+            "threshold": 0.4
+          },
+          {
+            "state": "endometrial_implants",
+            "op": ">",
+            "threshold": 0.5
+          }
+        ]
+      },
+      "rationale": "inflammation or endometriosis sensitizes pelvic structures to intercourse",
+      "confidence": 0.9
+    },
+    {
+      "symptom": "vaginal bleeding",
+      "condition": {
+        "any": [
+          {
+            "state": "ectopic_implantation",
+            "op": ">",
+            "threshold": 0.5
+          },
+          {
+            "state": "endometrial_implants",
+            "op": ">",
+            "threshold": 0.6
+          }
+        ]
+      },
+      "rationale": "ectopic pregnancy or aberrant endometrial activity → abnormal bleeding",
+      "confidence": 0.9
+    },
+    {
+      "symptom": "urinary hesitancy",
+      "condition": {
+        "state": "outflow_obstruction",
+        "op": ">",
+        "threshold": 0.5
+      },
+      "rationale": "BPH compresses urethra → delayed initiation of urination",
+      "confidence": 1.0
+    },
+    {
+      "symptom": "weak urinary stream",
+      "condition": {
+        "state": "outflow_obstruction",
+        "op": ">",
+        "threshold": 0.5
+      },
+      "rationale": "outflow resistance reduces stream force",
+      "confidence": 1.0
+    },
+    {
+      "symptom": "pelvic mass",
+      "condition": {
+        "state": "prostate_enlargement",
+        "op": ">",
+        "threshold": 0.6
+      },
+      "rationale": "enlarged prostate palpable on DRE",
+      "confidence": 0.9
+    },
+    {
+      "symptom": "fever",
+      "condition": {
+        "state": "infection",
+        "op": ">",
+        "threshold": 0.5
+      },
+      "rationale": "pelvic infection releases pyrogens",
+      "confidence": 0.9
+    },
+    {
+      "symptom": "lower abdominal pain",
+      "condition": {
+        "state": "contraction",
+        "op": ">",
+        "threshold": 0.6
+      },
+      "rationale": "uterine contractions activate T10-L1 afferents",
+      "confidence": 1.0
+    },
+    {
+      "symptom": "amenorrhea",
+      "condition": {
+        "state": "ectopic_implantation",
+        "op": ">",
+        "threshold": 0.5
+      },
+      "rationale": "pregnancy (even ectopic) suppresses cycle via hCG",
+      "confidence": 0.8
+    },
+    {
+      "symptom": "dysuria",
+      "condition": {
+        "all": [
+          {
+            "state": "inflammation",
+            "op": ">",
+            "threshold": 0.5
+          },
+          {
+            "state": "infection",
+            "op": ">",
+            "threshold": 0.4
+          }
+        ]
+      },
+      "rationale": "prostatitis or urethritis → pain on urination",
+      "confidence": 0.9
+    }
+  ],
+  "propagation_rules": [
+    {
+      "trigger": {
+        "state": "infection",
+        "op": ">",
+        "threshold": 0.5
+      },
+      "effect": {
+        "state": "inflammation",
+        "delta": 0.5
+      },
+      "rationale": "infection triggers inflammatory cascade",
+      "via": "intra_organ",
+      "review_status": "unreviewed"
+    },
+    {
+      "trigger": {
+        "state": "prostate_enlargement",
+        "op": ">",
+        "threshold": 0.5
+      },
+      "effect": {
+        "state": "outflow_obstruction",
+        "delta": 0.5
+      },
+      "rationale": "prostatic urethra compression → outflow restriction",
+      "via": "intra_organ",
+      "review_status": "unreviewed"
+    },
+    {
+      "trigger": {
+        "state": "outflow_obstruction",
+        "op": ">",
+        "threshold": 0.5
+      },
+      "effect": {
+        "organ": "bladder",
+        "state": "outflow_obstruction",
+        "delta": 0.5
+      },
+      "rationale": "prostate obstruction propagates to bladder outlet",
+      "via": "urinary",
+      "review_status": "unreviewed"
+    },
+    {
+      "trigger": {
+        "state": "infection",
+        "op": ">",
+        "threshold": 0.6
+      },
+      "effect": {
+        "organ": "blood",
+        "state": "infection_load",
+        "delta": 0.3
+      },
+      "rationale": "pelvic infection can seed bloodstream",
+      "via": "lymphatic",
+      "review_status": "unreviewed"
+    },
+    {
+      "trigger": {
+        "state": "ovarian_torsion",
+        "op": ">",
+        "threshold": 0.6
+      },
+      "effect": {
+        "state": "inflammation",
+        "delta": 0.5
+      },
+      "rationale": "torsion → ischemia → inflammatory necrosis",
+      "via": "intra_organ",
+      "review_status": "unreviewed"
+    }
+  ],
+  "connections": {
+    "incoming": [
+      "blood (gonadal arteries, internal iliac branches)",
+      "neural (pelvic plexus)"
+    ],
+    "outgoing": [
+      "bladder (anatomical adjacency, urethral course)",
+      "gi (peritoneal continuity)",
+      "blood (sex hormones)"
+    ],
+    "neural": [
+      "pelvic splanchnic (parasympathetic)",
+      "hypogastric (sympathetic)",
+      "pudendal (somatic)"
+    ]
+  },
+  "diseases": {
+    "Benign Prostatic Hyperplasia": {
+      "review_status": "unreviewed",
+      "description": "Age-related prostatic enlargement → urinary outflow obstruction.",
+      "perturbations": [
+        {
+          "variable": "prostate_enlargement",
+          "delta": 0.65,
+          "cause": "androgen-driven stromal/glandular hyperplasia"
+        }
+      ]
+    },
+    "Acute Prostatitis": {
+      "review_status": "unreviewed",
+      "description": "Bacterial prostate infection (typically gram-negative).",
+      "perturbations": [
+        {
+          "variable": "infection",
+          "delta": 0.75,
+          "cause": "bacterial ascending or hematogenous"
+        },
+        {
+          "variable": "inflammation",
+          "delta": 0.7,
+          "cause": "neutrophil response"
+        }
+      ]
+    },
+    "Pelvic Inflammatory Disease": {
+      "review_status": "unreviewed",
+      "description": "Ascending female genital tract infection (typically chlamydia/gonorrhea).",
+      "perturbations": [
+        {
+          "variable": "infection",
+          "delta": 0.75,
+          "cause": "ascending genital infection"
+        },
+        {
+          "variable": "inflammation",
+          "delta": 0.7,
+          "cause": "fallopian tube + ovarian inflammation"
+        }
+      ]
+    },
+    "Ectopic Pregnancy": {
+      "review_status": "unreviewed",
+      "description": "Implantation outside uterus (typically tubal) → severe pain, hemorrhage risk.",
+      "perturbations": [
+        {
+          "variable": "ectopic_implantation",
+          "delta": 0.8,
+          "cause": "abnormal implantation in fallopian tube"
+        },
+        {
+          "variable": "inflammation",
+          "delta": 0.4,
+          "cause": "trophoblastic invasion of tubal wall"
+        }
+      ]
+    },
+    "Ovarian Torsion": {
+      "review_status": "unreviewed",
+      "description": "Ovary twists on its vascular pedicle → ischemia, severe pelvic pain.",
+      "perturbations": [
+        {
+          "variable": "ovarian_torsion",
+          "delta": 0.8,
+          "cause": "ovarian cyst or mass causes axis rotation"
+        }
+      ]
+    },
+    "Endometriosis": {
+      "review_status": "unreviewed",
+      "description": "Ectopic endometrial tissue → cyclic pain, infertility, dyspareunia.",
+      "perturbations": [
+        {
+          "variable": "endometrial_implants",
+          "delta": 0.65,
+          "cause": "retrograde menstruation or coelomic metaplasia"
+        },
+        {
+          "variable": "inflammation",
+          "delta": 0.5,
+          "cause": "ectopic endometrium triggers chronic inflammation"
+        }
+      ]
+    },
+    "Tubo-Ovarian Abscess": {
+      "review_status": "unreviewed",
+      "description": "Complicated upper-genital-tract infection with localized inflammatory collection.",
+      "perturbations": [
+        {
+          "variable": "infection",
+          "delta": 0.8,
+          "cause": "ascending polymicrobial infection"
+        },
+        {
+          "variable": "inflammation",
+          "delta": 0.75,
+          "cause": "severe adnexal inflammatory response"
+        }
+      ]
+    },
+    "Acute Endometritis": {
+      "review_status": "unreviewed",
+      "description": "Infection and inflammation of the uterine lining, commonly producing pelvic pain and fever.",
+      "perturbations": [
+        {
+          "variable": "infection",
+          "delta": 0.7,
+          "cause": "ascending polymicrobial uterine infection"
+        },
+        {
+          "variable": "inflammation",
+          "delta": 0.65,
+          "cause": "inflamed endometrial tissue activates pelvic nociceptors"
+        }
+      ]
+    }
+  }
+}

@@ -1,0 +1,33 @@
+{
+  "Neurology": [
+    "Migraine",
+    "Tension-type Headache",
+    "Acute Bacterial Meningitis"
+  ],
+  "Infectious Disease": [
+    "Acute Viral Upper Respiratory Infection",
+    "Community-acquired Pneumonia",
+    "Acute Gastroenteritis",
+    "Acute Pyelonephritis"
+  ],
+  "Pulmonology": [
+    "Asthma Exacerbation",
+    "Community-acquired Pneumonia",
+    "Acute Viral Upper Respiratory Infection"
+  ],
+  "Cardiology": [
+    "Stable Angina Pectoris",
+    "Hypertensive Emergency"
+  ],
+  "Gastroenterology": [
+    "Acute Gastroenteritis",
+    "Gastroesophageal Reflux Disease"
+  ],
+  "Urology": [
+    "Acute Uncomplicated Cystitis",
+    "Acute Pyelonephritis"
+  ],
+  "Endocrinology": [
+    "Diabetes Mellitus Type 2"
+  ]
+}

@@ -1,0 +1,785 @@
+{
+  "_metadata": {
+    "framework": "atlas_coverage",
+    "schema_version": "1.0",
+    "description": "Maps every atlas organ (259 entities) to its state-model organ. Atlas has fine anatomical granularity (r_kidney + l_kidney separate, individual vessels, individual nerves). State model has functional granularity (16 organ types). This mapping bridges them so atlas-derived propagation can find the right state for any atlas entity.",
+    "source": "Manual mapping based on functional anatomy",
+    "review_status": "unreviewed"
+  },
+  "_kind_categories": {
+    "_comment": "Each atlas organ belongs to one of these kinds. Vessels/nerves are 'pathways', not organs with state models.",
+    "organ": "functional tissue with state variables (state_model maps here)",
+    "vessel": "blood vessel — has perfusion role but no own state model",
+    "nerve": "peripheral nerve — has signaling role but no own state model",
+    "duct": "lumen / conduit — has flow role but no own state model",
+    "region": "anatomical region label (not a tissue)",
+    "barrier": "membrane / capsule (e.g. meninges, pleura)",
+    "structural": "supporting structure (e.g. ligament, fascia)",
+    "lymph_node": "specific lymph station — drains into hematologic"
+  },
+  "atlas_to_state_organ": {
+    "_comment": "atlas_id → state_model_organ. If state_model_organ is null, this entity has no functional state model (e.g. vessels). Kind classifies the entity.",
+    "heart": {
+      "state_organ": "heart",
+      "kind": "organ"
+    },
+    "coronary_aa": {
+      "state_organ": "heart",
+      "kind": "vessel"
+    },
+    "coronary_sinus": {
+      "state_organ": "heart",
+      "kind": "vessel"
+    },
+    "lungs": {
+      "state_organ": "lung",
+      "kind": "organ"
+    },
+    "r_lung": {
+      "state_organ": "lung",
+      "kind": "organ"
+    },
+    "l_lung": {
+      "state_organ": "lung",
+      "kind": "organ"
+    },
+    "trachea": {
+      "state_organ": "lung",
+      "kind": "duct"
+    },
+    "r_bronchus": {
+      "state_organ": "lung",
+      "kind": "duct"
+    },
+    "l_bronchus": {
+      "state_organ": "lung",
+      "kind": "duct"
+    },
+    "diaphragm": {
+      "state_organ": "muscle",
+      "kind": "organ"
+    },
+    "pleura": {
+      "state_organ": "lung",
+      "kind": "barrier"
+    },
+    "esophagus": {
+      "state_organ": "gi",
+      "kind": "organ"
+    },
+    "stomach": {
+      "state_organ": "gi",
+      "kind": "organ"
+    },
+    "duodenum": {
+      "state_organ": "gi",
+      "kind": "organ"
+    },
+    "jejunum": {
+      "state_organ": "gi",
+      "kind": "organ"
+    },
+    "ileum": {
+      "state_organ": "gi",
+      "kind": "organ"
+    },
+    "cecum": {
+      "state_organ": "gi",
+      "kind": "organ"
+    },
+    "appendix": {
+      "state_organ": "gi",
+      "kind": "organ"
+    },
+    "asc_colon": {
+      "state_organ": "gi",
+      "kind": "organ"
+    },
+    "trans_colon": {
+      "state_organ": "gi",
+      "kind": "organ"
+    },
+    "desc_colon": {
+      "state_organ": "gi",
+      "kind": "organ"
+    },
+    "sig_colon": {
+      "state_organ": "gi",
+      "kind": "organ"
+    },
+    "rectum": {
+      "state_organ": "gi",
+      "kind": "organ"
+    },
+    "anus": {
+      "state_organ": "gi",
+      "kind": "organ"
+    },
+    "mouth": {
+      "state_organ": "gi",
+      "kind": "organ"
+    },
+    "pharynx": {
+      "state_organ": "upper_airway",
+      "kind": "organ"
+    },
+    "liver": {
+      "state_organ": "liver",
+      "kind": "organ"
+    },
+    "gallbladder": {
+      "state_organ": "gallbladder",
+      "kind": "organ"
+    },
+    "bile_duct": {
+      "state_organ": "gallbladder",
+      "kind": "duct"
+    },
+    "pancreas": {
+      "state_organ": "pancreas",
+      "kind": "organ"
+    },
+    "pancreas_islets": {
+      "state_organ": "pancreas",
+      "kind": "organ"
+    },
+    "r_kidney": {
+      "state_organ": "kidney",
+      "kind": "organ"
+    },
+    "l_kidney": {
+      "state_organ": "kidney",
+      "kind": "organ"
+    },
+    "r_ureter": {
+      "state_organ": "kidney",
+      "kind": "duct"
+    },
+    "l_ureter": {
+      "state_organ": "kidney",
+      "kind": "duct"
+    },
+    "bladder": {
+      "state_organ": "bladder",
+      "kind": "organ"
+    },
+    "urethra": {
+      "state_organ": "bladder",
+      "kind": "duct"
+    },
+    "spleen": {
+      "state_organ": "spleen",
+      "kind": "organ"
+    },
+    "bone_marrow": {
+      "state_organ": "bone",
+      "kind": "organ"
+    },
+    "blood": {
+      "state_organ": "blood",
+      "kind": "tissue"
+    },
+    "thyroid": {
+      "state_organ": "thyroid",
+      "kind": "organ"
+    },
+    "r_adrenal": {
+      "state_organ": "adrenal",
+      "kind": "organ"
+    },
+    "l_adrenal": {
+      "state_organ": "adrenal",
+      "kind": "organ"
+    },
+    "pituitary": {
+      "state_organ": "brain",
+      "kind": "organ"
+    },
+    "ovaries": {
+      "state_organ": "reproductive",
+      "kind": "organ"
+    },
+    "uterus": {
+      "state_organ": "reproductive",
+      "kind": "organ"
+    },
+    "prostate": {
+      "state_organ": "reproductive",
+      "kind": "organ"
+    },
+    "breast": {
+      "state_organ": "skin",
+      "kind": "organ"
+    },
+    "skin": {
+      "state_organ": "skin",
+      "kind": "organ"
+    },
+    "brain": {
+      "state_organ": "brain",
+      "kind": "organ"
+    },
+    "cerebrum": {
+      "state_organ": "brain",
+      "kind": "organ"
+    },
+    "cerebellum": {
+      "state_organ": "brain",
+      "kind": "organ"
+    },
+    "cerebellar_hemispheres": {
+      "state_organ": "brain",
+      "kind": "organ"
+    },
+    "cerebellar_vermis": {
+      "state_organ": "brain",
+      "kind": "organ"
+    },
+    "brainstem": {
+      "state_organ": "brain",
+      "kind": "organ"
+    },
+    "midbrain": {
+      "state_organ": "brain",
+      "kind": "organ"
+    },
+    "pons": {
+      "state_organ": "brain",
+      "kind": "organ"
+    },
+    "medulla": {
+      "state_organ": "brain",
+      "kind": "organ"
+    },
+    "diencephalon": {
+      "state_organ": "brain",
+      "kind": "organ"
+    },
+    "thalamus": {
+      "state_organ": "brain",
+      "kind": "organ"
+    },
+    "hypothalamus": {
+      "state_organ": "brain",
+      "kind": "organ"
+    },
+    "pineal": {
+      "state_organ": "brain",
+      "kind": "organ"
+    },
+    "frontal_lobe": {
+      "state_organ": "brain",
+      "kind": "organ"
+    },
+    "parietal_lobe": {
+      "state_organ": "brain",
+      "kind": "organ"
+    },
+    "temporal_lobe": {
+      "state_organ": "brain",
+      "kind": "organ"
+    },
+    "occipital_lobe": {
+      "state_organ": "brain",
+      "kind": "organ"
+    },
+    "insula": {
+      "state_organ": "brain",
+      "kind": "organ"
+    },
+    "basal_ganglia": {
+      "state_organ": "brain",
+      "kind": "organ"
+    },
+    "hippocampus": {
+      "state_organ": "brain",
+      "kind": "organ"
+    },
+    "amygdala": {
+      "state_organ": "brain",
+      "kind": "organ"
+    },
+    "corpus_callosum": {
+      "state_organ": "brain",
+      "kind": "structural"
+    },
+    "reticular_formation": {
+      "state_organ": "brain",
+      "kind": "organ"
+    },
+    "spinal_cord": {
+      "state_organ": "brain",
+      "kind": "organ"
+    },
+    "spinal_cord_cervical": {
+      "state_organ": "brain",
+      "kind": "organ"
+    },
+    "spinal_cord_thoracic": {
+      "state_organ": "brain",
+      "kind": "organ"
+    },
+    "spinal_cord_lumbar": {
+      "state_organ": "brain",
+      "kind": "organ"
+    },
+    "spinal_cord_sacral": {
+      "state_organ": "brain",
+      "kind": "organ"
+    },
+    "meninges": {
+      "state_organ": "brain",
+      "kind": "barrier"
+    },
+    "dura_mater": {
+      "state_organ": "brain",
+      "kind": "barrier"
+    },
+    "arachnoid_mater": {
+      "state_organ": "brain",
+      "kind": "barrier"
+    },
+    "pia_mater": {
+      "state_organ": "brain",
+      "kind": "barrier"
+    },
+    "csf_space": {
+      "state_organ": "brain",
+      "kind": "region"
+    },
+    "vagus_nerve": {
+      "state_organ": null,
+      "kind": "nerve"
+    },
+    "phrenic_nerve": {
+      "state_organ": null,
+      "kind": "nerve"
+    },
+    "facial_nerve": {
+      "state_organ": null,
+      "kind": "nerve"
+    },
+    "trigeminal_nerve": {
+      "state_organ": null,
+      "kind": "nerve"
+    },
+    "median_nerve": {
+      "state_organ": null,
+      "kind": "nerve"
+    },
+    "ulnar_nerve": {
+      "state_organ": null,
+      "kind": "nerve"
+    },
+    "radial_nerve": {
+      "state_organ": null,
+      "kind": "nerve"
+    },
+    "sciatic_nerve": {
+      "state_organ": null,
+      "kind": "nerve"
+    },
+    "common_peroneal_nerve": {
+      "state_organ": null,
+      "kind": "nerve"
+    },
+    "tibial_nerve": {
+      "state_organ": null,
+      "kind": "nerve"
+    },
+    "femoral_nerve": {
+      "state_organ": null,
+      "kind": "nerve"
+    },
+    "obturator_nerve": {
+      "state_organ": null,
+      "kind": "nerve"
+    },
+    "pudendal_nerve": {
+      "state_organ": null,
+      "kind": "nerve"
+    },
+    "brachial_plexus": {
+      "state_organ": null,
+      "kind": "nerve"
+    },
+    "lumbosacral_plexus": {
+      "state_organ": null,
+      "kind": "nerve"
+    },
+    "sympathetic_chain": {
+      "state_organ": null,
+      "kind": "nerve"
+    },
+    "eye": {
+      "state_organ": "eye",
+      "kind": "organ"
+    },
+    "retina": {
+      "state_organ": "eye",
+      "kind": "organ"
+    },
+    "middle_ear": {
+      "state_organ": "ear",
+      "kind": "organ"
+    },
+    "knee_joint": {
+      "state_organ": "bone",
+      "kind": "organ"
+    },
+    "ankle_joint": {
+      "state_organ": "bone",
+      "kind": "organ"
+    },
+    "wrist_joint": {
+      "state_organ": "bone",
+      "kind": "organ"
+    },
+    "mcp_joint": {
+      "state_organ": "bone",
+      "kind": "organ"
+    },
+    "mtp_joint": {
+      "state_organ": "bone",
+      "kind": "organ"
+    },
+    "pip_joint": {
+      "state_organ": "bone",
+      "kind": "organ"
+    },
+    "jaw": {
+      "state_organ": "bone",
+      "kind": "organ"
+    },
+    "l_shoulder": {
+      "state_organ": "bone",
+      "kind": "organ"
+    },
+    "r_shoulder": {
+      "state_organ": "bone",
+      "kind": "organ"
+    },
+    "l_arm": {
+      "state_organ": "muscle",
+      "kind": "region"
+    },
+    "r_arm": {
+      "state_organ": "muscle",
+      "kind": "region"
+    },
+    "upper_limbs": {
+      "state_organ": "muscle",
+      "kind": "region"
+    },
+    "lower_limbs": {
+      "state_organ": "muscle",
+      "kind": "region"
+    },
+    "supraspinatus_muscle": {
+      "state_organ": "muscle",
+      "kind": "organ"
+    },
+    "piriformis_muscle": {
+      "state_organ": "muscle",
+      "kind": "organ"
+    },
+    "iliotibial_band": {
+      "state_organ": "muscle",
+      "kind": "structural"
+    },
+    "fascial_compartment_leg": {
+      "state_organ": "muscle",
+      "kind": "region"
+    },
+    "axil_ln": {
+      "state_organ": null,
+      "kind": "lymph_node"
+    },
+    "cerv_ln": {
+      "state_organ": null,
+      "kind": "lymph_node"
+    },
+    "ing_ln": {
+      "state_organ": null,
+      "kind": "lymph_node"
+    },
+    "med_ln": {
+      "state_organ": null,
+      "kind": "lymph_node"
+    },
+    "mes_ln": {
+      "state_organ": null,
+      "kind": "lymph_node"
+    },
+    "thoracic_duct": {
+      "state_organ": null,
+      "kind": "duct"
+    },
+    "right_lymphatic_duct": {
+      "state_organ": null,
+      "kind": "duct"
+    },
+    "cisterna_chyli": {
+      "state_organ": null,
+      "kind": "duct"
+    },
+    "epigastrium": {
+      "state_organ": null,
+      "kind": "region"
+    },
+    "_default_vessel_pattern": {
+      "_comment": "All entities matching these patterns are vessels (kind=vessel, state_organ=null). The loader will auto-categorize the remaining cardiovascular atlas entities."
+    },
+    "_default_nerve_pattern": {
+      "_comment": "All neurologic entities ending in '_nerve' are kind=nerve."
+    },
+    "aorta": {
+      "state_organ": "vessel",
+      "kind": "vessel"
+    },
+    "aortic_arch": {
+      "state_organ": "vessel",
+      "kind": "vessel"
+    },
+    "abdominal_aorta": {
+      "state_organ": "vessel",
+      "kind": "vessel"
+    },
+    "thoracic_aorta": {
+      "state_organ": "vessel",
+      "kind": "vessel"
+    },
+    "lad": {
+      "state_organ": "vessel",
+      "kind": "vessel"
+    },
+    "rca": {
+      "state_organ": "vessel",
+      "kind": "vessel"
+    },
+    "lcx": {
+      "state_organ": "vessel",
+      "kind": "vessel"
+    },
+    "mca": {
+      "state_organ": "vessel",
+      "kind": "vessel"
+    },
+    "aca": {
+      "state_organ": "vessel",
+      "kind": "vessel"
+    },
+    "pca": {
+      "state_organ": "vessel",
+      "kind": "vessel"
+    },
+    "basilar": {
+      "state_organ": "vessel",
+      "kind": "vessel"
+    },
+    "vertebral_a": {
+      "state_organ": "vessel",
+      "kind": "vessel"
+    },
+    "ica": {
+      "state_organ": "vessel",
+      "kind": "vessel"
+    },
+    "cca": {
+      "state_organ": "vessel",
+      "kind": "vessel"
+    },
+    "eca": {
+      "state_organ": "vessel",
+      "kind": "vessel"
+    },
+    "subclavian_a": {
+      "state_organ": "vessel",
+      "kind": "vessel"
+    },
+    "axillary_a": {
+      "state_organ": "vessel",
+      "kind": "vessel"
+    },
+    "brachial_a": {
+      "state_organ": "vessel",
+      "kind": "vessel"
+    },
+    "radial_a": {
+      "state_organ": "vessel",
+      "kind": "vessel"
+    },
+    "ulnar_a": {
+      "state_organ": "vessel",
+      "kind": "vessel"
+    },
+    "common_iliac_a": {
+      "state_organ": "vessel",
+      "kind": "vessel"
+    },
+    "external_iliac_a": {
+      "state_organ": "vessel",
+      "kind": "vessel"
+    },
+    "internal_iliac_a": {
+      "state_organ": "vessel",
+      "kind": "vessel"
+    },
+    "femoral_a": {
+      "state_organ": "vessel",
+      "kind": "vessel"
+    },
+    "popliteal_a": {
+      "state_organ": "vessel",
+      "kind": "vessel"
+    },
+    "ant_tibial_a": {
+      "state_organ": "vessel",
+      "kind": "vessel"
+    },
+    "post_tibial_a": {
+      "state_organ": "vessel",
+      "kind": "vessel"
+    },
+    "renal_a": {
+      "state_organ": "vessel",
+      "kind": "vessel"
+    },
+    "celiac": {
+      "state_organ": "vessel",
+      "kind": "vessel"
+    },
+    "sma": {
+      "state_organ": "vessel",
+      "kind": "vessel"
+    },
+    "ima": {
+      "state_organ": "vessel",
+      "kind": "vessel"
+    },
+    "hepatic_a": {
+      "state_organ": "vessel",
+      "kind": "vessel"
+    },
+    "splenic_a": {
+      "state_organ": "vessel",
+      "kind": "vessel"
+    },
+    "uterine_a": {
+      "state_organ": "vessel",
+      "kind": "vessel"
+    },
+    "ophthalmic_a": {
+      "state_organ": "vessel",
+      "kind": "vessel"
+    },
+    "thyroid_a": {
+      "state_organ": "vessel",
+      "kind": "vessel"
+    },
+    "adrenal_a": {
+      "state_organ": "vessel",
+      "kind": "vessel"
+    },
+    "pulm_aa": {
+      "state_organ": "vessel",
+      "kind": "vessel"
+    },
+    "carotid": {
+      "state_organ": "vessel",
+      "kind": "vessel"
+    },
+    "svc": {
+      "state_organ": "vessel",
+      "kind": "vessel"
+    },
+    "ivc": {
+      "state_organ": "vessel",
+      "kind": "vessel"
+    },
+    "portal_v": {
+      "state_organ": "vessel",
+      "kind": "vessel"
+    },
+    "azygos_v": {
+      "state_organ": "vessel",
+      "kind": "vessel"
+    },
+    "splenic_v": {
+      "state_organ": "vessel",
+      "kind": "vessel"
+    },
+    "smv": {
+      "state_organ": "vessel",
+      "kind": "vessel"
+    },
+    "imv": {
+      "state_organ": "vessel",
+      "kind": "vessel"
+    },
+    "renal_v": {
+      "state_organ": "vessel",
+      "kind": "vessel"
+    },
+    "hepatic_v": {
+      "state_organ": "vessel",
+      "kind": "vessel"
+    },
+    "femoral_v": {
+      "state_organ": "vessel",
+      "kind": "vessel"
+    },
+    "great_saphenous_v": {
+      "state_organ": "vessel",
+      "kind": "vessel"
+    },
+    "small_saphenous_v": {
+      "state_organ": "vessel",
+      "kind": "vessel"
+    },
+    "internal_jugular": {
+      "state_organ": "vessel",
+      "kind": "vessel"
+    },
+    "external_jugular": {
+      "state_organ": "vessel",
+      "kind": "vessel"
+    },
+    "axillary_nerve": {
+      "state_organ": "peripheral_nerve",
+      "kind": "nerve"
+    },
+    "musculocutaneous_nerve": {
+      "state_organ": "peripheral_nerve",
+      "kind": "nerve"
+    },
+    "lateral_femoral_cutaneous_nerve": {
+      "state_organ": "peripheral_nerve",
+      "kind": "nerve"
+    },
+    "long_thoracic_nerve": {
+      "state_organ": "peripheral_nerve",
+      "kind": "nerve"
+    },
+    "suprascapular_nerve": {
+      "state_organ": "peripheral_nerve",
+      "kind": "nerve"
+    },
+    "recurrent_laryngeal_nerve": {
+      "state_organ": "peripheral_nerve",
+      "kind": "nerve"
+    },
+    "trigeminal_V1_ophthalmic": {
+      "state_organ": "peripheral_nerve",
+      "kind": "nerve"
+    },
+    "trigeminal_V2_maxillary": {
+      "state_organ": "peripheral_nerve",
+      "kind": "nerve"
+    },
+    "trigeminal_V3_mandibular": {
+      "state_organ": "peripheral_nerve",
+      "kind": "nerve"
+    }
+  }
+}

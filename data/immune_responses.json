@@ -1,0 +1,687 @@
+{
+  "_meta": {
+    "description": "Immune responses + universal mechanism templates (fever, pain, cough, etc.)",
+    "version": "0.2",
+    "n_responses": 22
+  },
+  "responses": {
+    "acute_bacterial_inflammation": {
+      "trigger": [
+        "bacterial_infection",
+        "tissue_damage"
+      ],
+      "cascade": [
+        "PAMPs_recognized_by_TLRs",
+        "NFkB_activation",
+        "IL1_IL6_TNF_release",
+        "neutrophil_recruitment",
+        "complement_activation"
+      ],
+      "produces_systemic_effects": [
+        {
+          "effect": "fever",
+          "mechanism": "IL_1_IL_6_TNF_act_on_hypothalamus_setpoint"
+        },
+        {
+          "effect": "leukocytosis",
+          "mechanism": "marrow_release_neutrophils"
+        },
+        {
+          "effect": "CRP_elevation",
+          "mechanism": "IL_6_drives_hepatic_synthesis"
+        },
+        {
+          "effect": "fatigue_malaise",
+          "mechanism": "cytokine_sickness_behavior"
+        },
+        {
+          "effect": "anorexia",
+          "mechanism": "TNF_acts_on_hypothalamus"
+        }
+      ]
+    },
+    "viral_response": {
+      "trigger": "viral_infection",
+      "cascade": [
+        "interferon_release",
+        "NK_cells",
+        "CD8_T_cells"
+      ],
+      "produces_systemic_effects": [
+        {
+          "effect": "low_grade_fever_or_high_fever",
+          "mechanism": "interferon"
+        },
+        {
+          "effect": "myalgia",
+          "mechanism": "interferon_induced"
+        },
+        {
+          "effect": "fatigue",
+          "mechanism": "interferon_induced"
+        },
+        {
+          "effect": "lymphocytosis",
+          "mechanism": "T_cell_response"
+        }
+      ]
+    },
+    "acute_inflammation": {
+      "mechanism_name": "Acute Inflammation",
+      "category": "Pathology",
+      "description": "Rapid immune response to harmful stimuli such as injury or infection.",
+      "cascade_chain": [
+        "Recognition of pathogen or injury.",
+        "Release of cytokines such as IL-1, TNF.",
+        "Vasodilation causing redness and heat.",
+        "Capillary leakage causing swelling.",
+        "Recruitment of neutrophils."
+      ],
+      "produces_systemic_effects": [
+        {
+          "effect": "redness",
+          "mechanism": "from_acute_inflammation"
+        },
+        {
+          "effect": "heat",
+          "mechanism": "from_acute_inflammation"
+        },
+        {
+          "effect": "swelling",
+          "mechanism": "from_acute_inflammation"
+        },
+        {
+          "effect": "pain",
+          "mechanism": "from_acute_inflammation"
+        },
+        {
+          "effect": "fever",
+          "mechanism": "from_acute_inflammation"
+        },
+        {
+          "effect": "pain",
+          "mechanism": "from_acute_inflammation"
+        }
+      ],
+      "occurs_in_diseases_examples": [
+        "pneumonia",
+        "pharyngitis",
+        "appendicitis"
+      ],
+      "_source": "rag_universal_mechanisms"
+    },
+    "chronic_inflammation": {
+      "mechanism_name": "Chronic Inflammation",
+      "category": "Pathology",
+      "description": "Long-term immune activation leading to tissue damage.",
+      "cascade_chain": [
+        "Persistent infection or autoimmune trigger.",
+        "Macrophage activation.",
+        "Granuloma formation in some cases.",
+        "Progressive tissue destruction."
+      ],
+      "produces_systemic_effects": [
+        {
+          "effect": "fibrosis",
+          "mechanism": "from_chronic_inflammation"
+        },
+        {
+          "effect": "organ dysfunction",
+          "mechanism": "from_chronic_inflammation"
+        },
+        {
+          "effect": "fatigue",
+          "mechanism": "from_chronic_inflammation"
+        },
+        {
+          "effect": "chronic pain",
+          "mechanism": "from_chronic_inflammation"
+        }
+      ],
+      "occurs_in_diseases_examples": [
+        "rheumatoid_arthritis",
+        "IBD",
+        "chronic_hepatitis"
+      ],
+      "_source": "rag_universal_mechanisms"
+    },
+    "ischemia": {
+      "mechanism_name": "Ischemia",
+      "category": "Pathology",
+      "description": "Reduced blood flow causing tissue oxygen shortage.",
+      "cascade_chain": [
+        "Arterial blockage or low perfusion.",
+        "Shift to anaerobic metabolism.",
+        "Lactic acid accumulation causing pain.",
+        "Cell death if prolonged."
+      ],
+      "produces_systemic_effects": [
+        {
+          "effect": "pain",
+          "mechanism": "from_ischemia"
+        },
+        {
+          "effect": "necrosis",
+          "mechanism": "from_ischemia"
+        },
+        {
+          "effect": "chest_pain",
+          "mechanism": "from_ischemia"
+        },
+        {
+          "effect": "leg_pain",
+          "mechanism": "from_ischemia"
+        }
+      ],
+      "occurs_in_diseases_examples": [
+        "heart_attack",
+        "stroke",
+        "PVD"
+      ],
+      "_source": "rag_universal_mechanisms"
+    },
+    "necrosis": {
+      "mechanism_name": "Necrosis",
+      "category": "Pathology",
+      "description": "Cell death caused by irreversible injury.",
+      "cascade_chain": [
+        "Loss of membrane integrity.",
+        "Cell swelling and rupture.",
+        "Release of intracellular contents.",
+        "Inflammatory response triggered."
+      ],
+      "produces_systemic_effects": [
+        {
+          "effect": "organ damage",
+          "mechanism": "from_necrosis"
+        },
+        {
+          "effect": "severe_pain",
+          "mechanism": "from_necrosis"
+        }
+      ],
+      "occurs_in_diseases_examples": [
+        "gangrene",
+        "heart_attack"
+      ],
+      "_source": "rag_universal_mechanisms"
+    },
+    "apoptosis": {
+      "mechanism_name": "Apoptosis",
+      "category": "Pathology",
+      "description": "Programmed cell death.",
+      "cascade_chain": [
+        "Activation of caspases.",
+        "DNA fragmentation.",
+        "Cell shrinkage.",
+        "Removal by phagocytes without inflammation."
+      ],
+      "produces_systemic_effects": [
+        {
+          "effect": "controlled cell turnover",
+          "mechanism": "from_apoptosis"
+        },
+        {
+          "effect": "controlled cell turnover",
+          "mechanism": "from_apoptosis"
+        }
+      ],
+      "occurs_in_diseases_examples": [
+        "cancer",
+        "degenerative_diseases"
+      ],
+      "_source": "rag_universal_mechanisms"
+    },
+    "edema_formation": {
+      "mechanism_name": "Edema Formation",
+      "category": "Physiology",
+      "description": "Accumulation of fluid in tissues.",
+      "cascade_chain": [
+        "Increased capillary pressure.",
+        "Increased vascular permeability.",
+        "Lymphatic obstruction.",
+        "Reduced plasma oncotic pressure."
+      ],
+      "produces_systemic_effects": [
+        {
+          "effect": "swelling",
+          "mechanism": "from_edema_formation"
+        },
+        {
+          "effect": "leg_swelling",
+          "mechanism": "from_edema_formation"
+        },
+        {
+          "effect": "lung_congestion",
+          "mechanism": "from_edema_formation"
+        }
+      ],
+      "occurs_in_diseases_examples": [
+        "heart_failure",
+        "kidney_failure"
+      ],
+      "_source": "rag_universal_mechanisms"
+    },
+    "fever_mechanism": {
+      "mechanism_name": "Fever Mechanism",
+      "category": "Symptom Mechanism",
+      "description": "Immune activation increases body temperature set point.",
+      "cascade_chain": [
+        "Pathogens release PAMPs.",
+        "Cytokines IL-1/IL-6 act on hypothalamus.",
+        "Thermoregulatory set point shifts upward.",
+        "Body generates heat (shivering)."
+      ],
+      "produces_systemic_effects": [
+        {
+          "effect": "elevated_temperature",
+          "mechanism": "from_fever_mechanism"
+        },
+        {
+          "effect": "shivering",
+          "mechanism": "from_fever_mechanism"
+        },
+        {
+          "effect": "fatigue",
+          "mechanism": "from_fever_mechanism"
+        }
+      ],
+      "occurs_in_diseases_examples": [
+        "flu",
+        "covid19",
+        "sepsis"
+      ],
+      "_source": "rag_universal_mechanisms"
+    },
+    "pain_mechanism": {
+      "mechanism_name": "Pain Mechanism",
+      "category": "Symptom Mechanism",
+      "description": "Nociceptors transmit signals triggered by tissue damage or inflammation.",
+      "cascade_chain": [
+        "Inflammatory mediators sensitize nerve endings.",
+        "Pain signals transmitted to spinal cord.",
+        "Brain interprets signal as pain."
+      ],
+      "produces_systemic_effects": [
+        {
+          "effect": "localized_or_diffuse_pain",
+          "mechanism": "from_pain_mechanism"
+        },
+        {
+          "effect": "tenderness",
+          "mechanism": "from_pain_mechanism"
+        }
+      ],
+      "occurs_in_diseases_examples": [
+        "appendicitis",
+        "arthritis"
+      ],
+      "_source": "rag_universal_mechanisms"
+    },
+    "cough_reflex": {
+      "mechanism_name": "Cough Reflex",
+      "category": "Symptom Mechanism",
+      "description": "Protective reflex to clear airway irritants.",
+      "cascade_chain": [
+        "Irritation detected by airway receptors.",
+        "Signal travels via vagus nerve.",
+        "Brainstem cough center activated.",
+        "Forceful expiration expels irritants."
+      ],
+      "produces_systemic_effects": [
+        {
+          "effect": "dry_cough",
+          "mechanism": "from_cough_reflex"
+        },
+        {
+          "effect": "wet_cough",
+          "mechanism": "from_cough_reflex"
+        },
+        {
+          "effect": "dry_cough",
+          "mechanism": "from_cough_reflex"
+        },
+        {
+          "effect": "wet_cough",
+          "mechanism": "from_cough_reflex"
+        }
+      ],
+      "occurs_in_diseases_examples": [
+        "asthma",
+        "bronchitis",
+        "pneumonia"
+      ],
+      "_source": "rag_universal_mechanisms"
+    },
+    "dyspnea_mechanism": {
+      "mechanism_name": "Dyspnea Mechanism",
+      "category": "Symptom Mechanism",
+      "description": "Mismatch between respiratory demand and capacity.",
+      "cascade_chain": [
+        "Low oxygen supply.",
+        "High CO2 levels.",
+        "Respiratory muscle fatigue.",
+        "Airway obstruction."
+      ],
+      "produces_systemic_effects": [
+        {
+          "effect": "shortness_of_breath",
+          "mechanism": "from_dyspnea_mechanism"
+        },
+        {
+          "effect": "shortness_of_breath",
+          "mechanism": "from_dyspnea_mechanism"
+        }
+      ],
+      "occurs_in_diseases_examples": [
+        "heart_failure",
+        "asthma",
+        "pneumonia"
+      ],
+      "_source": "rag_universal_mechanisms"
+    },
+    "hypoxia": {
+      "mechanism_name": "Hypoxia",
+      "category": "Pathology",
+      "description": "A state in which tissues are deprived of adequate oxygen supply.",
+      "cascade_chain": [
+        "Reduced oxygen delivery from lung disease or heart failure.",
+        "Impaired oxygen transport due to anemia or carbon monoxide.",
+        "Failure of oxygen utilization in mitochondria."
+      ],
+      "produces_systemic_effects": [
+        {
+          "effect": "fatigue",
+          "mechanism": "from_hypoxia"
+        },
+        {
+          "effect": "organ_dysfunction",
+          "mechanism": "from_hypoxia"
+        },
+        {
+          "effect": "mental_confusion",
+          "mechanism": "from_hypoxia"
+        },
+        {
+          "effect": "dyspnea",
+          "mechanism": "from_hypoxia"
+        },
+        {
+          "effect": "cyanosis",
+          "mechanism": "from_hypoxia"
+        }
+      ],
+      "occurs_in_diseases_examples": [
+        "pneumonia",
+        "asthma",
+        "heart_failure"
+      ],
+      "_source": "rag_universal_mechanisms"
+    },
+    "hypercapnia": {
+      "mechanism_name": "Hypercapnia",
+      "category": "Pathology",
+      "description": "Excessive carbon dioxide buildup in the blood.",
+      "cascade_chain": [
+        "Hypoventilation due to respiratory muscle failure.",
+        "Severe airway obstruction.",
+        "Impaired gas exchange in lung diseases."
+      ],
+      "produces_systemic_effects": [
+        {
+          "effect": "respiratory_acidosis",
+          "mechanism": "from_hypercapnia"
+        },
+        {
+          "effect": "drowsiness",
+          "mechanism": "from_hypercapnia"
+        },
+        {
+          "effect": "headache",
+          "mechanism": "from_hypercapnia"
+        }
+      ],
+      "occurs_in_diseases_examples": [
+        "copd",
+        "asthma_exacerbation"
+      ],
+      "_source": "rag_universal_mechanisms"
+    },
+    "respiratory_acidosis": {
+      "mechanism_name": "Respiratory Acidosis",
+      "category": "Physiology",
+      "description": "CO2 retention causing decreased blood pH.",
+      "cascade_chain": [
+        "Hypoventilation increases CO2.",
+        "CO2 combines with water to form carbonic acid.",
+        "Blood pH drops."
+      ],
+      "produces_systemic_effects": [
+        {
+          "effect": "confusion",
+          "mechanism": "from_respiratory_acidosis"
+        },
+        {
+          "effect": "fatigue",
+          "mechanism": "from_respiratory_acidosis"
+        },
+        {
+          "effect": "headache",
+          "mechanism": "from_respiratory_acidosis"
+        }
+      ],
+      "occurs_in_diseases_examples": [
+        "copd",
+        "drug_overdose"
+      ],
+      "_source": "rag_universal_mechanisms"
+    },
+    "respiratory_alkalosis": {
+      "mechanism_name": "Respiratory Alkalosis",
+      "category": "Physiology",
+      "description": "Excessive CO2 loss due to hyperventilation.",
+      "cascade_chain": [
+        "Rapid breathing expels CO2.",
+        "Low CO2 reduces carbonic acid.",
+        "Blood pH rises."
+      ],
+      "produces_systemic_effects": [
+        {
+          "effect": "tingling",
+          "mechanism": "from_respiratory_alkalosis"
+        },
+        {
+          "effect": "lightheadedness",
+          "mechanism": "from_respiratory_alkalosis"
+        },
+        {
+          "effect": "dizziness",
+          "mechanism": "from_respiratory_alkalosis"
+        }
+      ],
+      "occurs_in_diseases_examples": [
+        "anxiety_attack",
+        "fever"
+      ],
+      "_source": "rag_universal_mechanisms"
+    },
+    "metabolic_acidosis": {
+      "mechanism_name": "Metabolic Acidosis",
+      "category": "Physiology",
+      "description": "Blood becomes acidic due to metabolic disturbances.",
+      "cascade_chain": [
+        "Overproduction of acids (e.g., lactic acid).",
+        "Kidney failure reducing acid excretion.",
+        "Loss of bicarbonate through diarrhea."
+      ],
+      "produces_systemic_effects": [
+        {
+          "effect": "fast_breathing",
+          "mechanism": "from_metabolic_acidosis"
+        },
+        {
+          "effect": "weakness",
+          "mechanism": "from_metabolic_acidosis"
+        },
+        {
+          "effect": "nausea",
+          "mechanism": "from_metabolic_acidosis"
+        }
+      ],
+      "occurs_in_diseases_examples": [
+        "diabetic_ketoacidosis",
+        "kidney_failure"
+      ],
+      "_source": "rag_universal_mechanisms"
+    },
+    "metabolic_alkalosis": {
+      "mechanism_name": "Metabolic Alkalosis",
+      "category": "Physiology",
+      "description": "Blood becomes too alkaline.",
+      "cascade_chain": [
+        "Loss of acid (vomiting).",
+        "Excess bicarbonate intake.",
+        "Diuretic-induced electrolyte imbalance."
+      ],
+      "produces_systemic_effects": [
+        {
+          "effect": "muscle_cramps",
+          "mechanism": "from_metabolic_alkalosis"
+        },
+        {
+          "effect": "irritability",
+          "mechanism": "from_metabolic_alkalosis"
+        },
+        {
+          "effect": "weakness",
+          "mechanism": "from_metabolic_alkalosis"
+        }
+      ],
+      "occurs_in_diseases_examples": [
+        "vomiting",
+        "overuse_antacids"
+      ],
+      "_source": "rag_universal_mechanisms"
+    },
+    "electrolyte_imbalance:_hyperkalemia": {
+      "mechanism_name": "Electrolyte Imbalance: Hyperkalemia",
+      "category": "Pathology",
+      "description": "Elevated potassium levels disrupt electrical signaling.",
+      "cascade_chain": [
+        "Reduced kidney excretion.",
+        "Cell breakdown releases potassium.",
+        "Potassium shifts out of cells."
+      ],
+      "produces_systemic_effects": [
+        {
+          "effect": "arrhythmias",
+          "mechanism": "from_electrolyte_imbalance:_hyperkalemia"
+        },
+        {
+          "effect": "palpitations",
+          "mechanism": "from_electrolyte_imbalance:_hyperkalemia"
+        },
+        {
+          "effect": "muscle_weakness",
+          "mechanism": "from_electrolyte_imbalance:_hyperkalemia"
+        }
+      ],
+      "occurs_in_diseases_examples": [
+        "kidney_failure",
+        "tissue_trauma"
+      ],
+      "_source": "rag_universal_mechanisms"
+    },
+    "electrolyte_imbalance:_hypokalemia": {
+      "mechanism_name": "Electrolyte Imbalance: Hypokalemia",
+      "category": "Pathology",
+      "description": "Low potassium levels impair muscle function.",
+      "cascade_chain": [
+        "Loss through vomiting or diarrhea.",
+        "Diuretic use.",
+        "Hormonal imbalances."
+      ],
+      "produces_systemic_effects": [
+        {
+          "effect": "muscle_cramps",
+          "mechanism": "from_electrolyte_imbalance:_hypokalemia"
+        },
+        {
+          "effect": "heart_arrhythmia",
+          "mechanism": "from_electrolyte_imbalance:_hypokalemia"
+        },
+        {
+          "effect": "fatigue",
+          "mechanism": "from_electrolyte_imbalance:_hypokalemia"
+        },
+        {
+          "effect": "constipation",
+          "mechanism": "from_electrolyte_imbalance:_hypokalemia"
+        }
+      ],
+      "occurs_in_diseases_examples": [
+        "gi_loss",
+        "diuretic_use"
+      ],
+      "_source": "rag_universal_mechanisms"
+    },
+    "oxidative_stress": {
+      "mechanism_name": "Oxidative Stress",
+      "category": "Pathology",
+      "description": "Damage caused by free radicals overwhelming antioxidant defenses.",
+      "cascade_chain": [
+        "Reactive oxygen species produced by metabolism.",
+        "Antioxidant system fails to neutralize free radicals.",
+        "Cell membranes, DNA, and proteins damaged."
+      ],
+      "produces_systemic_effects": [
+        {
+          "effect": "cellular_damage",
+          "mechanism": "from_oxidative_stress"
+        },
+        {
+          "effect": "aging",
+          "mechanism": "from_oxidative_stress"
+        },
+        {
+          "effect": "fatigue",
+          "mechanism": "from_oxidative_stress"
+        }
+      ],
+      "occurs_in_diseases_examples": [
+        "cancer",
+        "neurodegeneration"
+      ],
+      "_source": "rag_universal_mechanisms"
+    },
+    "autoimmune_activation": {
+      "mechanism_name": "Autoimmune Activation",
+      "category": "Pathology",
+      "description": "Immune system mistakenly attacks healthy tissue.",
+      "cascade_chain": [
+        "Loss of self-tolerance.",
+        "Activation of autoreactive T or B cells.",
+        "Chronic inflammation and tissue destruction."
+      ],
+      "produces_systemic_effects": [
+        {
+          "effect": "organ_damage",
+          "mechanism": "from_autoimmune_activation"
+        },
+        {
+          "effect": "fatigue",
+          "mechanism": "from_autoimmune_activation"
+        },
+        {
+          "effect": "joint_pain",
+          "mechanism": "from_autoimmune_activation"
+        }
+      ],
+      "occurs_in_diseases_examples": [
+        "lupus",
+        "rheumatoid_arthritis"
+      ],
+      "_source": "rag_universal_mechanisms"
+    }
+  }
+}

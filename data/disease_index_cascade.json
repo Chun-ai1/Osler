@@ -1,0 +1,4412 @@
+{
+  "Acute Bacterial Meningitis": {
+    "system": "neurologic",
+    "anchors": [
+      "altered mental status",
+      "fever",
+      "headache"
+    ],
+    "support": [
+      "neck stiffness",
+      "phonophobia",
+      "photophobia"
+    ],
+    "all_syms": [
+      "altered mental status",
+      "fever",
+      "headache",
+      "neck stiffness",
+      "phonophobia",
+      "photophobia"
+    ],
+    "triage": "emergent",
+    "onset": "acute_hours_to_days",
+    "must_not_miss": true,
+    "red_flags": [],
+    "category": "Central nervous system infections",
+    "_source": "cascade_derived",
+    "_organ": "meninges",
+    "_failure_mode": "infection_inflammation"
+  },
+  "Acute Gastroenteritis": {
+    "system": "gastrointestinal",
+    "anchors": [
+      "abdominal cramps visceral",
+      "dehydration weakness",
+      "low grade fever"
+    ],
+    "support": [
+      "nausea",
+      "vomiting",
+      "watery diarrhea secretory"
+    ],
+    "all_syms": [
+      "abdominal cramps visceral",
+      "dehydration weakness",
+      "low grade fever",
+      "nausea",
+      "vomiting",
+      "watery diarrhea secretory"
+    ],
+    "triage": "urgent",
+    "onset": "acute_hours",
+    "must_not_miss": true,
+    "red_flags": [],
+    "category": "Gastrointestinal infections",
+    "_source": "cascade_derived",
+    "_organ": "small_intestine",
+    "_failure_mode": "viral_inflammation"
+  },
+  "Acute Pyelonephritis": {
+    "system": "urinary",
+    "anchors": [
+      "fever chills"
+    ],
+    "support": [
+      "flank pain",
+      "nausea vomiting"
+    ],
+    "all_syms": [
+      "fever chills",
+      "flank pain",
+      "nausea vomiting"
+    ],
+    "triage": "semi-urgent",
+    "onset": "acute_hours_to_days",
+    "must_not_miss": true,
+    "red_flags": [],
+    "category": "Kidney infections",
+    "_source": "cascade_derived",
+    "_organ": "kidney",
+    "_failure_mode": "infection_pyelonephritis"
+  },
+  "Acute Uncomplicated Cystitis": {
+    "system": "urinary",
+    "anchors": [
+      "dysuria burning",
+      "suprapubic pain"
+    ],
+    "support": [
+      "urgency",
+      "urinary frequency"
+    ],
+    "all_syms": [
+      "dysuria burning",
+      "suprapubic pain",
+      "urgency",
+      "urinary frequency"
+    ],
+    "triage": "urgent",
+    "onset": "acute_hours",
+    "must_not_miss": true,
+    "red_flags": [],
+    "category": "Urinary tract infections",
+    "_source": "cascade_derived",
+    "_organ": "bladder",
+    "_failure_mode": "infection_cystitis"
+  },
+  "Acute Viral Upper Respiratory Infection": {
+    "system": "gastrointestinal",
+    "anchors": [
+      "cough dry",
+      "fatigue malaise",
+      "low grade fever"
+    ],
+    "support": [
+      "nasal congestion",
+      "rhinorrhea runny nose",
+      "sore throat pharyngitis"
+    ],
+    "all_syms": [
+      "cough dry",
+      "fatigue malaise",
+      "low grade fever",
+      "nasal congestion",
+      "rhinorrhea runny nose",
+      "sore throat pharyngitis"
+    ],
+    "triage": "urgent",
+    "onset": "acute_days",
+    "must_not_miss": true,
+    "red_flags": [],
+    "category": "Upper respiratory infections",
+    "_source": "cascade_derived",
+    "_organ": "upper_respiratory_tract",
+    "_failure_mode": "viral_uri"
+  },
+  "Asthma Exacerbation": {
+    "system": "respiratory",
+    "anchors": [
+      "chest tightness",
+      "cough",
+      "dyspnea"
+    ],
+    "support": [
+      "prolonged expiration",
+      "shortness of breath dyspnea at rest",
+      "smooth muscle contraction",
+      "wheezing"
+    ],
+    "all_syms": [
+      "chest tightness",
+      "cough",
+      "dyspnea",
+      "prolonged expiration",
+      "shortness of breath dyspnea at rest",
+      "smooth muscle contraction",
+      "wheezing"
+    ],
+    "triage": "urgent",
+    "onset": "episodic",
+    "must_not_miss": true,
+    "red_flags": [],
+    "category": "Obstructive airway disease",
+    "_source": "cascade_derived",
+    "_organ": "bronchus",
+    "_failure_mode": "bronchospasm_asthma"
+  },
+  "Community-acquired Pneumonia": {
+    "system": "respiratory",
+    "anchors": [
+      "fever",
+      "hypoxia dyspnea reduced gas exchange"
+    ],
+    "support": [
+      "pleuritic chest pain somatic",
+      "productive cough clearing mechanism",
+      "shortness of breath progressive dyspnea"
+    ],
+    "all_syms": [
+      "fever",
+      "hypoxia dyspnea reduced gas exchange",
+      "pleuritic chest pain somatic",
+      "productive cough clearing mechanism",
+      "shortness of breath progressive dyspnea"
+    ],
+    "triage": "urgent",
+    "onset": "subacute_days",
+    "must_not_miss": true,
+    "red_flags": [],
+    "category": "Lower respiratory infections",
+    "_source": "cascade_derived",
+    "_organ": "lungs",
+    "_failure_mode": "alveolar_consolidation"
+  },
+  "Diabetes Mellitus Type 2": {
+    "system": "endocrine",
+    "anchors": [
+      "blurred vision",
+      "fatigue",
+      "frequent urination polyuria pattern"
+    ],
+    "support": [
+      "glycosuria polyuria",
+      "polydipsia thirst",
+      "polyphagia increased appetite",
+      "weight loss protein breakdown"
+    ],
+    "all_syms": [
+      "blurred vision",
+      "fatigue",
+      "frequent urination polyuria pattern",
+      "glycosuria polyuria",
+      "polydipsia thirst",
+      "polyphagia increased appetite",
+      "weight loss protein breakdown"
+    ],
+    "triage": "semi-urgent",
+    "onset": "chronic",
+    "must_not_miss": true,
+    "red_flags": [],
+    "category": "Glucose metabolism disorders",
+    "_source": "cascade_derived",
+    "_organ": "pancreas_islets",
+    "_failure_mode": "beta_cell_resistance_T2DM"
+  },
+  "Gastroesophageal Reflux Disease": {
+    "system": "gastrointestinal",
+    "anchors": [
+      "acid reflux into esophagus",
+      "heartburn retrosternal burning",
+      "no dysphagia no odynophagia",
+      "no endoscopic erosion uncomplicated"
+    ],
+    "support": [
+      "no weight loss no anemia no bleeding",
+      "occasional chest pain burning",
+      "regurgitation sour taste",
+      "responds to ppi acid suppression",
+      "worse when lying flat postprandial"
+    ],
+    "all_syms": [
+      "acid reflux into esophagus",
+      "heartburn retrosternal burning",
+      "no dysphagia no odynophagia",
+      "no endoscopic erosion uncomplicated",
+      "no weight loss no anemia no bleeding",
+      "occasional chest pain burning",
+      "regurgitation sour taste",
+      "responds to ppi acid suppression",
+      "worse when lying flat postprandial"
+    ],
+    "triage": "urgent",
+    "onset": "chronic",
+    "must_not_miss": true,
+    "red_flags": [],
+    "category": "Esophageal disorders",
+    "_source": "cascade_derived",
+    "_organ": "stomach",
+    "_failure_mode": "acid_reflux"
+  },
+  "Hypertensive Emergency": {
+    "system": "cardiovascular",
+    "anchors": [
+      "altered mental status cerebral",
+      "chest pain cardiac strain"
+    ],
+    "support": [
+      "dyspnea pulmonary edema",
+      "may be asymptomatic or severe headache",
+      "vision changes retinal damage"
+    ],
+    "all_syms": [
+      "altered mental status cerebral",
+      "chest pain cardiac strain",
+      "dyspnea pulmonary edema",
+      "may be asymptomatic or severe headache",
+      "vision changes retinal damage"
+    ],
+    "triage": "emergent",
+    "onset": "acute_hours",
+    "must_not_miss": true,
+    "red_flags": [],
+    "category": "Hypertensive crisis",
+    "_source": "cascade_derived",
+    "_organ": "vasculature_systemic",
+    "_failure_mode": "severe_HTN_emergency"
+  },
+  "Migraine": {
+    "system": "neurologic",
+    "anchors": [
+      "aura visual or sensory",
+      "nausea vomiting"
+    ],
+    "support": [
+      "phonophobia",
+      "photophobia",
+      "throbbing unilateral headache"
+    ],
+    "all_syms": [
+      "aura visual or sensory",
+      "nausea vomiting",
+      "phonophobia",
+      "photophobia",
+      "throbbing unilateral headache"
+    ],
+    "triage": "urgent",
+    "onset": "episodic",
+    "must_not_miss": true,
+    "red_flags": [],
+    "category": "Headache disorders",
+    "_source": "cascade_derived",
+    "_organ": "brain",
+    "_failure_mode": "vascular_dysregulation_migraine"
+  },
+  "Stable Angina Pectoris": {
+    "system": "cardiovascular",
+    "anchors": [
+      "chest tightness pressure squeezing quality",
+      "demand supply mismatch predictable",
+      "exertional chest pain substernal",
+      "fatigue during exertion",
+      "left arm pain jaw pain"
+    ],
+    "support": [
+      "pain relieved by rest within 5 minutes",
+      "reduced baseline coronary flow reserve",
+      "reproducible predictable pattern distinguishing",
+      "responds to sublingual nitroglycerin",
+      "shortness of breath dyspnea on exertion",
+      "transient subendocardial ischemia"
+    ],
+    "all_syms": [
+      "chest tightness pressure squeezing quality",
+      "demand supply mismatch predictable",
+      "exertional chest pain substernal",
+      "fatigue during exertion",
+      "left arm pain jaw pain",
+      "pain relieved by rest within 5 minutes",
+      "reduced baseline coronary flow reserve",
+      "reproducible predictable pattern distinguishing",
+      "responds to sublingual nitroglycerin",
+      "shortness of breath dyspnea on exertion",
+      "transient subendocardial ischemia"
+    ],
+    "triage": "urgent",
+    "onset": "exertional",
+    "must_not_miss": true,
+    "red_flags": [],
+    "category": "Ischemic heart disease",
+    "_source": "cascade_derived",
+    "_organ": "coronary_arteries",
+    "_failure_mode": "stable_atherosclerosis"
+  },
+  "Tension-type Headache": {
+    "system": "neurologic",
+    "anchors": [
+      "bilateral pressing band like headache",
+      "headache lasting hours to days",
+      "mild to moderate intensity no severe",
+      "muscle tightness in neck and scalp",
+      "no aura no throbbing pulsating"
+    ],
+    "support": [
+      "no nausea distinguishing",
+      "no photophobia distinguishing",
+      "non throbbing constant pain quality",
+      "not worsened by routine activity",
+      "responds to simple analgesics",
+      "tenderness to palpation of pericranial muscles"
+    ],
+    "all_syms": [
+      "bilateral pressing band like headache",
+      "headache lasting hours to days",
+      "mild to moderate intensity no severe",
+      "muscle tightness in neck and scalp",
+      "no aura no throbbing pulsating",
+      "no nausea distinguishing",
+      "no photophobia distinguishing",
+      "non throbbing constant pain quality",
+      "not worsened by routine activity",
+      "responds to simple analgesics",
+      "tenderness to palpation of pericranial muscles"
+    ],
+    "triage": "routine",
+    "onset": "episodic",
+    "must_not_miss": true,
+    "red_flags": [],
+    "category": "Headache disorders",
+    "_source": "cascade_derived",
+    "_organ": "brain",
+    "_failure_mode": "vascular_engorgement_tension"
+  },
+  "Sepsis": {
+    "system": "cardiovascular",
+    "anchors": [
+      "altered mental status",
+      "bruising bleeding",
+      "chills rigors",
+      "fever",
+      "hypotension",
+      "intravascular volume depletion",
+      "lactic acidosis"
+    ],
+    "support": [
+      "macrophage t cell activation",
+      "oliguria",
+      "rapid breathing tachypnea compensatory",
+      "respiratory failure",
+      "tachycardia compensatory",
+      "tissue edema",
+      "warm flushed skin initially"
+    ],
+    "all_syms": [
+      "altered mental status",
+      "bruising bleeding",
+      "chills rigors",
+      "fever",
+      "hypotension",
+      "intravascular volume depletion",
+      "lactic acidosis",
+      "macrophage t cell activation",
+      "oliguria",
+      "rapid breathing tachypnea compensatory",
+      "respiratory failure",
+      "tachycardia compensatory",
+      "tissue edema",
+      "warm flushed skin initially"
+    ],
+    "triage": "emergent",
+    "onset": null,
+    "must_not_miss": false,
+    "red_flags": [],
+    "category": "",
+    "_source": "cascade_derived",
+    "_organ": "vasculature_systemic",
+    "_failure_mode": "septic_shock"
+  },
+  "Congestive Heart Failure": {
+    "system": "cardiovascular",
+    "anchors": [
+      "ascites",
+      "decreased left ventricular contractility",
+      "dyspnea exertional",
+      "frothy pink sputum",
+      "hepatomegaly ruq discomfort",
+      "jugular venous distention jvd"
+    ],
+    "support": [
+      "leg swelling pitting edema dependent",
+      "orthopnea",
+      "paroxysmal nocturnal dyspnea pnd",
+      "pulmonary congestion",
+      "severe dyspnea at rest",
+      "sodium water retention",
+      "weight gain fluid"
+    ],
+    "all_syms": [
+      "ascites",
+      "decreased left ventricular contractility",
+      "dyspnea exertional",
+      "frothy pink sputum",
+      "hepatomegaly ruq discomfort",
+      "jugular venous distention jvd",
+      "leg swelling pitting edema dependent",
+      "orthopnea",
+      "paroxysmal nocturnal dyspnea pnd",
+      "pulmonary congestion",
+      "severe dyspnea at rest",
+      "sodium water retention",
+      "weight gain fluid"
+    ],
+    "triage": "urgent",
+    "onset": null,
+    "must_not_miss": false,
+    "red_flags": [],
+    "category": "",
+    "_source": "cascade_derived",
+    "_organ": "heart",
+    "_failure_mode": "chronic_pump_failure"
+  },
+  "COPD": {
+    "system": "respiratory",
+    "anchors": [
+      "abdominal bloating",
+      "alveolar wall destruction emphysema",
+      "barrel chest ap diameter increase",
+      "cyanosis lips nailbeds",
+      "daytime sleepiness",
+      "dyspnea on exertion progressive",
+      "increased sputum volume purulence"
+    ],
+    "support": [
+      "leg swelling",
+      "loss of elastic recoil",
+      "morning headache",
+      "mucus hypersecretion",
+      "productive cough chronic morning",
+      "respiratory failure acute on chronic",
+      "wheezing",
+      "worsening dyspnea at rest"
+    ],
+    "all_syms": [
+      "abdominal bloating",
+      "alveolar wall destruction emphysema",
+      "barrel chest ap diameter increase",
+      "cyanosis lips nailbeds",
+      "daytime sleepiness",
+      "dyspnea on exertion progressive",
+      "increased sputum volume purulence",
+      "leg swelling",
+      "loss of elastic recoil",
+      "morning headache",
+      "mucus hypersecretion",
+      "productive cough chronic morning",
+      "respiratory failure acute on chronic",
+      "wheezing",
+      "worsening dyspnea at rest"
+    ],
+    "triage": "urgent",
+    "onset": null,
+    "must_not_miss": false,
+    "red_flags": [],
+    "category": "",
+    "_source": "cascade_derived",
+    "_organ": "bronchus",
+    "_failure_mode": "chronic_airway_disease_COPD"
+  },
+  "Heart Attack/MI": {
+    "system": "cardiovascular",
+    "anchors": [
+      "anxiety sense of impending doom",
+      "chest pain visceral",
+      "diaphoresis cold sweating",
+      "epigastric pain",
+      "fatigue"
+    ],
+    "support": [
+      "jaw pain v3 referral",
+      "left arm pain dermatome",
+      "nausea vomiting",
+      "orthopnea if severe",
+      "pallor",
+      "shortness of breath dyspnea"
+    ],
+    "all_syms": [
+      "anxiety sense of impending doom",
+      "chest pain visceral",
+      "diaphoresis cold sweating",
+      "epigastric pain",
+      "fatigue",
+      "jaw pain v3 referral",
+      "left arm pain dermatome",
+      "nausea vomiting",
+      "orthopnea if severe",
+      "pallor",
+      "shortness of breath dyspnea"
+    ],
+    "triage": "routine",
+    "onset": null,
+    "must_not_miss": false,
+    "red_flags": [],
+    "category": "",
+    "_source": "cascade_derived",
+    "_organ": "heart",
+    "_failure_mode": "coronary_obstruction_acute"
+  },
+  "Acute Pulmonary Embolism": {
+    "system": "cardiovascular",
+    "anchors": [
+      "acute onset dyspnea sudden severe",
+      "anxiety apprehension",
+      "hemoptysis blood tinged sputum",
+      "hypotension",
+      "hypoxia low oxygen saturation"
+    ],
+    "support": [
+      "pleuritic chest pain somatic sharp with breathing",
+      "syncope",
+      "tachycardia",
+      "tachypnea compensatory respiratory rate increased",
+      "ventilation perfusion mismatch"
+    ],
+    "all_syms": [
+      "acute onset dyspnea sudden severe",
+      "anxiety apprehension",
+      "hemoptysis blood tinged sputum",
+      "hypotension",
+      "hypoxia low oxygen saturation",
+      "pleuritic chest pain somatic sharp with breathing",
+      "syncope",
+      "tachycardia",
+      "tachypnea compensatory respiratory rate increased",
+      "ventilation perfusion mismatch"
+    ],
+    "triage": "emergent",
+    "onset": null,
+    "must_not_miss": false,
+    "red_flags": [
+      "if massive obstructive shock"
+    ],
+    "category": "",
+    "_source": "cascade_derived",
+    "_organ": "pulmonary_arteries",
+    "_failure_mode": "thromboembolism_acute"
+  },
+  "ARDS": {
+    "system": "respiratory",
+    "anchors": [
+      "altered mental status",
+      "alveolar capillary barrier breakdown increased permeability",
+      "cyanosis central",
+      "decreased lung compliance increased work of breathing"
+    ],
+    "support": [
+      "hypoxemia not responding to supplemental oxygen",
+      "release tnf il1 il8 chemokines",
+      "severe dyspnea progressive refractory hypoxia",
+      "tachypnea marked respiratory distress"
+    ],
+    "all_syms": [
+      "altered mental status",
+      "alveolar capillary barrier breakdown increased permeability",
+      "cyanosis central",
+      "decreased lung compliance increased work of breathing",
+      "hypoxemia not responding to supplemental oxygen",
+      "release tnf il1 il8 chemokines",
+      "severe dyspnea progressive refractory hypoxia",
+      "tachypnea marked respiratory distress"
+    ],
+    "triage": "emergent",
+    "onset": null,
+    "must_not_miss": false,
+    "red_flags": [
+      "respiratory failure requires mechanical ventilation"
+    ],
+    "category": "",
+    "_source": "cascade_derived",
+    "_organ": "lungs",
+    "_failure_mode": "acute_alveolar_injury_ARDS"
+  },
+  "Diabetic Ketoacidosis": {
+    "system": "endocrine",
+    "anchors": [
+      "abdominal pain",
+      "altered mental status",
+      "coma if untreated",
+      "free fatty acids converted to ketones",
+      "fruity acetone breath odor"
+    ],
+    "support": [
+      "kussmaul respirations deep rapid breathing",
+      "marked hyperglycemia above 250 mgdl",
+      "nausea vomiting",
+      "polydipsia excessive thirst",
+      "polyuria excessive urination",
+      "severe dehydration hypovolemia"
+    ],
+    "all_syms": [
+      "abdominal pain",
+      "altered mental status",
+      "coma if untreated",
+      "free fatty acids converted to ketones",
+      "fruity acetone breath odor",
+      "kussmaul respirations deep rapid breathing",
+      "marked hyperglycemia above 250 mgdl",
+      "nausea vomiting",
+      "polydipsia excessive thirst",
+      "polyuria excessive urination",
+      "severe dehydration hypovolemia"
+    ],
+    "triage": "emergent",
+    "onset": null,
+    "must_not_miss": false,
+    "red_flags": [
+      "if severe cerebral edema or shock"
+    ],
+    "category": "",
+    "_source": "cascade_derived",
+    "_organ": "pancreas_islets",
+    "_failure_mode": "diabetic_ketoacidosis_DKA"
+  },
+  "Anaphylaxis": {
+    "system": "hematologic",
+    "anchors": [
+      "abdominal cramping",
+      "chest tightness",
+      "dyspnea shortness of breath",
+      "facial swelling angioedema",
+      "flushing",
+      "hypotension severe",
+      "massive mast cell degranulation"
+    ],
+    "support": [
+      "nausea vomiting diarrhea",
+      "pruritus intense itching",
+      "stridor hoarseness upper airway obstruction",
+      "syncope or loss of consciousness",
+      "tachycardia compensatory",
+      "tongue lip swelling",
+      "urticaria hives",
+      "wheezing severe"
+    ],
+    "all_syms": [
+      "abdominal cramping",
+      "chest tightness",
+      "dyspnea shortness of breath",
+      "facial swelling angioedema",
+      "flushing",
+      "hypotension severe",
+      "massive mast cell degranulation",
+      "nausea vomiting diarrhea",
+      "pruritus intense itching",
+      "stridor hoarseness upper airway obstruction",
+      "syncope or loss of consciousness",
+      "tachycardia compensatory",
+      "tongue lip swelling",
+      "urticaria hives",
+      "wheezing severe"
+    ],
+    "triage": "emergent",
+    "onset": null,
+    "must_not_miss": false,
+    "red_flags": [
+      "upper airway edema from vascular leak",
+      "systemic vasodilation capillary leak distributive shock",
+      "death from airway obstruction or shock if untreated"
+    ],
+    "category": "",
+    "_source": "cascade_derived",
+    "_organ": "systemic_immune",
+    "_failure_mode": "type_I_hypersensitivity_anaphylaxis"
+  },
+  "Acute Pancreatitis": {
+    "system": "hepatobiliary",
+    "anchors": [
+      "auto digestion of pancreatic tissue",
+      "back pain radiation back retroperitoneal",
+      "cullen sign periumbilical ecchymosis",
+      "epigastric pain severe constant",
+      "fever"
+    ],
+    "support": [
+      "grey turner sign flank ecchymosis",
+      "nausea",
+      "pain worse after eating",
+      "tachycardia compensatory",
+      "vomiting persistent"
+    ],
+    "all_syms": [
+      "auto digestion of pancreatic tissue",
+      "back pain radiation back retroperitoneal",
+      "cullen sign periumbilical ecchymosis",
+      "epigastric pain severe constant",
+      "fever",
+      "grey turner sign flank ecchymosis",
+      "nausea",
+      "pain worse after eating",
+      "tachycardia compensatory",
+      "vomiting persistent"
+    ],
+    "triage": "urgent",
+    "onset": null,
+    "must_not_miss": false,
+    "red_flags": [
+      "if severe pancreatic necrosis sirs"
+    ],
+    "category": "",
+    "_source": "cascade_derived",
+    "_organ": "pancreas",
+    "_failure_mode": "acute_pancreatitis"
+  },
+  "Aortic Dissection": {
+    "system": "cardiovascular",
+    "anchors": [
+      "acute aortic regurgitation murmur",
+      "blood pressure difference between arms pulse deficit",
+      "cardiac tamponade",
+      "false lumen formation"
+    ],
+    "support": [
+      "intimal flap visualized on imaging",
+      "limb ischemia if iliac involved",
+      "pain radiating to back between scapulae",
+      "stroke if carotid involved",
+      "sudden severe tearing chest pain maximal at onset"
+    ],
+    "all_syms": [
+      "acute aortic regurgitation murmur",
+      "blood pressure difference between arms pulse deficit",
+      "cardiac tamponade",
+      "false lumen formation",
+      "intimal flap visualized on imaging",
+      "limb ischemia if iliac involved",
+      "pain radiating to back between scapulae",
+      "stroke if carotid involved",
+      "sudden severe tearing chest pain maximal at onset"
+    ],
+    "triage": "emergent",
+    "onset": null,
+    "must_not_miss": false,
+    "red_flags": [
+      "if proximal extension to aortic root"
+    ],
+    "category": "",
+    "_source": "cascade_derived",
+    "_organ": "aorta",
+    "_failure_mode": "aortic_dissection_acute"
+  },
+  "Acute Cholecystitis": {
+    "system": "hepatobiliary",
+    "anchors": [
+      "bile stasis",
+      "boas sign right subscapular pain",
+      "fever",
+      "gallbladder distension increased pressure"
+    ],
+    "support": [
+      "leukocytosis nausea vomiting",
+      "localized sharp ruq pain",
+      "murphy sign ruq tenderness inspiratory arrest",
+      "ruq pain initial visceral"
+    ],
+    "all_syms": [
+      "bile stasis",
+      "boas sign right subscapular pain",
+      "fever",
+      "gallbladder distension increased pressure",
+      "leukocytosis nausea vomiting",
+      "localized sharp ruq pain",
+      "murphy sign ruq tenderness inspiratory arrest",
+      "ruq pain initial visceral"
+    ],
+    "triage": "urgent",
+    "onset": null,
+    "must_not_miss": false,
+    "red_flags": [
+      "if perforation or gangrene"
+    ],
+    "category": "",
+    "_source": "cascade_derived",
+    "_organ": "gallbladder",
+    "_failure_mode": "acute_cholecystitis"
+  },
+  "Acute Diverticulitis": {
+    "system": "gastrointestinal",
+    "anchors": [
+      "constipation or diarrhea",
+      "guarding voluntary",
+      "increased intraluminal pressure in diverticulum",
+      "leukocytosis neutrophil predominance"
+    ],
+    "support": [
+      "llq pain left lower quadrant persistent",
+      "localized tenderness llq",
+      "low grade fever",
+      "nausea anorexia",
+      "wall inflammation localized"
+    ],
+    "all_syms": [
+      "constipation or diarrhea",
+      "guarding voluntary",
+      "increased intraluminal pressure in diverticulum",
+      "leukocytosis neutrophil predominance",
+      "llq pain left lower quadrant persistent",
+      "localized tenderness llq",
+      "low grade fever",
+      "nausea anorexia",
+      "wall inflammation localized"
+    ],
+    "triage": "urgent",
+    "onset": null,
+    "must_not_miss": false,
+    "red_flags": [
+      "if perforation or abscess"
+    ],
+    "category": "",
+    "_source": "cascade_derived",
+    "_organ": "desc_colon",
+    "_failure_mode": "acute_diverticulitis"
+  },
+  "Atrial Fibrillation": {
+    "system": "cardiovascular",
+    "anchors": [
+      "chaotic atrial electrical activity 350 600 bpm",
+      "chest pain if ischemic",
+      "embolic stroke risk increased",
+      "fatigue"
+    ],
+    "support": [
+      "irregularly irregular ventricular response",
+      "lightheadedness dizziness",
+      "palpitations irregular heart beat",
+      "shortness of breath dyspnea on exertion",
+      "syncope if severe"
+    ],
+    "all_syms": [
+      "chaotic atrial electrical activity 350 600 bpm",
+      "chest pain if ischemic",
+      "embolic stroke risk increased",
+      "fatigue",
+      "irregularly irregular ventricular response",
+      "lightheadedness dizziness",
+      "palpitations irregular heart beat",
+      "shortness of breath dyspnea on exertion",
+      "syncope if severe"
+    ],
+    "triage": "urgent",
+    "onset": null,
+    "must_not_miss": false,
+    "red_flags": [
+      "if rapid ventricular response or thromboembolism"
+    ],
+    "category": "",
+    "_source": "cascade_derived",
+    "_organ": "heart",
+    "_failure_mode": "atrial_fibrillation_arrhythmia"
+  },
+  "Ischemic Stroke": {
+    "system": "neurologic",
+    "anchors": [
+      "altered mental status if large",
+      "aphasia difficulty speaking or understanding",
+      "deficit corresponds to vascular territory",
+      "facial droop one side",
+      "ischemic penumbra around infarct core"
+    ],
+    "support": [
+      "regional cerebral blood flow below critical threshold",
+      "sensory loss unilateral",
+      "sudden focal neurologic deficit",
+      "unilateral hemiparesis weakness one side",
+      "visual field deficit homonymous"
+    ],
+    "all_syms": [
+      "altered mental status if large",
+      "aphasia difficulty speaking or understanding",
+      "deficit corresponds to vascular territory",
+      "facial droop one side",
+      "ischemic penumbra around infarct core",
+      "regional cerebral blood flow below critical threshold",
+      "sensory loss unilateral",
+      "sudden focal neurologic deficit",
+      "unilateral hemiparesis weakness one side",
+      "visual field deficit homonymous"
+    ],
+    "triage": "emergent",
+    "onset": null,
+    "must_not_miss": false,
+    "red_flags": [
+      "neuronal death irreversible after critical time"
+    ],
+    "category": "",
+    "_source": "cascade_derived",
+    "_organ": "brain",
+    "_failure_mode": "ischemic_stroke"
+  },
+  "Type 1 Diabetes Mellitus": {
+    "system": "endocrine",
+    "anchors": [
+      "absolute insulin deficiency progressive",
+      "blurred vision",
+      "fatigue weakness",
+      "gad islet cell antibodies present",
+      "glycosuria",
+      "hyperglycemia severe above 300"
+    ],
+    "support": [
+      "lean body habitus unlike t2dm",
+      "polydipsia excessive thirst",
+      "polyphagia increased hunger",
+      "polyuria excessive urination",
+      "rapid onset within weeks",
+      "weight loss dramatic despite polyphagia"
+    ],
+    "all_syms": [
+      "absolute insulin deficiency progressive",
+      "blurred vision",
+      "fatigue weakness",
+      "gad islet cell antibodies present",
+      "glycosuria",
+      "hyperglycemia severe above 300",
+      "lean body habitus unlike t2dm",
+      "polydipsia excessive thirst",
+      "polyphagia increased hunger",
+      "polyuria excessive urination",
+      "rapid onset within weeks",
+      "weight loss dramatic despite polyphagia"
+    ],
+    "triage": "urgent",
+    "onset": null,
+    "must_not_miss": false,
+    "red_flags": [],
+    "category": "",
+    "_source": "cascade_derived",
+    "_organ": "pancreas_islets",
+    "_failure_mode": "type_1_diabetes_autoimmune"
+  },
+  "Primary Hypothyroidism": {
+    "system": "endocrine",
+    "anchors": [
+      "altered mental status to coma",
+      "bradycardia slow heart rate",
+      "cognitive slowing memory problems",
+      "cold intolerance feeling cold in normal temp",
+      "constipation chronic",
+      "decreased basal metabolic rate",
+      "depression low mood"
+    ],
+    "support": [
+      "dry skin",
+      "elevated tsh compensatory",
+      "facial puffiness periorbital edema myxedema",
+      "fatigue persistent lethargy",
+      "hair loss thinning",
+      "hypothermia",
+      "weight gain unexplained"
+    ],
+    "all_syms": [
+      "altered mental status to coma",
+      "bradycardia slow heart rate",
+      "cognitive slowing memory problems",
+      "cold intolerance feeling cold in normal temp",
+      "constipation chronic",
+      "decreased basal metabolic rate",
+      "depression low mood",
+      "dry skin",
+      "elevated tsh compensatory",
+      "facial puffiness periorbital edema myxedema",
+      "fatigue persistent lethargy",
+      "hair loss thinning",
+      "hypothermia",
+      "weight gain unexplained"
+    ],
+    "triage": "routine",
+    "onset": null,
+    "must_not_miss": false,
+    "red_flags": [
+      "if severe myxedema coma rare"
+    ],
+    "category": "",
+    "_source": "cascade_derived",
+    "_organ": "thyroid",
+    "_failure_mode": "primary_hypothyroidism_Hashimoto"
+  },
+  "Cirrhosis": {
+    "system": "hepatobiliary",
+    "anchors": [
+      "ascites abdominal distention",
+      "caput medusae periumbilical veins",
+      "dark urine pale stools",
+      "decreased functional liver mass",
+      "distorted hepatic architecture",
+      "easy bruising petechiae",
+      "edema lower extremities",
+      "esophageal varices dilated collaterals"
+    ],
+    "support": [
+      "gynecomastia in males",
+      "hepatic encephalopathy confusion asterixis",
+      "jaundice yellow skin sclera",
+      "prolonged pt inr bleeding tendency",
+      "pruritus itching",
+      "spider angiomas palmar erythema",
+      "splenomegaly",
+      "testicular atrophy",
+      "variceal bleeding hematemesis"
+    ],
+    "all_syms": [
+      "ascites abdominal distention",
+      "caput medusae periumbilical veins",
+      "dark urine pale stools",
+      "decreased functional liver mass",
+      "distorted hepatic architecture",
+      "easy bruising petechiae",
+      "edema lower extremities",
+      "esophageal varices dilated collaterals",
+      "gynecomastia in males",
+      "hepatic encephalopathy confusion asterixis",
+      "jaundice yellow skin sclera",
+      "prolonged pt inr bleeding tendency",
+      "pruritus itching",
+      "spider angiomas palmar erythema",
+      "splenomegaly",
+      "testicular atrophy",
+      "variceal bleeding hematemesis"
+    ],
+    "triage": "routine",
+    "onset": null,
+    "must_not_miss": false,
+    "red_flags": [
+      "decompensation complications"
+    ],
+    "category": "",
+    "_source": "cascade_derived",
+    "_organ": "liver",
+    "_failure_mode": "cirrhosis_chronic_liver_disease"
+  },
+  "Chronic Kidney Disease": {
+    "system": "urinary",
+    "anchors": [
+      "bone pain renal osteodystrophy",
+      "dyspnea on exertion",
+      "easy bruising bleeding",
+      "edema lower extremities",
+      "elevated creatinine bun",
+      "epistaxis nosebleeds",
+      "fatigue",
+      "gfr below 60 for 3 months"
+    ],
+    "support": [
+      "hypertension volume dependent",
+      "nausea anorexia metallic taste",
+      "pallor pale skin",
+      "pruritus uremic itching",
+      "pulmonary congestion dyspnea",
+      "secondary hyperparathyroidism",
+      "uremic encephalopathy confusion seizures",
+      "uremic frost skin white crystals late"
+    ],
+    "all_syms": [
+      "bone pain renal osteodystrophy",
+      "dyspnea on exertion",
+      "easy bruising bleeding",
+      "edema lower extremities",
+      "elevated creatinine bun",
+      "epistaxis nosebleeds",
+      "fatigue",
+      "gfr below 60 for 3 months",
+      "hypertension volume dependent",
+      "nausea anorexia metallic taste",
+      "pallor pale skin",
+      "pruritus uremic itching",
+      "pulmonary congestion dyspnea",
+      "secondary hyperparathyroidism",
+      "uremic encephalopathy confusion seizures",
+      "uremic frost skin white crystals late"
+    ],
+    "triage": "routine",
+    "onset": null,
+    "must_not_miss": false,
+    "red_flags": [
+      "end stage renal disease requires dialysis"
+    ],
+    "category": "",
+    "_source": "cascade_derived",
+    "_organ": "kidney",
+    "_failure_mode": "chronic_kidney_disease_CKD"
+  },
+  "Cellulitis": {
+    "system": "cutaneous",
+    "anchors": [
+      "bacterial invasion dermis subcutaneous tissue",
+      "erythema red warm skin expanding",
+      "fever chills",
+      "hypotension septic shock",
+      "il6 tnf release systemic inflammation",
+      "increased vascular permeability edema",
+      "indistinct borders to erythema"
+    ],
+    "support": [
+      "lymphangitic streaking red lines proximal",
+      "necrotizing fasciitis if deep",
+      "peau d orange appearance severe",
+      "rapid bacterial proliferation",
+      "regional lymphadenopathy tender nodes",
+      "swelling edema localized",
+      "tenderness to palpation dolor",
+      "warmth to palpation calor"
+    ],
+    "all_syms": [
+      "bacterial invasion dermis subcutaneous tissue",
+      "erythema red warm skin expanding",
+      "fever chills",
+      "hypotension septic shock",
+      "il6 tnf release systemic inflammation",
+      "increased vascular permeability edema",
+      "indistinct borders to erythema",
+      "lymphangitic streaking red lines proximal",
+      "necrotizing fasciitis if deep",
+      "peau d orange appearance severe",
+      "rapid bacterial proliferation",
+      "regional lymphadenopathy tender nodes",
+      "swelling edema localized",
+      "tenderness to palpation dolor",
+      "warmth to palpation calor"
+    ],
+    "triage": "urgent",
+    "onset": null,
+    "must_not_miss": false,
+    "red_flags": [
+      "if severe systemic spread"
+    ],
+    "category": "",
+    "_source": "cascade_derived",
+    "_organ": "skin",
+    "_failure_mode": "cellulitis_acute_bacterial_infection"
+  },
+  "Acute Appendicitis": {
+    "system": "gastrointestinal",
+    "anchors": [
+      "fever",
+      "high fever + sepsis signs",
+      "leukocytosis"
+    ],
+    "support": [
+      "rebound tenderness + guarding",
+      "somatic pain",
+      "visceral pain"
+    ],
+    "all_syms": [
+      "fever",
+      "high fever + sepsis signs",
+      "leukocytosis",
+      "rebound tenderness + guarding",
+      "somatic pain",
+      "visceral pain"
+    ],
+    "triage": "emergent",
+    "onset": null,
+    "must_not_miss": false,
+    "red_flags": [],
+    "category": "",
+    "_source": "cascade_derived",
+    "_organ": "appendix",
+    "_failure_mode": "luminal_obstruction"
+  },
+  "Deep Vein Thrombosis": {
+    "system": "hematologic",
+    "anchors": [
+      "calf pain tenderness or thigh",
+      "common with immobilization surgery cancer",
+      "positive homans sign low specificity"
+    ],
+    "support": [
+      "pulmonary embolism risk high",
+      "thrombus formation deep veins calf thigh",
+      "unilateral leg swelling",
+      "warmth erythema affected leg"
+    ],
+    "all_syms": [
+      "calf pain tenderness or thigh",
+      "common with immobilization surgery cancer",
+      "positive homans sign low specificity",
+      "pulmonary embolism risk high",
+      "thrombus formation deep veins calf thigh",
+      "unilateral leg swelling",
+      "warmth erythema affected leg"
+    ],
+    "triage": "emergent",
+    "onset": null,
+    "must_not_miss": false,
+    "red_flags": [
+      "embolization risk"
+    ],
+    "category": "",
+    "_source": "cascade_derived",
+    "_organ": "blood",
+    "_failure_mode": "venous_thromboembolism_DVT"
+  },
+  "Acute Kidney Injury": {
+    "system": "urinary",
+    "anchors": [
+      "altered mental status uremic encephalopathy",
+      "anuria in severe cases",
+      "cardiac arrhythmias",
+      "decreased glomerular filtration rate gfr",
+      "dyspnea",
+      "fatigue weakness general malaise"
+    ],
+    "support": [
+      "metabolic acidosis compensatory tachypnea",
+      "muscle weakness",
+      "nausea vomiting",
+      "oliguria less than 400ml per day",
+      "peripheral edema",
+      "pulmonary edema"
+    ],
+    "all_syms": [
+      "altered mental status uremic encephalopathy",
+      "anuria in severe cases",
+      "cardiac arrhythmias",
+      "decreased glomerular filtration rate gfr",
+      "dyspnea",
+      "fatigue weakness general malaise",
+      "metabolic acidosis compensatory tachypnea",
+      "muscle weakness",
+      "nausea vomiting",
+      "oliguria less than 400ml per day",
+      "peripheral edema",
+      "pulmonary edema"
+    ],
+    "triage": "urgent",
+    "onset": null,
+    "must_not_miss": false,
+    "red_flags": [
+      "hyperkalemia acidosis via decreased excretion"
+    ],
+    "category": "",
+    "_source": "cascade_derived",
+    "_organ": "kidney",
+    "_failure_mode": "acute_kidney_injury_AKI"
+  },
+  "Acute Bronchitis": {
+    "system": "respiratory",
+    "anchors": [
+      "chest discomfort with cough",
+      "ciliated epithelium inflammation",
+      "goblet cell hypersecretion increased mucus",
+      "low grade fever",
+      "malaise fatigue"
+    ],
+    "support": [
+      "no progression unless secondary bacterial",
+      "post infectious cough can persist weeks",
+      "productive cough initially dry then wet",
+      "thick yellow or clear sputum",
+      "wheezing mild if bronchospasm"
+    ],
+    "all_syms": [
+      "chest discomfort with cough",
+      "ciliated epithelium inflammation",
+      "goblet cell hypersecretion increased mucus",
+      "low grade fever",
+      "malaise fatigue",
+      "no progression unless secondary bacterial",
+      "post infectious cough can persist weeks",
+      "productive cough initially dry then wet",
+      "thick yellow or clear sputum",
+      "wheezing mild if bronchospasm"
+    ],
+    "triage": "routine",
+    "onset": null,
+    "must_not_miss": false,
+    "red_flags": [],
+    "category": "",
+    "_source": "cascade_derived",
+    "_organ": "bronchus",
+    "_failure_mode": "acute_bronchitis_inflammation"
+  },
+  "Pneumothorax": {
+    "system": "respiratory",
+    "anchors": [
+      "decreased tactile fremitus",
+      "hyperresonance to percussion",
+      "hypotension",
+      "ipsilateral chest pain sharp",
+      "loss of negative intrapleural pressure"
+    ],
+    "support": [
+      "lung collapses partially or completely",
+      "shortness of breath dyspnea sudden",
+      "sudden unilateral pleuritic chest pain",
+      "tachypnea compensatory",
+      "tracheal deviation to contralateral side"
+    ],
+    "all_syms": [
+      "decreased tactile fremitus",
+      "hyperresonance to percussion",
+      "hypotension",
+      "ipsilateral chest pain sharp",
+      "loss of negative intrapleural pressure",
+      "lung collapses partially or completely",
+      "shortness of breath dyspnea sudden",
+      "sudden unilateral pleuritic chest pain",
+      "tachypnea compensatory",
+      "tracheal deviation to contralateral side"
+    ],
+    "triage": "emergent",
+    "onset": null,
+    "must_not_miss": false,
+    "red_flags": [
+      "if tension pneumothorax mediastinal shift"
+    ],
+    "category": "",
+    "_source": "cascade_derived",
+    "_organ": "pleura",
+    "_failure_mode": "spontaneous_pneumothorax_pleural_rupture"
+  },
+  "Acute Pericarditis": {
+    "system": "cardiovascular",
+    "anchors": [
+      "beck triad hypotension jvd muffled heart sounds",
+      "ecg diffuse st elevation pr depression",
+      "fibrinous exudate pericardial friction",
+      "left arm jaw pain radiation",
+      "left shoulder pain referred"
+    ],
+    "support": [
+      "low grade fever",
+      "pain worse supine better sitting leaning forward",
+      "pericardial friction rub auscultation",
+      "pulsus paradoxus",
+      "sharp pleuritic chest pain substernal"
+    ],
+    "all_syms": [
+      "beck triad hypotension jvd muffled heart sounds",
+      "ecg diffuse st elevation pr depression",
+      "fibrinous exudate pericardial friction",
+      "left arm jaw pain radiation",
+      "left shoulder pain referred",
+      "low grade fever",
+      "pain worse supine better sitting leaning forward",
+      "pericardial friction rub auscultation",
+      "pulsus paradoxus",
+      "sharp pleuritic chest pain substernal"
+    ],
+    "triage": "urgent",
+    "onset": null,
+    "must_not_miss": false,
+    "red_flags": [
+      "if effusion progresses to tamponade"
+    ],
+    "category": "",
+    "_source": "cascade_derived",
+    "_organ": "pericardium",
+    "_failure_mode": "acute_pericarditis_inflammation"
+  },
+  "Infective Endocarditis": {
+    "system": "cardiovascular",
+    "anchors": [
+      "anemia chronic disease",
+      "dyspnea",
+      "fatigue weight loss subacute",
+      "fibrin platelet microorganism aggregates",
+      "janeway lesions painless palmar macules",
+      "new or changing heart murmur"
+    ],
+    "support": [
+      "osler nodes painful finger pad nodules",
+      "persistent fever chills",
+      "renal infarcts hematuria",
+      "roth spots retinal hemorrhages",
+      "splinter hemorrhages nailbeds",
+      "stroke",
+      "vegetations form on valve leaflets"
+    ],
+    "all_syms": [
+      "anemia chronic disease",
+      "dyspnea",
+      "fatigue weight loss subacute",
+      "fibrin platelet microorganism aggregates",
+      "janeway lesions painless palmar macules",
+      "new or changing heart murmur",
+      "osler nodes painful finger pad nodules",
+      "persistent fever chills",
+      "renal infarcts hematuria",
+      "roth spots retinal hemorrhages",
+      "splinter hemorrhages nailbeds",
+      "stroke",
+      "vegetations form on valve leaflets"
+    ],
+    "triage": "emergent",
+    "onset": null,
+    "must_not_miss": false,
+    "red_flags": [
+      "embolic complications systemic"
+    ],
+    "category": "",
+    "_source": "cascade_derived",
+    "_organ": "heart",
+    "_failure_mode": "infective_endocarditis"
+  },
+  "Acute Pulmonary Edema": {
+    "system": "cardiovascular",
+    "anchors": [
+      "altered mental status",
+      "cyanosis if severe",
+      "diaphoresis cold clammy skin",
+      "diffuse bilateral crackles rales",
+      "fluid extravasates into alveoli"
+    ],
+    "support": [
+      "frothy pink sputum",
+      "orthopnea cannot lie flat",
+      "paroxysmal nocturnal dyspnea pnd",
+      "pulmonary capillary hydrostatic pressure rises",
+      "severe dyspnea at rest sudden onset",
+      "tachycardia anxiety air hunger"
+    ],
+    "all_syms": [
+      "altered mental status",
+      "cyanosis if severe",
+      "diaphoresis cold clammy skin",
+      "diffuse bilateral crackles rales",
+      "fluid extravasates into alveoli",
+      "frothy pink sputum",
+      "orthopnea cannot lie flat",
+      "paroxysmal nocturnal dyspnea pnd",
+      "pulmonary capillary hydrostatic pressure rises",
+      "severe dyspnea at rest sudden onset",
+      "tachycardia anxiety air hunger"
+    ],
+    "triage": "emergent",
+    "onset": null,
+    "must_not_miss": false,
+    "red_flags": [
+      "respiratory failure if untreated"
+    ],
+    "category": "",
+    "_source": "cascade_derived",
+    "_organ": "heart",
+    "_failure_mode": "acute_pulmonary_edema_cardiogenic"
+  },
+  "Acute Hepatitis": {
+    "system": "hepatobiliary",
+    "anchors": [
+      "anorexia nausea vomiting",
+      "coagulopathy easy bleeding inr elevated",
+      "dark urine",
+      "elevated ast alt transaminases",
+      "fatigue severe prodromal phase",
+      "hepatic encephalopathy confusion asterixis",
+      "hepatocellular necrosis inflammation"
+    ],
+    "support": [
+      "hepatomegaly tender",
+      "jaundice yellow skin sclera",
+      "low grade fever",
+      "myalgia arthralgia",
+      "pale clay colored stools",
+      "pruritus itching intense",
+      "ruq pain dull constant"
+    ],
+    "all_syms": [
+      "anorexia nausea vomiting",
+      "coagulopathy easy bleeding inr elevated",
+      "dark urine",
+      "elevated ast alt transaminases",
+      "fatigue severe prodromal phase",
+      "hepatic encephalopathy confusion asterixis",
+      "hepatocellular necrosis inflammation",
+      "hepatomegaly tender",
+      "jaundice yellow skin sclera",
+      "low grade fever",
+      "myalgia arthralgia",
+      "pale clay colored stools",
+      "pruritus itching intense",
+      "ruq pain dull constant"
+    ],
+    "triage": "urgent",
+    "onset": null,
+    "must_not_miss": false,
+    "red_flags": [
+      "if severe acute liver failure"
+    ],
+    "category": "",
+    "_source": "cascade_derived",
+    "_organ": "liver",
+    "_failure_mode": "acute_hepatitis_inflammation"
+  },
+  "Inflammatory Bowel Disease": {
+    "system": "gastrointestinal",
+    "anchors": [
+      "anemia iron deficiency blood loss",
+      "bloody diarrhea hematochezia",
+      "crampy abdominal pain relieved by defecation",
+      "eye inflammation uveitis episcleritis",
+      "fatigue",
+      "joint pain arthritis peripheral or axial",
+      "llq or rlq pain depending on location",
+      "low grade fever intermittent"
+    ],
+    "support": [
+      "mucus in stool",
+      "neutrophil infiltration crypt abscesses",
+      "skin lesions erythema nodosum pyoderma",
+      "strictures fistulas crohns",
+      "tenesmus urgency to defecate",
+      "toxic megacolon uc",
+      "transmural inflammation crohns or mucosal uc",
+      "weight loss unintentional"
+    ],
+    "all_syms": [
+      "anemia iron deficiency blood loss",
+      "bloody diarrhea hematochezia",
+      "crampy abdominal pain relieved by defecation",
+      "eye inflammation uveitis episcleritis",
+      "fatigue",
+      "joint pain arthritis peripheral or axial",
+      "llq or rlq pain depending on location",
+      "low grade fever intermittent",
+      "mucus in stool",
+      "neutrophil infiltration crypt abscesses",
+      "skin lesions erythema nodosum pyoderma",
+      "strictures fistulas crohns",
+      "tenesmus urgency to defecate",
+      "toxic megacolon uc",
+      "transmural inflammation crohns or mucosal uc",
+      "weight loss unintentional"
+    ],
+    "triage": "urgent",
+    "onset": null,
+    "must_not_miss": false,
+    "red_flags": [
+      "complications long term"
+    ],
+    "category": "",
+    "_source": "cascade_derived",
+    "_organ": "sig_colon",
+    "_failure_mode": "inflammatory_bowel_disease_IBD"
+  },
+  "Acute Cholangitis": {
+    "system": "hepatobiliary",
+    "anchors": [
+      "altered mental status confusion",
+      "bacteremia systemic inflammation",
+      "bile stasis proximal to obstruction",
+      "high fever with chills rigors"
+    ],
+    "support": [
+      "hypotension septic shock",
+      "increased intrabiliary pressure",
+      "jaundice obstructive pattern",
+      "neutrophil recruitment",
+      "ruq pain visceral severe"
+    ],
+    "all_syms": [
+      "altered mental status confusion",
+      "bacteremia systemic inflammation",
+      "bile stasis proximal to obstruction",
+      "high fever with chills rigors",
+      "hypotension septic shock",
+      "increased intrabiliary pressure",
+      "jaundice obstructive pattern",
+      "neutrophil recruitment",
+      "ruq pain visceral severe"
+    ],
+    "triage": "emergent",
+    "onset": null,
+    "must_not_miss": false,
+    "red_flags": [
+      "if severe reynolds pentad"
+    ],
+    "category": "",
+    "_source": "cascade_derived",
+    "_organ": "bile_duct",
+    "_failure_mode": "acute_cholangitis_ascending_infection"
+  },
+  "Small Bowel Obstruction": {
+    "system": "gastrointestinal",
+    "anchors": [
+      "abdominal distension progressive",
+      "bilious vomiting persistent",
+      "constant severe pain not relieved",
+      "crampy colicky abdominal pain periumbilical",
+      "dehydration hypovolemia",
+      "feculent vomiting late distal obstruction"
+    ],
+    "support": [
+      "fever tachycardia sepsis",
+      "high pitched tinkling bowel sounds",
+      "intraluminal pressure rises",
+      "obstipation no passage of stool or gas",
+      "peritonitis rebound tenderness",
+      "proximal dilation distal collapse",
+      "tympany to percussion"
+    ],
+    "all_syms": [
+      "abdominal distension progressive",
+      "bilious vomiting persistent",
+      "constant severe pain not relieved",
+      "crampy colicky abdominal pain periumbilical",
+      "dehydration hypovolemia",
+      "feculent vomiting late distal obstruction",
+      "fever tachycardia sepsis",
+      "high pitched tinkling bowel sounds",
+      "intraluminal pressure rises",
+      "obstipation no passage of stool or gas",
+      "peritonitis rebound tenderness",
+      "proximal dilation distal collapse",
+      "tympany to percussion"
+    ],
+    "triage": "emergent",
+    "onset": null,
+    "must_not_miss": false,
+    "red_flags": [
+      "if strangulation bowel ischemia"
+    ],
+    "category": "",
+    "_source": "cascade_derived",
+    "_organ": "small_intestine",
+    "_failure_mode": "small_bowel_obstruction_mechanical"
+  },
+  "Subarachnoid Hemorrhage": {
+    "system": "neurologic",
+    "anchors": [
+      "altered mental status drowsiness to coma",
+      "cranial nerve palsy especially cn iii",
+      "hemiparesis if focal",
+      "maximal intensity within seconds",
+      "nausea vomiting",
+      "neck stiffness meningismus"
+    ],
+    "support": [
+      "papilledema if imaging",
+      "phonophobia",
+      "photophobia v1 v2 meningeal innervation",
+      "rebleed high mortality if untreated",
+      "seizure in 30 percent",
+      "sudden severe thunderclap headache worst of life",
+      "vasospasm 3 to 14 days post bleed"
+    ],
+    "all_syms": [
+      "altered mental status drowsiness to coma",
+      "cranial nerve palsy especially cn iii",
+      "hemiparesis if focal",
+      "maximal intensity within seconds",
+      "nausea vomiting",
+      "neck stiffness meningismus",
+      "papilledema if imaging",
+      "phonophobia",
+      "photophobia v1 v2 meningeal innervation",
+      "rebleed high mortality if untreated",
+      "seizure in 30 percent",
+      "sudden severe thunderclap headache worst of life",
+      "vasospasm 3 to 14 days post bleed"
+    ],
+    "triage": "emergent",
+    "onset": null,
+    "must_not_miss": false,
+    "red_flags": [
+      "complications delayed cerebral ischemia"
+    ],
+    "category": "",
+    "_source": "cascade_derived",
+    "_organ": "brain",
+    "_failure_mode": "subarachnoid_hemorrhage_SAH"
+  },
+  "Bell's Palsy": {
+    "system": "neurologic",
+    "anchors": [
+      "axonal dysfunction or demyelination",
+      "bell phenomenon eye rolls up with attempted closure",
+      "compression of nerve within bony canal",
+      "decreased tearing affected eye",
+      "dry mouth xerostomia ipsilateral",
+      "forehead wrinkle loss distinguishes"
+    ],
+    "support": [
+      "hyperacusis",
+      "inability to close eye affected side lagophthalmos",
+      "inability to smile or frown affected side",
+      "loss of taste anterior two thirds tongue ageusia",
+      "self limited in 70 to 85 percent",
+      "unilateral facial droop complete one side"
+    ],
+    "all_syms": [
+      "axonal dysfunction or demyelination",
+      "bell phenomenon eye rolls up with attempted closure",
+      "compression of nerve within bony canal",
+      "decreased tearing affected eye",
+      "dry mouth xerostomia ipsilateral",
+      "forehead wrinkle loss distinguishes",
+      "hyperacusis",
+      "inability to close eye affected side lagophthalmos",
+      "inability to smile or frown affected side",
+      "loss of taste anterior two thirds tongue ageusia",
+      "self limited in 70 to 85 percent",
+      "unilateral facial droop complete one side"
+    ],
+    "triage": "routine",
+    "onset": null,
+    "must_not_miss": false,
+    "red_flags": [],
+    "category": "",
+    "_source": "cascade_derived",
+    "_organ": "facial_nerve",
+    "_failure_mode": "bell_palsy_idiopathic_facial_paralysis"
+  },
+  "Generalized Tonic-Clonic Seizure": {
+    "system": "neurologic",
+    "anchors": [
+      "amnesia for event",
+      "continuous or repeated seizures no recovery",
+      "epileptiform discharges on eeg",
+      "excessive salivation foaming",
+      "gaba glutamate imbalance",
+      "generalized rhythmic convulsions",
+      "headache postictal"
+    ],
+    "support": [
+      "muscle soreness diffuse",
+      "postictal confusion drowsiness 30 min to hours",
+      "respiratory arrest brief cyanosis",
+      "stiffening of entire body",
+      "sudden loss of consciousness",
+      "tachycardia hypertension during seizure",
+      "tongue biting lateral aspect",
+      "urinary or fecal incontinence"
+    ],
+    "all_syms": [
+      "amnesia for event",
+      "continuous or repeated seizures no recovery",
+      "epileptiform discharges on eeg",
+      "excessive salivation foaming",
+      "gaba glutamate imbalance",
+      "generalized rhythmic convulsions",
+      "headache postictal",
+      "muscle soreness diffuse",
+      "postictal confusion drowsiness 30 min to hours",
+      "respiratory arrest brief cyanosis",
+      "stiffening of entire body",
+      "sudden loss of consciousness",
+      "tachycardia hypertension during seizure",
+      "tongue biting lateral aspect",
+      "urinary or fecal incontinence"
+    ],
+    "triage": "emergent",
+    "onset": null,
+    "must_not_miss": false,
+    "red_flags": [
+      "if status epilepticus seizure longer than 5 min"
+    ],
+    "category": "",
+    "_source": "cascade_derived",
+    "_organ": "brain",
+    "_failure_mode": "epileptic_seizure_generalized_tonic_clonic"
+  },
+  "Hyperthyroidism (Graves)": {
+    "system": "endocrine",
+    "anchors": [
+      "altered mental status agitation delirium",
+      "anxiety nervousness irritability",
+      "diplopia extraocular muscle enlargement",
+      "exophthalmos proptosis bulging eyes",
+      "frequent bowel movements diarrhea",
+      "heat intolerance sweating",
+      "high fever dramatic",
+      "hyperdefecation"
+    ],
+    "support": [
+      "increased basal metabolic rate",
+      "lid lag lid retraction",
+      "pretibial myxedema orange peel skin",
+      "suppressed tsh elevated free",
+      "tachycardia palpitations atrial fibrillation",
+      "thyroid gland diffuse enlargement goiter",
+      "tremor fine hand tremor",
+      "warm moist skin",
+      "weight loss despite increased appetite"
+    ],
+    "all_syms": [
+      "altered mental status agitation delirium",
+      "anxiety nervousness irritability",
+      "diplopia extraocular muscle enlargement",
+      "exophthalmos proptosis bulging eyes",
+      "frequent bowel movements diarrhea",
+      "heat intolerance sweating",
+      "high fever dramatic",
+      "hyperdefecation",
+      "increased basal metabolic rate",
+      "lid lag lid retraction",
+      "pretibial myxedema orange peel skin",
+      "suppressed tsh elevated free",
+      "tachycardia palpitations atrial fibrillation",
+      "thyroid gland diffuse enlargement goiter",
+      "tremor fine hand tremor",
+      "warm moist skin",
+      "weight loss despite increased appetite"
+    ],
+    "triage": "urgent",
+    "onset": null,
+    "must_not_miss": false,
+    "red_flags": [
+      "if severe thyroid storm"
+    ],
+    "category": "",
+    "_source": "cascade_derived",
+    "_organ": "thyroid",
+    "_failure_mode": "hyperthyroidism_Graves_disease"
+  },
+  "Iron Deficiency Anemia": {
+    "system": "hematologic",
+    "anchors": [
+      "angular cheilitis corner of mouth cracks",
+      "cognitive impairment children",
+      "decreased hemoglobin synthesis",
+      "dyspnea on exertion",
+      "fatigue chronic progressive",
+      "glossitis smooth red tongue",
+      "headache chronic",
+      "koilonychia spoon shaped nails"
+    ],
+    "support": [
+      "lightheadedness dizziness",
+      "microcytic hypochromic red cells",
+      "pallor skin conjunctivae palms",
+      "palpitations systolic flow murmur",
+      "pica craving for ice or starch",
+      "restless legs syndrome",
+      "tachycardia at rest",
+      "weakness decreased exercise tolerance"
+    ],
+    "all_syms": [
+      "angular cheilitis corner of mouth cracks",
+      "cognitive impairment children",
+      "decreased hemoglobin synthesis",
+      "dyspnea on exertion",
+      "fatigue chronic progressive",
+      "glossitis smooth red tongue",
+      "headache chronic",
+      "koilonychia spoon shaped nails",
+      "lightheadedness dizziness",
+      "microcytic hypochromic red cells",
+      "pallor skin conjunctivae palms",
+      "palpitations systolic flow murmur",
+      "pica craving for ice or starch",
+      "restless legs syndrome",
+      "tachycardia at rest",
+      "weakness decreased exercise tolerance"
+    ],
+    "triage": "routine",
+    "onset": null,
+    "must_not_miss": false,
+    "red_flags": [],
+    "category": "",
+    "_source": "cascade_derived",
+    "_organ": "blood",
+    "_failure_mode": "iron_deficiency_anemia"
+  },
+  "Adrenal Insufficiency": {
+    "system": "endocrine",
+    "anchors": [
+      "altered mental status confusion coma",
+      "anorexia weight loss",
+      "bronze skin color",
+      "fatigue chronic progressive",
+      "hyperkalemia high potassium",
+      "hyperpigmentation skin creases buccal mucosa",
+      "hypoglycemia"
+    ],
+    "support": [
+      "hyponatremia low sodium",
+      "hypotension orthostatic dizziness",
+      "low aldosterone high renin",
+      "low cortisol high acth primary",
+      "nausea vomiting abdominal pain",
+      "salt craving",
+      "severe hypotension shock",
+      "weakness orthostasis"
+    ],
+    "all_syms": [
+      "altered mental status confusion coma",
+      "anorexia weight loss",
+      "bronze skin color",
+      "fatigue chronic progressive",
+      "hyperkalemia high potassium",
+      "hyperpigmentation skin creases buccal mucosa",
+      "hypoglycemia",
+      "hyponatremia low sodium",
+      "hypotension orthostatic dizziness",
+      "low aldosterone high renin",
+      "low cortisol high acth primary",
+      "nausea vomiting abdominal pain",
+      "salt craving",
+      "severe hypotension shock",
+      "weakness orthostasis"
+    ],
+    "triage": "urgent",
+    "onset": null,
+    "must_not_miss": false,
+    "red_flags": [
+      "if stressor adrenal crisis"
+    ],
+    "category": "",
+    "_source": "cascade_derived",
+    "_organ": "r_adrenal",
+    "_failure_mode": "primary_adrenal_insufficiency_Addison"
+  },
+  "Acute Gout": {
+    "system": "",
+    "anchors": [
+      "asymptomatic intercritical period between attacks",
+      "crystal deposition synovium",
+      "desquamation skin peeling during resolution",
+      "exquisite tenderness cannot bear touch",
+      "intense neutrophil infiltration",
+      "joint swelling warmth erythema",
+      "leukocytosis"
+    ],
+    "support": [
+      "limited range of motion painful",
+      "low grade fever",
+      "pain maximal within 24 hours excruciating",
+      "release of inflammatory mediators",
+      "shiny red skin overlying joint",
+      "sudden severe monoarticular pain first mtp great toe",
+      "trigger inflammatory cascade"
+    ],
+    "all_syms": [
+      "asymptomatic intercritical period between attacks",
+      "crystal deposition synovium",
+      "desquamation skin peeling during resolution",
+      "exquisite tenderness cannot bear touch",
+      "intense neutrophil infiltration",
+      "joint swelling warmth erythema",
+      "leukocytosis",
+      "limited range of motion painful",
+      "low grade fever",
+      "pain maximal within 24 hours excruciating",
+      "release of inflammatory mediators",
+      "shiny red skin overlying joint",
+      "sudden severe monoarticular pain first mtp great toe",
+      "trigger inflammatory cascade"
+    ],
+    "triage": "urgent",
+    "onset": null,
+    "must_not_miss": false,
+    "red_flags": [],
+    "category": "",
+    "_source": "cascade_derived",
+    "_organ": "joint",
+    "_failure_mode": "acute_gout_monosodium_urate_crystals"
+  },
+  "Sciatica": {
+    "system": "neurologic",
+    "anchors": [
+      "bilateral leg weakness progressive",
+      "chemical irritation inflammatory mediators",
+      "decreased or absent reflexes achilles s1",
+      "dermatome lateral calf dorsum foot great toe",
+      "fecal incontinence",
+      "mechanical compression disc herniation",
+      "numbness paresthesia in dermatome",
+      "pain radiating buttock to posterior leg to foot"
+    ],
+    "support": [
+      "pain worse with sitting coughing sneezing valsalva",
+      "positive straight leg raise test 30 to 70 degrees",
+      "radicular pain along dermatome distribution",
+      "s1 dermatome posterior calf lateral foot heel",
+      "saddle anesthesia perineal numbness",
+      "sharp shooting electric quality pain",
+      "urinary retention or incontinence",
+      "weakness foot dorsiflexion or plantarflexion s1"
+    ],
+    "all_syms": [
+      "bilateral leg weakness progressive",
+      "chemical irritation inflammatory mediators",
+      "decreased or absent reflexes achilles s1",
+      "dermatome lateral calf dorsum foot great toe",
+      "fecal incontinence",
+      "mechanical compression disc herniation",
+      "numbness paresthesia in dermatome",
+      "pain radiating buttock to posterior leg to foot",
+      "pain worse with sitting coughing sneezing valsalva",
+      "positive straight leg raise test 30 to 70 degrees",
+      "radicular pain along dermatome distribution",
+      "s1 dermatome posterior calf lateral foot heel",
+      "saddle anesthesia perineal numbness",
+      "sharp shooting electric quality pain",
+      "urinary retention or incontinence",
+      "weakness foot dorsiflexion or plantarflexion s1"
+    ],
+    "triage": "routine",
+    "onset": null,
+    "must_not_miss": false,
+    "red_flags": [
+      "if cauda equina syndrome emergency"
+    ],
+    "category": "",
+    "_source": "cascade_derived",
+    "_organ": "spinal_nerves",
+    "_failure_mode": "sciatica_lumbar_radiculopathy"
+  },
+  "Acute Otitis Media": {
+    "system": "sensory",
+    "anchors": [
+      "bulging red tympanic membrane",
+      "conductive hearing loss temporary",
+      "decreased appetite anorexia",
+      "ear protruding outward",
+      "fever",
+      "fluid accumulation middle ear effusion",
+      "inflammation of middle ear mucosa",
+      "irritability poor sleep children"
+    ],
+    "support": [
+      "loss of tm landmarks decreased mobility",
+      "negative middle ear pressure",
+      "otorrhea purulent drainage",
+      "pain radiates to jaw",
+      "post auricular swelling redness",
+      "purulent fluid behind tympanic membrane",
+      "severe ear pain otalgia throbbing",
+      "sudden pain relief after perforation"
+    ],
+    "all_syms": [
+      "bulging red tympanic membrane",
+      "conductive hearing loss temporary",
+      "decreased appetite anorexia",
+      "ear protruding outward",
+      "fever",
+      "fluid accumulation middle ear effusion",
+      "inflammation of middle ear mucosa",
+      "irritability poor sleep children",
+      "loss of tm landmarks decreased mobility",
+      "negative middle ear pressure",
+      "otorrhea purulent drainage",
+      "pain radiates to jaw",
+      "post auricular swelling redness",
+      "purulent fluid behind tympanic membrane",
+      "severe ear pain otalgia throbbing",
+      "sudden pain relief after perforation"
+    ],
+    "triage": "urgent",
+    "onset": null,
+    "must_not_miss": false,
+    "red_flags": [
+      "if severe mastoiditis complication"
+    ],
+    "category": "",
+    "_source": "cascade_derived",
+    "_organ": "middle_ear",
+    "_failure_mode": "acute_otitis_media_AOM"
+  },
+  "Chronic Essential Hypertension": {
+    "system": "cardiovascular",
+    "anchors": [
+      "asymptomatic most patients",
+      "blood pressure persistently above 130 80",
+      "exertional dyspnea progressive",
+      "headache chronic morning"
+    ],
+    "support": [
+      "mi chf ckd risk",
+      "palpitations",
+      "stroke risk increased",
+      "vision changes retinopathy"
+    ],
+    "all_syms": [
+      "asymptomatic most patients",
+      "blood pressure persistently above 130 80",
+      "exertional dyspnea progressive",
+      "headache chronic morning",
+      "mi chf ckd risk",
+      "palpitations",
+      "stroke risk increased",
+      "vision changes retinopathy"
+    ],
+    "triage": "routine",
+    "onset": null,
+    "must_not_miss": false,
+    "red_flags": [],
+    "category": "",
+    "_source": "cascade_derived",
+    "_organ": "vasculature_systemic",
+    "_failure_mode": "chronic_essential_hypertension"
+  },
+  "Hyperlipidemia": {
+    "system": "cardiovascular",
+    "anchors": [
+      "abnormal lipid panel",
+      "asymptomatic silent progression",
+      "atherogenic profile"
+    ],
+    "support": [
+      "increased cv disease risk",
+      "premature corneal arcus under 50",
+      "xanthomas yellow deposits familial"
+    ],
+    "all_syms": [
+      "abnormal lipid panel",
+      "asymptomatic silent progression",
+      "atherogenic profile",
+      "increased cv disease risk",
+      "premature corneal arcus under 50",
+      "xanthomas yellow deposits familial"
+    ],
+    "triage": "routine",
+    "onset": null,
+    "must_not_miss": false,
+    "red_flags": [],
+    "category": "",
+    "_source": "cascade_derived",
+    "_organ": "vasculature_systemic",
+    "_failure_mode": "hyperlipidemia_dyslipidemia"
+  },
+  "Dilated Cardiomyopathy": {
+    "system": "cardiovascular",
+    "anchors": [
+      "atrial fibrillation common",
+      "decreased ejection fraction below 40",
+      "dyspnea on exertion then at rest",
+      "edema peripheral"
+    ],
+    "support": [
+      "fatigue decreased exercise tolerance",
+      "sudden cardiac death risk",
+      "ventricular arrhythmias risk",
+      "ventricular chamber enlargement"
+    ],
+    "all_syms": [
+      "atrial fibrillation common",
+      "decreased ejection fraction below 40",
+      "dyspnea on exertion then at rest",
+      "edema peripheral",
+      "fatigue decreased exercise tolerance",
+      "sudden cardiac death risk",
+      "ventricular arrhythmias risk",
+      "ventricular chamber enlargement"
+    ],
+    "triage": "urgent",
+    "onset": null,
+    "must_not_miss": false,
+    "red_flags": [
+      "arrhythmia risk"
+    ],
+    "category": "",
+    "_source": "cascade_derived",
+    "_organ": "heart",
+    "_failure_mode": "dilated_cardiomyopathy"
+  },
+  "Mitral Regurgitation": {
+    "system": "cardiovascular",
+    "anchors": [
+      "afib",
+      "dyspnea on exertion",
+      "fatigue decreased cardiac output"
+    ],
+    "support": [
+      "holosystolic murmur apex radiates axilla",
+      "orthopnea paroxysmal nocturnal dyspnea",
+      "s3 gallop volume overload"
+    ],
+    "all_syms": [
+      "afib",
+      "dyspnea on exertion",
+      "fatigue decreased cardiac output",
+      "holosystolic murmur apex radiates axilla",
+      "orthopnea paroxysmal nocturnal dyspnea",
+      "s3 gallop volume overload"
+    ],
+    "triage": "urgent",
+    "onset": null,
+    "must_not_miss": false,
+    "red_flags": [],
+    "category": "",
+    "_source": "cascade_derived",
+    "_organ": "heart",
+    "_failure_mode": "mitral_regurgitation"
+  },
+  "Aortic Stenosis": {
+    "system": "cardiovascular",
+    "anchors": [
+      "angina exertional",
+      "delayed carotid upstroke pulsus parvus et tardus",
+      "exertional angina demand supply mismatch"
+    ],
+    "support": [
+      "exertional dyspnea",
+      "exertional syncope decreased brain perfusion",
+      "harsh systolic ejection murmur rusb radiates carotids",
+      "heart failure decompensated"
+    ],
+    "all_syms": [
+      "angina exertional",
+      "delayed carotid upstroke pulsus parvus et tardus",
+      "exertional angina demand supply mismatch",
+      "exertional dyspnea",
+      "exertional syncope decreased brain perfusion",
+      "harsh systolic ejection murmur rusb radiates carotids",
+      "heart failure decompensated"
+    ],
+    "triage": "urgent",
+    "onset": null,
+    "must_not_miss": false,
+    "red_flags": [
+      "severe as classic triad"
+    ],
+    "category": "",
+    "_source": "cascade_derived",
+    "_organ": "heart",
+    "_failure_mode": "aortic_stenosis"
+  },
+  "Bradyarrhythmia": {
+    "system": "cardiovascular",
+    "anchors": [
+      "asystole risk",
+      "bradycardia pulse below 60",
+      "fatigue weakness"
+    ],
+    "support": [
+      "lightheadedness dizziness",
+      "may be asymptomatic if compensated",
+      "stokes adams attacks syncope episodes",
+      "syncope or near syncope"
+    ],
+    "all_syms": [
+      "asystole risk",
+      "bradycardia pulse below 60",
+      "fatigue weakness",
+      "lightheadedness dizziness",
+      "may be asymptomatic if compensated",
+      "stokes adams attacks syncope episodes",
+      "syncope or near syncope"
+    ],
+    "triage": "urgent",
+    "onset": null,
+    "must_not_miss": false,
+    "red_flags": [
+      "high grade av block complications"
+    ],
+    "category": "",
+    "_source": "cascade_derived",
+    "_organ": "heart",
+    "_failure_mode": "bradyarrhythmia_sinus_bradycardia_or_AV_block"
+  },
+  "Supraventricular Tachycardia": {
+    "system": "cardiovascular",
+    "anchors": [
+      "abrupt termination with valsalva or adenosine",
+      "chest pain or tightness",
+      "diaphoresis"
+    ],
+    "support": [
+      "dyspnea",
+      "lightheadedness anxiety",
+      "palpitations sudden rapid pounding",
+      "sudden onset regular narrow complex tachycardia 150 220"
+    ],
+    "all_syms": [
+      "abrupt termination with valsalva or adenosine",
+      "chest pain or tightness",
+      "diaphoresis",
+      "dyspnea",
+      "lightheadedness anxiety",
+      "palpitations sudden rapid pounding",
+      "sudden onset regular narrow complex tachycardia 150 220"
+    ],
+    "triage": "urgent",
+    "onset": null,
+    "must_not_miss": false,
+    "red_flags": [],
+    "category": "",
+    "_source": "cascade_derived",
+    "_organ": "heart",
+    "_failure_mode": "supraventricular_tachycardia_SVT"
+  },
+  "Vasovagal Syncope": {
+    "system": "neurologic",
+    "anchors": [
+      "decreased cerebral perfusion",
+      "diaphoresis pallor visual changes",
+      "hypotension bradycardia paradoxical",
+      "occurs when upright not supine"
+    ],
+    "support": [
+      "preceded by typical trigger",
+      "prodromal warning lightheadedness nausea",
+      "rapid full recovery without postictal state",
+      "syncope brief seconds to minutes"
+    ],
+    "all_syms": [
+      "decreased cerebral perfusion",
+      "diaphoresis pallor visual changes",
+      "hypotension bradycardia paradoxical",
+      "occurs when upright not supine",
+      "preceded by typical trigger",
+      "prodromal warning lightheadedness nausea",
+      "rapid full recovery without postictal state",
+      "syncope brief seconds to minutes"
+    ],
+    "triage": "routine",
+    "onset": null,
+    "must_not_miss": false,
+    "red_flags": [],
+    "category": "",
+    "_source": "cascade_derived",
+    "_organ": "brain",
+    "_failure_mode": "vasovagal_syncope_neurocardiogenic"
+  },
+  "Peripheral Artery Disease": {
+    "system": "cardiovascular",
+    "anchors": [
+      "cool pale hairless skin",
+      "decreased ankle brachial index below 0 9",
+      "diminished or absent pedal pulses",
+      "gangrene tissue necrosis"
+    ],
+    "support": [
+      "intermittent claudication calf pain with walking",
+      "non healing ulcers on toes feet",
+      "pain relieved with rest within minutes",
+      "reproducible at consistent distance",
+      "rest pain at night relieved by dangling leg"
+    ],
+    "all_syms": [
+      "cool pale hairless skin",
+      "decreased ankle brachial index below 0 9",
+      "diminished or absent pedal pulses",
+      "gangrene tissue necrosis",
+      "intermittent claudication calf pain with walking",
+      "non healing ulcers on toes feet",
+      "pain relieved with rest within minutes",
+      "reproducible at consistent distance",
+      "rest pain at night relieved by dangling leg"
+    ],
+    "triage": "routine",
+    "onset": null,
+    "must_not_miss": false,
+    "red_flags": [
+      "critical progression"
+    ],
+    "category": "",
+    "_source": "cascade_derived",
+    "_organ": "vasculature_systemic",
+    "_failure_mode": "peripheral_artery_disease_PAD"
+  },
+  "Varicose Veins": {
+    "system": "cardiovascular",
+    "anchors": [
+      "dilated tortuous superficial veins",
+      "hyperpigmentation brown discoloration",
+      "improved with elevation",
+      "increased venous pressure",
+      "leg aching heaviness worse end of day"
+    ],
+    "support": [
+      "leg swelling dependent",
+      "lipodermatosclerosis skin hardening",
+      "superficial thrombophlebitis",
+      "venous eczema pruritus",
+      "venous stasis ulcers medial malleolus"
+    ],
+    "all_syms": [
+      "dilated tortuous superficial veins",
+      "hyperpigmentation brown discoloration",
+      "improved with elevation",
+      "increased venous pressure",
+      "leg aching heaviness worse end of day",
+      "leg swelling dependent",
+      "lipodermatosclerosis skin hardening",
+      "superficial thrombophlebitis",
+      "venous eczema pruritus",
+      "venous stasis ulcers medial malleolus"
+    ],
+    "triage": "routine",
+    "onset": null,
+    "must_not_miss": false,
+    "red_flags": [],
+    "category": "",
+    "_source": "cascade_derived",
+    "_organ": "vasculature_systemic",
+    "_failure_mode": "chronic_venous_insufficiency_varicose_veins"
+  },
+  "Erosive Esophagitis": {
+    "system": "gastrointestinal",
+    "anchors": [
+      "dysphagia difficulty swallowing",
+      "heartburn progressive severe"
+    ],
+    "support": [
+      "odynophagia painful swallowing",
+      "regurgitation food acid",
+      "retrosternal chest pain burning"
+    ],
+    "all_syms": [
+      "dysphagia difficulty swallowing",
+      "heartburn progressive severe",
+      "odynophagia painful swallowing",
+      "regurgitation food acid",
+      "retrosternal chest pain burning"
+    ],
+    "triage": "routine",
+    "onset": null,
+    "must_not_miss": false,
+    "red_flags": [],
+    "category": "",
+    "_source": "cascade_derived",
+    "_organ": "esophagus",
+    "_failure_mode": "esophagitis_reflux_chronic"
+  },
+  "Peptic Ulcer Disease": {
+    "system": "gastrointestinal",
+    "anchors": [
+      "epigastric pain burning gnawing",
+      "hematemesis coffee ground vomiting",
+      "melena black tarry stools"
+    ],
+    "support": [
+      "nausea vomiting early satiety",
+      "pain relieved by eating duodenal",
+      "pain worse with eating gastric",
+      "ulceration gastric or duodenal"
+    ],
+    "all_syms": [
+      "epigastric pain burning gnawing",
+      "hematemesis coffee ground vomiting",
+      "melena black tarry stools",
+      "nausea vomiting early satiety",
+      "pain relieved by eating duodenal",
+      "pain worse with eating gastric",
+      "ulceration gastric or duodenal"
+    ],
+    "triage": "urgent",
+    "onset": null,
+    "must_not_miss": false,
+    "red_flags": [
+      "complications"
+    ],
+    "category": "",
+    "_source": "cascade_derived",
+    "_organ": "stomach",
+    "_failure_mode": "peptic_ulcer_disease_PUD"
+  },
+  "Irritable Bowel Syndrome": {
+    "system": "gastrointestinal",
+    "anchors": [
+      "abdominal pain chronic recurrent crampy",
+      "bloating distension",
+      "diarrhea constipation or alternating"
+    ],
+    "support": [
+      "mucus in stool no blood",
+      "no weight loss no fever",
+      "normal labs imaging",
+      "pain relieved with defecation"
+    ],
+    "all_syms": [
+      "abdominal pain chronic recurrent crampy",
+      "bloating distension",
+      "diarrhea constipation or alternating",
+      "mucus in stool no blood",
+      "no weight loss no fever",
+      "normal labs imaging",
+      "pain relieved with defecation"
+    ],
+    "triage": "routine",
+    "onset": null,
+    "must_not_miss": false,
+    "red_flags": [],
+    "category": "",
+    "_source": "cascade_derived",
+    "_organ": "colon",
+    "_failure_mode": "irritable_bowel_syndrome_IBS"
+  },
+  "Colorectal Cancer": {
+    "system": "gastrointestinal",
+    "anchors": [
+      "asymptomatic initially",
+      "bowel obstruction",
+      "change in bowel habits pencil thin stools",
+      "fatigue pallor"
+    ],
+    "support": [
+      "hematochezia bright red blood",
+      "metastasis liver lung",
+      "occult blood loss microcytic anemia",
+      "weight loss unintentional"
+    ],
+    "all_syms": [
+      "asymptomatic initially",
+      "bowel obstruction",
+      "change in bowel habits pencil thin stools",
+      "fatigue pallor",
+      "hematochezia bright red blood",
+      "metastasis liver lung",
+      "occult blood loss microcytic anemia",
+      "weight loss unintentional"
+    ],
+    "triage": "urgent",
+    "onset": null,
+    "must_not_miss": false,
+    "red_flags": [
+      "advanced"
+    ],
+    "category": "",
+    "_source": "cascade_derived",
+    "_organ": "asc_colon",
+    "_failure_mode": "colorectal_cancer"
+  },
+  "Hemorrhoids": {
+    "system": "gastrointestinal",
+    "anchors": [
+      "blood dripping into toilet bowl",
+      "bright red blood with defecation",
+      "external hemorrhoids painful"
+    ],
+    "support": [
+      "internal hemorrhoids painless",
+      "pruritus ani",
+      "severe anal pain acute"
+    ],
+    "all_syms": [
+      "blood dripping into toilet bowl",
+      "bright red blood with defecation",
+      "external hemorrhoids painful",
+      "internal hemorrhoids painless",
+      "pruritus ani",
+      "severe anal pain acute"
+    ],
+    "triage": "routine",
+    "onset": null,
+    "must_not_miss": false,
+    "red_flags": [],
+    "category": "",
+    "_source": "cascade_derived",
+    "_organ": "rectum",
+    "_failure_mode": "hemorrhoids"
+  },
+  "Non-alcoholic Fatty Liver Disease": {
+    "system": "hepatobiliary",
+    "anchors": [
+      "asymptomatic incidental finding",
+      "elevated alt ast mild"
+    ],
+    "support": [
+      "fatigue chronic",
+      "ruq discomfort dull",
+      "signs of cirrhosis late"
+    ],
+    "all_syms": [
+      "asymptomatic incidental finding",
+      "elevated alt ast mild",
+      "fatigue chronic",
+      "ruq discomfort dull",
+      "signs of cirrhosis late"
+    ],
+    "triage": "routine",
+    "onset": null,
+    "must_not_miss": false,
+    "red_flags": [],
+    "category": "",
+    "_source": "cascade_derived",
+    "_organ": "liver",
+    "_failure_mode": "non_alcoholic_fatty_liver_disease_NAFLD"
+  },
+  "Cholelithiasis": {
+    "system": "hepatobiliary",
+    "anchors": [
+      "asymptomatic most patients",
+      "boas sign right shoulder referral",
+      "incidental imaging finding"
+    ],
+    "support": [
+      "intermittent ruq pain postprandial",
+      "nausea vomiting",
+      "pain 30min to hours then resolves",
+      "pain triggered by fatty food"
+    ],
+    "all_syms": [
+      "asymptomatic most patients",
+      "boas sign right shoulder referral",
+      "incidental imaging finding",
+      "intermittent ruq pain postprandial",
+      "nausea vomiting",
+      "pain 30min to hours then resolves",
+      "pain triggered by fatty food"
+    ],
+    "triage": "routine",
+    "onset": null,
+    "must_not_miss": false,
+    "red_flags": [],
+    "category": "",
+    "_source": "cascade_derived",
+    "_organ": "gallbladder",
+    "_failure_mode": "cholelithiasis_gallstones_asymptomatic"
+  },
+  "Alcoholic Hepatitis": {
+    "system": "hepatobiliary",
+    "anchors": [
+      "ascites new onset",
+      "ast higher than alt ratio above 2",
+      "elevated ggt"
+    ],
+    "support": [
+      "encephalopathy confusion",
+      "fever low grade",
+      "jaundice progressive",
+      "ruq pain tender hepatomegaly"
+    ],
+    "all_syms": [
+      "ascites new onset",
+      "ast higher than alt ratio above 2",
+      "elevated ggt",
+      "encephalopathy confusion",
+      "fever low grade",
+      "jaundice progressive",
+      "ruq pain tender hepatomegaly"
+    ],
+    "triage": "urgent",
+    "onset": null,
+    "must_not_miss": false,
+    "red_flags": [
+      "decompensation"
+    ],
+    "category": "",
+    "_source": "cascade_derived",
+    "_organ": "liver",
+    "_failure_mode": "alcoholic_hepatitis"
+  },
+  "Chronic Pancreatitis": {
+    "system": "hepatobiliary",
+    "anchors": [
+      "chronic epigastric pain dull",
+      "diabetes secondary",
+      "pain radiates to back"
+    ],
+    "support": [
+      "polyuria polydipsia",
+      "steatorrhea fatty foul stools",
+      "weight loss malabsorption"
+    ],
+    "all_syms": [
+      "chronic epigastric pain dull",
+      "diabetes secondary",
+      "pain radiates to back",
+      "polyuria polydipsia",
+      "steatorrhea fatty foul stools",
+      "weight loss malabsorption"
+    ],
+    "triage": "routine",
+    "onset": null,
+    "must_not_miss": false,
+    "red_flags": [],
+    "category": "",
+    "_source": "cascade_derived",
+    "_organ": "pancreas",
+    "_failure_mode": "chronic_pancreatitis"
+  },
+  "Celiac Disease": {
+    "system": "gastrointestinal",
+    "anchors": [
+      "anti ttg anti endomysial antibodies",
+      "bloating abdominal pain",
+      "chronic diarrhea steatorrhea"
+    ],
+    "support": [
+      "dermatitis herpetiformis rash",
+      "duodenal villous atrophy biopsy",
+      "iron deficiency anemia"
+    ],
+    "all_syms": [
+      "anti ttg anti endomysial antibodies",
+      "bloating abdominal pain",
+      "chronic diarrhea steatorrhea",
+      "dermatitis herpetiformis rash",
+      "duodenal villous atrophy biopsy",
+      "iron deficiency anemia"
+    ],
+    "triage": "routine",
+    "onset": null,
+    "must_not_miss": false,
+    "red_flags": [],
+    "category": "",
+    "_source": "cascade_derived",
+    "_organ": "small_intestine",
+    "_failure_mode": "celiac_disease"
+  },
+  "Acute Sinusitis": {
+    "system": "gastrointestinal",
+    "anchors": [
+      "decreased sense of smell",
+      "facial pain pressure v2 distribution",
+      "fatigue"
+    ],
+    "support": [
+      "fever low grade",
+      "headache worse with bending forward",
+      "purulent nasal discharge",
+      "tooth pain maxillary sinus referral"
+    ],
+    "all_syms": [
+      "decreased sense of smell",
+      "facial pain pressure v2 distribution",
+      "fatigue",
+      "fever low grade",
+      "headache worse with bending forward",
+      "purulent nasal discharge",
+      "tooth pain maxillary sinus referral"
+    ],
+    "triage": "routine",
+    "onset": null,
+    "must_not_miss": false,
+    "red_flags": [],
+    "category": "",
+    "_source": "cascade_derived",
+    "_organ": "upper_respiratory_tract",
+    "_failure_mode": "acute_sinusitis"
+  },
+  "Streptococcal Pharyngitis": {
+    "system": "gastrointestinal",
+    "anchors": [
+      "absence of cough distinguishes",
+      "fever above 38",
+      "headache nausea",
+      "odynophagia painful swallowing"
+    ],
+    "support": [
+      "scarlatiniform rash strawberry tongue if scarlet fever",
+      "sudden onset sore throat severe",
+      "tender anterior cervical lymphadenopathy",
+      "tonsillar exudates white yellow"
+    ],
+    "all_syms": [
+      "absence of cough distinguishes",
+      "fever above 38",
+      "headache nausea",
+      "odynophagia painful swallowing",
+      "scarlatiniform rash strawberry tongue if scarlet fever",
+      "sudden onset sore throat severe",
+      "tender anterior cervical lymphadenopathy",
+      "tonsillar exudates white yellow"
+    ],
+    "triage": "urgent",
+    "onset": null,
+    "must_not_miss": false,
+    "red_flags": [],
+    "category": "",
+    "_source": "cascade_derived",
+    "_organ": "throat",
+    "_failure_mode": "streptococcal_pharyngitis"
+  },
+  "Allergic Rhinitis": {
+    "system": "gastrointestinal",
+    "anchors": [
+      "allergic conjunctivitis red itchy eyes",
+      "allergic shiners periorbital darkening",
+      "histamine leukotriene release",
+      "itching nose eyes palate"
+    ],
+    "support": [
+      "nasal congestion obstruction",
+      "nasal mucosal inflammation eosinophilic",
+      "rhinorrhea clear watery",
+      "sneezing paroxysmal repetitive"
+    ],
+    "all_syms": [
+      "allergic conjunctivitis red itchy eyes",
+      "allergic shiners periorbital darkening",
+      "histamine leukotriene release",
+      "itching nose eyes palate",
+      "nasal congestion obstruction",
+      "nasal mucosal inflammation eosinophilic",
+      "rhinorrhea clear watery",
+      "sneezing paroxysmal repetitive"
+    ],
+    "triage": "routine",
+    "onset": null,
+    "must_not_miss": false,
+    "red_flags": [],
+    "category": "",
+    "_source": "cascade_derived",
+    "_organ": "nose",
+    "_failure_mode": "allergic_rhinitis"
+  },
+  "Pulmonary Tuberculosis": {
+    "system": "respiratory",
+    "anchors": [
+      "cavitary lesions upper lobes",
+      "chronic cough more than 3 weeks",
+      "fatigue anorexia",
+      "fever low grade evening"
+    ],
+    "support": [
+      "granuloma formation caseating",
+      "hemoptysis blood tinged sputum",
+      "night sweats drenching",
+      "primary complex lymphatic spread",
+      "weight loss progressive"
+    ],
+    "all_syms": [
+      "cavitary lesions upper lobes",
+      "chronic cough more than 3 weeks",
+      "fatigue anorexia",
+      "fever low grade evening",
+      "granuloma formation caseating",
+      "hemoptysis blood tinged sputum",
+      "night sweats drenching",
+      "primary complex lymphatic spread",
+      "weight loss progressive"
+    ],
+    "triage": "emergent",
+    "onset": null,
+    "must_not_miss": false,
+    "red_flags": [
+      "advanced disease"
+    ],
+    "category": "",
+    "_source": "cascade_derived",
+    "_organ": "lungs",
+    "_failure_mode": "tuberculosis_pulmonary"
+  },
+  "Lung Cancer": {
+    "system": "respiratory",
+    "anchors": [
+      "bone pain brain symptoms",
+      "chest pain pleuritic if invading",
+      "clubbing of fingers",
+      "dyspnea progressive",
+      "fatigue"
+    ],
+    "support": [
+      "hemoptysis blood streaked sputum",
+      "hoarseness recurrent laryngeal nerve",
+      "persistent cough chronic new or changed",
+      "svc syndrome if compression",
+      "weight loss anorexia significant"
+    ],
+    "all_syms": [
+      "bone pain brain symptoms",
+      "chest pain pleuritic if invading",
+      "clubbing of fingers",
+      "dyspnea progressive",
+      "fatigue",
+      "hemoptysis blood streaked sputum",
+      "hoarseness recurrent laryngeal nerve",
+      "persistent cough chronic new or changed",
+      "svc syndrome if compression",
+      "weight loss anorexia significant"
+    ],
+    "triage": "urgent",
+    "onset": null,
+    "must_not_miss": false,
+    "red_flags": [
+      "advanced metastasis"
+    ],
+    "category": "",
+    "_source": "cascade_derived",
+    "_organ": "lungs",
+    "_failure_mode": "lung_cancer"
+  },
+  "Serous Otitis Media": {
+    "system": "sensory",
+    "anchors": [
+      "amber or clear fluid behind tm",
+      "fullness pressure sensation in ear",
+      "middle ear effusion without acute infection"
+    ],
+    "support": [
+      "muffled hearing unilateral or bilateral",
+      "popping sensation",
+      "speech delay if chronic in children",
+      "tm retracted immobile"
+    ],
+    "all_syms": [
+      "amber or clear fluid behind tm",
+      "fullness pressure sensation in ear",
+      "middle ear effusion without acute infection",
+      "muffled hearing unilateral or bilateral",
+      "popping sensation",
+      "speech delay if chronic in children",
+      "tm retracted immobile"
+    ],
+    "triage": "routine",
+    "onset": null,
+    "must_not_miss": false,
+    "red_flags": [],
+    "category": "",
+    "_source": "cascade_derived",
+    "_organ": "middle_ear",
+    "_failure_mode": "serous_otitis_media_OME"
+  },
+  "Acute Angle Closure Glaucoma": {
+    "system": "sensory",
+    "anchors": [
+      "blurred vision with halos around lights",
+      "fixed mid dilated pupil",
+      "headache periorbital",
+      "nausea vomiting"
+    ],
+    "support": [
+      "permanent vision loss within hours",
+      "pupillary block mid dilated pupil",
+      "red eye with corneal edema",
+      "severe eye pain unilateral throbbing",
+      "sudden increase in iop above 40"
+    ],
+    "all_syms": [
+      "blurred vision with halos around lights",
+      "fixed mid dilated pupil",
+      "headache periorbital",
+      "nausea vomiting",
+      "permanent vision loss within hours",
+      "pupillary block mid dilated pupil",
+      "red eye with corneal edema",
+      "severe eye pain unilateral throbbing",
+      "sudden increase in iop above 40"
+    ],
+    "triage": "emergent",
+    "onset": null,
+    "must_not_miss": false,
+    "red_flags": [
+      "if not treated urgent"
+    ],
+    "category": "",
+    "_source": "cascade_derived",
+    "_organ": "eye",
+    "_failure_mode": "acute_angle_closure_glaucoma"
+  },
+  "Conjunctivitis": {
+    "system": "sensory",
+    "anchors": [
+      "discharge watery viral purulent bacterial",
+      "itching prominent allergic",
+      "morning eyelid crusting bacterial"
+    ],
+    "support": [
+      "no severe pain distinguishes",
+      "no visual acuity loss",
+      "preauricular lymphadenopathy viral",
+      "red eye diffuse injection"
+    ],
+    "all_syms": [
+      "discharge watery viral purulent bacterial",
+      "itching prominent allergic",
+      "morning eyelid crusting bacterial",
+      "no severe pain distinguishes",
+      "no visual acuity loss",
+      "preauricular lymphadenopathy viral",
+      "red eye diffuse injection"
+    ],
+    "triage": "routine",
+    "onset": null,
+    "must_not_miss": false,
+    "red_flags": [],
+    "category": "",
+    "_source": "cascade_derived",
+    "_organ": "eye",
+    "_failure_mode": "conjunctivitis_pink_eye"
+  },
+  "Bronchiectasis": {
+    "system": "respiratory",
+    "anchors": [
+      "chronic productive cough voluminous sputum",
+      "chronic sinusitis associated",
+      "clubbing of fingers"
+    ],
+    "support": [
+      "dyspnea on exertion",
+      "hemoptysis episodic can be massive",
+      "purulent sputum three layer separation",
+      "recurrent pneumonias same lobe"
+    ],
+    "all_syms": [
+      "chronic productive cough voluminous sputum",
+      "chronic sinusitis associated",
+      "clubbing of fingers",
+      "dyspnea on exertion",
+      "hemoptysis episodic can be massive",
+      "purulent sputum three layer separation",
+      "recurrent pneumonias same lobe"
+    ],
+    "triage": "urgent",
+    "onset": null,
+    "must_not_miss": false,
+    "red_flags": [],
+    "category": "",
+    "_source": "cascade_derived",
+    "_organ": "bronchus",
+    "_failure_mode": "bronchiectasis"
+  },
+  "Idiopathic Pulmonary Fibrosis": {
+    "system": "respiratory",
+    "anchors": [
+      "clubbing of fingers",
+      "decreased dlco diffusion",
+      "decreased lung volumes restrictive pattern"
+    ],
+    "support": [
+      "dry persistent cough non productive",
+      "fine inspiratory velcro crackles bases",
+      "hypoxia at rest late",
+      "progressive exertional dyspnea gradual"
+    ],
+    "all_syms": [
+      "clubbing of fingers",
+      "decreased dlco diffusion",
+      "decreased lung volumes restrictive pattern",
+      "dry persistent cough non productive",
+      "fine inspiratory velcro crackles bases",
+      "hypoxia at rest late",
+      "progressive exertional dyspnea gradual"
+    ],
+    "triage": "urgent",
+    "onset": null,
+    "must_not_miss": false,
+    "red_flags": [
+      "advanced disease"
+    ],
+    "category": "",
+    "_source": "cascade_derived",
+    "_organ": "lungs",
+    "_failure_mode": "pulmonary_fibrosis_IPF"
+  },
+  "Benign Prostatic Hyperplasia": {
+    "system": "reproductive",
+    "anchors": [
+      "acute urinary retention inability to urinate",
+      "bladder outlet obstruction",
+      "incomplete bladder emptying post void dribbling",
+      "nocturia waking at night to void",
+      "prostatic enlargement increasing urethral resistance"
+    ],
+    "support": [
+      "recurrent utis",
+      "straining to urinate",
+      "urgency",
+      "urinary frequency increased",
+      "weak urinary stream hesitancy"
+    ],
+    "all_syms": [
+      "acute urinary retention inability to urinate",
+      "bladder outlet obstruction",
+      "incomplete bladder emptying post void dribbling",
+      "nocturia waking at night to void",
+      "prostatic enlargement increasing urethral resistance",
+      "recurrent utis",
+      "straining to urinate",
+      "urgency",
+      "urinary frequency increased",
+      "weak urinary stream hesitancy"
+    ],
+    "triage": "routine",
+    "onset": null,
+    "must_not_miss": false,
+    "red_flags": [],
+    "category": "",
+    "_source": "cascade_derived",
+    "_organ": "prostate",
+    "_failure_mode": "benign_prostatic_hyperplasia_BPH"
+  },
+  "Prostate Cancer": {
+    "system": "reproductive",
+    "anchors": [
+      "asymptomatic initially screen detected",
+      "bone pain back pelvis axial skeleton",
+      "elevated psa above 4"
+    ],
+    "support": [
+      "hematuria or hematospermia",
+      "obstructive urinary symptoms late",
+      "pathologic fractures",
+      "weight loss fatigue advanced"
+    ],
+    "all_syms": [
+      "asymptomatic initially screen detected",
+      "bone pain back pelvis axial skeleton",
+      "elevated psa above 4",
+      "hematuria or hematospermia",
+      "obstructive urinary symptoms late",
+      "pathologic fractures",
+      "weight loss fatigue advanced"
+    ],
+    "triage": "urgent",
+    "onset": null,
+    "must_not_miss": false,
+    "red_flags": [
+      "bone metastases"
+    ],
+    "category": "",
+    "_source": "cascade_derived",
+    "_organ": "prostate",
+    "_failure_mode": "prostate_cancer"
+  },
+  "Endometriosis": {
+    "system": "reproductive",
+    "anchors": [
+      "chronic pelvic pain non cyclic advanced",
+      "cyclic pelvic pain with menses",
+      "deep dyspareunia painful intercourse"
+    ],
+    "support": [
+      "dyschezia painful defecation with menses",
+      "dysmenorrhea severe progressive",
+      "dysuria with menses",
+      "infertility 30 to 50 percent"
+    ],
+    "all_syms": [
+      "chronic pelvic pain non cyclic advanced",
+      "cyclic pelvic pain with menses",
+      "deep dyspareunia painful intercourse",
+      "dyschezia painful defecation with menses",
+      "dysmenorrhea severe progressive",
+      "dysuria with menses",
+      "infertility 30 to 50 percent"
+    ],
+    "triage": "routine",
+    "onset": null,
+    "must_not_miss": false,
+    "red_flags": [],
+    "category": "",
+    "_source": "cascade_derived",
+    "_organ": "uterus",
+    "_failure_mode": "endometriosis"
+  },
+  "PCOS": {
+    "system": "reproductive",
+    "anchors": [
+      "acanthosis nigricans insulin resistance",
+      "acne severe treatment resistant",
+      "androgenic alopecia",
+      "anovulation chronic irregular cycles"
+    ],
+    "support": [
+      "hirsutism excess male pattern hair",
+      "infertility",
+      "obesity central pattern",
+      "polycystic ovaries on ultrasound",
+      "type 2 diabetes increased risk"
+    ],
+    "all_syms": [
+      "acanthosis nigricans insulin resistance",
+      "acne severe treatment resistant",
+      "androgenic alopecia",
+      "anovulation chronic irregular cycles",
+      "hirsutism excess male pattern hair",
+      "infertility",
+      "obesity central pattern",
+      "polycystic ovaries on ultrasound",
+      "type 2 diabetes increased risk"
+    ],
+    "triage": "routine",
+    "onset": null,
+    "must_not_miss": false,
+    "red_flags": [],
+    "category": "",
+    "_source": "cascade_derived",
+    "_organ": "ovary",
+    "_failure_mode": "polycystic_ovary_syndrome_PCOS"
+  },
+  "Ectopic Pregnancy": {
+    "system": "reproductive",
+    "anchors": [
+      "amenorrhea or abnormal bleeding",
+      "hemodynamic instability hypotension tachycardia",
+      "peritoneal signs",
+      "positive pregnancy test with abnormal hcg rise"
+    ],
+    "support": [
+      "severe acute pelvic pain",
+      "shoulder pain diaphragmatic irritation if hemoperitoneum",
+      "unilateral lower abdominal pain sharp",
+      "vaginal bleeding light to moderate"
+    ],
+    "all_syms": [
+      "amenorrhea or abnormal bleeding",
+      "hemodynamic instability hypotension tachycardia",
+      "peritoneal signs",
+      "positive pregnancy test with abnormal hcg rise",
+      "severe acute pelvic pain",
+      "shoulder pain diaphragmatic irritation if hemoperitoneum",
+      "unilateral lower abdominal pain sharp",
+      "vaginal bleeding light to moderate"
+    ],
+    "triage": "emergent",
+    "onset": null,
+    "must_not_miss": false,
+    "red_flags": [
+      "rupture catastrophic"
+    ],
+    "category": "",
+    "_source": "cascade_derived",
+    "_organ": "uterus",
+    "_failure_mode": "ectopic_pregnancy"
+  },
+  "Breast Cancer": {
+    "system": "reproductive",
+    "anchors": [
+      "axillary lymphadenopathy",
+      "bone pain back hip",
+      "hard irregular fixed mass",
+      "lung metastases dyspnea"
+    ],
+    "support": [
+      "nipple retraction or discharge bloody",
+      "palpable painless breast lump",
+      "skin changes dimpling peau dorange",
+      "weight loss fatigue"
+    ],
+    "all_syms": [
+      "axillary lymphadenopathy",
+      "bone pain back hip",
+      "hard irregular fixed mass",
+      "lung metastases dyspnea",
+      "nipple retraction or discharge bloody",
+      "palpable painless breast lump",
+      "skin changes dimpling peau dorange",
+      "weight loss fatigue"
+    ],
+    "triage": "urgent",
+    "onset": null,
+    "must_not_miss": false,
+    "red_flags": [
+      "advanced metastases"
+    ],
+    "category": "",
+    "_source": "cascade_derived",
+    "_organ": "breast",
+    "_failure_mode": "breast_cancer"
+  },
+  "Uterine Fibroids": {
+    "system": "reproductive",
+    "anchors": [
+      "asymptomatic often incidental",
+      "constipation rectal compression",
+      "dysmenorrhea painful periods",
+      "enlarged uterus on exam"
+    ],
+    "support": [
+      "intermenstrual bleeding",
+      "menorrhagia heavy periods",
+      "pelvic pressure fullness",
+      "urinary frequency bladder compression"
+    ],
+    "all_syms": [
+      "asymptomatic often incidental",
+      "constipation rectal compression",
+      "dysmenorrhea painful periods",
+      "enlarged uterus on exam",
+      "intermenstrual bleeding",
+      "menorrhagia heavy periods",
+      "pelvic pressure fullness",
+      "urinary frequency bladder compression"
+    ],
+    "triage": "routine",
+    "onset": null,
+    "must_not_miss": false,
+    "red_flags": [],
+    "category": "",
+    "_source": "cascade_derived",
+    "_organ": "uterus",
+    "_failure_mode": "uterine_fibroids_leiomyoma"
+  },
+  "Nephrolithiasis": {
+    "system": "urinary",
+    "anchors": [
+      "dysuria urgency if distal stone",
+      "fever if obstructed pyelonephritis",
+      "hematuria blood in urine",
+      "ipsilateral testicular or labial pain"
+    ],
+    "support": [
+      "nausea vomiting severe",
+      "pain radiates loin to groin",
+      "sudden severe flank pain",
+      "writhing unable to find comfortable position"
+    ],
+    "all_syms": [
+      "dysuria urgency if distal stone",
+      "fever if obstructed pyelonephritis",
+      "hematuria blood in urine",
+      "ipsilateral testicular or labial pain",
+      "nausea vomiting severe",
+      "pain radiates loin to groin",
+      "sudden severe flank pain",
+      "writhing unable to find comfortable position"
+    ],
+    "triage": "emergent",
+    "onset": null,
+    "must_not_miss": false,
+    "red_flags": [
+      "complications"
+    ],
+    "category": "",
+    "_source": "cascade_derived",
+    "_organ": "kidney",
+    "_failure_mode": "nephrolithiasis_kidney_stones"
+  },
+  "Hypoglycemia": {
+    "system": "endocrine",
+    "anchors": [
+      "adrenergic sympathetic response",
+      "anxiety hunger",
+      "blurred vision",
+      "coma loss of consciousness",
+      "confusion altered mental status"
+    ],
+    "support": [
+      "diaphoresis cold sweating",
+      "neuroglycopenic symptoms brain starvation",
+      "seizures if severe",
+      "tachycardia palpitations",
+      "tremor shakiness"
+    ],
+    "all_syms": [
+      "adrenergic sympathetic response",
+      "anxiety hunger",
+      "blurred vision",
+      "coma loss of consciousness",
+      "confusion altered mental status",
+      "diaphoresis cold sweating",
+      "neuroglycopenic symptoms brain starvation",
+      "seizures if severe",
+      "tachycardia palpitations",
+      "tremor shakiness"
+    ],
+    "triage": "emergent",
+    "onset": null,
+    "must_not_miss": false,
+    "red_flags": [
+      "neuroglycopenic symptoms"
+    ],
+    "category": "",
+    "_source": "cascade_derived",
+    "_organ": "pancreas_islets",
+    "_failure_mode": "hypoglycemia_severe"
+  },
+  "Preeclampsia": {
+    "system": "cardiovascular",
+    "anchors": [
+      "elevated liver enzymes",
+      "generalized tonic clonic seizures",
+      "hemolysis",
+      "new hypertension after 20 weeks gestation"
+    ],
+    "support": [
+      "proteinuria above 300 mg 24h",
+      "right upper quadrant pain hepatic",
+      "severe headache unrelieved",
+      "thrombocytopenia low platelets",
+      "visual disturbances scotomata blurred"
+    ],
+    "all_syms": [
+      "elevated liver enzymes",
+      "generalized tonic clonic seizures",
+      "hemolysis",
+      "new hypertension after 20 weeks gestation",
+      "proteinuria above 300 mg 24h",
+      "right upper quadrant pain hepatic",
+      "severe headache unrelieved",
+      "thrombocytopenia low platelets",
+      "visual disturbances scotomata blurred"
+    ],
+    "triage": "emergent",
+    "onset": null,
+    "must_not_miss": false,
+    "red_flags": [
+      "eclampsia progression"
+    ],
+    "category": "",
+    "_source": "cascade_derived",
+    "_organ": "vasculature_systemic",
+    "_failure_mode": "preeclampsia"
+  },
+  "Parkinson Disease": {
+    "system": "neurologic",
+    "anchors": [
+      "alpha synuclein lewy bodies",
+      "bradykinesia slow movements",
+      "cognitive decline dementia late",
+      "cogwheel rigidity lead pipe",
+      "decreased dopamine basal ganglia",
+      "loss of smell anosmia"
+    ],
+    "support": [
+      "mask like facies hypomimia",
+      "micrographia small handwriting",
+      "postural instability late",
+      "rem sleep behavior disorder",
+      "resting tremor unilateral pill rolling",
+      "shuffling gait freezing"
+    ],
+    "all_syms": [
+      "alpha synuclein lewy bodies",
+      "bradykinesia slow movements",
+      "cognitive decline dementia late",
+      "cogwheel rigidity lead pipe",
+      "decreased dopamine basal ganglia",
+      "loss of smell anosmia",
+      "mask like facies hypomimia",
+      "micrographia small handwriting",
+      "postural instability late",
+      "rem sleep behavior disorder",
+      "resting tremor unilateral pill rolling",
+      "shuffling gait freezing"
+    ],
+    "triage": "routine",
+    "onset": null,
+    "must_not_miss": false,
+    "red_flags": [],
+    "category": "",
+    "_source": "cascade_derived",
+    "_organ": "brain",
+    "_failure_mode": "parkinson_disease"
+  },
+  "Alzheimer's Dementia": {
+    "system": "neurologic",
+    "anchors": [
+      "agitation aggression sundowning",
+      "anterograde amnesia new memories",
+      "executive dysfunction planning",
+      "gradual insidious onset memory loss",
+      "incontinence late stage"
+    ],
+    "support": [
+      "language problems word finding anomia",
+      "loss of adls independence",
+      "personality changes apathy depression",
+      "psychosis paranoia hallucinations late",
+      "visuospatial difficulties getting lost"
+    ],
+    "all_syms": [
+      "agitation aggression sundowning",
+      "anterograde amnesia new memories",
+      "executive dysfunction planning",
+      "gradual insidious onset memory loss",
+      "incontinence late stage",
+      "language problems word finding anomia",
+      "loss of adls independence",
+      "personality changes apathy depression",
+      "psychosis paranoia hallucinations late",
+      "visuospatial difficulties getting lost"
+    ],
+    "triage": "urgent",
+    "onset": null,
+    "must_not_miss": false,
+    "red_flags": [
+      "functional decline"
+    ],
+    "category": "",
+    "_source": "cascade_derived",
+    "_organ": "brain",
+    "_failure_mode": "alzheimer_dementia"
+  },
+  "Multiple Sclerosis": {
+    "system": "neurologic",
+    "anchors": [
+      "ataxia intention tremor cerebellar",
+      "bladder dysfunction urgency incontinence",
+      "cognitive impairment subtle",
+      "color desaturation",
+      "demyelinating plaques disseminated in time and space",
+      "fatigue severe"
+    ],
+    "support": [
+      "lhermitte sign electric shock with neck flexion",
+      "limb weakness or sensory changes",
+      "monocular vision loss painful",
+      "oligoclonal bands in csf",
+      "spasticity increased tone",
+      "uhthoff phenomenon heat worsens"
+    ],
+    "all_syms": [
+      "ataxia intention tremor cerebellar",
+      "bladder dysfunction urgency incontinence",
+      "cognitive impairment subtle",
+      "color desaturation",
+      "demyelinating plaques disseminated in time and space",
+      "fatigue severe",
+      "lhermitte sign electric shock with neck flexion",
+      "limb weakness or sensory changes",
+      "monocular vision loss painful",
+      "oligoclonal bands in csf",
+      "spasticity increased tone",
+      "uhthoff phenomenon heat worsens"
+    ],
+    "triage": "urgent",
+    "onset": null,
+    "must_not_miss": false,
+    "red_flags": [],
+    "category": "",
+    "_source": "cascade_derived",
+    "_organ": "brain",
+    "_failure_mode": "multiple_sclerosis"
+  },
+  "Guillain-Barre Syndrome": {
+    "system": "neurologic",
+    "anchors": [
+      "albuminocytologic dissociation high protein normal wbc csf",
+      "ascending demyelination starts in feet",
+      "autonomic dysfunction arrhythmias",
+      "decreased or absent deep tendon reflexes"
+    ],
+    "support": [
+      "diaphragmatic weakness respiratory failure",
+      "facial palsy bilateral can occur",
+      "sensory disturbances paresthesias",
+      "symmetric ascending weakness",
+      "weakness progresses over days to weeks"
+    ],
+    "all_syms": [
+      "albuminocytologic dissociation high protein normal wbc csf",
+      "ascending demyelination starts in feet",
+      "autonomic dysfunction arrhythmias",
+      "decreased or absent deep tendon reflexes",
+      "diaphragmatic weakness respiratory failure",
+      "facial palsy bilateral can occur",
+      "sensory disturbances paresthesias",
+      "symmetric ascending weakness",
+      "weakness progresses over days to weeks"
+    ],
+    "triage": "emergent",
+    "onset": null,
+    "must_not_miss": false,
+    "red_flags": [
+      "respiratory failure"
+    ],
+    "category": "",
+    "_source": "cascade_derived",
+    "_organ": "spinal_nerves",
+    "_failure_mode": "guillain_barre_syndrome"
+  },
+  "Osteoporosis": {
+    "system": "hematologic",
+    "anchors": [
+      "asymptomatic until fracture",
+      "chronic back pain",
+      "decreased mobility increased mortality hip fx",
+      "distal radius colles fractures"
+    ],
+    "support": [
+      "hip fractures low energy",
+      "loss of height kyphosis dowager hump",
+      "t score below minus 2 5 dexa",
+      "vertebral compression fractures"
+    ],
+    "all_syms": [
+      "asymptomatic until fracture",
+      "chronic back pain",
+      "decreased mobility increased mortality hip fx",
+      "distal radius colles fractures",
+      "hip fractures low energy",
+      "loss of height kyphosis dowager hump",
+      "t score below minus 2 5 dexa",
+      "vertebral compression fractures"
+    ],
+    "triage": "routine",
+    "onset": null,
+    "must_not_miss": false,
+    "red_flags": [],
+    "category": "",
+    "_source": "cascade_derived",
+    "_organ": "bone",
+    "_failure_mode": "osteoporosis"
+  },
+  "Rheumatoid Arthritis": {
+    "system": "",
+    "anchors": [
+      "fatigue low grade fever",
+      "joint destruction disability",
+      "mcp pip joint swelling hands",
+      "morning stiffness more than 1 hour",
+      "rheumatoid factor anti ccp antibodies"
+    ],
+    "support": [
+      "rheumatoid nodules subcutaneous",
+      "spares dip joints",
+      "symmetric polyarthritis small joints",
+      "ulnar deviation swan neck boutonniere",
+      "wrist involvement ankle foot"
+    ],
+    "all_syms": [
+      "fatigue low grade fever",
+      "joint destruction disability",
+      "mcp pip joint swelling hands",
+      "morning stiffness more than 1 hour",
+      "rheumatoid factor anti ccp antibodies",
+      "rheumatoid nodules subcutaneous",
+      "spares dip joints",
+      "symmetric polyarthritis small joints",
+      "ulnar deviation swan neck boutonniere",
+      "wrist involvement ankle foot"
+    ],
+    "triage": "urgent",
+    "onset": null,
+    "must_not_miss": false,
+    "red_flags": [],
+    "category": "",
+    "_source": "cascade_derived",
+    "_organ": "joint",
+    "_failure_mode": "rheumatoid_arthritis"
+  },
+  "Immune Thrombocytopenia (ITP)": {
+    "system": "hematologic",
+    "anchors": [
+      "epistaxis nosebleeds gum bleeding",
+      "gi bleeding gu bleeding",
+      "heavy menstrual bleeding",
+      "intracranial hemorrhage rare"
+    ],
+    "support": [
+      "normal other lineages",
+      "petechiae pinpoint purple spots",
+      "platelet count below 100 isolated",
+      "purpura ecchymoses easy bruising"
+    ],
+    "all_syms": [
+      "epistaxis nosebleeds gum bleeding",
+      "gi bleeding gu bleeding",
+      "heavy menstrual bleeding",
+      "intracranial hemorrhage rare",
+      "normal other lineages",
+      "petechiae pinpoint purple spots",
+      "platelet count below 100 isolated",
+      "purpura ecchymoses easy bruising"
+    ],
+    "triage": "urgent",
+    "onset": null,
+    "must_not_miss": false,
+    "red_flags": [
+      "severe bleeding if very low"
+    ],
+    "category": "",
+    "_source": "cascade_derived",
+    "_organ": "blood",
+    "_failure_mode": "thrombocytopenia_ITP"
+  },
+  "Atopic Dermatitis": {
+    "system": "cutaneous",
+    "anchors": [
+      "associated asthma allergic rhinitis",
+      "erythematous scaly papules plaques",
+      "excoriations",
+      "facial extensor eczema infants",
+      "flexural eczema antecubital popliteal adults"
+    ],
+    "support": [
+      "ige elevation atopy triad",
+      "impaired skin barrier",
+      "intense pruritus itching",
+      "lichenification thickened skin chronic",
+      "secondary bacterial infection impetigo"
+    ],
+    "all_syms": [
+      "associated asthma allergic rhinitis",
+      "erythematous scaly papules plaques",
+      "excoriations",
+      "facial extensor eczema infants",
+      "flexural eczema antecubital popliteal adults",
+      "ige elevation atopy triad",
+      "impaired skin barrier",
+      "intense pruritus itching",
+      "lichenification thickened skin chronic",
+      "secondary bacterial infection impetigo"
+    ],
+    "triage": "routine",
+    "onset": null,
+    "must_not_miss": false,
+    "red_flags": [],
+    "category": "",
+    "_source": "cascade_derived",
+    "_organ": "skin",
+    "_failure_mode": "atopic_dermatitis_eczema"
+  },
+  "Non-Hodgkin Lymphoma": {
+    "system": "immune",
+    "anchors": [
+      "bone marrow infiltration cytopenias",
+      "drenching night sweats",
+      "extranodal disease gi cns skin",
+      "fever unexplained above 38",
+      "hepatosplenomegaly"
+    ],
+    "support": [
+      "painless lymphadenopathy progressive",
+      "rubbery firm non tender nodes",
+      "svc syndrome if mediastinal",
+      "tumor lysis syndrome",
+      "weight loss more than 10 percent 6 months"
+    ],
+    "all_syms": [
+      "bone marrow infiltration cytopenias",
+      "drenching night sweats",
+      "extranodal disease gi cns skin",
+      "fever unexplained above 38",
+      "hepatosplenomegaly",
+      "painless lymphadenopathy progressive",
+      "rubbery firm non tender nodes",
+      "svc syndrome if mediastinal",
+      "tumor lysis syndrome",
+      "weight loss more than 10 percent 6 months"
+    ],
+    "triage": "urgent",
+    "onset": null,
+    "must_not_miss": false,
+    "red_flags": [
+      "complications"
+    ],
+    "category": "",
+    "_source": "cascade_derived",
+    "_organ": "lymph_node",
+    "_failure_mode": "lymphoma_non_hodgkin"
+  },
+  "Carpal Tunnel Syndrome": {
+    "system": "neurologic",
+    "anchors": [
+      "ape hand deformity severe",
+      "carpal compression test positive",
+      "ischemia of nerve fibers in tunnel",
+      "median nerve compression at wrist",
+      "nocturnal symptoms worse at night shake hand for relief",
+      "numbness palmar aspect first 3 fingers"
+    ],
+    "support": [
+      "paresthesias lateral 3 5 fingers thumb index middle",
+      "phalen sign positive wrist flexion 60 seconds",
+      "thenar atrophy late finding",
+      "tinel sign positive at wrist",
+      "weakness of thumb abduction",
+      "weakness of thumb opposition apb"
+    ],
+    "all_syms": [
+      "ape hand deformity severe",
+      "carpal compression test positive",
+      "ischemia of nerve fibers in tunnel",
+      "median nerve compression at wrist",
+      "nocturnal symptoms worse at night shake hand for relief",
+      "numbness palmar aspect first 3 fingers",
+      "paresthesias lateral 3 5 fingers thumb index middle",
+      "phalen sign positive wrist flexion 60 seconds",
+      "thenar atrophy late finding",
+      "tinel sign positive at wrist",
+      "weakness of thumb abduction",
+      "weakness of thumb opposition apb"
+    ],
+    "triage": "routine",
+    "onset": null,
+    "must_not_miss": false,
+    "red_flags": [
+      "motor involvement late recurrent branch to thenar"
+    ],
+    "category": "",
+    "_source": "cascade_derived",
+    "_organ": "median_nerve",
+    "_failure_mode": "carpal_tunnel_syndrome"
+  },
+  "Cubital Tunnel Syndrome": {
+    "system": "neurologic",
+    "anchors": [
+      "claw hand deformity ring pinky hyperextended mcp flexed pip dip",
+      "elbow flexion test positive 60 seconds",
+      "froment sign positive pinch test",
+      "interosseous atrophy dorsal hand",
+      "numbness medial 1 5 fingers palmar and dorsal",
+      "paresthesias pinky and medial ring finger"
+    ],
+    "support": [
+      "stretch with elbow flexion",
+      "tinel sign at medial elbow",
+      "ulnar nerve compression medial elbow",
+      "wartenberg sign pinky abduction",
+      "weakness of finger abduction adduction interossei",
+      "worse with elbow flexion phone holding"
+    ],
+    "all_syms": [
+      "claw hand deformity ring pinky hyperextended mcp flexed pip dip",
+      "elbow flexion test positive 60 seconds",
+      "froment sign positive pinch test",
+      "interosseous atrophy dorsal hand",
+      "numbness medial 1 5 fingers palmar and dorsal",
+      "paresthesias pinky and medial ring finger",
+      "stretch with elbow flexion",
+      "tinel sign at medial elbow",
+      "ulnar nerve compression medial elbow",
+      "wartenberg sign pinky abduction",
+      "weakness of finger abduction adduction interossei",
+      "worse with elbow flexion phone holding"
+    ],
+    "triage": "routine",
+    "onset": null,
+    "must_not_miss": false,
+    "red_flags": [
+      "chronic severe"
+    ],
+    "category": "",
+    "_source": "cascade_derived",
+    "_organ": "ulnar_nerve",
+    "_failure_mode": "cubital_tunnel_syndrome"
+  },
+  "Tarsal Tunnel Syndrome": {
+    "system": "neurologic",
+    "anchors": [
+      "atrophy intrinsic foot late",
+      "burning pain sole of foot",
+      "compression in tarsal tunnel",
+      "ischemia distal branches"
+    ],
+    "support": [
+      "paresthesias plantar aspect",
+      "reproduction of symptoms with compression",
+      "tinel sign at medial ankle",
+      "weakness of intrinsic foot muscles",
+      "worse with activity standing walking"
+    ],
+    "all_syms": [
+      "atrophy intrinsic foot late",
+      "burning pain sole of foot",
+      "compression in tarsal tunnel",
+      "ischemia distal branches",
+      "paresthesias plantar aspect",
+      "reproduction of symptoms with compression",
+      "tinel sign at medial ankle",
+      "weakness of intrinsic foot muscles",
+      "worse with activity standing walking"
+    ],
+    "triage": "routine",
+    "onset": null,
+    "must_not_miss": false,
+    "red_flags": [],
+    "category": "",
+    "_source": "cascade_derived",
+    "_organ": "tibial_nerve",
+    "_failure_mode": "tarsal_tunnel_syndrome"
+  },
+  "Peroneal Nerve Palsy": {
+    "system": "neurologic",
+    "anchors": [
+      "demyelination with compression",
+      "foot drop weak dorsiflexion",
+      "foot slap during walking",
+      "nerve compression lateral knee below",
+      "no pain typically pure motor sensory"
+    ],
+    "support": [
+      "numbness dorsum of foot except first web space",
+      "numbness lateral leg",
+      "steppage gait high stepping",
+      "tinel sign at fibular head",
+      "weakness of eversion",
+      "weakness of toe extension"
+    ],
+    "all_syms": [
+      "demyelination with compression",
+      "foot drop weak dorsiflexion",
+      "foot slap during walking",
+      "nerve compression lateral knee below",
+      "no pain typically pure motor sensory",
+      "numbness dorsum of foot except first web space",
+      "numbness lateral leg",
+      "steppage gait high stepping",
+      "tinel sign at fibular head",
+      "weakness of eversion",
+      "weakness of toe extension"
+    ],
+    "triage": "urgent",
+    "onset": null,
+    "must_not_miss": false,
+    "red_flags": [],
+    "category": "",
+    "_source": "cascade_derived",
+    "_organ": "common_peroneal_nerve",
+    "_failure_mode": "peroneal_nerve_palsy_foot_drop"
+  },
+  "Trigeminal Neuralgia": {
+    "system": "neurologic",
+    "anchors": [
+      "ephaptic transmission abnormal firing",
+      "lancinating electric shock like facial pain",
+      "loss of inhibition",
+      "no sensory deficit distinguishes",
+      "normal neurologic exam between attacks",
+      "pain seconds to 2 minutes then refractory period"
+    ],
+    "support": [
+      "patients lose weight afraid to eat",
+      "severe unilateral pain",
+      "trigger zones light touch face",
+      "triggered by chewing brushing teeth wind on face",
+      "v1 ophthalmic least common forehead",
+      "v2 maxillary distribution most common cheek",
+      "v3 mandibular distribution jaw chin"
+    ],
+    "all_syms": [
+      "ephaptic transmission abnormal firing",
+      "lancinating electric shock like facial pain",
+      "loss of inhibition",
+      "no sensory deficit distinguishes",
+      "normal neurologic exam between attacks",
+      "pain seconds to 2 minutes then refractory period",
+      "patients lose weight afraid to eat",
+      "severe unilateral pain",
+      "trigger zones light touch face",
+      "triggered by chewing brushing teeth wind on face",
+      "v1 ophthalmic least common forehead",
+      "v2 maxillary distribution most common cheek",
+      "v3 mandibular distribution jaw chin"
+    ],
+    "triage": "routine",
+    "onset": null,
+    "must_not_miss": false,
+    "red_flags": [],
+    "category": "",
+    "_source": "cascade_derived",
+    "_organ": "trigeminal_nerve",
+    "_failure_mode": "trigeminal_neuralgia"
+  },
+  "Diabetic Retinopathy": {
+    "system": "sensory",
+    "anchors": [
+      "basement membrane thickening",
+      "blurred central vision",
+      "cotton wool spots nfl infarcts",
+      "decreased visual acuity gradual",
+      "dot blot hemorrhages",
+      "endothelial dysfunction brb breakdown",
+      "hard exudates lipid deposits"
+    ],
+    "support": [
+      "metamorphopsia distorted lines",
+      "microaneurysms on fundoscopy earliest sign",
+      "neovascular glaucoma",
+      "neovascularization at disc nvd",
+      "neovascularization elsewhere nve",
+      "pericyte loss microaneurysms form",
+      "tractional retinal detachment",
+      "vitreous hemorrhage sudden vision loss"
+    ],
+    "all_syms": [
+      "basement membrane thickening",
+      "blurred central vision",
+      "cotton wool spots nfl infarcts",
+      "decreased visual acuity gradual",
+      "dot blot hemorrhages",
+      "endothelial dysfunction brb breakdown",
+      "hard exudates lipid deposits",
+      "metamorphopsia distorted lines",
+      "microaneurysms on fundoscopy earliest sign",
+      "neovascular glaucoma",
+      "neovascularization at disc nvd",
+      "neovascularization elsewhere nve",
+      "pericyte loss microaneurysms form",
+      "tractional retinal detachment",
+      "vitreous hemorrhage sudden vision loss"
+    ],
+    "triage": "urgent",
+    "onset": null,
+    "must_not_miss": false,
+    "red_flags": [
+      "complications vision threatening"
+    ],
+    "category": "",
+    "_source": "cascade_derived",
+    "_organ": "retina",
+    "_failure_mode": "diabetic_retinopathy"
+  },
+  "Diabetic Nephropathy": {
+    "system": "urinary",
+    "anchors": [
+      "anemia chronic disease",
+      "decreased gfr",
+      "diffuse glomerulosclerosis",
+      "edema lower extremity if nephrotic",
+      "hypertension secondary",
+      "initial glomerular hyperfiltration decade 1"
+    ],
+    "support": [
+      "kimmelstiel wilson nodules pathognomonic",
+      "macroalbuminuria above 300 mg",
+      "mesangial expansion age deposition",
+      "microalbuminuria 30 to 300 mg 24h",
+      "rising creatinine",
+      "screening with urine albumin creatinine ratio",
+      "uremic symptoms late"
+    ],
+    "all_syms": [
+      "anemia chronic disease",
+      "decreased gfr",
+      "diffuse glomerulosclerosis",
+      "edema lower extremity if nephrotic",
+      "hypertension secondary",
+      "initial glomerular hyperfiltration decade 1",
+      "kimmelstiel wilson nodules pathognomonic",
+      "macroalbuminuria above 300 mg",
+      "mesangial expansion age deposition",
+      "microalbuminuria 30 to 300 mg 24h",
+      "rising creatinine",
+      "screening with urine albumin creatinine ratio",
+      "uremic symptoms late"
+    ],
+    "triage": "urgent",
+    "onset": null,
+    "must_not_miss": false,
+    "red_flags": [
+      "progressive gfr decline ckd"
+    ],
+    "category": "",
+    "_source": "cascade_derived",
+    "_organ": "kidney",
+    "_failure_mode": "diabetic_nephropathy"
+  },
+  "Diabetic Peripheral Neuropathy": {
+    "system": "neurologic",
+    "anchors": [
+      "age modification nerve proteins",
+      "allodynia hyperalgesia",
+      "bilateral symmetric distal to proximal",
+      "burning pain feet worse at night",
+      "charcot neuroarthropathy",
+      "diabetic foot ulcers painless",
+      "loss of ankle reflexes areflexia"
+    ],
+    "support": [
+      "loss of pain temperature late",
+      "loss of proprioception",
+      "loss of vibration sense tuning fork test",
+      "polyol pathway activation sorbitol accumulation",
+      "stocking glove distribution feet first",
+      "tingling paresthesias",
+      "vasa nervorum microangiopathy ischemia"
+    ],
+    "all_syms": [
+      "age modification nerve proteins",
+      "allodynia hyperalgesia",
+      "bilateral symmetric distal to proximal",
+      "burning pain feet worse at night",
+      "charcot neuroarthropathy",
+      "diabetic foot ulcers painless",
+      "loss of ankle reflexes areflexia",
+      "loss of pain temperature late",
+      "loss of proprioception",
+      "loss of vibration sense tuning fork test",
+      "polyol pathway activation sorbitol accumulation",
+      "stocking glove distribution feet first",
+      "tingling paresthesias",
+      "vasa nervorum microangiopathy ischemia"
+    ],
+    "triage": "routine",
+    "onset": null,
+    "must_not_miss": false,
+    "red_flags": [
+      "loss of pain temperature protective sensation"
+    ],
+    "category": "",
+    "_source": "cascade_derived",
+    "_organ": "spinal_nerves",
+    "_failure_mode": "diabetic_peripheral_neuropathy"
+  },
+  "Plantar Fasciitis": {
+    "system": "cutaneous",
+    "anchors": [
+      "altered gait compensatory",
+      "heel pain morning first few steps classic",
+      "heel spur calcaneal traction can be asymptomatic",
+      "local inflammation initially then degenerative"
+    ],
+    "support": [
+      "pain improves with walking then worse end of day",
+      "pain with passive dorsiflexion of toes windlass test",
+      "post static dyskinesia",
+      "repetitive microtrauma at insertion",
+      "tenderness at medial calcaneal tubercle"
+    ],
+    "all_syms": [
+      "altered gait compensatory",
+      "heel pain morning first few steps classic",
+      "heel spur calcaneal traction can be asymptomatic",
+      "local inflammation initially then degenerative",
+      "pain improves with walking then worse end of day",
+      "pain with passive dorsiflexion of toes windlass test",
+      "post static dyskinesia",
+      "repetitive microtrauma at insertion",
+      "tenderness at medial calcaneal tubercle"
+    ],
+    "triage": "routine",
+    "onset": null,
+    "must_not_miss": false,
+    "red_flags": [],
+    "category": "",
+    "_source": "cascade_derived",
+    "_organ": "skin",
+    "_failure_mode": "plantar_fasciitis"
+  },
+  "Rotator Cuff Tear (Supraspinatus)": {
+    "system": "musculoskeletal",
+    "anchors": [
+      "night pain lying on affected side",
+      "pain with overhead reaching",
+      "painful arc 60 to 120 degrees",
+      "positive drop arm test full thickness",
+      "positive empty can test jobe",
+      "positive neer hawkins impingement tests"
+    ],
+    "support": [
+      "pseudoparalysis severe unable to lift arm",
+      "shoulder pain lateral deltoid referred",
+      "subacromial impingement chronic",
+      "supraspinatus atrophy visible",
+      "tendon tear partial or full thickness",
+      "weakness arm abduction initial 15 degrees"
+    ],
+    "all_syms": [
+      "night pain lying on affected side",
+      "pain with overhead reaching",
+      "painful arc 60 to 120 degrees",
+      "positive drop arm test full thickness",
+      "positive empty can test jobe",
+      "positive neer hawkins impingement tests",
+      "pseudoparalysis severe unable to lift arm",
+      "shoulder pain lateral deltoid referred",
+      "subacromial impingement chronic",
+      "supraspinatus atrophy visible",
+      "tendon tear partial or full thickness",
+      "weakness arm abduction initial 15 degrees"
+    ],
+    "triage": "urgent",
+    "onset": null,
+    "must_not_miss": false,
+    "red_flags": [
+      "chronic full thickness tear"
+    ],
+    "category": "",
+    "_source": "cascade_derived",
+    "_organ": "supraspinatus_muscle",
+    "_failure_mode": "rotator_cuff_tear_supraspinatus"
+  },
+  "Piriformis Syndrome": {
+    "system": "musculoskeletal",
+    "anchors": [
+      "buttock pain deep aching",
+      "leg pain in sciatic distribution but negative slr",
+      "muscle tightness palpable",
+      "negative straight leg raise distinguishes"
+    ],
+    "support": [
+      "pain worse internal rotation fair test",
+      "pain worse sitting long periods",
+      "posterior thigh pain radiating",
+      "sciatic nerve irritation secondary",
+      "tender piriformis on deep palpation"
+    ],
+    "all_syms": [
+      "buttock pain deep aching",
+      "leg pain in sciatic distribution but negative slr",
+      "muscle tightness palpable",
+      "negative straight leg raise distinguishes",
+      "pain worse internal rotation fair test",
+      "pain worse sitting long periods",
+      "posterior thigh pain radiating",
+      "sciatic nerve irritation secondary",
+      "tender piriformis on deep palpation"
+    ],
+    "triage": "routine",
+    "onset": null,
+    "must_not_miss": false,
+    "red_flags": [],
+    "category": "",
+    "_source": "cascade_derived",
+    "_organ": "piriformis_muscle",
+    "_failure_mode": "piriformis_syndrome"
+  },
+  "Thoracic Outlet Syndrome": {
+    "system": "neurologic",
+    "anchors": [
+      "adson test positive loss of radial pulse with arm abduction",
+      "anatomical compression zone",
+      "arm color changes arterial",
+      "arm swelling venous",
+      "diminished pulse arm dependent"
+    ],
+    "support": [
+      "may compress neurovascular bundle",
+      "pain neck shoulder arm",
+      "roos test positive 3 min elevated arm stress",
+      "ulnar distribution paresthesias pinky ring",
+      "weakness intrinsic hand muscles"
+    ],
+    "all_syms": [
+      "adson test positive loss of radial pulse with arm abduction",
+      "anatomical compression zone",
+      "arm color changes arterial",
+      "arm swelling venous",
+      "diminished pulse arm dependent",
+      "may compress neurovascular bundle",
+      "pain neck shoulder arm",
+      "roos test positive 3 min elevated arm stress",
+      "ulnar distribution paresthesias pinky ring",
+      "weakness intrinsic hand muscles"
+    ],
+    "triage": "urgent",
+    "onset": null,
+    "must_not_miss": false,
+    "red_flags": [],
+    "category": "",
+    "_source": "cascade_derived",
+    "_organ": "brachial_plexus",
+    "_failure_mode": "thoracic_outlet_syndrome"
+  },
+  "Acute Compartment Syndrome": {
+    "system": "musculoskeletal",
+    "anchors": [
+      "loss of two point discrimination early",
+      "pain out of proportion to injury",
+      "pain pallor paresthesia pulselessness paralysis poikilothermia",
+      "pain with passive stretch classic sign"
+    ],
+    "support": [
+      "paresthesia then anesthesia",
+      "rising intracompartmental pressure",
+      "swelling within inelastic fascia",
+      "tense swollen compartment palpable",
+      "weakness of compartment muscles"
+    ],
+    "all_syms": [
+      "loss of two point discrimination early",
+      "pain out of proportion to injury",
+      "pain pallor paresthesia pulselessness paralysis poikilothermia",
+      "pain with passive stretch classic sign",
+      "paresthesia then anesthesia",
+      "rising intracompartmental pressure",
+      "swelling within inelastic fascia",
+      "tense swollen compartment palpable",
+      "weakness of compartment muscles"
+    ],
+    "triage": "emergent",
+    "onset": null,
+    "must_not_miss": false,
+    "red_flags": [
+      "6 p s late findings"
+    ],
+    "category": "",
+    "_source": "cascade_derived",
+    "_organ": "fascial_compartment_leg",
+    "_failure_mode": "acute_compartment_syndrome"
+  },
+  "Cauda Equina Syndrome": {
+    "system": "neurologic",
+    "anchors": [
+      "bilateral leg weakness asymmetric",
+      "bilateral lumbosacral radiculopathy",
+      "decreased anal sphincter tone",
+      "decreased or absent lower extremity reflexes",
+      "decreased perianal sensation"
+    ],
+    "support": [
+      "fecal incontinence",
+      "foot drop can be bilateral",
+      "multilevel neurologic deficit",
+      "saddle anesthesia perineal numbness perianal genital",
+      "urinary retention or overflow incontinence"
+    ],
+    "all_syms": [
+      "bilateral leg weakness asymmetric",
+      "bilateral lumbosacral radiculopathy",
+      "decreased anal sphincter tone",
+      "decreased or absent lower extremity reflexes",
+      "decreased perianal sensation",
+      "fecal incontinence",
+      "foot drop can be bilateral",
+      "multilevel neurologic deficit",
+      "saddle anesthesia perineal numbness perianal genital",
+      "urinary retention or overflow incontinence"
+    ],
+    "triage": "emergent",
+    "onset": null,
+    "must_not_miss": false,
+    "red_flags": [
+      "emergency surgical decompression within 48 hours critical"
+    ],
+    "category": "",
+    "_source": "cascade_derived",
+    "_organ": "cauda_equina",
+    "_failure_mode": "cauda_equina_syndrome"
+  },
+  "Iliotibial Band Syndrome": {
+    "system": "musculoskeletal",
+    "anchors": [
+      "lateral knee pain burning or aching",
+      "local inflammation",
+      "noble compression test positive",
+      "ober test positive it band tightness"
+    ],
+    "support": [
+      "pain at consistent distance into run",
+      "pain during or after running classic",
+      "pain worse running downhill",
+      "repetitive microtrauma at lateral femoral epicondyle",
+      "tenderness 2 3cm above lateral joint line"
+    ],
+    "all_syms": [
+      "lateral knee pain burning or aching",
+      "local inflammation",
+      "noble compression test positive",
+      "ober test positive it band tightness",
+      "pain at consistent distance into run",
+      "pain during or after running classic",
+      "pain worse running downhill",
+      "repetitive microtrauma at lateral femoral epicondyle",
+      "tenderness 2 3cm above lateral joint line"
+    ],
+    "triage": "routine",
+    "onset": null,
+    "must_not_miss": false,
+    "red_flags": [],
+    "category": "",
+    "_source": "cascade_derived",
+    "_organ": "iliotibial_band",
+    "_failure_mode": "iliotibial_band_syndrome"
+  },
+  "Thalamic Stroke (Lacunar Type)": {
+    "all_syms": [
+      "contralateral hemisensory loss face arm leg",
+      "delayed burning dysesthesia on affected side",
+      "hyperpathia to light touch",
+      "no prodrome sudden onset",
+      "numbness or paresthesia one sided",
+      "preserved motor strength distinguishes from capsular stroke",
+      "preserved visual field no optic radiation involvement"
+    ],
+    "anchors": [
+      "contralateral hemisensory loss face arm leg",
+      "numbness or paresthesia one sided",
+      "preserved motor strength distinguishes from capsular stroke",
+      "preserved visual field no optic radiation involvement"
+    ],
+    "support": [
+      "delayed burning dysesthesia on affected side",
+      "hyperpathia to light touch",
+      "no prodrome sudden onset"
+    ],
+    "system": "neurologic",
+    "triage": "urgent",
+    "onset": "minutes",
+    "must_not_miss": true,
+    "red_flags": [
+      "sudden neurologic deficit",
+      "stroke red flags"
+    ],
+    "category": "vascular"
+  }
+}

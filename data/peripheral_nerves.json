@@ -1,0 +1,724 @@
+{
+  "_meta": {
+    "version": "1.0",
+    "description": "Peripheral nerves with compression sites and clinical signs"
+  },
+  "nerves": {
+    "median_nerve": {
+      "type": "peripheral_nerve",
+      "spinal_origin": "C5-T1 brachial plexus medial and lateral cords",
+      "trunk_path": [
+        "brachial_plexus",
+        "axilla_medial_arm",
+        "antecubital_fossa",
+        "pronator_teres",
+        "anterior_forearm",
+        "carpal_tunnel",
+        "thenar_palm"
+      ],
+      "compression_sites": [
+        {
+          "site": "carpal_tunnel_wrist",
+          "syndrome": "Carpal Tunnel Syndrome",
+          "cause": "flexor_retinaculum_thickening_repetitive_motion"
+        },
+        {
+          "site": "pronator_teres_forearm",
+          "syndrome": "Pronator Syndrome",
+          "cause": "muscle_hypertrophy_or_fibrous_band"
+        },
+        {
+          "site": "anterior_interosseous_branch",
+          "syndrome": "AIN syndrome",
+          "cause": "fibrous_band_compression"
+        },
+        {
+          "site": "ligament_of_Struthers_arm",
+          "syndrome": "supracondylar_compression",
+          "cause": "anatomic_variant"
+        }
+      ],
+      "motor_supply": [
+        "pronator_teres",
+        "FCR",
+        "palmaris_longus",
+        "FDS",
+        "lateral_FDP",
+        "FPL",
+        "pronator_quadratus",
+        "thenar_LOAF_muscles",
+        "lateral_2_lumbricals"
+      ],
+      "sensory_supply": [
+        "palmar_lateral_3.5_fingers",
+        "dorsal_distal_phalanges_index_middle_ring"
+      ],
+      "dermatome_anchors": [
+        "C6_thumb_index",
+        "C7_middle_finger"
+      ],
+      "clinical_signs": [
+        "thenar_atrophy",
+        "Tinel_sign_at_wrist",
+        "Phalen_sign_positive",
+        "ape_hand_deformity_severe",
+        "weakness_of_thumb_opposition"
+      ],
+      "associated_diseases": [
+        "Carpal Tunnel Syndrome",
+        "Median Nerve Palsy"
+      ]
+    },
+    "ulnar_nerve": {
+      "type": "peripheral_nerve",
+      "spinal_origin": "C8-T1 brachial plexus medial cord",
+      "trunk_path": [
+        "brachial_plexus",
+        "medial_arm",
+        "cubital_tunnel_medial_elbow",
+        "medial_forearm",
+        "Guyon_canal_wrist",
+        "medial_hand"
+      ],
+      "compression_sites": [
+        {
+          "site": "cubital_tunnel_elbow",
+          "syndrome": "Cubital Tunnel Syndrome",
+          "cause": "elbow_flexion_repetitive_or_leaning"
+        },
+        {
+          "site": "Guyon_canal_wrist",
+          "syndrome": "Guyon_Canal_Syndrome",
+          "cause": "cyclist_handlebar_pressure_or_ganglion"
+        },
+        {
+          "site": "Arcade_of_Struthers_arm",
+          "syndrome": "proximal_ulnar_neuropathy",
+          "cause": "fibrous_band"
+        }
+      ],
+      "motor_supply": [
+        "FCU",
+        "medial_FDP",
+        "hypothenar_muscles",
+        "interossei",
+        "medial_2_lumbricals",
+        "adductor_pollicis",
+        "deep_head_FPB"
+      ],
+      "sensory_supply": [
+        "medial_1.5_fingers_palmar_and_dorsal"
+      ],
+      "dermatome_anchors": [
+        "C8_pinky"
+      ],
+      "clinical_signs": [
+        "claw_hand_deformity_ring_pinky",
+        "Wartenberg_sign_pinky_abduction",
+        "Froment_sign_positive_pinch",
+        "interosseous_muscle_wasting",
+        "elbow_flexion_test"
+      ],
+      "associated_diseases": [
+        "Cubital Tunnel Syndrome",
+        "Ulnar Neuropathy"
+      ]
+    },
+    "radial_nerve": {
+      "type": "peripheral_nerve",
+      "spinal_origin": "C5-T1 brachial plexus posterior cord",
+      "trunk_path": [
+        "axilla",
+        "spiral_groove_humerus_posterior",
+        "lateral_arm",
+        "lateral_elbow",
+        "supinator_tunnel",
+        "posterior_forearm",
+        "dorsum_hand"
+      ],
+      "compression_sites": [
+        {
+          "site": "spiral_groove_humerus",
+          "syndrome": "Saturday_Night_Palsy",
+          "cause": "compression_against_humerus_sleep_or_humeral_fracture"
+        },
+        {
+          "site": "axilla",
+          "syndrome": "Crutch_Palsy",
+          "cause": "improper_crutch_use"
+        },
+        {
+          "site": "supinator_tunnel_radial_tunnel",
+          "syndrome": "Posterior Interosseous Nerve Syndrome",
+          "cause": "supinator_arcade_of_Frohse"
+        }
+      ],
+      "motor_supply": [
+        "triceps",
+        "anconeus",
+        "brachioradialis",
+        "ECRL",
+        "supinator",
+        "extensor_compartment_posterior_forearm",
+        "EPL",
+        "EPB",
+        "APL",
+        "EI"
+      ],
+      "sensory_supply": [
+        "posterior_arm",
+        "posterior_forearm",
+        "dorsal_lateral_hand",
+        "dorsal_lateral_3.5_fingers_proximal_phalanges"
+      ],
+      "dermatome_anchors": [
+        "C6_thumb_dorsum",
+        "C7_middle_finger_dorsum"
+      ],
+      "clinical_signs": [
+        "wrist_drop",
+        "finger_drop",
+        "loss_of_thumb_extension",
+        "sensory_loss_anatomical_snuffbox"
+      ],
+      "associated_diseases": [
+        "Saturday Night Palsy",
+        "Radial Nerve Palsy",
+        "Posterior Interosseous Nerve Syndrome"
+      ]
+    },
+    "axillary_nerve": {
+      "type": "peripheral_nerve",
+      "spinal_origin": "C5-C6 brachial plexus posterior cord",
+      "trunk_path": [
+        "axilla",
+        "quadrangular_space",
+        "posterior_deltoid_region",
+        "lateral_shoulder"
+      ],
+      "compression_sites": [
+        {
+          "site": "quadrangular_space",
+          "syndrome": "Quadrangular_Space_Syndrome",
+          "cause": "fibrous_bands_or_humerus_dislocation"
+        },
+        {
+          "site": "anterior_shoulder_dislocation",
+          "syndrome": "post_dislocation_axillary_neuropathy",
+          "cause": "stretch_injury"
+        }
+      ],
+      "motor_supply": [
+        "deltoid",
+        "teres_minor"
+      ],
+      "sensory_supply": [
+        "regimental_badge_area_lateral_shoulder"
+      ],
+      "dermatome_anchors": [
+        "C5_lateral_shoulder"
+      ],
+      "clinical_signs": [
+        "deltoid_weakness_arm_abduction_loss",
+        "sensory_loss_lateral_shoulder",
+        "deltoid_atrophy_severe"
+      ],
+      "associated_diseases": [
+        "Axillary Nerve Palsy"
+      ]
+    },
+    "musculocutaneous_nerve": {
+      "type": "peripheral_nerve",
+      "spinal_origin": "C5-C7 brachial plexus lateral cord",
+      "trunk_path": [
+        "coracobrachialis",
+        "between_biceps_and_brachialis",
+        "lateral_forearm"
+      ],
+      "compression_sites": [
+        {
+          "site": "coracobrachialis",
+          "syndrome": "musculocutaneous_neuropathy",
+          "cause": "weightlifting_or_anatomic_variant"
+        }
+      ],
+      "motor_supply": [
+        "coracobrachialis",
+        "biceps_brachii",
+        "brachialis"
+      ],
+      "sensory_supply": [
+        "lateral_forearm_via_LACN"
+      ],
+      "dermatome_anchors": [
+        "C6"
+      ],
+      "clinical_signs": [
+        "weakness_elbow_flexion_supination",
+        "loss_of_biceps_reflex",
+        "sensory_loss_lateral_forearm"
+      ],
+      "associated_diseases": [
+        "Musculocutaneous Neuropathy"
+      ]
+    },
+    "sciatic_nerve": {
+      "type": "peripheral_nerve",
+      "spinal_origin": "L4-S3 lumbosacral plexus",
+      "trunk_path": [
+        "greater_sciatic_foramen",
+        "infrapiriformis_or_through_piriformis",
+        "posterior_thigh",
+        "splits_at_apex_popliteal_fossa_into_tibial_and_common_peroneal"
+      ],
+      "compression_sites": [
+        {
+          "site": "piriformis_muscle",
+          "syndrome": "Piriformis Syndrome",
+          "cause": "piriformis_spasm_or_anatomic_variant"
+        },
+        {
+          "site": "L5_S1_disc_herniation",
+          "syndrome": "Sciatica_Radiculopathy",
+          "cause": "disc_compression_nerve_root"
+        },
+        {
+          "site": "deep_gluteal",
+          "syndrome": "Deep_Gluteal_Syndrome",
+          "cause": "fibrous_bands"
+        }
+      ],
+      "motor_supply": [
+        "hamstrings",
+        "adductor_magnus_partial",
+        "all_below_knee_via_branches"
+      ],
+      "sensory_supply": [
+        "posterior_thigh",
+        "entire_leg_below_knee_except_medial_via_branches"
+      ],
+      "dermatome_anchors": [
+        "L5_great_toe_dorsum",
+        "S1_lateral_foot"
+      ],
+      "clinical_signs": [
+        "positive_straight_leg_raise",
+        "weakness_knee_flexion",
+        "loss_of_ankle_reflex_S1"
+      ],
+      "associated_diseases": [
+        "Sciatica",
+        "Piriformis Syndrome"
+      ]
+    },
+    "femoral_nerve": {
+      "type": "peripheral_nerve",
+      "spinal_origin": "L2-L4 lumbar plexus",
+      "trunk_path": [
+        "psoas_muscle",
+        "under_inguinal_ligament",
+        "femoral_triangle",
+        "anterior_thigh"
+      ],
+      "compression_sites": [
+        {
+          "site": "psoas_compartment",
+          "syndrome": "psoas_hematoma_compression",
+          "cause": "anticoagulation_or_trauma_hematoma"
+        },
+        {
+          "site": "inguinal_ligament",
+          "syndrome": "femoral_neuropathy",
+          "cause": "prolonged_lithotomy_or_hernia_repair"
+        }
+      ],
+      "motor_supply": [
+        "iliopsoas",
+        "sartorius",
+        "quadriceps_femoris_all_4_heads",
+        "pectineus"
+      ],
+      "sensory_supply": [
+        "anterior_thigh",
+        "medial_leg_via_saphenous_nerve"
+      ],
+      "dermatome_anchors": [
+        "L3_medial_knee",
+        "L4_medial_malleolus"
+      ],
+      "clinical_signs": [
+        "quadriceps_weakness_knee_extension_loss",
+        "absent_patellar_reflex_L4",
+        "buckling_knee",
+        "sensory_loss_anterior_thigh"
+      ],
+      "associated_diseases": [
+        "Femoral Neuropathy",
+        "Diabetic Amyotrophy"
+      ]
+    },
+    "common_peroneal_nerve": {
+      "type": "peripheral_nerve",
+      "spinal_origin": "L4-S2 (branch of sciatic)",
+      "trunk_path": [
+        "posterior_thigh",
+        "lateral_popliteal_fossa",
+        "around_fibular_head_superficial",
+        "anterior_lateral_compartment_leg",
+        "dorsum_foot"
+      ],
+      "compression_sites": [
+        {
+          "site": "fibular_head_neck",
+          "syndrome": "Peroneal Nerve Palsy",
+          "cause": "crossed_legs_OR_cast_OR_squatting_OR_weight_loss_loss_of_fat_pad"
+        },
+        {
+          "site": "anterior_tarsal_tunnel",
+          "syndrome": "anterior_tarsal_tunnel_syndrome",
+          "cause": "extensor_retinaculum_compression"
+        }
+      ],
+      "motor_supply": [
+        "anterior_compartment_TA_EHL_EDL_PT",
+        "lateral_compartment_peroneus_longus_brevis"
+      ],
+      "sensory_supply": [
+        "lateral_leg",
+        "dorsum_foot_except_first_web_space"
+      ],
+      "dermatome_anchors": [
+        "L5_dorsum_foot_great_toe"
+      ],
+      "clinical_signs": [
+        "foot_drop",
+        "steppage_gait",
+        "loss_of_eversion_dorsiflexion",
+        "sensory_loss_dorsum_foot"
+      ],
+      "associated_diseases": [
+        "Peroneal Nerve Palsy",
+        "Foot Drop"
+      ]
+    },
+    "tibial_nerve": {
+      "type": "peripheral_nerve",
+      "spinal_origin": "L4-S3 (main branch of sciatic)",
+      "trunk_path": [
+        "popliteal_fossa",
+        "posterior_compartment_leg",
+        "behind_medial_malleolus",
+        "tarsal_tunnel",
+        "plantar_foot"
+      ],
+      "compression_sites": [
+        {
+          "site": "tarsal_tunnel_medial_ankle",
+          "syndrome": "Tarsal Tunnel Syndrome",
+          "cause": "flexor_retinaculum_compression_or_swelling"
+        }
+      ],
+      "motor_supply": [
+        "gastrocnemius",
+        "soleus",
+        "plantaris",
+        "popliteus",
+        "tibialis_posterior",
+        "FDL",
+        "FHL",
+        "plantar_intrinsics"
+      ],
+      "sensory_supply": [
+        "posterior_leg_via_sural",
+        "sole_of_foot_via_medial_and_lateral_plantar"
+      ],
+      "dermatome_anchors": [
+        "S1_lateral_foot",
+        "S2_medial_heel"
+      ],
+      "clinical_signs": [
+        "weak_plantar_flexion",
+        "loss_of_ankle_reflex_S1",
+        "sensory_loss_sole",
+        "Tinel_sign_at_tarsal_tunnel"
+      ],
+      "associated_diseases": [
+        "Tarsal Tunnel Syndrome",
+        "Tibial Neuropathy"
+      ]
+    },
+    "lateral_femoral_cutaneous_nerve": {
+      "type": "peripheral_nerve",
+      "spinal_origin": "L2-L3 lumbar plexus",
+      "trunk_path": [
+        "psoas_lateral",
+        "under_inguinal_ligament_near_ASIS",
+        "lateral_thigh"
+      ],
+      "compression_sites": [
+        {
+          "site": "ASIS_inguinal_ligament",
+          "syndrome": "Meralgia Paresthetica",
+          "cause": "tight_belts_pregnancy_obesity_compression"
+        }
+      ],
+      "motor_supply": [],
+      "sensory_supply": [
+        "anterolateral_thigh"
+      ],
+      "dermatome_anchors": [
+        "L2_L3_lateral_thigh"
+      ],
+      "clinical_signs": [
+        "burning_numbness_lateral_thigh",
+        "Tinel_sign_at_ASIS",
+        "no_motor_deficit"
+      ],
+      "associated_diseases": [
+        "Meralgia Paresthetica"
+      ]
+    },
+    "trigeminal_V1_ophthalmic": {
+      "type": "cranial_nerve_branch",
+      "from": "trigeminal_nerve_CN_V_at_Gasserian_ganglion",
+      "trunk_path": [
+        "superior_orbital_fissure",
+        "orbit",
+        "forehead_via_supraorbital_supratrochlear"
+      ],
+      "compression_sites": [
+        {
+          "site": "superior_orbital_fissure",
+          "syndrome": "Superior_Orbital_Fissure_Syndrome",
+          "cause": "tumor_inflammation"
+        }
+      ],
+      "sensory_supply": [
+        "forehead",
+        "scalp_to_vertex",
+        "upper_eyelid",
+        "cornea",
+        "nose_dorsum"
+      ],
+      "dermatome_anchors": [
+        "V1_forehead_scalp"
+      ],
+      "clinical_signs": [
+        "loss_of_corneal_reflex",
+        "forehead_sensory_loss",
+        "V1_distribution_pain"
+      ],
+      "associated_diseases": [
+        "Trigeminal Neuralgia V1 branch",
+        "Herpes Zoster Ophthalmicus"
+      ]
+    },
+    "trigeminal_V2_maxillary": {
+      "type": "cranial_nerve_branch",
+      "from": "trigeminal_nerve_CN_V_at_Gasserian_ganglion",
+      "trunk_path": [
+        "foramen_rotundum",
+        "pterygopalatine_fossa",
+        "infraorbital_foramen",
+        "cheek"
+      ],
+      "compression_sites": [
+        {
+          "site": "foramen_rotundum",
+          "syndrome": "V2_compression",
+          "cause": "tumor_in_pterygopalatine_fossa"
+        }
+      ],
+      "sensory_supply": [
+        "cheek",
+        "lower_eyelid",
+        "upper_lip",
+        "maxillary_teeth",
+        "nasal_mucosa",
+        "palate"
+      ],
+      "dermatome_anchors": [
+        "V2_maxilla_cheek"
+      ],
+      "clinical_signs": [
+        "facial_pain_cheek_maxillary_distribution",
+        "loss_of_sensation_upper_teeth"
+      ],
+      "associated_diseases": [
+        "Trigeminal Neuralgia V2 branch"
+      ]
+    },
+    "trigeminal_V3_mandibular": {
+      "type": "cranial_nerve_branch",
+      "from": "trigeminal_nerve_CN_V",
+      "trunk_path": [
+        "foramen_ovale",
+        "infratemporal_fossa",
+        "branches_to_chewing_muscles_and_chin"
+      ],
+      "compression_sites": [
+        {
+          "site": "foramen_ovale",
+          "syndrome": "V3_compression",
+          "cause": "tumor_infratemporal_fossa"
+        }
+      ],
+      "motor_supply": [
+        "muscles_of_mastication_masseter_temporalis_pterygoids"
+      ],
+      "sensory_supply": [
+        "chin",
+        "lower_lip",
+        "mandibular_teeth",
+        "anterior_2_3_tongue_via_lingual_GA_only",
+        "external_ear"
+      ],
+      "dermatome_anchors": [
+        "V3_mandible_chin"
+      ],
+      "clinical_signs": [
+        "facial_pain_mandibular_distribution",
+        "weakness_of_chewing",
+        "jaw_deviation_to_weak_side"
+      ],
+      "associated_diseases": [
+        "Trigeminal Neuralgia V3 branch"
+      ]
+    },
+    "long_thoracic_nerve": {
+      "type": "peripheral_nerve",
+      "spinal_origin": "C5-C7 brachial plexus roots",
+      "trunk_path": [
+        "lateral_neck",
+        "axilla_along_serratus_anterior"
+      ],
+      "compression_sites": [
+        {
+          "site": "axilla",
+          "syndrome": "Long_Thoracic_Neuropathy",
+          "cause": "backpack_compression_or_stretch_injury"
+        }
+      ],
+      "motor_supply": [
+        "serratus_anterior"
+      ],
+      "sensory_supply": [],
+      "clinical_signs": [
+        "winging_of_scapula_medial_winging",
+        "weakness_in_protraction_of_scapula"
+      ],
+      "associated_diseases": [
+        "Winged Scapula",
+        "Long Thoracic Nerve Palsy"
+      ]
+    },
+    "suprascapular_nerve": {
+      "type": "peripheral_nerve",
+      "spinal_origin": "C5-C6 upper trunk brachial plexus",
+      "trunk_path": [
+        "supraspinatus_fossa_via_suprascapular_notch",
+        "infraspinatus_fossa_via_spinoglenoid_notch"
+      ],
+      "compression_sites": [
+        {
+          "site": "suprascapular_notch",
+          "syndrome": "suprascapular_neuropathy",
+          "cause": "ganglion_cyst_or_trauma"
+        },
+        {
+          "site": "spinoglenoid_notch",
+          "syndrome": "infraspinatus_isolated_palsy",
+          "cause": "ganglion_cyst_paralabral"
+        }
+      ],
+      "motor_supply": [
+        "supraspinatus",
+        "infraspinatus"
+      ],
+      "sensory_supply": [
+        "GH_joint_AC_joint"
+      ],
+      "clinical_signs": [
+        "weakness_external_rotation_arm_abduction_initiation",
+        "atrophy_supraspinatus_infraspinatus"
+      ],
+      "associated_diseases": [
+        "Suprascapular Neuropathy"
+      ]
+    },
+    "phrenic_nerve": {
+      "type": "peripheral_nerve",
+      "spinal_origin": "C3-C5",
+      "trunk_path": [
+        "lateral_neck_anterior_scalene",
+        "descends_anterior_mediastinum_with_pericardium",
+        "diaphragm"
+      ],
+      "compression_sites": [
+        {
+          "site": "neck",
+          "syndrome": "phrenic_neuropathy",
+          "cause": "tumor_trauma_idiopathic"
+        },
+        {
+          "site": "anterior_mediastinum",
+          "syndrome": "diaphragmatic_paralysis",
+          "cause": "mediastinal_mass_or_surgery"
+        }
+      ],
+      "motor_supply": [
+        "diaphragm_ipsilateral"
+      ],
+      "sensory_supply": [
+        "central_diaphragm_mediastinal_pleura_pericardium"
+      ],
+      "clinical_signs": [
+        "elevated_hemidiaphragm_on_CXR",
+        "dyspnea_supine_orthopnea",
+        "paradoxical_motion_on_sniff_test",
+        "hiccups_if_irritated"
+      ],
+      "associated_diseases": [
+        "Diaphragmatic Paralysis"
+      ],
+      "referred_pain_note": "shoulder_tip_pain_C3_C5_dermatome_when_diaphragm_irritated_eg_subdiaphragmatic_abscess_cholecystitis"
+    },
+    "recurrent_laryngeal_nerve": {
+      "type": "peripheral_nerve",
+      "spinal_origin": "branch of CN X vagus",
+      "trunk_path": [
+        "loops_under_subclavian_right_or_aortic_arch_left",
+        "tracheoesophageal_groove",
+        "larynx"
+      ],
+      "compression_sites": [
+        {
+          "site": "left_aortic_arch",
+          "syndrome": "left_recurrent_laryngeal_paralysis",
+          "cause": "thoracic_aortic_aneurysm_lung_cancer_mediastinal_mass"
+        },
+        {
+          "site": "neck_thyroid_region",
+          "syndrome": "RLN_injury",
+          "cause": "thyroid_surgery_thyroid_cancer"
+        }
+      ],
+      "motor_supply": [
+        "all_intrinsic_laryngeal_muscles_except_cricothyroid"
+      ],
+      "sensory_supply": [
+        "below_vocal_cords_subglottic"
+      ],
+      "clinical_signs": [
+        "hoarseness",
+        "vocal_cord_paralysis",
+        "weak_cough",
+        "aspiration_risk"
+      ],
+      "associated_diseases": [
+        "Recurrent Laryngeal Nerve Palsy",
+        "Vocal Cord Paralysis"
+      ]
+    }
+  }
+}

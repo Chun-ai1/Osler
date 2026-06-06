@@ -1,0 +1,83 @@
+{
+  "_metadata": {
+    "framework": "specialty_obstetrics",
+    "schema_version": "1.0",
+    "description": "Obstetrics framework — pregnancy physiology, prenatal/intrapartum/postpartum complications.",
+    "source": "Williams Obstetrics; ACOG guidelines",
+    "review_status": "unreviewed"
+  },
+
+  "pregnancy_physiology": {
+    "cardiovascular": ["plasma volume +50%", "RBC mass +25% (relative dilutional anemia)", "CO +30-50%", "HR +10-15", "BP drops mid-trimester, rises near term"],
+    "respiratory": ["TV +30%", "minute ventilation ↑", "PaCO2 ↓ (compensated resp alkalosis)", "FRC ↓"],
+    "renal": ["GFR +50%", "creatinine baseline lower", "glycosuria more common", "physiologic hydronephrosis (R > L)"],
+    "GI": ["delayed gastric emptying", "constipation", "GERD common", "increased gallstone risk"],
+    "hematologic": ["hypercoagulable (5x VTE risk)", "WBC up"],
+    "endocrine": ["hCG (early)", "hPL", "progesterone", "estrogen"]
+  },
+
+  "prenatal_care": {
+    "first_trimester": ["confirm pregnancy", "establish dates (LMP, US crown-rump length)", "labs: blood type, Rh, CBC, urine, STI, HIV, rubella", "first trimester aneuploidy screen (NT + PAPP-A + hCG)"],
+    "second_trimester": ["quad screen 16-18 wk", "anatomy US 18-22 wk", "1 hr GTT 24-28 wk"],
+    "third_trimester": ["GBS swab 36-37 wk", "monitoring fetal movements", "growth assessment"],
+    "vaccinations_in_pregnancy": ["Tdap each pregnancy", "flu shot anytime", "RSV maternal vaccine"]
+  },
+
+  "prenatal_complications": {
+    "first_trimester": {
+      "spontaneous_abortion": "15-20% of recognized pregnancies",
+      "ectopic_pregnancy": "abnormal hCG rise + sonogram with no IUP; RUPTURE = emergency",
+      "molar_pregnancy": "very high hCG, snowstorm on US",
+      "hyperemesis_gravidarum": "intractable vomiting, weight loss, ketosis"
+    },
+    "second_trimester": {
+      "incompetent_cervix": "painless cervical dilation → 2nd trim loss",
+      "preterm_labor_threatened": "contractions before 37 wk"
+    },
+    "third_trimester": {
+      "preeclampsia": {
+        "criteria": "new HTN ≥140/90 after 20 wk + proteinuria OR end-organ damage",
+        "severe": "BP ≥160/110, AKI, hepatic, neuro symptoms, thrombocytopenia",
+        "treatment": "delivery curative; magnesium for seizure prophylaxis"
+      },
+      "eclampsia": "preeclampsia + seizures",
+      "HELLP_syndrome": "Hemolysis, Elevated Liver enzymes, Low Platelets",
+      "gestational_diabetes": "screening 24-28 wk; treat with diet/insulin",
+      "placenta_previa": "placenta over cervical os → painless 3rd trimester bleeding",
+      "placental_abruption": "premature separation → painful bleeding + tetanic uterus",
+      "vasa_previa": "fetal vessels over os → rupture with membranes",
+      "preterm_rupture_of_membranes_PROM": "ROM before 37 wk; risk: chorioamnionitis"
+    },
+    "intrapartum": {
+      "chorioamnionitis": "maternal fever + uterine tenderness + fetal tachy",
+      "shoulder_dystocia": "head delivers but shoulders impacted",
+      "uterine_rupture": "severe pain + fetal distress + loss of contraction pattern",
+      "cord_prolapse": "cord through cervix → fetal compression",
+      "amniotic_fluid_embolism": "sudden cardiovascular collapse + DIC during/after delivery"
+    },
+    "postpartum": {
+      "postpartum_hemorrhage_PPH": {
+        "causes": ["uterine atony (most common)", "trauma (lacerations)", "tissue (retained POC)", "thrombin (coagulopathy)"],
+        "definition": ">500 mL vaginal or >1000 mL C-section"
+      },
+      "endometritis": "fever + uterine tenderness postpartum (polymicrobial)",
+      "mastitis": "breast pain + erythema + fever in breastfeeding (S. aureus)",
+      "postpartum_DVT_PE": "highest VTE risk in first 6 weeks postpartum",
+      "postpartum_depression": "10-15% incidence, beyond 'baby blues' (which is normal first 2 wk)",
+      "postpartum_psychosis": "rare but emergency, suicide/infanticide risk",
+      "Sheehan_syndrome": "pituitary infarction from PPH → panhypopituitarism"
+    }
+  },
+
+  "fetal_assessment": {
+    "non_stress_test_NST": "fetal HR reactivity",
+    "biophysical_profile_BPP": "tone, movement, breathing, fluid, NST (10 max)",
+    "ultrasound": "growth, anatomy, fluid, placenta",
+    "amniocentesis": "fetal cell genetics (>15 wk)",
+    "CVS_chorionic_villus_sampling": "earlier than amnio (10-13 wk)"
+  },
+
+  "maternal_medications_safety": {
+    "_see": "pharmacology_framework drug_categories_pregnancy"
+  }
+}

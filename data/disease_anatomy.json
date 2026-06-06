@@ -1,0 +1,854 @@
+{
+  "_meta": {
+    "description": "3D anatomical fingerprint for each disease — used for spatial consistency check",
+    "schema": {
+      "primary": "organs typically involved",
+      "zones": "body zones where this disease presents",
+      "system": "primary affected body system"
+    },
+    "version": "1.0",
+    "verification_status": "anatomic_textbook",
+    "fields_removed": [
+      "zones",
+      "system"
+    ],
+    "note": "zones and system are now DERIVED at runtime from primary organs via DerivationEngine"
+  },
+  "diseases": {
+    "stable_angina_pectoris": {
+      "primary": [
+        "heart",
+        "lad_a",
+        "rca_a",
+        "lcx_a",
+        "left_main_coronary"
+      ]
+    },
+    "heart_attack": {
+      "primary": [
+        "heart",
+        "lad_a",
+        "rca_a",
+        "lcx_a",
+        "left_main_coronary"
+      ]
+    },
+    "myocardial_infarction": {
+      "primary": [
+        "heart",
+        "lad_a",
+        "rca_a",
+        "lcx_a"
+      ]
+    },
+    "hypertensive_emergency": {
+      "primary": [
+        "heart",
+        "aorta",
+        "brain",
+        "r_kidney",
+        "l_kidney"
+      ]
+    },
+    "community_acquired_pneumonia": {
+      "primary": [
+        "r_lung",
+        "l_lung",
+        "lungs",
+        "r_bronchus",
+        "l_bronchus"
+      ]
+    },
+    "pneumonia": {
+      "primary": [
+        "r_lung",
+        "l_lung",
+        "lungs"
+      ]
+    },
+    "asthma_exacerbation": {
+      "primary": [
+        "r_bronchus",
+        "l_bronchus",
+        "lungs"
+      ]
+    },
+    "asthma": {
+      "primary": [
+        "r_bronchus",
+        "l_bronchus",
+        "lungs"
+      ]
+    },
+    "acute_viral_upper_respiratory_infection": {
+      "primary": [
+        "pharynx",
+        "trachea"
+      ]
+    },
+    "covid": {
+      "primary": [
+        "lungs",
+        "r_lung",
+        "l_lung",
+        "pharynx"
+      ]
+    },
+    "pulmonary_embolism": {
+      "primary": [
+        "pulm_aa",
+        "r_pulm_a",
+        "l_pulm_a",
+        "lungs",
+        "r_lung",
+        "l_lung"
+      ]
+    },
+    "acute_bacterial_meningitis": {
+      "primary": [
+        "meninges",
+        "brain",
+        "spinal_cord"
+      ]
+    },
+    "meningitis": {
+      "primary": [
+        "meninges",
+        "brain"
+      ]
+    },
+    "migraine": {
+      "primary": [
+        "brain",
+        "middle_cerebral_a",
+        "ophthalmic_a"
+      ]
+    },
+    "tension_type_headache": {
+      "primary": [
+        "brain",
+        "muscles"
+      ]
+    },
+    "stroke": {
+      "primary": [
+        "brain",
+        "middle_cerebral_a",
+        "anterior_cerebral_a",
+        "internal_carotid_a"
+      ]
+    },
+    "ischemic_stroke": {
+      "primary": [
+        "brain",
+        "middle_cerebral_a",
+        "anterior_cerebral_a",
+        "internal_carotid_a"
+      ]
+    },
+    "acute_gastroenteritis": {
+      "primary": [
+        "stomach",
+        "jejunum",
+        "ileum",
+        "asc_colon",
+        "trans_colon"
+      ]
+    },
+    "gastroenteritis": {
+      "primary": [
+        "stomach",
+        "jejunum",
+        "ileum"
+      ]
+    },
+    "appendicitis": {
+      "primary": [
+        "appendix",
+        "cecum",
+        "ileocolic_a"
+      ]
+    },
+    "gastroesophageal_reflux_disease": {
+      "primary": [
+        "esophagus",
+        "stomach"
+      ]
+    },
+    "cholecystitis": {
+      "primary": [
+        "gallbladder",
+        "cystic_a",
+        "bile_duct"
+      ]
+    },
+    "pancreatitis": {
+      "primary": [
+        "pancreas",
+        "duodenum"
+      ]
+    },
+    "acute_pyelonephritis": {
+      "primary": [
+        "r_kidney",
+        "l_kidney",
+        "r_ureter",
+        "l_ureter"
+      ]
+    },
+    "pyelonephritis": {
+      "primary": [
+        "r_kidney",
+        "l_kidney"
+      ]
+    },
+    "acute_uncomplicated_cystitis": {
+      "primary": [
+        "bladder",
+        "urethra"
+      ]
+    },
+    "cystitis": {
+      "primary": [
+        "bladder",
+        "urethra"
+      ]
+    },
+    "urinary_tract_infection": {
+      "primary": [
+        "bladder",
+        "urethra",
+        "r_ureter",
+        "l_ureter"
+      ]
+    },
+    "ureterolithiasis": {
+      "primary": [
+        "r_ureter",
+        "l_ureter",
+        "r_kidney",
+        "l_kidney"
+      ]
+    },
+    "diabetes_mellitus_type_2": {
+      "primary": [
+        "pancreas"
+      ]
+    },
+    "diabetic_ketoacidosis": {
+      "primary": [
+        "pancreas",
+        "brain",
+        "r_kidney",
+        "l_kidney"
+      ]
+    },
+    "deep_vein_thrombosis": {
+      "primary": [
+        "soleal_vv",
+        "gastrocnemius_vv",
+        "great_saphenous_v",
+        "r_femoral_v",
+        "l_femoral_v",
+        "r_popliteal_v"
+      ]
+    },
+    "dvt": {
+      "primary": [
+        "soleal_vv",
+        "great_saphenous_v"
+      ]
+    },
+    "aortic_dissection": {
+      "primary": [
+        "aorta",
+        "aortic_arch",
+        "thoracic_aorta",
+        "abdominal_aorta"
+      ]
+    },
+    "sepsis": {
+      "primary": [
+        "vasculature_systemic"
+      ]
+    },
+    "shock": {
+      "primary": [
+        "heart",
+        "brain"
+      ]
+    },
+    "influenza_like_illness": {
+      "primary": []
+    },
+    "viral_uri": {
+      "primary": [
+        "pharynx",
+        "trachea"
+      ]
+    },
+    "acute_coronary_syndrome": {
+      "primary": [
+        "heart",
+        "lad_a",
+        "rca_a",
+        "lcx_a",
+        "left_main_coronary"
+      ]
+    },
+    "st_elevation_myocardial_infarction": {
+      "primary": [
+        "heart",
+        "lad_a",
+        "rca_a",
+        "lcx_a"
+      ]
+    },
+    "nstemi": {
+      "primary": [
+        "heart",
+        "lad_a",
+        "rca_a"
+      ]
+    },
+    "unstable_angina": {
+      "primary": [
+        "heart",
+        "lad_a",
+        "rca_a",
+        "lcx_a"
+      ]
+    },
+    "atrial_fibrillation": {
+      "primary": [
+        "heart",
+        "left_atrium",
+        "right_atrium"
+      ]
+    },
+    "heart_failure_exacerbation": {
+      "primary": [
+        "heart",
+        "left_ventricle",
+        "lungs"
+      ]
+    },
+    "pericarditis": {
+      "primary": [
+        "heart"
+      ]
+    },
+    "pericardial_tamponade": {
+      "primary": [
+        "heart"
+      ]
+    },
+    "endocarditis": {
+      "primary": [
+        "heart",
+        "left_atrium",
+        "left_ventricle"
+      ]
+    },
+    "vasovagal_syncope": {
+      "primary": [
+        "brain",
+        "heart"
+      ]
+    },
+    "orthostatic_hypotension": {
+      "primary": [
+        "brain",
+        "heart"
+      ]
+    },
+    "peripheral_arterial_disease": {
+      "primary": [
+        "r_femoral_a",
+        "l_femoral_a",
+        "r_popliteal_a",
+        "l_popliteal_a",
+        "r_tibial_a",
+        "l_tibial_a"
+      ]
+    },
+    "hypertrophic_cardiomyopathy": {
+      "primary": [
+        "heart",
+        "left_ventricle"
+      ]
+    },
+    "acute_bronchitis": {
+      "primary": [
+        "r_bronchus",
+        "l_bronchus",
+        "trachea"
+      ]
+    },
+    "copd_exacerbation": {
+      "primary": [
+        "r_lung",
+        "l_lung",
+        "lungs",
+        "r_bronchus",
+        "l_bronchus"
+      ]
+    },
+    "acute_sinusitis": {
+      "primary": [
+        "pharynx"
+      ]
+    },
+    "streptococcal_pharyngitis": {
+      "primary": [
+        "pharynx"
+      ]
+    },
+    "influenza": {
+      "primary": [
+        "r_lung",
+        "l_lung",
+        "pharynx",
+        "trachea"
+      ]
+    },
+    "acute_otitis_media": {
+      "primary": [
+        "pharynx"
+      ]
+    },
+    "bronchiolitis": {
+      "primary": [
+        "r_bronchus",
+        "l_bronchus",
+        "lungs"
+      ]
+    },
+    "croup": {
+      "primary": [
+        "trachea",
+        "pharynx"
+      ]
+    },
+    "pneumothorax": {
+      "primary": [
+        "r_lung",
+        "l_lung",
+        "pleura"
+      ]
+    },
+    "pleural_effusion": {
+      "primary": [
+        "pleura",
+        "r_lung",
+        "l_lung"
+      ]
+    },
+    "aspiration_pneumonia": {
+      "primary": [
+        "r_lung",
+        "l_lung",
+        "lungs"
+      ]
+    },
+    "tuberculosis": {
+      "primary": [
+        "r_lung",
+        "l_lung",
+        "lungs"
+      ]
+    },
+    "acute_cholecystitis": {
+      "primary": [
+        "gallbladder",
+        "cystic_a",
+        "bile_duct"
+      ]
+    },
+    "acute_pancreatitis": {
+      "primary": [
+        "pancreas",
+        "duodenum"
+      ]
+    },
+    "diverticulitis": {
+      "primary": [
+        "sig_colon",
+        "desc_colon"
+      ]
+    },
+    "peptic_ulcer_disease": {
+      "primary": [
+        "stomach",
+        "duodenum",
+        "gastroduodenal_a"
+      ]
+    },
+    "upper_gi_bleed": {
+      "primary": [
+        "stomach",
+        "duodenum",
+        "esophagus",
+        "left_gastric_a"
+      ]
+    },
+    "lower_gi_bleed": {
+      "primary": [
+        "sig_colon",
+        "desc_colon",
+        "rectum"
+      ]
+    },
+    "inflammatory_bowel_disease_flare": {
+      "primary": [
+        "ileum",
+        "asc_colon",
+        "desc_colon",
+        "trans_colon"
+      ]
+    },
+    "acute_hepatitis": {
+      "primary": [
+        "liver",
+        "proper_hepatic_a"
+      ]
+    },
+    "cholangitis": {
+      "primary": [
+        "bile_duct",
+        "liver",
+        "gallbladder"
+      ]
+    },
+    "bowel_obstruction": {
+      "primary": [
+        "jejunum",
+        "ileum",
+        "asc_colon",
+        "trans_colon"
+      ]
+    },
+    "mesenteric_ischemia": {
+      "primary": [
+        "sma",
+        "jejunum",
+        "ileum",
+        "asc_colon"
+      ]
+    },
+    "constipation": {
+      "primary": [
+        "sig_colon",
+        "desc_colon",
+        "rectum"
+      ]
+    },
+    "transient_ischemic_attack": {
+      "primary": [
+        "brain",
+        "middle_cerebral_a",
+        "internal_carotid_a"
+      ]
+    },
+    "subarachnoid_hemorrhage": {
+      "primary": [
+        "brain",
+        "meninges",
+        "middle_cerebral_a"
+      ]
+    },
+    "intracerebral_hemorrhage": {
+      "primary": [
+        "brain"
+      ]
+    },
+    "cluster_headache": {
+      "primary": [
+        "brain",
+        "ophthalmic_a"
+      ]
+    },
+    "seizure": {
+      "primary": [
+        "brain"
+      ]
+    },
+    "bell_palsy": {
+      "primary": [
+        "brain",
+        "brainstem"
+      ]
+    },
+    "vertigo_peripheral": {
+      "primary": [
+        "brainstem",
+        "cerebellum"
+      ]
+    },
+    "vertigo_central": {
+      "primary": [
+        "brain",
+        "cerebellum",
+        "brainstem"
+      ]
+    },
+    "concussion": {
+      "primary": [
+        "brain"
+      ]
+    },
+    "idiopathic_intracranial_hypertension": {
+      "primary": [
+        "brain",
+        "meninges"
+      ]
+    },
+    "septic_shock": {
+      "primary": [
+        "heart",
+        "lungs",
+        "r_kidney",
+        "l_kidney",
+        "liver",
+        "brain"
+      ]
+    },
+    "covid_19": {
+      "primary": [
+        "lungs",
+        "r_lung",
+        "l_lung",
+        "pharynx"
+      ]
+    },
+    "cellulitis": {
+      "primary": [
+        "skin"
+      ]
+    },
+    "necrotizing_fasciitis": {
+      "primary": [
+        "skin",
+        "muscles"
+      ]
+    },
+    "mononucleosis": {
+      "primary": [
+        "pharynx",
+        "spleen",
+        "cerv_ln"
+      ]
+    },
+    "lyme_disease": {
+      "primary": [
+        "skin",
+        "brain",
+        "heart"
+      ]
+    },
+    "acute_hiv_infection": {
+      "primary": [
+        "spleen",
+        "cerv_ln",
+        "axil_ln",
+        "ing_ln"
+      ]
+    },
+    "malaria": {
+      "primary": [
+        "spleen",
+        "liver",
+        "bone_marrow"
+      ]
+    },
+    "hypoglycemia": {
+      "primary": [
+        "brain",
+        "pancreas"
+      ]
+    },
+    "hyperosmolar_hyperglycemic_state": {
+      "primary": [
+        "pancreas",
+        "brain",
+        "r_kidney",
+        "l_kidney"
+      ]
+    },
+    "thyroid_storm": {
+      "primary": [
+        "thyroid",
+        "heart",
+        "brain"
+      ]
+    },
+    "myxedema_coma": {
+      "primary": [
+        "thyroid",
+        "brain",
+        "heart"
+      ]
+    },
+    "adrenal_crisis": {
+      "primary": [
+        "r_adrenal",
+        "l_adrenal",
+        "heart"
+      ]
+    },
+    "hypothyroidism": {
+      "primary": [
+        "thyroid"
+      ]
+    },
+    "hyperthyroidism": {
+      "primary": [
+        "thyroid",
+        "heart"
+      ]
+    },
+    "renal_colic_nephrolithiasis": {
+      "primary": [
+        "r_ureter",
+        "l_ureter",
+        "r_kidney",
+        "l_kidney"
+      ]
+    },
+    "acute_kidney_injury": {
+      "primary": [
+        "r_kidney",
+        "l_kidney"
+      ]
+    },
+    "urinary_retention": {
+      "primary": [
+        "bladder",
+        "urethra",
+        "prostate"
+      ]
+    },
+    "prostatitis": {
+      "primary": [
+        "prostate",
+        "bladder"
+      ]
+    },
+    "chronic_kidney_disease": {
+      "primary": [
+        "r_kidney",
+        "l_kidney"
+      ]
+    },
+    "glomerulonephritis": {
+      "primary": [
+        "r_kidney",
+        "l_kidney"
+      ]
+    },
+    "ectopic_pregnancy": {
+      "primary": [
+        "uterus",
+        "ovaries",
+        "uterine_a"
+      ]
+    },
+    "ovarian_torsion": {
+      "primary": [
+        "ovaries",
+        "uterus"
+      ]
+    },
+    "pelvic_inflammatory_disease": {
+      "primary": [
+        "uterus",
+        "ovaries"
+      ]
+    },
+    "preeclampsia": {
+      "primary": [
+        "uterus",
+        "r_kidney",
+        "l_kidney",
+        "brain",
+        "liver"
+      ]
+    },
+    "panic_attack": {
+      "primary": [
+        "brain",
+        "heart"
+      ]
+    },
+    "major_depressive_episode": {
+      "primary": [
+        "brain"
+      ]
+    },
+    "generalized_anxiety_disorder": {
+      "primary": [
+        "brain"
+      ]
+    },
+    "acute_alcohol_intoxication": {
+      "primary": [
+        "brain",
+        "liver"
+      ]
+    },
+    "opioid_overdose": {
+      "primary": [
+        "brain",
+        "lungs"
+      ]
+    },
+    "anaphylaxis": {
+      "primary": [
+        "lungs",
+        "r_bronchus",
+        "l_bronchus",
+        "skin",
+        "heart"
+      ]
+    },
+    "heat_stroke": {
+      "primary": [
+        "brain",
+        "skin"
+      ]
+    },
+    "hypothermia": {
+      "primary": [
+        "heart",
+        "brain"
+      ]
+    },
+    "carbon_monoxide_poisoning": {
+      "primary": [
+        "brain",
+        "heart"
+      ]
+    },
+    "hyperventilation_syndrome": {
+      "primary": [
+        "lungs",
+        "brain"
+      ]
+    },
+    "acute_glaucoma": {
+      "primary": [
+        "ophthalmic_a"
+      ]
+    },
+    "congestive_heart_failure": {
+      "primary": [
+        "heart"
+      ]
+    },
+    "copd": {
+      "primary": [
+        "bronchus"
+      ]
+    }
+  }
+}

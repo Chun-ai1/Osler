@@ -1,0 +1,323 @@
+{
+  "_meta": {
+    "description": "Mechanism keyword → 3D organ inference",
+    "usage": "Used when a mechanism's title/description contains a keyword, infer affected organs",
+    "version": "1.0"
+  },
+  "keywords": {
+    "myocardial": [
+      "heart",
+      "lad_a",
+      "rca_a",
+      "lcx_a",
+      "left_main_coronary"
+    ],
+    "cardiac": [
+      "heart",
+      "left_ventricle",
+      "right_ventricle"
+    ],
+    "coronary": [
+      "coronary_aa",
+      "lad_a",
+      "rca_a",
+      "lcx_a"
+    ],
+    "pericardial": [
+      "heart"
+    ],
+    "atrial": [
+      "right_atrium",
+      "left_atrium"
+    ],
+    "ventricular": [
+      "left_ventricle",
+      "right_ventricle"
+    ],
+    "aortic": [
+      "aorta",
+      "aortic_arch",
+      "thoracic_aorta",
+      "abdominal_aorta"
+    ],
+    "arterial": [
+      "aorta"
+    ],
+    "atherosclerosis": [
+      "aorta",
+      "lad_a",
+      "rca_a"
+    ],
+    "thrombosis": [
+      "soleal_vv",
+      "great_saphenous_v"
+    ],
+    "embolism": [
+      "pulm_aa",
+      "r_pulm_a",
+      "l_pulm_a"
+    ],
+    "pulmonary": [
+      "lungs",
+      "r_lung",
+      "l_lung",
+      "pulm_aa"
+    ],
+    "respiratory": [
+      "lungs",
+      "trachea",
+      "r_bronchus",
+      "l_bronchus"
+    ],
+    "bronchial": [
+      "r_bronchus",
+      "l_bronchus",
+      "bronchial_a"
+    ],
+    "alveolar": [
+      "r_lung",
+      "l_lung",
+      "lungs"
+    ],
+    "pneumonia": [
+      "lungs",
+      "r_lung",
+      "l_lung"
+    ],
+    "asthma": [
+      "r_bronchus",
+      "l_bronchus",
+      "lungs"
+    ],
+    "copd": [
+      "lungs",
+      "r_bronchus",
+      "l_bronchus"
+    ],
+    "cerebral": [
+      "brain",
+      "middle_cerebral_a",
+      "anterior_cerebral_a",
+      "posterior_cerebral_a"
+    ],
+    "stroke": [
+      "brain",
+      "middle_cerebral_a",
+      "internal_carotid_a"
+    ],
+    "ischemic_stroke": [
+      "brain",
+      "middle_cerebral_a"
+    ],
+    "meningeal": [
+      "meninges",
+      "brain"
+    ],
+    "meningitis": [
+      "meninges",
+      "brain",
+      "spinal_cord"
+    ],
+    "encephalitis": [
+      "brain"
+    ],
+    "seizure": [
+      "brain"
+    ],
+    "spinal": [
+      "spinal_cord"
+    ],
+    "gastric": [
+      "stomach",
+      "left_gastric_a"
+    ],
+    "esophageal": [
+      "esophagus"
+    ],
+    "duodenal": [
+      "duodenum",
+      "gastroduodenal_a"
+    ],
+    "intestinal": [
+      "jejunum",
+      "ileum"
+    ],
+    "colonic": [
+      "asc_colon",
+      "desc_colon",
+      "trans_colon"
+    ],
+    "appendiceal": [
+      "appendix",
+      "cecum",
+      "ileocolic_a"
+    ],
+    "appendicitis": [
+      "appendix",
+      "cecum",
+      "ileocolic_a"
+    ],
+    "gastroenteritis": [
+      "stomach",
+      "jejunum",
+      "ileum",
+      "asc_colon"
+    ],
+    "colitis": [
+      "asc_colon",
+      "trans_colon",
+      "desc_colon",
+      "sig_colon"
+    ],
+    "diverticulitis": [
+      "sig_colon",
+      "desc_colon"
+    ],
+    "hepatic": [
+      "liver",
+      "proper_hepatic_a",
+      "hepatic_vv"
+    ],
+    "liver": [
+      "liver"
+    ],
+    "biliary": [
+      "gallbladder",
+      "bile_duct",
+      "cystic_a"
+    ],
+    "cholecyst": [
+      "gallbladder",
+      "cystic_a",
+      "cystic_v"
+    ],
+    "pancreatic": [
+      "pancreas"
+    ],
+    "pancreatitis": [
+      "pancreas",
+      "duodenum"
+    ],
+    "renal": [
+      "r_kidney",
+      "l_kidney",
+      "r_renal_a",
+      "l_renal_a"
+    ],
+    "kidney": [
+      "r_kidney",
+      "l_kidney"
+    ],
+    "ureteral": [
+      "r_ureter",
+      "l_ureter"
+    ],
+    "nephritis": [
+      "r_kidney",
+      "l_kidney"
+    ],
+    "pyelonephritis": [
+      "r_kidney",
+      "l_kidney",
+      "r_ureter",
+      "l_ureter"
+    ],
+    "cystitis": [
+      "bladder"
+    ],
+    "urinary": [
+      "bladder",
+      "urethra",
+      "r_kidney",
+      "l_kidney"
+    ],
+    "thyroid": [
+      "thyroid"
+    ],
+    "adrenal": [
+      "r_adrenal",
+      "l_adrenal"
+    ],
+    "diabetic": [
+      "pancreas"
+    ],
+    "diabetes": [
+      "pancreas"
+    ],
+    "pituitary": [
+      "pituitary"
+    ],
+    "splenic": [
+      "spleen",
+      "splenic_a",
+      "splenic_v"
+    ],
+    "hematologic": [
+      "bone_marrow",
+      "spleen"
+    ],
+    "anemia": [
+      "bone_marrow"
+    ],
+    "uterine": [
+      "uterus",
+      "uterine_a"
+    ],
+    "ovarian": [
+      "ovaries",
+      "ovarian_a"
+    ],
+    "testicular": [
+      "testicular_a"
+    ],
+    "prostatic": [
+      "prostate"
+    ],
+    "lymphatic": [
+      "thoracic_duct",
+      "cerv_ln",
+      "axil_ln",
+      "mes_ln"
+    ],
+    "lymphadenopathy": [
+      "cerv_ln",
+      "axil_ln",
+      "ing_ln",
+      "mes_ln"
+    ],
+    "carotid": [
+      "r_carotid_a",
+      "l_carotid_a",
+      "internal_carotid_a"
+    ],
+    "femoral": [
+      "r_femoral_a",
+      "l_femoral_a"
+    ],
+    "iliac": [
+      "r_iliac_a",
+      "l_iliac_a",
+      "internal_iliac_a"
+    ],
+    "sepsis": [
+      "heart",
+      "lungs",
+      "r_kidney",
+      "l_kidney",
+      "liver",
+      "spleen"
+    ],
+    "septic_shock": [
+      "heart",
+      "lungs",
+      "r_kidney",
+      "l_kidney"
+    ],
+    "shock": [
+      "heart",
+      "brain",
+      "r_kidney",
+      "l_kidney"
+    ]
+  }
+}

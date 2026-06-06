@@ -1,0 +1,215 @@
+{
+  "_comment": "Syndrome labels and system configuration for Osler.",
+  "_version": "1.0",
+  "syndrome_labels": {
+    "gastrointestinal": "GI syndrome",
+    "respiratory": "respiratory syndrome",
+    "cardiovascular": "cardiovascular syndrome",
+    "neurologic": "neurologic syndrome",
+    "musculoskeletal": "musculoskeletal syndrome",
+    "dermatologic": "dermatologic process",
+    "urinary": "urinary syndrome",
+    "immunologic": "immune-mediated process",
+    "thermoregulatory": "systemic / thermoregulatory syndrome"
+  },
+  "system_priority": {
+    "_note": "Higher = checked first for syndrome assignment",
+    "gastrointestinal": 10,
+    "respiratory": 9,
+    "cardiovascular": 8,
+    "neurologic": 8,
+    "urinary": 7,
+    "musculoskeletal": 6,
+    "dermatologic": 5,
+    "immunologic": 4,
+    "thermoregulatory": 3
+  },
+  "system_friendly_names": {
+    "gastrointestinal": "digestive system",
+    "respiratory": "lungs and breathing",
+    "cardiovascular": "heart and circulation",
+    "neurologic": "nervous system",
+    "musculoskeletal": "muscles and joints",
+    "dermatologic": "skin",
+    "urinary": "urinary tract",
+    "immunologic": "immune system",
+    "thermoregulatory": "whole body"
+  },
+  "system_anchor_symptoms": {
+    "_note": "Symptoms required to confirm a system (beyond vague anchors)",
+    "gastrointestinal": [
+      "diarrhea",
+      "abdominal pain",
+      "nausea",
+      "vomiting",
+      "bloody stool"
+    ],
+    "respiratory": [
+      "cough",
+      "shortness of breath",
+      "wheezing",
+      "chest tightness"
+    ],
+    "cardiovascular": [
+      "chest pain",
+      "palpitations",
+      "syncope",
+      "edema"
+    ],
+    "neurologic": [
+      "numbness",
+      "tingling",
+      "focal weakness",
+      "headache",
+      "dizziness"
+    ],
+    "urinary": [
+      "dysuria",
+      "urinary frequency",
+      "flank pain",
+      "hematuria"
+    ],
+    "musculoskeletal": [
+      "joint pain",
+      "muscle pain",
+      "back pain",
+      "arthralgia"
+    ],
+    "dermatologic": [
+      "rash",
+      "itching",
+      "hives",
+      "redness",
+      "skin changes"
+    ]
+  },
+  "symptom_organ_fallback": {
+    "_note": "Fallback organ localizations for symptoms the anatomy KG doesn't cover well.",
+    "vomiting": [
+      "stomach",
+      "esophagus",
+      "duodenum"
+    ],
+    "nausea": [
+      "stomach",
+      "duodenum"
+    ],
+    "diarrhea": [
+      "colon",
+      "ileum",
+      "jejunum"
+    ],
+    "weakness": [
+      "brain",
+      "spinal_cord",
+      "muscle"
+    ],
+    "fatigue": [
+      "brain",
+      "liver"
+    ],
+    "dizziness": [
+      "brain",
+      "inner_ear",
+      "cerebellum"
+    ],
+    "headache": [
+      "brain",
+      "meninges",
+      "scalp"
+    ],
+    "rash": [
+      "skin",
+      "dermis"
+    ],
+    "redness": [
+      "skin",
+      "dermis"
+    ],
+    "itching": [
+      "skin",
+      "dermis"
+    ],
+    "swelling": [
+      "lymph_node",
+      "soft_tissue"
+    ],
+    "palpitations": [
+      "heart",
+      "left_ventricle"
+    ],
+    "shortness of breath": [
+      "lung",
+      "bronchus",
+      "pleura"
+    ],
+    "cough": [
+      "bronchus",
+      "trachea",
+      "lung"
+    ],
+    "fever": [
+      "hypothalamus",
+      "liver"
+    ],
+    "chills": [
+      "hypothalamus",
+      "muscle"
+    ],
+    "confusion": [
+      "brain",
+      "cerebral_cortex"
+    ],
+    "numbness": [
+      "spinal_cord",
+      "peripheral_nerve"
+    ],
+    "tingling": [
+      "peripheral_nerve",
+      "spinal_cord"
+    ],
+    "chest pain": [
+      "heart",
+      "pleura",
+      "pericardium"
+    ],
+    "abdominal pain": [
+      "stomach",
+      "colon",
+      "appendix",
+      "small_intestine"
+    ],
+    "back pain": [
+      "spine",
+      "kidney",
+      "muscle"
+    ],
+    "joint pain": [
+      "synovial_joint",
+      "cartilage"
+    ],
+    "sore throat": [
+      "pharynx",
+      "tonsil",
+      "larynx"
+    ],
+    "runny nose": [
+      "nasal_mucosa",
+      "sinuses"
+    ],
+    "ear pain": [
+      "middle_ear",
+      "external_ear",
+      "eustachian_tube"
+    ],
+    "loss of smell": [
+      "olfactory_epithelium",
+      "nasal_mucosa"
+    ],
+    "blurred vision": [
+      "retina",
+      "optic_nerve",
+      "lens"
+    ]
+  }
+}

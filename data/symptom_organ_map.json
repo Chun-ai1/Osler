@@ -1,0 +1,437 @@
+{
+  "_meta": {
+    "description": "Maps each symptom to 3D anatomical organs and body zones",
+    "schema": {
+      "primary": "organs DIRECTLY producing this symptom",
+      "adjacent": "physically adjacent organs (secondary risk)",
+      "zones": "body zones for visualization"
+    },
+    "source": "Standard clinical anatomy + symptom-organ correlations",
+    "version": "1.0",
+    "fields_removed": [
+      "zones",
+      "adjacent"
+    ],
+    "note": "zones and adjacent are now DERIVED at runtime from primary organs via DerivationEngine"
+  },
+  "symptoms": {
+    "headache": {
+      "primary": [
+        "brain",
+        "meninges",
+        "superior_sagittal_sinus",
+        "transverse_sinus",
+        "middle_cerebral_a"
+      ]
+    },
+    "stiff_neck": {
+      "primary": [
+        "meninges",
+        "spinal_cord",
+        "brainstem"
+      ]
+    },
+    "altered_mental_status": {
+      "primary": [
+        "brain",
+        "cerebellum",
+        "brainstem"
+      ]
+    },
+    "confusion": {
+      "primary": [
+        "brain",
+        "cerebellum"
+      ]
+    },
+    "seizure": {
+      "primary": [
+        "brain"
+      ]
+    },
+    "syncope": {
+      "primary": [
+        "brain",
+        "heart"
+      ]
+    },
+    "dizziness": {
+      "primary": [
+        "brain",
+        "cerebellum",
+        "brainstem"
+      ]
+    },
+    "loss_of_consciousness": {
+      "primary": [
+        "brain",
+        "brainstem"
+      ]
+    },
+    "sensitivity_to_light": {
+      "primary": [
+        "brain",
+        "meninges"
+      ]
+    },
+    "weakness": {
+      "primary": [
+        "brain",
+        "spinal_cord",
+        "muscles"
+      ]
+    },
+    "chest_pain": {
+      "primary": [
+        "heart",
+        "lad_a",
+        "rca_a",
+        "lcx_a",
+        "left_main_coronary",
+        "aorta",
+        "thoracic_aorta",
+        "heart",
+        "esophagus"
+      ]
+    },
+    "chest_tightness": {
+      "primary": [
+        "heart",
+        "lad_a",
+        "rca_a",
+        "lungs"
+      ]
+    },
+    "left_arm_pain": {
+      "primary": [
+        "heart",
+        "lad_a",
+        "lcx_a",
+        "l_arm"
+      ]
+    },
+    "shortness_of_breath": {
+      "primary": [
+        "lungs",
+        "r_lung",
+        "l_lung",
+        "trachea",
+        "r_bronchus",
+        "l_bronchus",
+        "heart"
+      ]
+    },
+    "dyspnea": {
+      "primary": [
+        "lungs",
+        "r_lung",
+        "l_lung",
+        "heart"
+      ]
+    },
+    "cough": {
+      "primary": [
+        "trachea",
+        "r_bronchus",
+        "l_bronchus",
+        "lungs",
+        "r_lung",
+        "l_lung"
+      ]
+    },
+    "wheezing": {
+      "primary": [
+        "r_bronchus",
+        "l_bronchus",
+        "lungs",
+        "r_lung",
+        "l_lung"
+      ]
+    },
+    "hemoptysis": {
+      "primary": [
+        "lungs",
+        "r_lung",
+        "l_lung",
+        "r_bronchus",
+        "l_bronchus",
+        "bronchial_a"
+      ]
+    },
+    "palpitations": {
+      "primary": [
+        "heart",
+        "right_atrium",
+        "left_atrium",
+        "left_ventricle"
+      ]
+    },
+    "abdominal_pain": {
+      "primary": [
+        "stomach",
+        "duodenum",
+        "jejunum",
+        "ileum",
+        "asc_colon",
+        "trans_colon",
+        "desc_colon",
+        "liver",
+        "gallbladder",
+        "pancreas",
+        "appendix"
+      ]
+    },
+    "epigastric_pain": {
+      "primary": [
+        "stomach",
+        "duodenum",
+        "pancreas",
+        "esophagus"
+      ]
+    },
+    "ruq_pain": {
+      "primary": [
+        "liver",
+        "gallbladder",
+        "bile_duct",
+        "duodenum"
+      ]
+    },
+    "right_upper_quadrant_pain": {
+      "primary": [
+        "liver",
+        "gallbladder",
+        "bile_duct"
+      ]
+    },
+    "luq_pain": {
+      "primary": [
+        "spleen",
+        "stomach",
+        "splenic_a",
+        "splenic_v"
+      ]
+    },
+    "rlq_pain": {
+      "primary": [
+        "appendix",
+        "cecum",
+        "ileum",
+        "ileocolic_a"
+      ]
+    },
+    "right_lower_quadrant_pain": {
+      "primary": [
+        "appendix",
+        "cecum",
+        "ileum"
+      ]
+    },
+    "mcburney_point": {
+      "primary": [
+        "appendix"
+      ]
+    },
+    "llq_pain": {
+      "primary": [
+        "sig_colon",
+        "desc_colon"
+      ]
+    },
+    "left_lower_quadrant_pain": {
+      "primary": [
+        "sig_colon",
+        "desc_colon"
+      ]
+    },
+    "periumbilical_pain": {
+      "primary": [
+        "jejunum",
+        "ileum",
+        "trans_colon"
+      ]
+    },
+    "suprapubic_pain": {
+      "primary": [
+        "bladder",
+        "uterus",
+        "prostate"
+      ]
+    },
+    "pelvic_pain": {
+      "primary": [
+        "uterus",
+        "ovaries",
+        "bladder",
+        "prostate",
+        "rectum"
+      ]
+    },
+    "nausea": {
+      "primary": [
+        "stomach",
+        "duodenum",
+        "brain"
+      ]
+    },
+    "vomiting": {
+      "primary": [
+        "stomach",
+        "esophagus",
+        "duodenum"
+      ]
+    },
+    "diarrhea": {
+      "primary": [
+        "jejunum",
+        "ileum",
+        "asc_colon",
+        "desc_colon",
+        "trans_colon",
+        "sig_colon"
+      ]
+    },
+    "constipation": {
+      "primary": [
+        "sig_colon",
+        "rectum",
+        "desc_colon"
+      ]
+    },
+    "hematemesis": {
+      "primary": [
+        "stomach",
+        "esophagus",
+        "duodenum",
+        "gastroduodenal_a",
+        "left_gastric_a"
+      ]
+    },
+    "melena": {
+      "primary": [
+        "stomach",
+        "duodenum",
+        "jejunum",
+        "gastroduodenal_a"
+      ]
+    },
+    "hematochezia": {
+      "primary": [
+        "sig_colon",
+        "rectum",
+        "desc_colon"
+      ]
+    },
+    "dysuria": {
+      "primary": [
+        "bladder",
+        "urethra"
+      ]
+    },
+    "urinary_frequency": {
+      "primary": [
+        "bladder",
+        "urethra"
+      ]
+    },
+    "hematuria": {
+      "primary": [
+        "bladder",
+        "r_kidney",
+        "l_kidney",
+        "r_ureter",
+        "l_ureter"
+      ]
+    },
+    "flank_pain": {
+      "primary": [
+        "r_kidney",
+        "l_kidney",
+        "r_ureter",
+        "l_ureter"
+      ]
+    },
+    "right_flank_pain": {
+      "primary": [
+        "r_kidney",
+        "r_ureter"
+      ]
+    },
+    "left_flank_pain": {
+      "primary": [
+        "l_kidney",
+        "l_ureter"
+      ]
+    },
+    "fever": {
+      "primary": [
+        "brain"
+      ]
+    },
+    "chills": {
+      "primary": [
+        "brain",
+        "muscles"
+      ]
+    },
+    "fatigue": {
+      "primary": [
+        "brain",
+        "heart",
+        "muscles"
+      ]
+    },
+    "body_aches": {
+      "primary": [
+        "muscles"
+      ]
+    },
+    "sweating": {
+      "primary": [
+        "skin",
+        "brain"
+      ]
+    },
+    "bleeding_minor": {
+      "primary": [
+        "skin"
+      ]
+    },
+    "bleeding_severe": {
+      "primary": [
+        "heart",
+        "aorta",
+        "ivc",
+        "bone_marrow"
+      ]
+    },
+    "vaginal_bleeding": {
+      "primary": [
+        "uterus",
+        "ovaries"
+      ]
+    },
+    "testicular_pain": {
+      "primary": [
+        "testicular_a"
+      ]
+    },
+    "calf_pain": {
+      "primary": [
+        "soleal_vv",
+        "gastrocnemius_vv",
+        "posterior_tibial_a",
+        "great_saphenous_v"
+      ]
+    },
+    "leg_swelling": {
+      "primary": [
+        "great_saphenous_v",
+        "small_saphenous_v",
+        "soleal_vv",
+        "r_femoral_v",
+        "l_femoral_v"
+      ]
+    }
+  }
+}

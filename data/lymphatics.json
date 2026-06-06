@@ -1,0 +1,124 @@
+{
+  "_meta": {
+    "version": "1.0",
+    "description": "Major lymph node groups and drainage"
+  },
+  "lymph_groups": {
+    "axillary_nodes": {
+      "type": "lymph_node_group",
+      "location": "axilla",
+      "drains_from": [
+        "upper_limb",
+        "lateral_breast",
+        "upper_anterior_abdominal_wall_above_umbilicus"
+      ],
+      "drains_to": [
+        "subclavian_lymph_trunk"
+      ],
+      "groups": [
+        "pectoral_anterior",
+        "subscapular_posterior",
+        "humeral_lateral",
+        "central",
+        "apical"
+      ],
+      "common_pathology": [
+        "breast_cancer_metastasis",
+        "lymphedema_post_mastectomy",
+        "lymphoma_axillary",
+        "axillary_abscess_cat_scratch"
+      ],
+      "clinical_signs": [
+        "palpable_axillary_lymphadenopathy",
+        "arm_lymphedema_after_ALND"
+      ]
+    },
+    "cervical_nodes": {
+      "type": "lymph_node_group",
+      "location": "neck_levels_I_through_VII",
+      "drains_from": [
+        "head_face_scalp",
+        "oral_cavity_pharynx_larynx_thyroid"
+      ],
+      "drains_to": [
+        "thoracic_duct_left_or_right_lymphatic_duct"
+      ],
+      "common_pathology": [
+        "reactive_lymphadenopathy_URI",
+        "head_neck_squamous_cell_metastasis",
+        "lymphoma_cervical",
+        "TB_scrofula",
+        "thyroid_cancer_spread"
+      ],
+      "clinical_signs": [
+        "palpable_cervical_lymphadenopathy",
+        "Virchow_node_left_supraclavicular_GI_malignancy"
+      ]
+    },
+    "inguinal_nodes": {
+      "type": "lymph_node_group",
+      "location": "groin",
+      "drains_from": [
+        "lower_limb",
+        "lower_anterior_abdominal_wall_below_umbilicus",
+        "external_genitalia_non_testicular",
+        "anal_canal_below_pectinate"
+      ],
+      "drains_to": [
+        "external_iliac_nodes"
+      ],
+      "common_pathology": [
+        "STI_inguinal_lymphadenopathy",
+        "vulvar_penile_cancer_metastasis",
+        "melanoma_lower_limb_metastasis"
+      ],
+      "clinical_signs": [
+        "palpable_inguinal_lymphadenopathy",
+        "buboes_STI"
+      ]
+    },
+    "mesenteric_nodes": {
+      "type": "lymph_node_group",
+      "location": "mesentery_intraabdominal",
+      "drains_from": [
+        "small_intestine",
+        "colon"
+      ],
+      "drains_to": [
+        "preaortic_nodes_thoracic_duct"
+      ],
+      "common_pathology": [
+        "mesenteric_adenitis_viral_or_bacterial_mimics_appendicitis",
+        "lymphoma_mesenteric",
+        "colon_cancer_staging_N"
+      ],
+      "clinical_signs": [
+        "abdominal_pain_in_children_RLQ_mesenteric_adenitis"
+      ]
+    },
+    "mediastinal_nodes": {
+      "type": "lymph_node_group",
+      "location": "mediastinum",
+      "drains_from": [
+        "lungs",
+        "heart_pericardium",
+        "esophagus_middle",
+        "thymus"
+      ],
+      "drains_to": [
+        "thoracic_duct"
+      ],
+      "common_pathology": [
+        "lung_cancer_mediastinal_metastasis_staging",
+        "sarcoidosis_bilateral_hilar",
+        "lymphoma_mediastinal_mass",
+        "TB_mediastinal"
+      ],
+      "clinical_signs": [
+        "mediastinal_widening_CXR",
+        "SVC_syndrome_if_large",
+        "Pemberton_sign_thoracic_outlet"
+      ]
+    }
+  }
+}

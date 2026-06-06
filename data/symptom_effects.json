@@ -1,0 +1,153 @@
+{
+  "_meta": {
+    "description": "Numerical body state changes per symptom",
+    "schema": {
+      "delta_field": "numerical change to body state field (e.g. 'blood_volume_ml': -1500)",
+      "process": "label of physiological process triggered",
+      "perfusion_organ": "[organ_name, factor] — multiplies organ perfusion",
+      "perfusion_global": "factor — multiplies all organ perfusion"
+    },
+    "source": "Standard physiology textbooks (Guyton, Hall)",
+    "version": "1.0"
+  },
+  "symptom_effects": {
+    "bleeding_minor": {
+      "blood_volume_ml": -250,
+      "heart_rate": 5,
+      "process": "minor_blood_loss"
+    },
+    "bleeding_moderate": {
+      "blood_volume_ml": -750,
+      "map_mmhg": -8,
+      "heart_rate": 15,
+      "hemoglobin_g": -1.5,
+      "hematocrit": -0.04,
+      "process": "moderate_blood_loss"
+    },
+    "bleeding_severe": {
+      "blood_volume_ml": -1500,
+      "map_mmhg": -25,
+      "sbp_mmhg": -30,
+      "heart_rate": 30,
+      "hemoglobin_g": -3.0,
+      "hematocrit": -0.1,
+      "lactate_mmol": 1.5,
+      "perfusion_global": 0.75,
+      "process": "hemorrhagic_shock_risk"
+    },
+    "hematemesis": {
+      "blood_volume_ml": -800,
+      "map_mmhg": -10,
+      "heart_rate": 20,
+      "hemoglobin_g": -2.0,
+      "process": "upper_gi_bleed"
+    },
+    "melena": {
+      "blood_volume_ml": -500,
+      "hemoglobin_g": -1.5,
+      "process": "upper_gi_bleed_chronic"
+    },
+    "hematuria_gross": {
+      "blood_volume_ml": -100,
+      "hemoglobin_g": -0.3,
+      "process": "urinary_bleeding"
+    },
+    "vomiting_persistent": {
+      "blood_volume_ml": -500,
+      "potassium_meq": -0.5,
+      "pH": 0.04,
+      "heart_rate": 10,
+      "process": "metabolic_alkalosis"
+    },
+    "diarrhea_severe": {
+      "blood_volume_ml": -800,
+      "potassium_meq": -0.7,
+      "sodium_meq": -3,
+      "pH": -0.06,
+      "heart_rate": 12,
+      "process": "metabolic_acidosis_volume_loss"
+    },
+    "polyuria": {
+      "blood_volume_ml": -300,
+      "potassium_meq": -0.3,
+      "process": "osmotic_diuresis"
+    },
+    "fever": {
+      "temperature_c": 2.0,
+      "heart_rate": 15,
+      "resp_rate": 3,
+      "process": "febrile_response"
+    },
+    "high_fever": {
+      "temperature_c": 3.5,
+      "heart_rate": 25,
+      "resp_rate": 6,
+      "wbc_k": 6,
+      "process": "severe_infection"
+    },
+    "chills": {
+      "temperature_c": 1.0,
+      "heart_rate": 10,
+      "process": "rigors_pre_fever"
+    },
+    "septic_shock_signs": {
+      "map_mmhg": -30,
+      "heart_rate": 40,
+      "lactate_mmol": 3.5,
+      "perfusion_global": 0.5,
+      "wbc_k": 8,
+      "process": "distributive_shock"
+    },
+    "dyspnea_severe": {
+      "spo2": -8,
+      "resp_rate": 14,
+      "heart_rate": 20,
+      "pao2": -25,
+      "process": "respiratory_distress"
+    },
+    "cyanosis": {
+      "spo2": -15,
+      "pao2": -35,
+      "process": "severe_hypoxemia"
+    },
+    "wheezing": {
+      "spo2": -3,
+      "resp_rate": 6,
+      "process": "bronchospasm"
+    },
+    "chest_pain_crushing": {
+      "process": "myocardial_ischemia",
+      "perfusion_organ": [
+        "heart",
+        0.6
+      ]
+    },
+    "syncope": {
+      "map_mmhg": -20,
+      "heart_rate": -10,
+      "process": "cerebral_hypoperfusion",
+      "perfusion_organ": [
+        "brain",
+        0.5
+      ]
+    },
+    "altered_mental_status": {
+      "perfusion_organ": [
+        "brain",
+        0.7
+      ],
+      "process": "cerebral_dysfunction"
+    },
+    "seizure": {
+      "lactate_mmol": 2.0,
+      "pH": -0.05,
+      "process": "anaerobic_metabolism_crisis"
+    },
+    "polydipsia_polyuria_polyphagia": {
+      "glucose_mg": 180,
+      "blood_volume_ml": -400,
+      "potassium_meq": -0.4,
+      "process": "hyperglycemia"
+    }
+  }
+}

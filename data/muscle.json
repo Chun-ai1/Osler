@@ -1,0 +1,353 @@
+{
+  "_metadata": {
+    "organ": "muscle",
+    "schema_version": "2.0",
+    "description": "Skeletal muscle state model. Used by myositis, rhabdomyolysis, compartment syndrome, myasthenia.",
+    "source": "Boron & Boulpaep; Harrison's IM Neurology + Rheumatology",
+    "review_status": "unreviewed"
+  },
+  "state_variables": {
+    "inflammation": {
+      "range": [
+        0,
+        1
+      ],
+      "description": "myositis severity"
+    },
+    "necrosis": {
+      "range": [
+        0,
+        1
+      ],
+      "description": "myocyte breakdown (rhabdomyolysis)"
+    },
+    "spasm": {
+      "range": [
+        0,
+        1
+      ],
+      "description": "involuntary sustained contraction"
+    },
+    "weakness": {
+      "range": [
+        0,
+        1
+      ],
+      "description": "reduced strength (high = severe weakness)"
+    },
+    "neuromuscular_function": {
+      "range": [
+        0,
+        1
+      ],
+      "description": "NMJ transmission — HIGHER = better",
+      "inverse": true
+    },
+    "compartment_pressure": {
+      "range": [
+        0,
+        1
+      ],
+      "description": "intra-compartmental pressure"
+    },
+    "perfusion": {
+      "range": [
+        0,
+        1
+      ],
+      "description": "muscle blood flow — HIGHER = better",
+      "inverse": true
+    },
+    "metabolic_demand": {
+      "range": [
+        0,
+        1
+      ],
+      "description": "energy/oxygen requirement"
+    },
+    "ck_release": {
+      "range": [
+        0,
+        1
+      ],
+      "description": "creatine kinase release from damaged myocytes"
+    }
+  },
+  "derivation_rules": [
+    {
+      "symptom": "muscle pain",
+      "condition": {
+        "any": [
+          {
+            "state": "inflammation",
+            "op": ">",
+            "threshold": 0.4
+          },
+          {
+            "state": "spasm",
+            "op": ">",
+            "threshold": 0.5
+          }
+        ]
+      },
+      "rationale": "myositis or sustained contraction activates muscle nociceptors",
+      "confidence": 1.0
+    },
+    {
+      "symptom": "muscle weakness",
+      "condition": {
+        "state": "weakness",
+        "op": ">",
+        "threshold": 0.4
+      },
+      "rationale": "reduced force generation from muscle or NMJ pathology",
+      "confidence": 1.0
+    },
+    {
+      "symptom": "muscle stiffness",
+      "condition": {
+        "state": "spasm",
+        "op": ">",
+        "threshold": 0.5
+      },
+      "rationale": "sustained myofibril contraction → palpable stiffness",
+      "confidence": 0.9
+    },
+    {
+      "symptom": "muscle swelling",
+      "condition": {
+        "state": "inflammation",
+        "op": ">",
+        "threshold": 0.5
+      },
+      "rationale": "inflammatory exudate within muscle compartment",
+      "confidence": 0.9
+    },
+    {
+      "symptom": "fatigable weakness",
+      "condition": {
+        "state": "neuromuscular_function",
+        "op": "<",
+        "threshold": 0.5
+      },
+      "rationale": "NMJ dysfunction → weakness worsens with repeated activity (myasthenia)",
+      "confidence": 1.0
+    },
+    {
+      "symptom": "compartment tenderness",
+      "condition": {
+        "state": "compartment_pressure",
+        "op": ">",
+        "threshold": 0.6
+      },
+      "rationale": "elevated pressure → ischemic pain, tense compartment",
+      "confidence": 1.0
+    },
+    {
+      "symptom": "dark urine",
+      "condition": {
+        "state": "ck_release",
+        "op": ">",
+        "threshold": 0.6
+      },
+      "rationale": "myoglobinuria from rhabdomyolysis → tea-colored urine",
+      "confidence": 1.0
+    }
+  ],
+  "propagation_rules": [
+    {
+      "trigger": {
+        "state": "necrosis",
+        "op": ">",
+        "threshold": 0.5
+      },
+      "effect": {
+        "state": "ck_release",
+        "delta": 0.5
+      },
+      "rationale": "myocyte breakdown releases CK and myoglobin",
+      "via": "intra_organ",
+      "review_status": "unreviewed"
+    },
+    {
+      "trigger": {
+        "state": "compartment_pressure",
+        "op": ">",
+        "threshold": 0.6
+      },
+      "effect": {
+        "state": "perfusion",
+        "delta": -0.5
+      },
+      "rationale": "high pressure exceeds capillary perfusion pressure → ischemia",
+      "via": "intra_organ",
+      "review_status": "unreviewed"
+    },
+    {
+      "trigger": {
+        "state": "perfusion",
+        "op": "<",
+        "threshold": 0.4
+      },
+      "effect": {
+        "state": "necrosis",
+        "delta": 0.4
+      },
+      "rationale": "ischemia → myocyte death",
+      "via": "intra_organ",
+      "review_status": "unreviewed"
+    },
+    {
+      "trigger": {
+        "state": "ck_release",
+        "op": ">",
+        "threshold": 0.6
+      },
+      "effect": {
+        "organ": "kidney",
+        "state": "tubular_damage",
+        "delta": 0.3
+      },
+      "rationale": "myoglobinuria → renal tubular toxicity → AKI",
+      "via": "circulates_through",
+      "review_status": "unreviewed"
+    }
+  ],
+  "connections": {
+    "incoming": [
+      "blood (muscular arteries)",
+      "neural (motor neurons)"
+    ],
+    "outgoing": [
+      "kidney (myoglobin)",
+      "blood (metabolic byproducts)"
+    ],
+    "neural": [
+      "motor neurons",
+      "muscle spindle afferents (1a, 1b, II)"
+    ]
+  },
+  "diseases": {
+    "Rhabdomyolysis": {
+      "review_status": "unreviewed",
+      "description": "Massive muscle breakdown from trauma, ischemia, drugs, or extreme exertion.",
+      "perturbations": [
+        {
+          "variable": "necrosis",
+          "delta": 0.75,
+          "cause": "myocyte membrane disruption"
+        },
+        {
+          "variable": "ck_release",
+          "delta": 0.8,
+          "cause": "intracellular contents (CK, myoglobin, K+) released"
+        },
+        {
+          "variable": "inflammation",
+          "delta": 0.5,
+          "cause": "muscle injury triggers local inflammation"
+        }
+      ]
+    },
+    "Acute Compartment Syndrome": {
+      "review_status": "unreviewed",
+      "description": "Elevated pressure in fascial compartment → ischemia + necrosis if not decompressed.",
+      "perturbations": [
+        {
+          "variable": "compartment_pressure",
+          "delta": 0.8,
+          "cause": "trauma + hemorrhage/edema in closed compartment"
+        },
+        {
+          "variable": "inflammation",
+          "delta": 0.45,
+          "cause": "tissue injury"
+        }
+      ]
+    },
+    "Myasthenia Gravis": {
+      "review_status": "unreviewed",
+      "description": "Autoimmune destruction of ACh receptors at NMJ → fatigable weakness.",
+      "perturbations": [
+        {
+          "variable": "neuromuscular_function",
+          "delta": -0.65,
+          "cause": "anti-AChR antibodies block NMJ transmission"
+        },
+        {
+          "variable": "weakness",
+          "delta": 0.6,
+          "cause": "reduced muscle activation per nerve impulse"
+        }
+      ]
+    },
+    "Polymyositis": {
+      "review_status": "unreviewed",
+      "description": "Autoimmune T-cell-mediated muscle inflammation → symmetric proximal weakness.",
+      "perturbations": [
+        {
+          "variable": "inflammation",
+          "delta": 0.7,
+          "cause": "CD8+ T-cell attack on myocytes"
+        },
+        {
+          "variable": "weakness",
+          "delta": 0.55,
+          "cause": "inflammatory damage reduces strength"
+        },
+        {
+          "variable": "ck_release",
+          "delta": 0.5,
+          "cause": "ongoing myocyte injury"
+        }
+      ]
+    },
+    "Dermatomyositis": {
+      "review_status": "unreviewed",
+      "description": "Inflammatory myopathy with immune-mediated muscle injury and characteristic skin involvement.",
+      "perturbations": [
+        {
+          "variable": "inflammation",
+          "delta": 0.7,
+          "cause": "immune-mediated muscle inflammation"
+        },
+        {
+          "variable": "weakness",
+          "delta": 0.6,
+          "cause": "proximal muscle fibers lose force generation"
+        },
+        {
+          "variable": "ck_release",
+          "delta": 0.5,
+          "cause": "injured myocytes release creatine kinase"
+        }
+      ]
+    },
+    "Toxic Statin Myopathy": {
+      "review_status": "unreviewed",
+      "description": "Medication-associated muscle injury ranging from myalgia to rhabdomyolysis.",
+      "perturbations": [
+        {
+          "variable": "inflammation",
+          "delta": 0.25,
+          "cause": "drug-associated muscle irritation"
+        },
+        {
+          "variable": "weakness",
+          "delta": 0.45,
+          "cause": "impaired muscle performance"
+        },
+        {
+          "variable": "necrosis",
+          "delta": 0.45,
+          "cause": "severe toxicity can damage myocytes"
+        },
+        {
+          "variable": "ck_release",
+          "delta": 0.6,
+          "cause": "muscle injury releases CK"
+        }
+      ]
+    }
+  }
+}

@@ -1,0 +1,100 @@
+<!doctype html><html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1"><link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin><link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,400;9..144,600;9..144,900&family=Newsreader:opsz,wght@6..72,400;6..72,500&family=JetBrains+Mono:wght@400;600&display=swap" rel="stylesheet"><style>
+:root{--paper:#f7f4ec;--ink:#1c1a17;--muted:#6b6356;--rule:#d8d0c0;--accent:#7c1d2b;
+--ok:#1f5d4c;--caution:#9a6a12;--adjust:#27496b;--avoid:#7c1d2b;--insufficient:#5b5750;}
+*{box-sizing:border-box}html{scroll-behavior:smooth}
+body{margin:0;background:var(--paper);color:var(--ink);font-family:"Newsreader",Georgia,serif;font-size:18px;line-height:1.55;
+background-image:radial-gradient(circle at 1px 1px,rgba(0,0,0,.025) 1px,transparent 0);background-size:22px 22px}
+main{max-width:840px;margin:0 auto;padding:52px 28px 92px}
+.masthead{border-bottom:3px double var(--ink);padding-bottom:24px}
+.kicker{font-family:"JetBrains Mono",monospace;font-size:11px;letter-spacing:.22em;text-transform:uppercase;color:var(--accent);margin:0 0 10px}
+h1{font-family:"Fraunces",serif;font-weight:900;font-size:clamp(32px,5.5vw,48px);line-height:1.03;margin:0 0 20px;letter-spacing:-.01em}
+.meta{display:grid;grid-template-columns:repeat(2,1fr);gap:2px 28px}
+.meta>div{display:flex;flex-direction:column;padding:7px 0;border-bottom:1px solid var(--rule)}
+.meta .full{grid-column:1/-1}
+.meta span{font-family:"JetBrains Mono",monospace;font-size:10px;letter-spacing:.15em;text-transform:uppercase;color:var(--muted)}
+.meta b{font-weight:500}
+.targets{margin:2px 0 0;padding-left:18px}.targets li{font-weight:500}
+.card{margin:28px 0;padding:22px 26px;background:#fffdf8;border:1px solid var(--rule);border-left:5px solid var(--insufficient);box-shadow:5px 6px 0 rgba(0,0,0,.04)}
+.card.ok{border-left-color:var(--ok)}.card.caution{border-left-color:var(--caution)}.card.adjust{border-left-color:var(--adjust)}
+.card.avoid{border-left-color:var(--avoid)}.card.emergency{border-left-color:#5a0f17}
+.card-head{display:flex;align-items:baseline;justify-content:space-between;gap:14px}
+.card-head h2{font-family:"Fraunces",serif;font-weight:600;font-size:28px;margin:0;text-transform:capitalize}
+.alias{font-family:"JetBrains Mono",monospace;font-size:11px;color:var(--muted);text-transform:none;font-weight:400}
+.badge{font-family:"JetBrains Mono",monospace;font-size:11px;font-weight:600;padding:5px 11px;border-radius:2px;white-space:nowrap;color:#fffdf8;background:var(--insufficient)}
+.badge.ok{background:var(--ok)}.badge.caution{background:var(--caution)}.badge.adjust{background:var(--adjust)}.badge.avoid{background:var(--avoid)}.badge.emergency{background:#5a0f17}
+.level{font-family:"JetBrains Mono",monospace;font-size:11px;letter-spacing:.04em;color:var(--muted);margin:4px 0 0;text-transform:uppercase}
+.role{font-weight:600}
+.role-primary_candidate{color:var(--ok)}
+.role-emergency_context_candidate{color:var(--avoid)}
+.role-conditional_candidate{color:var(--caution)}
+.role-mechanism_candidate{color:var(--muted)}
+.claims{list-style:none;margin:14px 0 6px;padding:0}
+.claims li{position:relative;padding:8px 0 8px 22px;border-bottom:1px dotted var(--rule)}
+.claims li:before{content:"";position:absolute;left:2px;top:16px;width:6px;height:6px;background:var(--muted);transform:rotate(45deg)}
+.claims li.risk:before{background:var(--accent)}.claims li.faers:before{background:var(--adjust)}
+.claims b{font-family:"Fraunces",serif;font-weight:600}
+.muted{color:var(--muted);font-size:14.5px}
+.dose{font-family:"JetBrains Mono",monospace;font-size:14px;background:#efe9da;padding:1px 6px}
+.block{color:var(--accent);font-style:italic}
+.verdict{margin:16px 0 0;padding:12px 16px;background:#efe9da;border-left:3px solid var(--ink)}
+.missing{font-family:"JetBrains Mono",monospace;font-size:12px;color:var(--muted);margin:8px 0 0}
+sup.cite{font-family:"JetBrains Mono",monospace;font-size:.62em;line-height:0;margin-left:1px}
+sup.cite a{text-decoration:none;color:var(--accent);font-weight:600;padding:0 2px;border-radius:2px}
+sup.cite a:hover{background:var(--accent);color:#fffdf8}
+.references{margin-top:50px;border-top:3px double var(--ink);padding-top:18px}
+.references h2{font-family:"Fraunces",serif;font-weight:900;font-size:24px;margin:0 0 14px}
+.refs{list-style:none;margin:0;padding:0}
+.refs li{position:relative;padding:10px 0 10px 34px;border-bottom:1px solid var(--rule);font-size:14.5px;line-height:1.5}
+.refs li.flash{background:#fbeec3;transition:background .25s}
+.rn{position:absolute;left:0;top:10px;font-family:"JetBrains Mono",monospace;font-size:12px;font-weight:600;color:var(--accent)}
+.refs .src{font-weight:500}.refs .sec{font-style:italic;color:#444}
+.refs code{font-family:"JetBrains Mono",monospace;font-size:11.5px;color:var(--muted)}
+.refs .ext{font-family:"JetBrains Mono",monospace;font-size:11.5px;color:var(--adjust);text-decoration:none}
+.refs .ext:hover{text-decoration:underline}.refs .note{color:var(--muted);font-style:italic}
+.disclaimer{margin-top:28px;padding:16px 20px;border:1px solid var(--accent);background:#fbf1ef}
+.disclaimer p{font-family:"Fraunces",serif;font-size:14px;color:var(--accent);margin:0;font-weight:500}
+.ref-group{font-family:"JetBrains Mono",monospace;font-size:10px;letter-spacing:.15em;text-transform:uppercase;color:var(--muted);margin:16px 0 6px}
+.muted-label{font-family:"JetBrains Mono",monospace;font-size:10px;letter-spacing:.1em;text-transform:uppercase;color:var(--muted);margin:6px 0 2px}
+ul.lbl{margin:4px 0 0;padding-left:18px}ul.lbl li{padding:3px 0;line-height:1.5}
+details.more{margin:4px 0 0}
+details.more>summary{font-family:"JetBrains Mono",monospace;font-size:11px;letter-spacing:.05em;color:var(--accent);cursor:pointer;list-style:none;padding:2px 0}
+details.more>summary::-webkit-details-marker{display:none}
+details.more>summary:before{content:"▸ ";font-size:10px}
+details.more[open]>summary:before{content:"▾ "}
+details.more>summary:hover{text-decoration:underline}
+details.more .full{margin:6px 0 0;padding:10px 12px;background:#fffdf8;border-left:2px solid var(--rule);font-size:15px;line-height:1.55}
+.refs.internal .rn{color:var(--muted)}
+sup.cite-int a{color:var(--muted)}
+sup.cite-int a:hover{background:var(--muted);color:#fffdf8}
+@media(max-width:560px){.meta{grid-template-columns:1fr}}
+</style><style>
+.card-head h2 .zh{font-family:"Newsreader",serif;font-weight:400;font-size:18px;color:var(--muted);margin-left:8px}
+.zh{font-size:16px}
+.ok-tag{font-family:"JetBrains Mono",monospace;font-size:10px;color:#fffdf8;background:var(--ok);padding:2px 7px;border-radius:2px;white-space:nowrap}
+.warn-tag{font-family:"JetBrains Mono",monospace;font-size:10px;color:#fffdf8;background:var(--caution);padding:2px 7px;border-radius:2px}
+.card .targets{margin:4px 0 0;padding-left:18px}
+.card .targets li{font-family:"JetBrains Mono",monospace;font-size:14px;padding:2px 0}
+</style></head><body><main><header class="masthead">
+      <p class="kicker">Drug Profile · Mechanism · Label · FAERS</p>
+      <h1>Aspirin</h1>
+      <div class="meta">
+        <div><span>Drug class</span><b>antiplatelet</b></div>
+        <div><span>Routes</span><b>oral</b></div>
+        <div><span>Product type</span><b>—</b></div>
+        <div><span>RxNorm CUI</span><b>—</b></div>
+        <div class="full"><span>Approved indications (label)</span><b>acute coronary syndrome, secondary prevention of cardiovascular events</b></div>
+      </div>
+    </header><section class="card"><div class="card-head"><h2>How it is used <span class="zh">使用方法</span></h2></div><p class="muted">Routes: oral</p><p>Acute Coronary Syndrome The initial dose is 162 mg to 325 mg, then 81 mg once daily</p><details class="more"><summary>show full label text (3 sections)</summary><ul class="lbl"><li>Acute Coronary Syndrome The initial dose is 162 mg to 325 mg, then 81 mg once daily</li><li>Maintenance Give 0.5 mg per kg up to 2.5 mg daily; do not exceed 5.5 mg in 24 hours</li><li>Renal Impairment No dosage adjustment is required</li></ul></details><sup class="cite cite-ext"><a href="https://dailymed.nlm.nih.gov/dailymed/drugInfo.cfm?setid=0058175f-3474-40c3-a046-6cfaec86d84b" target="_blank" rel="noopener" title="FDA label — openFDA / DailyMed SPL">1</a></sup></section><section class="card"><div class="card-head"><h2>Dosage <span class="zh">劑量</span></h2></div><ol class="claims"><li><b>acute coronary syndrome.</b> <span class="warn-tag">label text only — not validated for patient-specific use</span><div class="muted-label">label text<sup class="cite cite-ext"><a href="https://dailymed.nlm.nih.gov/dailymed/drugInfo.cfm?setid=0058175f-3474-40c3-a046-6cfaec86d84b" target="_blank" rel="noopener" title="FDA label — openFDA / DailyMed SPL">1</a></sup>:</div><p>verbatim label Dosage &amp; Administration text — populate via fetch</p></li></ol></section><section class="card"><div class="card-head"><h2>Adverse effects <span class="zh">副作用</span></h2></div><p>scaffold dyspepsia, GI bleeding, bruising</p><sup class="cite cite-ext"><a href="https://dailymed.nlm.nih.gov/dailymed/drugInfo.cfm?setid=0058175f-3474-40c3-a046-6cfaec86d84b" target="_blank" rel="noopener" title="FDA label — openFDA / DailyMed SPL">1</a></sup></section><section class="card"><div class="card-head"><h2>Body-state effects <span class="zh">會改變哪些人體數據</span></h2></div><ul class="targets"><li>blood.platelet_aggregation ↓ <span class="muted">(primary)</span></li><li>heart.ischemic_event_progression_risk ↓ <span class="muted">(derived)</span></li></ul><p class="muted">Direction of change this drug exerts on modeled organ-state variables<sup class="cite cite-int" title="Internal mechanism map (drug_mechanisms / state_effects) — estimated mechanism, not a clinical source">M1</sup>.</p></section><section class="card"><div class="card-head"><h2>Bad real-world record <span class="zh">不好的紀錄</span></h2></div><p>Most-reported events: fatigue (33496).<sup class="cite cite-ext"><a href="https://www.fda.gov/drugs/fda-adverse-event-monitoring-system-aems/fda-adverse-event-monitoring-system-aems-public-dashboard" target="_blank" rel="noopener" title="FDA FAERS — Adverse Event Reporting System (data via openFDA)">2</a></sup></p></section><section class="card"><div class="card-head"><h2>Who should not use it <span class="zh">哪些病人不建議使用</span></h2></div><ol class="claims"><li><b>Contraindications.</b> <p>scaffold hypersensitivity to NSAIDs/salicylates; active GI bleeding</p><sup class="cite cite-ext"><a href="https://dailymed.nlm.nih.gov/dailymed/drugInfo.cfm?setid=0058175f-3474-40c3-a046-6cfaec86d84b" target="_blank" rel="noopener" title="FDA label — openFDA / DailyMed SPL">1</a></sup></li><li><b>Warnings &amp; precautions.</b> <p>scaffold GI bleeding and ulceration; bleeding risk</p><sup class="cite cite-ext"><a href="https://dailymed.nlm.nih.gov/dailymed/drugInfo.cfm?setid=0058175f-3474-40c3-a046-6cfaec86d84b" target="_blank" rel="noopener" title="FDA label — openFDA / DailyMed SPL">1</a></sup></li><li><b>Drug interactions.</b> <p>scaffold anticoagulants (warfarin, heparin) increase bleeding risk; other NSAIDs</p><sup class="cite cite-ext"><a href="https://dailymed.nlm.nih.gov/dailymed/drugInfo.cfm?setid=0058175f-3474-40c3-a046-6cfaec86d84b" target="_blank" rel="noopener" title="FDA label — openFDA / DailyMed SPL">1</a></sup></li></ol></section>
+      <section class="references"><h2>References</h2><p class="ref-group">External sources (cited)</p><ol class="refs">
+<li><span class="rn">1</span><span class="src">FDA label — openFDA / DailyMed SPL</span> · <code>set_id 0058175f-3474-40c3-a046-6cfaec86d84b</code> &nbsp;<a class="ext" href="https://dailymed.nlm.nih.gov/dailymed/drugInfo.cfm?setid=0058175f-3474-40c3-a046-6cfaec86d84b" target="_blank" rel="noopener">view label ↗</a> <span class="note">— retrieved 2026-05-22</span></li>
+<li><span class="rn">2</span><span class="src">FDA FAERS — Adverse Event Reporting System (data via openFDA)</span> · <span class="sec">post-marketing spontaneous reports</span> &nbsp;<a class="ext" href="https://www.fda.gov/drugs/fda-adverse-event-monitoring-system-aems/fda-adverse-event-monitoring-system-aems-public-dashboard" target="_blank" rel="noopener">view source ↗</a> <span class="note">— official FDA data; signal only — a report does NOT mean the drug caused the event; may lag months</span></li>
+</ol>
+<p class="ref-group">Internal model — NOT an external source</p><ul class="refs internal">
+<li><span class="rn">M1</span><span class="src">Internal mechanism map (drug_mechanisms / state_effects)</span> · <span class="sec">irreversible COX-1 inhibition lowers platelet aggregation → lowers thrombus progression risk</span> <span class="note">— estimated mechanism, not a clinical source</span></li>
+</ul></section>
+      <footer class="disclaimer"><p>Reference information only. Label text is shown verbatim with source; doses are not individualized for any patient. Mechanism data is estimated. FAERS is signal, not causation. Clinical decisions require a licensed clinician.</p></footer>
+    </main><script>
+document.querySelectorAll('sup.cite a').forEach(function(a){a.addEventListener('click',function(){
+var el=document.getElementById('ref-'+this.dataset.n);if(!el)return;el.classList.remove('flash');void el.offsetWidth;el.classList.add('flash');
+setTimeout(function(){el.classList.remove('flash')},1400);});});
+</script></body></html>

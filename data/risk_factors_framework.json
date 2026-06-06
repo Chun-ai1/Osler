@@ -1,0 +1,92 @@
+{
+  "_metadata": {
+    "framework": "risk_factors",
+    "schema_version": "1.0",
+    "description": "Risk factor framework — modifiable vs non-modifiable, per-disease risk factors, common risk scores.",
+    "source": "Harrison's IM; USPSTF; major cardiology/oncology society guidelines",
+    "review_status": "unreviewed"
+  },
+
+  "risk_factor_categories": {
+    "non_modifiable": ["age", "sex", "ethnicity", "family history / genetics"],
+    "modifiable_lifestyle": ["smoking", "alcohol", "diet", "exercise", "weight (BMI)", "sleep"],
+    "modifiable_medical": ["hypertension", "diabetes", "dyslipidemia", "obesity", "anticoagulant use"],
+    "environmental": ["air pollution", "occupational exposures", "radiation", "infections (HPV→cervical, H. pylori→gastric)"],
+    "psychosocial": ["chronic stress", "low SES", "social isolation"]
+  },
+
+  "disease_risk_profiles": {
+    "atherosclerotic_CVD": {
+      "major": ["age (M>45, F>55)", "smoking", "hypertension", "diabetes", "dyslipidemia (high LDL)", "family history premature CAD"],
+      "score_systems": ["ASCVD pooled cohort equation", "Framingham risk score", "Reynolds (women)"]
+    },
+    "stroke": {
+      "shared_with_CVD": "yes",
+      "additional": ["AFib (CHADS2/CHA2DS2-VASc)", "carotid stenosis", "PFO/ASD", "OCP + smoking", "thrombophilia"]
+    },
+    "venous_thromboembolism": {
+      "Virchow_triad": ["stasis (immobility, surgery, long flight)", "endothelial injury (trauma, central line)", "hypercoagulability (cancer, OCP, pregnancy, thrombophilia)"],
+      "scores": ["Wells score for DVT/PE", "PERC rule (rule-out)"]
+    },
+    "type_2_diabetes": {
+      "major": ["family history", "obesity (BMI > 25)", "physical inactivity", "GDM history", "PCOS", "metabolic syndrome", "ethnicity (Hispanic, Asian, AA, Native)"],
+      "screening": "fasting glucose, HbA1c, OGTT"
+    },
+    "breast_cancer": {
+      "major": ["age", "family history", "BRCA1/2 mutation", "early menarche", "late menopause", "nulliparity", "HRT", "alcohol", "obesity"],
+      "scores": ["Gail model", "Tyrer-Cuzick"]
+    },
+    "colorectal_cancer": {
+      "major": ["age > 50", "family history", "FAP", "Lynch syndrome", "IBD", "diet (low fiber, high red meat)", "smoking", "alcohol"]
+    },
+    "lung_cancer": {
+      "major": ["smoking (#1)", "secondhand smoke", "radon", "asbestos", "family history"]
+    },
+    "osteoporosis": {
+      "major": ["age", "female sex (postmenopausal)", "white/Asian race", "low body weight", "family history", "smoking", "alcohol", "corticosteroids", "low Ca/vit D"],
+      "scores": ["FRAX (fracture risk)"]
+    },
+    "infection_severity_high_risk_groups": {
+      "_comment": "Groups at risk for severe outcomes from common infections.",
+      "elderly": ["pneumonia (S. pneumoniae)", "influenza", "COVID"],
+      "diabetic": ["foot infections", "UTI", "fungal", "Mucor (DKA)"],
+      "asplenic": ["encapsulated bacteria (S. pneumoniae, H. influenzae, N. meningitidis) — OPSI"],
+      "immunocompromised": ["PCP", "CMV", "Candida", "Cryptococcus", "TB reactivation"],
+      "neutropenic": ["gram-negatives, Pseudomonas, fungi"],
+      "neonatal": ["Group B Strep", "Listeria", "E. coli", "HSV"]
+    }
+  },
+
+  "common_risk_scores": {
+    "ASCVD_pooled_cohort": {
+      "factors": ["age", "sex", "race", "TC", "HDL", "SBP", "BP_treatment", "DM", "smoking"],
+      "output": "10-year ASCVD risk %"
+    },
+    "Framingham": {
+      "factors": ["age", "sex", "TC", "HDL", "SBP", "smoking", "DM"],
+      "output": "10-year CVD risk %"
+    },
+    "Wells_DVT": {
+      "factors": ["active cancer", "paralysis/immobility", "bedridden > 3d / surgery 12 wk", "tenderness along veins", "entire leg swelling", "calf swelling > 3 cm", "pitting edema", "collateral veins", "previous DVT"],
+      "interpretation": "≥3 high, 1-2 moderate, ≤0 low"
+    },
+    "Wells_PE": {
+      "factors": ["clinical signs DVT", "PE most likely diagnosis", "HR>100", "immobilization/surgery 4wk", "previous DVT/PE", "hemoptysis", "malignancy"],
+      "interpretation": ">6 high, 2-6 moderate, <2 low"
+    },
+    "CHADS2_CHA2DS2_VASc": {
+      "factors_CHA2DS2_VASc": ["CHF", "HTN", "age ≥75 (2 pts)", "DM", "stroke/TIA (2 pts)", "vascular disease", "age 65-74", "sex female"],
+      "interpretation": "≥2 anticoagulate (men) or ≥3 (women)"
+    },
+    "HAS_BLED": {
+      "factors": ["HTN", "abnormal renal/liver", "stroke", "bleeding history", "labile INR", "elderly>65", "drugs/alcohol"],
+      "interpretation": "score ≥3 high bleeding risk"
+    },
+    "MELD": {
+      "factors": ["bilirubin", "creatinine", "INR", "Na+"],
+      "use": "liver transplant priority, surgical risk in cirrhosis"
+    },
+    "Glasgow_Coma_Scale": {"see": "vital_signs_framework"},
+    "Apache_II_SOFA": {"use": "ICU mortality prediction"}
+  }
+}

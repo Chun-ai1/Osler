@@ -1,0 +1,117 @@
+{
+  "_meta": {
+    "version": "1.0",
+    "description": "Major fascial structures and tunnels"
+  },
+  "fascia": {
+    "plantar_fascia": {
+      "type": "fascia",
+      "origin": "medial_calcaneal_tuberosity",
+      "insertion": "metatarsal_heads_via_5_bands",
+      "function": [
+        "arch_support_windlass_mechanism",
+        "shock_absorption_during_walking"
+      ],
+      "innervation": "medial_calcaneal_nerve_S1_S2",
+      "blood_supply": "lateral_plantar_artery",
+      "common_pathology": [
+        "Plantar Fasciitis_inflammation_at_origin",
+        "plantar_fibromatosis"
+      ],
+      "clinical_signs": [
+        "heel_pain_morning_first_steps_classic",
+        "tender_medial_calcaneal_tubercle",
+        "pain_with_dorsiflexion_of_toes_windlass_test"
+      ]
+    },
+    "carpal_tunnel": {
+      "type": "fascia_structure",
+      "components": [
+        "flexor_retinaculum_roof",
+        "carpal_bones_floor",
+        "9_tendons_and_median_nerve_contents"
+      ],
+      "function": "passage_for_finger_flexor_tendons_and_median_nerve",
+      "common_pathology": [
+        "Carpal Tunnel Syndrome_median_nerve_compression"
+      ],
+      "clinical_signs": [
+        "Tinel_sign_tap_at_wrist",
+        "Phalen_sign_flexion_60sec",
+        "thenar_atrophy_late",
+        "nocturnal_paresthesias_classic"
+      ]
+    },
+    "cubital_tunnel": {
+      "type": "fascia_structure",
+      "components": [
+        "medial_epicondyle_humerus",
+        "olecranon",
+        "Osborne_ligament_arcuate_ligament"
+      ],
+      "function": "passage_for_ulnar_nerve_at_elbow",
+      "common_pathology": [
+        "Cubital Tunnel Syndrome_ulnar_nerve_compression"
+      ],
+      "clinical_signs": [
+        "Tinel_at_medial_elbow",
+        "elbow_flexion_test_positive_60_sec",
+        "pinky_ring_paresthesia",
+        "claw_hand_late"
+      ]
+    },
+    "tarsal_tunnel": {
+      "type": "fascia_structure",
+      "components": [
+        "flexor_retinaculum_medial_ankle",
+        "medial_malleolus",
+        "tibial_nerve_contents"
+      ],
+      "function": "passage_for_tibial_nerve_and_tendons",
+      "common_pathology": [
+        "Tarsal Tunnel Syndrome_tibial_nerve_compression"
+      ],
+      "clinical_signs": [
+        "Tinel_at_medial_ankle",
+        "burning_sole_foot_pain",
+        "worse_with_activity"
+      ]
+    },
+    "iliotibial_band": {
+      "type": "fascia",
+      "origin": "iliac_crest_TFL",
+      "insertion": "Gerdy_tubercle_lateral_tibia",
+      "function": [
+        "lateral_knee_stabilization",
+        "hip_abductor_assistant"
+      ],
+      "common_pathology": [
+        "IT_Band_Syndrome_runners_knee",
+        "snapping_hip_external_type"
+      ],
+      "clinical_signs": [
+        "lateral_knee_pain_with_running",
+        "Ober_test_positive_IT_band_tightness"
+      ]
+    },
+    "thoracolumbar_fascia": {
+      "type": "fascia",
+      "components": [
+        "posterior_layer_attaches_to_paraspinal_muscles",
+        "anterior_layer"
+      ],
+      "function": [
+        "load_transfer_trunk_to_lower_limb",
+        "core_stability"
+      ],
+      "common_pathology": [
+        "chronic_low_back_pain_myofascial",
+        "fascial_restriction"
+      ],
+      "clinical_signs": [
+        "paraspinal_tightness",
+        "limited_lumbar_flexion"
+      ]
+    }
+  }
+}

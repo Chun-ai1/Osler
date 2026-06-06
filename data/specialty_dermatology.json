@@ -1,0 +1,130 @@
+{
+  "_metadata": {
+    "framework": "specialty_dermatology",
+    "schema_version": "1.0",
+    "description": "Dermatology framework — morphology terminology, common rashes, skin cancers.",
+    "source": "Fitzpatrick Dermatology in General Medicine",
+    "review_status": "unreviewed"
+  },
+
+  "morphology_terms": {
+    "primary_lesions": {
+      "macule": "flat, <1cm, color change only",
+      "patch": "flat, >1cm",
+      "papule": "raised, <1cm, solid",
+      "plaque": "raised, >1cm, plateau-like",
+      "nodule": "deeper, solid, palpable",
+      "vesicle": "fluid-filled, <1cm",
+      "bulla": "fluid-filled, >1cm",
+      "pustule": "pus-filled",
+      "wheal": "transient raised edematous (urticaria)",
+      "cyst": "encapsulated cavity"
+    },
+    "secondary_lesions": {
+      "scale": "flakes of stratum corneum (psoriasis, eczema)",
+      "crust": "dried exudate",
+      "erosion": "loss of epidermis",
+      "ulcer": "loss of epidermis + dermis",
+      "fissure": "linear crack",
+      "lichenification": "thickened skin from chronic rubbing",
+      "atrophy": "thin skin",
+      "scar": "fibrous tissue replacement"
+    },
+    "distribution_patterns": {
+      "dermatomal": "shingles",
+      "symmetric_extensor": "psoriasis",
+      "flexural": "atopic dermatitis",
+      "photodistributed": "lupus, drug eruption",
+      "acral": "Stevens-Johnson, hand-foot-mouth"
+    }
+  },
+
+  "common_inflammatory_rashes": {
+    "atopic_dermatitis_eczema": {
+      "distribution": "flexural (adults), face/extensor (infants)",
+      "morphology": "erythematous patches with scale, vesicles, lichenification",
+      "treatment": ["topical steroids", "moisturizers", "topical calcineurin inhibitors", "dupilumab (severe)"]
+    },
+    "contact_dermatitis": {
+      "types": ["allergic (Type IV)", "irritant"],
+      "morphology": "geometric/sharp borders, vesicles",
+      "common_allergens": ["nickel", "poison ivy", "fragrance", "preservatives"]
+    },
+    "psoriasis": {
+      "morphology": "well-demarcated plaques with silvery scale",
+      "distribution": "scalp, elbows, knees, nails",
+      "auspitz_sign": "pinpoint bleeding when scale removed",
+      "associated": "psoriatic arthritis (20%)",
+      "treatment": ["topical steroids", "vit D analogs", "phototherapy", "biologics (TNF, IL-17, IL-23)"]
+    },
+    "seborrheic_dermatitis": "scalp/face greasy scale, Malassezia",
+    "lichen_planus": "purple polygonal pruritic papules; Wickham striae"
+  },
+
+  "infectious_skin_conditions": {
+    "bacterial": {
+      "impetigo": "honey-crusted lesions (Staph or Strep)",
+      "folliculitis": "pustules around hair follicles",
+      "furuncle_carbuncle": "deep abscess",
+      "cellulitis": {"see": "skin.json state model"},
+      "erysipelas": "well-demarcated, raised, often facial (GAS)",
+      "necrotizing_fasciitis": "pain out of proportion, crepitus, rapid spread, surgical emergency"
+    },
+    "viral": {
+      "warts_HPV": "verruca vulgaris/plantaris",
+      "molluscum_contagiosum": "umbilicated papules",
+      "herpes_simplex": "grouped vesicles",
+      "herpes_zoster": "dermatomal vesicles"
+    },
+    "fungal": {
+      "tinea_dermatophyte": "ring-shaped scaly plaque (corporis, cruris, pedis, capitis, unguium)",
+      "candida": "satellite pustules in skin folds",
+      "tinea_versicolor": "Malassezia, hypo/hyperpigmented macules"
+    },
+    "parasitic": {
+      "scabies": "intense itch worse at night, burrows, web spaces",
+      "lice_pediculosis": "scalp, body, pubic"
+    }
+  },
+
+  "skin_cancers": {
+    "basal_cell_carcinoma_BCC": {
+      "appearance": "pearly papule with telangiectasias, rolled border, central ulcer",
+      "behavior": "locally invasive, rarely metastasizes",
+      "risk_factors": ["UV exposure", "fair skin"]
+    },
+    "squamous_cell_carcinoma_SCC": {
+      "appearance": "scaly/crusted/ulcerated papule on sun-exposed skin",
+      "precursor": "actinic keratosis",
+      "behavior": "can metastasize",
+      "risk_factors": ["UV", "immunosuppression", "HPV"]
+    },
+    "melanoma": {
+      "ABCDE": ["Asymmetry", "Border irregular", "Color variation", "Diameter >6mm", "Evolving"],
+      "subtypes": ["superficial spreading (most common)", "nodular", "lentigo maligna", "acral lentiginous"],
+      "depth_prognostic": "Breslow thickness",
+      "behavior": "highly metastatic if invasive"
+    }
+  },
+
+  "drug_reactions": {
+    "morbilliform_eruption": "most common, 7-14 days after start; benign",
+    "DRESS": "Drug Reaction with Eosinophilia + Systemic Symptoms; fever, rash, organ involvement",
+    "SJS_TEN": "Stevens-Johnson (<10% BSA) / TEN (>30%) — sloughing, mucosa, mortality high; stop drug urgently",
+    "AGEP": "Acute Generalized Exanthematous Pustulosis",
+    "fixed_drug_eruption": "same location with re-exposure"
+  },
+
+  "autoimmune_blistering": {
+    "pemphigus_vulgaris": "intraepidermal, anti-desmoglein 3, mucosal involvement, Nikolsky positive",
+    "bullous_pemphigoid": "subepidermal, anti-BP180/BP230, elderly, tense bullae",
+    "dermatitis_herpetiformis": "associated with celiac, IgA deposits"
+  },
+
+  "vascular_skin_lesions": {
+    "purpura_petechiae": "extravasated blood; non-blanching",
+    "ecchymosis": "bruise, larger than purpura",
+    "telangiectasia": "dilated capillaries",
+    "hemangioma": "vascular tumor"
+  }
+}

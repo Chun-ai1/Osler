@@ -1,0 +1,64 @@
+{
+  "Neurology": [
+    "neurovascular",
+    "cortical spreading depression",
+    "trigeminovascular",
+    "central sensitization",
+    "intracranial pressure",
+    "mening",
+    "seizure",
+    "migraine",
+    "stroke"
+  ],
+  "Infectious Disease": [
+    "inflammation",
+    "cytokine",
+    "bacterial",
+    "viral",
+    "infection",
+    "sepsis",
+    "fever",
+    "meningitis",
+    "pneumonia"
+  ],
+  "Pulmonology": [
+    "bronch",
+    "airway",
+    "hypox",
+    "alveolar",
+    "asthma",
+    "respiratory failure"
+  ],
+  "Cardiology": [
+    "ischemia",
+    "myocard",
+    "arrhythm",
+    "hypertension",
+    "heart failure",
+    "vascular"
+  ],
+  "Gastroenterology": [
+    "gastric",
+    "enter",
+    "colitis",
+    "hepat",
+    "reflux",
+    "diarrhea",
+    "vomit"
+  ],
+  "Urology": [
+    "urine",
+    "kidney",
+    "renal",
+    "cystitis",
+    "pyelonephritis",
+    "flank pain"
+  ],
+  "Endocrinology": [
+    "glucose",
+    "diabetes",
+    "insulin",
+    "thyroid",
+    "metabolic"
+  ]
+}

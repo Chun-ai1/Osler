@@ -1,0 +1,487 @@
+[
+  {
+    "name": "chest_pain_sob",
+    "symptoms": [
+      "chest pain",
+      "shortness of breath"
+    ],
+    "priority": 3.0,
+    "penalize_mechanisms": [
+      "headache",
+      "migraine",
+      "tension-type"
+    ],
+    "reward_mechanisms": [
+      "myocard",
+      "ischemi",
+      "acute coronary",
+      "angina",
+      "pulmonary embol",
+      "embol",
+      "cardiac",
+      "heart failure",
+      "respiratory",
+      "aortic dissection",
+      "pericard"
+    ],
+    "bucket": "combo_risk"
+  },
+  {
+    "name": "chest_pain_single",
+    "symptoms": [
+      "chest pain"
+    ],
+    "priority": 2.0,
+    "triage_floor": "PROMPT",
+    "hard_block_otc": true,
+    "note": "Any chest pain requires minimum PROMPT evaluation",
+    "bucket": "observed_red_flag",
+    "freeze_syndrome_label": "mixed high-risk chest-pain syndrome",
+    "freeze_priority": 10
+  },
+  {
+    "name": "sob_single",
+    "symptoms": [
+      "shortness of breath"
+    ],
+    "priority": 2.0,
+    "triage_floor": "PROMPT",
+    "hard_block_otc": true,
+    "bucket": "observed_red_flag",
+    "freeze_syndrome_label": "mixed respiratory / cardiopulmonary syndrome",
+    "freeze_priority": 9
+  },
+  {
+    "name": "syncope",
+    "symptoms": [
+      "syncope"
+    ],
+    "priority": 4.0,
+    "triage_floor": "EMERGENCY",
+    "hard_block_otc": true,
+    "bucket": "observed_red_flag",
+    "freeze_syndrome_label": "high-risk syncope syndrome",
+    "freeze_priority": 8
+  },
+  {
+    "name": "fainting",
+    "symptoms": [
+      "fainting"
+    ],
+    "priority": 4.0,
+    "triage_floor": "EMERGENCY",
+    "hard_block_otc": true,
+    "bucket": "observed_red_flag",
+    "freeze_syndrome_label": "high-risk syncope syndrome",
+    "freeze_priority": 8
+  },
+  {
+    "name": "hemoptysis",
+    "symptoms": [
+      "hemoptysis"
+    ],
+    "priority": 3.0,
+    "triage_floor": "URGENT",
+    "hard_block_otc": true,
+    "bucket": "observed_red_flag",
+    "freeze_syndrome_label": "high-risk respiratory bleeding syndrome",
+    "freeze_priority": 7
+  },
+  {
+    "name": "hematemesis",
+    "symptoms": [
+      "hematemesis"
+    ],
+    "priority": 3.0,
+    "triage_floor": "URGENT",
+    "hard_block_otc": true,
+    "bucket": "observed_red_flag",
+    "freeze_syndrome_label": "high-risk GI bleeding syndrome",
+    "freeze_priority": 7
+  },
+  {
+    "name": "melena",
+    "symptoms": [
+      "melena"
+    ],
+    "priority": 3.0,
+    "triage_floor": "URGENT",
+    "hard_block_otc": true,
+    "bucket": "observed_red_flag",
+    "freeze_syndrome_label": "high-risk GI bleeding syndrome",
+    "freeze_priority": 7
+  },
+  {
+    "name": "bloody_stool",
+    "symptoms": [
+      "bloody stool"
+    ],
+    "priority": 3.0,
+    "triage_floor": "URGENT",
+    "hard_block_otc": true,
+    "bucket": "observed_red_flag",
+    "freeze_syndrome_label": "high-risk GI bleeding syndrome",
+    "freeze_priority": 7
+  },
+  {
+    "name": "severe_abdominal_pain",
+    "symptoms": [
+      "severe abdominal pain"
+    ],
+    "priority": 3.0,
+    "triage_floor": "URGENT",
+    "hard_block_otc": true,
+    "bucket": "observed_red_flag",
+    "freeze_syndrome_label": "high-risk abdominal syndrome",
+    "freeze_priority": 7
+  },
+  {
+    "name": "worst_headache",
+    "symptoms": [
+      "worst headache"
+    ],
+    "priority": 4.0,
+    "triage_floor": "EMERGENCY",
+    "hard_block_otc": true,
+    "bucket": "observed_red_flag",
+    "freeze_syndrome_label": "high-risk headache — rule out SAH",
+    "freeze_priority": 9
+  },
+  {
+    "name": "thunderclap_headache",
+    "symptoms": [
+      "thunderclap headache"
+    ],
+    "priority": 4.0,
+    "triage_floor": "EMERGENCY",
+    "hard_block_otc": true,
+    "bucket": "observed_red_flag",
+    "freeze_syndrome_label": "high-risk headache — rule out SAH",
+    "freeze_priority": 9
+  },
+  {
+    "name": "stiff_neck",
+    "symptoms": [
+      "stiff neck"
+    ],
+    "priority": 3.0,
+    "triage_floor": "URGENT",
+    "hard_block_otc": true,
+    "bucket": "observed_red_flag"
+  },
+  {
+    "name": "altered_mental_status",
+    "symptoms": [
+      "altered mental status"
+    ],
+    "priority": 4.0,
+    "triage_floor": "EMERGENCY",
+    "hard_block_otc": true,
+    "bucket": "observed_red_flag",
+    "freeze_syndrome_label": "high-risk neurologic syndrome",
+    "freeze_priority": 9
+  },
+  {
+    "name": "focal_weakness",
+    "symptoms": [
+      "focal weakness"
+    ],
+    "priority": 4.0,
+    "triage_floor": "EMERGENCY",
+    "hard_block_otc": true,
+    "bucket": "observed_red_flag",
+    "freeze_syndrome_label": "high-risk neurologic syndrome — rule out stroke",
+    "freeze_priority": 9
+  },
+  {
+    "name": "slurred_speech",
+    "symptoms": [
+      "slurred speech"
+    ],
+    "priority": 4.0,
+    "triage_floor": "EMERGENCY",
+    "hard_block_otc": true,
+    "bucket": "observed_red_flag",
+    "freeze_syndrome_label": "high-risk neurologic syndrome — rule out stroke",
+    "freeze_priority": 9
+  },
+  {
+    "name": "vision_loss",
+    "symptoms": [
+      "vision loss"
+    ],
+    "priority": 3.0,
+    "triage_floor": "URGENT",
+    "hard_block_otc": true,
+    "bucket": "observed_red_flag"
+  },
+  {
+    "name": "confusion",
+    "symptoms": [
+      "confusion"
+    ],
+    "priority": 3.0,
+    "triage_floor": "URGENT",
+    "hard_block_otc": true,
+    "always_watch": true,
+    "bucket": "observed_red_flag",
+    "freeze_syndrome_label": "high-risk neurologic syndrome",
+    "freeze_priority": 8
+  },
+  {
+    "name": "neuro_stroke_combo",
+    "symptoms": [
+      "focal weakness",
+      "slurred speech"
+    ],
+    "priority": 5.0,
+    "triage_floor": "EMERGENCY",
+    "hard_block_otc": true,
+    "note": "Stroke combination",
+    "bucket": "observed_red_flag",
+    "freeze_syndrome_label": "high-risk neurologic syndrome — rule out stroke",
+    "freeze_priority": 10
+  },
+  {
+    "name": "meningitis_combo",
+    "symptoms": [
+      "stiff neck",
+      "fever",
+      "headache"
+    ],
+    "priority": 4.0,
+    "triage_floor": "EMERGENCY",
+    "note": "Meningitis triad",
+    "bucket": "combo_risk"
+  },
+  {
+    "name": "vomiting_blood_watch",
+    "symptoms": [
+      "vomiting"
+    ],
+    "priority": 1.0,
+    "watch_for": "vomiting blood",
+    "watch_gate": [
+      "vomiting"
+    ],
+    "note": "Only show if actual vomiting present",
+    "bucket": "watch_for"
+  },
+  {
+    "name": "fainting_watch",
+    "symptoms": [
+      "dizziness",
+      "palpitations"
+    ],
+    "priority": 1.5,
+    "watch_for": "fainting or loss of consciousness",
+    "watch_gate": [
+      "dizziness",
+      "palpitations"
+    ],
+    "bucket": "watch_for"
+  },
+  {
+    "name": "jaundice_watch",
+    "symptoms": [
+      "abdominal pain",
+      "nausea"
+    ],
+    "priority": 1.0,
+    "watch_for": "yellowing of skin or eyes (jaundice)",
+    "watch_gate": [
+      "abdominal pain",
+      "nausea"
+    ],
+    "bucket": "watch_for"
+  },
+  {
+    "name": "gi_dehydration_risk",
+    "symptoms": [
+      "diarrhea",
+      "vomiting"
+    ],
+    "priority": 1.5,
+    "bucket": "combo_risk",
+    "watch_for": "signs of dehydration (dry mouth, reduced urine, dizziness)",
+    "note": "Vomiting + diarrhea together raise dehydration risk"
+  },
+  {
+    "name": "respiratory_gi_mixed",
+    "symptoms": [
+      "cough",
+      "diarrhea"
+    ],
+    "priority": 1.2,
+    "bucket": "combo_risk",
+    "note": "Mixed respiratory + GI pattern — consider systemic viral illness"
+  },
+  {
+    "name": "fever_dehydration_escalator",
+    "symptoms": [
+      "fever",
+      "vomiting"
+    ],
+    "priority": 1.5,
+    "bucket": "combo_risk",
+    "watch_for": "signs of severe dehydration, inability to keep fluids down"
+  },
+  {
+    "name": "always_watch_confusion",
+    "symptoms": [],
+    "priority": 1.0,
+    "bucket": "watch_for",
+    "watch_for": "confusion",
+    "always": true,
+    "note": "Show this watch-for item regardless of symptom set"
+  },
+  {
+    "name": "always_watch_fainting",
+    "symptoms": [],
+    "priority": 1.0,
+    "bucket": "watch_for",
+    "watch_for": "fainting",
+    "always": true,
+    "note": "Show this watch-for item regardless of symptom set"
+  },
+  {
+    "name": "watch_chest_pain",
+    "symptoms": [
+      "chest pain",
+      "palpitations",
+      "shortness of breath"
+    ],
+    "priority": 1.0,
+    "bucket": "watch_for",
+    "watch_for": "chest pain",
+    "note": "Show only when one of ['chest pain', 'palpitations', 'shortness of breath'] is present"
+  },
+  {
+    "name": "watch_bloody_or_dark_stool",
+    "symptoms": [
+      "diarrhea",
+      "abdominal pain"
+    ],
+    "priority": 1.0,
+    "bucket": "watch_for",
+    "watch_for": "bloody or dark stool",
+    "note": "Show only when one of ['diarrhea', 'abdominal pain'] is present"
+  },
+  {
+    "name": "watch_vomiting_blood",
+    "symptoms": [
+      "vomiting"
+    ],
+    "priority": 1.0,
+    "bucket": "watch_for",
+    "watch_for": "vomiting blood",
+    "note": "Show only when one of ['vomiting'] is present"
+  },
+  {
+    "name": "watch_severe_abdominal_pain",
+    "symptoms": [
+      "abdominal pain",
+      "nausea",
+      "vomiting",
+      "diarrhea"
+    ],
+    "priority": 1.0,
+    "bucket": "watch_for",
+    "watch_for": "severe abdominal pain",
+    "note": "Show only when one of ['abdominal pain', 'nausea', 'vomiting', 'diarrhea'] is present"
+  },
+  {
+    "name": "watch_high_fever",
+    "symptoms": [
+      "fever",
+      "chills",
+      "nausea",
+      "vomiting"
+    ],
+    "priority": 1.0,
+    "bucket": "watch_for",
+    "watch_for": "high fever",
+    "note": "Show only when one of ['fever', 'chills', 'nausea', 'vomiting'] is present"
+  },
+  {
+    "name": "watch_persistent_vomiting",
+    "symptoms": [
+      "vomiting",
+      "nausea"
+    ],
+    "priority": 1.0,
+    "bucket": "watch_for",
+    "watch_for": "persistent vomiting",
+    "note": "Show only when one of ['vomiting', 'nausea'] is present"
+  },
+  {
+    "name": "watch_inability_to_keep_fluids_down",
+    "symptoms": [
+      "nausea",
+      "vomiting"
+    ],
+    "priority": 1.0,
+    "bucket": "watch_for",
+    "watch_for": "inability to keep fluids down",
+    "note": "Show only when one of ['nausea', 'vomiting'] is present"
+  },
+  {
+    "name": "watch_severe_dehydration",
+    "symptoms": [
+      "nausea",
+      "vomiting",
+      "diarrhea",
+      "dizziness"
+    ],
+    "priority": 1.0,
+    "bucket": "watch_for",
+    "watch_for": "severe dehydration",
+    "note": "Show only when one of ['nausea', 'vomiting', 'diarrhea', 'dizziness'] is present"
+  },
+  {
+    "name": "watch_fainting",
+    "symptoms": [
+      "dizziness",
+      "nausea",
+      "weakness",
+      "palpitations"
+    ],
+    "priority": 1.0,
+    "bucket": "watch_for",
+    "watch_for": "fainting",
+    "note": "Show only when one of ['dizziness', 'nausea', 'weakness', 'palpitations'] is present"
+  },
+  {
+    "name": "watch_rash_with_fever",
+    "symptoms": [
+      "fever",
+      "rash",
+      "redness"
+    ],
+    "priority": 1.0,
+    "bucket": "watch_for",
+    "watch_for": "rash with fever",
+    "note": "Show only when one of ['fever', 'rash', 'redness'] is present"
+  },
+  {
+    "name": "watch_jaundice",
+    "symptoms": [
+      "abdominal pain",
+      "nausea"
+    ],
+    "priority": 1.0,
+    "bucket": "watch_for",
+    "watch_for": "jaundice",
+    "note": "Show only when one of ['abdominal pain', 'nausea'] is present"
+  },
+  {
+    "name": "watch_worsening_dizziness",
+    "symptoms": [
+      "dizziness"
+    ],
+    "priority": 1.0,
+    "bucket": "watch_for",
+    "watch_for": "worsening dizziness",
+    "note": "Show only when one of ['dizziness'] is present"
+  }
+]

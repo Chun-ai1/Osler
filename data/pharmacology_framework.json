@@ -1,0 +1,215 @@
+{
+  "_metadata": {
+    "framework": "pharmacology",
+    "schema_version": "1.0",
+    "description": "Drug classes, mechanisms, effects on state variables, common side effects, key interactions. Bridges drugs ↔ state model: drug exposure → state perturbation; perturbed state → consider drug effects.",
+    "source": "Goodman & Gilman; Lippincott Pharmacology; UpToDate",
+    "review_status": "unreviewed"
+  },
+
+  "drug_classes": {
+    "beta_blockers": {
+      "mechanism": "β1/β2 adrenergic antagonism",
+      "examples": ["metoprolol", "carvedilol", "propranolol", "atenolol"],
+      "indications": ["hypertension", "CHF", "post-MI", "rate control AF", "migraine prevention"],
+      "state_effects": [
+        {"organ": "heart", "state": "sympathetic_drive", "delta": -0.4},
+        {"organ": "heart", "state": "contractility", "delta": -0.3, "inverse_state": true},
+        {"organ": "heart", "state": "electrical_instability", "delta": -0.3}
+      ],
+      "side_effects": ["bradycardia", "hypotension", "bronchospasm (non-selective)", "fatigue", "depression"],
+      "contraindications": ["severe asthma", "decompensated HF", "AV block"],
+      "interactions": ["calcium channel blockers (additive bradycardia)", "verapamil (avoid)"],
+      "review_status": "unreviewed"
+    },
+    "ACE_inhibitors": {
+      "mechanism": "block angiotensin-converting enzyme → less angiotensin II",
+      "examples": ["lisinopril", "enalapril", "ramipril", "captopril"],
+      "indications": ["hypertension", "CHF", "post-MI", "diabetic nephropathy"],
+      "state_effects": [
+        {"organ": "heart", "state": "afterload", "delta": -0.3},
+        {"organ": "kidney", "state": "filtration", "delta": -0.1, "rationale": "small drop in GFR initially"}
+      ],
+      "side_effects": ["dry cough", "hyperkalemia", "AKI", "angioedema", "fetal toxicity"],
+      "contraindications": ["pregnancy", "bilateral renal artery stenosis", "hyperkalemia"],
+      "interactions": ["NSAIDs (reduce efficacy + AKI risk)", "potassium-sparing diuretics"],
+      "review_status": "unreviewed"
+    },
+    "diuretics_loop": {
+      "mechanism": "block NKCC2 in thick ascending limb of Henle",
+      "examples": ["furosemide", "bumetanide", "torsemide"],
+      "indications": ["CHF", "pulmonary edema", "hypertension (refractory)", "AKI with volume overload"],
+      "state_effects": [
+        {"organ": "kidney", "state": "fluid_retention", "delta": -0.5},
+        {"organ": "heart", "state": "preload", "delta": -0.4}
+      ],
+      "side_effects": ["hypokalemia", "hypomagnesemia", "ototoxicity", "hypovolemia", "metabolic alkalosis"],
+      "review_status": "unreviewed"
+    },
+    "statins": {
+      "mechanism": "HMG-CoA reductase inhibition",
+      "examples": ["atorvastatin", "rosuvastatin", "simvastatin"],
+      "indications": ["hyperlipidemia", "ASCVD prevention", "post-MI"],
+      "state_effects": [
+        {"organ": "heart", "state": "ischemia", "delta": -0.1, "rationale": "long-term plaque stabilization"}
+      ],
+      "side_effects": ["myalgia", "rhabdomyolysis (rare)", "hepatotoxicity", "diabetes risk"],
+      "interactions": ["fibrates (myopathy)", "macrolides", "grapefruit"],
+      "review_status": "unreviewed"
+    },
+    "anticoagulants_warfarin": {
+      "mechanism": "vitamin K epoxide reductase inhibitor → blocks factor II,VII,IX,X",
+      "examples": ["warfarin"],
+      "indications": ["AF", "VTE", "mechanical heart valves"],
+      "state_effects": [
+        {"organ": "liver", "state": "synthetic_function", "delta": -0.2, "rationale": "pharmacologic anticoag (mimics liver dysfunction)"}
+      ],
+      "side_effects": ["bleeding", "skin necrosis", "teratogenic"],
+      "interactions": ["many (antibiotics, NSAIDs, alcohol, food)"],
+      "monitoring": "INR target 2-3 (mechanical valve 2.5-3.5)",
+      "review_status": "unreviewed"
+    },
+    "anticoagulants_DOAC": {
+      "mechanism": "direct factor Xa or thrombin inhibitor",
+      "examples": ["apixaban", "rivaroxaban", "dabigatran", "edoxaban"],
+      "indications": ["AF", "VTE"],
+      "side_effects": ["bleeding (less than warfarin in head)", "GI bleed (rivaroxaban)"],
+      "review_status": "unreviewed"
+    },
+    "antiplatelets": {
+      "mechanism": "block ADP receptor (P2Y12) or COX-1 (aspirin)",
+      "examples": ["aspirin", "clopidogrel", "ticagrelor", "prasugrel"],
+      "indications": ["ACS", "stroke prevention", "post-stent"],
+      "side_effects": ["bleeding", "GI ulceration", "rare TTP (clopidogrel)"],
+      "review_status": "unreviewed"
+    },
+    "antibiotics_beta_lactams": {
+      "mechanism": "inhibit bacterial cell wall synthesis (PBP)",
+      "examples": ["penicillin", "amoxicillin", "ceftriaxone", "cefepime", "meropenem"],
+      "spectrum": "varies by generation; broad gram+ to broad gram-",
+      "state_effects": [
+        {"organ": "blood", "state": "infection_load", "delta": -0.5}
+      ],
+      "side_effects": ["allergy", "C. difficile colitis", "renal (cephalosporins)"],
+      "review_status": "unreviewed"
+    },
+    "antibiotics_fluoroquinolones": {
+      "mechanism": "DNA gyrase / topoisomerase IV inhibition",
+      "examples": ["ciprofloxacin", "levofloxacin", "moxifloxacin"],
+      "side_effects": ["QT prolongation", "tendon rupture", "C. difficile", "CNS effects"],
+      "blackbox": "tendon rupture, peripheral neuropathy",
+      "review_status": "unreviewed"
+    },
+    "antibiotics_macrolides": {
+      "mechanism": "50S ribosomal inhibition",
+      "examples": ["azithromycin", "clarithromycin", "erythromycin"],
+      "side_effects": ["QT prolongation", "GI upset", "ototoxicity (high dose)"],
+      "review_status": "unreviewed"
+    },
+    "antibiotics_vancomycin": {
+      "mechanism": "cell wall synthesis (D-Ala-D-Ala binding)",
+      "indications": ["MRSA", "severe gram+ infections"],
+      "side_effects": ["red man syndrome (infusion)", "nephrotoxicity", "ototoxicity"],
+      "monitoring": "trough levels",
+      "review_status": "unreviewed"
+    },
+    "NSAIDs": {
+      "mechanism": "COX-1/COX-2 inhibition → less prostaglandin",
+      "examples": ["ibuprofen", "naproxen", "ketorolac", "celecoxib (COX-2 selective)"],
+      "side_effects": ["GI bleed/ulcer", "AKI", "hypertension", "cardiovascular risk"],
+      "contraindications": ["CKD", "active GI bleed", "CHF", "third trimester pregnancy"],
+      "state_effects": [
+        {"organ": "gi", "state": "mucosal_inflammation", "delta": 0.3},
+        {"organ": "kidney", "state": "perfusion", "delta": -0.2}
+      ],
+      "review_status": "unreviewed"
+    },
+    "opioids": {
+      "mechanism": "μ-opioid receptor agonism",
+      "examples": ["morphine", "fentanyl", "oxycodone", "hydromorphone"],
+      "indications": ["severe pain"],
+      "side_effects": ["respiratory depression", "constipation", "nausea", "sedation", "dependence"],
+      "antidote": "naloxone",
+      "review_status": "unreviewed"
+    },
+    "benzodiazepines": {
+      "mechanism": "GABA-A receptor positive allosteric modulator",
+      "examples": ["lorazepam", "midazolam", "diazepam", "alprazolam"],
+      "indications": ["anxiety", "seizures (status)", "alcohol withdrawal", "sedation"],
+      "side_effects": ["respiratory depression (with opioids)", "delirium (elderly)", "dependence"],
+      "antidote": "flumazenil",
+      "review_status": "unreviewed"
+    },
+    "corticosteroids": {
+      "mechanism": "glucocorticoid receptor → anti-inflammatory + immunosuppressive",
+      "examples": ["prednisone", "methylprednisolone", "dexamethasone", "hydrocortisone"],
+      "state_effects": [
+        {"organ": null, "state": "inflammation", "delta": -0.5},
+        {"organ": "adrenal", "state": "cortisol_level", "delta": 0.3, "rationale": "exogenous source"}
+      ],
+      "side_effects": ["hyperglycemia", "weight gain", "osteoporosis", "infection risk", "adrenal suppression on withdrawal"],
+      "review_status": "unreviewed"
+    },
+    "insulin": {
+      "mechanism": "insulin receptor agonism → glucose uptake",
+      "examples": ["regular insulin", "NPH", "glargine", "lispro", "aspart"],
+      "state_effects": [
+        {"organ": "pancreas", "state": "blood_glucose_elevation", "delta": -0.6},
+        {"organ": "pancreas", "state": "insulin_secretion", "delta": 0.3, "rationale": "exogenous supplementation"}
+      ],
+      "side_effects": ["hypoglycemia", "weight gain", "lipodystrophy"],
+      "review_status": "unreviewed"
+    },
+    "metformin": {
+      "mechanism": "AMPK activation, hepatic gluconeogenesis suppression",
+      "indications": ["T2DM first-line"],
+      "side_effects": ["GI upset", "lactic acidosis (rare, with renal failure)", "B12 deficiency"],
+      "contraindications": ["GFR < 30"],
+      "review_status": "unreviewed"
+    },
+    "levothyroxine": {
+      "mechanism": "T4 supplementation",
+      "indications": ["hypothyroidism"],
+      "state_effects": [
+        {"organ": "thyroid", "state": "t3_t4_level", "delta": 0.4}
+      ],
+      "side_effects": ["over-replacement → hyperthyroid symptoms"],
+      "review_status": "unreviewed"
+    },
+    "PPI": {
+      "mechanism": "irreversible H+/K+ ATPase inhibition",
+      "examples": ["omeprazole", "pantoprazole", "esomeprazole"],
+      "indications": ["GERD", "PUD", "stress ulcer prophylaxis", "H. pylori (with antibiotics)"],
+      "state_effects": [
+        {"organ": "gi", "state": "acid_exposure", "delta": -0.5}
+      ],
+      "side_effects": ["B12 deficiency", "C. difficile risk", "hypomagnesemia", "fracture (long-term)"],
+      "review_status": "unreviewed"
+    },
+    "chemotherapy_general": {
+      "mechanism": "various (alkylating, antimetabolite, mitotic inhibitor, topoisomerase, targeted)",
+      "side_effects": ["myelosuppression", "GI mucositis", "alopecia", "nausea/vomiting", "secondary malignancy"],
+      "state_effects": [
+        {"organ": "bone", "state": "marrow_function", "delta": -0.5, "rationale": "myelosuppression"},
+        {"organ": "gi", "state": "mucosal_inflammation", "delta": 0.4, "rationale": "mucositis"}
+      ],
+      "review_status": "unreviewed"
+    }
+  },
+
+  "polypharmacy_risks": {
+    "_comment": "Combinations creating high-risk interactions",
+    "QT_prolongation": ["macrolides + fluoroquinolones", "antipsychotics + ondansetron"],
+    "serotonin_syndrome": ["SSRI + MAOI", "SSRI + tramadol", "SSRI + linezolid"],
+    "bleeding_risk": ["warfarin + NSAID", "DOAC + antiplatelet", "warfarin + antibiotics"],
+    "AKI_risk": ["NSAID + ACE-I + diuretic ('triple whammy')"],
+    "respiratory_depression": ["opioids + benzodiazepines + alcohol"]
+  },
+
+  "drug_categories_pregnancy": {
+    "_comment": "FDA letter categories deprecated 2015; PLLR labeling now. General teratogenic risks listed.",
+    "absolute_avoid": ["warfarin (first trimester)", "isotretinoin", "thalidomide", "ACE inhibitors (T2-T3)", "methotrexate"],
+    "relative_avoid": ["NSAIDs (T3)", "fluoroquinolones", "tetracyclines (T2-T3)"],
+    "review_status": "unreviewed"
+  }
+}

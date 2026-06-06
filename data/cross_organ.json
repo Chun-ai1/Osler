@@ -1,0 +1,157 @@
+{
+  "_metadata": {
+    "schema_version": "2.0",
+    "description": "Global cross-organ propagation rules. Combine two strategies: (1) hand-written rules for medically-specific propagation, (2) atlas-derived defaults — what each atlas connection_type transmits and with what decay.",
+    "review_status": "unreviewed"
+  },
+  "atlas_connection_semantics": {
+    "_comment": "How NEXUS interprets each atlas connection_type for state propagation. decay = fraction of state passed along; polarity tells whether the receiving state goes up or down when source state crosses threshold.",
+    "arterial": {
+      "transmits_state": "perfusion",
+      "decay": 0.7,
+      "polarity": "positive",
+      "threshold": 0.4,
+      "rationale": "if source organ's perfusion drops, downstream (arterial) targets also lose perfusion"
+    },
+    "venous": {
+      "transmits_state": "venous_pressure",
+      "decay": 0.6,
+      "polarity": "positive",
+      "threshold": 0.6,
+      "rationale": "venous congestion transmits backward to upstream organs"
+    },
+    "lymphatic": {
+      "transmits_state": "infection_load",
+      "decay": 0.4,
+      "polarity": "positive",
+      "threshold": 0.5,
+      "rationale": "lymphatic drainage carries infection / inflammation downstream"
+    },
+    "neural": {
+      "transmits_state": "nerve_signal",
+      "decay": 0.8,
+      "polarity": "positive",
+      "threshold": 0.5,
+      "rationale": "nerve activation propagates with high fidelity"
+    },
+    "referred_pain": {
+      "transmits_state": "pain_signal",
+      "decay": 0.9,
+      "polarity": "positive",
+      "threshold": 0.5,
+      "rationale": "visceral pain referred to dermatome via convergence at spinal level"
+    },
+    "adjacent": {
+      "transmits_state": "inflammation",
+      "decay": 0.3,
+      "polarity": "positive",
+      "threshold": 0.7,
+      "rationale": "severe local inflammation can extend to anatomically adjacent organ"
+    },
+    "circulates_through": {
+      "transmits_state": "blood_borne_factor",
+      "decay": 0.5,
+      "polarity": "positive",
+      "threshold": 0.5,
+      "rationale": "blood circulation distributes infections, toxins, cytokines systemically"
+    },
+    "gi_tract": {
+      "transmits_state": "luminal_contents",
+      "decay": 0.6,
+      "polarity": "positive",
+      "threshold": 0.5,
+      "rationale": "GI tract continuity allows contents/pathogens to move downstream"
+    },
+    "urinary": {
+      "transmits_state": "urinary_obstruction",
+      "decay": 0.7,
+      "polarity": "positive",
+      "threshold": 0.4,
+      "rationale": "obstruction propagates retrograde in urinary tract"
+    },
+    "biliary": {
+      "transmits_state": "biliary_obstruction",
+      "decay": 0.7,
+      "polarity": "positive",
+      "threshold": 0.4,
+      "rationale": "obstruction propagates retrograde in biliary tree"
+    },
+    "airway": {
+      "transmits_state": "airway_obstruction",
+      "decay": 0.5,
+      "polarity": "positive",
+      "threshold": 0.5,
+      "rationale": "airway lumen connects bronchi to alveoli; obstruction or infection moves through"
+    },
+    "portal": {
+      "transmits_state": "portal_pressure",
+      "decay": 0.6,
+      "polarity": "positive",
+      "threshold": 0.5,
+      "rationale": "portal hypertension affects all portal drainage organs"
+    },
+    "cardiac": {
+      "transmits_state": "cardiac_output",
+      "decay": 0.7,
+      "polarity": "positive",
+      "threshold": 0.4,
+      "rationale": "cardiac function directly affects connected vasculature"
+    },
+    "part_of": {
+      "transmits_state": null,
+      "_comment": "part_of is anatomical containment, not a propagation channel — no automatic state transfer"
+    }
+  },
+  "global_propagation_rules": [
+    {
+      "name": "shock_renal",
+      "trigger": {"organ": "heart", "state": "cardiac_output", "op": "<", "threshold": 0.5},
+      "effect":  {"organ": "kidney", "state": "perfusion", "delta": -0.4},
+      "via": "arterial",
+      "rationale": "Hypotensive shock from low cardiac output → renal hypoperfusion → pre-renal AKI",
+      "review_status": "unreviewed"
+    },
+    {
+      "name": "left_heart_failure_pulmonary",
+      "trigger": {"organ": "heart", "state": "pulmonary_congestion", "op": ">", "threshold": 0.5},
+      "effect":  {"organ": "lung", "state": "gas_exchange", "delta": -0.4},
+      "via": "circulates_through",
+      "rationale": "Left ventricular failure → pulmonary venous congestion → alveolar edema → impaired O2 diffusion",
+      "review_status": "unreviewed"
+    },
+    {
+      "name": "pyelonephritis_to_blood",
+      "trigger": {"organ": "kidney", "state": "luminal_pathogen", "op": ">", "threshold": 0.6},
+      "effect":  {"organ": "blood", "state": "infection_load", "delta": 0.4},
+      "via": "circulates_through",
+      "rationale": "Pyelonephritis can seed bloodstream → bacteremia / urosepsis risk",
+      "review_status": "unreviewed"
+    },
+    {
+      "name": "cystitis_ascending_to_kidney",
+      "trigger": {"organ": "bladder", "state": "luminal_bacteria", "op": ">", "threshold": 0.7},
+      "effect":  {"organ": "kidney", "state": "luminal_pathogen", "delta": 0.3},
+      "via": "urinary",
+      "rationale": "Ascending UTI: bladder pathogens reflux up ureters → kidney → pyelonephritis",
+      "review_status": "unreviewed"
+    },
+    {
+      "name": "gi_dehydration_to_kidney",
+      "trigger": {"organ": "gi", "state": "secretion", "op": ">", "threshold": 0.7},
+      "effect":  {"organ": "kidney", "state": "perfusion", "delta": -0.3},
+      "via": "circulates_through",
+      "rationale": "Severe diarrhea → volume depletion → reduced renal perfusion → pre-renal AKI",
+      "review_status": "unreviewed"
+    }
+  ],
+  "neural_framework_placeholder": {
+    "_comment": "Reserved for Stage D.4 — neural propagation network. Will encode: dermatome → organ mapping (referred pain), cranial nerve pathways, spinal cord segments, autonomic projections. Currently empty.",
+    "review_status": "unreviewed",
+    "pathways": []
+  },
+  "vascular_framework_placeholder": {
+    "_comment": "Reserved for Stage D.5 — vascular propagation network. Will encode: arterial perfusion territories, venous drainage, watershed regions, embolic sources, anastomoses. Currently empty.",
+    "review_status": "unreviewed",
+    "territories": []
+  }
+}

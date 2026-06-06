@@ -1,0 +1,372 @@
+{
+  "_metadata": {
+    "organ": "pancreas",
+    "schema_version": "2.0",
+    "description": "Pancreas state model (exocrine + endocrine). Used by pancreatitis, diabetes, pancreatic cancer.",
+    "source": "Boron & Boulpaep; Harrison's IM Endocrinology + GI",
+    "review_status": "unreviewed"
+  },
+  "state_variables": {
+    "exocrine_inflammation": {
+      "range": [
+        0,
+        1
+      ],
+      "description": "acinar cell inflammation"
+    },
+    "autodigestion": {
+      "range": [
+        0,
+        1
+      ],
+      "description": "premature trypsinogen activation → tissue damage"
+    },
+    "ductal_obstruction": {
+      "range": [
+        0,
+        1
+      ],
+      "description": "duct stone or stricture"
+    },
+    "insulin_secretion": {
+      "range": [
+        0,
+        1
+      ],
+      "description": "beta cell function — HIGHER = better",
+      "inverse": true,
+      "default": 1.0
+    },
+    "glucagon_response": {
+      "range": [
+        0,
+        1
+      ],
+      "description": "alpha cell function — HIGHER = better",
+      "inverse": true,
+      "default": 1.0
+    },
+    "exocrine_enzyme_output": {
+      "range": [
+        0,
+        1
+      ],
+      "description": "lipase/amylase secretion — HIGHER = better",
+      "inverse": true,
+      "default": 1.0
+    },
+    "peripancreatic_inflammation": {
+      "range": [
+        0,
+        1
+      ],
+      "description": "spread to retroperitoneum"
+    },
+    "blood_glucose_elevation": {
+      "range": [
+        0,
+        1
+      ],
+      "description": "hyperglycemia severity"
+    }
+  },
+  "derivation_rules": [
+    {
+      "symptom": "epigastric pain",
+      "condition": {
+        "state": "exocrine_inflammation",
+        "op": ">",
+        "threshold": 0.5
+      },
+      "rationale": "pancreatic inflammation activates visceral afferents (celiac plexus, T6-T9) → epigastric pain",
+      "confidence": 1.0
+    },
+    {
+      "symptom": "pain radiating to back",
+      "condition": {
+        "state": "peripancreatic_inflammation",
+        "op": ">",
+        "threshold": 0.5
+      },
+      "rationale": "retroperitoneal location → inflammation reaches splanchnic nerves → boring pain to back",
+      "confidence": 1.0
+    },
+    {
+      "symptom": "nausea",
+      "condition": {
+        "state": "exocrine_inflammation",
+        "op": ">",
+        "threshold": 0.5
+      },
+      "rationale": "inflammation activates CTZ via vagal afferents",
+      "confidence": 0.9
+    },
+    {
+      "symptom": "vomiting",
+      "condition": {
+        "state": "exocrine_inflammation",
+        "op": ">",
+        "threshold": 0.6
+      },
+      "rationale": "severe pancreatic inflammation triggers persistent vomiting",
+      "confidence": 0.9
+    },
+    {
+      "symptom": "polyuria",
+      "condition": {
+        "state": "blood_glucose_elevation",
+        "op": ">",
+        "threshold": 0.6
+      },
+      "rationale": "glucose exceeds renal threshold → osmotic diuresis",
+      "confidence": 1.0
+    },
+    {
+      "symptom": "polydipsia",
+      "condition": {
+        "state": "blood_glucose_elevation",
+        "op": ">",
+        "threshold": 0.6
+      },
+      "rationale": "osmotic diuresis → hypovolemia → thirst",
+      "confidence": 1.0
+    },
+    {
+      "symptom": "weight loss",
+      "condition": {
+        "state": "insulin_secretion",
+        "op": "<",
+        "threshold": 0.4
+      },
+      "rationale": "insulin deficiency → catabolism of fat and protein",
+      "confidence": 0.8
+    },
+    {
+      "symptom": "steatorrhea",
+      "condition": {
+        "state": "exocrine_enzyme_output",
+        "op": "<",
+        "threshold": 0.4
+      },
+      "rationale": "lipase deficiency → fat malabsorption → fatty stools",
+      "confidence": 0.9
+    }
+  ],
+  "propagation_rules": [
+    {
+      "trigger": {
+        "state": "autodigestion",
+        "op": ">",
+        "threshold": 0.5
+      },
+      "effect": {
+        "state": "exocrine_inflammation",
+        "delta": 0.5
+      },
+      "rationale": "activated enzymes damage acinar cells → release more enzymes (vicious cycle)",
+      "via": "intra_organ",
+      "review_status": "unreviewed"
+    },
+    {
+      "trigger": {
+        "state": "ductal_obstruction",
+        "op": ">",
+        "threshold": 0.5
+      },
+      "effect": {
+        "state": "autodigestion",
+        "delta": 0.4
+      },
+      "rationale": "obstruction causes backflow + premature activation of trypsinogen",
+      "via": "intra_organ",
+      "review_status": "unreviewed"
+    },
+    {
+      "trigger": {
+        "state": "exocrine_inflammation",
+        "op": ">",
+        "threshold": 0.6
+      },
+      "effect": {
+        "state": "peripancreatic_inflammation",
+        "delta": 0.4
+      },
+      "rationale": "inflammation extends to peripancreatic fat and retroperitoneum",
+      "via": "intra_organ",
+      "review_status": "unreviewed"
+    },
+    {
+      "trigger": {
+        "state": "insulin_secretion",
+        "op": "<",
+        "threshold": 0.4
+      },
+      "effect": {
+        "state": "blood_glucose_elevation",
+        "delta": 0.5
+      },
+      "rationale": "without insulin, glucose cannot enter cells → hyperglycemia",
+      "via": "intra_organ",
+      "review_status": "unreviewed"
+    }
+  ],
+  "connections": {
+    "incoming": [
+      "blood (celiac branch)",
+      "gi (duodenum endocrine signals)"
+    ],
+    "outgoing": [
+      "gi (pancreatic duct → duodenum)",
+      "blood (insulin/glucagon endocrine)"
+    ],
+    "neural": [
+      "vagus",
+      "celiac plexus"
+    ]
+  },
+  "diseases": {
+    "Acute Pancreatitis": {
+      "review_status": "unreviewed",
+      "description": "Acute inflammation from gallstones, alcohol, or other causes — premature enzyme activation.",
+      "perturbations": [
+        {
+          "variable": "exocrine_inflammation",
+          "delta": 0.8,
+          "cause": "neutrophil + cytokine response to enzyme leakage"
+        },
+        {
+          "variable": "autodigestion",
+          "delta": 0.7,
+          "cause": "trypsinogen activated within acinar cells"
+        },
+        {
+          "variable": "peripancreatic_inflammation",
+          "delta": 0.5,
+          "cause": "spread to retroperitoneum"
+        }
+      ]
+    },
+    "Type 1 Diabetes Mellitus": {
+      "review_status": "unreviewed",
+      "description": "Autoimmune destruction of pancreatic beta cells → absolute insulin deficiency.",
+      "perturbations": [
+        {
+          "variable": "insulin_secretion",
+          "delta": -0.85,
+          "cause": "T-cell-mediated beta cell destruction"
+        },
+        {
+          "variable": "blood_glucose_elevation",
+          "delta": 0.7,
+          "cause": "no insulin → hyperglycemia"
+        }
+      ]
+    },
+    "Type 2 Diabetes Mellitus": {
+      "review_status": "unreviewed",
+      "description": "Insulin resistance + relative insulin deficiency from beta cell dysfunction.",
+      "perturbations": [
+        {
+          "variable": "insulin_secretion",
+          "delta": -0.4,
+          "cause": "beta cell exhaustion + dysfunction"
+        },
+        {
+          "variable": "blood_glucose_elevation",
+          "delta": 0.55,
+          "cause": "insulin resistance + reduced secretion"
+        }
+      ]
+    },
+    "Chronic Pancreatitis": {
+      "review_status": "unreviewed",
+      "description": "Repeated injury → fibrosis → loss of exocrine + endocrine function.",
+      "perturbations": [
+        {
+          "variable": "exocrine_enzyme_output",
+          "delta": -0.6,
+          "cause": "loss of functional acinar mass"
+        },
+        {
+          "variable": "insulin_secretion",
+          "delta": -0.4,
+          "cause": "loss of islet cells from chronic fibrosis"
+        }
+      ]
+    },
+    "Diabetic Ketoacidosis": {
+      "_review_status": "unreviewed",
+      "description": "Severe insulin deficiency → uncontrolled lipolysis + ketogenesis + hyperglycemia.",
+      "perturbations": [
+        {
+          "variable": "insulin_secretion",
+          "delta": -0.85,
+          "cause": "absolute or relative insulin deficiency under stress"
+        },
+        {
+          "variable": "blood_glucose_elevation",
+          "delta": 0.8,
+          "cause": "uncontrolled hepatic glucose output"
+        }
+      ]
+    },
+    "Diabetes Mellitus Type 2": {
+      "review_status": "unreviewed",
+      "description": "Insulin resistance + relative insulin deficiency from beta cell dysfunction.",
+      "perturbations": [
+        {
+          "variable": "insulin_secretion",
+          "delta": -0.4,
+          "cause": "beta cell exhaustion + dysfunction"
+        },
+        {
+          "variable": "blood_glucose_elevation",
+          "delta": 0.55,
+          "cause": "insulin resistance + reduced secretion"
+        }
+      ]
+    },
+    "Pancreatic Adenocarcinoma": {
+      "review_status": "unreviewed",
+      "description": "Malignancy of pancreatic ductal tissue that can obstruct exocrine flow and impair endocrine function.",
+      "perturbations": [
+        {
+          "variable": "ductal_obstruction",
+          "delta": 0.7,
+          "cause": "tumor narrows or obstructs pancreatic duct"
+        },
+        {
+          "variable": "exocrine_enzyme_output",
+          "delta": -0.5,
+          "cause": "obstructed duct reduces enzyme delivery"
+        },
+        {
+          "variable": "blood_glucose_elevation",
+          "delta": 0.35,
+          "cause": "pancreatic tissue dysfunction can impair glucose regulation"
+        },
+        {
+          "variable": "peripancreatic_inflammation",
+          "delta": 0.25,
+          "cause": "local tissue invasion/inflammatory response"
+        }
+      ]
+    },
+    "Exocrine Pancreatic Insufficiency": {
+      "review_status": "unreviewed",
+      "description": "Insufficient pancreatic digestive enzyme production or delivery causing maldigestion.",
+      "perturbations": [
+        {
+          "variable": "exocrine_enzyme_output",
+          "delta": -0.75,
+          "cause": "loss of acinar output or ductal delivery"
+        },
+        {
+          "variable": "ductal_obstruction",
+          "delta": 0.25,
+          "cause": "obstruction can contribute to poor enzyme delivery"
+        }
+      ]
+    }
+  }
+}

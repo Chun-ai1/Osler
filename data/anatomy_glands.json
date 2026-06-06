@@ -1,0 +1,97 @@
+{
+  "_metadata": {
+    "framework": "anatomy_glands",
+    "schema_version": "1.0",
+    "description": "Glands — exocrine (salivary, sweat, sebaceous, lacrimal, mammary) + endocrine (already in atlas as thyroid, adrenal, etc.). Adds the missing exocrine glands.",
+    "source": "Gray's Anatomy 41e",
+    "review_status": "unreviewed"
+  },
+
+  "exocrine_glands": {
+    "parotid": {
+      "type": "salivary",
+      "secretion": "serous saliva (amylase)",
+      "innervation": "CN9 (glossopharyngeal) parasympathetic",
+      "duct": "Stensen duct → opposite upper 2nd molar",
+      "common_pathology": ["parotitis (mumps, bacterial, Sjogren)", "sialolithiasis", "parotid tumor (pleomorphic adenoma)"],
+      "review_status": "unreviewed"
+    },
+    "submandibular": {
+      "type": "salivary",
+      "secretion": "mixed serous + mucous",
+      "innervation": "CN7 (chorda tympani) parasympathetic",
+      "duct": "Wharton duct → floor of mouth",
+      "common_pathology": ["sialolithiasis (most common gland)", "submandibular abscess"],
+      "review_status": "unreviewed"
+    },
+    "sublingual": {
+      "type": "salivary",
+      "secretion": "mucous",
+      "common_pathology": ["ranula (mucocele)"],
+      "review_status": "unreviewed"
+    },
+    "lacrimal_gland": {
+      "type": "lacrimal",
+      "secretion": "tears",
+      "innervation": "CN7 parasympathetic + sympathetic",
+      "common_pathology": ["dacryoadenitis", "Sjogren syndrome", "dacryocystitis (NLD obstruction)"],
+      "review_status": "unreviewed"
+    },
+    "sweat_glands_eccrine": {
+      "type": "sweat",
+      "distribution": "all skin surfaces",
+      "secretion": "watery sweat",
+      "innervation": "sympathetic cholinergic (unique)",
+      "common_pathology": ["hyperhidrosis", "anhidrosis"],
+      "review_status": "unreviewed"
+    },
+    "sweat_glands_apocrine": {
+      "type": "sweat",
+      "distribution": "axilla, groin, areola, perineum",
+      "secretion": "viscous (puberty onset)",
+      "common_pathology": ["hidradenitis suppurativa", "Fox-Fordyce disease"],
+      "review_status": "unreviewed"
+    },
+    "sebaceous_glands": {
+      "type": "sebum-producing",
+      "distribution": "face, scalp, back (high density), associated with hair follicles",
+      "secretion": "lipid (sebum)",
+      "common_pathology": ["acne vulgaris", "seborrheic dermatitis", "sebaceous cyst"],
+      "review_status": "unreviewed"
+    },
+    "ceruminous_glands": {
+      "type": "modified apocrine",
+      "distribution": "external auditory canal",
+      "secretion": "cerumen (earwax)",
+      "common_pathology": ["impacted cerumen"],
+      "review_status": "unreviewed"
+    },
+    "mammary_glands": {
+      "type": "modified apocrine / lactational",
+      "distribution": "breast",
+      "secretion": "milk (lactation)",
+      "innervation": "intercostal (T4 dermatome nipple), prolactin/oxytocin hormonal",
+      "common_pathology": ["mastitis", "breast abscess", "fibroadenoma", "breast cancer"],
+      "review_status": "unreviewed"
+    },
+    "Bartholin_glands": {
+      "type": "vestibular_mucous",
+      "distribution": "vaginal vestibule (female)",
+      "common_pathology": ["Bartholin cyst", "Bartholin abscess"],
+      "review_status": "unreviewed"
+    },
+    "Cowper_glands": {
+      "type": "bulbourethral_mucous",
+      "distribution": "below prostate (male)",
+      "common_pathology": ["rare"],
+      "review_status": "unreviewed"
+    }
+  },
+
+  "endocrine_glands_summary": {
+    "_comment": "Already in atlas/state model. Listed here for completeness.",
+    "covered_in_state_model": ["thyroid", "adrenal", "pancreas_islets", "pituitary", "pineal", "ovaries", "prostate"],
+    "missing": ["parathyroid (4 glands)", "thymus (atrophies after puberty)"],
+    "review_status": "unreviewed"
+  }
+}

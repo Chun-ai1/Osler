@@ -1,0 +1,443 @@
+{
+  "_metadata": {
+    "organ": "bone",
+    "schema_version": "2.0",
+    "description": "Bone + joint state model. Used by fractures, osteomyelitis, septic arthritis, gout, RA.",
+    "source": "Harrison's IM Rheumatology + Orthopedics",
+    "review_status": "unreviewed"
+  },
+  "state_variables": {
+    "structural_integrity": {
+      "range": [
+        0,
+        1
+      ],
+      "description": "bone cortical/trabecular integrity — HIGHER = better",
+      "inverse": true
+    },
+    "inflammation": {
+      "range": [
+        0,
+        1
+      ],
+      "description": "bone or joint inflammation"
+    },
+    "infection": {
+      "range": [
+        0,
+        1
+      ],
+      "description": "pathogen load in bone/joint"
+    },
+    "joint_effusion": {
+      "range": [
+        0,
+        1
+      ],
+      "description": "fluid accumulation in joint space"
+    },
+    "synovial_inflammation": {
+      "range": [
+        0,
+        1
+      ],
+      "description": "synovitis severity"
+    },
+    "crystal_deposition": {
+      "range": [
+        0,
+        1
+      ],
+      "description": "urate or pyrophosphate crystals"
+    },
+    "cartilage_damage": {
+      "range": [
+        0,
+        1
+      ],
+      "description": "articular cartilage erosion"
+    },
+    "bone_density": {
+      "range": [
+        0,
+        1
+      ],
+      "description": "BMD — HIGHER = better",
+      "inverse": true
+    },
+    "fracture_present": {
+      "range": [
+        0,
+        1
+      ],
+      "description": "discontinuity in bone"
+    }
+  },
+  "derivation_rules": [
+    {
+      "symptom": "bone pain",
+      "condition": {
+        "any": [
+          {
+            "state": "fracture_present",
+            "op": ">",
+            "threshold": 0.5
+          },
+          {
+            "state": "inflammation",
+            "op": ">",
+            "threshold": 0.5
+          }
+        ]
+      },
+      "rationale": "periosteal nociceptors activated by fracture or inflammation",
+      "confidence": 1.0
+    },
+    {
+      "symptom": "joint pain",
+      "condition": {
+        "any": [
+          {
+            "state": "synovial_inflammation",
+            "op": ">",
+            "threshold": 0.4
+          },
+          {
+            "state": "joint_effusion",
+            "op": ">",
+            "threshold": 0.5
+          },
+          {
+            "state": "crystal_deposition",
+            "op": ">",
+            "threshold": 0.5
+          }
+        ]
+      },
+      "rationale": "synovial inflammation OR effusion stretch OR crystal-induced inflammation activates joint nociceptors",
+      "confidence": 1.0
+    },
+    {
+      "symptom": "joint swelling",
+      "condition": {
+        "state": "joint_effusion",
+        "op": ">",
+        "threshold": 0.5
+      },
+      "rationale": "intra-articular fluid accumulation visible/palpable as swelling",
+      "confidence": 1.0
+    },
+    {
+      "symptom": "joint stiffness",
+      "condition": {
+        "state": "synovial_inflammation",
+        "op": ">",
+        "threshold": 0.5
+      },
+      "rationale": "inflamed synovium → reduced joint mobility, morning stiffness",
+      "confidence": 1.0
+    },
+    {
+      "symptom": "joint warmth",
+      "condition": {
+        "any": [
+          {
+            "state": "synovial_inflammation",
+            "op": ">",
+            "threshold": 0.5
+          },
+          {
+            "state": "infection",
+            "op": ">",
+            "threshold": 0.5
+          }
+        ]
+      },
+      "rationale": "inflammation → local vasodilation → palpable warmth",
+      "confidence": 0.9
+    },
+    {
+      "symptom": "deformity",
+      "condition": {
+        "state": "fracture_present",
+        "op": ">",
+        "threshold": 0.6
+      },
+      "rationale": "displaced fracture → visible angulation or shortening",
+      "confidence": 1.0
+    },
+    {
+      "symptom": "limited range of motion",
+      "condition": {
+        "any": [
+          {
+            "state": "joint_effusion",
+            "op": ">",
+            "threshold": 0.5
+          },
+          {
+            "state": "cartilage_damage",
+            "op": ">",
+            "threshold": 0.5
+          }
+        ]
+      },
+      "rationale": "mechanical limitation from effusion or cartilage loss",
+      "confidence": 0.9
+    },
+    {
+      "symptom": "fever",
+      "condition": {
+        "any": [
+          {
+            "state": "infection",
+            "op": ">",
+            "threshold": 0.5
+          }
+        ]
+      },
+      "rationale": "septic process releases pyrogens",
+      "confidence": 0.9
+    }
+  ],
+  "propagation_rules": [
+    {
+      "trigger": {
+        "state": "infection",
+        "op": ">",
+        "threshold": 0.5
+      },
+      "effect": {
+        "state": "inflammation",
+        "delta": 0.5
+      },
+      "rationale": "infection triggers neutrophil + cytokine response",
+      "via": "intra_organ",
+      "review_status": "unreviewed"
+    },
+    {
+      "trigger": {
+        "state": "crystal_deposition",
+        "op": ">",
+        "threshold": 0.5
+      },
+      "effect": {
+        "state": "synovial_inflammation",
+        "delta": 0.5
+      },
+      "rationale": "crystals activate NLRP3 inflammasome in synoviocytes",
+      "via": "intra_organ",
+      "review_status": "unreviewed"
+    },
+    {
+      "trigger": {
+        "state": "synovial_inflammation",
+        "op": ">",
+        "threshold": 0.5
+      },
+      "effect": {
+        "state": "joint_effusion",
+        "delta": 0.4
+      },
+      "rationale": "inflamed synovium produces excess fluid",
+      "via": "intra_organ",
+      "review_status": "unreviewed"
+    },
+    {
+      "trigger": {
+        "state": "synovial_inflammation",
+        "op": ">",
+        "threshold": 0.7
+      },
+      "effect": {
+        "state": "cartilage_damage",
+        "delta": 0.3
+      },
+      "rationale": "chronic synovitis (e.g. RA pannus) erodes cartilage",
+      "via": "intra_organ",
+      "review_status": "unreviewed"
+    },
+    {
+      "trigger": {
+        "state": "bone_density",
+        "op": "<",
+        "threshold": 0.4
+      },
+      "effect": {
+        "state": "fracture_present",
+        "delta": 0.3
+      },
+      "rationale": "osteoporotic bone fractures under low trauma",
+      "via": "intra_organ",
+      "review_status": "unreviewed"
+    }
+  ],
+  "connections": {
+    "incoming": [
+      "blood (nutrient arteries)",
+      "neural (proprioceptive afferents)"
+    ],
+    "outgoing": [
+      "blood (cytokines, mineral exchange)"
+    ],
+    "neural": [
+      "sclerotomes (segmental)",
+      "joint capsule mechanoreceptors"
+    ]
+  },
+  "diseases": {
+    "Fracture": {
+      "review_status": "unreviewed",
+      "description": "Discontinuity in bone from trauma or pathologic process.",
+      "perturbations": [
+        {
+          "variable": "fracture_present",
+          "delta": 0.8,
+          "cause": "force exceeds bone strength"
+        },
+        {
+          "variable": "inflammation",
+          "delta": 0.5,
+          "cause": "soft tissue injury around fracture"
+        }
+      ]
+    },
+    "Osteoporosis": {
+      "review_status": "unreviewed",
+      "description": "Reduced bone mineral density → increased fragility fracture risk.",
+      "perturbations": [
+        {
+          "variable": "bone_density",
+          "delta": -0.55,
+          "cause": "imbalance of osteoclast > osteoblast activity"
+        }
+      ]
+    },
+    "Septic Arthritis": {
+      "review_status": "unreviewed",
+      "description": "Bacterial infection of joint space → acute monoarticular arthritis.",
+      "perturbations": [
+        {
+          "variable": "infection",
+          "delta": 0.8,
+          "cause": "hematogenous bacterial seeding of joint"
+        },
+        {
+          "variable": "synovial_inflammation",
+          "delta": 0.75,
+          "cause": "neutrophil response in synovium"
+        },
+        {
+          "variable": "joint_effusion",
+          "delta": 0.7,
+          "cause": "purulent effusion"
+        }
+      ]
+    },
+    "Acute Gout": {
+      "review_status": "unreviewed",
+      "description": "Monosodium urate crystal deposition → acute inflammatory arthritis.",
+      "perturbations": [
+        {
+          "variable": "crystal_deposition",
+          "delta": 0.75,
+          "cause": "urate crystals precipitate in joint"
+        },
+        {
+          "variable": "synovial_inflammation",
+          "delta": 0.7,
+          "cause": "NLRP3 inflammasome activation"
+        },
+        {
+          "variable": "joint_effusion",
+          "delta": 0.55,
+          "cause": "inflammatory effusion"
+        }
+      ]
+    },
+    "Rheumatoid Arthritis": {
+      "review_status": "unreviewed",
+      "description": "Autoimmune chronic synovitis → symmetric polyarthritis, joint erosion.",
+      "perturbations": [
+        {
+          "variable": "synovial_inflammation",
+          "delta": 0.65,
+          "cause": "T-cell + B-cell mediated chronic synovitis"
+        },
+        {
+          "variable": "cartilage_damage",
+          "delta": 0.45,
+          "cause": "pannus erodes cartilage"
+        },
+        {
+          "variable": "joint_effusion",
+          "delta": 0.5,
+          "cause": "chronic synovitis → effusion"
+        }
+      ]
+    },
+    "Osteomyelitis": {
+      "review_status": "unreviewed",
+      "description": "Infection of bone causing inflammatory destruction and localized pain.",
+      "perturbations": [
+        {
+          "variable": "infection",
+          "delta": 0.7,
+          "cause": "microbial invasion of bone"
+        },
+        {
+          "variable": "inflammation",
+          "delta": 0.6,
+          "cause": "immune response within rigid osseous tissue"
+        },
+        {
+          "variable": "structural_integrity",
+          "delta": -0.3,
+          "cause": "infectious bone destruction"
+        }
+      ]
+    },
+    "Osteoarthritis": {
+      "review_status": "unreviewed",
+      "description": "Degenerative joint disease with progressive cartilage loss and mechanical pain.",
+      "perturbations": [
+        {
+          "variable": "cartilage_damage",
+          "delta": 0.7,
+          "cause": "degenerative loss of articular cartilage"
+        },
+        {
+          "variable": "synovial_inflammation",
+          "delta": 0.25,
+          "cause": "secondary low-grade synovitis"
+        },
+        {
+          "variable": "joint_effusion",
+          "delta": 0.2,
+          "cause": "reactive fluid accumulation in symptomatic joints"
+        }
+      ]
+    },
+    "Calcium Pyrophosphate Deposition Disease": {
+      "review_status": "unreviewed",
+      "description": "CPP crystal arthritis (pseudogout) causing an acute inflammatory monoarthritis.",
+      "perturbations": [
+        {
+          "variable": "crystal_deposition",
+          "delta": 0.7,
+          "cause": "CPP crystal deposition in synovial space"
+        },
+        {
+          "variable": "synovial_inflammation",
+          "delta": 0.65,
+          "cause": "crystals activate intense local inflammation"
+        },
+        {
+          "variable": "joint_effusion",
+          "delta": 0.5,
+          "cause": "acute inflammatory exudate"
+        }
+      ]
+    }
+  }
+}

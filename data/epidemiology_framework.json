@@ -1,0 +1,73 @@
+{
+  "_metadata": {
+    "framework": "epidemiology",
+    "schema_version": "1.0",
+    "description": "Population epidemiology — prevalence/incidence by demographics. Modifies pre-test probability based on age, sex, geography.",
+    "source": "CDC; WHO Global Burden of Disease; Harrison's IM Epidemiology",
+    "review_status": "unreviewed"
+  },
+
+  "age_stratified_disease_likelihood": {
+    "_comment": "Common conditions where age strongly predicts likelihood.",
+    "neonatal_0_28d": ["GBS sepsis", "TORCH infections", "congenital heart disease", "hyperbilirubinemia"],
+    "infant_1_12mo": ["bronchiolitis (RSV)", "intussusception", "pyloric stenosis", "Kawasaki disease"],
+    "toddler_1_3y": ["croup", "febrile seizures", "ingestion/foreign body", "ALL (peak 2-5y)"],
+    "child_3_12y": ["asthma", "viral exanthems", "appendicitis", "JIA"],
+    "adolescent_12_18y": ["mononucleosis", "scoliosis", "depression/anxiety", "eating disorders"],
+    "young_adult_18_40y": ["MS onset (F)", "first psychotic break", "appendicitis", "STIs", "anxiety/depression"],
+    "middle_age_40_65y": ["MI/CAD onset", "T2DM diagnosis", "colon cancer screening", "breast cancer", "lung cancer (smokers)"],
+    "elderly_65_plus": ["dementia", "stroke", "CHF", "AFib", "pneumonia (severe)", "falls/fractures", "polypharmacy", "delirium"],
+    "very_elderly_80_plus": ["frailty syndrome", "polypharmacy harm", "vascular dementia", "aspiration pneumonia"]
+  },
+
+  "sex_predominance": {
+    "_comment": "Diseases with significant sex bias.",
+    "M_predominant": ["MI (younger)", "AAA", "gout (premenopausal F protected)", "esophageal SCC", "renal cell carcinoma", "ankylosing spondylitis"],
+    "F_predominant": ["autoimmune in general (RA, SLE, MS, Hashimoto, Graves)", "UTI", "breast cancer", "osteoporosis", "depression/anxiety", "fibromyalgia", "migraine", "gallstones"]
+  },
+
+  "pediatric_specific": {
+    "_comment": "Conditions essentially limited to children or with different presentation in kids.",
+    "rashes": ["roseola", "measles", "rubella", "fifth disease (parvovirus B19)", "hand-foot-mouth (coxsackie)", "varicella"],
+    "respiratory": ["croup", "epiglottitis (now rare with Hib vaccine)", "bronchiolitis (RSV)"],
+    "GI": ["intussusception (3mo-3y)", "pyloric stenosis (3-6wk)", "Hirschsprung", "necrotizing enterocolitis (NEC)"],
+    "hematologic": ["sickle cell crises", "ALL", "Wilms tumor", "neuroblastoma"],
+    "rheumatologic": ["Kawasaki", "HSP (IgA vasculitis)", "JIA", "rheumatic fever"]
+  },
+
+  "pregnancy_associated": {
+    "_comment": "Conditions specific to or worsened by pregnancy.",
+    "first_trimester": ["hyperemesis gravidarum", "ectopic pregnancy", "spontaneous abortion"],
+    "second_trimester": ["incompetent cervix", "preterm labor risk"],
+    "third_trimester": ["preeclampsia", "HELLP", "gestational diabetes", "placenta previa", "abruptio placentae"],
+    "postpartum": ["PPH", "endometritis", "DVT/PE (high risk)", "postpartum depression", "postpartum psychosis", "Sheehan syndrome"],
+    "VTE_pregnancy": "5x increased risk; highest postpartum"
+  },
+
+  "geographic_endemic_diseases": {
+    "_comment": "Diseases concentrated in specific regions — travel history matters.",
+    "tropical": ["malaria", "dengue", "chikungunya", "schistosomiasis", "filariasis", "leishmaniasis"],
+    "specific_US_regions": {
+      "northeast_midwest": "Lyme disease, anaplasmosis, babesiosis",
+      "southwest": "valley fever (coccidioidomycosis), hantavirus",
+      "southeast": "RMSF, ehrlichiosis",
+      "midwest_OH_MS_valleys": "histoplasmosis, blastomycosis"
+    },
+    "diet_related": ["Vibrio (raw shellfish, Gulf coast)", "salmonella (eggs/poultry)", "listeria (deli meats, soft cheese)"]
+  },
+
+  "racial_ethnic_health_disparities": {
+    "_comment": "Documented disparities in disease prevalence/outcomes.",
+    "African_American": ["hypertension (more severe, younger onset)", "diabetes", "CKD", "stroke", "sickle cell", "sarcoidosis", "prostate cancer mortality"],
+    "Hispanic_Latino": ["diabetes", "metabolic syndrome", "liver disease"],
+    "Asian_American": ["hepatitis B", "stomach cancer", "lower BMI threshold for DM"],
+    "Native_American": ["diabetes", "alcohol use disorder", "TB"],
+    "Ashkenazi_Jewish": ["Tay-Sachs", "Gaucher", "BRCA1/2", "Crohn disease"]
+  },
+
+  "global_burden_top_causes": {
+    "_comment": "Leading causes of mortality globally (approximate).",
+    "global_leading_causes_of_death": ["ischemic heart disease", "stroke", "COPD", "lower respiratory infections", "dementia", "trachea/bronchus/lung cancers", "diabetes", "diarrheal diseases", "kidney disease", "neonatal conditions"],
+    "us_specific_top_causes": ["heart disease", "cancer", "COVID-19", "accidents", "stroke", "chronic lower respiratory disease", "Alzheimer", "diabetes"]
+  }
+}

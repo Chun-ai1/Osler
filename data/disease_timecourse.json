@@ -1,0 +1,599 @@
+{
+  "_metadata": {
+    "schema_version": "1.0",
+    "description": "Numeric onset windows for diseases. duration_hours = how long user has had symptoms. Format: [min_likely_hours, max_likely_hours] — symptom duration MOST consistent with this disease. Outside this range, likelihood drops.",
+    "source": "Harrison's IM + UpToDate typical presentations",
+    "review_status": "unreviewed",
+    "scale_meaning": {
+      "1": "1 hour",
+      "24": "1 day",
+      "168": "1 week",
+      "720": "1 month",
+      "8760": "1 year"
+    }
+  },
+  "_comment": "If user says symptom started 2 days ago, duration_hours=48. We check which diseases have 48 inside their typical window. Inside → boost. Outside → penalty.",
+  "disease_timecourses": {
+    "Heart Attack/MI": {
+      "typical_window_hours": [
+        0.1,
+        12
+      ],
+      "rationale": "STEMI presents within hours; classic case is <12 hours from onset"
+    },
+    "Acute Coronary Syndrome": {
+      "typical_window_hours": [
+        0.5,
+        48
+      ],
+      "rationale": "Unstable angina can have intermittent pain over hours-days"
+    },
+    "Aortic Dissection": {
+      "typical_window_hours": [
+        0.1,
+        6
+      ],
+      "rationale": "Sudden tearing pain, presents within hours"
+    },
+    "Acute Pulmonary Embolism": {
+      "typical_window_hours": [
+        0.1,
+        72
+      ],
+      "rationale": "Sudden dyspnea, classically presents <24h but can be 1-3 days"
+    },
+    "Pneumothorax": {
+      "typical_window_hours": [
+        0.1,
+        24
+      ],
+      "rationale": "Sudden onset, usually within hours"
+    },
+    "Atrial Fibrillation": {
+      "typical_window_hours": [
+        0.5,
+        168
+      ],
+      "rationale": "Palpitations can be intermittent for days before presentation"
+    },
+    "Supraventricular Tachycardia": {
+      "typical_window_hours": [
+        0.1,
+        24
+      ],
+      "rationale": "Episodic, each episode minutes-hours"
+    },
+    "Vasovagal Syncope": {
+      "typical_window_hours": [
+        0.01,
+        1
+      ],
+      "rationale": "Single discrete episode lasting seconds to minutes"
+    },
+    "Community-acquired Pneumonia": {
+      "typical_window_hours": [
+        24,
+        168
+      ],
+      "rationale": "Develops over 1-7 days"
+    },
+    "Acute Viral Upper Respiratory Infection": {
+      "typical_window_hours": [
+        12,
+        168
+      ],
+      "rationale": "Common cold builds over half-day to a week"
+    },
+    "COPD": {
+      "typical_window_hours": [
+        8760,
+        87600
+      ],
+      "rationale": "Chronic, years of progression"
+    },
+    "Asthma Exacerbation": {
+      "typical_window_hours": [
+        1,
+        72
+      ],
+      "rationale": "Acute flare over hours-days"
+    },
+    "Acute Appendicitis": {
+      "typical_window_hours": [
+        4,
+        72
+      ],
+      "rationale": "Periumbilical → RLQ migration over 4-48 hours"
+    },
+    "Acute Cholecystitis": {
+      "typical_window_hours": [
+        4,
+        96
+      ],
+      "rationale": "RUQ pain after fatty meal, develops over hours-days"
+    },
+    "Small Bowel Obstruction": {
+      "typical_window_hours": [
+        4,
+        48
+      ],
+      "rationale": "Crampy pain + vomiting over hours-2 days"
+    },
+    "Gastroesophageal Reflux Disease": {
+      "typical_window_hours": [
+        168,
+        87600
+      ],
+      "rationale": "Chronic — weeks to years of intermittent symptoms"
+    },
+    "Acute Gastroenteritis": {
+      "typical_window_hours": [
+        4,
+        120
+      ],
+      "rationale": "Self-limited over hours-5 days"
+    },
+    "Acute Ischemic Stroke": {
+      "typical_window_hours": [
+        0.01,
+        24
+      ],
+      "rationale": "Sudden onset, tPA window is 4.5 hours"
+    },
+    "Subarachnoid Hemorrhage": {
+      "typical_window_hours": [
+        0.01,
+        24
+      ],
+      "rationale": "Thunderclap headache, peaks in seconds"
+    },
+    "Bacterial Meningitis": {
+      "typical_window_hours": [
+        12,
+        96
+      ],
+      "rationale": "Develops over hours to days"
+    },
+    "Acute Bacterial Meningitis": {
+      "typical_window_hours": [
+        12,
+        96
+      ],
+      "rationale": "Develops over hours to days"
+    },
+    "Migraine": {
+      "typical_window_hours": [
+        1,
+        72
+      ],
+      "rationale": "Typical attack 4-72 hours"
+    },
+    "Parkinson Disease": {
+      "typical_window_hours": [
+        8760,
+        175200
+      ],
+      "rationale": "Chronic, years to decades of progression"
+    },
+    "Diabetic Ketoacidosis": {
+      "typical_window_hours": [
+        12,
+        72
+      ],
+      "rationale": "Develops over half-day to 3 days"
+    },
+    "Hypothyroidism": {
+      "typical_window_hours": [
+        720,
+        87600
+      ],
+      "rationale": "Chronic over months-years"
+    },
+    "Hyperthyroidism (Graves)": {
+      "typical_window_hours": [
+        720,
+        17520
+      ],
+      "rationale": "Develops over months-years"
+    },
+    "Acute Uncomplicated Cystitis": {
+      "typical_window_hours": [
+        6,
+        168
+      ],
+      "rationale": "Develops over hours-days"
+    },
+    "Acute Pyelonephritis": {
+      "typical_window_hours": [
+        12,
+        96
+      ],
+      "rationale": "Fever + flank pain over half-day to 4 days"
+    },
+    "Nephrolithiasis": {
+      "typical_window_hours": [
+        0.1,
+        48
+      ],
+      "rationale": "Sudden severe colic, episodic"
+    },
+    "Sepsis": {
+      "typical_window_hours": [
+        6,
+        96
+      ],
+      "rationale": "Develops over hours to days from infection source"
+    },
+    "Anaphylaxis": {
+      "typical_window_hours": [
+        0.01,
+        4
+      ],
+      "rationale": "Onset minutes-hours after trigger"
+    },
+    "Cellulitis": {
+      "typical_window_hours": [
+        12,
+        168
+      ],
+      "rationale": "Develops over half-day to a week"
+    },
+    "Preeclampsia": {
+      "typical_window_hours": [
+        24,
+        720
+      ],
+      "rationale": "Develops over days-weeks of pregnancy"
+    },
+    "Iron Deficiency Anemia": {
+      "typical_window_hours": [
+        720,
+        17520
+      ],
+      "rationale": "Chronic — months of progression"
+    },
+    "Deep Vein Thrombosis": {
+      "typical_window_hours": [
+        24,
+        168
+      ],
+      "rationale": "Develops over 1-7 days"
+    },
+    "Interstitial Cystitis/Bladder Pain Syndrome": {
+      "typical_window_hours": [
+        168,
+        87600
+      ],
+      "rationale": "Chronic or relapsing bladder pain syndrome lasting weeks to years.",
+      "review_status": "unreviewed"
+    },
+    "Urethritis": {
+      "typical_window_hours": [
+        12,
+        336
+      ],
+      "rationale": "Symptoms usually evolve over hours to two weeks.",
+      "review_status": "unreviewed"
+    },
+    "Disseminated Intravascular Coagulation": {
+      "typical_window_hours": [
+        1,
+        168
+      ],
+      "rationale": "Acute systemic coagulation disorder in severe illness.",
+      "review_status": "unreviewed"
+    },
+    "Anemia of Chronic Disease": {
+      "typical_window_hours": [
+        720,
+        87600
+      ],
+      "rationale": "Develops over weeks to chronic disease course.",
+      "review_status": "unreviewed"
+    },
+    "Hemolytic Anemia": {
+      "typical_window_hours": [
+        1,
+        8760
+      ],
+      "rationale": "May be acute or chronic depending on trigger.",
+      "review_status": "unreviewed"
+    },
+    "Osteomyelitis": {
+      "typical_window_hours": [
+        24,
+        8760
+      ],
+      "rationale": "Acute or chronic infection of bone.",
+      "review_status": "unreviewed"
+    },
+    "Osteoarthritis": {
+      "typical_window_hours": [
+        720,
+        175200
+      ],
+      "rationale": "Chronic degenerative disorder.",
+      "review_status": "unreviewed"
+    },
+    "Calcium Pyrophosphate Deposition Disease": {
+      "typical_window_hours": [
+        1,
+        336
+      ],
+      "rationale": "Acute crystal flare typically lasts days.",
+      "review_status": "unreviewed"
+    },
+    "Viral Encephalitis": {
+      "typical_window_hours": [
+        12,
+        336
+      ],
+      "rationale": "Acute encephalitic illness evolves over hours to days.",
+      "review_status": "unreviewed"
+    },
+    "Transient Ischemic Attack": {
+      "typical_window_hours": [
+        0.01,
+        24
+      ],
+      "rationale": "Transient neurologic episode, classically minutes to hours.",
+      "review_status": "unreviewed"
+    },
+    "Otitis Externa": {
+      "typical_window_hours": [
+        12,
+        336
+      ],
+      "rationale": "Usually presents over days.",
+      "review_status": "unreviewed"
+    },
+    "Meniere Disease": {
+      "typical_window_hours": [
+        0.3,
+        87600
+      ],
+      "rationale": "Episodic recurrent disorder; attacks last minutes to hours.",
+      "review_status": "unreviewed"
+    },
+    "Benign Paroxysmal Positional Vertigo": {
+      "typical_window_hours": [
+        0.01,
+        87600
+      ],
+      "rationale": "Brief recurrent positional episodes.",
+      "review_status": "unreviewed"
+    },
+    "Anterior Uveitis": {
+      "typical_window_hours": [
+        12,
+        720
+      ],
+      "rationale": "Acute inflammatory eye presentation over days to weeks.",
+      "review_status": "unreviewed"
+    },
+    "Cataract": {
+      "typical_window_hours": [
+        720,
+        175200
+      ],
+      "rationale": "Gradual progressive lens opacity.",
+      "review_status": "unreviewed"
+    },
+    "Central Retinal Artery Occlusion": {
+      "typical_window_hours": [
+        0.01,
+        24
+      ],
+      "rationale": "Sudden retinal ischemia requiring emergency recognition.",
+      "review_status": "unreviewed"
+    },
+    "Optic Neuritis": {
+      "typical_window_hours": [
+        12,
+        720
+      ],
+      "rationale": "Visual symptoms evolve over days.",
+      "review_status": "unreviewed"
+    },
+    "Acute Myocarditis": {
+      "typical_window_hours": [
+        12,
+        720
+      ],
+      "rationale": "Inflammatory myocardial syndrome over days to weeks.",
+      "review_status": "unreviewed"
+    },
+    "Ventricular Tachycardia": {
+      "typical_window_hours": [
+        0.01,
+        24
+      ],
+      "rationale": "Abrupt arrhythmia episode.",
+      "review_status": "unreviewed"
+    },
+    "Hydronephrosis from Urinary Obstruction": {
+      "typical_window_hours": [
+        1,
+        8760
+      ],
+      "rationale": "Obstruction may be acute or chronic.",
+      "review_status": "unreviewed"
+    },
+    "Acute Interstitial Nephritis": {
+      "typical_window_hours": [
+        24,
+        720
+      ],
+      "rationale": "Often appears days to weeks after trigger.",
+      "review_status": "unreviewed"
+    },
+    "Hepatic Encephalopathy": {
+      "typical_window_hours": [
+        1,
+        720
+      ],
+      "rationale": "Can arise rapidly during decompensation or precipitating illness.",
+      "review_status": "unreviewed"
+    },
+    "Primary Biliary Cholangitis": {
+      "typical_window_hours": [
+        8760,
+        175200
+      ],
+      "rationale": "Chronic progressive cholestatic disease.",
+      "review_status": "unreviewed"
+    },
+    "Viral Pneumonia": {
+      "typical_window_hours": [
+        12,
+        336
+      ],
+      "rationale": "Develops over days.",
+      "review_status": "unreviewed"
+    },
+    "Aspiration Pneumonitis": {
+      "typical_window_hours": [
+        0.1,
+        72
+      ],
+      "rationale": "Chemical lung injury follows aspiration rapidly.",
+      "review_status": "unreviewed"
+    },
+    "Dermatomyositis": {
+      "typical_window_hours": [
+        168,
+        8760
+      ],
+      "rationale": "Subacute to chronic inflammatory myopathy.",
+      "review_status": "unreviewed"
+    },
+    "Toxic Statin Myopathy": {
+      "typical_window_hours": [
+        24,
+        8760
+      ],
+      "rationale": "Medication-associated symptoms over days to months.",
+      "review_status": "unreviewed"
+    },
+    "Pancreatic Adenocarcinoma": {
+      "typical_window_hours": [
+        720,
+        175200
+      ],
+      "rationale": "Progressive disease over months.",
+      "review_status": "unreviewed"
+    },
+    "Exocrine Pancreatic Insufficiency": {
+      "typical_window_hours": [
+        720,
+        175200
+      ],
+      "rationale": "Chronic digestive enzyme insufficiency.",
+      "review_status": "unreviewed"
+    },
+    "Tubo-Ovarian Abscess": {
+      "typical_window_hours": [
+        24,
+        336
+      ],
+      "rationale": "Acute complication of pelvic infection.",
+      "review_status": "unreviewed"
+    },
+    "Necrotizing Fasciitis": {
+      "typical_window_hours": [
+        1,
+        168
+      ],
+      "rationale": "Rapidly progressive emergency over hours to days.",
+      "review_status": "unreviewed"
+    },
+    "Herpes Zoster": {
+      "typical_window_hours": [
+        12,
+        720
+      ],
+      "rationale": "Pain and eruption develop over days and resolve over weeks.",
+      "review_status": "unreviewed"
+    },
+    "Splenic Rupture": {
+      "typical_window_hours": [
+        0.01,
+        48
+      ],
+      "rationale": "Acute traumatic or spontaneous rupture presentation.",
+      "review_status": "unreviewed"
+    },
+    "Hypersplenism": {
+      "typical_window_hours": [
+        720,
+        87600
+      ],
+      "rationale": "Chronic cytopenia-producing process.",
+      "review_status": "unreviewed"
+    },
+    "Subacute Thyroiditis": {
+      "typical_window_hours": [
+        168,
+        2160
+      ],
+      "rationale": "Painful inflammatory thyroiditis over weeks to months.",
+      "review_status": "unreviewed"
+    },
+    "Toxic Multinodular Goiter": {
+      "typical_window_hours": [
+        720,
+        175200
+      ],
+      "rationale": "Chronic autonomous hyperthyroidism.",
+      "review_status": "unreviewed"
+    },
+    "Acute Viral Rhinitis": {
+      "typical_window_hours": [
+        12,
+        240
+      ],
+      "rationale": "Common viral illness lasting days.",
+      "review_status": "unreviewed"
+    },
+    "Chronic Rhinosinusitis": {
+      "typical_window_hours": [
+        2016,
+        175200
+      ],
+      "rationale": "Persistent sinonasal inflammation lasting at least weeks.",
+      "review_status": "unreviewed"
+    },
+    "Abdominal Aortic Aneurysm": {
+      "typical_window_hours": [
+        8760,
+        175200
+      ],
+      "rationale": "Usually chronic and silent until complication.",
+      "review_status": "unreviewed"
+    },
+    "Acute Limb Ischemia": {
+      "typical_window_hours": [
+        0.01,
+        24
+      ],
+      "rationale": "Abrupt vascular occlusion requiring urgent recognition.",
+      "review_status": "unreviewed"
+    },
+    "Superficial Thrombophlebitis": {
+      "typical_window_hours": [
+        12,
+        720
+      ],
+      "rationale": "Acute localized venous inflammation over days to weeks.",
+      "review_status": "unreviewed"
+    },
+    "Acute Endometritis": {
+      "typical_window_hours": [
+        24,
+        336
+      ],
+      "rationale": "Acute infection commonly evolves over days.",
+      "review_status": "unreviewed"
+    }
+  }
+}

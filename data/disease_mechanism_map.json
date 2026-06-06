@@ -1,0 +1,611 @@
+{
+  "_meta": {
+    "description": "Maps verified disease names to LAYER 2-4 mechanism inputs",
+    "purpose": "Bridge between hardcoded clinical data and mechanism derivation"
+  },
+  "mappings": {
+    "Acute Bacterial Meningitis": {
+      "organ": "meninges",
+      "failure_mode": "infection_inflammation",
+      "pathogen": "neisseria_meningitidis"
+    },
+    "Acute Gastroenteritis": {
+      "organ": "small_intestine",
+      "failure_mode": "viral_inflammation",
+      "pathogen": "norovirus"
+    },
+    "Acute Pyelonephritis": {
+      "organ": "kidney",
+      "failure_mode": "infection_pyelonephritis",
+      "pathogen": "escherichia_coli_uropathogenic"
+    },
+    "Acute Uncomplicated Cystitis": {
+      "organ": "bladder",
+      "failure_mode": "infection_cystitis",
+      "pathogen": "escherichia_coli_uropathogenic"
+    },
+    "Acute Viral Upper Respiratory Infection": {
+      "organ": "upper_respiratory_tract",
+      "failure_mode": "viral_uri",
+      "pathogen": "rhinovirus"
+    },
+    "Asthma Exacerbation": {
+      "organ": "bronchus",
+      "failure_mode": "bronchospasm_asthma",
+      "pathogen": null
+    },
+    "Community-acquired Pneumonia": {
+      "organ": "lungs",
+      "failure_mode": "alveolar_consolidation",
+      "pathogen": "streptococcus_pneumoniae"
+    },
+    "Diabetes Mellitus Type 2": {
+      "organ": "pancreas_islets",
+      "failure_mode": "beta_cell_resistance_T2DM",
+      "pathogen": null
+    },
+    "Gastroesophageal Reflux Disease": {
+      "organ": "stomach",
+      "failure_mode": "acid_reflux",
+      "pathogen": null
+    },
+    "Hypertensive Emergency": {
+      "organ": "vasculature_systemic",
+      "failure_mode": "severe_HTN_emergency",
+      "pathogen": null
+    },
+    "Migraine": {
+      "organ": "brain",
+      "failure_mode": "vascular_dysregulation_migraine",
+      "pathogen": null
+    },
+    "Stable Angina Pectoris": {
+      "organ": "coronary_arteries",
+      "failure_mode": "stable_atherosclerosis",
+      "pathogen": null
+    },
+    "Tension-type Headache": {
+      "organ": "brain",
+      "failure_mode": "vascular_engorgement_tension",
+      "pathogen": null
+    },
+    "Sepsis": {
+      "organ": "vasculature_systemic",
+      "failure_mode": "septic_shock",
+      "pathogen": null
+    },
+    "Congestive Heart Failure": {
+      "organ": "heart",
+      "failure_mode": "chronic_pump_failure",
+      "pathogen": null
+    },
+    "COPD": {
+      "organ": "bronchus",
+      "failure_mode": "chronic_airway_disease_COPD",
+      "pathogen": null
+    },
+    "Heart Attack/MI": {
+      "organ": "heart",
+      "failure_mode": "coronary_obstruction_acute",
+      "pathogen": null
+    },
+    "Acute Pulmonary Embolism": {
+      "organ": "pulmonary_arteries",
+      "failure_mode": "thromboembolism_acute",
+      "pathogen": null
+    },
+    "ARDS": {
+      "organ": "lungs",
+      "failure_mode": "acute_alveolar_injury_ARDS",
+      "pathogen": null
+    },
+    "Diabetic Ketoacidosis": {
+      "organ": "pancreas_islets",
+      "failure_mode": "diabetic_ketoacidosis_DKA",
+      "pathogen": null
+    },
+    "Anaphylaxis": {
+      "organ": "systemic_immune",
+      "failure_mode": "type_I_hypersensitivity_anaphylaxis",
+      "pathogen": null
+    },
+    "Acute Pancreatitis": {
+      "organ": "pancreas",
+      "failure_mode": "acute_pancreatitis",
+      "pathogen": null
+    },
+    "Aortic Dissection": {
+      "organ": "aorta",
+      "failure_mode": "aortic_dissection_acute",
+      "pathogen": null
+    },
+    "Acute Cholecystitis": {
+      "organ": "gallbladder",
+      "failure_mode": "acute_cholecystitis",
+      "pathogen": null
+    },
+    "Acute Diverticulitis": {
+      "organ": "desc_colon",
+      "failure_mode": "acute_diverticulitis",
+      "pathogen": null
+    },
+    "Atrial Fibrillation": {
+      "organ": "heart",
+      "failure_mode": "atrial_fibrillation_arrhythmia",
+      "pathogen": null
+    },
+    "Ischemic Stroke": {
+      "organ": "brain",
+      "failure_mode": "ischemic_stroke",
+      "pathogen": null
+    },
+    "Type 1 Diabetes Mellitus": {
+      "organ": "pancreas_islets",
+      "failure_mode": "type_1_diabetes_autoimmune",
+      "pathogen": null
+    },
+    "Primary Hypothyroidism": {
+      "organ": "thyroid",
+      "failure_mode": "primary_hypothyroidism_Hashimoto",
+      "pathogen": null
+    },
+    "Cirrhosis": {
+      "organ": "liver",
+      "failure_mode": "cirrhosis_chronic_liver_disease",
+      "pathogen": null
+    },
+    "Chronic Kidney Disease": {
+      "organ": "kidney",
+      "failure_mode": "chronic_kidney_disease_CKD",
+      "pathogen": null
+    },
+    "Cellulitis": {
+      "organ": "skin",
+      "failure_mode": "cellulitis_acute_bacterial_infection",
+      "pathogen": null
+    },
+    "Acute Appendicitis": {
+      "organ": "appendix",
+      "failure_mode": "luminal_obstruction",
+      "pathogen": null
+    },
+    "Deep Vein Thrombosis": {
+      "organ": "blood",
+      "failure_mode": "venous_thromboembolism_DVT",
+      "pathogen": null
+    },
+    "Acute Kidney Injury": {
+      "organ": "kidney",
+      "failure_mode": "acute_kidney_injury_AKI",
+      "pathogen": null
+    },
+    "Acute Bronchitis": {
+      "organ": "bronchus",
+      "failure_mode": "acute_bronchitis_inflammation",
+      "pathogen": null
+    },
+    "Pneumothorax": {
+      "organ": "pleura",
+      "failure_mode": "spontaneous_pneumothorax_pleural_rupture",
+      "pathogen": null
+    },
+    "Acute Pericarditis": {
+      "organ": "pericardium",
+      "failure_mode": "acute_pericarditis_inflammation",
+      "pathogen": null
+    },
+    "Infective Endocarditis": {
+      "organ": "heart",
+      "failure_mode": "infective_endocarditis",
+      "pathogen": null
+    },
+    "Acute Pulmonary Edema": {
+      "organ": "heart",
+      "failure_mode": "acute_pulmonary_edema_cardiogenic",
+      "pathogen": null
+    },
+    "Acute Hepatitis": {
+      "organ": "liver",
+      "failure_mode": "acute_hepatitis_inflammation",
+      "pathogen": null
+    },
+    "Inflammatory Bowel Disease": {
+      "organ": "sig_colon",
+      "failure_mode": "inflammatory_bowel_disease_IBD",
+      "pathogen": null
+    },
+    "Acute Cholangitis": {
+      "organ": "bile_duct",
+      "failure_mode": "acute_cholangitis_ascending_infection",
+      "pathogen": null
+    },
+    "Small Bowel Obstruction": {
+      "organ": "small_intestine",
+      "failure_mode": "small_bowel_obstruction_mechanical",
+      "pathogen": null
+    },
+    "Subarachnoid Hemorrhage": {
+      "organ": "brain",
+      "failure_mode": "subarachnoid_hemorrhage_SAH",
+      "pathogen": null
+    },
+    "Bell's Palsy": {
+      "organ": "facial_nerve",
+      "failure_mode": "bell_palsy_idiopathic_facial_paralysis",
+      "pathogen": null
+    },
+    "Generalized Tonic-Clonic Seizure": {
+      "organ": "brain",
+      "failure_mode": "epileptic_seizure_generalized_tonic_clonic",
+      "pathogen": null
+    },
+    "Hyperthyroidism (Graves)": {
+      "organ": "thyroid",
+      "failure_mode": "hyperthyroidism_Graves_disease",
+      "pathogen": null
+    },
+    "Iron Deficiency Anemia": {
+      "organ": "blood",
+      "failure_mode": "iron_deficiency_anemia",
+      "pathogen": null
+    },
+    "Adrenal Insufficiency": {
+      "organ": "r_adrenal",
+      "failure_mode": "primary_adrenal_insufficiency_Addison",
+      "pathogen": null
+    },
+    "Acute Gout": {
+      "organ": "joint",
+      "failure_mode": "acute_gout_monosodium_urate_crystals",
+      "pathogen": null,
+      "additional_sites": [
+        "mtp_joint",
+        "ankle_joint",
+        "knee_joint"
+      ]
+    },
+    "Sciatica": {
+      "organ": "spinal_nerves",
+      "failure_mode": "sciatica_lumbar_radiculopathy",
+      "pathogen": null
+    },
+    "Acute Otitis Media": {
+      "organ": "middle_ear",
+      "failure_mode": "acute_otitis_media_AOM",
+      "pathogen": null
+    },
+    "Chronic Essential Hypertension": {
+      "organ": "vasculature_systemic",
+      "failure_mode": "chronic_essential_hypertension",
+      "pathogen": null
+    },
+    "Hyperlipidemia": {
+      "organ": "vasculature_systemic",
+      "failure_mode": "hyperlipidemia_dyslipidemia",
+      "pathogen": null
+    },
+    "Dilated Cardiomyopathy": {
+      "organ": "heart",
+      "failure_mode": "dilated_cardiomyopathy",
+      "pathogen": null
+    },
+    "Mitral Regurgitation": {
+      "organ": "heart",
+      "failure_mode": "mitral_regurgitation",
+      "pathogen": null
+    },
+    "Aortic Stenosis": {
+      "organ": "heart",
+      "failure_mode": "aortic_stenosis",
+      "pathogen": null
+    },
+    "Bradyarrhythmia": {
+      "organ": "heart",
+      "failure_mode": "bradyarrhythmia_sinus_bradycardia_or_AV_block",
+      "pathogen": null
+    },
+    "Supraventricular Tachycardia": {
+      "organ": "heart",
+      "failure_mode": "supraventricular_tachycardia_SVT",
+      "pathogen": null
+    },
+    "Vasovagal Syncope": {
+      "organ": "brain",
+      "failure_mode": "vasovagal_syncope_neurocardiogenic",
+      "pathogen": null
+    },
+    "Peripheral Artery Disease": {
+      "organ": "vasculature_systemic",
+      "failure_mode": "peripheral_artery_disease_PAD",
+      "pathogen": null
+    },
+    "Varicose Veins": {
+      "organ": "vasculature_systemic",
+      "failure_mode": "chronic_venous_insufficiency_varicose_veins",
+      "pathogen": null
+    },
+    "Erosive Esophagitis": {
+      "organ": "esophagus",
+      "failure_mode": "esophagitis_reflux_chronic",
+      "pathogen": null
+    },
+    "Peptic Ulcer Disease": {
+      "organ": "stomach",
+      "failure_mode": "peptic_ulcer_disease_PUD",
+      "pathogen": null
+    },
+    "Irritable Bowel Syndrome": {
+      "organ": "colon",
+      "failure_mode": "irritable_bowel_syndrome_IBS",
+      "pathogen": null
+    },
+    "Colorectal Cancer": {
+      "organ": "asc_colon",
+      "failure_mode": "colorectal_cancer",
+      "pathogen": null
+    },
+    "Hemorrhoids": {
+      "organ": "rectum",
+      "failure_mode": "hemorrhoids",
+      "pathogen": null
+    },
+    "Non-alcoholic Fatty Liver Disease": {
+      "organ": "liver",
+      "failure_mode": "non_alcoholic_fatty_liver_disease_NAFLD",
+      "pathogen": null
+    },
+    "Cholelithiasis": {
+      "organ": "gallbladder",
+      "failure_mode": "cholelithiasis_gallstones_asymptomatic",
+      "pathogen": null
+    },
+    "Alcoholic Hepatitis": {
+      "organ": "liver",
+      "failure_mode": "alcoholic_hepatitis",
+      "pathogen": null
+    },
+    "Chronic Pancreatitis": {
+      "organ": "pancreas",
+      "failure_mode": "chronic_pancreatitis",
+      "pathogen": null
+    },
+    "Celiac Disease": {
+      "organ": "small_intestine",
+      "failure_mode": "celiac_disease",
+      "pathogen": null
+    },
+    "Acute Sinusitis": {
+      "organ": "upper_respiratory_tract",
+      "failure_mode": "acute_sinusitis",
+      "pathogen": null
+    },
+    "Streptococcal Pharyngitis": {
+      "organ": "throat",
+      "failure_mode": "streptococcal_pharyngitis",
+      "pathogen": null
+    },
+    "Allergic Rhinitis": {
+      "organ": "nose",
+      "failure_mode": "allergic_rhinitis",
+      "pathogen": null
+    },
+    "Pulmonary Tuberculosis": {
+      "organ": "lungs",
+      "failure_mode": "tuberculosis_pulmonary",
+      "pathogen": null
+    },
+    "Lung Cancer": {
+      "organ": "lungs",
+      "failure_mode": "lung_cancer",
+      "pathogen": null
+    },
+    "Serous Otitis Media": {
+      "organ": "middle_ear",
+      "failure_mode": "serous_otitis_media_OME",
+      "pathogen": null
+    },
+    "Acute Angle Closure Glaucoma": {
+      "organ": "eye",
+      "failure_mode": "acute_angle_closure_glaucoma",
+      "pathogen": null
+    },
+    "Conjunctivitis": {
+      "organ": "eye",
+      "failure_mode": "conjunctivitis_pink_eye",
+      "pathogen": null
+    },
+    "Bronchiectasis": {
+      "organ": "bronchus",
+      "failure_mode": "bronchiectasis",
+      "pathogen": null
+    },
+    "Idiopathic Pulmonary Fibrosis": {
+      "organ": "lungs",
+      "failure_mode": "pulmonary_fibrosis_IPF",
+      "pathogen": null
+    },
+    "Benign Prostatic Hyperplasia": {
+      "organ": "prostate",
+      "failure_mode": "benign_prostatic_hyperplasia_BPH",
+      "pathogen": null
+    },
+    "Prostate Cancer": {
+      "organ": "prostate",
+      "failure_mode": "prostate_cancer",
+      "pathogen": null
+    },
+    "Endometriosis": {
+      "organ": "uterus",
+      "failure_mode": "endometriosis",
+      "pathogen": null
+    },
+    "PCOS": {
+      "organ": "ovary",
+      "failure_mode": "polycystic_ovary_syndrome_PCOS",
+      "pathogen": null
+    },
+    "Ectopic Pregnancy": {
+      "organ": "uterus",
+      "failure_mode": "ectopic_pregnancy",
+      "pathogen": null
+    },
+    "Breast Cancer": {
+      "organ": "breast",
+      "failure_mode": "breast_cancer",
+      "pathogen": null
+    },
+    "Uterine Fibroids": {
+      "organ": "uterus",
+      "failure_mode": "uterine_fibroids_leiomyoma",
+      "pathogen": null
+    },
+    "Nephrolithiasis": {
+      "organ": "kidney",
+      "failure_mode": "nephrolithiasis_kidney_stones",
+      "pathogen": null
+    },
+    "Hypoglycemia": {
+      "organ": "pancreas_islets",
+      "failure_mode": "hypoglycemia_severe",
+      "pathogen": null
+    },
+    "Preeclampsia": {
+      "organ": "vasculature_systemic",
+      "failure_mode": "preeclampsia",
+      "pathogen": null
+    },
+    "Parkinson Disease": {
+      "organ": "brain",
+      "failure_mode": "parkinson_disease",
+      "pathogen": null
+    },
+    "Alzheimer's Dementia": {
+      "organ": "brain",
+      "failure_mode": "alzheimer_dementia",
+      "pathogen": null
+    },
+    "Multiple Sclerosis": {
+      "organ": "brain",
+      "failure_mode": "multiple_sclerosis",
+      "pathogen": null
+    },
+    "Guillain-Barre Syndrome": {
+      "organ": "spinal_nerves",
+      "failure_mode": "guillain_barre_syndrome",
+      "pathogen": null
+    },
+    "Osteoporosis": {
+      "organ": "bone",
+      "failure_mode": "osteoporosis",
+      "pathogen": null
+    },
+    "Rheumatoid Arthritis": {
+      "organ": "joint",
+      "failure_mode": "rheumatoid_arthritis",
+      "pathogen": null,
+      "additional_sites": [
+        "mcp_joint",
+        "pip_joint",
+        "wrist_joint",
+        "mtp_joint"
+      ]
+    },
+    "Immune Thrombocytopenia (ITP)": {
+      "organ": "blood",
+      "failure_mode": "thrombocytopenia_ITP",
+      "pathogen": null
+    },
+    "Atopic Dermatitis": {
+      "organ": "skin",
+      "failure_mode": "atopic_dermatitis_eczema",
+      "pathogen": null
+    },
+    "Non-Hodgkin Lymphoma": {
+      "organ": "lymph_node",
+      "failure_mode": "lymphoma_non_hodgkin",
+      "pathogen": null
+    },
+    "Carpal Tunnel Syndrome": {
+      "organ": "median_nerve",
+      "failure_mode": "carpal_tunnel_syndrome",
+      "pathogen": null
+    },
+    "Cubital Tunnel Syndrome": {
+      "organ": "ulnar_nerve",
+      "failure_mode": "cubital_tunnel_syndrome",
+      "pathogen": null
+    },
+    "Tarsal Tunnel Syndrome": {
+      "organ": "tibial_nerve",
+      "failure_mode": "tarsal_tunnel_syndrome",
+      "pathogen": null
+    },
+    "Peroneal Nerve Palsy": {
+      "organ": "common_peroneal_nerve",
+      "failure_mode": "peroneal_nerve_palsy_foot_drop",
+      "pathogen": null
+    },
+    "Trigeminal Neuralgia": {
+      "organ": "trigeminal_nerve",
+      "failure_mode": "trigeminal_neuralgia",
+      "pathogen": null
+    },
+    "Diabetic Retinopathy": {
+      "organ": "retina",
+      "failure_mode": "diabetic_retinopathy",
+      "pathogen": null
+    },
+    "Diabetic Nephropathy": {
+      "organ": "kidney",
+      "failure_mode": "diabetic_nephropathy",
+      "pathogen": null
+    },
+    "Diabetic Peripheral Neuropathy": {
+      "organ": "spinal_nerves",
+      "failure_mode": "diabetic_peripheral_neuropathy",
+      "pathogen": null
+    },
+    "Plantar Fasciitis": {
+      "organ": "skin",
+      "failure_mode": "plantar_fasciitis",
+      "pathogen": null
+    },
+    "Rotator Cuff Tear (Supraspinatus)": {
+      "organ": "supraspinatus_muscle",
+      "failure_mode": "rotator_cuff_tear_supraspinatus",
+      "pathogen": null
+    },
+    "Piriformis Syndrome": {
+      "organ": "piriformis_muscle",
+      "failure_mode": "piriformis_syndrome",
+      "pathogen": null
+    },
+    "Thoracic Outlet Syndrome": {
+      "organ": "brachial_plexus",
+      "failure_mode": "thoracic_outlet_syndrome",
+      "pathogen": null
+    },
+    "Acute Compartment Syndrome": {
+      "organ": "fascial_compartment_leg",
+      "failure_mode": "acute_compartment_syndrome",
+      "pathogen": null
+    },
+    "Cauda Equina Syndrome": {
+      "organ": "cauda_equina",
+      "failure_mode": "cauda_equina_syndrome",
+      "pathogen": null
+    },
+    "Iliotibial Band Syndrome": {
+      "organ": "iliotibial_band",
+      "failure_mode": "iliotibial_band_syndrome",
+      "pathogen": null
+    },
+    "Thalamic Stroke (Lacunar Type)": {
+      "organ": "thalamus",
+      "failure_mode": "lacunar_infarct_vpl_pure_sensory",
+      "pathogen": null,
+      "_review_status": "unreviewed",
+      "_review_note": "Disease entry awaiting medical review. NEXUS will refuse to publish this as a disease label until _review_status is set to 'reviewed'."
+    }
+  }
+}

@@ -1,0 +1,137 @@
+{
+  "_comment": "Follow-up question templates for Osler. Edit here, not in code.",
+  "_version": "1.0",
+  "buckets": {
+    "neuro_screen": {
+      "_note": "Neurologic localization — highest priority. Ask when numbness/weakness/tingling present.",
+      "numbness": [
+        "Is the numbness on one side of your body (face, arm, or leg), or is it on both sides?",
+        "Did the numbness start suddenly, or come on gradually over minutes/hours?",
+        "Do you also have any weakness, difficulty speaking, or changes in your vision?"
+      ],
+      "weakness": [
+        "Is the weakness on one side of your body, or both sides?",
+        "Did it start suddenly or gradually?"
+      ],
+      "tingling": [
+        "Is the tingling on one side of your body or both sides, and where exactly?"
+      ]
+    },
+    "clarify": {
+      "_note": "Symptom clarification — 1 per response max.",
+      "dizziness": [
+        "Is the dizziness more like lightheadedness/faintness, or a spinning sensation?"
+      ],
+      "rash": [
+        "Where is the rash? Is it spreading, raised, or itchy?"
+      ],
+      "redness": [
+        "Where is the redness? (skin, eyes, face, or a specific area)"
+      ],
+      "swelling": [
+        "Where is the swelling? (one leg, both legs, face, or all over)"
+      ],
+      "joint pain": [
+        "Is the joint pain in one joint or multiple joints, and which ones?"
+      ],
+      "pain": [
+        "Where exactly is the pain?"
+      ]
+    },
+    "dehydration": {
+      "_note": "Ask only when GI symptoms present OR dizziness WITHOUT neuro symptoms.",
+      "default": [
+        "Have you been able to keep food and fluids down, or has nausea been preventing you from eating or drinking?",
+        "Are you urinating less than usual, or feeling very thirsty or dry-mouthed?"
+      ]
+    },
+    "vestibular": {
+      "_note": "Positional dizziness — ask when dizziness present without neuro symptoms.",
+      "default": [
+        "Is the dizziness worse when you stand up quickly, turn your head, or change positions?"
+      ]
+    },
+    "systemic": {
+      "_note": "Infection/systemic illness screen.",
+      "default": [
+        "Have you had any fever, chills, or felt like you might be coming down with something?",
+        "Have you been around anyone who is sick, or traveled recently?"
+      ]
+    },
+    "medication": {
+      "_note": "Always ask when unexplained symptoms without clear cause.",
+      "default": [
+        "Have you started any new medications, supplements, or changed your dosage recently?"
+      ]
+    },
+    "red_flags": {
+      "_note": "GI safety questions.",
+      "gi": [
+        "Is there any blood in your stool?",
+        "Have you had any severe abdominal pain or cramping?"
+      ]
+    }
+  },
+  "high_priority": {
+    "_note": "Forced questions for high-priority symptoms — override normal buckets.",
+    "chest pain": [
+      "What does the chest pain feel like? (pressure/squeezing, sharp/stabbing, burning, or aching)",
+      "How long has the chest pain lasted? Is it constant or comes and goes?",
+      "Do you have shortness of breath, sweating, or lightheadedness with the chest pain?",
+      "Does the pain spread to your arm, jaw, neck, or back?",
+      "Does it get worse with physical activity or deep breathing?"
+    ],
+    "shortness of breath": [
+      "Did the shortness of breath come on suddenly or gradually?",
+      "Is it worse when lying down or with exertion?"
+    ],
+    "numbness": [
+      "Is the numbness on one side of your body, or both sides?",
+      "Where exactly is the numbness — face, arm, hand, leg, or a specific area?",
+      "Did the numbness start suddenly or come on gradually?",
+      "Do you also have any weakness, difficulty speaking, or vision changes?"
+    ],
+    "weakness": [
+      "Is the weakness on one side of your body or both sides?",
+      "Did it start suddenly or gradually?",
+      "Do you also have numbness, difficulty speaking, or vision changes?"
+    ],
+    "palpitations": [
+      "How long do the palpitations last — seconds, minutes, or longer?",
+      "Do you feel lightheadedness, near-fainting, or chest discomfort with them?",
+      "Do they start and stop suddenly, or gradually?"
+    ]
+  },
+  "high_risk_safety": {
+    "_note": "Shown instead of normal questions when high-risk freeze active.",
+    "chest pain": [
+      "Can you describe the chest pain character? (pressure, sharp, burning)",
+      "Is it worse with exertion or breathing?",
+      "Any radiation to arm/jaw/back?",
+      "Any sweating, nausea, or shortness of breath?"
+    ],
+    "shortness of breath": [
+      "Did the shortness of breath come on suddenly?",
+      "Any chest pain or leg swelling?",
+      "Are you able to speak in full sentences?"
+    ],
+    "syncope": [
+      "Did you lose consciousness completely or just feel faint?",
+      "Any warning signs before it happened (palpitations, chest pain)?",
+      "How long were you unresponsive?"
+    ]
+  },
+  "suppress_patterns": {
+    "_note": "Question substrings to suppress if already asked. Case-insensitive.",
+    "patterns": [
+      "sweating",
+      "shortness of breath",
+      "arm.*jaw",
+      "one side",
+      "keep.*fluids",
+      "urinating",
+      "blood.*stool",
+      "fainting"
+    ]
+  }
+}

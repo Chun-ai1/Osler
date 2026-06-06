@@ -1,0 +1,2842 @@
+{
+  "_meta": {
+    "description": "Medical knowledge graph for GNN learning",
+    "edge_types": [
+      "disease_affects_organ",
+      "disease_in_zone",
+      "symptom_indicates_organ",
+      "symptom_in_zone",
+      "organ_in_zone",
+      "disease_has_symptom",
+      "organ_connects_to"
+    ],
+    "total_nodes": 436,
+    "total_edges": 1576
+  },
+  "edges": {
+    "disease_affects_organ": {
+      "stable_angina_pectoris": [
+        "heart",
+        "lad_a",
+        "lcx_a",
+        "left_main_coronary",
+        "rca_a"
+      ],
+      "heart_attack": [
+        "heart",
+        "lad_a",
+        "lcx_a",
+        "left_main_coronary",
+        "rca_a"
+      ],
+      "myocardial_infarction": [
+        "heart",
+        "lad_a",
+        "lcx_a",
+        "rca_a"
+      ],
+      "hypertensive_emergency": [
+        "aorta",
+        "brain",
+        "heart",
+        "l_kidney",
+        "r_kidney"
+      ],
+      "community_acquired_pneumonia": [
+        "l_bronchus",
+        "l_lung",
+        "lungs",
+        "r_bronchus",
+        "r_lung"
+      ],
+      "pneumonia": [
+        "l_lung",
+        "lungs",
+        "r_lung"
+      ],
+      "asthma_exacerbation": [
+        "l_bronchus",
+        "lungs",
+        "r_bronchus"
+      ],
+      "asthma": [
+        "l_bronchus",
+        "lungs",
+        "r_bronchus"
+      ],
+      "acute_viral_upper_respiratory_infection": [
+        "pharynx",
+        "trachea"
+      ],
+      "covid": [
+        "l_lung",
+        "lungs",
+        "pharynx",
+        "r_lung"
+      ],
+      "pulmonary_embolism": [
+        "l_lung",
+        "l_pulm_a",
+        "lungs",
+        "pulm_aa",
+        "r_lung",
+        "r_pulm_a"
+      ],
+      "acute_bacterial_meningitis": [
+        "brain",
+        "meninges",
+        "spinal_cord"
+      ],
+      "meningitis": [
+        "brain",
+        "meninges"
+      ],
+      "migraine": [
+        "brain",
+        "middle_cerebral_a",
+        "ophthalmic_a"
+      ],
+      "tension_type_headache": [
+        "brain",
+        "muscles"
+      ],
+      "stroke": [
+        "anterior_cerebral_a",
+        "brain",
+        "internal_carotid_a",
+        "middle_cerebral_a"
+      ],
+      "ischemic_stroke": [
+        "anterior_cerebral_a",
+        "brain",
+        "internal_carotid_a",
+        "middle_cerebral_a"
+      ],
+      "acute_gastroenteritis": [
+        "asc_colon",
+        "ileum",
+        "jejunum",
+        "stomach",
+        "trans_colon"
+      ],
+      "gastroenteritis": [
+        "ileum",
+        "jejunum",
+        "stomach"
+      ],
+      "appendicitis": [
+        "appendix",
+        "cecum",
+        "ileocolic_a"
+      ],
+      "gastroesophageal_reflux_disease": [
+        "esophagus",
+        "stomach"
+      ],
+      "cholecystitis": [
+        "bile_duct",
+        "cystic_a",
+        "gallbladder"
+      ],
+      "pancreatitis": [
+        "duodenum",
+        "pancreas"
+      ],
+      "acute_pyelonephritis": [
+        "l_kidney",
+        "l_ureter",
+        "r_kidney",
+        "r_ureter"
+      ],
+      "pyelonephritis": [
+        "l_kidney",
+        "r_kidney"
+      ],
+      "acute_uncomplicated_cystitis": [
+        "bladder",
+        "urethra"
+      ],
+      "cystitis": [
+        "bladder",
+        "urethra"
+      ],
+      "urinary_tract_infection": [
+        "bladder",
+        "l_ureter",
+        "r_ureter",
+        "urethra"
+      ],
+      "ureterolithiasis": [
+        "l_kidney",
+        "l_ureter",
+        "r_kidney",
+        "r_ureter"
+      ],
+      "diabetes_mellitus_type_2": [
+        "pancreas"
+      ],
+      "diabetic_ketoacidosis": [
+        "brain",
+        "l_kidney",
+        "pancreas",
+        "r_kidney"
+      ],
+      "deep_vein_thrombosis": [
+        "gastrocnemius_vv",
+        "great_saphenous_v",
+        "l_femoral_v",
+        "r_femoral_v",
+        "r_popliteal_v",
+        "soleal_vv"
+      ],
+      "dvt": [
+        "great_saphenous_v",
+        "soleal_vv"
+      ],
+      "aortic_dissection": [
+        "abdominal_aorta",
+        "aorta",
+        "aortic_arch",
+        "thoracic_aorta"
+      ],
+      "sepsis": [
+        "heart",
+        "l_kidney",
+        "liver",
+        "lungs",
+        "r_kidney",
+        "spleen"
+      ],
+      "shock": [
+        "brain",
+        "heart"
+      ],
+      "viral_uri": [
+        "pharynx",
+        "trachea"
+      ],
+      "acute_coronary_syndrome": [
+        "heart",
+        "lad_a",
+        "lcx_a",
+        "left_main_coronary",
+        "rca_a"
+      ],
+      "st_elevation_myocardial_infarction": [
+        "heart",
+        "lad_a",
+        "lcx_a",
+        "rca_a"
+      ],
+      "nstemi": [
+        "heart",
+        "lad_a",
+        "rca_a"
+      ],
+      "unstable_angina": [
+        "heart",
+        "lad_a",
+        "lcx_a",
+        "rca_a"
+      ],
+      "atrial_fibrillation": [
+        "heart",
+        "left_atrium",
+        "right_atrium"
+      ],
+      "heart_failure_exacerbation": [
+        "heart",
+        "left_ventricle",
+        "lungs"
+      ],
+      "pericarditis": [
+        "heart"
+      ],
+      "pericardial_tamponade": [
+        "heart"
+      ],
+      "endocarditis": [
+        "heart",
+        "left_atrium",
+        "left_ventricle"
+      ],
+      "vasovagal_syncope": [
+        "brain",
+        "heart"
+      ],
+      "orthostatic_hypotension": [
+        "brain",
+        "heart"
+      ],
+      "peripheral_arterial_disease": [
+        "l_femoral_a",
+        "l_popliteal_a",
+        "l_tibial_a",
+        "r_femoral_a",
+        "r_popliteal_a",
+        "r_tibial_a"
+      ],
+      "hypertrophic_cardiomyopathy": [
+        "heart",
+        "left_ventricle"
+      ],
+      "acute_bronchitis": [
+        "l_bronchus",
+        "r_bronchus",
+        "trachea"
+      ],
+      "copd_exacerbation": [
+        "l_bronchus",
+        "l_lung",
+        "lungs",
+        "r_bronchus",
+        "r_lung"
+      ],
+      "acute_sinusitis": [
+        "pharynx"
+      ],
+      "streptococcal_pharyngitis": [
+        "pharynx"
+      ],
+      "influenza": [
+        "l_lung",
+        "pharynx",
+        "r_lung",
+        "trachea"
+      ],
+      "acute_otitis_media": [
+        "pharynx"
+      ],
+      "bronchiolitis": [
+        "l_bronchus",
+        "lungs",
+        "r_bronchus"
+      ],
+      "croup": [
+        "pharynx",
+        "trachea"
+      ],
+      "pneumothorax": [
+        "l_lung",
+        "pleura",
+        "r_lung"
+      ],
+      "pleural_effusion": [
+        "l_lung",
+        "pleura",
+        "r_lung"
+      ],
+      "aspiration_pneumonia": [
+        "l_lung",
+        "lungs",
+        "r_lung"
+      ],
+      "tuberculosis": [
+        "l_lung",
+        "lungs",
+        "r_lung"
+      ],
+      "acute_cholecystitis": [
+        "bile_duct",
+        "cystic_a",
+        "gallbladder"
+      ],
+      "acute_pancreatitis": [
+        "duodenum",
+        "pancreas"
+      ],
+      "diverticulitis": [
+        "desc_colon",
+        "sig_colon"
+      ],
+      "peptic_ulcer_disease": [
+        "duodenum",
+        "gastroduodenal_a",
+        "stomach"
+      ],
+      "upper_gi_bleed": [
+        "duodenum",
+        "esophagus",
+        "left_gastric_a",
+        "stomach"
+      ],
+      "lower_gi_bleed": [
+        "desc_colon",
+        "rectum",
+        "sig_colon"
+      ],
+      "inflammatory_bowel_disease_flare": [
+        "asc_colon",
+        "desc_colon",
+        "ileum",
+        "trans_colon"
+      ],
+      "acute_hepatitis": [
+        "liver",
+        "proper_hepatic_a"
+      ],
+      "cholangitis": [
+        "bile_duct",
+        "gallbladder",
+        "liver"
+      ],
+      "bowel_obstruction": [
+        "asc_colon",
+        "ileum",
+        "jejunum",
+        "trans_colon"
+      ],
+      "mesenteric_ischemia": [
+        "asc_colon",
+        "ileum",
+        "jejunum",
+        "sma"
+      ],
+      "constipation": [
+        "desc_colon",
+        "rectum",
+        "sig_colon"
+      ],
+      "transient_ischemic_attack": [
+        "brain",
+        "internal_carotid_a",
+        "middle_cerebral_a"
+      ],
+      "subarachnoid_hemorrhage": [
+        "brain",
+        "meninges",
+        "middle_cerebral_a"
+      ],
+      "intracerebral_hemorrhage": [
+        "brain"
+      ],
+      "cluster_headache": [
+        "brain",
+        "ophthalmic_a"
+      ],
+      "seizure": [
+        "brain"
+      ],
+      "bell_palsy": [
+        "brain",
+        "brainstem"
+      ],
+      "vertigo_peripheral": [
+        "brainstem",
+        "cerebellum"
+      ],
+      "vertigo_central": [
+        "brain",
+        "brainstem",
+        "cerebellum"
+      ],
+      "concussion": [
+        "brain"
+      ],
+      "idiopathic_intracranial_hypertension": [
+        "brain",
+        "meninges"
+      ],
+      "septic_shock": [
+        "brain",
+        "heart",
+        "l_kidney",
+        "liver",
+        "lungs",
+        "r_kidney"
+      ],
+      "covid_19": [
+        "l_lung",
+        "lungs",
+        "pharynx",
+        "r_lung"
+      ],
+      "cellulitis": [
+        "skin"
+      ],
+      "necrotizing_fasciitis": [
+        "muscles",
+        "skin"
+      ],
+      "mononucleosis": [
+        "cerv_ln",
+        "pharynx",
+        "spleen"
+      ],
+      "lyme_disease": [
+        "brain",
+        "heart",
+        "skin"
+      ],
+      "acute_hiv_infection": [
+        "axil_ln",
+        "cerv_ln",
+        "ing_ln",
+        "spleen"
+      ],
+      "malaria": [
+        "bone_marrow",
+        "liver",
+        "spleen"
+      ],
+      "hypoglycemia": [
+        "brain",
+        "pancreas"
+      ],
+      "hyperosmolar_hyperglycemic_state": [
+        "brain",
+        "l_kidney",
+        "pancreas",
+        "r_kidney"
+      ],
+      "thyroid_storm": [
+        "brain",
+        "heart",
+        "thyroid"
+      ],
+      "myxedema_coma": [
+        "brain",
+        "heart",
+        "thyroid"
+      ],
+      "adrenal_crisis": [
+        "heart",
+        "l_adrenal",
+        "r_adrenal"
+      ],
+      "hypothyroidism": [
+        "thyroid"
+      ],
+      "hyperthyroidism": [
+        "heart",
+        "thyroid"
+      ],
+      "renal_colic_nephrolithiasis": [
+        "l_kidney",
+        "l_ureter",
+        "r_kidney",
+        "r_ureter"
+      ],
+      "acute_kidney_injury": [
+        "l_kidney",
+        "r_kidney"
+      ],
+      "urinary_retention": [
+        "bladder",
+        "prostate",
+        "urethra"
+      ],
+      "prostatitis": [
+        "bladder",
+        "prostate"
+      ],
+      "chronic_kidney_disease": [
+        "l_kidney",
+        "r_kidney"
+      ],
+      "glomerulonephritis": [
+        "l_kidney",
+        "r_kidney"
+      ],
+      "ectopic_pregnancy": [
+        "ovaries",
+        "uterine_a",
+        "uterus"
+      ],
+      "ovarian_torsion": [
+        "ovaries",
+        "uterus"
+      ],
+      "pelvic_inflammatory_disease": [
+        "ovaries",
+        "uterus"
+      ],
+      "preeclampsia": [
+        "brain",
+        "l_kidney",
+        "liver",
+        "r_kidney",
+        "uterus"
+      ],
+      "panic_attack": [
+        "brain",
+        "heart"
+      ],
+      "major_depressive_episode": [
+        "brain"
+      ],
+      "generalized_anxiety_disorder": [
+        "brain"
+      ],
+      "acute_alcohol_intoxication": [
+        "brain",
+        "liver"
+      ],
+      "opioid_overdose": [
+        "brain",
+        "lungs"
+      ],
+      "anaphylaxis": [
+        "heart",
+        "l_bronchus",
+        "lungs",
+        "r_bronchus",
+        "skin"
+      ],
+      "heat_stroke": [
+        "brain",
+        "skin"
+      ],
+      "hypothermia": [
+        "brain",
+        "heart"
+      ],
+      "carbon_monoxide_poisoning": [
+        "brain",
+        "heart"
+      ],
+      "hyperventilation_syndrome": [
+        "brain",
+        "lungs"
+      ],
+      "acute_glaucoma": [
+        "ophthalmic_a"
+      ]
+    },
+    "disease_in_zone": {
+      "stable_angina_pectoris": [
+        "thorax_central"
+      ],
+      "heart_attack": [
+        "thorax_central"
+      ],
+      "myocardial_infarction": [
+        "thorax_central"
+      ],
+      "hypertensive_emergency": [
+        "head",
+        "thorax_central"
+      ],
+      "community_acquired_pneumonia": [
+        "thorax_central"
+      ],
+      "pneumonia": [
+        "thorax_central"
+      ],
+      "asthma_exacerbation": [
+        "thorax_central"
+      ],
+      "asthma": [
+        "thorax_central"
+      ],
+      "acute_viral_upper_respiratory_infection": [
+        "neck",
+        "thorax_central"
+      ],
+      "covid": [
+        "thorax_central"
+      ],
+      "pulmonary_embolism": [
+        "thorax_central"
+      ],
+      "acute_bacterial_meningitis": [
+        "head"
+      ],
+      "meningitis": [
+        "head"
+      ],
+      "migraine": [
+        "head"
+      ],
+      "tension_type_headache": [
+        "head",
+        "neck"
+      ],
+      "stroke": [
+        "head"
+      ],
+      "ischemic_stroke": [
+        "head"
+      ],
+      "acute_gastroenteritis": [
+        "epigastric",
+        "umbilical"
+      ],
+      "gastroenteritis": [
+        "umbilical"
+      ],
+      "appendicitis": [
+        "rlq"
+      ],
+      "gastroesophageal_reflux_disease": [
+        "epigastric"
+      ],
+      "cholecystitis": [
+        "ruq"
+      ],
+      "pancreatitis": [
+        "epigastric"
+      ],
+      "acute_pyelonephritis": [
+        "left_flank",
+        "right_flank"
+      ],
+      "pyelonephritis": [
+        "left_flank",
+        "right_flank"
+      ],
+      "acute_uncomplicated_cystitis": [
+        "suprapubic"
+      ],
+      "cystitis": [
+        "suprapubic"
+      ],
+      "urinary_tract_infection": [
+        "suprapubic"
+      ],
+      "ureterolithiasis": [
+        "left_flank",
+        "right_flank"
+      ],
+      "diabetic_ketoacidosis": [
+        "epigastric"
+      ],
+      "aortic_dissection": [
+        "thorax_central"
+      ],
+      "viral_uri": [
+        "neck"
+      ],
+      "acute_coronary_syndrome": [
+        "thorax_central"
+      ],
+      "st_elevation_myocardial_infarction": [
+        "thorax_central"
+      ],
+      "nstemi": [
+        "thorax_central"
+      ],
+      "unstable_angina": [
+        "thorax_central"
+      ],
+      "atrial_fibrillation": [
+        "thorax_central"
+      ],
+      "heart_failure_exacerbation": [
+        "thorax_central"
+      ],
+      "pericarditis": [
+        "thorax_central"
+      ],
+      "pericardial_tamponade": [
+        "thorax_central"
+      ],
+      "endocarditis": [
+        "thorax_central"
+      ],
+      "vasovagal_syncope": [
+        "head",
+        "thorax_central"
+      ],
+      "hypertrophic_cardiomyopathy": [
+        "thorax_central"
+      ],
+      "acute_bronchitis": [
+        "thorax_central"
+      ],
+      "copd_exacerbation": [
+        "thorax_central"
+      ],
+      "acute_sinusitis": [
+        "head"
+      ],
+      "streptococcal_pharyngitis": [
+        "neck"
+      ],
+      "influenza": [
+        "thorax_central"
+      ],
+      "acute_otitis_media": [
+        "head"
+      ],
+      "bronchiolitis": [
+        "thorax_central"
+      ],
+      "croup": [
+        "neck"
+      ],
+      "pneumothorax": [
+        "thorax_central"
+      ],
+      "pleural_effusion": [
+        "thorax_central"
+      ],
+      "aspiration_pneumonia": [
+        "thorax_central"
+      ],
+      "tuberculosis": [
+        "thorax_central"
+      ],
+      "acute_cholecystitis": [
+        "ruq"
+      ],
+      "acute_pancreatitis": [
+        "epigastric"
+      ],
+      "diverticulitis": [
+        "llq"
+      ],
+      "peptic_ulcer_disease": [
+        "epigastric"
+      ],
+      "upper_gi_bleed": [
+        "epigastric"
+      ],
+      "lower_gi_bleed": [
+        "llq",
+        "suprapubic"
+      ],
+      "inflammatory_bowel_disease_flare": [
+        "llq",
+        "rlq",
+        "umbilical"
+      ],
+      "acute_hepatitis": [
+        "ruq"
+      ],
+      "cholangitis": [
+        "ruq"
+      ],
+      "bowel_obstruction": [
+        "umbilical"
+      ],
+      "mesenteric_ischemia": [
+        "umbilical"
+      ],
+      "constipation": [
+        "llq",
+        "suprapubic"
+      ],
+      "transient_ischemic_attack": [
+        "head"
+      ],
+      "subarachnoid_hemorrhage": [
+        "head"
+      ],
+      "intracerebral_hemorrhage": [
+        "head"
+      ],
+      "cluster_headache": [
+        "head"
+      ],
+      "seizure": [
+        "head"
+      ],
+      "bell_palsy": [
+        "head"
+      ],
+      "vertigo_peripheral": [
+        "head"
+      ],
+      "vertigo_central": [
+        "head"
+      ],
+      "concussion": [
+        "head"
+      ],
+      "idiopathic_intracranial_hypertension": [
+        "head"
+      ],
+      "covid_19": [
+        "thorax_central"
+      ],
+      "mononucleosis": [
+        "neck"
+      ],
+      "thyroid_storm": [
+        "neck"
+      ],
+      "hypothyroidism": [
+        "neck"
+      ],
+      "hyperthyroidism": [
+        "neck"
+      ],
+      "renal_colic_nephrolithiasis": [
+        "left_flank",
+        "right_flank"
+      ],
+      "urinary_retention": [
+        "suprapubic"
+      ],
+      "prostatitis": [
+        "pelvis",
+        "suprapubic"
+      ],
+      "ectopic_pregnancy": [
+        "llq",
+        "pelvis",
+        "rlq"
+      ],
+      "ovarian_torsion": [
+        "llq",
+        "pelvis",
+        "rlq"
+      ],
+      "pelvic_inflammatory_disease": [
+        "pelvis",
+        "suprapubic"
+      ],
+      "panic_attack": [
+        "head",
+        "thorax_central"
+      ],
+      "major_depressive_episode": [
+        "head"
+      ],
+      "generalized_anxiety_disorder": [
+        "head"
+      ],
+      "acute_alcohol_intoxication": [
+        "head"
+      ],
+      "opioid_overdose": [
+        "head",
+        "thorax_central"
+      ],
+      "hyperventilation_syndrome": [
+        "thorax_central"
+      ],
+      "acute_glaucoma": [
+        "head"
+      ]
+    },
+    "symptom_indicates_organ": {
+      "headache": [
+        "brain",
+        "meninges",
+        "middle_cerebral_a",
+        "superior_sagittal_sinus",
+        "transverse_sinus"
+      ],
+      "stiff_neck": [
+        "brainstem",
+        "meninges",
+        "spinal_cord"
+      ],
+      "altered_mental_status": [
+        "brain",
+        "brainstem",
+        "cerebellum"
+      ],
+      "confusion": [
+        "brain",
+        "cerebellum"
+      ],
+      "seizure": [
+        "brain"
+      ],
+      "syncope": [
+        "brain",
+        "heart"
+      ],
+      "dizziness": [
+        "brain",
+        "brainstem",
+        "cerebellum"
+      ],
+      "loss_of_consciousness": [
+        "brain",
+        "brainstem"
+      ],
+      "sensitivity_to_light": [
+        "brain",
+        "meninges"
+      ],
+      "weakness": [
+        "brain",
+        "muscles",
+        "spinal_cord"
+      ],
+      "chest_pain": [
+        "aorta",
+        "esophagus",
+        "heart",
+        "lad_a",
+        "lcx_a",
+        "left_main_coronary",
+        "rca_a",
+        "thoracic_aorta"
+      ],
+      "chest_tightness": [
+        "heart",
+        "lad_a",
+        "lungs",
+        "rca_a"
+      ],
+      "left_arm_pain": [
+        "heart",
+        "l_arm",
+        "lad_a",
+        "lcx_a"
+      ],
+      "shortness_of_breath": [
+        "heart",
+        "l_bronchus",
+        "l_lung",
+        "lungs",
+        "r_bronchus",
+        "r_lung",
+        "trachea"
+      ],
+      "dyspnea": [
+        "heart",
+        "l_lung",
+        "lungs",
+        "r_lung"
+      ],
+      "cough": [
+        "l_bronchus",
+        "l_lung",
+        "lungs",
+        "r_bronchus",
+        "r_lung",
+        "trachea"
+      ],
+      "wheezing": [
+        "l_bronchus",
+        "l_lung",
+        "lungs",
+        "r_bronchus",
+        "r_lung"
+      ],
+      "hemoptysis": [
+        "bronchial_a",
+        "l_bronchus",
+        "l_lung",
+        "lungs",
+        "r_bronchus",
+        "r_lung"
+      ],
+      "palpitations": [
+        "heart",
+        "left_atrium",
+        "left_ventricle",
+        "right_atrium"
+      ],
+      "abdominal_pain": [
+        "appendix",
+        "asc_colon",
+        "desc_colon",
+        "duodenum",
+        "gallbladder",
+        "ileum",
+        "jejunum",
+        "liver",
+        "pancreas",
+        "stomach",
+        "trans_colon"
+      ],
+      "epigastric_pain": [
+        "duodenum",
+        "esophagus",
+        "pancreas",
+        "stomach"
+      ],
+      "ruq_pain": [
+        "bile_duct",
+        "duodenum",
+        "gallbladder",
+        "liver"
+      ],
+      "right_upper_quadrant_pain": [
+        "bile_duct",
+        "gallbladder",
+        "liver"
+      ],
+      "luq_pain": [
+        "spleen",
+        "splenic_a",
+        "splenic_v",
+        "stomach"
+      ],
+      "rlq_pain": [
+        "appendix",
+        "cecum",
+        "ileocolic_a",
+        "ileum"
+      ],
+      "right_lower_quadrant_pain": [
+        "appendix",
+        "cecum",
+        "ileum"
+      ],
+      "mcburney_point": [
+        "appendix"
+      ],
+      "llq_pain": [
+        "desc_colon",
+        "sig_colon"
+      ],
+      "left_lower_quadrant_pain": [
+        "desc_colon",
+        "sig_colon"
+      ],
+      "periumbilical_pain": [
+        "ileum",
+        "jejunum",
+        "trans_colon"
+      ],
+      "suprapubic_pain": [
+        "bladder",
+        "prostate",
+        "uterus"
+      ],
+      "pelvic_pain": [
+        "bladder",
+        "ovaries",
+        "prostate",
+        "rectum",
+        "uterus"
+      ],
+      "nausea": [
+        "brain",
+        "duodenum",
+        "stomach"
+      ],
+      "vomiting": [
+        "duodenum",
+        "esophagus",
+        "stomach"
+      ],
+      "diarrhea": [
+        "asc_colon",
+        "desc_colon",
+        "ileum",
+        "jejunum",
+        "sig_colon",
+        "trans_colon"
+      ],
+      "constipation": [
+        "desc_colon",
+        "rectum",
+        "sig_colon"
+      ],
+      "hematemesis": [
+        "duodenum",
+        "esophagus",
+        "gastroduodenal_a",
+        "left_gastric_a",
+        "stomach"
+      ],
+      "melena": [
+        "duodenum",
+        "gastroduodenal_a",
+        "jejunum",
+        "stomach"
+      ],
+      "hematochezia": [
+        "desc_colon",
+        "rectum",
+        "sig_colon"
+      ],
+      "dysuria": [
+        "bladder",
+        "urethra"
+      ],
+      "urinary_frequency": [
+        "bladder",
+        "urethra"
+      ],
+      "hematuria": [
+        "bladder",
+        "l_kidney",
+        "l_ureter",
+        "r_kidney",
+        "r_ureter"
+      ],
+      "flank_pain": [
+        "l_kidney",
+        "l_ureter",
+        "r_kidney",
+        "r_ureter"
+      ],
+      "right_flank_pain": [
+        "r_kidney",
+        "r_ureter"
+      ],
+      "left_flank_pain": [
+        "l_kidney",
+        "l_ureter"
+      ],
+      "fever": [
+        "brain"
+      ],
+      "chills": [
+        "brain",
+        "muscles"
+      ],
+      "fatigue": [
+        "brain",
+        "heart",
+        "muscles"
+      ],
+      "body_aches": [
+        "muscles"
+      ],
+      "sweating": [
+        "brain",
+        "skin"
+      ],
+      "bleeding_minor": [
+        "skin"
+      ],
+      "bleeding_severe": [
+        "aorta",
+        "bone_marrow",
+        "heart",
+        "ivc"
+      ],
+      "vaginal_bleeding": [
+        "ovaries",
+        "uterus"
+      ],
+      "testicular_pain": [
+        "testicular_a"
+      ],
+      "calf_pain": [
+        "gastrocnemius_vv",
+        "great_saphenous_v",
+        "posterior_tibial_a",
+        "soleal_vv"
+      ],
+      "leg_swelling": [
+        "great_saphenous_v",
+        "l_femoral_v",
+        "r_femoral_v",
+        "small_saphenous_v",
+        "soleal_vv"
+      ]
+    },
+    "symptom_in_zone": {
+      "headache": [
+        "head"
+      ],
+      "stiff_neck": [
+        "head",
+        "neck"
+      ],
+      "altered_mental_status": [
+        "head"
+      ],
+      "confusion": [
+        "head"
+      ],
+      "seizure": [
+        "head"
+      ],
+      "syncope": [
+        "head",
+        "thorax_central"
+      ],
+      "dizziness": [
+        "head"
+      ],
+      "loss_of_consciousness": [
+        "head"
+      ],
+      "sensitivity_to_light": [
+        "head"
+      ],
+      "weakness": [
+        "head"
+      ],
+      "chest_pain": [
+        "thorax_central"
+      ],
+      "chest_tightness": [
+        "thorax_central"
+      ],
+      "left_arm_pain": [
+        "thorax_central"
+      ],
+      "shortness_of_breath": [
+        "thorax_central"
+      ],
+      "dyspnea": [
+        "thorax_central"
+      ],
+      "cough": [
+        "neck",
+        "thorax_central"
+      ],
+      "wheezing": [
+        "thorax_central"
+      ],
+      "hemoptysis": [
+        "thorax_central"
+      ],
+      "palpitations": [
+        "thorax_central"
+      ],
+      "abdominal_pain": [
+        "epigastric",
+        "umbilical"
+      ],
+      "epigastric_pain": [
+        "epigastric"
+      ],
+      "ruq_pain": [
+        "ruq"
+      ],
+      "right_upper_quadrant_pain": [
+        "ruq"
+      ],
+      "luq_pain": [
+        "luq"
+      ],
+      "rlq_pain": [
+        "rlq"
+      ],
+      "right_lower_quadrant_pain": [
+        "rlq"
+      ],
+      "mcburney_point": [
+        "rlq"
+      ],
+      "llq_pain": [
+        "llq"
+      ],
+      "left_lower_quadrant_pain": [
+        "llq"
+      ],
+      "periumbilical_pain": [
+        "umbilical"
+      ],
+      "suprapubic_pain": [
+        "suprapubic"
+      ],
+      "pelvic_pain": [
+        "pelvis"
+      ],
+      "nausea": [
+        "epigastric",
+        "head"
+      ],
+      "vomiting": [
+        "epigastric"
+      ],
+      "diarrhea": [
+        "umbilical"
+      ],
+      "constipation": [
+        "llq",
+        "suprapubic"
+      ],
+      "hematemesis": [
+        "epigastric"
+      ],
+      "melena": [
+        "epigastric",
+        "umbilical"
+      ],
+      "hematochezia": [
+        "llq",
+        "suprapubic"
+      ],
+      "dysuria": [
+        "suprapubic"
+      ],
+      "urinary_frequency": [
+        "suprapubic"
+      ],
+      "hematuria": [
+        "left_flank",
+        "right_flank",
+        "suprapubic"
+      ],
+      "flank_pain": [
+        "left_flank",
+        "right_flank"
+      ],
+      "right_flank_pain": [
+        "right_flank"
+      ],
+      "left_flank_pain": [
+        "left_flank"
+      ],
+      "vaginal_bleeding": [
+        "pelvis",
+        "suprapubic"
+      ],
+      "testicular_pain": [
+        "pelvis"
+      ]
+    },
+    "organ_in_zone": {
+      "heart": [
+        "thorax_central"
+      ],
+      "right_atrium": [
+        "right_thorax",
+        "thorax_central"
+      ],
+      "right_ventricle": [
+        "right_thorax",
+        "thorax_central"
+      ],
+      "left_ventricle": [
+        "left_thorax",
+        "thorax_central"
+      ],
+      "svc": [
+        "right_thorax",
+        "thorax_central"
+      ],
+      "pulm_aa": [
+        "right_thorax",
+        "thorax_central"
+      ],
+      "r_carotid_a": [
+        "neck"
+      ],
+      "l_carotid_a": [
+        "neck"
+      ],
+      "basilar_a": [
+        "head"
+      ],
+      "r_femoral_a": [
+        "pelvis"
+      ],
+      "l_femoral_a": [
+        "pelvis"
+      ],
+      "anterior_cerebral_a": [
+        "head"
+      ],
+      "middle_cerebral_a": [
+        "head"
+      ],
+      "l_middle_cerebral_a": [
+        "head"
+      ],
+      "posterior_cerebral_a": [
+        "head"
+      ],
+      "anterior_communicating_a": [
+        "head"
+      ],
+      "posterior_communicating_a": [
+        "head"
+      ],
+      "ophthalmic_a": [
+        "head"
+      ],
+      "superior_sagittal_sinus": [
+        "head"
+      ],
+      "transverse_sinus": [
+        "head"
+      ],
+      "cavernous_sinus": [
+        "head"
+      ],
+      "lcx_a": [
+        "left_thorax",
+        "thorax_central"
+      ],
+      "rca_a": [
+        "right_thorax",
+        "thorax_central"
+      ],
+      "r_pulm_a": [
+        "right_thorax",
+        "thorax_central"
+      ],
+      "l_pulm_a": [
+        "left_thorax",
+        "thorax_central"
+      ],
+      "proper_hepatic_a": [
+        "ruq"
+      ],
+      "gastroduodenal_a": [
+        "ruq"
+      ],
+      "cystic_a": [
+        "ruq"
+      ],
+      "ileocolic_a": [
+        "rlq"
+      ],
+      "sigmoid_aa": [
+        "llq"
+      ],
+      "superior_rectal_a": [
+        "pelvis"
+      ],
+      "paraumbilical_vv": [
+        "umbilical"
+      ],
+      "cystic_v": [
+        "ruq"
+      ],
+      "internal_iliac_a": [
+        "pelvis"
+      ],
+      "l_internal_iliac_a": [
+        "pelvis"
+      ],
+      "external_iliac_a": [
+        "pelvis"
+      ],
+      "l_external_iliac_a": [
+        "pelvis"
+      ],
+      "uterine_a": [
+        "pelvis"
+      ],
+      "testicular_a": [
+        "pelvis",
+        "rlq",
+        "suprapubic"
+      ],
+      "vesical_aa": [
+        "pelvis"
+      ],
+      "obturator_a": [
+        "pelvis"
+      ],
+      "axillary_a": [
+        "right_thorax"
+      ],
+      "l_axillary_a": [
+        "left_thorax"
+      ],
+      "axillary_v": [
+        "right_thorax"
+      ],
+      "l_axillary_v": [
+        "left_thorax"
+      ],
+      "deep_femoral_a": [
+        "pelvis"
+      ],
+      "l_deep_femoral_a": [
+        "pelvis"
+      ],
+      "deep_femoral_v": [
+        "pelvis"
+      ],
+      "cisterna_chyli": [
+        "lower_back"
+      ],
+      "trachea": [
+        "neck"
+      ],
+      "r_bronchus": [
+        "right_thorax",
+        "thorax_central"
+      ],
+      "l_bronchus": [
+        "left_thorax",
+        "thorax_central"
+      ],
+      "r_lung": [
+        "right_thorax"
+      ],
+      "l_lung": [
+        "left_thorax"
+      ],
+      "lungs": [
+        "thorax_central"
+      ],
+      "pleura": [
+        "right_thorax"
+      ],
+      "stomach": [
+        "luq"
+      ],
+      "duodenum": [
+        "ruq"
+      ],
+      "jejunum": [
+        "umbilical"
+      ],
+      "ileum": [
+        "rlq",
+        "umbilical"
+      ],
+      "cecum": [
+        "rlq"
+      ],
+      "sig_colon": [
+        "llq"
+      ],
+      "rectum": [
+        "pelvis"
+      ],
+      "liver": [
+        "ruq"
+      ],
+      "gallbladder": [
+        "ruq"
+      ],
+      "bile_duct": [
+        "ruq"
+      ],
+      "spleen": [
+        "left_flank"
+      ],
+      "r_kidney": [
+        "right_flank"
+      ],
+      "l_kidney": [
+        "left_flank"
+      ],
+      "bladder": [
+        "pelvis",
+        "suprapubic"
+      ],
+      "r_adrenal": [
+        "lower_back",
+        "right_flank"
+      ],
+      "l_adrenal": [
+        "left_flank",
+        "lower_back"
+      ],
+      "brain": [
+        "head"
+      ],
+      "cerebellum": [
+        "head"
+      ],
+      "brainstem": [
+        "head"
+      ],
+      "meninges": [
+        "head"
+      ],
+      "vagus_n": [
+        "neck"
+      ],
+      "pituitary": [
+        "head"
+      ],
+      "epigastrium": [
+        "epigastric"
+      ],
+      "uterus": [
+        "pelvis",
+        "suprapubic"
+      ],
+      "ovaries": [
+        "pelvis",
+        "rlq"
+      ],
+      "prostate": [
+        "pelvis"
+      ]
+    },
+    "disease_has_symptom": {
+      "acute_bacterial_meningitis": [
+        "fever",
+        "neck stiffness",
+        "photophobia",
+        "severe headache"
+      ],
+      "acute_gastroenteritis": [
+        "abdominal cramps",
+        "diarrhea",
+        "fever",
+        "vomiting"
+      ],
+      "acute_pyelonephritis": [
+        "chills",
+        "dysuria",
+        "fever",
+        "flank pain",
+        "nausea",
+        "urinary frequency"
+      ],
+      "acute_uncomplicated_cystitis": [
+        "burning with urination",
+        "dysuria",
+        "increased frequency",
+        "urgency",
+        "urinary frequency",
+        "urinary urgency"
+      ],
+      "acute_viral_upper_respiratory_infection": [
+        "cough",
+        "low-grade fever",
+        "runny nose",
+        "sore throat"
+      ],
+      "asthma_exacerbation": [
+        "chest tightness",
+        "cough",
+        "shortness of breath",
+        "wheezing"
+      ],
+      "community_acquired_pneumonia": [
+        "fever",
+        "pleuritic chest pain",
+        "productive cough",
+        "shortness of breath"
+      ],
+      "diabetes_mellitus_type_2": [
+        "blurred vision",
+        "fatigue",
+        "frequent urination",
+        "increased thirst",
+        "polydipsia",
+        "polyphagia",
+        "polyuria"
+      ],
+      "gastroesophageal_reflux_disease": [
+        "burning chest pain after meals",
+        "regurgitation",
+        "sour taste"
+      ],
+      "hypertensive_emergency": [
+        "chest pain",
+        "headache",
+        "very high blood pressure",
+        "visual changes"
+      ],
+      "migraine": [
+        "light sensitivity",
+        "nausea",
+        "sound sensitivity",
+        "throbbing headache"
+      ],
+      "stable_angina_pectoris": [
+        "chest pressure with exertion",
+        "relief with rest",
+        "shortness of breath"
+      ],
+      "tension_type_headache": [
+        "bilateral pressure-like headache",
+        "mild photophobia",
+        "neck tightness"
+      ]
+    },
+    "organ_connects_to": {
+      "r_carotid_a": [
+        "brachiocephalic_a",
+        "brain",
+        "external_carotid_a",
+        "internal_carotid_a"
+      ],
+      "internal_carotid_a": [
+        "anterior_cerebral_a",
+        "middle_cerebral_a",
+        "ophthalmic_a",
+        "posterior_communicating_a",
+        "r_carotid_a"
+      ],
+      "external_carotid_a": [
+        "r_carotid_a"
+      ],
+      "l_carotid_a": [
+        "aortic_arch",
+        "brain",
+        "l_external_carotid_a",
+        "l_internal_carotid_a"
+      ],
+      "l_internal_carotid_a": [
+        "l_carotid_a",
+        "l_middle_cerebral_a"
+      ],
+      "l_external_carotid_a": [
+        "l_carotid_a"
+      ],
+      "middle_cerebral_a": [
+        "brain",
+        "internal_carotid_a"
+      ],
+      "l_middle_cerebral_a": [
+        "brain",
+        "l_internal_carotid_a"
+      ],
+      "anterior_cerebral_a": [
+        "anterior_communicating_a",
+        "brain",
+        "internal_carotid_a"
+      ],
+      "ophthalmic_a": [
+        "internal_carotid_a"
+      ],
+      "posterior_communicating_a": [
+        "internal_carotid_a",
+        "posterior_cerebral_a"
+      ],
+      "anterior_communicating_a": [
+        "anterior_cerebral_a"
+      ],
+      "basilar_a": [
+        "brain",
+        "brainstem",
+        "cerebellum",
+        "l_vertebral_a",
+        "posterior_cerebral_a",
+        "r_vertebral_a"
+      ],
+      "posterior_cerebral_a": [
+        "basilar_a",
+        "brain",
+        "posterior_communicating_a"
+      ],
+      "brain": [
+        "anterior_cerebral_a",
+        "basilar_a",
+        "brainstem",
+        "cavernous_sinus",
+        "cerv_ln",
+        "l_carotid_a",
+        "l_jugular_v",
+        "l_middle_cerebral_a",
+        "meninges",
+        "middle_cerebral_a",
+        "posterior_cerebral_a",
+        "r_carotid_a",
+        "r_jugular_v",
+        "superior_sagittal_sinus"
+      ],
+      "superior_sagittal_sinus": [
+        "brain",
+        "transverse_sinus"
+      ],
+      "transverse_sinus": [
+        "sigmoid_sinus",
+        "superior_sagittal_sinus"
+      ],
+      "sigmoid_sinus": [
+        "cavernous_sinus",
+        "r_jugular_v",
+        "transverse_sinus"
+      ],
+      "r_jugular_v": [
+        "brain",
+        "r_brachiocephalic_v",
+        "sigmoid_sinus"
+      ],
+      "cavernous_sinus": [
+        "brain",
+        "sigmoid_sinus"
+      ],
+      "aorta": [
+        "aortic_arch",
+        "coronary_aa",
+        "left_main_coronary",
+        "left_ventricle",
+        "rca_a"
+      ],
+      "left_main_coronary": [
+        "aorta",
+        "lad_a",
+        "lcx_a"
+      ],
+      "lad_a": [
+        "heart",
+        "left_main_coronary"
+      ],
+      "lcx_a": [
+        "heart",
+        "left_main_coronary"
+      ],
+      "rca_a": [
+        "aorta",
+        "heart"
+      ],
+      "heart": [
+        "coronary_aa",
+        "coronary_sinus",
+        "diaphragm",
+        "epigastrium",
+        "esophagus",
+        "jaw",
+        "l_arm",
+        "l_shoulder",
+        "lad_a",
+        "lcx_a",
+        "lungs",
+        "rca_a",
+        "vagus_n"
+      ],
+      "pulm_aa": [
+        "l_lung",
+        "l_pulm_a",
+        "lungs",
+        "r_lung",
+        "r_pulm_a",
+        "right_ventricle"
+      ],
+      "r_pulm_a": [
+        "pulm_aa",
+        "r_lung"
+      ],
+      "l_pulm_a": [
+        "l_lung",
+        "pulm_aa"
+      ],
+      "r_lung": [
+        "diaphragm",
+        "med_ln",
+        "pleura",
+        "pulm_aa",
+        "pulm_vv",
+        "r_bronchus",
+        "r_lower_pulm_v",
+        "r_pulm_a",
+        "r_upper_pulm_v"
+      ],
+      "l_lung": [
+        "diaphragm",
+        "l_bronchus",
+        "l_lower_pulm_v",
+        "l_pulm_a",
+        "l_upper_pulm_v",
+        "med_ln",
+        "pleura",
+        "pulm_aa",
+        "pulm_vv"
+      ],
+      "r_upper_pulm_v": [
+        "left_atrium",
+        "r_lung"
+      ],
+      "r_lower_pulm_v": [
+        "left_atrium",
+        "r_lung"
+      ],
+      "l_upper_pulm_v": [
+        "l_lung",
+        "left_atrium"
+      ],
+      "l_lower_pulm_v": [
+        "l_lung",
+        "left_atrium"
+      ],
+      "left_atrium": [
+        "l_lower_pulm_v",
+        "l_upper_pulm_v",
+        "left_ventricle",
+        "pulm_vv",
+        "r_lower_pulm_v",
+        "r_upper_pulm_v"
+      ],
+      "thoracic_aorta": [
+        "abdominal_aorta",
+        "aortic_arch",
+        "bronchial_a"
+      ],
+      "bronchial_a": [
+        "l_bronchus",
+        "r_bronchus",
+        "thoracic_aorta"
+      ],
+      "r_bronchus": [
+        "bronchial_a",
+        "r_lung",
+        "trachea"
+      ],
+      "l_bronchus": [
+        "bronchial_a",
+        "l_lung",
+        "trachea"
+      ],
+      "celiac": [
+        "abdominal_aorta",
+        "common_hepatic_a",
+        "hepatic_a",
+        "left_gastric_a",
+        "spleen",
+        "splenic_a",
+        "stomach"
+      ],
+      "splenic_a": [
+        "celiac",
+        "spleen"
+      ],
+      "spleen": [
+        "celiac",
+        "diaphragm",
+        "l_kidney",
+        "l_shoulder",
+        "pancreas",
+        "splenic_a",
+        "splenic_v",
+        "stomach"
+      ],
+      "common_hepatic_a": [
+        "celiac",
+        "gastroduodenal_a",
+        "proper_hepatic_a",
+        "right_gastric_a"
+      ],
+      "proper_hepatic_a": [
+        "common_hepatic_a",
+        "cystic_a",
+        "liver"
+      ],
+      "liver": [
+        "bile_duct",
+        "diaphragm",
+        "gallbladder",
+        "hepatic_a",
+        "hepatic_vv",
+        "med_ln",
+        "paraumbilical_vv",
+        "portal_vein",
+        "proper_hepatic_a",
+        "r_kidney",
+        "r_shoulder",
+        "stomach",
+        "trans_colon",
+        "vagus_n"
+      ],
+      "gastroduodenal_a": [
+        "common_hepatic_a",
+        "duodenum",
+        "stomach"
+      ],
+      "duodenum": [
+        "bile_duct",
+        "gallbladder",
+        "gastroduodenal_a",
+        "jejunum",
+        "pancreas",
+        "portal_vein",
+        "r_kidney",
+        "sma",
+        "stomach"
+      ],
+      "stomach": [
+        "celiac",
+        "duodenum",
+        "esophagus",
+        "gastroduodenal_a",
+        "left_gastric_a",
+        "left_gastric_v",
+        "liver",
+        "mes_ln",
+        "pancreas",
+        "portal_vein",
+        "spleen",
+        "vagus_n"
+      ],
+      "left_gastric_a": [
+        "celiac",
+        "stomach"
+      ],
+      "right_gastric_a": [
+        "common_hepatic_a"
+      ],
+      "cystic_a": [
+        "gallbladder",
+        "proper_hepatic_a"
+      ],
+      "gallbladder": [
+        "bile_duct",
+        "cystic_a",
+        "cystic_v",
+        "duodenum",
+        "liver",
+        "r_shoulder"
+      ],
+      "sma": [
+        "abdominal_aorta",
+        "asc_colon",
+        "cecum",
+        "duodenum",
+        "ileocolic_a",
+        "ileum",
+        "jejunum",
+        "middle_colic_a",
+        "pancreas",
+        "right_colic_a"
+      ],
+      "ileocolic_a": [
+        "appendix",
+        "cecum",
+        "ileum",
+        "sma"
+      ],
+      "appendix": [
+        "cecum",
+        "epigastrium",
+        "ileocolic_a",
+        "ileum"
+      ],
+      "cecum": [
+        "appendix",
+        "asc_colon",
+        "ileocolic_a",
+        "ileum",
+        "sma",
+        "smv"
+      ],
+      "ileum": [
+        "appendix",
+        "cecum",
+        "ileocolic_a",
+        "jejunum",
+        "mes_ln",
+        "sma",
+        "smv",
+        "vagus_n"
+      ],
+      "right_colic_a": [
+        "asc_colon",
+        "sma"
+      ],
+      "asc_colon": [
+        "cecum",
+        "mes_ln",
+        "r_kidney",
+        "right_colic_a",
+        "sma",
+        "smv",
+        "trans_colon"
+      ],
+      "middle_colic_a": [
+        "sma",
+        "trans_colon"
+      ],
+      "trans_colon": [
+        "asc_colon",
+        "desc_colon",
+        "liver",
+        "middle_colic_a"
+      ],
+      "ima": [
+        "abdominal_aorta",
+        "desc_colon",
+        "left_colic_a",
+        "rectum",
+        "sig_colon",
+        "sigmoid_aa",
+        "superior_rectal_a"
+      ],
+      "left_colic_a": [
+        "desc_colon",
+        "ima"
+      ],
+      "desc_colon": [
+        "ima",
+        "imv",
+        "l_kidney",
+        "left_colic_a",
+        "mes_ln",
+        "sig_colon",
+        "trans_colon"
+      ],
+      "sigmoid_aa": [
+        "ima",
+        "sig_colon"
+      ],
+      "sig_colon": [
+        "desc_colon",
+        "ima",
+        "imv",
+        "rectum",
+        "sigmoid_aa"
+      ],
+      "superior_rectal_a": [
+        "ima",
+        "rectum"
+      ],
+      "rectum": [
+        "anus",
+        "bladder",
+        "ima",
+        "imv",
+        "ing_ln",
+        "sig_colon",
+        "superior_rectal_a"
+      ],
+      "left_gastric_v": [
+        "portal_vein",
+        "stomach"
+      ],
+      "portal_vein": [
+        "cystic_v",
+        "duodenum",
+        "left_gastric_v",
+        "liver",
+        "smv",
+        "splenic_v",
+        "stomach"
+      ],
+      "cystic_v": [
+        "gallbladder",
+        "portal_vein"
+      ],
+      "paraumbilical_vv": [
+        "liver"
+      ],
+      "abdominal_aorta": [
+        "celiac",
+        "ima",
+        "internal_iliac_a",
+        "l_adrenal",
+        "l_iliac_a",
+        "l_internal_iliac_a",
+        "l_renal_a",
+        "ovarian_a",
+        "r_adrenal",
+        "r_iliac_a",
+        "r_renal_a",
+        "sma",
+        "testicular_a",
+        "thoracic_aorta"
+      ],
+      "internal_iliac_a": [
+        "abdominal_aorta",
+        "obturator_a",
+        "uterine_a",
+        "vesical_aa"
+      ],
+      "l_internal_iliac_a": [
+        "abdominal_aorta"
+      ],
+      "r_iliac_a": [
+        "abdominal_aorta",
+        "external_iliac_a",
+        "r_femoral_a"
+      ],
+      "external_iliac_a": [
+        "r_femoral_a",
+        "r_iliac_a"
+      ],
+      "l_iliac_a": [
+        "abdominal_aorta",
+        "l_external_iliac_a",
+        "l_femoral_a"
+      ],
+      "l_external_iliac_a": [
+        "l_femoral_a",
+        "l_iliac_a"
+      ],
+      "r_femoral_a": [
+        "deep_femoral_a",
+        "external_iliac_a",
+        "lower_limbs",
+        "r_iliac_a",
+        "r_popliteal_a"
+      ],
+      "l_femoral_a": [
+        "l_deep_femoral_a",
+        "l_external_iliac_a",
+        "l_iliac_a",
+        "l_popliteal_a",
+        "lower_limbs"
+      ],
+      "uterine_a": [
+        "internal_iliac_a"
+      ],
+      "vesical_aa": [
+        "bladder",
+        "internal_iliac_a"
+      ],
+      "bladder": [
+        "ing_ln",
+        "l_ureter",
+        "prostate",
+        "r_ureter",
+        "rectum",
+        "urethra",
+        "uterus",
+        "vesical_aa"
+      ],
+      "obturator_a": [
+        "internal_iliac_a"
+      ],
+      "ovarian_a": [
+        "abdominal_aorta"
+      ],
+      "testicular_a": [
+        "abdominal_aorta"
+      ],
+      "r_subclavian_a": [
+        "axillary_a",
+        "brachiocephalic_a",
+        "r_brachial_a",
+        "r_vertebral_a"
+      ],
+      "axillary_a": [
+        "r_brachial_a",
+        "r_subclavian_a"
+      ],
+      "l_subclavian_a": [
+        "aortic_arch",
+        "l_axillary_a",
+        "l_brachial_a",
+        "l_vertebral_a"
+      ],
+      "l_axillary_a": [
+        "l_brachial_a",
+        "l_subclavian_a"
+      ],
+      "r_brachial_a": [
+        "axillary_a",
+        "deep_brachial_a",
+        "r_arm",
+        "r_radial_a",
+        "r_subclavian_a",
+        "ulnar_a"
+      ],
+      "l_brachial_a": [
+        "l_arm",
+        "l_axillary_a",
+        "l_radial_a",
+        "l_subclavian_a",
+        "l_ulnar_a"
+      ],
+      "deep_brachial_a": [
+        "r_brachial_a"
+      ],
+      "ulnar_a": [
+        "palmar_arch_aa",
+        "r_brachial_a"
+      ],
+      "l_ulnar_a": [
+        "l_brachial_a",
+        "l_palmar_arch_aa"
+      ],
+      "r_radial_a": [
+        "palmar_arch_aa",
+        "r_arm",
+        "r_brachial_a"
+      ],
+      "palmar_arch_aa": [
+        "r_radial_a",
+        "ulnar_a"
+      ],
+      "l_radial_a": [
+        "l_arm",
+        "l_brachial_a",
+        "l_palmar_arch_aa"
+      ],
+      "l_palmar_arch_aa": [
+        "l_radial_a",
+        "l_ulnar_a"
+      ],
+      "r_arm": [
+        "basilic_v",
+        "cephalic_v",
+        "r_brachial_a",
+        "r_kidney",
+        "r_radial_a",
+        "r_subclavian_v"
+      ],
+      "cephalic_v": [
+        "median_cubital_v",
+        "r_arm"
+      ],
+      "basilic_v": [
+        "median_cubital_v",
+        "r_arm"
+      ],
+      "median_cubital_v": [
+        "axillary_v",
+        "basilic_v",
+        "cephalic_v"
+      ],
+      "axillary_v": [
+        "median_cubital_v",
+        "r_subclavian_v"
+      ],
+      "r_subclavian_v": [
+        "axillary_v",
+        "r_arm",
+        "r_brachiocephalic_v"
+      ],
+      "l_axillary_v": [
+        "l_subclavian_v"
+      ],
+      "l_subclavian_v": [
+        "l_arm",
+        "l_axillary_v",
+        "l_brachiocephalic_v"
+      ],
+      "deep_femoral_a": [
+        "r_femoral_a"
+      ],
+      "l_deep_femoral_a": [
+        "l_femoral_a"
+      ],
+      "r_popliteal_a": [
+        "anterior_tibial_a",
+        "posterior_tibial_a",
+        "r_femoral_a",
+        "r_tibial_a"
+      ],
+      "anterior_tibial_a": [
+        "dorsalis_pedis_a",
+        "r_popliteal_a"
+      ],
+      "posterior_tibial_a": [
+        "peroneal_a",
+        "r_popliteal_a"
+      ],
+      "l_popliteal_a": [
+        "l_anterior_tibial_a",
+        "l_femoral_a",
+        "l_posterior_tibial_a",
+        "l_tibial_a"
+      ],
+      "l_anterior_tibial_a": [
+        "l_dorsalis_pedis_a",
+        "l_popliteal_a"
+      ],
+      "l_posterior_tibial_a": [
+        "l_popliteal_a"
+      ],
+      "peroneal_a": [
+        "posterior_tibial_a"
+      ],
+      "dorsalis_pedis_a": [
+        "anterior_tibial_a"
+      ],
+      "l_dorsalis_pedis_a": [
+        "l_anterior_tibial_a"
+      ],
+      "r_femoral_v": [
+        "deep_femoral_v",
+        "great_saphenous_v",
+        "ivc",
+        "r_iliac_v",
+        "r_popliteal_v",
+        "r_saphenous_v"
+      ],
+      "deep_femoral_v": [
+        "r_femoral_v"
+      ],
+      "r_saphenous_v": [
+        "great_saphenous_v",
+        "lower_limbs",
+        "r_femoral_v"
+      ],
+      "great_saphenous_v": [
+        "perforator_vv",
+        "r_femoral_v",
+        "r_saphenous_v"
+      ],
+      "l_saphenous_v": [
+        "l_femoral_v",
+        "l_great_saphenous_v",
+        "lower_limbs"
+      ],
+      "l_great_saphenous_v": [
+        "l_femoral_v",
+        "l_saphenous_v"
+      ],
+      "l_femoral_v": [
+        "ivc",
+        "l_great_saphenous_v",
+        "l_iliac_v",
+        "l_popliteal_v",
+        "l_saphenous_v"
+      ],
+      "soleal_vv": [
+        "r_popliteal_v"
+      ],
+      "r_popliteal_v": [
+        "gastrocnemius_vv",
+        "r_femoral_v",
+        "small_saphenous_v",
+        "soleal_vv"
+      ],
+      "gastrocnemius_vv": [
+        "r_popliteal_v"
+      ],
+      "small_saphenous_v": [
+        "r_popliteal_v"
+      ],
+      "perforator_vv": [
+        "great_saphenous_v"
+      ],
+      "cisterna_chyli": [
+        "thoracic_duct"
+      ],
+      "thoracic_duct": [
+        "axil_ln",
+        "cerv_ln",
+        "cisterna_chyli",
+        "ing_ln",
+        "l_brachiocephalic_v",
+        "med_ln",
+        "mes_ln",
+        "svc"
+      ],
+      "l_brachiocephalic_v": [
+        "l_jugular_v",
+        "l_subclavian_v",
+        "svc",
+        "thoracic_duct"
+      ],
+      "right_lymphatic_duct": [
+        "r_brachiocephalic_v"
+      ],
+      "r_brachiocephalic_v": [
+        "r_jugular_v",
+        "r_subclavian_v",
+        "right_lymphatic_duct",
+        "svc"
+      ],
+      "left_ventricle": [
+        "aorta",
+        "left_atrium"
+      ],
+      "aortic_arch": [
+        "aorta",
+        "brachiocephalic_a",
+        "l_carotid_a",
+        "l_subclavian_a",
+        "thoracic_aorta"
+      ],
+      "coronary_aa": [
+        "aorta",
+        "heart"
+      ],
+      "brachiocephalic_a": [
+        "aortic_arch",
+        "r_carotid_a",
+        "r_subclavian_a"
+      ],
+      "r_vertebral_a": [
+        "basilar_a",
+        "r_subclavian_a"
+      ],
+      "l_vertebral_a": [
+        "basilar_a",
+        "l_subclavian_a"
+      ],
+      "cerebellum": [
+        "basilar_a",
+        "brainstem"
+      ],
+      "brainstem": [
+        "basilar_a",
+        "brain",
+        "cerebellum",
+        "spinal_cord",
+        "vagus_n"
+      ],
+      "l_arm": [
+        "heart",
+        "l_brachial_a",
+        "l_kidney",
+        "l_radial_a",
+        "l_subclavian_v"
+      ],
+      "hepatic_a": [
+        "celiac",
+        "liver"
+      ],
+      "jejunum": [
+        "duodenum",
+        "ileum",
+        "mes_ln",
+        "sma",
+        "smv",
+        "vagus_n"
+      ],
+      "pancreas": [
+        "duodenum",
+        "epigastrium",
+        "l_kidney",
+        "sma",
+        "spleen",
+        "splenic_v",
+        "stomach",
+        "vagus_n"
+      ],
+      "r_renal_a": [
+        "abdominal_aorta",
+        "r_kidney"
+      ],
+      "r_kidney": [
+        "asc_colon",
+        "duodenum",
+        "liver",
+        "r_adrenal",
+        "r_arm",
+        "r_renal_a",
+        "r_renal_v",
+        "r_ureter"
+      ],
+      "l_renal_a": [
+        "abdominal_aorta",
+        "l_kidney"
+      ],
+      "l_kidney": [
+        "desc_colon",
+        "l_adrenal",
+        "l_arm",
+        "l_renal_a",
+        "l_renal_v",
+        "l_ureter",
+        "pancreas",
+        "spleen"
+      ],
+      "r_adrenal": [
+        "abdominal_aorta",
+        "r_kidney"
+      ],
+      "l_adrenal": [
+        "abdominal_aorta",
+        "l_kidney"
+      ],
+      "r_tibial_a": [
+        "r_popliteal_a"
+      ],
+      "l_tibial_a": [
+        "l_popliteal_a"
+      ],
+      "lower_limbs": [
+        "ing_ln",
+        "l_femoral_a",
+        "l_saphenous_v",
+        "r_femoral_a",
+        "r_saphenous_v",
+        "uterus"
+      ],
+      "l_jugular_v": [
+        "brain",
+        "l_brachiocephalic_v"
+      ],
+      "svc": [
+        "azygos_v",
+        "l_brachiocephalic_v",
+        "r_brachiocephalic_v",
+        "right_atrium",
+        "thoracic_duct",
+        "upper_limbs"
+      ],
+      "right_atrium": [
+        "coronary_sinus",
+        "ivc",
+        "right_ventricle",
+        "svc"
+      ],
+      "upper_limbs": [
+        "axil_ln",
+        "svc"
+      ],
+      "coronary_sinus": [
+        "heart",
+        "right_atrium"
+      ],
+      "azygos_v": [
+        "svc"
+      ],
+      "hepatic_vv": [
+        "ivc",
+        "liver"
+      ],
+      "ivc": [
+        "hepatic_vv",
+        "l_femoral_v",
+        "l_iliac_v",
+        "l_renal_v",
+        "r_femoral_v",
+        "r_iliac_v",
+        "r_renal_v",
+        "right_atrium"
+      ],
+      "r_renal_v": [
+        "ivc",
+        "r_kidney"
+      ],
+      "l_renal_v": [
+        "ivc",
+        "l_kidney"
+      ],
+      "l_popliteal_v": [
+        "l_femoral_v"
+      ],
+      "r_iliac_v": [
+        "ivc",
+        "r_femoral_v"
+      ],
+      "l_iliac_v": [
+        "ivc",
+        "l_femoral_v"
+      ],
+      "smv": [
+        "asc_colon",
+        "cecum",
+        "ileum",
+        "jejunum",
+        "portal_vein"
+      ],
+      "imv": [
+        "desc_colon",
+        "rectum",
+        "sig_colon",
+        "splenic_v"
+      ],
+      "splenic_v": [
+        "imv",
+        "pancreas",
+        "portal_vein",
+        "spleen"
+      ],
+      "right_ventricle": [
+        "pulm_aa",
+        "right_atrium"
+      ],
+      "lungs": [
+        "heart",
+        "med_ln",
+        "pulm_aa",
+        "pulm_vv",
+        "vagus_n"
+      ],
+      "pulm_vv": [
+        "l_lung",
+        "left_atrium",
+        "lungs",
+        "r_lung"
+      ],
+      "mouth": [
+        "pharynx"
+      ],
+      "pharynx": [
+        "esophagus",
+        "mouth"
+      ],
+      "esophagus": [
+        "heart",
+        "pharynx",
+        "stomach",
+        "vagus_n"
+      ],
+      "anus": [
+        "rectum"
+      ],
+      "r_ureter": [
+        "bladder",
+        "r_kidney"
+      ],
+      "l_ureter": [
+        "bladder",
+        "l_kidney"
+      ],
+      "urethra": [
+        "bladder"
+      ],
+      "bile_duct": [
+        "duodenum",
+        "gallbladder",
+        "liver"
+      ],
+      "spinal_cord": [
+        "brainstem",
+        "phrenic_n"
+      ],
+      "vagus_n": [
+        "brainstem",
+        "esophagus",
+        "heart",
+        "ileum",
+        "jejunum",
+        "liver",
+        "lungs",
+        "pancreas",
+        "stomach"
+      ],
+      "phrenic_n": [
+        "diaphragm",
+        "spinal_cord"
+      ],
+      "diaphragm": [
+        "heart",
+        "l_lung",
+        "liver",
+        "phrenic_n",
+        "r_lung",
+        "r_shoulder",
+        "spleen"
+      ],
+      "trachea": [
+        "l_bronchus",
+        "r_bronchus"
+      ],
+      "jaw": [
+        "heart"
+      ],
+      "l_shoulder": [
+        "heart",
+        "spleen"
+      ],
+      "epigastrium": [
+        "appendix",
+        "heart",
+        "pancreas"
+      ],
+      "r_shoulder": [
+        "diaphragm",
+        "gallbladder",
+        "liver"
+      ],
+      "uterus": [
+        "bladder",
+        "ing_ln",
+        "lower_limbs"
+      ],
+      "cerv_ln": [
+        "brain",
+        "thoracic_duct",
+        "thyroid"
+      ],
+      "thyroid": [
+        "cerv_ln"
+      ],
+      "med_ln": [
+        "l_lung",
+        "liver",
+        "lungs",
+        "r_lung",
+        "thoracic_duct"
+      ],
+      "mes_ln": [
+        "asc_colon",
+        "desc_colon",
+        "ileum",
+        "jejunum",
+        "stomach",
+        "thoracic_duct"
+      ],
+      "axil_ln": [
+        "thoracic_duct",
+        "upper_limbs"
+      ],
+      "ing_ln": [
+        "bladder",
+        "lower_limbs",
+        "prostate",
+        "rectum",
+        "thoracic_duct",
+        "uterus"
+      ],
+      "prostate": [
+        "bladder",
+        "ing_ln"
+      ],
+      "pleura": [
+        "l_lung",
+        "r_lung"
+      ],
+      "meninges": [
+        "brain"
+      ]
+    }
+  }
+}

@@ -1,0 +1,594 @@
+{
+  "_metadata": {
+    "organ": "peripheral_nerve",
+    "schema_version": "2.0",
+    "description": "Generic peripheral nerve state model — covers cranial nerves (when peripheral), spinal nerves, plexus, peripheral nerve trunks. Used by carpal/cubital/tarsal tunnel, sciatica, GBS, MS, Bell's palsy, trigeminal neuralgia, etc.",
+    "source": "Adams & Victor Principles of Neurology",
+    "review_status": "unreviewed"
+  },
+  "state_variables": {
+    "myelin_integrity": {
+      "range": [
+        0,
+        1
+      ],
+      "description": "Schwann cell myelin sheath integrity — HIGHER = better",
+      "inverse": true
+    },
+    "axonal_integrity": {
+      "range": [
+        0,
+        1
+      ],
+      "description": "axon continuity — HIGHER = better",
+      "inverse": true
+    },
+    "compression": {
+      "range": [
+        0,
+        1
+      ],
+      "description": "external compression of nerve"
+    },
+    "demyelination": {
+      "range": [
+        0,
+        1
+      ],
+      "description": "active demyelination"
+    },
+    "inflammation": {
+      "range": [
+        0,
+        1
+      ],
+      "description": "nerve / surrounding tissue inflammation"
+    },
+    "ischemia": {
+      "range": [
+        0,
+        1
+      ],
+      "description": "vasa nervorum ischemia"
+    },
+    "sensory_conduction": {
+      "range": [
+        0,
+        1
+      ],
+      "description": "sensory afferent function — HIGHER = better",
+      "inverse": true
+    },
+    "motor_conduction": {
+      "range": [
+        0,
+        1
+      ],
+      "description": "motor efferent function — HIGHER = better",
+      "inverse": true
+    },
+    "ectopic_discharge": {
+      "range": [
+        0,
+        1
+      ],
+      "description": "abnormal spontaneous firing (paresthesia, pain)"
+    }
+  },
+  "derivation_rules": [
+    {
+      "symptom": "numbness",
+      "condition": {
+        "state": "sensory_conduction",
+        "op": "<",
+        "threshold": 0.5
+      },
+      "rationale": "reduced sensory afferent conduction → loss of sensation",
+      "confidence": 1.0
+    },
+    {
+      "symptom": "tingling paresthesia",
+      "condition": {
+        "state": "ectopic_discharge",
+        "op": ">",
+        "threshold": 0.4
+      },
+      "rationale": "abnormal spontaneous firing → tingling sensation",
+      "confidence": 1.0
+    },
+    {
+      "symptom": "muscle weakness",
+      "condition": {
+        "state": "motor_conduction",
+        "op": "<",
+        "threshold": 0.5
+      },
+      "rationale": "motor efferent failure → reduced muscle activation",
+      "confidence": 1.0
+    },
+    {
+      "symptom": "shooting pain",
+      "condition": {
+        "any": [
+          {
+            "state": "ectopic_discharge",
+            "op": ">",
+            "threshold": 0.6
+          },
+          {
+            "state": "inflammation",
+            "op": ">",
+            "threshold": 0.5
+          }
+        ]
+      },
+      "rationale": "nerve injury or inflammation → ectopic Aδ/C-fiber firing",
+      "confidence": 1.0
+    },
+    {
+      "symptom": "muscle atrophy",
+      "condition": {
+        "all": [
+          {
+            "state": "axonal_integrity",
+            "op": "<",
+            "threshold": 0.4
+          },
+          {
+            "state": "motor_conduction",
+            "op": "<",
+            "threshold": 0.4
+          }
+        ]
+      },
+      "rationale": "denervation → muscle wasting (weeks to months)",
+      "confidence": 0.9
+    },
+    {
+      "symptom": "loss of reflexes",
+      "condition": {
+        "state": "motor_conduction",
+        "op": "<",
+        "threshold": 0.5
+      },
+      "rationale": "afferent or efferent failure of reflex arc",
+      "confidence": 0.9
+    },
+    {
+      "symptom": "fasciculations",
+      "condition": {
+        "all": [
+          {
+            "state": "axonal_integrity",
+            "op": "<",
+            "threshold": 0.5
+          },
+          {
+            "state": "ectopic_discharge",
+            "op": ">",
+            "threshold": 0.4
+          }
+        ]
+      },
+      "rationale": "denervated motor units fire spontaneously",
+      "confidence": 0.8
+    },
+    {
+      "symptom": "facial droop",
+      "condition": {
+        "state": "motor_conduction",
+        "op": "<",
+        "threshold": 0.4
+      },
+      "rationale": "CN7 motor failure → ipsilateral facial weakness (Bell palsy)",
+      "confidence": 0.7
+    },
+    {
+      "symptom": "electric shock-like pain",
+      "condition": {
+        "state": "ectopic_discharge",
+        "op": ">",
+        "threshold": 0.7
+      },
+      "rationale": "trigeminal neuralgia: paroxysmal A-beta to A-delta cross-talk",
+      "confidence": 0.9
+    },
+    {
+      "symptom": "hand pain at night",
+      "condition": {
+        "all": [
+          {
+            "state": "compression",
+            "op": ">",
+            "threshold": 0.5
+          },
+          {
+            "state": "ectopic_discharge",
+            "op": ">",
+            "threshold": 0.3
+          }
+        ]
+      },
+      "rationale": "carpal tunnel — wrist flexion at night worsens median compression",
+      "confidence": 0.85
+    },
+    {
+      "symptom": "weakness of thumb",
+      "condition": {
+        "all": [
+          {
+            "state": "compression",
+            "op": ">",
+            "threshold": 0.6
+          },
+          {
+            "state": "motor_conduction",
+            "op": "<",
+            "threshold": 0.6
+          }
+        ]
+      },
+      "rationale": "median nerve compression affects abductor pollicis brevis (thenar)",
+      "confidence": 0.75
+    }
+  ],
+  "propagation_rules": [
+    {
+      "trigger": {
+        "state": "compression",
+        "op": ">",
+        "threshold": 0.5
+      },
+      "effect": {
+        "state": "myelin_integrity",
+        "delta": -0.4
+      },
+      "rationale": "chronic compression → focal demyelination",
+      "via": "intra_organ",
+      "review_status": "unreviewed"
+    },
+    {
+      "trigger": {
+        "state": "compression",
+        "op": ">",
+        "threshold": 0.7
+      },
+      "effect": {
+        "state": "axonal_integrity",
+        "delta": -0.3
+      },
+      "rationale": "severe compression → axonal injury (axonotmesis)",
+      "via": "intra_organ",
+      "review_status": "unreviewed"
+    },
+    {
+      "trigger": {
+        "state": "myelin_integrity",
+        "op": "<",
+        "threshold": 0.5
+      },
+      "effect": {
+        "state": "sensory_conduction",
+        "delta": -0.4
+      },
+      "rationale": "demyelination slows saltatory conduction",
+      "via": "intra_organ",
+      "review_status": "unreviewed"
+    },
+    {
+      "trigger": {
+        "state": "myelin_integrity",
+        "op": "<",
+        "threshold": 0.5
+      },
+      "effect": {
+        "state": "motor_conduction",
+        "delta": -0.4
+      },
+      "rationale": "demyelination affects motor fibers too",
+      "via": "intra_organ",
+      "review_status": "unreviewed"
+    },
+    {
+      "trigger": {
+        "state": "demyelination",
+        "op": ">",
+        "threshold": 0.5
+      },
+      "effect": {
+        "state": "ectopic_discharge",
+        "delta": 0.4
+      },
+      "rationale": "demyelinated segments → ephaptic + ectopic firing",
+      "via": "intra_organ",
+      "review_status": "unreviewed"
+    },
+    {
+      "trigger": {
+        "state": "ischemia",
+        "op": ">",
+        "threshold": 0.5
+      },
+      "effect": {
+        "state": "axonal_integrity",
+        "delta": -0.4
+      },
+      "rationale": "vasa nervorum ischemia → axonal injury (diabetic, vasculitic)",
+      "via": "intra_organ",
+      "review_status": "unreviewed"
+    }
+  ],
+  "connections": {
+    "incoming": [
+      "spinal cord / brainstem (root)",
+      "blood (vasa nervorum)"
+    ],
+    "outgoing": [
+      "muscle (motor)",
+      "skin (sensory)"
+    ],
+    "neural": [
+      "self"
+    ]
+  },
+  "diseases": {
+    "Carpal Tunnel Syndrome": {
+      "_review_status": "unreviewed",
+      "description": "Median nerve compression at the wrist beneath transverse carpal ligament.",
+      "perturbations": [
+        {
+          "variable": "compression",
+          "delta": 0.7,
+          "cause": "elevated carpal tunnel pressure"
+        },
+        {
+          "variable": "ectopic_discharge",
+          "delta": 0.5,
+          "cause": "compressed nerve fires abnormally"
+        },
+        {
+          "variable": "motor_conduction",
+          "delta": -0.3,
+          "cause": "thenar muscle involvement late"
+        }
+      ]
+    },
+    "Cubital Tunnel Syndrome": {
+      "_review_status": "unreviewed",
+      "description": "Ulnar nerve compression at the elbow (cubital tunnel).",
+      "perturbations": [
+        {
+          "variable": "compression",
+          "delta": 0.6,
+          "cause": "ulnar nerve compression at elbow"
+        },
+        {
+          "variable": "ectopic_discharge",
+          "delta": 0.4,
+          "cause": "compressed nerve abnormal firing"
+        }
+      ]
+    },
+    "Tarsal Tunnel Syndrome": {
+      "_review_status": "unreviewed",
+      "description": "Posterior tibial nerve compression at the medial ankle.",
+      "perturbations": [
+        {
+          "variable": "compression",
+          "delta": 0.55,
+          "cause": "tibial nerve compression in tarsal tunnel"
+        },
+        {
+          "variable": "ectopic_discharge",
+          "delta": 0.4,
+          "cause": "compression-induced firing"
+        }
+      ]
+    },
+    "Peroneal Nerve Palsy": {
+      "_review_status": "unreviewed",
+      "description": "Common peroneal nerve injury at fibular head — foot drop.",
+      "perturbations": [
+        {
+          "variable": "compression",
+          "delta": 0.6,
+          "cause": "compression at fibular neck (crossed legs, cast)"
+        },
+        {
+          "variable": "motor_conduction",
+          "delta": -0.45,
+          "cause": "peroneal motor fibers preferentially affected"
+        }
+      ]
+    },
+    "Sciatica": {
+      "_review_status": "unreviewed",
+      "description": "Lumbar nerve root irritation (often L4-S1) → radicular leg pain.",
+      "perturbations": [
+        {
+          "variable": "compression",
+          "delta": 0.55,
+          "cause": "disc herniation or spinal stenosis compresses root"
+        },
+        {
+          "variable": "inflammation",
+          "delta": 0.4,
+          "cause": "nerve root chemical irritation"
+        },
+        {
+          "variable": "ectopic_discharge",
+          "delta": 0.5,
+          "cause": "compressed and inflamed nerve fires abnormally"
+        }
+      ]
+    },
+    "Trigeminal Neuralgia": {
+      "_review_status": "unreviewed",
+      "description": "Paroxysmal facial pain in trigeminal distribution from neurovascular compression at root entry zone.",
+      "perturbations": [
+        {
+          "variable": "compression",
+          "delta": 0.45,
+          "cause": "vascular loop compresses CN5 at root entry"
+        },
+        {
+          "variable": "demyelination",
+          "delta": 0.45,
+          "cause": "focal demyelination → ephaptic cross-talk"
+        },
+        {
+          "variable": "ectopic_discharge",
+          "delta": 0.75,
+          "cause": "paroxysmal high-frequency discharge"
+        }
+      ]
+    },
+    "Bell's Palsy": {
+      "_review_status": "unreviewed",
+      "description": "Idiopathic acute CN7 palsy — likely HSV reactivation, viral neuritis.",
+      "perturbations": [
+        {
+          "variable": "inflammation",
+          "delta": 0.6,
+          "cause": "viral (HSV) neuritis"
+        },
+        {
+          "variable": "myelin_integrity",
+          "delta": -0.35,
+          "cause": "inflammatory demyelination of CN7"
+        },
+        {
+          "variable": "motor_conduction",
+          "delta": -0.5,
+          "cause": "CN7 motor fibers affected"
+        }
+      ]
+    },
+    "Guillain-Barre Syndrome": {
+      "_review_status": "unreviewed",
+      "description": "Acute inflammatory demyelinating polyneuropathy — post-infectious autoimmune demyelination.",
+      "perturbations": [
+        {
+          "variable": "inflammation",
+          "delta": 0.65,
+          "cause": "autoimmune attack on Schwann cells"
+        },
+        {
+          "variable": "demyelination",
+          "delta": 0.7,
+          "cause": "multifocal demyelination"
+        },
+        {
+          "variable": "motor_conduction",
+          "delta": -0.55,
+          "cause": "demyelination slows/blocks conduction"
+        },
+        {
+          "variable": "myelin_integrity",
+          "delta": -0.5,
+          "cause": "myelin destruction"
+        }
+      ]
+    },
+    "Multiple Sclerosis": {
+      "_review_status": "unreviewed",
+      "description": "Autoimmune CNS demyelination — episodes of focal neurologic deficit disseminated in time and space.",
+      "perturbations": [
+        {
+          "variable": "demyelination",
+          "delta": 0.65,
+          "cause": "autoimmune attack on CNS myelin (oligodendrocytes)"
+        },
+        {
+          "variable": "myelin_integrity",
+          "delta": -0.5,
+          "cause": "plaques in white matter"
+        },
+        {
+          "variable": "sensory_conduction",
+          "delta": -0.35,
+          "cause": "affected tract function"
+        },
+        {
+          "variable": "motor_conduction",
+          "delta": -0.35,
+          "cause": "affected tract function"
+        }
+      ]
+    },
+    "Cauda Equina Syndrome": {
+      "_review_status": "unreviewed",
+      "description": "Compression of lumbar/sacral nerve roots — surgical emergency.",
+      "perturbations": [
+        {
+          "variable": "compression",
+          "delta": 0.75,
+          "cause": "large disc herniation, tumor, or hematoma at L4-S3"
+        },
+        {
+          "variable": "motor_conduction",
+          "delta": -0.6,
+          "cause": "multi-root motor failure"
+        },
+        {
+          "variable": "sensory_conduction",
+          "delta": -0.5,
+          "cause": "saddle anesthesia, multi-dermatome"
+        }
+      ]
+    },
+    "Thoracic Outlet Syndrome": {
+      "_review_status": "unreviewed",
+      "description": "Compression of brachial plexus / subclavian vessels in thoracic outlet — arm symptoms.",
+      "perturbations": [
+        {
+          "variable": "compression",
+          "delta": 0.55,
+          "cause": "cervical rib, scalene hypertrophy, postural"
+        },
+        {
+          "variable": "ectopic_discharge",
+          "delta": 0.35,
+          "cause": "compressed plexus abnormal firing"
+        }
+      ]
+    },
+    "Piriformis Syndrome": {
+      "_review_status": "unreviewed",
+      "description": "Sciatic nerve compression by hypertonic piriformis muscle.",
+      "perturbations": [
+        {
+          "variable": "compression",
+          "delta": 0.5,
+          "cause": "piriformis muscle compresses sciatic nerve in greater sciatic foramen"
+        },
+        {
+          "variable": "ectopic_discharge",
+          "delta": 0.45,
+          "cause": "compressed sciatic abnormal firing"
+        }
+      ]
+    },
+    "Diabetic Peripheral Neuropathy": {
+      "_review_status": "unreviewed",
+      "description": "Chronic distal symmetric polyneuropathy from diabetic vasa nervorum disease + metabolic injury.",
+      "perturbations": [
+        {
+          "variable": "ischemia",
+          "delta": 0.5,
+          "cause": "vasa nervorum microvascular disease"
+        },
+        {
+          "variable": "axonal_integrity",
+          "delta": -0.45,
+          "cause": "metabolic + ischemic axonal injury"
+        },
+        {
+          "variable": "sensory_conduction",
+          "delta": -0.5,
+          "cause": "distal sensory fibers affected first (length-dependent)"
+        }
+      ]
+    }
+  }
+}

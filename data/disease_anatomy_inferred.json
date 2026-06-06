@@ -1,0 +1,2011 @@
+{
+  "_meta": {
+    "description": "GNN-inferred disease anatomy — for review/augmentation",
+    "verification_status": "gnn_inferred",
+    "model": "TransE knowledge graph embedding",
+    "training_loss": 0.12327989928036628,
+    "warning": "DO NOT use for clinical decisions without human review"
+  },
+  "predictions": {
+    "ischemic_stroke": {
+      "predicted_organs": [
+        "middle_cerebral_a",
+        "brain",
+        "internal_carotid_a",
+        "meninges",
+        "anterior_cerebral_a"
+      ],
+      "predicted_zones": [
+        "head",
+        "neck"
+      ],
+      "top_organ_confidence": 0.7747677963275759,
+      "top_zone_confidence": 0.6192329350844029,
+      "verification_status": "gnn_inferred",
+      "already_known": true
+    },
+    "peptic_ulcer_disease": {
+      "predicted_organs": [
+        "duodenum",
+        "stomach",
+        "pancreas",
+        "gastroduodenal_a",
+        "esophagus"
+      ],
+      "predicted_zones": [
+        "epigastric",
+        "umbilical",
+        "ruq"
+      ],
+      "top_organ_confidence": 0.6757004585251026,
+      "top_zone_confidence": 0.6595656536389505,
+      "verification_status": "gnn_inferred",
+      "already_known": true
+    },
+    "acute_sinusitis": {
+      "predicted_organs": [
+        "pharynx",
+        "esophagus",
+        "brain",
+        "brainstem",
+        "heart"
+      ],
+      "predicted_zones": [
+        "neck",
+        "head",
+        "thorax_central"
+      ],
+      "top_organ_confidence": 0.4688243920584931,
+      "top_zone_confidence": 0.46667397549235434,
+      "verification_status": "gnn_inferred",
+      "already_known": true
+    },
+    "gastroesophageal_reflux_disease": {
+      "predicted_organs": [
+        "esophagus",
+        "pancreas",
+        "duodenum",
+        "stomach",
+        "spleen"
+      ],
+      "predicted_zones": [
+        "epigastric",
+        "umbilical",
+        "neck"
+      ],
+      "top_organ_confidence": 0.6032470744170956,
+      "top_zone_confidence": 0.564567629774981,
+      "verification_status": "gnn_inferred",
+      "already_known": true
+    },
+    "acute_viral_upper_respiratory_infection": {
+      "predicted_organs": [
+        "trachea",
+        "pharynx",
+        "lungs",
+        "r_bronchus",
+        "l_bronchus"
+      ],
+      "predicted_zones": [
+        "thorax_central",
+        "neck"
+      ],
+      "top_organ_confidence": 0.5922725841862734,
+      "top_zone_confidence": 0.5709554536058836,
+      "verification_status": "gnn_inferred",
+      "already_known": true
+    },
+    "thyroid_storm": {
+      "predicted_organs": [
+        "thyroid",
+        "brain",
+        "brainstem",
+        "cerv_ln",
+        "heart"
+      ],
+      "predicted_zones": [
+        "neck",
+        "head",
+        "thorax_central"
+      ],
+      "top_organ_confidence": 0.596244809935913,
+      "top_zone_confidence": 0.5824837633139563,
+      "verification_status": "gnn_inferred",
+      "already_known": true
+    },
+    "transient_ischemic_attack": {
+      "predicted_organs": [
+        "middle_cerebral_a",
+        "brain",
+        "meninges",
+        "internal_carotid_a",
+        "anterior_cerebral_a"
+      ],
+      "predicted_zones": [
+        "head",
+        "neck"
+      ],
+      "top_organ_confidence": 0.7389385452776235,
+      "top_zone_confidence": 0.6389878018404522,
+      "verification_status": "gnn_inferred",
+      "already_known": true
+    },
+    "subarachnoid_hemorrhage": {
+      "predicted_organs": [
+        "meninges",
+        "middle_cerebral_a",
+        "brain",
+        "brainstem",
+        "anterior_cerebral_a"
+      ],
+      "predicted_zones": [
+        "head",
+        "neck"
+      ],
+      "top_organ_confidence": 0.6681631782347024,
+      "top_zone_confidence": 0.6067011495518717,
+      "verification_status": "gnn_inferred",
+      "already_known": true
+    },
+    "bronchiolitis": {
+      "predicted_organs": [
+        "lungs",
+        "r_bronchus",
+        "l_bronchus",
+        "trachea",
+        "r_lung"
+      ],
+      "predicted_zones": [
+        "thorax_central",
+        "neck"
+      ],
+      "top_organ_confidence": 0.7488195176451051,
+      "top_zone_confidence": 0.6570541019670577,
+      "verification_status": "gnn_inferred",
+      "already_known": true
+    },
+    "diabetic_ketoacidosis": {
+      "predicted_organs": [
+        "pancreas",
+        "l_kidney",
+        "r_kidney",
+        "spleen",
+        "duodenum"
+      ],
+      "predicted_zones": [
+        "epigastric",
+        "left_flank",
+        "right_flank"
+      ],
+      "top_organ_confidence": 0.6817647599920791,
+      "top_zone_confidence": 0.6236514603836506,
+      "verification_status": "gnn_inferred",
+      "already_known": true
+    },
+    "idiopathic_intracranial_hypertension": {
+      "predicted_organs": [
+        "meninges",
+        "brain",
+        "middle_cerebral_a",
+        "brainstem",
+        "anterior_cerebral_a"
+      ],
+      "predicted_zones": [
+        "head",
+        "neck"
+      ],
+      "top_organ_confidence": 0.6436800628299968,
+      "top_zone_confidence": 0.5919539878323979,
+      "verification_status": "gnn_inferred",
+      "already_known": true
+    },
+    "appendicitis": {
+      "predicted_organs": [
+        "appendix",
+        "ileocolic_a",
+        "ileum",
+        "cecum",
+        "sma"
+      ],
+      "predicted_zones": [
+        "rlq",
+        "umbilical",
+        "epigastric"
+      ],
+      "top_organ_confidence": 0.635812185462585,
+      "top_zone_confidence": 0.6061752018432588,
+      "verification_status": "gnn_inferred",
+      "already_known": true
+    },
+    "mononucleosis": {
+      "predicted_organs": [
+        "esophagus",
+        "pharynx",
+        "spleen",
+        "thyroid",
+        "cerv_ln"
+      ],
+      "predicted_zones": [
+        "neck",
+        "epigastric",
+        "thorax_central"
+      ],
+      "top_organ_confidence": 0.5162993922719983,
+      "top_zone_confidence": 0.5257375245344975,
+      "verification_status": "gnn_inferred",
+      "already_known": true
+    },
+    "adrenal_crisis": {
+      "predicted_organs": [
+        "l_kidney",
+        "r_adrenal",
+        "l_adrenal",
+        "r_kidney",
+        "spleen"
+      ],
+      "predicted_zones": [
+        "left_flank",
+        "right_flank",
+        "neck"
+      ],
+      "top_organ_confidence": 0.47421934636519947,
+      "top_zone_confidence": 0.4746094947573137,
+      "verification_status": "gnn_inferred",
+      "already_known": true
+    },
+    "acute_glaucoma": {
+      "predicted_organs": [
+        "ophthalmic_a",
+        "middle_cerebral_a",
+        "meninges",
+        "brain",
+        "brainstem"
+      ],
+      "predicted_zones": [
+        "head"
+      ],
+      "top_organ_confidence": 0.45432298331628657,
+      "top_zone_confidence": 0.4208199357881621,
+      "verification_status": "gnn_inferred",
+      "already_known": true
+    },
+    "hypertrophic_cardiomyopathy": {
+      "predicted_organs": [
+        "heart",
+        "rca_a",
+        "lcx_a",
+        "lad_a",
+        "lungs"
+      ],
+      "predicted_zones": [
+        "thorax_central",
+        "neck",
+        "left_flank"
+      ],
+      "top_organ_confidence": 0.6718234194283259,
+      "top_zone_confidence": 0.6190366027365619,
+      "verification_status": "gnn_inferred",
+      "already_known": true
+    },
+    "major_depressive_episode": {
+      "predicted_organs": [
+        "brain",
+        "middle_cerebral_a",
+        "brainstem",
+        "meninges"
+      ],
+      "predicted_zones": [
+        "head"
+      ],
+      "top_organ_confidence": 0.43049511660105055,
+      "top_zone_confidence": 0.4425614498827192,
+      "verification_status": "gnn_inferred",
+      "already_known": true
+    },
+    "bell_palsy": {
+      "predicted_organs": [
+        "brainstem",
+        "brain",
+        "meninges",
+        "cerebellum",
+        "middle_cerebral_a"
+      ],
+      "predicted_zones": [
+        "head",
+        "neck"
+      ],
+      "top_organ_confidence": 0.6866641379480369,
+      "top_zone_confidence": 0.5958885878260047,
+      "verification_status": "gnn_inferred",
+      "already_known": true
+    },
+    "shock": {
+      "predicted_organs": [
+        "brain",
+        "brainstem",
+        "meninges"
+      ],
+      "predicted_zones": [],
+      "top_organ_confidence": 0.4468980539048375,
+      "top_zone_confidence": 0.39832230478419456,
+      "verification_status": "gnn_inferred",
+      "already_known": true
+    },
+    "constipation": {
+      "predicted_organs": [
+        "desc_colon",
+        "sig_colon",
+        "rectum"
+      ],
+      "predicted_zones": [
+        "llq",
+        "suprapubic"
+      ],
+      "top_organ_confidence": 0.4361774760515614,
+      "top_zone_confidence": 0.4479866767882307,
+      "verification_status": "gnn_inferred",
+      "already_known": true
+    },
+    "mesenteric_ischemia": {
+      "predicted_organs": [
+        "jejunum",
+        "ileum",
+        "asc_colon",
+        "trans_colon",
+        "appendix"
+      ],
+      "predicted_zones": [
+        "umbilical",
+        "epigastric",
+        "rlq"
+      ],
+      "top_organ_confidence": 0.7816765594812367,
+      "top_zone_confidence": 0.735875475558457,
+      "verification_status": "gnn_inferred",
+      "already_known": true
+    },
+    "ureterolithiasis": {
+      "predicted_organs": [
+        "r_kidney",
+        "l_kidney",
+        "l_ureter",
+        "r_ureter",
+        "pancreas"
+      ],
+      "predicted_zones": [
+        "right_flank",
+        "left_flank",
+        "suprapubic"
+      ],
+      "top_organ_confidence": 0.7478091847528122,
+      "top_zone_confidence": 0.7842255347120959,
+      "verification_status": "gnn_inferred",
+      "already_known": true
+    },
+    "malaria": {
+      "predicted_organs": [
+        "spleen",
+        "liver",
+        "esophagus",
+        "pancreas",
+        "duodenum"
+      ],
+      "predicted_zones": [
+        "epigastric",
+        "ruq",
+        "umbilical"
+      ],
+      "top_organ_confidence": 0.5079480150505468,
+      "top_zone_confidence": 0.44949418223638593,
+      "verification_status": "gnn_inferred",
+      "already_known": true
+    },
+    "prostatitis": {
+      "predicted_organs": [
+        "bladder",
+        "ovaries",
+        "uterus",
+        "urethra",
+        "r_ureter"
+      ],
+      "predicted_zones": [
+        "suprapubic",
+        "pelvis",
+        "llq"
+      ],
+      "top_organ_confidence": 0.6358232832798263,
+      "top_zone_confidence": 0.6625603278102205,
+      "verification_status": "gnn_inferred",
+      "already_known": true
+    },
+    "cholecystitis": {
+      "predicted_organs": [
+        "bile_duct",
+        "gallbladder",
+        "liver",
+        "cystic_a",
+        "esophagus"
+      ],
+      "predicted_zones": [
+        "ruq",
+        "epigastric",
+        "umbilical"
+      ],
+      "top_organ_confidence": 0.6291845588175691,
+      "top_zone_confidence": 0.6285809858206316,
+      "verification_status": "gnn_inferred",
+      "already_known": true
+    },
+    "atrial_fibrillation": {
+      "predicted_organs": [
+        "heart",
+        "lungs",
+        "rca_a",
+        "lcx_a",
+        "left_ventricle"
+      ],
+      "predicted_zones": [
+        "thorax_central",
+        "neck"
+      ],
+      "top_organ_confidence": 0.6581178681096193,
+      "top_zone_confidence": 0.6346282930411626,
+      "verification_status": "gnn_inferred",
+      "already_known": true
+    },
+    "pericarditis": {
+      "predicted_organs": [
+        "heart",
+        "rca_a",
+        "lcx_a",
+        "lad_a",
+        "lungs"
+      ],
+      "predicted_zones": [
+        "thorax_central"
+      ],
+      "top_organ_confidence": 0.46489710781738286,
+      "top_zone_confidence": 0.41898814342100127,
+      "verification_status": "gnn_inferred",
+      "already_known": true
+    },
+    "acute_kidney_injury": {
+      "predicted_organs": [
+        "l_kidney",
+        "r_kidney",
+        "l_ureter",
+        "r_ureter",
+        "r_adrenal"
+      ],
+      "predicted_zones": [
+        "left_flank",
+        "right_flank",
+        "suprapubic"
+      ],
+      "top_organ_confidence": 0.5529561149195346,
+      "top_zone_confidence": 0.5043924384711703,
+      "verification_status": "gnn_inferred",
+      "already_known": true
+    },
+    "aortic_dissection": {
+      "predicted_organs": [
+        "thoracic_aorta",
+        "aorta",
+        "rca_a",
+        "left_main_coronary",
+        "heart"
+      ],
+      "predicted_zones": [
+        "thorax_central",
+        "neck",
+        "left_flank"
+      ],
+      "top_organ_confidence": 0.6776219503167307,
+      "top_zone_confidence": 0.5243241541484979,
+      "verification_status": "gnn_inferred",
+      "already_known": true
+    },
+    "vasovagal_syncope": {
+      "predicted_organs": [
+        "brain",
+        "heart",
+        "brainstem",
+        "meninges",
+        "rca_a"
+      ],
+      "predicted_zones": [
+        "neck",
+        "thorax_central",
+        "head"
+      ],
+      "top_organ_confidence": 0.6158005727841676,
+      "top_zone_confidence": 0.6281540637260036,
+      "verification_status": "gnn_inferred",
+      "already_known": true
+    },
+    "bowel_obstruction": {
+      "predicted_organs": [
+        "jejunum",
+        "ileum",
+        "asc_colon",
+        "trans_colon",
+        "sma"
+      ],
+      "predicted_zones": [
+        "umbilical",
+        "rlq",
+        "epigastric"
+      ],
+      "top_organ_confidence": 0.7639216682907785,
+      "top_zone_confidence": 0.7082362514686499,
+      "verification_status": "gnn_inferred",
+      "already_known": true
+    },
+    "sepsis": {
+      "predicted_organs": [
+        "spleen",
+        "esophagus",
+        "liver",
+        "pancreas",
+        "l_kidney"
+      ],
+      "predicted_zones": [
+        "left_flank",
+        "epigastric",
+        "right_flank"
+      ],
+      "top_organ_confidence": 0.6668262710623497,
+      "top_zone_confidence": 0.5930223255252643,
+      "verification_status": "gnn_inferred",
+      "already_known": true
+    },
+    "urinary_tract_infection": {
+      "predicted_organs": [
+        "r_ureter",
+        "l_ureter",
+        "urethra",
+        "bladder",
+        "prostate"
+      ],
+      "predicted_zones": [
+        "suprapubic",
+        "left_flank",
+        "right_flank"
+      ],
+      "top_organ_confidence": 0.6982739739917454,
+      "top_zone_confidence": 0.6085731271825361,
+      "verification_status": "gnn_inferred",
+      "already_known": true
+    },
+    "endocarditis": {
+      "predicted_organs": [
+        "left_ventricle",
+        "heart",
+        "lungs",
+        "rca_a",
+        "lcx_a"
+      ],
+      "predicted_zones": [
+        "thorax_central",
+        "neck"
+      ],
+      "top_organ_confidence": 0.6473973515780876,
+      "top_zone_confidence": 0.6038551922071216,
+      "verification_status": "gnn_inferred",
+      "already_known": true
+    },
+    "streptococcal_pharyngitis": {
+      "predicted_organs": [
+        "pharynx"
+      ],
+      "predicted_zones": [
+        "neck"
+      ],
+      "top_organ_confidence": 0.46305458696429125,
+      "top_zone_confidence": 0.4703465081761671,
+      "verification_status": "gnn_inferred",
+      "already_known": true
+    },
+    "asthma": {
+      "predicted_organs": [
+        "lungs",
+        "r_bronchus",
+        "l_bronchus",
+        "trachea",
+        "r_lung"
+      ],
+      "predicted_zones": [
+        "thorax_central",
+        "neck"
+      ],
+      "top_organ_confidence": 0.7422370243104655,
+      "top_zone_confidence": 0.671677833297074,
+      "verification_status": "gnn_inferred",
+      "already_known": true
+    },
+    "acute_cholecystitis": {
+      "predicted_organs": [
+        "bile_duct",
+        "gallbladder",
+        "cystic_a",
+        "liver",
+        "duodenum"
+      ],
+      "predicted_zones": [
+        "ruq",
+        "epigastric",
+        "umbilical"
+      ],
+      "top_organ_confidence": 0.6105913261618128,
+      "top_zone_confidence": 0.5906847211753369,
+      "verification_status": "gnn_inferred",
+      "already_known": true
+    },
+    "inflammatory_bowel_disease_flare": {
+      "predicted_organs": [
+        "trans_colon",
+        "asc_colon",
+        "jejunum",
+        "ileum",
+        "sma"
+      ],
+      "predicted_zones": [
+        "umbilical",
+        "rlq",
+        "epigastric"
+      ],
+      "top_organ_confidence": 0.7483936733501662,
+      "top_zone_confidence": 0.6799530114735426,
+      "verification_status": "gnn_inferred",
+      "already_known": true
+    },
+    "acute_bacterial_meningitis": {
+      "predicted_organs": [
+        "brainstem",
+        "spinal_cord",
+        "brain",
+        "meninges",
+        "middle_cerebral_a"
+      ],
+      "predicted_zones": [
+        "head",
+        "neck",
+        "thorax_central"
+      ],
+      "top_organ_confidence": 0.6068714369897866,
+      "top_zone_confidence": 0.551605477231134,
+      "verification_status": "gnn_inferred",
+      "already_known": true
+    },
+    "cholangitis": {
+      "predicted_organs": [
+        "liver",
+        "bile_duct",
+        "gallbladder",
+        "duodenum",
+        "esophagus"
+      ],
+      "predicted_zones": [
+        "ruq",
+        "epigastric",
+        "umbilical"
+      ],
+      "top_organ_confidence": 0.6477889777647485,
+      "top_zone_confidence": 0.6197313443132038,
+      "verification_status": "gnn_inferred",
+      "already_known": true
+    },
+    "croup": {
+      "predicted_organs": [
+        "pharynx",
+        "trachea",
+        "lungs",
+        "r_bronchus",
+        "l_bronchus"
+      ],
+      "predicted_zones": [
+        "neck",
+        "thorax_central",
+        "head"
+      ],
+      "top_organ_confidence": 0.6367444883907378,
+      "top_zone_confidence": 0.5850540078166417,
+      "verification_status": "gnn_inferred",
+      "already_known": true
+    },
+    "heat_stroke": {
+      "predicted_organs": [
+        "skin",
+        "brain"
+      ],
+      "predicted_zones": [],
+      "top_organ_confidence": 0.4770545869778342,
+      "top_zone_confidence": 0.3680917104168309,
+      "verification_status": "gnn_inferred",
+      "already_known": true
+    },
+    "pyelonephritis": {
+      "predicted_organs": [
+        "r_kidney",
+        "l_kidney",
+        "l_ureter",
+        "r_ureter",
+        "pancreas"
+      ],
+      "predicted_zones": [
+        "left_flank",
+        "right_flank",
+        "epigastric"
+      ],
+      "top_organ_confidence": 0.641958291562119,
+      "top_zone_confidence": 0.6991065634508549,
+      "verification_status": "gnn_inferred",
+      "already_known": true
+    },
+    "generalized_anxiety_disorder": {
+      "predicted_organs": [
+        "brain",
+        "meninges",
+        "middle_cerebral_a",
+        "brainstem",
+        "anterior_cerebral_a"
+      ],
+      "predicted_zones": [
+        "head",
+        "neck"
+      ],
+      "top_organ_confidence": 0.5355420951581407,
+      "top_zone_confidence": 0.5126100758690417,
+      "verification_status": "gnn_inferred",
+      "already_known": true
+    },
+    "acute_uncomplicated_cystitis": {
+      "predicted_organs": [
+        "urethra",
+        "r_ureter",
+        "l_ureter",
+        "ovaries",
+        "bladder"
+      ],
+      "predicted_zones": [
+        "suprapubic",
+        "left_flank",
+        "neck"
+      ],
+      "top_organ_confidence": 0.4977773724782054,
+      "top_zone_confidence": 0.5284175455603212,
+      "verification_status": "gnn_inferred",
+      "already_known": true
+    },
+    "hypoglycemia": {
+      "predicted_organs": [
+        "brain",
+        "brainstem",
+        "meninges",
+        "pancreas",
+        "middle_cerebral_a"
+      ],
+      "predicted_zones": [
+        "head",
+        "neck",
+        "epigastric"
+      ],
+      "top_organ_confidence": 0.4729982847327083,
+      "top_zone_confidence": 0.43334486814384254,
+      "verification_status": "gnn_inferred",
+      "already_known": true
+    },
+    "pancreatitis": {
+      "predicted_organs": [
+        "pancreas",
+        "duodenum",
+        "stomach",
+        "jejunum",
+        "esophagus"
+      ],
+      "predicted_zones": [
+        "epigastric",
+        "umbilical",
+        "ruq"
+      ],
+      "top_organ_confidence": 0.6327857631694987,
+      "top_zone_confidence": 0.6622139496040912,
+      "verification_status": "gnn_inferred",
+      "already_known": true
+    },
+    "acute_gastroenteritis": {
+      "predicted_organs": [
+        "jejunum",
+        "pancreas",
+        "trans_colon",
+        "asc_colon",
+        "ileum"
+      ],
+      "predicted_zones": [
+        "umbilical",
+        "epigastric",
+        "rlq"
+      ],
+      "top_organ_confidence": 0.7384701040444643,
+      "top_zone_confidence": 0.7499715030047894,
+      "verification_status": "gnn_inferred",
+      "already_known": true
+    },
+    "deep_vein_thrombosis": {
+      "predicted_organs": [
+        "soleal_vv",
+        "gastrocnemius_vv",
+        "r_popliteal_v",
+        "great_saphenous_v",
+        "r_femoral_v"
+      ],
+      "predicted_zones": [],
+      "top_organ_confidence": 0.4970593089358003,
+      "top_zone_confidence": 0.3369563447005386,
+      "verification_status": "gnn_inferred",
+      "already_known": true
+    },
+    "vertigo_peripheral": {
+      "predicted_organs": [
+        "brainstem",
+        "cerebellum",
+        "brain",
+        "meninges",
+        "spinal_cord"
+      ],
+      "predicted_zones": [
+        "head",
+        "neck"
+      ],
+      "top_organ_confidence": 0.5863791829845414,
+      "top_zone_confidence": 0.5151729710591322,
+      "verification_status": "gnn_inferred",
+      "already_known": true
+    },
+    "chronic_kidney_disease": {
+      "predicted_organs": [
+        "r_kidney",
+        "l_kidney",
+        "r_ureter",
+        "l_ureter",
+        "pancreas"
+      ],
+      "predicted_zones": [
+        "right_flank",
+        "left_flank"
+      ],
+      "top_organ_confidence": 0.516288905290476,
+      "top_zone_confidence": 0.49038473106206554,
+      "verification_status": "gnn_inferred",
+      "already_known": true
+    },
+    "unstable_angina": {
+      "predicted_organs": [
+        "lcx_a",
+        "lad_a",
+        "rca_a",
+        "heart",
+        "left_main_coronary"
+      ],
+      "predicted_zones": [
+        "thorax_central",
+        "neck"
+      ],
+      "top_organ_confidence": 0.8005615226301065,
+      "top_zone_confidence": 0.6044123732720571,
+      "verification_status": "gnn_inferred",
+      "already_known": true
+    },
+    "stable_angina_pectoris": {
+      "predicted_organs": [
+        "heart",
+        "rca_a",
+        "lad_a",
+        "lcx_a",
+        "left_main_coronary"
+      ],
+      "predicted_zones": [
+        "thorax_central",
+        "neck",
+        "left_flank"
+      ],
+      "top_organ_confidence": 0.7179258383745025,
+      "top_zone_confidence": 0.6255696076826478,
+      "verification_status": "gnn_inferred",
+      "already_known": true
+    },
+    "influenza": {
+      "predicted_organs": [
+        "lungs",
+        "trachea",
+        "r_bronchus",
+        "l_bronchus",
+        "r_lung"
+      ],
+      "predicted_zones": [
+        "thorax_central",
+        "neck"
+      ],
+      "top_organ_confidence": 0.7561835534507554,
+      "top_zone_confidence": 0.6693337004061907,
+      "verification_status": "gnn_inferred",
+      "already_known": true
+    },
+    "acute_hepatitis": {
+      "predicted_organs": [
+        "liver",
+        "bile_duct",
+        "gallbladder",
+        "duodenum",
+        "proper_hepatic_a"
+      ],
+      "predicted_zones": [
+        "ruq",
+        "epigastric",
+        "umbilical"
+      ],
+      "top_organ_confidence": 0.5829722507405815,
+      "top_zone_confidence": 0.5301741593721977,
+      "verification_status": "gnn_inferred",
+      "already_known": true
+    },
+    "aspiration_pneumonia": {
+      "predicted_organs": [
+        "lungs",
+        "r_lung",
+        "l_lung",
+        "r_bronchus",
+        "l_bronchus"
+      ],
+      "predicted_zones": [
+        "thorax_central",
+        "neck"
+      ],
+      "top_organ_confidence": 0.7360467723963984,
+      "top_zone_confidence": 0.6252130770033438,
+      "verification_status": "gnn_inferred",
+      "already_known": true
+    },
+    "lower_gi_bleed": {
+      "predicted_organs": [
+        "desc_colon",
+        "sig_colon",
+        "rectum",
+        "bladder",
+        "ovaries"
+      ],
+      "predicted_zones": [
+        "llq",
+        "suprapubic",
+        "pelvis"
+      ],
+      "top_organ_confidence": 0.6149518731077517,
+      "top_zone_confidence": 0.6677479155010331,
+      "verification_status": "gnn_inferred",
+      "already_known": true
+    },
+    "pneumothorax": {
+      "predicted_organs": [
+        "r_lung",
+        "lungs",
+        "l_lung",
+        "pleura",
+        "r_bronchus"
+      ],
+      "predicted_zones": [
+        "thorax_central",
+        "neck"
+      ],
+      "top_organ_confidence": 0.7112344343533964,
+      "top_zone_confidence": 0.6032281369011387,
+      "verification_status": "gnn_inferred",
+      "already_known": true
+    },
+    "intracerebral_hemorrhage": {
+      "predicted_organs": [
+        "brain",
+        "brainstem",
+        "meninges"
+      ],
+      "predicted_zones": [
+        "head"
+      ],
+      "top_organ_confidence": 0.44125567373902735,
+      "top_zone_confidence": 0.4205861436318861,
+      "verification_status": "gnn_inferred",
+      "already_known": true
+    },
+    "tuberculosis": {
+      "predicted_organs": [
+        "lungs",
+        "r_lung",
+        "r_bronchus",
+        "l_lung",
+        "l_bronchus"
+      ],
+      "predicted_zones": [
+        "thorax_central",
+        "neck"
+      ],
+      "top_organ_confidence": 0.7668692901919744,
+      "top_zone_confidence": 0.6665468196391636,
+      "verification_status": "gnn_inferred",
+      "already_known": true
+    },
+    "acute_hiv_infection": {
+      "predicted_organs": [
+        "cerv_ln",
+        "thyroid",
+        "brain",
+        "axil_ln",
+        "meninges"
+      ],
+      "predicted_zones": [
+        "neck"
+      ],
+      "top_organ_confidence": 0.5905247961173054,
+      "top_zone_confidence": 0.4206025971752945,
+      "verification_status": "gnn_inferred",
+      "already_known": true
+    },
+    "septic_shock": {
+      "predicted_organs": [
+        "esophagus",
+        "pancreas",
+        "liver",
+        "r_kidney",
+        "heart"
+      ],
+      "predicted_zones": [
+        "thorax_central",
+        "left_flank",
+        "neck"
+      ],
+      "top_organ_confidence": 0.6144582689847459,
+      "top_zone_confidence": 0.5747439150223529,
+      "verification_status": "gnn_inferred",
+      "already_known": true
+    },
+    "hypothermia": {
+      "predicted_organs": [
+        "heart",
+        "brain",
+        "brainstem",
+        "meninges",
+        "rca_a"
+      ],
+      "predicted_zones": [
+        "neck",
+        "head",
+        "thorax_central"
+      ],
+      "top_organ_confidence": 0.4795889773822339,
+      "top_zone_confidence": 0.473468884702575,
+      "verification_status": "gnn_inferred",
+      "already_known": true
+    },
+    "anaphylaxis": {
+      "predicted_organs": [
+        "lungs",
+        "r_bronchus",
+        "l_bronchus",
+        "trachea",
+        "heart"
+      ],
+      "predicted_zones": [
+        "thorax_central",
+        "neck"
+      ],
+      "top_organ_confidence": 0.7088457902538912,
+      "top_zone_confidence": 0.6521928469482858,
+      "verification_status": "gnn_inferred",
+      "already_known": true
+    },
+    "viral_uri": {
+      "predicted_organs": [
+        "pharynx",
+        "trachea",
+        "lungs",
+        "r_bronchus",
+        "l_bronchus"
+      ],
+      "predicted_zones": [
+        "neck",
+        "thorax_central"
+      ],
+      "top_organ_confidence": 0.5309594475949955,
+      "top_zone_confidence": 0.5142250587739189,
+      "verification_status": "gnn_inferred",
+      "already_known": true
+    },
+    "community_acquired_pneumonia": {
+      "predicted_organs": [
+        "lungs",
+        "r_bronchus",
+        "l_bronchus",
+        "r_lung",
+        "trachea"
+      ],
+      "predicted_zones": [
+        "thorax_central",
+        "neck",
+        "head"
+      ],
+      "top_organ_confidence": 0.7198074181670026,
+      "top_zone_confidence": 0.6734221076870992,
+      "verification_status": "gnn_inferred",
+      "already_known": true
+    },
+    "asthma_exacerbation": {
+      "predicted_organs": [
+        "lungs",
+        "r_bronchus",
+        "l_bronchus",
+        "trachea",
+        "r_lung"
+      ],
+      "predicted_zones": [
+        "thorax_central",
+        "neck"
+      ],
+      "top_organ_confidence": 0.665032368813377,
+      "top_zone_confidence": 0.6328457582399705,
+      "verification_status": "gnn_inferred",
+      "already_known": true
+    },
+    "pulmonary_embolism": {
+      "predicted_organs": [
+        "r_lung",
+        "lungs",
+        "l_lung",
+        "pulm_aa",
+        "r_bronchus"
+      ],
+      "predicted_zones": [
+        "thorax_central",
+        "neck"
+      ],
+      "top_organ_confidence": 0.7747242724008963,
+      "top_zone_confidence": 0.6364569773976478,
+      "verification_status": "gnn_inferred",
+      "already_known": true
+    },
+    "copd_exacerbation": {
+      "predicted_organs": [
+        "lungs",
+        "r_bronchus",
+        "r_lung",
+        "l_bronchus",
+        "l_lung"
+      ],
+      "predicted_zones": [
+        "thorax_central",
+        "neck"
+      ],
+      "top_organ_confidence": 0.8710280668978032,
+      "top_zone_confidence": 0.7092134705893977,
+      "verification_status": "gnn_inferred",
+      "already_known": true
+    },
+    "pneumonia": {
+      "predicted_organs": [
+        "lungs",
+        "r_lung",
+        "l_lung",
+        "r_bronchus",
+        "pulm_aa"
+      ],
+      "predicted_zones": [
+        "thorax_central",
+        "neck"
+      ],
+      "top_organ_confidence": 0.6875924995232143,
+      "top_zone_confidence": 0.6003427550482653,
+      "verification_status": "gnn_inferred",
+      "already_known": true
+    },
+    "tension_type_headache": {
+      "predicted_organs": [
+        "brain",
+        "brainstem",
+        "meninges",
+        "heart",
+        "muscles"
+      ],
+      "predicted_zones": [
+        "neck",
+        "head",
+        "thorax_central"
+      ],
+      "top_organ_confidence": 0.5403142076625362,
+      "top_zone_confidence": 0.5803411110917889,
+      "verification_status": "gnn_inferred",
+      "already_known": true
+    },
+    "concussion": {
+      "predicted_organs": [
+        "brain",
+        "meninges",
+        "brainstem",
+        "middle_cerebral_a",
+        "cerebellum"
+      ],
+      "predicted_zones": [
+        "head",
+        "neck"
+      ],
+      "top_organ_confidence": 0.5109045281419075,
+      "top_zone_confidence": 0.4770618560128746,
+      "verification_status": "gnn_inferred",
+      "already_known": true
+    },
+    "meningitis": {
+      "predicted_organs": [
+        "meninges",
+        "brain",
+        "brainstem",
+        "middle_cerebral_a",
+        "anterior_cerebral_a"
+      ],
+      "predicted_zones": [
+        "head",
+        "neck"
+      ],
+      "top_organ_confidence": 0.5946619034763363,
+      "top_zone_confidence": 0.5313191909044626,
+      "verification_status": "gnn_inferred",
+      "already_known": true
+    },
+    "myocardial_infarction": {
+      "predicted_organs": [
+        "lad_a",
+        "lcx_a",
+        "rca_a",
+        "heart",
+        "left_main_coronary"
+      ],
+      "predicted_zones": [
+        "thorax_central",
+        "neck",
+        "left_flank"
+      ],
+      "top_organ_confidence": 0.8388906470852563,
+      "top_zone_confidence": 0.6399987964699702,
+      "verification_status": "gnn_inferred",
+      "already_known": true
+    },
+    "pleural_effusion": {
+      "predicted_organs": [
+        "r_lung",
+        "lungs",
+        "l_lung",
+        "pleura",
+        "r_bronchus"
+      ],
+      "predicted_zones": [
+        "thorax_central",
+        "neck"
+      ],
+      "top_organ_confidence": 0.7239643743781891,
+      "top_zone_confidence": 0.6050468026005364,
+      "verification_status": "gnn_inferred",
+      "already_known": true
+    },
+    "renal_colic_nephrolithiasis": {
+      "predicted_organs": [
+        "l_ureter",
+        "r_ureter",
+        "l_kidney",
+        "r_kidney",
+        "pancreas"
+      ],
+      "predicted_zones": [
+        "right_flank",
+        "left_flank",
+        "suprapubic"
+      ],
+      "top_organ_confidence": 0.7395612833927375,
+      "top_zone_confidence": 0.7609120114414117,
+      "verification_status": "gnn_inferred",
+      "already_known": true
+    },
+    "hyperventilation_syndrome": {
+      "predicted_organs": [
+        "lungs",
+        "brain",
+        "heart",
+        "brainstem",
+        "r_bronchus"
+      ],
+      "predicted_zones": [
+        "neck",
+        "thorax_central",
+        "head"
+      ],
+      "top_organ_confidence": 0.5458168879037438,
+      "top_zone_confidence": 0.5375688038533181,
+      "verification_status": "gnn_inferred",
+      "already_known": true
+    },
+    "cluster_headache": {
+      "predicted_organs": [
+        "brain",
+        "meninges",
+        "middle_cerebral_a",
+        "brainstem",
+        "ophthalmic_a"
+      ],
+      "predicted_zones": [
+        "head",
+        "neck"
+      ],
+      "top_organ_confidence": 0.6272914901409031,
+      "top_zone_confidence": 0.5982410668596836,
+      "verification_status": "gnn_inferred",
+      "already_known": true
+    },
+    "ectopic_pregnancy": {
+      "predicted_organs": [
+        "ovaries",
+        "uterus",
+        "bladder",
+        "ing_ln",
+        "r_ureter"
+      ],
+      "predicted_zones": [
+        "suprapubic",
+        "pelvis",
+        "rlq"
+      ],
+      "top_organ_confidence": 0.693532714814726,
+      "top_zone_confidence": 0.6284142208621957,
+      "verification_status": "gnn_inferred",
+      "already_known": true
+    },
+    "orthostatic_hypotension": {
+      "predicted_organs": [
+        "brain",
+        "brainstem",
+        "heart",
+        "meninges"
+      ],
+      "predicted_zones": [
+        "neck"
+      ],
+      "top_organ_confidence": 0.4566868155428021,
+      "top_zone_confidence": 0.4066847632913691,
+      "verification_status": "gnn_inferred",
+      "already_known": true
+    },
+    "hyperthyroidism": {
+      "predicted_organs": [
+        "thyroid",
+        "heart",
+        "cerv_ln",
+        "brain",
+        "brainstem"
+      ],
+      "predicted_zones": [
+        "neck",
+        "thorax_central"
+      ],
+      "top_organ_confidence": 0.5640668210313835,
+      "top_zone_confidence": 0.534288534337145,
+      "verification_status": "gnn_inferred",
+      "already_known": true
+    },
+    "migraine": {
+      "predicted_organs": [
+        "brain",
+        "middle_cerebral_a",
+        "meninges",
+        "brainstem",
+        "ophthalmic_a"
+      ],
+      "predicted_zones": [
+        "head",
+        "neck",
+        "epigastric"
+      ],
+      "top_organ_confidence": 0.5679123355891783,
+      "top_zone_confidence": 0.5786033624356619,
+      "verification_status": "gnn_inferred",
+      "already_known": true
+    },
+    "pelvic_inflammatory_disease": {
+      "predicted_organs": [
+        "ovaries",
+        "uterus",
+        "bladder",
+        "urethra",
+        "prostate"
+      ],
+      "predicted_zones": [
+        "suprapubic",
+        "pelvis",
+        "rlq"
+      ],
+      "top_organ_confidence": 0.7122376685478974,
+      "top_zone_confidence": 0.6081767580593627,
+      "verification_status": "gnn_inferred",
+      "already_known": true
+    },
+    "cystitis": {
+      "predicted_organs": [
+        "urethra",
+        "bladder",
+        "ovaries",
+        "prostate",
+        "r_ureter"
+      ],
+      "predicted_zones": [
+        "suprapubic",
+        "pelvis",
+        "llq"
+      ],
+      "top_organ_confidence": 0.6394731276146348,
+      "top_zone_confidence": 0.5527638350329278,
+      "verification_status": "gnn_inferred",
+      "already_known": true
+    },
+    "hypothyroidism": {
+      "predicted_organs": [
+        "thyroid"
+      ],
+      "predicted_zones": [
+        "neck"
+      ],
+      "top_organ_confidence": 0.4534403420305867,
+      "top_zone_confidence": 0.42468319019468914,
+      "verification_status": "gnn_inferred",
+      "already_known": true
+    },
+    "acute_otitis_media": {
+      "predicted_organs": [
+        "pharynx",
+        "esophagus"
+      ],
+      "predicted_zones": [
+        "neck"
+      ],
+      "top_organ_confidence": 0.4913563518620439,
+      "top_zone_confidence": 0.4360893508956892,
+      "verification_status": "gnn_inferred",
+      "already_known": true
+    },
+    "vertigo_central": {
+      "predicted_organs": [
+        "brainstem",
+        "brain",
+        "meninges",
+        "cerebellum",
+        "middle_cerebral_a"
+      ],
+      "predicted_zones": [
+        "head",
+        "neck"
+      ],
+      "top_organ_confidence": 0.728106924754103,
+      "top_zone_confidence": 0.6174275664820225,
+      "verification_status": "gnn_inferred",
+      "already_known": true
+    },
+    "acute_pyelonephritis": {
+      "predicted_organs": [
+        "r_kidney",
+        "l_kidney",
+        "r_ureter",
+        "l_ureter",
+        "pancreas"
+      ],
+      "predicted_zones": [
+        "left_flank",
+        "right_flank",
+        "suprapubic"
+      ],
+      "top_organ_confidence": 0.652195907939469,
+      "top_zone_confidence": 0.7004921654957287,
+      "verification_status": "gnn_inferred",
+      "already_known": true
+    },
+    "heart_attack": {
+      "predicted_organs": [
+        "lad_a",
+        "lcx_a",
+        "rca_a",
+        "left_main_coronary",
+        "heart"
+      ],
+      "predicted_zones": [
+        "thorax_central",
+        "neck",
+        "left_flank"
+      ],
+      "top_organ_confidence": 0.8756665739110997,
+      "top_zone_confidence": 0.6262856134769398,
+      "verification_status": "gnn_inferred",
+      "already_known": true
+    },
+    "acute_alcohol_intoxication": {
+      "predicted_organs": [
+        "brainstem",
+        "brain",
+        "meninges",
+        "esophagus",
+        "middle_cerebral_a"
+      ],
+      "predicted_zones": [
+        "head",
+        "neck",
+        "epigastric"
+      ],
+      "top_organ_confidence": 0.5098126197975488,
+      "top_zone_confidence": 0.5066677698287937,
+      "verification_status": "gnn_inferred",
+      "already_known": true
+    },
+    "glomerulonephritis": {
+      "predicted_organs": [
+        "r_kidney",
+        "l_kidney",
+        "spleen",
+        "pancreas",
+        "l_ureter"
+      ],
+      "predicted_zones": [
+        "left_flank",
+        "right_flank",
+        "epigastric"
+      ],
+      "top_organ_confidence": 0.5739527305197567,
+      "top_zone_confidence": 0.5309872638996899,
+      "verification_status": "gnn_inferred",
+      "already_known": true
+    },
+    "seizure": {
+      "predicted_organs": [
+        "middle_cerebral_a",
+        "brain",
+        "meninges",
+        "ophthalmic_a",
+        "internal_carotid_a"
+      ],
+      "predicted_zones": [
+        "head"
+      ],
+      "top_organ_confidence": 0.4356488259907881,
+      "top_zone_confidence": 0.4132921547790302,
+      "verification_status": "gnn_inferred",
+      "already_known": true
+    },
+    "gastroenteritis": {
+      "predicted_organs": [
+        "jejunum",
+        "ileum",
+        "asc_colon",
+        "pancreas",
+        "trans_colon"
+      ],
+      "predicted_zones": [
+        "umbilical",
+        "epigastric",
+        "rlq"
+      ],
+      "top_organ_confidence": 0.6864843182598394,
+      "top_zone_confidence": 0.6586514856179951,
+      "verification_status": "gnn_inferred",
+      "already_known": true
+    },
+    "panic_attack": {
+      "predicted_organs": [
+        "heart",
+        "brain",
+        "brainstem",
+        "lungs",
+        "meninges"
+      ],
+      "predicted_zones": [
+        "neck",
+        "thorax_central",
+        "head"
+      ],
+      "top_organ_confidence": 0.5840614967140737,
+      "top_zone_confidence": 0.618493560799097,
+      "verification_status": "gnn_inferred",
+      "already_known": true
+    },
+    "st_elevation_myocardial_infarction": {
+      "predicted_organs": [
+        "lad_a",
+        "lcx_a",
+        "rca_a",
+        "heart",
+        "left_main_coronary"
+      ],
+      "predicted_zones": [
+        "thorax_central",
+        "neck"
+      ],
+      "top_organ_confidence": 0.8345342866383273,
+      "top_zone_confidence": 0.6193557127211351,
+      "verification_status": "gnn_inferred",
+      "already_known": true
+    },
+    "carbon_monoxide_poisoning": {
+      "predicted_organs": [
+        "heart",
+        "rca_a",
+        "brain",
+        "lad_a",
+        "lcx_a"
+      ],
+      "predicted_zones": [
+        "neck",
+        "thorax_central"
+      ],
+      "top_organ_confidence": 0.47065015447327413,
+      "top_zone_confidence": 0.44026502061679545,
+      "verification_status": "gnn_inferred",
+      "already_known": true
+    },
+    "urinary_retention": {
+      "predicted_organs": [
+        "urethra",
+        "bladder",
+        "r_ureter",
+        "prostate",
+        "l_ureter"
+      ],
+      "predicted_zones": [
+        "suprapubic",
+        "llq",
+        "pelvis"
+      ],
+      "top_organ_confidence": 0.6242864868667979,
+      "top_zone_confidence": 0.5917763029990828,
+      "verification_status": "gnn_inferred",
+      "already_known": true
+    },
+    "diabetes_mellitus_type_2": {
+      "predicted_organs": [
+        "esophagus",
+        "pancreas",
+        "heart"
+      ],
+      "predicted_zones": [],
+      "top_organ_confidence": 0.43659034671953045,
+      "top_zone_confidence": 0.39695795275224516,
+      "verification_status": "gnn_inferred",
+      "already_known": true
+    },
+    "myxedema_coma": {
+      "predicted_organs": [
+        "brain",
+        "thyroid",
+        "meninges",
+        "brainstem",
+        "middle_cerebral_a"
+      ],
+      "predicted_zones": [
+        "neck",
+        "head",
+        "thorax_central"
+      ],
+      "top_organ_confidence": 0.5417845891735399,
+      "top_zone_confidence": 0.48239715628579666,
+      "verification_status": "gnn_inferred",
+      "already_known": true
+    },
+    "preeclampsia": {
+      "predicted_organs": [
+        "l_kidney",
+        "r_kidney",
+        "r_ureter",
+        "pancreas",
+        "l_ureter"
+      ],
+      "predicted_zones": [
+        "left_flank",
+        "right_flank",
+        "epigastric"
+      ],
+      "top_organ_confidence": 0.6608543051937512,
+      "top_zone_confidence": 0.6228793696188268,
+      "verification_status": "gnn_inferred",
+      "already_known": true
+    },
+    "covid": {
+      "predicted_organs": [
+        "lungs",
+        "r_lung",
+        "r_bronchus",
+        "l_bronchus",
+        "l_lung"
+      ],
+      "predicted_zones": [
+        "thorax_central",
+        "neck"
+      ],
+      "top_organ_confidence": 0.7739098047922655,
+      "top_zone_confidence": 0.6602438394240194,
+      "verification_status": "gnn_inferred",
+      "already_known": true
+    },
+    "nstemi": {
+      "predicted_organs": [
+        "lad_a",
+        "rca_a",
+        "lcx_a",
+        "heart",
+        "left_main_coronary"
+      ],
+      "predicted_zones": [
+        "thorax_central",
+        "neck"
+      ],
+      "top_organ_confidence": 0.7249609444342495,
+      "top_zone_confidence": 0.60742185619162,
+      "verification_status": "gnn_inferred",
+      "already_known": true
+    },
+    "opioid_overdose": {
+      "predicted_organs": [
+        "brain",
+        "brainstem",
+        "lungs",
+        "heart",
+        "meninges"
+      ],
+      "predicted_zones": [
+        "neck",
+        "thorax_central",
+        "head"
+      ],
+      "top_organ_confidence": 0.5960831685318709,
+      "top_zone_confidence": 0.6657232208769144,
+      "verification_status": "gnn_inferred",
+      "already_known": true
+    },
+    "ovarian_torsion": {
+      "predicted_organs": [
+        "ovaries",
+        "uterus",
+        "bladder",
+        "ing_ln",
+        "r_ureter"
+      ],
+      "predicted_zones": [
+        "suprapubic",
+        "pelvis",
+        "rlq"
+      ],
+      "top_organ_confidence": 0.7387506468511227,
+      "top_zone_confidence": 0.6421323630720968,
+      "verification_status": "gnn_inferred",
+      "already_known": true
+    },
+    "hypertensive_emergency": {
+      "predicted_organs": [
+        "heart",
+        "brain",
+        "brainstem",
+        "rca_a",
+        "esophagus"
+      ],
+      "predicted_zones": [
+        "neck",
+        "thorax_central",
+        "head"
+      ],
+      "top_organ_confidence": 0.604312671718446,
+      "top_zone_confidence": 0.5969096211639481,
+      "verification_status": "gnn_inferred",
+      "already_known": true
+    },
+    "acute_pancreatitis": {
+      "predicted_organs": [
+        "pancreas",
+        "duodenum",
+        "stomach",
+        "esophagus",
+        "spleen"
+      ],
+      "predicted_zones": [
+        "epigastric",
+        "umbilical",
+        "ruq"
+      ],
+      "top_organ_confidence": 0.6143579979836392,
+      "top_zone_confidence": 0.6529723397330766,
+      "verification_status": "gnn_inferred",
+      "already_known": true
+    },
+    "lyme_disease": {
+      "predicted_organs": [
+        "skin",
+        "brain",
+        "heart",
+        "brainstem",
+        "meninges"
+      ],
+      "predicted_zones": [
+        "neck",
+        "head",
+        "thorax_central"
+      ],
+      "top_organ_confidence": 0.5704545101595909,
+      "top_zone_confidence": 0.4704901258698028,
+      "verification_status": "gnn_inferred",
+      "already_known": true
+    },
+    "necrotizing_fasciitis": {
+      "predicted_organs": [
+        "muscles",
+        "skin"
+      ],
+      "predicted_zones": [],
+      "top_organ_confidence": 0.45137013704484447,
+      "top_zone_confidence": 0.3448582951867227,
+      "verification_status": "gnn_inferred",
+      "already_known": true
+    },
+    "acute_bronchitis": {
+      "predicted_organs": [
+        "trachea",
+        "r_bronchus",
+        "l_bronchus",
+        "lungs",
+        "r_lung"
+      ],
+      "predicted_zones": [
+        "thorax_central",
+        "neck"
+      ],
+      "top_organ_confidence": 0.6922574064921408,
+      "top_zone_confidence": 0.6062094776360123,
+      "verification_status": "gnn_inferred",
+      "already_known": true
+    },
+    "covid_19": {
+      "predicted_organs": [
+        "lungs",
+        "r_lung",
+        "r_bronchus",
+        "l_bronchus",
+        "trachea"
+      ],
+      "predicted_zones": [
+        "thorax_central",
+        "neck"
+      ],
+      "top_organ_confidence": 0.7489921416462105,
+      "top_zone_confidence": 0.6452232010022328,
+      "verification_status": "gnn_inferred",
+      "already_known": true
+    },
+    "stroke": {
+      "predicted_organs": [
+        "middle_cerebral_a",
+        "brain",
+        "meninges",
+        "anterior_cerebral_a",
+        "internal_carotid_a"
+      ],
+      "predicted_zones": [
+        "head",
+        "neck"
+      ],
+      "top_organ_confidence": 0.762089734383067,
+      "top_zone_confidence": 0.6437653196412975,
+      "verification_status": "gnn_inferred",
+      "already_known": true
+    },
+    "upper_gi_bleed": {
+      "predicted_organs": [
+        "stomach",
+        "duodenum",
+        "esophagus",
+        "pancreas",
+        "spleen"
+      ],
+      "predicted_zones": [
+        "epigastric",
+        "umbilical",
+        "ruq"
+      ],
+      "top_organ_confidence": 0.703828424106446,
+      "top_zone_confidence": 0.6972726641067731,
+      "verification_status": "gnn_inferred",
+      "already_known": true
+    },
+    "diverticulitis": {
+      "predicted_organs": [
+        "desc_colon",
+        "sig_colon",
+        "rectum",
+        "trans_colon",
+        "ovaries"
+      ],
+      "predicted_zones": [
+        "llq",
+        "suprapubic",
+        "rlq"
+      ],
+      "top_organ_confidence": 0.5660683368142713,
+      "top_zone_confidence": 0.6074373038283695,
+      "verification_status": "gnn_inferred",
+      "already_known": true
+    },
+    "heart_failure_exacerbation": {
+      "predicted_organs": [
+        "lungs",
+        "heart",
+        "rca_a",
+        "r_bronchus",
+        "left_ventricle"
+      ],
+      "predicted_zones": [
+        "thorax_central",
+        "neck",
+        "left_flank"
+      ],
+      "top_organ_confidence": 0.7503507320099798,
+      "top_zone_confidence": 0.7543590152434513,
+      "verification_status": "gnn_inferred",
+      "already_known": true
+    },
+    "pericardial_tamponade": {
+      "predicted_organs": [
+        "heart",
+        "rca_a",
+        "lad_a",
+        "lcx_a",
+        "left_main_coronary"
+      ],
+      "predicted_zones": [
+        "thorax_central",
+        "neck"
+      ],
+      "top_organ_confidence": 0.5086451163646551,
+      "top_zone_confidence": 0.46799356414354537,
+      "verification_status": "gnn_inferred",
+      "already_known": true
+    },
+    "acute_coronary_syndrome": {
+      "predicted_organs": [
+        "lad_a",
+        "lcx_a",
+        "rca_a",
+        "left_main_coronary",
+        "heart"
+      ],
+      "predicted_zones": [
+        "thorax_central",
+        "neck",
+        "left_flank"
+      ],
+      "top_organ_confidence": 0.8802105699028839,
+      "top_zone_confidence": 0.6188127818880818,
+      "verification_status": "gnn_inferred",
+      "already_known": true
+    },
+    "hyperosmolar_hyperglycemic_state": {
+      "predicted_organs": [
+        "l_kidney",
+        "r_kidney",
+        "pancreas",
+        "l_ureter",
+        "spleen"
+      ],
+      "predicted_zones": [
+        "left_flank",
+        "right_flank",
+        "epigastric"
+      ],
+      "top_organ_confidence": 0.6090597057340501,
+      "top_zone_confidence": 0.5858842156282371,
+      "verification_status": "gnn_inferred",
+      "already_known": true
+    }
+  }
+}

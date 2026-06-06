@@ -1,0 +1,41 @@
+# macOS
+.DS_Store
+
+# Python cache
+__pycache__/
+*.pyc
+*.pyo
+*.pyd
+
+# virtual environments
+.venv/
+venv/
+llm_env*/
+*_env*/
+
+# model checkpoints / weights
+checkpoints/
+*.pt
+*.pth
+*.ckpt
+
+# data files - DO NOT upload patient/MIMIC data
+*.jsonl
+*.csv
+*.parquet
+*.sqlite
+*.db
+
+# generated reports / temporary outputs
+rules_candidates.json
+rules_with_invariance.json
+osler_coverage_trajectories.jsonl
+state_observability.json
+split_report.json
+
+# private files / secrets
+.env
+.env.*
+medical_knowledge/private/
+mimic-iv/
+mimic-iv-demo/

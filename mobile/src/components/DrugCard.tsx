@@ -30,9 +30,11 @@ interface Props {
   rank: number;
   /** when true, paint the highlight pulse (accent-light bg + accent border) */
   highlighted?: boolean;
+  /** result.mechanism_only — no clinical labels loaded at all */
+  mechanismOnly?: boolean;
 }
 
-export default function DrugCard({ candidate: c, rank, highlighted }: Props) {
+export default function DrugCard({ candidate: c, rank, highlighted, mechanismOnly }: Props) {
   const [showMech, setShowMech] = useState(false);
   const safety = colorForSafety(c.safety?.decision);
   const reasons = (c.safety?.reasons ?? []).filter((r) => r.message);
@@ -71,11 +73,21 @@ export default function DrugCard({ candidate: c, rank, highlighted }: Props) {
         <Text style={styles.finalAnswer}>{c.final_answer}</Text>
       )}
 
-      {!!c.dose?.verbatim && c.dose.patient_specific_allowed && (
+      {c.dose?.verbatim && c.dose.patient_specific_allowed ? (
         <View style={styles.doseBox}>
+          <Text style={styles.doseLabel}>DOSE (CONFIRM WITH CLINICIAN)</Text>
           <Text style={styles.doseText}>{c.dose.verbatim}</Text>
-          <Text style={styles.doseCaption}>
-            Label dose — clinician must confirm
+        </View>
+      ) : (
+        // Mirrors the web demo's `.dose.blocked` box: the safety gate withheld
+        // patient-specific dosing — say so explicitly instead of hiding it.
+        <View style={styles.doseBoxBlocked}>
+          <Text style={styles.doseLabelBlocked}>DOSE</Text>
+          <Text style={styles.doseTextBlocked}>
+            not shown —{' '}
+            {mechanismOnly
+              ? 'no label loaded'
+              : 'blocked by safety gate / validation'}
           </Text>
         </View>
       )}
@@ -208,23 +220,47 @@ const styles = StyleSheet.create({
     color: colors.text,
     marginTop: spacing.md,
   },
+  // green dose box mirrors web `.dose` (#F0FDF4 bg / #BBF7D0 border)
   doseBox: {
-    backgroundColor: colors.accentLight,
+    backgroundColor: '#F0FDF4',
+    borderWidth: 1,
+    borderColor: '#BBF7D0',
     borderRadius: radius.sm,
     padding: spacing.md,
     marginTop: spacing.md,
+  },
+  doseLabel: {
+    fontFamily: fonts.bodySemiBold,
+    fontSize: 10,
+    letterSpacing: 0.8,
+    color: colors.green,
+    marginBottom: spacing.xs,
   },
   doseText: {
     fontFamily: Platform.select({ ios: 'Menlo', android: 'monospace' }),
     fontSize: 15,
     lineHeight: 21,
-    color: colors.accent,
+    color: colors.text,
   },
-  doseCaption: {
+  doseBoxBlocked: {
+    backgroundColor: colors.bgWarm,
+    borderWidth: 1,
+    borderColor: colors.borderSolid,
+    borderRadius: radius.sm,
+    padding: spacing.md,
+    marginTop: spacing.md,
+  },
+  doseLabelBlocked: {
+    fontFamily: fonts.bodySemiBold,
+    fontSize: 10,
+    letterSpacing: 0.8,
+    color: colors.textMuted,
+    marginBottom: spacing.xs,
+  },
+  doseTextBlocked: {
     fontFamily: fonts.body,
-    fontSize: 11,
-    color: colors.textSecondary,
-    marginTop: spacing.xs,
+    fontSize: 13,
+    color: colors.textMuted,
   },
   rationale: {
     fontFamily: fonts.body,

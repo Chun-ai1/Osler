@@ -166,6 +166,7 @@ export default function ReasoningScreen() {
               candidate={item}
               rank={index + 1}
               highlighted={pulseDrug === item.drug?.toLowerCase()}
+              mechanismOnly={!!bundle?.result?.mechanism_only}
             />
           )}
           ListEmptyComponent={

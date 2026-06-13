@@ -46,6 +46,21 @@ export interface MatchedTarget {
   effect_type: string;
 }
 
+/** Provenance for a drug claim (openFDA/DailyMed SPL record). */
+export interface Evidence {
+  source?: string; // e.g. "openFDA / DailyMed (FDA SPL)"
+  set_id?: string; // DailyMed SPL setid → direct drugInfo link
+  retrieved_at?: string;
+}
+
+/** FAERS adverse-event signal (FDA Adverse Event Reporting System). */
+export interface FaersSignal {
+  event: string;
+  report_count: number;
+  source?: string;
+  confidence?: string;
+}
+
 export interface DrugCandidate {
   drug: string;
   clinical_role: { label?: string; role?: string };
@@ -56,6 +71,10 @@ export interface DrugCandidate {
   dose?: { verbatim?: string; patient_specific_allowed?: boolean };
   final_answer?: string;
   rationale?: string;
+  evidence?: Evidence[];
+  faers_signals?: FaersSignal[];
+  indication_support?: string;
+  label_status?: string;
 }
 
 export interface AnalyzeResult {
@@ -72,6 +91,7 @@ export interface AnalyzeResult {
   target_states?: string[];
   candidates: DrugCandidate[];
   mechanism_only?: boolean;
+  _disclaimer?: string;
 }
 
 export interface Perturbation {

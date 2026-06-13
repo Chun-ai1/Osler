@@ -167,12 +167,18 @@ export default function ReasoningScreen() {
               rank={index + 1}
               highlighted={pulseDrug === item.drug?.toLowerCase()}
               mechanismOnly={!!bundle?.result?.mechanism_only}
+              disease={bundle?.disease_model}
             />
           )}
           ListEmptyComponent={
             <Text style={styles.noData}>
               No drug candidates in this analysis.
             </Text>
+          }
+          ListFooterComponent={
+            bundle?.result?._disclaimer ? (
+              <Text style={styles.disclaimer}>{bundle.result._disclaimer}</Text>
+            ) : null
           }
         />
       )}
@@ -313,6 +319,15 @@ const styles = StyleSheet.create({
     color: colors.textMuted,
     textAlign: 'center',
     marginTop: spacing.xl,
+  },
+  disclaimer: {
+    fontFamily: fonts.body,
+    fontSize: 11.5,
+    lineHeight: 17,
+    color: colors.textMuted,
+    fontStyle: 'italic',
+    marginTop: spacing.sm,
+    marginBottom: spacing.xl,
   },
   graphWrap: {
     flex: 1,

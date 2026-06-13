@@ -15,7 +15,8 @@ import {
   View,
 } from 'react-native';
 
-import type { DrugCandidate } from '@/api/osler';
+import type { DiseaseModel, DrugCandidate } from '@/api/osler';
+import DrugSources from '@/components/DrugSources';
 import { colorForSafety, colors, fonts, radius, shadow, spacing } from '@/theme/tokens';
 
 if (
@@ -32,9 +33,11 @@ interface Props {
   highlighted?: boolean;
   /** result.mechanism_only — no clinical labels loaded at all */
   mechanismOnly?: boolean;
+  /** disease world-model, for the disease-source citation */
+  disease?: DiseaseModel | null;
 }
 
-export default function DrugCard({ candidate: c, rank, highlighted, mechanismOnly }: Props) {
+export default function DrugCard({ candidate: c, rank, highlighted, mechanismOnly, disease }: Props) {
   const [showMech, setShowMech] = useState(false);
   const safety = colorForSafety(c.safety?.decision);
   const reasons = (c.safety?.reasons ?? []).filter((r) => r.message);
@@ -156,6 +159,8 @@ export default function DrugCard({ candidate: c, rank, highlighted, mechanismOnl
           )}
         </View>
       )}
+
+      <DrugSources candidate={c} disease={disease} />
     </View>
   );
 }
